@@ -352,13 +352,33 @@ table {
 
 /* Additional Utility Classes
 ------------------------------------------------------- */
-.fr   { float:right; }
-.fl   { float:left; }
-.show { display:block; }
-.hide { display:none; }
-
+.fr           { float:right; }
+.fl           { float:left; }
+.show         { display:block; }
+.hide         { display:none; }
 .deemphasize  { color:#888; }
 .center       { text-align:center; }
+
+.tip-top:after,
+.tip-right:after,
+.tip-bottom:after,
+.tip-left:after {
+  content:'';
+  border-width:0 5px 5px;
+  border-style:solid;
+  position:absolute;
+  border-color:#333 transparent;
+  }
+  .tip-bottom:after {
+    border-width:5px 5px 0;
+    }
+  .tip-left:after {
+    border-width:5px 5px 5px 0;
+    border-color:transparent #333;
+    }
+  .tip-right:after {
+    border-width:5px 0 5px 5px;
+    }
 
 /* Markup free clearing
 Details: http://www.positioniseverything.net/easyclearing.html
