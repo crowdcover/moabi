@@ -337,6 +337,21 @@ table {
 .margin11 { margin-left:91.6666%; }
 .margin12 { margin-left:100.0000%; }
 
+/* reverse margins on right-floated elements */
+.fr.margin0  { margin-right:04.1666%; }
+.fr.margin1  { margin-right:08.3333%; }
+.fr.margin2  { margin-right:16.6666%; }
+.fr.margin3  { margin-right:25.0000%; }
+.fr.margin4  { margin-right:33.3333%; }
+.fr.margin5  { margin-right:41.6666%; }
+.fr.margin6  { margin-right:50.0000%; }
+.fr.margin7  { margin-right:58.3333%; }
+.fr.margin8  { margin-right:66.6666%; }
+.fr.margin9  { margin-right:75.0000%; }
+.fr.margin10 { margin-right:83.3333%; }
+.fr.margin11 { margin-right:91.6666%; }
+.fr.margin12 { margin-right:100.0000%; }
+
 /* Padding
 ------------------------------------------------------- */
 .pad1    { padding:10px; }
