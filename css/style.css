@@ -422,30 +422,30 @@ table { border-collapse: collapse; border-spacing:0; }
 ------------------------------------------------------- */
 @font-face {
   font-family:'Open Sans';
-    src:url('/fonts/opensans-regular.eot');
-    src:url('/fonts/opensans-regular.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/opensans-regular.woff') format('woff');
+    src:url('../fonts/opensans-regular.eot');
+    src:url('../fonts/opensans-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/opensans-regular.woff') format('woff');
   }
 
 @font-face {
   font-family:'Open Sans Italic';
-    src:url('/fonts/opensans-italic.eot');
-    src:url('/fonts/opensans-italic.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/opensans-italic.woff') format('woff');
+    src:url('../fonts/opensans-italic.eot');
+    src:url('../fonts/opensans-italic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/opensans-italic.woff') format('woff');
   }
 
 @font-face {
   font-family:'Open Sans Bold';
-    src:url('/fonts/OpenSans-Semibold-webfont.eot');
-    src:url('/fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/OpenSans-Semibold-webfont.woff') format('woff');
+    src:url('../fonts/OpenSans-Semibold-webfont.eot');
+    src:url('../fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans-Semibold-webfont.woff') format('woff');
   }
 
 @font-face {
   font-family:'Open Sans Bold Italic';
-    src:url('/fonts/OpenSans-Semibolditalic-webfont.eot');
-    src:url('/fonts/OpenSans-Semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/OpenSans-Semibolditalic-webfont.woff') format('woff');
+    src:url('../fonts/OpenSans-Semibolditalic-webfont.eot');
+    src:url('../fonts/OpenSans-Semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans-Semibolditalic-webfont.woff') format('woff');
   }
 
 /* Inline Elements: Defaults
