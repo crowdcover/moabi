@@ -1,4 +1,4 @@
-auto: true
-server: true
+name: "Moabi"
+description: "Moabi is a collaborative mapping platform to monitor landuse planning in the Democratic Republic of the Congo."
 baseurl:
 permalink: /:title

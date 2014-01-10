@@ -1,4 +1,4 @@
-fresh-start
+Moabi DRC
 ===========
 
-Extremely barebones starting point for responsive sites built on Jekyll.
+Jekyll build of the new Moabi site
