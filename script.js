@@ -21,8 +21,10 @@ $('.boxmenu li a').on('click', function(e) {
     $(this).parent('li').siblings('li').children('a.active').removeClass('active');
     $(this).addClass('active');
 
-    $('.main-panel').hide();
-    $(panelClassName).show();
+    // $('.main-panel').hide();
+    // $(panelClassName).show();
+    $('.main-panel.active').removeClass('active')
+    $(panelClassName).addClass('active')
 });
 
 
