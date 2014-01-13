@@ -6,9 +6,23 @@
     z-index: -1;
 }
 
+.gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: url(../img/gradient_a70.png);
+    z-index: -1;
+    background
+}
+
 .header, .sidebar-header, .centerbar-header {
     height: 44px;
     border-bottom: 1px solid #CCC;
+}
+
+.sidebar-header, .centerbar-header {
+    /*z-index: 2;*/
 }
 
 .header {
@@ -16,8 +30,8 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: #000;
     box-shadow: rgba(0,0,0,0.25) 0 0 10px 3px;
+    background-color: #000;
 }
 
 .header .title, .header .landing-title, .header .nav {
@@ -46,6 +60,13 @@
 }
 
 /*centerbar used on landing page*/
+.limiter {
+    width: 70%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .centerbar-container {
     position: absolute;
     top: 0;
@@ -55,6 +76,9 @@
     border-left: 2px solid #CCC;
     border-bottom: 2px solid #CCC;
     box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+
+    max-height: 100%;
+    overflow: auto;
 }
 
 /*sidebar used on all project pages*/
@@ -67,6 +91,9 @@
     border-right: 2px solid #CCC;
     border-bottom: 2px solid #CCC;
     box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+
+    max-height: 100%;
+    overflow: auto;
 }
 
 .centerbar-fill, .sidebar-fill {
@@ -75,20 +102,14 @@
     background-color: rgba(255, 252, 248, 0.9);
 }
 
-.limiter {
-    width: 70%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 /*intro blurbs.  [landing page, and where else?]*/
-.intro {
+.intro .titlefloat {
+    float: left;
+    margin-right: 16px;
+    margin-bottom: 12px;
 }
 
 .intro h1 {
-    float: left;
-    margin-right: 16px;
     text-align: right;
 }
 
@@ -99,7 +120,7 @@
 /***********************Menus***********************/
 /*boxmenu*/
 .boxmenu {
-
+    clear: both;
 }
 
 .boxmenu li {
@@ -283,25 +304,27 @@
 
 /**************************Panels**************************/
 .main-panel {
-    /*display: none;*/
-    /*padding: 12px;*/
+    display: none;
+    padding: 12px;
 
-    max-height: 0;
+    /*max-height: 0;
     overflow: hidden;
     -webkit-transition: max-height 0.5s ease;
     -moz-transition: max-height 0.5s ease;
     -o-transition: max-height 0.5s ease;
     -ms-transition: max-height 0.5s ease;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease;*/
 }
 
 .main-panel.active {
-    /*display: block;*/
+    display: block;
 
-    height: auto;
-    max-height: 600px;
+    /*height: auto;
+    max-height: 100%;
     overflow: auto;
-    padding: 12px;
+    padding: 12px;*/
+
+    clear: both;
 }
 
 
