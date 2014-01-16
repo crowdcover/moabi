@@ -92,8 +92,8 @@ addRadioButton('helsinki.moabi_transport', 'transport');
 addRadioButton('helsinki.moabi_logging', 'logging');
 addRadioButton('helsinki.moabi_mining', 'mining');
 addRadioButton('helsinki.moabi_oil', 'oil');
-addRadioButton('helsinki.moabi_mining', 'palm');
-addRadioButton('helsinki.moabi_oil', 'indigenous');
+addRadioButton('helsinki.moabi_palm', 'palm');
+addRadioButton('helsinki.moabi_indigenous', 'indigenous');
 
 navigate('era', '-2,18,8');
 navigate('luki', '-5.6,13.2,8');
