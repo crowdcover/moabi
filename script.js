@@ -9,6 +9,8 @@ var map = L.mapbox.map('map', 'helsinki.moabi_base', {
 })
     .setView([-2.877, 22.830], 5);
 
+//add REDD tile layer
+L.mapbox.tileLayer('http://{s}.tiles.osm.moabi.org/redd/{z}/{x}/{y}.png').addTo(map);
 
 
 // Main Menu panel switcher
