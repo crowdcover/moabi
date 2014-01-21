@@ -78,21 +78,18 @@ function toggleLayer(e) {
     e.preventDefault();
     e.stopPropagation();
 
-    var mapId = $(this).data(mapId);
-    layer = L.mapbox.tileLayer(mapId);
+    // var mapId = $(this).data(mapId);
+    // layer = L.mapbox.tileLayer(mapId);
 
-    if (map.hasLayer(layer)) {
-        console.log("removed " + layer)
-        map.removeLayer(layer);
-        $(this).removeClass('active');
-    } else {
-        console.log("added " + layer)
-        map.addLayer(layer);
-        $(this).addClass('active');
-
-        // $(this).closest('div').children('.minor-panel.active').removeClass('active');
-        // $('#' + elementId + '-panel').addClass('active');
-    }
+    // if (map.hasLayer(layer)) {
+    //     console.log("removed " + layer)
+    //     map.removeLayer(layer);
+    //     $(this).removeClass('active');
+    // } else {
+    //     console.log("added " + layer)
+    //     map.addLayer(layer);
+    //     $(this).addClass('active');
+    // }
 }
 
 
@@ -102,37 +99,39 @@ $(window).resize(contentBarResize);
 $('.boxmenu').on('click', 'a', showMajorPanel);
 $('.minor-panel-viewer').on('click', 'a', showMinorPanel);
 $('.nav-buttons').on('click', 'a', navigate);
-$('.data-layers li a').on('click', toggleLayer);
+$('.data-layers li a').on('click', 'a', toggleLayer);
 
 
-// function addRadioButton(mapId, elementId) {
-//     var layer = L.mapbox.tileLayer(mapId);
+function addRadioButton(mapId, elementId) {
+    var layer = L.mapbox.tileLayer(mapId);
 
-//     $('#' + elementId).on('click', function(e) {
-//         e.preventDefault();
-//         e.stopPropagation();
+    $('#' + elementId).on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-//         if (map.hasLayer(layer)) {
-//             map.removeLayer(layer);
-//             $(this).removeClass('active');
-//         } else {
-//             map.addLayer(layer);
-//             $(this).addClass('active');
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            $(this).removeClass('active');
+        } else {
+            map.addLayer(layer);
+            $(this).addClass('active');
 
-//             $(this).closest('div').children('.minor-panel.active').removeClass('active');
-//             $('#' + elementId + '-panel').addClass('active');
-//         }
-//     });
-// }
+            $(this).closest('div').children('.minor-panel.active').removeClass('active');
+            $('#' + elementId + '-panel').addClass('active');
 
-// // bind all handlers to their elements
-// addRadioButton('helsinki.moabi_transport', 'transport');
-// addRadioButton('helsinki.moabi_logging', 'logging');
-// addRadioButton('helsinki.moabi_mining', 'mining');
-// addRadioButton('helsinki.moabi_oil', 'oil');
-// addRadioButton('helsinki.moabi_palm', 'palm');
-// addRadioButton('helsinki.moabi_indigenous', 'indigenous');
-// addRadioButton('helsinki.moabi_energy', 'energy');
+            contentBarResize();
+        }
+    });
+}
+
+// bind all handlers to their elements
+addRadioButton('helsinki.moabi_transport', 'transport');
+addRadioButton('helsinki.moabi_logging', 'logging');
+addRadioButton('helsinki.moabi_mining', 'mining');
+addRadioButton('helsinki.moabi_oil', 'oil');
+addRadioButton('helsinki.moabi_palm', 'palm');
+addRadioButton('helsinki.moabi_indigenous', 'indigenous');
+addRadioButton('helsinki.moabi_energy', 'energy');
 
 
 
