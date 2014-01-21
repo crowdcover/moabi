@@ -16,13 +16,9 @@
     background
 }
 
-.header, .sidebar-header, .centerbar-header {
+.header, .contentbar-header {
     height: 44px;
     border-bottom: 1px solid #CCC;
-}
-
-.sidebar-header, .centerbar-header {
-    /*z-index: 2;*/
 }
 
 .header {
@@ -59,7 +55,6 @@
     font-weight: bold;
 }
 
-/*centerbar used on landing page*/
 .limiter {
     width: 70%;
     max-width: 1000px;
@@ -67,22 +62,7 @@
     margin-right: auto;
 }
 
-.centerbar-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-right: 2px solid #CCC;
-    border-left: 2px solid #CCC;
-    border-bottom: 2px solid #CCC;
-    box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
-
-    max-height: 100%;
-    overflow: auto;
-}
-
-/*sidebar used on all project pages*/
-.sidebar-container {
+.contentbar {
     position: absolute;
     top: 0;
     left: 0;
@@ -91,18 +71,44 @@
     border-right: 2px solid #CCC;
     border-bottom: 2px solid #CCC;
     box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
-
-    max-height: 100%;
-    overflow: auto;
 }
 
-.centerbar-fill, .sidebar-fill {
+.contentbar.limiter {
+    right: 0;
+    border-left: 2px solid #CCC;
+    width: 70%;
+}
+
+.contentbar-fill {
     position: relative;
-    background-color: rgb(255, 252, 248); /*fallback*/
+    background-color: rgb(255, 252, 248);
     background-color: rgba(255, 252, 248, 0.9);
+    width: 100%;
+    overflow: auto;
+    -webkit-transition: height 0.2s ease;
+    -moz-transition: height 0.2s ease;
+    -o-transition: height 0.2s ease;
+    -ms-transition: height 0.2s ease;
+    transition: height 0.2s ease;
 }
 
 /*intro blurbs.  [landing page, and where else?]*/
+.main-panel.intro {
+    display: none;
+    background-color: rgb(255, 252, 248);
+    background-color: rgba(255, 252, 248, 0.9);
+
+/*    -webkit-transition: height 0.2s ease;
+    -moz-transition: height 0.2s ease;
+    -o-transition: height 0.2s ease;
+    -ms-transition: height 0.2s ease;
+    transition: height 0.2s ease;
+*/}
+
+.main-panel.intro.active{
+    display: block;
+}
+
 .intro .titlefloat {
     float: left;
     margin-right: 16px;
@@ -332,21 +338,31 @@
 .minor-panel {
     background-color: rgb(206, 196, 180);
     background-color: rgba(87, 70, 41, 0.37);
-    /*padding: 0;*/
-    max-height: 0;
-    /*border: 1px solid #888;*/
+    padding: 8px;
+    border: 1px solid #888;
+
+    /*no transition*/
+    display: none;
+
+    /*vertical expand*/
+/*    max-height: 0;
     overflow: hidden;
     -webkit-transition: max-height 0.5s ease;
     -moz-transition: max-height 0.5s ease;
     -o-transition: max-height 0.5s ease;
     -ms-transition: max-height 0.5s ease;
-    transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease;*/
 }
 
 .minor-panel.active {
-    height: auto;
+
+    /*no transition*/
+    display: block;
+
+    /*vertical expand*/
+/*    height: auto;
     max-height: 300px;
-    overflow: auto;
+    overflow: auto;*/
 }
 
 .minor-panel ul {

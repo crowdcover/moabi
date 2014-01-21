@@ -10,98 +10,161 @@ var map = L.mapbox.map('map', 'helsinki.moabi_base', {
     .setView([-2.877, 22.830], 5);
 
 //add REDD tile layer
-//L.mapbox.tileLayer('http://{s}.tiles.osm.moabi.org/redd/{z}/{x}/{y}.png').addTo(map);
 L.tileLayer('http://tiles.osm.moabi.org/redd/{z}/{x}/{y}.png').addTo(map);
 
-// Main Menu panel switcher
-$('.boxmenu li a').on('click', function(e) {
+
+// Major/minor panel switcher
+function showMajorPanel(e) {
     e.preventDefault();
     e.stopPropagation();
 
     var panelClassName = '.' + $(this).attr('id') + '.main-panel';
 
-    $(this).parent('li').siblings('li').children('a.active').removeClass('active');
-    $(this).addClass('active');
+    $(this).addClass('active').parent('li').siblings('li').children('a.active').removeClass('active');
 
-    // $('.main-panel').hide();
-    // $(panelClassName).show();
-    $('.main-panel.active').removeClass('active')
-    $(panelClassName).addClass('active')
-});
+    $('.main-panel.active').removeClass('active');
+    $(panelClassName).addClass('active');
 
+    contentBarResize();
+}
 
-// REDD+ Project panel switcher
-$('.redd-buttons li a').on('click', function(e) {
+function showMinorPanel(e) {
     e.preventDefault();
     e.stopPropagation();
 
     var panelId = '#' + $(this).attr('id') + '-panel';
 
     //make button .active
-    $(this).parent('li').siblings('li').children('a.active').removeClass('active');
-    $(this).addClass('active');
+    $(this).addClass('active').parent('li').siblings('li').children('a.active').removeClass('active');
 
     //close any open panel and open the new one
     $(this).closest('div').children('.minor-panel.active').removeClass('active');
     $(panelId).addClass('active');
-});
 
-
-// Data Layers panel
-function addRadioButton(mapId, elementId) {
-    var layer = L.mapbox.tileLayer(mapId);
-
-    $('#' + elementId).on('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            $(this).removeClass('active');
-        } else {
-            map.addLayer(layer);
-            $(this).addClass('active');
-
-            $(this).closest('div').children('.minor-panel.active').removeClass('active');
-            $('#' + elementId + '-panel').addClass('active');
-        }
-    });
+    contentBarResize();
 }
+
+// Navigate Function
+function navigate(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+
+    var lat = $(this).data("lat");
+    var lon = $(this).data("lon");
+    var zoom = $(this).data("zoom");
+    map.setView([lat, lon], zoom);
+
+    // $(this).parent('li').siblings('li').children('a.active').removeClass('active');
+    // $(this).addClass('active');
+}
+
+function contentBarResize() {
+    // in order to allow for an animated height transition:
+    // calculate height of content-bar's children,
+    // calculate max height of content bar based on window size - content-bar's siblings
+    // set content-bar height to the smaller of the two
+    var contentHeight = $('.contentbar-fill').children('.main-panel.active').outerHeight();
+    var maxHeight = $(window).height() - $('.boxmenu').height() - $('.contentbar-header').height() - 3; //minus 3 for border-bottom of .contentbar-fill (2) and .contentbar-header (1)
+    console.log("contentBarResize fired. Content height: " + contentHeight);
+    if(contentHeight < maxHeight ) {
+        $('.contentbar-fill').height(contentHeight);
+    } else {
+        $('.contentbar-fill').height(maxHeight);
+    }
+}
+
+function toggleLayer(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var mapId = $(this).data(mapId);
+    layer = L.mapbox.tileLayer(mapId);
+
+    if (map.hasLayer(layer)) {
+        console.log("removed " + layer)
+        map.removeLayer(layer);
+        $(this).removeClass('active');
+    } else {
+        console.log("added " + layer)
+        map.addLayer(layer);
+        $(this).addClass('active');
+
+        // $(this).closest('div').children('.minor-panel.active').removeClass('active');
+        // $('#' + elementId + '-panel').addClass('active');
+    }
+}
+
+
+$(document).ready(contentBarResize);
+$(window).resize(contentBarResize);
+
+$('.boxmenu').on('click', 'a', showMajorPanel);
+$('.minor-panel-viewer').on('click', 'a', showMinorPanel);
+$('.nav-buttons').on('click', 'a', navigate);
+$('.data-layers li a').on('click', toggleLayer);
+
+
+// function addRadioButton(mapId, elementId) {
+//     var layer = L.mapbox.tileLayer(mapId);
+
+//     $('#' + elementId).on('click', function(e) {
+//         e.preventDefault();
+//         e.stopPropagation();
+
+//         if (map.hasLayer(layer)) {
+//             map.removeLayer(layer);
+//             $(this).removeClass('active');
+//         } else {
+//             map.addLayer(layer);
+//             $(this).addClass('active');
+
+//             $(this).closest('div').children('.minor-panel.active').removeClass('active');
+//             $('#' + elementId + '-panel').addClass('active');
+//         }
+//     });
+// }
+
+// // bind all handlers to their elements
+// addRadioButton('helsinki.moabi_transport', 'transport');
+// addRadioButton('helsinki.moabi_logging', 'logging');
+// addRadioButton('helsinki.moabi_mining', 'mining');
+// addRadioButton('helsinki.moabi_oil', 'oil');
+// addRadioButton('helsinki.moabi_palm', 'palm');
+// addRadioButton('helsinki.moabi_indigenous', 'indigenous');
+// addRadioButton('helsinki.moabi_energy', 'energy');
 
 
 
 // map zoom-to navigation buttons
-function navigate(elementId, latlonzoom) {
-    $('#' + elementId).on('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+// function navigate(elementId, latlonzoom) {
+//     $('#' + elementId).on('click', function(e) {
+//         e.preventDefault();
+//         e.stopPropagation();
 
-        var location = latlonzoom.split(',');
-        var latLon = [location[0],location[1]];
-        var zoom = location[2];
-        map.setView(latLon, zoom);
+//         var location = latlonzoom.split(',');
+//         var latLon = [location[0],location[1]];
+//         var zoom = location[2];
+//         map.setView(latLon, zoom);
 
-        // $(this).parent('li').siblings('li').children('a.active').removeClass('active');
-        // $(this).addClass('active');
-    });
-}
+//         // $(this).parent('li').siblings('li').children('a.active').removeClass('active');
+//         // $(this).addClass('active');
+//     });
+// }
+
+// navigate('era', '-2,18,8');
+// navigate('luki', '-5.6,13.2,8');
+// navigate('tayna', '-0.35,28.74,8');
+// navigate('kwamouth', '-3.9,16.6,8');
+// navigate('ecomakala', '-1,29.3,8');
+// navigate('mambasa', '1.1,29.1,8');
+// navigate('isangi', '0.9,24.1,8');
+// navigate('mitsoshi', '-5.1,29.1,8');
+// navigate('jadora', '0.4,23.95,8');
+
+//set content-bar height
+//also consider using max-height: calc(100% - 90px) [mind compatibility issues ]
+//http://stackoverflow.com/questions/2434602/css-setting-width-height-as-percentage-minus-pixels
 
 
-// bind all handlers to their elements
-addRadioButton('helsinki.moabi_transport', 'transport');
-addRadioButton('helsinki.moabi_logging', 'logging');
-addRadioButton('helsinki.moabi_mining', 'mining');
-addRadioButton('helsinki.moabi_oil', 'oil');
-addRadioButton('helsinki.moabi_palm', 'palm');
-addRadioButton('helsinki.moabi_indigenous', 'indigenous');
-addRadioButton('helsinki.moabi_energy', 'energy');
 
-navigate('era', '-2,18,8');
-navigate('luki', '-5.6,13.2,8');
-navigate('tayna', '-0.35,28.74,8');
-navigate('kwamouth', '-3.9,16.6,8');
-navigate('ecomakala', '-1,29.3,8');
-navigate('mambasa', '1.1,29.1,8');
-navigate('isangi', '0.9,24.1,8');
-navigate('mitsoshi', '-5.1,29.1,8');
-navigate('jadora', '0.4,23.95,8');

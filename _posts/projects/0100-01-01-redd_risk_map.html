@@ -62,37 +62,47 @@ reddprojectpanel:
 datapanel:
   - id: indigenous
     name: Indigenous Lands
+    mapId: helsinki.moabi_indigenous
     description: Don't exproriate indigenous lands. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
   - id: transport
     name: Transport
+    mapId: helsinki.moabi_transport
     description: Roads and rivers provide the major arteries for travel and trade across DRC. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
   - id: mining
-    name: Mining and Energy
+    name: Mining
+    mapId: helsinki.moabi_mining
     description: Mining and Energy. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
   - id: logging
     name: Logging
+    mapId: helsinki.moabi_logging
     description: Logging cuts down trees. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
   - id: oil
     name: Oil
+    mapId: helsinki.moabi_oil
     description: So much Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
   - id: palm
     name: Palm Oil
+    mapId: helsinki.moabi_palm
     description: So much Palm Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
   - id: energy
     name: Energy
+    mapId: helsinki.moabi_energy
     description: Energy Corridors! After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
 ---
 
+<header class="header">
+    <h1 class="title">{{page.title}}</h1>
+    <a class="nav home" href="{{site.baseurl}}/">Home</a>
+</header>
 
-<div class="sidebar-container">
-    <div class="sidebar-header"></div>
-    <div class="sidebar-fill">
-        <ul class="boxmenu width-3 clearfix">
-            <li><a id="about" class="active" href="#">About</a></li>
-            <li><a id="data" href="#">Data Layers</a></li>
-            <li><a id="sites" href="#">REDD+ Projects</a></li>
-        </ul>
-
+<div class="contentbar">
+    <div class="contentbar-header"></div>
+    <ul class="boxmenu width-3 clearfix">
+        <li><a id="about" class="active" href="#">About</a></li>
+        <li><a id="data" href="#">Data Layers</a></li>
+        <li><a id="sites" href="#">REDD+ Projects</a></li>
+    </ul>
+    <div class="contentbar-fill">
         <div class="main-panel about active">
             <h2>Managing the DRC's Forests</h2>
             <p class="small">Future forest loss in DRC is very uncertain. Decades of conflict and under investment have prevented the industrial scale of forestry and agricultural activities that characterized deforestation in Brazil and Indonesia – the other two large rainforest countries. As the country stabilizes, deforestation will increase, but predicting when and where it will occur presents an ongoing challenge to REDD+ implementation. The maps illustrate 7 potential land use activities overlapping REDD+ pilot projects locations including mines, roads, and logging permits. Some are active, many are speculative, but over the next thirty years, it is inevitable that they could compete with REDD+ activities. These land uses will also overlap with customary rights of local communities and could impede their access and use of the forest.</p>
@@ -101,9 +111,9 @@ datapanel:
         <div class="main-panel data">
             <div class="aside">Click on a layer to add/remove from the map</div>
 
-            <ul class="listmenu layer-buttons">
+            <ul class="listmenu minor-panel-viewer data-layers">
                 {% for dpanel in page.datapanel %}
-                    <li><a href="#" id="{{dpanel.id}}">{{dpanel.name}}</a></li>
+                    <li><a href="#" id="{{dpanel.id}}" data-mapId="{{dpanel.mapId}}">{{dpanel.name}}</a></li>
                 {% endfor %}
             </ul>
 
@@ -137,9 +147,9 @@ datapanel:
             <p class="small">FILLERTEXT: REDD+ Projects cover a significant amount of the DRC's valuable rainforest resources.  If managed correctly, they could provide an a steady revenue stream while protecting the country's ecological hertigage and acting as an important carbon sink for the world.</p>
             <div class="aside">Click on a REDD+ Project to navigate to it's location.</div>
 
-            <ul class="pillmenu redd-buttons">
+            <ul class="pillmenu minor-panel-viewer nav-buttons">
                 {% for rproject in page.reddprojectpanel %}
-                    <li><a id="{{rproject.id}}" href="#">{{rproject.name}}</a></li>
+                    <li><a id="{{rproject.id}}" data-lat="{{rproject.lat}}" data-lon="{{rproject.lon}}" data-zoom="{{rproject.zoom}}" href="#">{{rproject.name}}</a></li>
                 {% endfor %}
             </ul>
 

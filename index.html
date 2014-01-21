@@ -2,6 +2,7 @@
 layout: default
 title:
 basemap: helsinki.project_base
+gradient: true
 sitepages:
   - name: About
     id: about
@@ -14,25 +15,31 @@ sitepages:
   - name: Add/Edit Data
     id: edit
 ---
-<div class="gradient"></div>
-<div class="centerbar-container limiter">
-    <div class="centerbar-header"></div>
-    <div class="centerbar-fill">
-        <div class="main-panel intro active">
-            <div class="titlefloat">
-                <h1>Collaborative</h1>
-                <h1>Landuse</h1>
-                <h1>Mapping</h1>
-            </div>
-            <p>Moabi is a collaborative mapping platform to monitor landuse planning in the Democratic Republic of the Congo.  Introductory text to the Moabi project, not to be more than a few lines long.  A full consideration of the project should be included in the in about page.  This should be limited to four or five sentences, so as to not lose an audience with a short attention span.</p>
-        </div>
 
-        {% capture boxmenu_width %}width-{{page.sitepages.size}}{% endcapture %}
-        <ul class="boxmenu {{boxmenu_width}}">
-            {% for sitepage in page.sitepages %}
-                <li><a href="#" id="{{sitepage.id}}">{{sitepage.name}}</a></li>
-            {% endfor %}
-        </ul>
+<header class="header">
+    <h1 class="landing-title">Moabi</h1>
+</header>
+
+<div class="contentbar limiter">
+    <div class="contentbar-header"></div>
+
+    <div class="main-panel intro active clearfix">
+        <div class="titlefloat">
+            <h1>Collaborative</h1>
+            <h1>Landuse</h1>
+            <h1>Mapping</h1>
+        </div>
+        <p>Moabi is a collaborative mapping platform to monitor landuse planning in the Democratic Republic of the Congo.  Introductory text to the Moabi project, not to be more than a few lines long.  A full consideration of the project should be included in the in about page.  This should be limited to four or five sentences, so as to not lose an audience with a short attention span.</p>
+    </div>
+
+    {% capture boxmenu_width %}width-{{page.sitepages.size}}{% endcapture %}
+    <ul class="boxmenu {{boxmenu_width}} clearfix">
+        {% for sitepage in page.sitepages %}
+            <li><a href="#" id="{{sitepage.id}}">{{sitepage.name}}</a></li>
+        {% endfor %}
+    </ul>
+
+    <div class="contentbar-fill">
         <div class="main-panel about" id="about-panel">
             <h1>About the Project</h1>
             <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis minima excepturi voluptatem unde non veniam dolore quia sapiente! Minima, aperiam, facilis, atque autem esse perspiciatis soluta facere necessitatibus numquam illo quis eos amet velit assumenda quae perferendis ut pariatur ea quia provident corporis inventore blanditiis repudiandae accusantium iure aliquam dolores vero nihil vitae praesentium ex nulla vel quidem exercitationem explicabo repellendus cumque consectetur quam maiores odit placeat tempore! Itaque, inventore, saepe, minus libero dicta sunt illum ratione quia magni atque voluptatibus laborum magnam earum! Consequuntur, possimus, nam maiores itaque explicabo quae ipsum nesciunt doloribus aspernatur porro. Dolorum, dolore perferendis officia asperiores enim incidunt ex ad nulla quos harum repellat culpa qui iusto esse veniam quod quo perspiciatis doloribus saepe sed aliquid velit molestiae corporis laudantium id neque debitis cupiditate quaerat vel omnis vero nam eaque quidem praesentium earum ea ducimus laboriosam ipsa temporibus aut modi cum quae nesciunt possimus obcaecati architecto repellendus hic beatae quisquam alias. Aliquam, velit, est vitae consequuntur debitis vel repudiandae perferendis inventore ratione natus soluta et enim totam perspiciatis facilis recusandae ex. Asperiores, itaque, iure, delectus pariatur maxime exercitationem nihil necessitatibus in et cumque commodi repellat praesentium. Quibusdam, veritatis doloremque sapiente eaque sunt et laboriosam alias.</p>
