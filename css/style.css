@@ -130,7 +130,9 @@
 }
 
 .boxmenu li {
+    /*float left or display inline-block and set li { letter-spacing: 0;}, ul { whitespace: nowrap; letter-spacing: -4px; }, and remove ul's clearfix*/
     float: left;
+    /*display: inline-block;*/
     border: 1px solid #AAA;
     border-left: 0;
 }
