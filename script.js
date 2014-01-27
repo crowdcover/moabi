@@ -5,9 +5,13 @@
 
 var map = L.mapbox.map('map', undefined, {
     //legendControl: true,
-    shareControl: true
+    shareControl: true,
+
 })
     .setView(page_data.baseLayer.latlon, page_data.baseLayer.zoom);
+
+map.zoomControl.setPosition('topright')
+map.shareControl.setPosition('topright')
 
 //add REDD tile layer
 for(i = 0; i < page_data.baseLayer["id"].length; i++){

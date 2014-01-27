@@ -398,10 +398,9 @@
     cursor: pointer;
 }
 
-/***********************Zoom Control***********************/
-.leaflet-top.leaflet-left{
-    left: 12px;
-    top: 40px;
+/*********************** UI Controls ***********************/
+.leaflet-top.leaflet-right{
+    top: 44px;
 }
 
 
