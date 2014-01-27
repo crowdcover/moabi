@@ -15,6 +15,7 @@
 
 {{content}}
 
+    {% if page.basemap %}{% include parse_layers.html %}{% endif %}
     <script src='{{site.baseurl}}/script.js'></script>
 </body>
 </html>

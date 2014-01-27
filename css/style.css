@@ -4,6 +4,7 @@
     bottom:0;
     width:100%;
     z-index: -1;
+    background-color: #333;
 }
 
 .gradient {
@@ -13,7 +14,6 @@
     width: 100%;
     background: url(../img/gradient_a70.png);
     z-index: -1;
-    background
 }
 
 .header, .contentbar-header {

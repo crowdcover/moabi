@@ -3,15 +3,17 @@
 {% include js/jquery-1.10.2.min.js %}
 
 
-var map = L.mapbox.map('map', 'helsinki.moabi_base', {
+var map = L.mapbox.map('map', undefined, {
     //legendControl: true,
     shareControl: true
 })
-    .setView([-2.877, 22.830], 5);
+    .setView(page_data.baseLayer.latlon, page_data.baseLayer.zoom);
 
 //add REDD tile layer
-L.tileLayer('http://tiles.osm.moabi.org/redd/{z}/{x}/{y}.png').addTo(map);
-
+for(i = 0; i < page_data.baseLayer["id"].length; i++){
+    L.mapbox.tileLayer(page_data.baseLayer["id"][i][0], { zIndex: page_data.baseLayer["id"][i][1] }).addTo(map);
+}
+L.tileLayer('http://tiles.osm.moabi.org/redd/{z}/{x}/{y}.png', {zIndex: 0}).addTo(map);
 
 (function() {
 var moabi = {

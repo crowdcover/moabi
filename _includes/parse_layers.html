@@ -1,0 +1,61 @@
+<script>
+    var page_data = {}
+
+    page_data.baseLayer = {
+        latlon: [{{page.basemap.center.lat}}, {{page.basemap.center.lon}}],
+        zoom: {{page.basemap.center.zoom}},
+        id: [
+            {% for layer in page.basemap.layers %}
+                ['{{ layer.id }}',{{layer.z}}]{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+            ]
+    }
+
+/*
+    page_data.mapLayers = {
+    {% for section in sections %}
+    "{{section.sectionid}}": {
+      "label": "{{section.label}}",
+      "class": "{{section.class}}",
+      "layers": {
+        {% for layer in section.layers %}
+        "{{layer.layerid}}": {
+          "label": "{{layer.label}}",
+          "maps": [
+            {% for map in layer.maps %}
+            {
+            "mapid": "{{map.mapid}}",
+            "text": {% if map.text %}document.getElementById('{{map.text}}').innerHTML{% else %}''{% endif %},
+            "legend": {% if map.legend %}document.getElementById('{{map.legend}}').innerHTML{% else %}''{% endif %},
+            "htmlid": "{{map.htmlid}}",
+            "label": "{{map.label}}"
+            },
+            {% endfor %}
+          ],
+        },
+        {% endfor %}
+      }
+    },
+  {% endfor %}
+  }
+*/
+
+  // page_data.mapboxLayers = {
+  //   {% for section in sections %}
+  //     {% for layer in section.layers %}
+  //       {% for map in layer.maps %}
+  //         {% if map.htmlid %}{% assign htmlid = map.htmlid %}{% else %}{% assign htmlid = layer.layerid %}{% endif %}
+  //         {{ htmlid }} : {
+  //           "id": "{{map.mapid}}",
+  //           {% if gis %}{% else %}
+  //           "text": {% if map.text %}document.getElementById('{{map.text}}').innerHTML{% else %}''{% endif %},
+  //           "legend": {% if map.legend %}document.getElementById('{{map.legend}}').innerHTML{% else %}''{% endif %},
+  //           "zIndex": {% if map.z %}{{map.z}}{% else %}''{% endif %}
+  //           {% endif %}
+  //         },
+  //      {% endfor %}
+  //     {% endfor %}
+  //   {% endfor %}
+  //   }
+
+</script>
