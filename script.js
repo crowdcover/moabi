@@ -10,8 +10,8 @@ var map = L.mapbox.map('map', undefined, {
 })
     .setView(page_data.baseLayer.latlon, page_data.baseLayer.zoom);
 
-map.zoomControl.setPosition('topright')
-map.shareControl.setPosition('topright')
+map.zoomControl.setPosition('topright');
+map.shareControl.setPosition('topright');
 
 //add REDD tile layer
 for(i = 0; i < page_data.baseLayer["id"].length; i++){
@@ -29,8 +29,8 @@ var moabi = {
 
         $('.boxmenu').on('click', 'a', this.showMajorPanel);
         $('.minor-panel-viewer').on('click', 'a', this.showMinorPanel);
-        $('.nav-buttons').on('click', 'a', this.navigate);
-        $('.data-layers').on('click', 'a', this.toggleLayer);
+        $('.navigate').on('click', 'a', this.navigate);
+        $('.toggle-layer').on('click', 'a', this.toggleLayer);
     },
 
     showMajorPanel: function(e) {
