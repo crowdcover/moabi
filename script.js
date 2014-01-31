@@ -68,10 +68,12 @@ var moabi = {
         e.preventDefault();
         e.stopPropagation();
 
-
-        var lat = $(this).data("lat");
-        var lon = $(this).data("lon");
-        var zoom = $(this).data("zoom");
+        var lat = $(this).data("nav")[0];
+        var lon = $(this).data("nav")[1];
+        var zoom = $(this).data("nav")[2];
+        // var lat = $(this).data("lat");
+        // var lon = $(this).data("lon");
+        // var zoom = $(this).data("zoom");
         map.setView([lat, lon], zoom);
 
         $(this).parent('li').siblings('li').children('a.active').removeClass('active');

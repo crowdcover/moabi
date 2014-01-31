@@ -165,7 +165,7 @@ main_panels:
                         <li>
                             <a id="{{button.id}}"
                             {% if {{event_handlers}} contains 'toggle-layer' %}data-mapid="{{button.mapId}}"{% endif %}
-                            {% if {{event_handlers}} contains 'navigate' %}data-lat="{{button.lat}}" data-lon="{{button.lon}}" data-zoom="{{button.zoom}}"{% endif %}
+                            {% if {{event_handlers}} contains 'navigate' %}data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]'{% endif %}
                             href="#">{{button.name}}</a>
                         </li>
                     {% endfor %}
