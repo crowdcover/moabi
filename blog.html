@@ -1,0 +1,29 @@
+---
+layout: default
+title: Blog
+basemap:
+    center:
+        lat: -2.877
+        lon: 22.830
+        zoom: 5
+    layers:
+      - id: 'helsinki.moabi_base'
+        z: -1
+gradient: true
+id: blog
+
+body:
+    title:
+    description:
+---
+
+{% for post in site.categories.blog_post %}
+    <div class="blog-post">
+        <h2>{{post.title}}</h2>
+        <span>{{post.date | date: "%Y-%m-%d"}}</span>
+
+        {% for paragraph in post.text %}
+            <p class="small">{{paragraph}}</p>
+        {% endfor %}
+    </div>
+{% endfor %}

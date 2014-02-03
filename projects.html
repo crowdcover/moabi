@@ -1,0 +1,40 @@
+---
+layout: default
+title: Projects
+basemap:
+    center:
+        lat: -2.877
+        lon: 22.830
+        zoom: 5
+    layers:
+      - id: 'helsinki.moabi_base'
+        z: -1
+gradient: true
+id: projects
+
+body:
+    title: Moabi Projects
+    description: Moabi is a collaborative mapping platform to monitor landuse planning in the Democratic Republic of the Congo.  Introductory text to the Moabi project, not to be more than a few lines long.  A full consideration of the project should be included in the in about page.  This should be limited to four or five sentences, so as to not lose an audience with a short attention span.
+---
+
+<ul class="thumb-menu">
+    {% for project in site.categories.project %}
+    <li class="clearfix"><a href="{{site.baseurl}}{{project.url}}">
+
+        {% assign descriptionsize = project.description.size %}
+        {% if descriptionsize > 240 %}
+            <div class="thumbnail"></div>
+            <div class="description">
+                <h3>{{project.title}}</h3>
+                <p class="small">{{project.description | truncate:240}}</p>
+            </div>
+        {% else %}
+            <div class="thumbnail"></div>
+            <div class="description">
+                <h3>{{project.title}}</h3>
+                <p class="small">{{project.description}}</p>
+            </div>
+        {% endif %}
+    </a></li>
+    {% endfor %}
+</ul>
