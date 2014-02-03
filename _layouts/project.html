@@ -12,12 +12,13 @@
 <div id="map"></div>
 
 <header class="header">
-    <h1 class="title">{{page.title}}</h1>
     <a class="nav home" href="{{site.baseurl}}/">Home</a>
 </header>
 
 <div class="contentbar">
-    <div class="contentbar-header"></div>
+    <div class="contentbar-header">
+        <h1 class="title">{{page.title}}</h1>
+    </div>
     {% capture width_n %}width-{{page.main_panels.size}}{% endcapture %}
     <ul class="boxmenu {{width_n}} clearfix">
         {% for main_panel in page.main_panels %}

@@ -30,21 +30,20 @@
     background-color: #000;
 }
 
-.header .title, .header .landing-title, .header .nav {
+.header .title, .header .landing-title, .header .nav,
+.contentbar-header .title {
     color: rgb(250, 244, 236);
+    height: 100%;
 }
 
 .header .nav:hover {
     color: #798A69;
 }
 
-.header .title {
+.header .title,
+.contentbar-header .title {
     float: left;
-    margin: 4px 12px;
-}
-
-.header .landing-title {
-    text-align: center;
+    padding-left: 12px;
 }
 
 .header .nav {
@@ -77,6 +76,18 @@
     right: 0;
     border-left: 2px solid #CCC;
     width: 70%;
+}
+
+.contentbar-header .landing-title {
+    text-align: center;
+}
+
+.contentbar-header .landing-title a {
+    color: #FFFFFF;
+}
+
+.contentbar-header .landing-title a:hover {
+    color: #798A69;
 }
 
 .contentbar-fill {
