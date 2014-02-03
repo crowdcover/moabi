@@ -11,6 +11,81 @@
 
 <div id="map"></div>
 
+<header class="header">
+    <h1 class="title">{{page.title}}</h1>
+    <a class="nav home" href="{{site.baseurl}}/">Home</a>
+</header>
+
+<div class="contentbar">
+    <div class="contentbar-header"></div>
+    {% capture width_n %}width-{{page.main_panels.size}}{% endcapture %}
+    <ul class="boxmenu {{width_n}} clearfix">
+        {% for main_panel in page.main_panels %}
+        <li><a id="{{main_panel.id}}" class="{% if forloop.first %}active{% endif %}" href="#">{{main_panel.name}}</a></li>
+        {% endfor %}
+    </ul>
+
+    <div class="contentbar-fill">
+        {% for main_panel in page.main_panels %}
+        <div class="main-panel {{main_panel.id}} {% if forloop.first %}active{% endif %}">
+            {% if main_panel.title %} <h2>{{main_panel.title}}</h2> {% endif %}
+            {% if main_panel.description %} <p class="small">{{main_panel.description}}</p> {% endif %}
+
+            {% if main_panel.buttons_panel %}
+                {% if main_panel.buttons_panel.aside %}
+                    <div class="aside">{{main_panel.buttons_panel.aside}}</div>
+                {% endif %}
+
+                {% capture event_handlers %}
+                    {% for action in main_panel.buttons_panel.actions %}{{action}} {% endfor %}
+                {% endcapture %}
+
+                <ul class="{{main_panel.buttons_panel.type}} {% if main_panel.buttons_panel.minor-panel-viewer %}minor-panel-viewer{% endif %} {{event_handlers}}">
+                    {% for button in main_panel.buttons_panel.buttons %}
+                        <li>
+                            <a id="{{button.id}}"
+                            {% if {{event_handlers}} contains 'toggle-layer' %}data-mapid="{{button.mapId}}"{% endif %}
+                            {% if {{event_handlers}} contains 'navigate' %}data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]'{% endif %}
+                            href="#">{{button.name}}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+
+                {% for minor_panel in main_panel.buttons_panel.buttons %}
+                    {% if minor_panel.description %}
+                    <div class="minor-panel small" id="{{minor_panel.id}}-panel">
+                        <div class="clearfix">
+                            <h3>{{minor_panel.name}}</h3>
+                            <ul>
+                                <li>
+                                    <p class="small">{{minor_panel.description}}</p>
+                                </li>
+                                <li>
+                                    <div class="title">Availability</div>
+                                    <div class="content">Public</div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="title">Data</div>
+                                    <div class="content">
+                                        <a href="#" class="print">Print</a>
+                                        <a href="#" class="download">Download</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+
+            {% endif %}
+
+        </div>
+        {% endfor %}
+
+
+    </div>
+</div>
 
 
 {{content}}
