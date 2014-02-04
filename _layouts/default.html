@@ -27,6 +27,7 @@
                 <h1>{{page.intro.title}}</h1>
             </div>
             <p>{{page.intro.description_short}}</p>
+            <p><em>Moabi DRC is currently under development.  Expect more soon...</em></p>
         </div>
     {% endif %}
 
@@ -47,8 +48,8 @@
     {% if page.body %}
         <div class="contentbar-fill">
             <div class="main-panel active">
-                <h1>{{page.body.title}}</h1>
-                <p class="small">{{page.body.description}}</p>
+                {% if page.body.title %} <h1>{{page.body.title}}</h1> {% endif %}
+                {% if page.body.description %} <p class="small">{{page.body.description}}</p> {% endif %}
 
                 {{content}}
             </div>

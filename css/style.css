@@ -154,6 +154,7 @@
 }
 
 .boxmenu li a {
+    /* made sure anchor text doesn't wrap, or explicitly change top/bottom padding on text wrap, or set a { display: table-cell; height: 48px; width: 9999px; } and deal with whitespace*/
     display: block;
     background-color: #C5CDAC;
     color: #333;
@@ -348,7 +349,42 @@
 }
 
 
-/********************REDD Project Sites********************/
+
+/******************** Arrows ********************/
+.arrow {
+    height: 0;
+    width: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid #555;  /* or to make equal sides:; border-left-width + border-right-width * 0.866 */
+}
+
+.down {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.left {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.right {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+
+/******************** REDD Project Sites ********************/
 .minor-panel {
     background-color: rgb(206, 196, 180);
     background-color: rgba(87, 70, 41, 0.37);
@@ -573,6 +609,7 @@ small { display:block; }
 strong {
   font-family:'Open Sans Bold', serif;
   font-weight:normal;
+  text-transform: uppercase;
   }
   strong em,
   em strong { font-family:'Open Sans Bold Italic', serif; }
