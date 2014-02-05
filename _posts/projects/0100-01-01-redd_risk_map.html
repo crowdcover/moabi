@@ -34,7 +34,7 @@ main_panels:
         actions: [toggle-layer]
         minor-panel-viewer: true
         buttons_aside: Click on a layer to add/remove from the map
-        buttons:
+        layers:
           - id: indigenous
             name: Indigenous Lands
             mapId: moabi_indigenous
@@ -73,7 +73,7 @@ main_panels:
         actions: [navigate]
         minor-panel-viewer: true
         buttons_aside: Click on a REDD+ Project to navigate to it's location.
-        buttons:
+        layers:
           - id: era
             name: Era
             lat: -2
@@ -135,4 +135,14 @@ main_panels:
             zoom: 8
             description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
 ---
+
+<div class="moabi-legend indigenous-legend" style='display: none;'>
+    <div>indigenous</div>
+</div>
+
+<div class="moabi-legend transport-legend" style='display: none;'>
+    <div>transport legend</div>
+</div>
+
+
 

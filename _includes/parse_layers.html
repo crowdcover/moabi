@@ -1,7 +1,7 @@
 <script>
-    var page_data = {}
 
-    page_data.baseLayer = {
+var page_data = {
+    baseLayer: {
         latlon: [{{page.basemap.center.lat}}, {{page.basemap.center.lon}}],
         zoom: {{page.basemap.center.zoom}},
         id: [
@@ -9,7 +9,10 @@
                 ['{{ layer.id }}',{{layer.z}}]{% unless forloop.last %},{% endunless %}
             {% endfor %}
             ]
-    }
+    },
+    dataLayers: {}
+}
+
 
 /*
     page_data.mapLayers = {

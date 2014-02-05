@@ -19,9 +19,12 @@ for(i = 0; i < page_data.baseLayer["id"].length; i++){
     L.tileLayer('http://tiles.osm.moabi.org/' + page_data.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
 }
 
-(function() {
+//map.legendControl.addLegend(document.getElementById('legend-content').innerHTML);
+map.legendControl.addLegend('<div></div>');
+
+
+(function(context) {
 var moabi = {
-    dataLayers: {},
 
     init: function() {
         $(document).ready(this.contentBarResize);
@@ -31,6 +34,7 @@ var moabi = {
         $('.minor-panel-viewer').on('click', 'a', this.showMinorPanel);
         $('.navigate').on('click', 'a', this.navigate);
         $('.toggle-layer').on('click', 'a', this.toggleLayer);
+        $('.moabi-legend').appendTo('.map-legend')
     },
 
     showMajorPanel: function(e) {
@@ -87,19 +91,22 @@ var moabi = {
         var mapId = $(this).data('mapid'),
             elementId = $(this).attr('id');
 
-        if (! moabi.dataLayers[elementId]){
-            //moabi.dataLayers[elementId] = L.mapbox.tileLayer(mapId);
-            moabi.dataLayers[elementId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
+        if (! page_data.dataLayers[elementId]){
+            //page_data.dataLayers[elementId] = L.mapbox.tileLayer(mapId);
+            page_data.dataLayers[elementId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
         }
 
-        var layer = moabi.dataLayers[elementId];
+        var layer = page_data.dataLayers[elementId];
 
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
             $(this).removeClass('active');
+            $('.' + elementId + '-legend').hide();
+
         } else {
             map.addLayer(layer);
             $(this).addClass('active');
+            $('.' + elementId + '-legend').show();
         }
     },
 
@@ -126,7 +133,9 @@ var moabi = {
 
 moabi.init();
 
-})();
+window.moabi = moabi;
+
+})(window);
 
 
 
