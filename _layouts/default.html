@@ -31,12 +31,6 @@
         </div>
     {% endif %}
 
-<!--     {% capture width_n %}width-{{page.sitepages.size}}{% endcapture %}
-    <ul class="boxmenu {{width_n}} clearfix">
-        {% for sitepage in page.sitepages %}
-            <li><a href="#" id="{{sitepage.id}}">{{sitepage.name}}</a></li>
-        {% endfor %}
-    </ul> -->
     <ul class="boxmenu width-5 clearfix">
         <li><a href="{{site.baseurl}}/about.html" id="about" {% if page.id == "about" %}class="active"{% endif %} >About</a></li>
         <li><a href="{{site.baseurl}}/projects.html" id="projects" {% if page.id == "projects" %}class="active"{% endif %} >Projects</a></li>
@@ -45,7 +39,7 @@
         <li><a href="{{site.baseurl}}/data.html" id="edit" {% if page.id == "data" %}class="active"{% endif %} >Add/Edit Data</a></li>
     </ul>
 
-    {% if page.body %}
+    {% unless page.body == 'hide' %}
         <div class="contentbar-fill">
             <div class="main-panel active">
                 {% if page.body.title %} <h1>{{page.body.title}}</h1> {% endif %}
@@ -54,7 +48,7 @@
                 {{content}}
             </div>
         </div>
-    {% endif %}
+    {% endunless %}
 
 </div>
 

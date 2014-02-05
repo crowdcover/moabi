@@ -51,7 +51,7 @@
     margin-right: 28px;
     padding: 12px 0;
     font-size: 125%;
-    font-weight: bold;
+    font-family:'Open Sans Bold', serif;
 }
 
 .limiter {
@@ -160,7 +160,7 @@
     color: #333;
     padding: 12px 0;
     text-align: center;
-    font-weight: bold;
+    font-family:'Open Sans Bold', serif;
 }
 
 .boxmenu li a:hover {
@@ -446,6 +446,66 @@
     cursor: pointer;
 }
 
+
+/******************** Blog ********************/
+.blog-post {
+    margin: 8px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #BBB;
+}
+
+.blog-post:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.blog-post .image-border {
+    float: left;
+    width: 44%;
+    height: 280px;
+    margin-right: 12px;
+    padding: 4px 6px 6px 4px;
+    border-right: 1px solid #BBB;
+    border-bottom: 1px solid #BBB;
+}
+
+.blog-post .image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.blog-post .image-border,
+.blog-post img {
+    height: 280px;
+}
+
+.blog-post .title {
+
+}
+
+.blog-post .title a {
+    color: #404040;
+}
+
+.blog-post .title a:hover {
+    color: #404040;
+    text-decoration: underline;
+}
+.blog-post .date {
+    margin: 0 0 4px 22px;
+    display: inline-block;
+    font-family:'Open Sans Italic', serif;
+}
+
+.blog-post .post_content {
+
+}
+
+.blog-post .more {
+    float: right;
+    margin-right: 18px;
+}
 /*********************** UI Controls ***********************/
 .leaflet-top.leaflet-right{
     top: 44px;
@@ -667,6 +727,11 @@ sub { top: 0.4em; }
 a {
     color: #5A6943;
     text-decoration: none;
+    font-family: 'Open Sans Bold', serif;
+}
+
+a:hover {
+    color: #C5CDAC;
 }
 
 p a:hover,
@@ -679,11 +744,11 @@ p {
 }
 
 .aside {
+    font-family:'Open Sans Bold Italic', serif;
     font-size:11px;
     line-height:18px;
     letter-spacing:0;
     color: #666;
-    font-style: italic;
     padding-bottom: 4px;
 }
 
