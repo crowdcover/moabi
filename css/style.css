@@ -78,11 +78,8 @@
     width: 70%;
 }
 
-.contentbar-header .landing-title {
-    text-align: center;
-}
-
 .contentbar-header .landing-title a {
+    font-family: 'Open Sans Bold', serif;
     color: #FFFFFF;
 }
 
