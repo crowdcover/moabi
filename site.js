@@ -8,8 +8,10 @@ var map = L.mapbox.map('map', undefined, {
 })
     .setView(page_data.baseLayer.latlon, page_data.baseLayer.zoom);
 
+//build base layer
 for(i = 0; i < page_data.baseLayer["id"].length; i++){
-    L.mapbox.tileLayer(page_data.baseLayer["id"][i][0], { zIndex: page_data.baseLayer["id"][i][1] }).addTo(map);
+    // L.mapbox.tileLayer(page_data.baseLayer["id"][i][0], { zIndex: page_data.baseLayer["id"][i][1] }).addTo(map);
+    L.tileLayer('http://tiles.osm.moabi.org/' + page_data.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
 }
 
 (function() {

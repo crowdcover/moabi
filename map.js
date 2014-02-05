@@ -13,11 +13,11 @@ var map = L.mapbox.map('map', undefined, {
 map.zoomControl.setPosition('topright');
 map.shareControl.setPosition('topright');
 
-//add REDD tile layer
+//build base layer
 for(i = 0; i < page_data.baseLayer["id"].length; i++){
-    L.mapbox.tileLayer(page_data.baseLayer["id"][i][0], { zIndex: page_data.baseLayer["id"][i][1] }).addTo(map);
+    // L.mapbox.tileLayer(page_data.baseLayer["id"][i][0], { zIndex: page_data.baseLayer["id"][i][1] }).addTo(map);
+    L.tileLayer('http://tiles.osm.moabi.org/' + page_data.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
 }
-L.tileLayer('http://tiles.osm.moabi.org/redd/{z}/{x}/{y}.png', {zIndex: 0}).addTo(map);
 
 (function() {
 var moabi = {
@@ -88,7 +88,8 @@ var moabi = {
             elementId = $(this).attr('id');
 
         if (! moabi.dataLayers[elementId]){
-            moabi.dataLayers[elementId] = L.mapbox.tileLayer(mapId);
+            //moabi.dataLayers[elementId] = L.mapbox.tileLayer(mapId);
+            moabi.dataLayers[elementId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
         }
 
         var layer = moabi.dataLayers[elementId];
