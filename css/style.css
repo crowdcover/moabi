@@ -321,6 +321,7 @@
 .thumb-menu li .description, .thumb-menu li .description-truncate {
     color: #404040;
     color: rgba(0,0,0,0.75);
+    font-family: 'Open Sans', sans-serif;
 }
 
 /**************************Panels**************************/
