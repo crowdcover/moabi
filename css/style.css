@@ -450,7 +450,7 @@
 
 /******************** Blog ********************/
 .blog-post {
-    margin: 8px 0;
+    margin: 8px 10px;
     padding-bottom: 8px;
     border-bottom: 2px solid #BBB;
 }
@@ -463,11 +463,19 @@
 .blog-post .image-border {
     float: left;
     width: 44%;
-    height: 280px;
     margin-right: 12px;
     padding: 4px 6px 6px 4px;
     border-right: 1px solid #BBB;
     border-bottom: 1px solid #BBB;
+}
+
+.blog-post .image-border.center {
+    float: none;
+    margin: 0 auto 18px;
+    width: 700px;
+    max-width: 100%;
+    border-right: 0;
+    border-top: 1px solid #BBB;
 }
 
 .blog-post .image {
@@ -494,9 +502,14 @@
     text-decoration: underline;
 }
 .blog-post .date {
-    margin: 0 0 4px 22px;
-    display: inline-block;
+    position: relative;
+    left: 22px;
+    margin-bottom: 12px;
     font-family:'Open Sans Italic', serif;
+}
+
+.blog-post .date.center {
+    position: static;
 }
 
 .blog-post .post_content {
@@ -753,6 +766,9 @@ p {
     padding-bottom: 4px;
 }
 
+.center {
+    text-align: center;
+}
 /* Markup free clearing
 Details: http://www.positioniseverything.net/easyclearing.html
 ------------------------------------------------------- */

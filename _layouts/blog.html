@@ -1,0 +1,60 @@
+---
+basemap:
+    center:
+        lat: -2.877
+        lon: 22.830
+        zoom: 5
+    layers:
+      - id: 'helsinki.moabi_base'
+        z: -1
+gradient: true
+---
+<!doctype html>
+<html>
+<head>
+    {% include dochead.html %}
+</head>
+
+<body>
+
+<div id="map"></div>
+{% if page.gradient %}<div class="gradient"></div>{% endif %}
+
+<header class="header"></header>
+
+<div class="contentbar limiter">
+    <div class="contentbar-header">
+        <h1 class="landing-title"><a href="{{site.baseurl}}/">Moabi</a></h1>
+    </div>
+
+    <ul class="boxmenu width-5 clearfix">
+        <li><a href="{{site.baseurl}}/about.html" id="about" {% if page.id == "about" %}class="active"{% endif %} >About</a></li>
+        <li><a href="{{site.baseurl}}/projects.html" id="projects" {% if page.id == "projects" %}class="active"{% endif %} >Projects</a></li>
+        <li><a href="{{site.baseurl}}/blog.html" id="blog" {% if page.id == "blog" %}class="active"{% endif %} >Blog</a></li>
+        <li><a href="{{site.baseurl}}/register.html" id="register" {% if page.id == "register" %}class="active"{% endif %} >Register</a></li>
+        <li><a href="{{site.baseurl}}/data.html" id="edit" {% if page.id == "data" %}class="active"{% endif %} >Add/Edit Data</a></li>
+    </ul>
+
+    <div class="contentbar-fill">
+        <div class="main-panel active">
+            <div class="blog-post">
+                <h1 class="title center">{{page.title}}</h1>
+                <div class="date center">{{page.date | date: "%d %B, %Y"}}</div>
+                {% if page.img %}
+                    <div class='image-border center'>
+                        <div class='image'>
+                            <img src="{{site.baseurl}}/img/{{page.img}}" alt="Blog Image">
+                        </div>
+                    </div>
+                {% endif %}
+                {{content}}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    {% if page.basemap %}{% include parse_layers.html %}{% endif %}
+    <script src='{{site.baseurl}}/site.js'></script>
+</body>
+</html>

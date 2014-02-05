@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: Introducing Moabi
 subtitle: a sample blog post, written as a proof of concept
 date: 2014-01-02
