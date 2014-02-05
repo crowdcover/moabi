@@ -112,10 +112,12 @@ var moabi = {
         var maxHeight = $(window).height() - $('.contentbar-header').height() - $('.boxmenu').height() - 3; //minus 3 for border-bottom of .contentbar-fill (2) and .contentbar-header (1)
         //console.log("contentBarResize fired. Content height: " + $('.contentbar-fill').children('.main-panel.active').outerHeight());
         if(contentHeight < maxHeight ) {
-            console.log("set to contentHeight" + contentHeight);
+            // console.log("set to contentHeight" + contentHeight);
+            $('.boxmenu').removeClass('shadow');
             $('.contentbar-fill').height(contentHeight);
         } else {
             //console.log("set to maxHeight" + maxHeight + " .window: " + $(window).height() + "header: " + $('.contentbar-header').height() + "boxmenu: " + $('.boxmenu').height());
+            $('.boxmenu').addClass('shadow');
             $('.contentbar-fill').height(maxHeight);
         }
     }
