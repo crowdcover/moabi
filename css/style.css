@@ -166,7 +166,7 @@
     color: #333;
     padding: 12px 0;
     text-align: center;
-    font-family:'Open Sans Bold', serif;
+    font-family: 'Open Sans Bold', serif;
 }
 
 .boxmenu li a:hover {
@@ -327,7 +327,6 @@
 .thumb-menu li .description, .thumb-menu li .description-truncate {
     color: #404040;
     color: rgba(0,0,0,0.75);
-    font-family: 'Open Sans', sans-serif;
 }
 
 /**************************Panels**************************/
@@ -748,11 +747,15 @@ sub { top: 0.4em; }
 a {
     color: #5A6943;
     text-decoration: none;
-    font-family: 'Open Sans Bold', serif;
+    font-family: 'Open Sans', serif;
 }
 
 a:hover {
     color: #C5CDAC;
+}
+
+p a {
+    font-family: 'Open Sans Bold', serif;
 }
 
 p a:hover,
