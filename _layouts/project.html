@@ -32,28 +32,27 @@
             {% if main_panel.title %} <h2>{{main_panel.title}}</h2> {% endif %}
             {% if main_panel.description %} <p class="small">{{main_panel.description}}</p> {% endif %}
 
-            {% if main_panel.buttons_panel %}
-                {% if main_panel.buttons_panel.aside %}
-                    <div class="aside">{{main_panel.buttons_panel.aside}}</div>
+            {% if main_panel.panel_data %}
+                {% if main_panel.panel_data.aside %}
+                    <div class="aside">{{main_panel.panel_data.aside}}</div>
                 {% endif %}
 
                 {% capture event_handlers %}
-                    {% for action in main_panel.buttons_panel.actions %}{{action}} {% endfor %}
+                    {% for action in main_panel.panel_data.actions %}{{action}} {% endfor %}
                 {% endcapture %}
 
-                <ul class="{{main_panel.buttons_panel.type}} {% if main_panel.buttons_panel.minor-panel-viewer %}minor-panel-viewer{% endif %} {{event_handlers}}">
-                    {% for button in main_panel.buttons_panel.data %}
+                <ul class="{{main_panel.panel_data.ui_style}} {{event_handlers}}">
+                    {% for button in main_panel.panel_data.data_elements %}
                         <li>
                             <a id="{{button.id}}"
-                            {% if {{event_handlers}} contains 'toggle-layer' %}data-mapid="{{button.mapId}}"{% endif %}
+                            {% if {{event_handlers}} contains 'toggle-layer' %}data-mapid="{{button.id}}"{% endif %}
                             {% if {{event_handlers}} contains 'navigate' %}data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]'{% endif %}
                             href="#">{{button.name}}</a>
                         </li>
                     {% endfor %}
                 </ul>
 
-
-                {% for minor_panel in main_panel.buttons_panel.data %}
+                {% for minor_panel in main_panel.panel_data.data_elements %}
                     {% if minor_panel.description %}
                     <div class="minor-panel small" id="{{minor_panel.id}}-panel">
                         <div class="clearfix">

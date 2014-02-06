@@ -29,45 +29,37 @@ main_panels:
     name: Data Layers
     title:
     description:
-    buttons_panel:
-        type: listmenu
-        actions: [toggle-layer]
-        minor-panel-viewer: true
-        buttons_aside: Click on a layer to add/remove from the map
-        data:
-          - id: indigenous
+    panel_data:
+        ui_style: listmenu
+        actions: [minor-panel-viewer, toggle-layer]
+        aside: Click on a layer to add/remove from the map
+        data_elements:
+          - id: moabi_indigenous
             name: Indigenous Lands
-            mapId: moabi_indigenous
             legend: true
             description: Don't exproriate indigenous lands. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: transport
+          - id: moabi_transport
             name: Transport
-            mapId: moabi_transport
             legend: true
             description: Roads and rivers provide the major arteries for travel and trade across DRC. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: mining
+          - id: moabi_mining
             name: Mining
-            mapId: moabi_mining
             legend: true
             description: Mining and Energy. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: logging
+          - id: moabi_logging
             name: Logging
-            mapId: moabi_logging
             legend: true
             description: Logging cuts down trees. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: oil
+          - id: moabi_oil
             name: Oil
-            mapId: moabi_oil
             legend: true
             description: So much Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: palm
+          - id: moabi_palm
             name: Palm Oil
-            mapId: moabi_palm
             legend: true
             description: So much Palm Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: energy
+          - id: moabi_energy
             name: Energy
-            mapId: moabi_energy
             legend: false
             description: Energy Corridors! After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
 
@@ -75,12 +67,11 @@ main_panels:
     name: REDD+ Projects
     title: REDD+ Project Sites
     description: REDD+ Projects cover a significant amount of the DRC's valuable rainforest resources. If managed correctly, they could provide an a steady revenue stream while protecting the country's ecological hertigage and acting as an important carbon sink for the world.
-    buttons_panel:
-        type: pillmenu
-        actions: [navigate]
-        minor-panel-viewer: true
-        buttons_aside: Click on a REDD+ Project to navigate to it's location.
-        data:
+    panel_data:
+        ui_style: pillmenu
+        actions: [minor-panel-viewer, navigate]
+        aside: Click on a REDD+ Project to navigate to it's location.
+        data_elements:
           - id: era
             name: Era
             lat: -2
@@ -143,20 +134,19 @@ main_panels:
             description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
 ---
 
-legend: true
 {% for main_panel in page.main_panels %}
-    {% if main_panel.buttons_panel.actions contains 'toggle-layer' %}
-        {% for data_layer in main_panel.buttons_panel.data %}
-            {% if data_layer.legend %}
-                <div class="moabi-legend {{data_layer.id}}-legend" style='display: none;'>
-                    <div>{{data_layer.name}}</div>
+    {% if main_panel.panel_data.actions contains 'toggle-layer' %}
+        {% for data_element in main_panel.panel_data.data_elements %}
+            {% if data_element.legend %}
+                <div class="moabi-legend {{data_element.id}}-legend" style='display: none;'>
+                    <div>{{data_element.name}}</div>
                 </div>
             {% endif %}
         {% endfor %}
     {% endif %}
 {% endfor %}
 
-<div class="moabi-legend energy-legend" style='display: none;'>
+<div class="moabi-legend moabi_energy-legend" style='display: none;'>
     <div><strong>ENERGY LEGEND!</strong></div>
 </div>
 
