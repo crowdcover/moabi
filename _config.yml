@@ -16,9 +16,6 @@ prose:
           element: "checkbox"
           label: "Publish?"
           value: true
-        field:
-          element: "hidden"
-          value: "prose_project"
       - name: "permalink"
         field:
           element: "text"
