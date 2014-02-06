@@ -11,27 +11,58 @@ prose:
         field:
           element: "hidden"
           value: "prose_project"
+      - name: "permalink"
+        field:
+          element: "text"
+          label: "Permalink"
+          value: "/prose_projects/...html"
       - name: "title"
         field:
           element: "text"
           label: "Title"
           value: ""
-      - name: "splash"
+      - name: "map_lat"
+        field:
+          element: "number"
+          label: "Map Center Latitude"
+      - name: "map_lon"
+        field:
+          element: "number"
+          label: "Map Center Longitude"
+      - name: "map_zoom"
+        field:
+          element: "number"
+          label: "Map Zoom"
+      - name: "basemap"
         field:
           element: "text"
-          label: "Splash image"
-          value: ""
-      - name: "tags"
+          label: "Base Map"
+
+      - name: "about_header"
         field:
-          element: "multiselect"
-          label: "Add Tags"
-          placeholder: "Choose Tags"
-          options:
-            - name: "Apples"
-              value: "apples"
-            - name: "Bananas"
-              value: "bananas"
-            - name: "Pears"
-              value: "pears"
-            - name: "Mangos"
-              value: "mangos"
+          element: "text"
+          label: "About Text Header"
+      - name: "data_header"
+        field:
+          element: "text"
+          label: "Data Text Header"
+      - name: "data_description"
+        field:
+          element: "text"
+          label: "Data Text Description"
+      - name: "data_layer1_name"
+        field:
+          element: "text"
+          label: "Name of First Data Layer"
+      - name: "data_layer1_id"
+        field:
+          element: "text"
+          label: "Map ID of First Data Layer"
+      - name: "data_layer2_name"
+        field:
+          element: "text"
+          label: "Name of Second Data Layer"
+      - name: "data_layer2_id"
+        field:
+          element: "text"
+          label: "Map ID of Second Data Layer"
