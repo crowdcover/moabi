@@ -53,8 +53,9 @@ prose:
           label: "Data Text Header"
       - name: "data_description"
         field:
-          element: "text"
+          element: "textarea"
           label: "Data Text Description"
+          value: description...
       - name: "data_layer1_name"
         field:
           element: "text"
