@@ -34,7 +34,7 @@ var moabi = {
         $('.minor-panel-viewer').on('click', 'a', this.showMinorPanel);
         $('.navigate').on('click', 'a', this.navigate);
         $('.toggle-layer').on('click', 'a', this.toggleLayer);
-        $('.moabi-legend').appendTo('.map-legend')
+        $('.moabi-legend').appendTo('.map-legend');
     },
 
     showMajorPanel: function(e) {
@@ -72,41 +72,47 @@ var moabi = {
         e.preventDefault();
         e.stopPropagation();
 
-        var lat = $(this).data("nav")[0];
-        var lon = $(this).data("nav")[1];
-        var zoom = $(this).data("nav")[2];
-        // var lat = $(this).data("lat");
-        // var lon = $(this).data("lon");
-        // var zoom = $(this).data("zoom");
+        $this = $(this);
+
+        var lat = $this.data("nav")[0];
+        var lon = $this.data("nav")[1];
+        var zoom = $this.data("nav")[2];
         map.setView([lat, lon], zoom);
 
-        $(this).parent('li').siblings('li').children('a.active').removeClass('active');
-        $(this).addClass('active');
+        $this.parent('li').siblings('li').children('a.active').removeClass('active');
+        $this.addClass('active');
     },
 
     toggleLayer: function(e) {
         e.preventDefault();
         e.stopPropagation();
 
-        var mapId = $(this).data('mapid'),
-            elementId = $(this).attr('id');
+        $this = $(this);
+
+        var mapId = $this.data('mapid'),
+            elementId = $this.attr('id');
 
         if (! page_data.dataLayers[elementId]){
             //page_data.dataLayers[elementId] = L.mapbox.tileLayer(mapId);
-            page_data.dataLayers[elementId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
+            // page_data.dataLayers[elementId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
+            page_data.dataLayers[elementId] = [
+                L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
+                $('.' + elementId + '-legend')
+            ];
         }
 
-        var layer = page_data.dataLayers[elementId];
+        var layer = page_data.dataLayers[elementId][0];
+        var layerLegend = page_data.dataLayers[elementId][1];
 
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
-            $(this).removeClass('active');
-            $('.' + elementId + '-legend').hide();
+            $this.removeClass('active');
+            layerLegend.hide();
 
         } else {
             map.addLayer(layer);
-            $(this).addClass('active');
-            $('.' + elementId + '-legend').show();
+            $this.addClass('active');
+            layerLegend.show();
         }
     },
 
