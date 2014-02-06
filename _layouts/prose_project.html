@@ -1,0 +1,77 @@
+---
+---
+<!doctype html>
+<html>
+<head>
+    {% include dochead.html %}
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<header class="header">
+    <a class="nav home" href="{{site.baseurl}}/">Home</a>
+</header>
+
+<div class="contentbar">
+    <div class="contentbar-header">
+        <h1 class="title">{{page.title}}</h1>
+    </div>
+
+    <ul class="boxmenu width-2 clearfix">
+        <li><a id="about" class="active" href="#">About</a></li>
+        <li><a id="data" class="" href="#">Data</a></li>
+    </ul>
+
+    <div class="contentbar-fill">
+        <div class="main-panel about active">
+            <h2>{{page.about_header}}</h2>
+            <p class="small">{{content}}</p>
+        </div>
+
+        <div class="main-panel data">
+            <h2>{{page.data_header}}</h2>
+            <p class="small">{{page.data_description}}</p>
+
+            <ul class="listmenu minor-panel-viewer toggle-layer">
+                {% if page.data_layer1_id %}
+                    <li>
+                        <a id="{{page.data_layer1_id}}" data-mapid="{{page.data_layer1_id}}" href="#">{{page.data_layer1_name}}</a>
+                    </li>
+                {% endif %}
+                {% if page.data_layer2_id %}
+                    <li>
+                        <a id="{{page.data_layer2_id}}" data-mapid="{{page.data_layer2_id}}" href="#">{{page.data_layer2_name}}</a>
+                    </li>
+                {% endif %}
+                {% if page.data_layer3_id %}
+                    <li>
+                        <a id="{{page.data_layer3_id}}" data-mapid="{{page.data_layer3_id}}" href="#">{{page.data_layer3_name}}</a>
+                    </li>
+                {% endif %}
+                {% if page.data_layer4_id %}
+                    <li>
+                        <a id="{{page.data_layer4_id}}" data-mapid="{{page.data_layer4_id}}" href="#">{{page.data_layer4_name}}</a>
+                    </li>
+                {% endif %}
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+
+    <script>
+        var page_data = {
+            baseLayer: {
+                latlon: [{{page.map_lat}}, {{page.map_lon}}],
+                zoom: {{page.map_zoom}},
+                id: [ ['{{ page.basemap }}', -1] ]
+            },
+            dataLayers: {}
+        }
+    </script>
+    <script src='{{site.baseurl}}/map.js'></script>
+</body>
+</html>
