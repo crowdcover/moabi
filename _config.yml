@@ -11,6 +11,14 @@ prose:
         field:
           element: "hidden"
           value: "prose_project"
+      - name: "published"
+        field:
+          element: "checkbox"
+          label: "Publish?"
+          value: true
+        field:
+          element: "hidden"
+          value: "prose_project"
       - name: "permalink"
         field:
           element: "text"
@@ -23,15 +31,15 @@ prose:
           value: ""
       - name: "map_lat"
         field:
-          element: "number"
+          element: "text"
           label: "Map Center Latitude"
       - name: "map_lon"
         field:
-          element: "number"
+          element: "text"
           label: "Map Center Longitude"
       - name: "map_zoom"
         field:
-          element: "number"
+          element: "text"
           label: "Map Zoom"
       - name: "basemap"
         field:

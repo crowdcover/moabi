@@ -1,17 +1,10 @@
 ---
 layout: prose_project
-published: false
 title: Making Maps By Filling Forms
 permalink: /prose_projects/filling_forms.html
-map_lat: 
-  - "-2.877"
-  - -2.877
-map_lon: 
-  - "22.83"
-  - 22.83
-map_zoom: 
-  - "5"
-  - 5
+map_lat: -2.877
+map_lon: 22.83
+map_zoom: 5
 basemap: moabi_base
 about_header: "This is a form field!"
 data_header: "Data over here!"
