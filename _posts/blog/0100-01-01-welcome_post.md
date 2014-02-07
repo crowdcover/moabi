@@ -1,13 +1,10 @@
 ---
 layout: blog_post
+categories: [blog_post]
 title: Introducing Moabi
 subtitle: a sample blog post, written as a proof of concept
-date: 2014-01-02
-categories: [blog_post]
 
 img: wb_temp.jpg
-
-excerpt: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, dicta, explicabo, totam consequatur sapiente maiores eaque aperiam provident molestiae labore dolorem reiciendis dolores laborum nam nostrum beatae repellendus. Voluptatum, iusto soluta consequuntur voluptates. Tenetur, necessitatibus, officia, voluptatibus officiis nemo quam architecto obcaecati sint rerum optio ad dignissimos atque sed esse quisquam modi ea possimus incidunt veritatis asperiores perferendis autem error fugit repellendus animi.
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, dicta, explicabo, totam consequatur sapiente maiores eaque aperiam provident molestiae labore dolorem reiciendis dolores laborum nam nostrum beatae repellendus. Voluptatum, iusto soluta consequuntur voluptates. Tenetur, necessitatibus, officia, voluptatibus officiis nemo quam architecto obcaecati sint rerum optio ad dignissimos atque sed esse quisquam modi ea possimus incidunt veritatis asperiores perferendis autem error fugit repellendus animi.

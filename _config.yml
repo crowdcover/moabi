@@ -6,7 +6,7 @@ prose:
   rooturl: '_posts'
   siteurl: 'rdc.moabi.org'
   metadata:
-    _posts:
+    _posts/prose_project/:
       - name: "layout"
         field:
           element: "hidden"
@@ -72,3 +72,23 @@ prose:
         field:
           element: "text"
           label: "Map ID of Second Data Layer"
+    _posts/prose_project/:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "blog_post"
+      - name: "categories"
+        field:
+          element: "hidden"
+          value: "[blog_post]"
+      - name: "title"
+        field:
+          element: "text"
+          label: "Title"
+      - name: "subtitle"
+        field:
+          element: "text"
+          label: "Title"
+
+
+

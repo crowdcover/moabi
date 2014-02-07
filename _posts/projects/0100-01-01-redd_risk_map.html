@@ -133,7 +133,6 @@ main_panels:
             zoom: 8
             description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
 ---
-
 {% for main_panel in page.main_panels %}
     {% if main_panel.panel_data.actions contains 'toggle-layer' %}
         {% for data_element in main_panel.panel_data.data_elements %}
