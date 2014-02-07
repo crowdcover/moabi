@@ -530,6 +530,69 @@
 
 
 
+/******************************* Language Widget *******************************/
+.widget-ui {
+    float: right;
+    background-color: white;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin: 7px 10px 0 0;
+}
+
+.widget-ui a {
+    width: 26px;
+    height: 26px;
+    border-bottom: 1px solid #DDD;
+    display: block;
+    color: #404040;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px 0;
+}
+
+.widget-ui.horizontal a {
+    float: left;
+    border-bottom: none;
+    border-right: 1px solid #DDD;
+}
+
+.widget-ui a:hover {
+    background-color: white;
+    color: #404040;
+}
+
+.widget-ui a:active {
+    color: orange;
+}
+
+.widget-ui a.active {
+    background-color: #F0F0F0;
+    color: orange;
+    box-shadow: inset 0px 2px 3px rgba(0,0,0,0.15);
+}
+
+.widget-ui a:first-child {
+    border-radius: 3px 3px 0 0;
+}
+
+.widget-ui a:last-child {
+    border-radius: 0 0 3px 3px;
+    border-bottom: none;
+}
+
+.widget-ui.horizontal a:first-child {
+    border-radius: 3px 0 0 3px
+}
+
+.widget-ui.horizontal a:last-child {
+    border-radius: 0 3px 3px 0;
+    border-right: none;
+}
+
+
+
+
 /* Base.css, developed by MapBox https://www.mapbox.com/base/latest/base.css */
 /**********************************************************************************/
 /**********************************************************************************/

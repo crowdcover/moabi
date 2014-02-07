@@ -16,8 +16,6 @@ for(i = 0; i < page_data.baseLayer["id"].length; i++){
 
 (function() {
 var moabi = {
-    dataLayers: {},
-
     init: function() {
         $(document).ready(this.contentBarResize);
         $(window).resize(this.contentBarResize);
@@ -59,43 +57,46 @@ var moabi = {
         moabi.contentBarResize();
     },
 
-    navigate: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+    // UNCOMMENT ONLY IF THESE EVENT HANDLERS PROVE USEFUL TO NON-PROJECT PAGES.
+    // BETTER YET, FIND A BETTER WAY TO MANAGE MULTIPLE JS PAGES
 
-        var lat = $(this).data("nav")[0];
-        var lon = $(this).data("nav")[1];
-        var zoom = $(this).data("nav")[2];
-        // var lat = $(this).data("lat");
-        // var lon = $(this).data("lon");
-        // var zoom = $(this).data("zoom");
-        map.setView([lat, lon], zoom);
+    // navigate: function(e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
 
-        $(this).parent('li').siblings('li').children('a.active').removeClass('active');
-        $(this).addClass('active');
-    },
+    //     var lat = $(this).data("nav")[0];
+    //     var lon = $(this).data("nav")[1];
+    //     var zoom = $(this).data("nav")[2];
+    //     // var lat = $(this).data("lat");
+    //     // var lon = $(this).data("lon");
+    //     // var zoom = $(this).data("zoom");
+    //     map.setView([lat, lon], zoom);
 
-    toggleLayer: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+    //     $(this).parent('li').siblings('li').children('a.active').removeClass('active');
+    //     $(this).addClass('active');
+    // },
 
-        var mapId = $(this).data('mapid'),
-            elementId = $(this).attr('id');
+    // toggleLayer: function(e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
 
-        if (! moabi.dataLayers[elementId]){
-            moabi.dataLayers[elementId] = L.mapbox.tileLayer(mapId);
-        }
+    //     var mapId = $(this).data('mapid'),
+    //         elementId = $(this).attr('id');
 
-        var layer = moabi.dataLayers[elementId];
+    //     if (! moabi.dataLayers[elementId]){
+    //         moabi.dataLayers[elementId] = L.mapbox.tileLayer(mapId);
+    //     }
 
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            $(this).removeClass('active');
-        } else {
-            map.addLayer(layer);
-            $(this).addClass('active');
-        }
-    },
+    //     var layer = moabi.dataLayers[elementId];
+
+    //     if (map.hasLayer(layer)) {
+    //         map.removeLayer(layer);
+    //         $(this).removeClass('active');
+    //     } else {
+    //         map.addLayer(layer);
+    //         $(this).addClass('active');
+    //     }
+    // },
 
     contentBarResize: function() {
         // in order to allow for an animated height transition:
