@@ -1,0 +1,50 @@
+---
+layout: default
+title: Projects
+id: projects
+basemap:
+    center:
+        lat: -2.877
+        lon: 22.830
+        zoom: 5
+    layers:
+      - id: 'moabi_base'
+        z: -1
+gradient: true
+language: en
+
+body:
+    title: Moabi Projects
+    description: Moabi is a collaborative mapping platform to monitor landuse planning in the Democratic Republic of the Congo.  Introductory text to the Moabi project, not to be more than a few lines long.  A full consideration of the project should be included in the in about page.  This should be limited to four or five sentences, so as to not lose an audience with a short attention span.
+---
+
+<ul class="thumb-menu">
+    {% for project in site.categories.project %}
+    <li class="clearfix"><a href="{{site.baseurl}}{{project.url}}">
+
+            {% if project.thumb.img %}
+                <img src="{{site.baseurl}}/img/{{project.thumb.img}}" alt="">
+            {% elsif project.thumb.map_id %}
+                {% if project.thumb.lat and project.thumb.lon and project.thumb.zoom %}
+                    <div class="thumbnail" style='background-image:url("http://api.tiles.mapbox.com/v3/{{project.thumb.map_id}}/{{project.thumb.lon}},{{project.thumb.lat}},{{project.thumb.zoom}}/80x60.png");'></div>
+                {% else %}
+                    <div class="thumbnail" style='background-image:url("http://api.tiles.mapbox.com/v3/{{project.thumb.map_id}}/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/80x60.png");'></div>
+                {% endif %}
+            {% else %}
+                <!-- <img src="{{site.baseurl}}/img/logo.png" alt=""> -->
+                <div class="thumbnail" style='background-image:url("http://api.tiles.mapbox.com/v3/helsinki.moabi_base/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/80x60.png");'></div>
+            {% endif %}
+
+            <div class="description">
+                <div>{{project.thumb.map_id}}</div>
+                <h3>{{project.title}}</h3>
+                {% if project.description.size > 240 %}
+                    <p class="small">{{project.description | truncate:240}}</p>
+                {% else %}
+                    <p class="small">{{project.description}}</p>
+                {% endif %}
+            </div>
+
+    </a></li>
+    {% endfor %}
+</ul>

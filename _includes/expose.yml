@@ -1,0 +1,27 @@
+# This rather clunky code allows any page with a page_ref to reference another page with a page_key
+# based on a match between ref and key.  The referencing page will inherit all front matter THAT IS USED
+# WITHIN THE PAGE (i.e not variables like 'categories' or 'permalink' that are referenced via {{site.var}} from the
+# referenced page, unless any of those values are explicitly overwritten by the referencing page.
+# This allows any page in english/french to borrow directly from its french/english counterpart, so that
+# only content needing translation would need to be defined in the frontmatter.
+
+# In each layout, all page variables are accessed via {{var}}, NOT {{page.var}}
+
+# expose.yml must include an {% assign ... %} command for each base node that is to be referencable itself
+# or is to have one of its child nodes be referencable
+
+{% if page.page_ref %}
+    {% for referenced_page in site.categories.project %}{% if page.page_ref == referenced_page.page_key %}
+        {% assign ref_layout = referenced_page.layout %}
+        {% assign ref_title = referenced_page.title %}
+        {% assign ref_description = referenced_page.description %}
+        {% assign ref_basemap = referenced_page.basemap %}
+        {% assign ref_main_panels = referenced_page.main_panels %}
+    {% endif %}{% endfor %}
+
+    {% assign page_layout = page.layout %}
+    {% assign page_title = page.title %}
+    {% assign page_description = page.description %}
+    {% assign page_basemap = page.basemap %}
+    {% assign page_main_panels = page.main_panels %}
+{% endif %}

@@ -26,8 +26,6 @@ map.legendControl.addLegend('<div></div>');
 (function(context) {
 var moabi = {
 
-    currentLanguage: 'en',
-
     init: function() {
         $(document).ready(this.contentBarResize);
         $(window).resize(this.contentBarResize);
@@ -36,7 +34,7 @@ var moabi = {
         $('.minor-panel-viewer').on('click', 'a', this.showMinorPanel);
         $('.navigate').on('click', 'a', this.navigate);
         $('.toggle-layer').on('click', 'a', this.toggleLayer);
-        $('.toggle-language').on('click', 'a', this.toggleLanguage);
+        // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         $('.moabi-legend').appendTo('.map-legend');
     },
 
@@ -120,36 +118,19 @@ var moabi = {
     },
 
     toggleLanguage: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+        // e.stopPropagation();
 
-        $this = $(this)
+        // $this = $(this);
 
-        if($this.data('lang') == 'en' && moabi.currentLanguage != 'en'){
-            moabi.currentLanguage = 'en';
-            console.log("view englishLayers");
+        // if($this.data('lang') == 'en' && moabi.currentLanguage != 'en') {
+        //     moabi.currentLanguage = 'en';
+        //     $this.addClass('active').siblings('.active').removeClass('active');
 
-            $this.addClass('active').siblings('.active').removeClass('active');
+        // } else if($this.data('lang') == 'fr' && moabi.currentLanguage != 'fr') {
+        //     moabi.currentLanguage = 'fr';
+        //     $this.addClass('active').siblings('.active').removeClass('active');
 
-            // map.removeLayer(chineseLayers.labels);
-            // map.removeLayer(chineseLayers.dams_grid);
-
-            // map.addLayer(englishLayers.labels);
-            // map.addLayer(englishLayers.dams_grid);
-        }else if($this.data('lang') == 'fr' && moabi.currentLanguage != 'fr'){
-            moabi.currentLanguage = 'fr';
-            console.log("view frenchLayers");
-
-            $this.addClass('active').siblings('.active').removeClass('active');
-
-            // map.removeLayer(englishLayers.labels);
-            // map.removeLayer(englishLayers.dams_grid);
-
-            // map.addLayer(chineseLayers.labels);
-            // map.addLayer(chineseLayers.dams_grid);
-        }else{
-            console.log("nope");
-        }
+        // }
     },
 
     contentBarResize: function() {

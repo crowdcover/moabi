@@ -37,6 +37,7 @@
         <li><a href="{{site.baseurl}}/blog.html" id="blog" {% if page.id == "blog" %}class="active"{% endif %} >Blog</a></li>
         <li><a href="{{site.baseurl}}/register.html" id="register" {% if page.id == "register" %}class="active"{% endif %} >Register</a></li>
         <li><a href="{{site.baseurl}}/data.html" id="edit" {% if page.id == "data" %}class="active"{% endif %} >Add/Edit Data</a></li>
+        <div class="findme">{{site.baseurl}}</div>
     </ul>
 
     {% unless page.body == 'hide' %}
