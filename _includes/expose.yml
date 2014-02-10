@@ -12,36 +12,27 @@
 
 {% if page.page_ref %}
     {% for referenced_page in site.categories.project %}{% if page.page_ref == referenced_page.page_key %}
-        {% assign ref_page = referenced_page %}
-        # {% assign ref_layout = referenced_page.layout %}
-        # {% assign ref_title = referenced_page.title %}
-        # {% assign ref_description = referenced_page.description %}
-        # {% assign ref_basemap = referenced_page.basemap %}
-        # {% assign ref_main_panels = referenced_page.main_panels %}
+        {% assign page_layout = referenced_page.layout %}
+        {% assign page_title = referenced_page.title %}
+        {% assign page_description = referenced_page.description %}
+        {% assign page_basemap = referenced_page.basemap %}
+        {% assign page_main_panels = referenced_page.main_panels %}
     {% endif %}{% endfor %}
 
     {% if page.layout %}
         {% assign page_layout = page.layout %}
-    {% else %}
-        {% assign page_layout = ref_page.layout %}
     {% endif %}
 
     {% if page.title %}
         {% assign page_title = page.title %}
-    {% else %}
-        {% assign page_title = ref_page.title %}
     {% endif %}
 
     {% if page.description %}
         {% assign page_description = page.description %}
-    {% else %}
-        {% assign page_description = ref_page.description %}
     {% endif %}
 
     {% if page.basemap %}
         {% assign page_basemap = page.basemap %}
-    {% else %}
-        {% assign page_basemap = ref_page.basemap %}
     {% endif %}
 
 {% endif %}
