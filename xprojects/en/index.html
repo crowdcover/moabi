@@ -36,7 +36,6 @@ body:
             {% endif %}
 
             <div class="description">
-                <div>{{project.thumb.map_id}}</div>
                 <h3>{{project.title}}</h3>
                 {% if project.description.size > 240 %}
                     <p class="small">{{project.description | truncate:240}}</p>
