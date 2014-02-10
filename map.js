@@ -19,9 +19,6 @@ for(i = 0; i < page_data.baseLayer["id"].length; i++){
     L.tileLayer('http://tiles.osm.moabi.org/' + page_data.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
 }
 
-//map.legendControl.addLegend(document.getElementById('legend-content').innerHTML);
-map.legendControl.addLegend('<div></div>');
-
 
 (function(context) {
 var moabi = {
@@ -35,6 +32,7 @@ var moabi = {
         $('.navigate').on('click', 'a', this.navigate);
         $('.toggle-layer').on('click', 'a', this.toggleLayer);
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
+        map.legendControl.addLegend('<h3>Data Layers</h3>');
         $('.moabi-legend').appendTo('.map-legend');
     },
 
@@ -108,12 +106,12 @@ var moabi = {
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
             $this.removeClass('active');
-            layerLegend.hide();
+            layerLegend.removeClass('active');
 
         } else {
             map.addLayer(layer);
             $this.addClass('active');
-            layerLegend.show();
+            layerLegend.addClass('active');
         }
     },
 
