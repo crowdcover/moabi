@@ -326,10 +326,27 @@
     color: rgba(0,0,0,0.75);
 }
 
+.thumb-menu.centered li {
+    height: auto;
+    border: 1px solid #CCC;
+    margin: 12px 60px;
+}
+
+.thumb-menu.centered li a {
+    display: block;
+    height: 96px;
+    padding: 8px 0;
+}
+
+.thumb-menu.centered li a:hover {
+    border: 1px solid #999;
+}
+
+
 /**************************Panels**************************/
 .main-panel {
     display: none;
-    padding: 12px;
+    padding: 24px;
 
     /*max-height: 0;
     overflow: hidden;
@@ -353,7 +370,13 @@
 
 
 
-/******************** Arrows ********************/
+/******************** Icons ********************/
+
+.icon {
+    /*background: transparent url(/img/sprite.png) no-repeat 0 0;*/
+    text-indent: -999em;
+}
+
 .arrow {
     height: 0;
     width: 0;
@@ -825,6 +848,18 @@ p a:hover,
 
 p {
     margin-bottom: 10px;
+}
+
+p:last-child {
+    margin-bottom: 18px;
+}
+
+h1 {
+    margin-bottom: 8px;
+}
+
+.main-panel h1 {
+    text-align: center;
 }
 
 .aside {
