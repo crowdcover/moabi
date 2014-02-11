@@ -33,14 +33,11 @@ var moabi = {
         $('.toggle-layer').on('click', 'a', this.toggleLayer);
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         map.legendControl.addLegend('<h3>Data Layers</h3>');
-        $('.moabi-legend').appendTo('.map-legend').each(
-            function() {
-                $(this).prepend('<span class="hide-layer">X</span>');
-            }).children('.hide-layer').on('click', this.legendToggleLayer);
+        $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
     },
 
     legendToggleLayer: function(e) {
-        mapId = $(this).parent().data('id');
+        mapId = $(this).data('id');
         $('.ui-button[data-id="' + mapId + '"]' ).trigger('click');
     },
 
@@ -63,16 +60,17 @@ var moabi = {
         e.preventDefault();
         e.stopPropagation();
 
-        var panelId = '#' + $(this).attr('id') + '-panel';
+        $this = $(this);
 
-        //make button .active
-        //$(this).addClass('active').parent('li').siblings('li').children('a.active').removeClass('active');
+        if (! $this.hasClass('active')) {
+            var panelId = $(this).data('id');
 
-        //close any open panel and open the new one
-        $(this).closest('div').children('.minor-panel.active').removeClass('active');
-        $(panelId).addClass('active');
+            //close any open panel and open the new one
+            $(this).closest('div').children('.minor-panel.active').removeClass('active');
+            $('.minor-panel[data-id="' + panelId + '"]').addClass('active');
 
-        moabi.contentBarResize();
+            moabi.contentBarResize();
+        }
     },
 
     navigate: function(e) {
@@ -107,16 +105,25 @@ var moabi = {
 
         var layer = page_data.dataLayers[mapId][0];
         var layerLegend = page_data.dataLayers[mapId][1];
+        var $mapLegend = $('.map-legend');
 
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
-            $this.removeClass('active');
-            layerLegend.removeClass('active');
+            $this.removeClass('active rcon float layer-toggle');
+
+            layerLegend.removeClass('active icon layer-toggle');
+            if ($mapLegend.children('.moabi-legend.active').length === 0) {
+                $mapLegend.removeClass('active');
+            }
 
         } else {
             map.addLayer(layer);
-            $this.addClass('active');
-            layerLegend.addClass('active');
+            $this.addClass('active rcon float layer-toggle');
+
+            if (! $mapLegend.hasClass('active')) {
+                $mapLegend.addClass('active');
+            }
+            layerLegend.addClass('active icon layer-toggle');
         }
     },
 

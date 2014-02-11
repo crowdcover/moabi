@@ -55,7 +55,7 @@
 
                 {% for minor_panel in main_panel.panel_data.data_elements %}
                     {% if minor_panel.description %}
-                    <div class="minor-panel small" id="{{minor_panel.id}}-panel">
+                    <div class="minor-panel small" data-id="{{minor_panel.id}}">
                         <div class="clearfix">
                             <h3>{{minor_panel.name}}</h3>
                             <ul>
