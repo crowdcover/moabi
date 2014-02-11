@@ -640,19 +640,47 @@
     width: 240px;
 }
 
-.map-legend h3 {
-    font: 18px/28px 'Open Sans Bold';
+.map-legend > h3 {
+    font: 18px/28px 'Open Sans Bold', serif;
     text-align: center;
     border-bottom: 2px solid #999;
 }
 
 .moabi-legend {
     display: none;
+    position: relative;
     margin-bottom: 8px;
+    margin-left: 12px;
 }
 
 .moabi-legend.active {
     display: block;
+}
+
+.moabi-legend > *:first-child:before {
+    content: "•";
+    font: 10px 'Open Sans Bold', serif;
+    position: absolute;
+    left: -16px;
+    top: -2px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.moabi-legend > *:first-child:before:hover {
+    color: #CCC;
+
+}
+
+.moabi-legend h1,
+.moabi-legend h2,
+.moabi-legend h3,
+.moabi-legend h4,
+.moabi-legend h5,
+.moabi-legend h6 {
+    font: 15px/18px 'Open Sans Bold', serif;
+    text-align: center;
+    margin-bottom: 4px;
 }
 
 .moabi-legend .legend-category .symbol {
