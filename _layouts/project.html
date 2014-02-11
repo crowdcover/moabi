@@ -45,8 +45,8 @@
                 <ul class="{{main_panel.panel_data.ui_style}} {{event_handlers}}">
                     {% for button in main_panel.panel_data.data_elements %}
                         <li>
-                            <a id="{{button.id}}"
-                            {% if {{event_handlers}} contains 'toggle-layer' %}data-mapid="{{button.id}}"{% endif %}
+                            <a class="ui-button"
+                            {% if {{event_handlers}} contains 'toggle-layer' %}data-id="{{button.id}}"{% endif %}
                             {% if {{event_handlers}} contains 'navigate' %}data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]'{% endif %}
                             href="#">{{button.name}}</a>
                         </li>

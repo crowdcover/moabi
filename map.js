@@ -33,7 +33,15 @@ var moabi = {
         $('.toggle-layer').on('click', 'a', this.toggleLayer);
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         map.legendControl.addLegend('<h3>Data Layers</h3>');
-        $('.moabi-legend').appendTo('.map-legend');
+        $('.moabi-legend').appendTo('.map-legend').each(
+            function() {
+                $(this).prepend('<span class="hide-layer">X</span>');
+            }).children('.hide-layer').on('click', this.legendToggleLayer);
+    },
+
+    legendToggleLayer: function(e) {
+        mapId = $(this).parent().data('id');
+        $('.ui-button[data-id="' + mapId + '"]' ).trigger('click');
     },
 
     showMajorPanel: function(e) {
@@ -88,20 +96,17 @@ var moabi = {
 
         $this = $(this);
 
-        var mapId = $this.data('mapid'),
-            elementId = $this.attr('id');
+        var mapId = $this.data('id');
 
-        if (! page_data.dataLayers[elementId]){
-            //page_data.dataLayers[elementId] = L.mapbox.tileLayer(mapId);
-            // page_data.dataLayers[elementId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
-            page_data.dataLayers[elementId] = [
+        if (! page_data.dataLayers[mapId]){
+            page_data.dataLayers[mapId] = [
                 L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
-                $('.' + elementId + '-legend')
+                $('.moabi-legend[data-id="' + mapId + '"]')
             ];
         }
 
-        var layer = page_data.dataLayers[elementId][0];
-        var layerLegend = page_data.dataLayers[elementId][1];
+        var layer = page_data.dataLayers[mapId][0];
+        var layerLegend = page_data.dataLayers[mapId][1];
 
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);

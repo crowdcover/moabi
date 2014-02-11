@@ -657,8 +657,7 @@
     display: block;
 }
 
-.moabi-legend > *:first-child:before {
-    content: "•";
+.moabi-legend .hide-layer {
     font: 10px 'Open Sans Bold', serif;
     position: absolute;
     left: -16px;
@@ -667,8 +666,8 @@
     padding: 4px;
 }
 
-.moabi-legend > *:first-child:before:hover {
-    color: #CCC;
+.moabi-legend .hide-layer:hover {
+    color: #aaa;
 
 }
 
