@@ -1,8 +1,7 @@
 ---
 layout: project
-title: ROUGE+ Risk Map
+title: REDD+ Risk Map (fr)
 categories: [project]
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, provident soluta nostrum nihil a ipsam ullam ab ipsa cum ex.
 permalink: /redd_risk_map/fr
 language: fr
 page_key: redd_risk
@@ -15,7 +14,7 @@ basemap:
       - id: moabi_base
         z: -1
 thumb:
-    map_id: helsinki.moabi_transport
+    map_id: helsinki.moabi_base,helsinki.moabi_mining
     lat:
     lon:
     zoom:
@@ -39,30 +38,57 @@ main_panels:
           - id: moabi_indigenous
             name: Indigenous Lands
             legend: true
+            color: '#BFC7E4'
+            source:
+                name: DGPA, Atlas de Localisation des Peuples Autochtones Pygmees
+                url: www.dgpa.cd
             description: Don't exproriate indigenous lands. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
           - id: moabi_transport
             name: Transport
-            legend: true
+            legend: false
+            color:
+            source:
+                name: Ministry of Information
+                url: www.com
             description: Roads and rivers provide the major arteries for travel and trade across DRC. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
           - id: moabi_mining
             name: Mining
             legend: true
+            color: '#F6EE98'
+            source:
+                name: CAMI (November 2013)
+                url:
             description: Mining and Energy. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
           - id: moabi_logging
             name: Logging
             legend: true
+            color: '#AC9270'
+            source:
+                name: Ministry of Logging
+                url:
             description: Logging cuts down trees. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
           - id: moabi_oil
             name: Oil
             legend: true
+            color: '#EAC096'
+            source:
+                name: CAMI (November 2013)
+                url:
             description: So much Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
           - id: moabi_palm
             name: Palm Oil
             legend: true
+            color: '#767436'
+            source:
+                name: Ministry of Agriculture
+                url:
             description: So much Palm Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
           - id: moabi_energy
             name: Energy
             legend: false
+            source:
+                name: Ministry of Energy
+                url:
             description: Energy Corridors! After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
 
   - id: sites
@@ -139,14 +165,41 @@ main_panels:
     {% if main_panel.panel_data.actions contains 'toggle-layer' %}
         {% for data_element in main_panel.panel_data.data_elements %}
             {% if data_element.legend %}
-                <div class="moabi-legend {{data_element.id}}-legend" style='display: none;'>
-                    <div>{{data_element.name}}</div>
+                <div class="moabi-legend icon layer-toggle" data-id="{{data_element.id}}">
+                    <div class="legend-category">
+                        <div class="symbol" style="background-color: {{data_element.color}}"></div>
+                        <span class="value">{{data_element.name}}</span>
+                    </div>
+                    {% if data_element.source %}
+                        <div class="source"><span>Source:</span> {% if data_element.source.url %}<a href="{{data_element.source.ulr}}">{{data_element.source.name}}</a>{% else %}{{data_element.source.name}}{% endif %}</div>
+                    {% endif %}
                 </div>
             {% endif %}
         {% endfor %}
     {% endif %}
 {% endfor %}
 
-<div class="moabi-legend moabi_energy-legend" style='display: none;'>
-    <div><strong>ENERGY LEGEND!</strong></div>
+<div class="moabi-legend icon layer-toggle" data-id="moabi_energy">
+    <h4>Hydropower and Energy Corridors</h4>
+    <table class="legend-table named-rows">
+        <tr>
+            <th></th>
+            <th>Existing</th>
+            <th>Future</th>
+        </tr>
+        <tr>
+            <td>Dam</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Energy Line</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div class="source"><span>Source:</span> <a href="www.com">Africa Energy</a></div>
 </div>
+
+
+

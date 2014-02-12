@@ -300,31 +300,75 @@
 
 /*thumb menu*/
 .thumb-menu {
-    margin-top: 24px;
+    margin: 24px 40px;
 }
 
 .thumb-menu li {
-    height: 70px;
-    overflow: hidden;
     margin-bottom: 8px;
 }
 
 .thumb-menu li .thumbnail {
-    width: 80px;
-    height: 60px;
-    border: 1px solid #ccc;
+    position: relative;
+    width: 200px;
+    height: 140px;
+    border: 1px solid #aaa;
     float: left;
     margin-right: 12px;
 }
 
-.thumb-menu li:hover .thumbnail {
-    background-color: rgb(202, 202, 202);
-    background-color: rgba(202, 202, 202, 0.31);
+.thumb-menu li .shadow {
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    -webkit-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    transition: background 0.2s ease;
 }
 
-.thumb-menu li .description, .thumb-menu li .description-truncate {
+.thumb-menu li:hover .shadow {
+    background: transparent;
+}
+
+.thumb-menu li .description {
+    position: relative;
+    height: 140px;
     color: #404040;
     color: rgba(0,0,0,0.75);
+}
+
+.thumb-menu li .description h2 {
+    margin-bottom: 12px;
+    padding: 0;
+}
+
+.thumb-menu li .description p {
+    height: 60px;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.thumb-menu li p:after {
+    content: "... View Project";
+    position: absolute;
+    top: 122px;
+    right: -1000px;
+    -webkit-transition: right 0.2s ease;
+    -moz-transition: right 0.2s ease;
+    -o-transition: right 0.2s ease;
+    -ms-transition: right 0.2s ease;
+    transition: right 0.2s ease;
+}
+
+.thumb-menu li:hover p:after {
+    right: 0;
+}
+
+.thumb-menu li .description.more {
+    height: auto;
 }
 
 .thumb-menu.centered li {
@@ -347,28 +391,18 @@
 /**************************Panels**************************/
 .main-panel {
     display: none;
-    padding: 10px 24px;
-
-    /*max-height: 0;
-    overflow: hidden;
-    -webkit-transition: max-height 0.5s ease;
-    -moz-transition: max-height 0.5s ease;
-    -o-transition: max-height 0.5s ease;
-    -ms-transition: max-height 0.5s ease;
-    transition: max-height 0.5s ease;*/
+    padding: 20px 24px;
 }
 
 .main-panel.active {
     display: block;
-
-    /*height: auto;
-    max-height: 100%;
-    overflow: auto;
-    padding: 12px;*/
-
     clear: both;
 }
 
+.contentbar.limiter .main-panel p.description {
+    padding: 0 40px 18px;
+    border-bottom: 2px solid #CCC;
+}
 
 /******************** REDD Project Sites ********************/
 .minor-panel {
