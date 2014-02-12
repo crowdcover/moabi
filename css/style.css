@@ -628,14 +628,14 @@
       cursor: pointer;
   }
 
-.moabi-legend.icon.layer-toggle:hover:before,
+.moabi-legend.active.icon.layer-toggle:hover:before,
 .moabi-legend.icon.layer-toggle:before {
     position: absolute;
     left: -2px;
     top: 2px;
     color: #5E5E5E;
 }
-  .moabi-legend.icon.layer-toggle:hover:before {
+  .moabi-legend.active.icon.layer-toggle:hover:before {
       left: -3px;
       top: -2px;
   }
@@ -1242,14 +1242,16 @@ icon.aria:before {
 .search.icon:before { content: "\00F4" }
 .ellipsis.icon:before { content: "\00F6" }
 
-.layer-toggle.icon:before,
-.layer-toggle.rcon:after {
+.layer-toggle.icon:active:before,
+.layer-toggle.rcon:active:after,
+.layer-toggle.icon.active:before,
+.layer-toggle.rcon.active:after {
     content: "\007D";
     font-size: 18px;
 }
 
-.layer-toggle.icon:hover:before,
-.layer-toggle.rcon:hover:after {
+.layer-toggle.icon.active:hover:before,
+.layer-toggle.rcon.active:hover:after {
     content: "\0058";
     font-size: 28px;
     cursor: pointer;

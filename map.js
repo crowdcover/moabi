@@ -106,9 +106,9 @@ var moabi = {
 
         if (map.hasLayer(layer)) {
             map.removeLayer(layer);
-            $this.removeClass('active rcon float layer-toggle');
+            $this.removeClass('active');
 
-            layerLegend.removeClass('active icon layer-toggle');
+            layerLegend.removeClass('active icon');
             if ($mapLegend.children('.moabi-legend.active').length === 0) {
                 $mapLegend.removeClass('active');
             }
@@ -116,12 +116,12 @@ var moabi = {
 
         } else {
             map.addLayer(layer);
-            $this.addClass('active rcon float layer-toggle');
+            $this.addClass('active');
 
             if (! $mapLegend.hasClass('active')) {
                 $mapLegend.addClass('active');
             }
-            layerLegend.addClass('active icon layer-toggle');
+            layerLegend.addClass('active icon');
             moabi.legendResize();
         }
     },
