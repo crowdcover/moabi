@@ -52,7 +52,7 @@
     margin-right: 28px;
     padding: 12px 0;
     font-size: 125%;
-    font-family:'Open Sans Bold', serif;
+    font-family:'Open Sans Bold', sans-serif;
 }
 
 .limiter {
@@ -80,7 +80,7 @@
 }
 
 .contentbar-header .landing-title a {
-    font-family: 'Open Sans Bold', serif;
+    font-family: 'Open Sans Bold', sans-serif;
     color: #FFFFFF;
 }
 
@@ -164,7 +164,7 @@
     color: #333;
     padding: 12px 0;
     text-align: center;
-    font-family: 'Open Sans Bold', serif;
+    font-family: 'Open Sans Bold', sans-serif;
 }
 
 .boxmenu li a:hover {
@@ -490,7 +490,7 @@
     position: relative;
     left: 22px;
     margin-bottom: 12px;
-    font-family:'Open Sans Italic', serif;
+    font-family:'Open Sans Italic', sans-serif;
     color: #5f5f5f;
 }
 
@@ -611,7 +611,7 @@
       display: block;
   }
   .map-legend > h3 {
-      font: 18px/28px 'Open Sans Bold', serif;
+      font: 18px/28px 'Open Sans Bold', sans-serif;
       text-align: center;
       border-bottom: 2px solid #999;
   }
@@ -647,7 +647,7 @@
 .moabi-legend h4,
 .moabi-legend h5,
 .moabi-legend h6 {
-    font: 15px/18px 'Open Sans Bold', serif;
+    font: 15px/18px 'Open Sans Bold', sans-serif;
     text-align: center;
     margin-bottom: 4px;
 }
@@ -686,7 +686,7 @@
 }*/
 
 .moabi-legend .legend-table {
-    font: 12px/16px 'Open Sans', serif;
+    font: 12px/16px 'Open Sans', sans-serif;
     margin-bottom: 8px;
 }
 
@@ -714,7 +714,7 @@
 }
 
 .moabi-legend .source span {
-    font-family: 'Open Sans Bold Italic', serif;
+    font-family: 'Open Sans Bold Italic', sans-serif;
 }
 
 
@@ -797,9 +797,9 @@ table { border-collapse: collapse; border-spacing:0; }
 
 @font-face {
   font-family:'Open Sans Bold Italic';
-    src:url('../fonts/OpenSans-Semibolditalic-webfont.eot');
-    src:url('../fonts/OpenSans-Semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/OpenSans-Semibolditalic-webfont.woff') format('woff');
+    src:url('../fonts/OpenSans-SemiboldItalic-webfont.eot');
+    src:url('../fonts/OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OpenSans-SemiboldItalic-webfont.woff') format('woff');
   }
 
 /* Inline Elements: Defaults
@@ -809,7 +809,7 @@ input,
 textarea {
   color:#404040;
   color:rgba(0,0,0,0.75);
-  font:15px/20px 'Open Sans', serif;
+  font:15px/20px 'Open Sans', sans-serif;
   -webkit-font-smoothing:antialiased;
   }
 
@@ -822,7 +822,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family:'Open Sans Bold', serif;
+  font-family:'Open Sans Bold', sans-serif;
   font-weight:normal;
   margin:0;
   }
@@ -833,7 +833,7 @@ em h3, h3 em,
 em h4, h4 em,
 em h5, h5 em,
 em h6, h6 em {
-  font-family:'Open Sans Bold Italic', serif;
+  font-family:'Open Sans Bold Italic', sans-serif;
   }
 
 h1 {
@@ -874,16 +874,16 @@ small { display:block; }
 
 .strong,
 strong {
-  font-family:'Open Sans Bold', serif;
+  font-family:'Open Sans Bold', sans-serif;
   font-weight:normal;
   text-transform: uppercase;
   }
   strong em,
-  em strong { font-family:'Open Sans Bold Italic', serif; }
+  em strong { font-family:'Open Sans Bold Italic', sans-serif; }
 
 address,
 em {
-  font-family:'Open Sans Italic', serif;
+  font-family:'Open Sans Italic', sans-serif;
   }
 
 /* Links */
@@ -985,7 +985,7 @@ sub { top: 0.4em; }
 a {
     color: #5A6943;
     text-decoration: none;
-    font-family: 'Open Sans', serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 a:hover {
@@ -993,7 +993,7 @@ a:hover {
 }
 
 p a {
-    font-family: 'Open Sans Bold', serif;
+    font-family: 'Open Sans Bold', sans-serif;
 }
 
 p a:hover,
@@ -1026,7 +1026,7 @@ table th {
 }
 
 .aside {
-    font-family: 'Open Sans Italic', serif;
+    font-family: 'Open Sans Italic', sans-serif;
     font-size: 12px;
     line-height: 18px;
     letter-spacing: 0;
