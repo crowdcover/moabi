@@ -23,13 +23,13 @@
     {% capture width_n %}width-{{page.main_panels.size}}{% endcapture %}
     <ul class="boxmenu {{width_n}} clearfix">
         {% for main_panel in page.main_panels %}
-        <li><a id="{{main_panel.id}}" class="{% if forloop.first %}active{% endif %}" href="#">{{main_panel.name}}</a></li>
+        <li><a data-id="{{main_panel.id}}" class="{% if forloop.first %}active{% endif %}" href="#">{{main_panel.name}}</a></li>
         {% endfor %}
     </ul>
 
     <div class="contentbar-fill">
         {% for main_panel in page.main_panels %}
-        <div class="main-panel {{main_panel.id}} {% if forloop.first %}active{% endif %}">
+        <div data-id="{{main_panel.id}}" class="main-panel {% if forloop.first %}active{% endif %}">
             {% if main_panel.title %} <h2>{{main_panel.title}}</h2> {% endif %}
             {% if main_panel.description %} <p class="small">{{main_panel.description}}</p> {% endif %}
 
