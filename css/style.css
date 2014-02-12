@@ -93,7 +93,8 @@
     background-color: rgb(255, 252, 248);
     background-color: rgba(255, 252, 248, 0.9);
     width: 100%;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-transition: height 0.2s ease;
     -moz-transition: height 0.2s ease;
     -o-transition: height 0.2s ease;
@@ -543,6 +544,55 @@
 
 
 
+/*********************** Media ***********************/
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 320px;
+}
+
+.slide-control {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    z-index: 1;
+}
+    .slide-control[data-slide="right"] {
+        right: 0;
+    }
+    .slide-control[data-slide="left"] {
+        left: 0;
+    }
+    .slide-control[data-slide="right"]:hover,
+    .slide-control[data-slide="left"]:hover {
+        background: rgba(0,0,0,0.2);
+    }
+    .slide-control span {
+        position: absolute;
+        height: 48px;
+        width: 48px;
+        top: 50%;
+        margin-top: -24px;
+        color: orange;
+    }
+    .slide-control:hover span {
+        color: white;
+    }
+
+.slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    opacity: 0;
+}
+    .slide.active {
+        opacity: 1;
+    }
+
 /*********************** UI Controls ***********************/
 .leaflet-top.leaflet-right{
     top: 44px;
@@ -612,7 +662,7 @@
 
 
 
-/******************************* Language Widget *******************************/
+/******************************* Map Legends *******************************/
 .leaflet-container a {
     color: #5A6943;
 }

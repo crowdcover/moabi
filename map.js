@@ -31,6 +31,7 @@ var moabi = {
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         map.legendControl.addLegend('<h3>Data Layers</h3>');
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
+        $('.slideshow').on('click', 'a.slide-control', this.imgSlide);
     },
 
     legendToggleLayer: function(e) {
@@ -190,6 +191,24 @@ var moabi = {
 
         $mapLegend.height(totalHeight);
         console.log("total height: " + totalHeight);
+    },
+
+    imgSlide: function() {
+        var $this = $(this),
+            slides = $('.slide'),
+            activeSlide = slides.filter('.active'),
+            slideCount = slides.length;
+
+        activeSlide.removeClass('active');
+        if ($this.data('slide') == 'right'){
+            var newIndex = parseInt(activeSlide.data('index'), 10) + 1;
+            if (newIndex > slideCount){ var newIndex = 1; }
+            slides.filter('[data-index="' + newIndex + '"]').addClass('active');
+        } else {
+            var newIndex = parseInt(activeSlide.data('index'), 10) - 1;
+            if (newIndex === 0){ var newIndex = slideCount; }
+            slides.filter('[data-index="' + newIndex + '"]').addClass('active');
+        }
     }
 
 };

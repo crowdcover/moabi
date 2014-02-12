@@ -81,6 +81,22 @@
 
             {% endif %}
 
+            <!-- media slideshow -->
+            {% if main_panel.panel_media %}
+                <div class="slideshow">
+                    <a href="#" class="slide-control" data-slide="left">
+                        <span class="icon big leftarrow"></span>
+                    </a>
+                    <a href="#" class="slide-control" data-slide="right">
+                        <span class="icon big rightarrow"></span>
+                    </a>
+
+                    {% for img in main_panel.panel_media.data_elements %}
+                        <div class="slide {% if forloop.first %}active{% endif %}" style="background-image: url('{{img.url}}');" data-index="{{forloop.index}}"></div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
         </div>
         {% endfor %}
 

@@ -2,23 +2,23 @@
 layout: project
 title: Community Mapping
 categories: [project]
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, commodi, tenetur ducimus at numquam voluptas perspiciatis quasi suscipit ut voluptatum repellat ea ex fugit saepe ratione ipsam pariatur harum nihil temporibus libero porro eligendi quos.
-permalink: /projects/community_mapping.html
+permalink: /community_mapping/en
+language: en
+page_key: community_mapping
 basemap:
     center:
         lat: -2.877
         lon: 22.830
         zoom: 5
     layers:
-      - id: helsinki.moabi_base
+      - id: moabi_base
         z: -1
 thumb:
-    map_id:
+    map_id: helsinki.moabi_base,helsinki.moabi_mining
     lat:
     lon:
     zoom:
     img:
-
 
 main_panels:
   - id: about
@@ -27,7 +27,51 @@ main_panels:
     description: For a country as large and diverse as the DRC, active community consent and participation will be essential for any successful landuse monitoring project.  In January 2014, Crowdcover partnered with '########' and '#######' to lead community mapping projects in '#####.'  The data, collected by local participants via SMS and Smart Phone, records the level of regional familiarity with the REDD process and also locates specific instances of illegal logging.  View the results in the project data panel.
 
   - id: data
-    name: Data
-    description: ...data coming soon
+    name: Data Layers
+    title:
+    description:
+    panel_data:
+        ui_style: listmenu
+        actions: [minor-panel-viewer, toggle-layer]
+        aside: Click on a layer to add/remove from the map
+        data_elements:
+          - id: moabi_transport
+            name: Transport
+            legend: false
+            color:
+            source:
+                name: Ministry of Information
+                url: www.com
+            description: Roads and rivers provide the major arteries for travel and trade across DRC. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
+          - id: moabi_logging
+            name: Logging
+            legend: true
+            color: '#AC9270'
+            source:
+                name: Ministry of Logging
+                url:
+            description: Logging cuts down trees. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
+          - id: moabi_oil
+            name: Oil
+            legend: true
+            color: '#EAC096'
+            source:
+                name: CAMI (November 2013)
+                url:
+            description: So much Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
+
+  - id: media
+    name: Media
+    title:
+    description:
+    panel_media:
+        ui_style: slideshow
+        data_elements:
+          - id: pic1
+            url: http://farm8.staticflickr.com/7415/12483499665_60483bf75b.jpg
+          - id: pic2
+            url: http://farm4.staticflickr.com/3701/12483979744_8c0776ea12.jpg
+          - id: pic3
+            url: http://farm3.staticflickr.com/2891/12483502755_f605561cdc.jpg
 ---
 
