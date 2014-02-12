@@ -34,7 +34,8 @@ var moabi = {
     },
 
     legendToggleLayer: function(e) {
-        mapId = $(this).data('id');
+        var mapId = $(this).data('id');
+
         $('.ui-button[data-id="' + mapId + '"]' ).trigger('click');
     },
 
@@ -111,6 +112,7 @@ var moabi = {
             if ($mapLegend.children('.moabi-legend.active').length === 0) {
                 $mapLegend.removeClass('active');
             }
+            moabi.legendResize();
 
         } else {
             map.addLayer(layer);
@@ -120,6 +122,7 @@ var moabi = {
                 $mapLegend.addClass('active');
             }
             layerLegend.addClass('active icon layer-toggle');
+            moabi.legendResize();
         }
     },
 
@@ -159,11 +162,28 @@ var moabi = {
             $boxmenu.addClass('shadow');
             $contentbarFill.height(maxHeight);
         }
-    }
+    },
 
-    // legendResize: function() {
-    //     var $mapLegend =
-    // }
+    legendResize: function() {
+        // set .map-egend height to it's new height every time .moabi-legends are added/removed
+        var $mapLegend = $('.map-legend'),
+            totalHeight = 0;
+
+        // sum outerHeight of everything not a .moabi-legend [at this point only the h4]
+        $mapLegend.children().not('.moabi-legend').each(function() {
+            console.log($(this).data('id') + " : " + $(this).outerHeight( true ));
+            totalHeight += $(this).outerHeight( true );
+        });
+
+        // sum outerHeight of every .moabi-legend.active
+        $mapLegend.children('.moabi-legend.active').each(function() {
+            console.log($(this).data('id') + " : " + $(this).outerHeight( true ));
+            totalHeight += $(this).outerHeight( true );
+        });
+
+        $mapLegend.height(totalHeight);
+        console.log("total height: " + totalHeight);
+    }
 
 };
 

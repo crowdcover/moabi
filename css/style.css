@@ -599,6 +599,13 @@
 .map-legend {
     width: 268px;
     display: none;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.2s ease;
+    -moz-transition: height 0.2s ease;
+    -o-transition: height 0.2s ease;
+    -ms-transition: height 0.2s ease;
+    transition: height 0.2s ease;
 }
   .map-legend.active{
       display: block;
@@ -610,12 +617,14 @@
   }
   .moabi-legend {
       display: none;
+      height: 0;
       position: relative;
       margin-bottom: 8px;
       padding-left: 12px;
   }
   .moabi-legend.active {
       display: block;
+      height: auto;
       cursor: pointer;
   }
 
