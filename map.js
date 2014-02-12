@@ -58,17 +58,24 @@ var moabi = {
         e.preventDefault();
         e.stopPropagation();
 
-        var $this = $(this);
+        var $this = $(this),
+            panelId = $(this).data('id');
 
-        if (! $this.hasClass('active')) {
-            var panelId = $(this).data('id');
+        if ($this.hasClass('active')) {
+            // close the active panel and open the previous one
+            $('.minor-panel[data-id="' + panelId + '"]').removeClass('active');
 
-            //close any open panel and open the new one
-            $(this).closest('div').children('.minor-panel.active').removeClass('active');
+            var nextInLine = $this.closest('li').siblings('li').children('a.active:last').data('id');
+            if (nextInLine) {
+                $('.minor-panel[data-id="' + nextInLine + '"]').addClass('active');
+            }
+        } else {
+            // close any active panel and open the new one
+            $(this).closest('.main-panel').children('.minor-panel.active').removeClass('active');
             $('.minor-panel[data-id="' + panelId + '"]').addClass('active');
-
-            moabi.contentBarResize();
         }
+
+        moabi.contentBarResize();
     },
 
     navigate: function(e) {

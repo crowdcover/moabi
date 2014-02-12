@@ -46,7 +46,7 @@
                     {% for button in main_panel.panel_data.data_elements %}
                         <li>
                             <a class="ui-button {% if {{event_handlers}} contains 'toggle-layer' %}rcon float layer-toggle{% endif %}"
-                            {% if {{event_handlers}} contains 'toggle-layer' %}data-id="{{button.id}}"{% endif %}
+                            {% if {{event_handlers}} contains 'toggle-layer' or {{event_handlers}} contains 'minor-panel-viewer' %}data-id="{{button.id}}"{% endif %}
                             {% if {{event_handlers}} contains 'navigate' %}data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]'{% endif %}
                             href="#">{{button.name}}</a>
                         </li>
