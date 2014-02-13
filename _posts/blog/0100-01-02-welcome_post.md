@@ -3,8 +3,8 @@ layout: blog_post
 categories: [blog_post]
 title: Introducing Moabi
 subtitle: a sample blog post, written as a proof of concept
-permalink: welcome_post/en
-language: en
+permalink: welcome_post/fr
+language: fr
 
 img: wb_temp.jpg
 ---

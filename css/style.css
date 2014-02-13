@@ -569,14 +569,14 @@
     }
     .slide-control span {
         position: absolute;
-        height: 48px;
-        width: 48px;
+        height: 30px;
+        width: 30px;
         top: 50%;
         margin-top: -24px;
-        color: orange;
+        color: white;
     }
     .slide-control:hover span {
-        color: white;
+        color: orange;
     }
 
 .slide {
@@ -1155,13 +1155,18 @@ table th {
 
 .icon:before,
 .rcon:after {
-    font-family: 'Icon-Set';
+    font: 15px/20px 'Icon-Set';
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+
+    /* experimental */
+    margin-right: 2px;
+    position: relative;
+    top: 1px;
 
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
@@ -1173,6 +1178,11 @@ table th {
     .rcon.float:after {
         float: right;
     }
+
+.icon.big:before,
+.rcon.big:after {
+    font: 30px 'Icon-Set';
+}
 
 /*.rcon:after,
 .icon:before {
@@ -1344,7 +1354,6 @@ table th {
 .layer-toggle.rcon.active:after {
     content: "\e67c";
     font-size: 10px;
-    position: relative;
     top: 5px;
 }
 
@@ -1353,7 +1362,6 @@ table th {
     content: "\e656";
     font-size: 14px;
     cursor: pointer;
-    position: relative;
     top: 3px;
     right: -2px;
 }

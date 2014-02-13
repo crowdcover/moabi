@@ -30,11 +30,11 @@ gradient: true
     </div>
 
     <ul class="boxmenu width-5 clearfix">
-        <li><a href="{{site.baseurl}}/about.html" id="about" {% if page.id == "about" %}class="active"{% endif %} >About</a></li>
-        <li><a href="{{site.baseurl}}/projects.html" id="projects" {% if page.id == "projects" %}class="active"{% endif %} >Projects</a></li>
-        <li><a href="{{site.baseurl}}/blog.html" id="blog" {% if page.id == "blog" %}class="active"{% endif %} >Blog</a></li>
-        <li><a href="{{site.baseurl}}/register.html" id="register" {% if page.id == "register" %}class="active"{% endif %} >Register</a></li>
-        <li><a href="{{site.baseurl}}/data.html" id="edit" {% if page.id == "data" %}class="active"{% endif %} >Add/Edit Data</a></li>
+        <li><a href="{{site.baseurl}}/about/{{page.language}}" data-id="about" {% if page.id == "about" %}class="active"{% endif %} >About</a></li>
+        <li><a href="{{site.baseurl}}/projects/{{page.language}}" data-id="projects" {% if page.id == "projects" %}class="active"{% endif %} >Projects</a></li>
+        <li><a href="{{site.baseurl}}/blog/{{page.language}}" data-id="blog" {% if page.id == "blog" %}class="active"{% endif %} >Blog</a></li>
+        <li><a href="{{site.baseurl}}/register/{{page.language}}" data-id="register" {% if page.id == "register" %}class="active"{% endif %} >Register</a></li>
+        <li><a href="{{site.baseurl}}/data/{{page.language}}" data-id="edit" {% if page.id == "data" %}class="active"{% endif %} >Add/Edit Data</a></li>
     </ul>
 
     <div class="contentbar-fill">
