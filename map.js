@@ -160,13 +160,10 @@ var moabi = {
 
         var contentHeight = $contentbarFill.children('.main-panel.active').outerHeight();
         var maxHeight = $(window).height() - $('.contentbar-header').height() - $boxmenu.height() - 3; //minus 3 for border-bottom of .contentbar-fill (2) and .contentbar-header (1)
-        //console.log("contentBarResize fired. Content height: " + $contentbarFill.children('.main-panel.active').outerHeight());
         if(contentHeight < maxHeight ) {
-            // console.log("set to contentHeight" + contentHeight);
             $boxmenu.removeClass('shadow');
             $contentbarFill.height(contentHeight);
         } else {
-            //console.log("set to maxHeight" + maxHeight + " .window: " + $(window).height() + "header: " + $('.contentbar-header').height() + "boxmenu: " + $boxmenu.height());
             $boxmenu.addClass('shadow');
             $contentbarFill.height(maxHeight);
         }
@@ -179,18 +176,15 @@ var moabi = {
 
         // sum outerHeight of everything not a .moabi-legend [at this point only the h4]
         $mapLegend.children().not('.moabi-legend').each(function() {
-            console.log($(this).data('id') + " : " + $(this).outerHeight( true ));
             totalHeight += $(this).outerHeight( true );
         });
 
         // sum outerHeight of every .moabi-legend.active
         $mapLegend.children('.moabi-legend.active').each(function() {
-            console.log($(this).data('id') + " : " + $(this).outerHeight( true ));
             totalHeight += $(this).outerHeight( true );
         });
 
         $mapLegend.height(totalHeight);
-        console.log("total height: " + totalHeight);
     },
 
     imgSlide: function() {
