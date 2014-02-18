@@ -83,6 +83,9 @@
 
             <!-- media slideshow -->
             {% if main_panel.panel_media %}
+                {% if main_panel.panel_media.aside %}
+                    <div class="aside">{{main_panel.panel_media.aside}}</div>
+                {% endif %}
                 <div class="slideshow">
                     <a href="#" class="slide-control" data-slide="left">
                         <span class="icon big arrow-left"></span>
@@ -97,6 +100,10 @@
                 </div>
             {% endif %}
 
+            {% if main_panel.panel_custom %}
+                {{content}}
+            {% endif %}
+
         </div>
         {% endfor %}
 
@@ -104,8 +111,6 @@
     </div>
 </div>
 
-
-{{content}}
 
     {% if page.basemap %}{% include parse_layers.html %}{% endif %}
     <script src='{{site.baseurl}}/map.js'></script>

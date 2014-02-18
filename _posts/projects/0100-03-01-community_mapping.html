@@ -28,6 +28,11 @@ main_panels:
     title: Community Participation in Project Monitoring
     description: For a country as large and diverse as the DRC, active community consent and participation will be essential for any successful landuse monitoring project.  In January 2014, Crowdcover partnered with '########' and '#######' to lead community mapping projects in '#####.'  The data, collected by local participants via SMS and Smart Phone, records the level of regional familiarity with the REDD process and also locates specific instances of illegal logging.  View the results in the project data panel.
 
+  - id: narrative
+    name: Report
+    title: Field Report
+    panel_custom: true
+
   - id: data
     name: Data Layers
     title:
@@ -45,14 +50,6 @@ main_panels:
                 name: DGPA, Atlas de Localisation des Peuples Autochtones Pygmees
                 url: www.dgpa.cd
             description: Don't exproriate indigenous lands. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: moabi_transport
-            name: Transport
-            legend: false
-            color:
-            source:
-                name: Ministry of Information
-                url: www.com
-            description: Roads and rivers provide the major arteries for travel and trade across DRC. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
           - id: moabi_mining
             name: Mining
             legend: true
@@ -85,20 +82,14 @@ main_panels:
                 name: Ministry of Agriculture
                 url:
             description: So much Palm Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: moabi_energy
-            name: Energy
-            legend: false
-            source:
-                name: Ministry of Energy
-                url:
-            description: Energy Corridors! After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
 
   - id: media
-    name: Media
-    title:
-    description:
+    name: Photos
+    title: Photos From the Field
+    description: During the training and field mission, members of the Excites and Moabi teams worked in close collaboration with local residents to map community resources and instances of illegal logging.
     panel_media:
         ui_style: slideshow
+        aside: View photos from the field mission below.
         data_elements:
           - id: pic1
             url: http://farm8.staticflickr.com/7415/12483499665_60483bf75b.jpg
@@ -106,7 +97,23 @@ main_panels:
             url: http://farm4.staticflickr.com/3701/12483979744_8c0776ea12.jpg
           - id: pic3
             url: http://farm3.staticflickr.com/2891/12483502755_f605561cdc.jpg
+          - id: pic4
+            url: http://farm4.staticflickr.com/3707/12483636803_ec4c92db27.jpg
+          - id: pic5
+            url: http://farm8.staticflickr.com/7433/12483505725_901ce1eeeb.jpg
+          - id: pic6
+            url: http://farm8.staticflickr.com/7440/12483506815_820ff7ae43.jpg
 ---
+<div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, voluptates, obcaecati, perspiciatis, eos provident animi beatae sed rem minus maiores velit aut consequatur modi totam cum ratione voluptatum temporibus molestias quasi possimus vitae in amet at itaque suscipit nesciunt culpa omnis numquam fuga est? Nemo obcaecati adipisci illo quia iste. </p>
+    <h3>Independent Observer Points</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, perspiciatis, itaque soluta amet sed in sint aperiam iure magnam at sapiente repellat laboriosam ea obcaecati sit debitis quod numquam dolorem. Inventore, dolorem tempore eum dignissimos quibusdam vero quia quam iusto tenetur ab nam nisi similique consequuntur porro ex ut.</p>
+    <h3>Illegal Logging</h3>
+    <p>Lorem ipsum dolor sit amet, <span class="navigate"><a href="#" data-nav='["-0.59", "18.84", "17"]'>illegal deforestation</a></span> adipisicing elit. Suscipit, eaque et magnam facere omnis quia animi incidunt commodi laborum excepturi corporis eveniet esse nisi totam vel obcaecati <span class="navigate"><a href="#" data-nav='["-0.594", "18.834", "17"]'>abandoned logs</a></span> iure harum recusandae! </p>
+    <h3>Incorrect Government Concession Data</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, totam voluptates mollitia minus reiciendis perspiciatis voluptatum nobis architecto eos maiores. Quo officiis rerum quas <span class="navigate"><a href="#" data-nav='["-0.593", "18.838", "17"]'>palm oil plantation</a></span> voluptas cupiditate? Obcaecati, consectetur, perspiciatis quae cumque laudantium eos eveniet autem expedita assumenda cupiditate quos recusandae error blanditiis dolore nisi commodi possimus voluptatem reprehenderit suscipit deserunt magnam numquam a ex ipsam harum corporis ipsum. </p>
+</div>
+
 {% for main_panel in page.main_panels %}
     {% if main_panel.panel_data.actions contains 'toggle-layer' %}
         {% for data_element in main_panel.panel_data.data_elements %}
