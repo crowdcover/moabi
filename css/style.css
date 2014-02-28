@@ -45,6 +45,7 @@ table { border-collapse: collapse; border-spacing:0; }
           box-sizing:border-box;
   }
 
+
 /* @FontFace
 ------------------------------------------------------- */
 @font-face {
@@ -75,8 +76,8 @@ table { border-collapse: collapse; border-spacing:0; }
         url('../fonts/OpenSans-SemiboldItalic-webfont.woff') format('woff');
   }
 
-/* Base.css, developed by MapBox https://www.mapbox.com/base/latest/base.css */
 
+/* Base.css, developed by MapBox https://www.mapbox.com/base/latest/base.css */
 /* Inline Elements: Defaults
 ------------------------------------------------------- */
 body,
@@ -84,7 +85,8 @@ input,
 textarea {
   color:#404040;
   color:rgba(0,0,0,0.75);
-  font:15px/20px 'Open Sans', sans-serif;
+  /*font:15px/20px 'Open Sans', sans-serif;*/
+  font:15px/25px 'Open Sans', sans-serif;
   -webkit-font-smoothing:antialiased;
   }
 
@@ -115,6 +117,8 @@ h1 {
   font-size:30px;
   line-height:40px;
   letter-spacing:-1px;
+  /**/
+  margin-bottom: 8px;
   }
 h2 {
   font-size:22px;
@@ -134,9 +138,14 @@ h4, h5, h6 {
   }
 /*
 p { margin-bottom:20px; }
+*/
+p { margin-bottom: 10px; }
 
+/*
 p:last-child { margin-bottom:0; }
 */
+p:last-child { margin-bottom: 18px; }
+
 small,
 .prose.small,
 .small {
@@ -161,7 +170,9 @@ em {
   font-family:'Open Sans Italic', sans-serif;
   }
 
-/* Links */
+
+/* Links
+------------------------------------------------------- */
 /*a,
 a code {
   color:#3887BE;
@@ -194,7 +205,72 @@ a.quiet.dark { color:rgba(255,255,255,0.5); }
 a.quiet.dark:hover { color:rgba(255,255,255,0.75); }
 */
 
-/* Tables */
+a {
+    color: #5A6943;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    }
+
+a:hover {
+    color: #D4E797;
+}
+
+a:focus {
+    -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.05);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+p a {
+    font-family: 'Open Sans Bold', sans-serif;
+}
+
+p a:hover,
+.minor-panel a:hover {
+    text-decoration: underline;
+}
+
+span.navigate a {
+    font-size: 0.9em;
+    color: #ffa500;
+    display: inline-block;
+    border: 1px dashed #ffa500;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 3px;
+}
+
+span.navigate a:hover {
+    background-color: rgb(230,230,230);
+    background-color: rgba(100,100,100,0.1);
+}
+
+span.navigate a:active {
+    background-color: transparent;
+    border-color: #808080;
+}
+
+
+/* sub/superscripts
+------------------------------------------------------- */
+sup,
+sub {
+  height:0;
+  line-height:1;
+  vertical-align:baseline;
+  _vertical-align:bottom;
+  position:relative;
+  font-size:75%;
+  }
+sup {
+  bottom:1ex;
+  }
+sub {
+  top:.5ex;
+  }
+
+
+/* Tables
+------------------------------------------------------- */
 table {
   width:100%;
   background-color:transparent;
@@ -245,80 +321,14 @@ table.fixed {
   border-radius:0;
   }
 
-
-/*JLC Typography*/
-sup, sub {
-   vertical-align: baseline;
-   position: relative;
-   top: -0.4em;
-   font-size: 0.8em;
-}
-
-sub { top: 0.4em; }
-
-a {
-    color: #5A6943;
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-}
-
-a:hover {
-    color: #D4E797;
-}
-
-p a {
-    font-family: 'Open Sans Bold', sans-serif;
-}
-
-p a:hover,
-.minor-panel a:hover {
-    text-decoration: underline;
-}
-
-span.navigate a {
-    font-size: 0.9em;
-    color: #ffa500;
-    display: inline-block;
-    border: 1px dashed #ffa500;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 0 3px;
-}
-
-span.navigate a:hover {
-    background-color: rgb(230,230,230);
-    background-color: rgba(100,100,100,0.1);
-}
-
-span.navigate a:active {
-    background-color: transparent;
-    border-color: #808080;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-p:last-child {
-    margin-bottom: 18px;
-}
-
-h1 {
-    margin-bottom: 8px;
-}
-
+/**/
 table th {
     text-align: center;
 }
 
-.main-panel h1 {
-    text-align: center;
-}
 
-.main-panel h2 {
-    /*text-indent: 22px;*/
-}
-
+/* JLC Typography
+------------------------------------------------------- */
 .aside {
     font-family: 'Open Sans Italic', sans-serif;
     font-size: 12px;
@@ -352,7 +362,7 @@ table th {
 }
 
 .header, .contentbar-header {
-    height: 44px;
+    height: 60px;
     border-bottom: 1px solid #CCC;
 }
 
@@ -390,13 +400,6 @@ table th {
     font-family:'Open Sans Bold', sans-serif;
 }
 
-.limiter {
-    width: 80%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .contentbar {
     position: absolute;
     top: 0;
@@ -408,10 +411,14 @@ table th {
     box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
 }
 
+.limiter,
 .contentbar.limiter {
     right: 0;
+    width: 80%;
+    max-width: 1000px;
+    min-width: 840px;
+    margin: 0 auto;
     border-left: 2px solid #CCC;
-    width: 70%;
 }
 
 .contentbar-header .landing-title a {
