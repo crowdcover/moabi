@@ -1,22 +1,54 @@
 #map {
-    position:absolute;
-    top:0;
-    bottom:0;
-    width:100%;
-    z-index: -1;
-    background-color: #333;
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:100%;
+  z-index: -1;
+  background-color: #333;
 }
 
 .gradient {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background: url(../img/gradient_a70.png);
-    z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: url(../img/gradient_a70.png);
+  z-index: -1;
 }
 
-.header, .contentbar-header {
+header {
+  border-bottom: 1px solid #CCC;
+  box-shadow: rgba(0,0,0,0.25) 0 0 10px 3px;
+}
+  header .limiter { border-bottom: 0; }
+
+.limiter {
+  border: 2px solid #CCC;
+  border-top: 0;
+}
+
+.content {
+  box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+}
+
+
+
+
+
+.fill-black {
+  background-color: #000;
+}
+
+.fill-light {
+  background-color: rgb(255, 252, 248);
+  background-color: rgba(255, 252, 248, 0.9);
+}
+
+.text-tall {
+  line-height: 25px;
+}
+
+/*.header, .contentbar-header {
     height: 60px;
     border-bottom: 1px solid #CCC;
 }
@@ -83,7 +115,7 @@
 
 .contentbar-header .landing-title a:hover {
     color: #798A69;
-}
+}*/
 
 .contentbar-fill {
     /*position: relative;*/  /* can't scroll w/ position: relative and z-index: -1; re-activate if this needs relative positioning */

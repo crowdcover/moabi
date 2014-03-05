@@ -1,0 +1,53 @@
+---
+---
+
+<!doctype html>
+<html>
+<head>
+    {% include dochead.html %}
+</head>
+
+<body>
+
+<div id="map"></div>
+{% if page.gradient %}<div class="gradient"></div>{% endif %}
+
+<header class="fill-black">
+  <div class="limiter clearfix">
+    <div class="col2 margin1 center pad1"><a href="">About</a></div>
+    <div class="col2 center pad1"><a href="">Blog</a></div>
+    <div class="col2 center pad1"><a href="">Projects</a></div>
+    <div class="col2 center pad1"><a href="">Registry</a></div>
+    <div class="col2 center pad1"><a href="">Data</a></div>
+  </div>
+</header>
+
+<div class="limiter clearfix fill-light pad2">
+  {% if page.intro %}
+    <div class="col12 clearfix">
+      <div class="col3 pad1">
+        <h1 class="text-right">{{page.intro.title}}</h1>
+      </div>
+      <div class="col8 pad1 text-tall">{{page.intro.description}}</div>
+    </div>
+    <div class="margin3 pad1x"><em>Moabi DRC is currently under development.  Expect more soon...</em></div>
+  {% endif %}
+
+  {% if page.body %}
+    <div class="contentbar-fill">
+      <div class="main-panel active">
+        {% if page.body.title %} <h1>{{page.body.title}}</h1> {% endif %}
+        {% if page.body.description %} <p class="description">{{page.body.description}}</p> {% endif %}
+
+        {{content}}
+      </div>
+    </div>
+  {% endif %}
+
+
+</div>
+
+{% if page.basemap %}{% include parse_layers.html %}{% endif %}
+<script src='{{site.baseurl}}/site.js'></script>
+</body>
+</html>
