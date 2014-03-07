@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Blog
 id: blog
 basemap:
@@ -14,24 +14,22 @@ gradient: true
 language: en
 
 body: true
-
 ---
 
 {% for post in site.categories.blog_post %}
     {% if post.language == page.language %}
-        <div class="blog-post clearfix">
+        <div class="clearfix">
+            <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
+            <div class="col10 margin1 margin1r center pad1 keyline-bottom">{{post.date | date: "%d %B, %Y"}}</div class="center">
             {% if post.img %}
-                <div class='image-border'>
-                    <div class='image'>
-                        <img src="{{site.baseurl}}/img/{{post.img}}" alt="Blog Image">
-                    </div>
+                <div class="col8 margin2 margin2r pad1y">
+                    <img src="{{site.baseurl}}/img/{{post.img}}" alt="Blog Image">
                 </div>
             {% endif %}
-            <h2 class="title"><a href="{{post.url}}">{{post.title}}</a></h2>
-            <div class="date">{{post.date | date: "%d %B, %Y"}}</div>
-
-            <div class="post_content">{{post.excerpt}}</div>
-            <a href="{{post.url}}" class="more">Read More</a>
+            <div class="col10 margin1 margin1r pad2y keyline-top">{{post.excerpt}}</div>
+            <div class="margin1">
+                <a href="{{post.url}}">Read More</a>
+            </div>
         </div>
     {% endif %}
 {% endfor %}

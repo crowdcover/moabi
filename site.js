@@ -31,15 +31,14 @@ var moabi = {
         // calculate max height of content bar based on window size - content-bar's siblings
         // set content-bar height to the smaller of the two
         var $boxmenu = $('.boxmenu'),
-            $contentbarFill = $('.contentbar-fill');
+            $content = $('.content');
 
-        var contentHeight = $contentbarFill.children('.main-panel.active').outerHeight();
-        var maxHeight = $(window).height() - $('.contentbar-header').height() - $boxmenu.height() - 3; //minus 3 for border-bottom of .contentbar-fill (2) and .contentbar-header (1)
-        //console.log("contentBarResize fired. Content height: " + $contentbarFill.children('.main-panel.active').outerHeight());
+        var contentHeight = $content.height();
+        var maxHeight = $(window).height() - $('header').height();
         if(contentHeight < maxHeight ) {
             // console.log("set to contentHeight" + contentHeight);
             $boxmenu.removeClass('shadow');
-            $contentbarFill.height(contentHeight);
+            $content.height(contentHeight);
         } else {
             //console.log("set to maxHeight" + maxHeight + " .window: " + $(window).height() + "header: " + $('.contentbar-header').height() + "boxmenu: " + $boxmenu.height());
             $boxmenu.addClass('shadow');

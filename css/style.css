@@ -21,6 +21,15 @@ header {
   box-shadow: rgba(0,0,0,0.25) 0 0 10px 3px;
 }
   header .limiter { border-bottom: 0; }
+  header .nav:hover {
+    background-color: rgb(255, 252, 248);
+    background-color: rgba(255, 252, 248, 0.9);
+  }
+  header .nav a {
+    font: 1.2em/1em 'Open Sans Bold';
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
 .limiter {
   border: 2px solid #CCC;
@@ -28,12 +37,24 @@ header {
 }
 
 .content {
-  box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+  box-shadow: rgba(0,0,0,0.25) 0 16px 10px 4px;
+}
+
+.intro {
+  font: 16px/24px 'Open Sans';
+  text-align: justify;
 }
 
 
 
 
+a {
+  color: #758B54;
+}
+
+a:hover {
+    color: #F8AA04;
+}
 
 .fill-black {
   background-color: #000;
@@ -44,9 +65,8 @@ header {
   background-color: rgba(255, 252, 248, 0.9);
 }
 
-.text-tall {
-  line-height: 25px;
-}
+
+
 
 /*.header, .contentbar-header {
     height: 60px;
