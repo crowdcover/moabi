@@ -1,6 +1,6 @@
 <script>
 
-var page_data = {
+var mapLayers = {
     baseLayer: {
         latlon: [{{page.basemap.center.lat}}, {{page.basemap.center.lon}}],
         zoom: {{page.basemap.center.zoom}},
@@ -16,7 +16,7 @@ var page_data = {
 
 
 /*
-    page_data.mapLayers = {
+    mapLayers.mapLayers = {
     {% for section in sections %}
     "{{section.sectionid}}": {
       "label": "{{section.label}}",
@@ -44,7 +44,7 @@ var page_data = {
   }
 */
 
-  // page_data.mapboxLayers = {
+  // mapLayers.mapboxLayers = {
   //   {% for section in sections %}
   //     {% for layer in section.layers %}
   //       {% for map in layer.maps %}

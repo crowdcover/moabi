@@ -7,19 +7,19 @@ var moabi = {
 
     init: function() {
 
-        if (window.page_data){
+        if (window.mapLayers){
             var map = L.mapbox.map('map', undefined, {
                 shareControl: true
             });
 
-            map.setView(page_data.baseLayer.latlon, page_data.baseLayer.zoom);
+            map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
             map.zoomControl.setPosition('topright');
             map.shareControl.setPosition('topright');
             map.legendControl.addLegend('<h3>Data Layers</h3>');
 
             //build base layer
-            for(i = 0; i < page_data.baseLayer["id"].length; i++){
-                L.tileLayer('http://tiles.osm.moabi.org/' + page_data.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
+            for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
+                L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
             }
         }
 
@@ -102,15 +102,15 @@ var moabi = {
         var $this = $(this),
             mapId = $this.data('id');
 
-        if (! page_data.dataLayers[mapId]){
-            page_data.dataLayers[mapId] = [
+        if (! mapLayers.dataLayers[mapId]){
+            mapLayers.dataLayers[mapId] = [
                 L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
                 $('.moabi-legend[data-id="' + mapId + '"]')
             ];
         }
 
-        var layer = page_data.dataLayers[mapId][0],
-            layerLegend = page_data.dataLayers[mapId][1],
+        var layer = mapLayers.dataLayers[mapId][0],
+            layerLegend = mapLayers.dataLayers[mapId][1],
             $mapLegend = $('.map-legend');
 
         if (map.hasLayer(layer)) {
