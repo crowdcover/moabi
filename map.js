@@ -2,25 +2,27 @@
 ---
 {% include js/jquery-1.10.2.min.js %}
 
-
-var map = L.mapbox.map('map', undefined, {
-    shareControl: true
-});
-
-map.setView(page_data.baseLayer.latlon, page_data.baseLayer.zoom);
-map.zoomControl.setPosition('topright');
-map.shareControl.setPosition('topright');
-
-//build base layer
-for(i = 0; i < page_data.baseLayer["id"].length; i++){
-    L.tileLayer('http://tiles.osm.moabi.org/' + page_data.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
-}
-
-
 (function(context) {
 var moabi = {
 
     init: function() {
+
+        if (window.page_data){
+            var map = L.mapbox.map('map', undefined, {
+                shareControl: true
+            });
+
+            map.setView(page_data.baseLayer.latlon, page_data.baseLayer.zoom);
+            map.zoomControl.setPosition('topright');
+            map.shareControl.setPosition('topright');
+            map.legendControl.addLegend('<h3>Data Layers</h3>');
+
+            //build base layer
+            for(i = 0; i < page_data.baseLayer["id"].length; i++){
+                L.tileLayer('http://tiles.osm.moabi.org/' + page_data.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
+            }
+        }
+
         $(document).ready(this.contentBarResize);
         $(window).resize(this.contentBarResize);
 
@@ -29,9 +31,8 @@ var moabi = {
         $('.navigate').on('click', 'a', this.navigate);
         $('.toggle-layer').on('click', 'a', this.toggleLayer);
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
-        map.legendControl.addLegend('<h3>Data Layers</h3>');
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
-        $('.slideshow').on('click', 'a.slide-control', this.imgSlide);
+        $('.slideshow').on('click', '.slide-control', this.imgSlide);
     },
 
     legendToggleLayer: function(e) {
@@ -191,16 +192,16 @@ var moabi = {
         var $this = $(this),
             slides = $('.slide'),
             activeSlide = slides.filter('.active'),
-            slideCount = slides.length;
+            slideCount = slides.length - 1;  // subtract 1 for moabi title slide
 
         activeSlide.removeClass('active');
         if ($this.data('slide') == 'right'){
             var newIndex = parseInt(activeSlide.data('index'), 10) + 1;
-            if (newIndex > slideCount){ var newIndex = 1; }
+            if (newIndex > slideCount){ var newIndex = 0; }
             slides.filter('[data-index="' + newIndex + '"]').addClass('active');
         } else {
             var newIndex = parseInt(activeSlide.data('index'), 10) - 1;
-            if (newIndex === 0){ var newIndex = slideCount; }
+            if (newIndex === -1){ var newIndex = slideCount; }
             slides.filter('[data-index="' + newIndex + '"]').addClass('active');
         }
     }

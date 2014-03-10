@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(255, 252, 248);;
+}
+
 #map {
   position:absolute;
   top:0;
@@ -20,24 +24,18 @@ header {
   border-bottom: 1px solid #CCC;
   box-shadow: rgba(0,0,0,0.25) 0 0 10px 3px;
 }
-  header .limiter { border-bottom: 0; }
-  header .nav:hover {
-    background-color: rgb(255, 252, 248);
-    background-color: rgba(255, 252, 248, 0.9);
-  }
-  header .nav a {
-    font: 1.2em/1em 'Open Sans Bold';
+  header .nav {
+    font-family: 'Open Sans Bold';
     text-transform: uppercase;
     letter-spacing: 1px;
   }
 
-.limiter {
-  border: 2px solid #CCC;
-  border-top: 0;
+section {
+    padding: 40px 0;
 }
 
 .content {
-  box-shadow: rgba(0,0,0,0.25) 0 16px 10px 4px;
+  box-shadow: rgba(0,0,0,0.25) 0 6px 10px 4px;
 }
 
 .intro {
@@ -63,6 +61,10 @@ a:hover {
 .fill-light {
   background-color: rgb(255, 252, 248);
   background-color: rgba(255, 252, 248, 0.9);
+}
+
+.slide {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 
@@ -602,9 +604,10 @@ a:hover {
 
 .slide-control {
     position: absolute;
-    width: 30px;
+    width: 60px;
     height: 100%;
     z-index: 1;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
     .slide-control[data-slide="right"] {
         right: 0;
@@ -612,14 +615,18 @@ a:hover {
     .slide-control[data-slide="left"] {
         left: 0;
     }
+    .slide-control[data-slide="right"] span {
+        left: 18px;
+    }
+    .slide-control[data-slide="left"] span {
+        right: 8px;
+    }
     .slide-control[data-slide="right"]:hover,
     .slide-control[data-slide="left"]:hover {
         background: rgba(0,0,0,0.2);
     }
     .slide-control span {
         position: absolute;
-        height: 30px;
-        width: 30px;
         top: 50%;
         margin-top: -24px;
         color: white;

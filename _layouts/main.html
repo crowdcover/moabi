@@ -9,35 +9,52 @@
 
 <body>
 
-<div id="map"></div>
-{% if page.gradient %}<div class="gradient"></div>{% endif %}
-
 <header class="fill-black">
     <div class="limiter clearfix">
-        <div class="nav col3 center pad1"><a href="{{site.baseurl}}/xabout/{{page.language}}">About</a></div>
-        <div class="nav col3 center pad1"><a href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a></div>
-        <div class="nav col3 center pad1"><a href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a></div>
-        <div class="nav col3 center pad1"><a href="http://osm.moabi.org/">Data</a></div>
+        <h1 class="nav col1 pad1y center"><a href="{{site.baseurl}}">Moabi</a></h1>
+        <a class="nav pad2 fr" href="http://osm.moabi.org/">Data</a>
+        <a class="nav pad2 fr" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
+        <a class="nav pad2 fr" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
+        <a class="nav pad2 fr" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
     </div>
 </header>
 
-<div class="content limiter fill-light scroll-styled">
-    {% if page.intro %}
-        <div class="col12 clearfix">
-            <div class="col3 pad1">
-                <h1 class="text-right">{{page.intro.title}}</h1>
+<div class="fill-light slideshow">
+    <a href="#" class="slide-control" data-slide="left">
+        <span class="icon big arrow-left"></span>
+    </a>
+    <a href="#" class="slide-control" data-slide="right">
+        <span class="icon big uniE687"></span>
+    </a>
+
+    {% if page.slideshow %}
+        <div class="slide active" style="background-image: url('/img/wb_temp.jpg');" data-index="0">
+            <div class="col12 pad2y clearfix dark pin-bottom limiter">
+                <div class="col3 pad1y">
+                    <h1 class="">{{page.slideshow.title}}</h1>
+                </div>
+                <div class="col9 pad1y intro">{{page.slideshow.description}}</div>
             </div>
-            <div class="col9 pad1 intro">{{page.intro.description}}</div>
         </div>
-        <div class="margin3 pad1"><em>Moabi DRC is currently under development.  Expect more soon...</em></div>
+        {% for project in site.categories.project_en %}
+            <div class="slide" style="background-image: url('{{project.img}}');" data-index="{{forloop.index}}">
+                <div class="col12 pad2y clearfix dark pin-bottom limiter">
+                    <div class="col3 pad1y">
+                        <h1 class="">{{project.title}}</h1>
+                    </div>
+                    <div class="col9 pad1y intro">{{project.title}}</div>
+                </div>
+            </div>
+        {% endfor %}
     {% endif %}
 
     {{content}}
 
-
 </div>
 
+
 {% if page.basemap %}{% include parse_layers.html %}{% endif %}
-<script src='{{site.baseurl}}/site.js'></script>
+<script src='{{site.baseurl}}/map.js'></script>
 </body>
 </html>
+
