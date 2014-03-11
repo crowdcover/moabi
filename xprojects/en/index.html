@@ -1,51 +1,37 @@
 ---
-layout: default
+layout: main
 title: Projects
 id: projects
-basemap:
-    center:
-        lat: -2.877
-        lon: 22.830
-        zoom: 5
-    layers:
-      - id: 'moabi_base'
-        z: -1
-gradient: true
 language: en
-
-body:
-    title: Moabi Projects
-    description: Moabi is a collaborative mapping platform to monitor landuse planning in the Democratic Republic of the Congo.  Introductory text to the Moabi project, not to be more than a few lines long.  A full consideration of the project should be included in the in about page.  This should be limited to four or five sentences, so as to not lose an audience with a short attention span.
 ---
 
-<ul class="thumb-menu">
-    {% for project in site.categories.project %}
-        {% if project.language == page.language %}
-            <li class="clearfix"><a href="{{site.baseurl}}{{project.url}}">
-
-                    {% if project.thumb.img %}
-                        <img src="{{site.baseurl}}/img/{{project.thumb.img}}" alt="">
-                    {% elsif project.thumb.map_id %}
-                        {% if project.thumb.lat and project.thumb.lon and project.thumb.zoom %}
-                            <div class="thumbnail" style='background-image:url("http://api.tiles.mapbox.com/v3/{{project.thumb.map_id}}/{{project.thumb.lon}},{{project.thumb.lat}},{{project.thumb.zoom}}/200x140.png");'></div>
-                        {% else %}
-                            <div class="thumbnail" style='background-image:url("http://api.tiles.mapbox.com/v3/{{project.thumb.map_id}}/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/200x140.png");'><div class="shadow"></div></div>
-                        {% endif %}
+<section class="fill-light">
+    <div class="limiter">
+        {% for project in site.categories.project_en %}
+            <div class="clearfix pad2y">
+                <div class="col3 row3 pad2 contain">
+                {% if project.thumb.img %}
+                    <a href="{{site.baseurl}}{{project.url}}"><img src="{{site.baseurl}}/img/{{project.thumb.img}}" alt="{{project.url}}">
+                {% elsif project.thumb.map_id %}
+                    {% if project.thumb.lat and project.thumb.lon and project.thumb.zoom %}
+                        <div class="row3" style='background-image:url("http://api.tiles.mapbox.com/v3/{{project.thumb.map_id}}/{{project.thumb.lon}},{{project.thumb.lat}},{{project.thumb.zoom}}/200x140.png");'></div>
                     {% else %}
-                        <!-- <img src="{{site.baseurl}}/img/logo.png" alt=""> -->
-                        <div class="thumbnail" style='background-image:url("http://api.tiles.mapbox.com/v3/helsinki.moabi_base/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/200x140.png");'></div>
+                        <div class="row3" style='background-image:url("http://api.tiles.mapbox.com/v3/{{project.thumb.map_id}}/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/200x140.png");'><div class="shadow"></div></div>
                     {% endif %}
-
-                    <div class="description">
-                        <h2>{{project.title}}</h2>
-                        {% for main_panel in project.main_panels %}
-                            {% if main_panel.id == 'about' %}
-                                <p class="small">{{main_panel.description | truncate: 340 }}</p>
-                            {% endif %}
-                        {% endfor %}
-                    </div>
-
-            </a></li>
-        {% endif %}
-    {% endfor %}
-</ul>
+                {% else %}
+                    <!-- <img src="{{site.baseurl}}/img/logo.png" alt=""> -->
+                    <div class="row3" style='background-image:url("http://api.tiles.mapbox.com/v3/helsinki.moabi_base/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/200x140.png");'></div>
+                {% endif %}
+                </div>
+                <div class="col9">
+                    <h2>{{project.title}}</h2>
+                    {% for main_panel in project.main_panels %}
+                        {% if main_panel.id == 'about' %}
+                            <p class="">{{main_panel.description | truncate: 340 }}</p>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
