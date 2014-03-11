@@ -2,35 +2,24 @@
 layout: main
 title: Blog
 id: blog
-basemap:
-    center:
-        lat: -2.877
-        lon: 22.830
-        zoom: 5
-    layers:
-      - id: 'moabi_base'
-        z: -1
-gradient: true
 language: en
-
-body: true
 ---
 
-{% for post in site.categories.blog_post %}
-    {% if post.language == page.language %}
-        <div class="clearfix">
+{% for post in site.categories.blog_post %} {% if post.language == page.language %}
+    <section class="clearfix">
+        <div class="limiter">
             <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
-            <div class="col10 margin1 margin1r center pad1 keyline-bottom">{{post.date | date: "%d %B, %Y"}}</div class="center">
+            <div class="pad1 center keyline-bottom quiet">{{post.date | date: "%d %B, %Y"}}</div>
             {% if post.img %}
-                <div class="col8 margin2 margin2r pad1y">
+            <div class="clearfix">
+                <div class="col10 margin1 margin1r pad1y">
                     <img src="{{site.baseurl}}/img/{{post.img}}" alt="Blog Image">
                 </div>
-            {% endif %}
-            <div class="col10 margin1 margin1r pad2y keyline-top">{{post.excerpt}}</div>
-            <div class="margin1">
-                <a href="{{post.url}}">Read More</a>
             </div>
+            {% endif %}
+            <div class="pad2y keyline-top">{{post.excerpt}}</div>
+            <a href="{{post.url}}">Read More</a>
         </div>
-    {% endif %}
-{% endfor %}
+    </section>
+{% endif %}{% endfor %}
 

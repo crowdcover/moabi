@@ -1,7 +1,3 @@
-body {
-  background-color: rgb(255, 252, 248);
-}
-
 #map {
   position:absolute;
   top:0;
@@ -11,14 +7,18 @@ body {
   background-color: #333;
 }
 
-/*.gradient {
+.gradient {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
   background: url(../img/gradient_a70.png);
   z-index: -1;
-}*/
+}
+
+body {
+  background-color: rgb(255, 252, 248);
+}
 
 .gradient {
   position: absolute;
@@ -28,6 +28,35 @@ body {
   background: transparent url(../img/gradient_a70.png) repeat-x 0 0;
   opacity: 0.8;
   z-index: 1;
+}
+
+h1 a,
+h2 a,
+h3 a {
+  color: #404040;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover {
+  color: #888;
+}
+
+.dark {
+    color: #FFFCF8;
+}
+
+.fill-black {
+  background-color: #000;
+}
+
+.fill-dark {
+    background-color: #222;
+}
+
+.fill-light {
+  background-color: rgb(255, 252, 248);
+  background-color: rgba(255, 252, 248, 0.9);
 }
 
 header {
@@ -47,22 +76,9 @@ header {
     color: #F8AA04;
   }
 
-section {
-    padding: 40px 0;
-}
-
-.content {
-  box-shadow: rgba(0,0,0,0.25) 0 6px 10px 4px;
-}
-
-/*.intro {
-  font: 16px/24px 'Open Sans';
-  text-align: justify;
-}*/
-
 footer {
     text-align: center;
-    padding: 40px 0;
+    padding: 20px 0;
 }
 
 footer a {
@@ -74,28 +90,30 @@ footer a:hover {
     border: 1px solid #DDD;
 }
 
-
-.dark {
-    color: #FFFCF8;
+section {
+    padding: 40px 0;
 }
 
-.fill-black {
-  background-color: #000;
-}
-
-.fill-dark {
-    background-color: #222;
-}
-
-.fill-light {
-  background-color: rgb(255, 252, 248);
-  background-color: rgba(255, 252, 248, 0.9);
+.content {
+  box-shadow: rgba(0,0,0,0.25) 0 6px 10px 4px;
 }
 
 .slide {
   text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
+ol.list-style,
+ul.list-style {
+  list-style: square inside none;
+  padding: 0 0 20px 20px;
+}
+  ol.list-style,
+  ul.list-style {
+    line-height: 2em;
+  }
+  p.list-style {
+    margin-bottom: 6px;
+  }
 
 
 
