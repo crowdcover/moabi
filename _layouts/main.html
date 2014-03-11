@@ -29,46 +29,51 @@
         <span class="icon big uniE687"></span>
     </a>
 
+    {% if page.slideshow.introslide %}
     <div class="slide active" style="background-image: url('/img/wb_temp.jpg');" data-index="0">
-        <div class="col12 pad2y clearfix dark limiter contain">
-            <div class="col3 pad1y">
-                <h1 class="">{{page.slideshow.title}}</h1>
+        <div class="col12 pad4 clearfix dark limiter pin-bottom">
+            <div class="col3">
+                <h1 class="">{{page.slideshow.introslide.title}}</h1>
             </div>
-            <div class="col9 pad1y intro">{{page.slideshow.description}}</div>
+            <div class="col9">
+                <p>{{page.slideshow.introslide.description}}</p>
+                <p><em>Use the slide arrows to the left and right to explore Projects</em></p>
+            </div>
         </div>
     </div>
+    {% endif %}
 
     {% for project in site.categories.project_en %}
-        <div class="slide" style="background-image: url('{{project.img}}');" data-index="{{forloop.index}}">
-            <div class="col12 pad2y clearfix dark pin-bottom limiter">
-                <div class="col3 pad1y">
+        <div class="slide" style="background-image: url('{{project.img}}');" data-index="{% if page.slideshow.introslide %} {{forloop.index0}} {% else %} {{forloop.index}} {% endif %}">
+            <div class="col12 pad4y clearfix dark limiter pin-bottom">
+                <div class="col3">
                     <h1 class="">{{project.title}}</h1>
                 </div>
-                <div class="col9 pad1y intro">{{project.title}}</div>
+                <div class="col9">{{project.title}}</div>
             </div>
         </div>
     {% endfor %}
 </div>
 
-<section></section>
 {% endif %}
 
-<section class="fill-dark clearfix">
-    <div class="limiter center dark">
+<section class="fill-light clearfix">
+    <div class="limiter center">
         <div class="col4 pad2x pad2y">
             <h2 class="keyline-bottom">Explore the Data</h2>
             <div class="pad2 quiet">Interact with the project database's extensive data on land use in the DRC via the interactive map below.  Export a map as a print copy, an embeddable url, or <a href="#">download</a> the raw geographic data.</div>
         </div>
         <div class="col4 pad2x pad2y">
             <h2 class="keyline-bottom">View the Projects</h2>
-            <div class="pad2 quiet">Each user-generated data hub presents specific data and analysis on a single topic.  <a href="#">Browse projects</a> to gain an in-depth understanding of the data, or build your own project hub using uploaded data.</div>
+            <div class="pad2 quiet">Each user-generated data hub presents specific data and analysis on a single topic.  <a href="#">Browse</a> projects to gain an in-depth understanding of the data, or <a href="#">build</a> your own project hub using uploaded data.</div>
         </div>
         <div class="col4 pad2x pad2y">
             <h2 class="keyline-bottom">Open for Collaboration</h2>
-            <div class="pad2 quiet">Moabi is built on a clone of the OpenStreetMap project, an open, user-generated map of the world containing geographic data on buildings and navigation.  Moabi extends OSM's collaborative model to tackle difficult developmental problems relating to land use planning and natural resource management.  Learn more about the <a href="#">Moabi</a>, or <a href="#">download and collaborate on</a> the data.</div>
+            <div class="pad2 quiet">Moabi is built on a clone of the OpenStreetMap project, an open, user-generated map of the world containing geographic data on buildings and navigation.  Moabi extends OSM's collaborative model to tackle difficult developmental problems relating to land use planning and natural resource management.  Learn <a href="#">more</a> about Moabi, or <a href="#">download and collaborate</a> on the data.</div>
         </div>
     </div>
 </section>
+
 {% if page.basemap %}
 <section class="row16 contain">
     <div id="map"></div>
