@@ -68,6 +68,9 @@ footer a:hover {
 }
 
 
+.dark {
+    color: #FFFCF8;
+}
 
 a {
   color: #758B54;
@@ -79,6 +82,10 @@ a:hover {
 
 .fill-black {
   background-color: #000;
+}
+
+.fill-dark {
+    background-color: #292929;
 }
 
 .fill-light {

@@ -9,7 +9,7 @@
 
 <body>
 
-<header class="fill-black">
+<header class="fill-dark">
     <div class="limiter clearfix">
         <h1 class="nav col1 pad1y center"><a href="{{site.baseurl}}">Moabi</a></h1>
         <a class="nav pad2 fr" href="http://osm.moabi.org/">Data</a>
@@ -20,8 +20,7 @@
 </header>
 
 {% if page.slideshow %}
-<div class="slideshow">
-<div class="fill-light">
+<div class="slideshow fill-light">
     <div class="gradient"></div>
     <a href="#" class="slide-control" data-slide="left">
         <span class="icon big arrow-left"></span>
@@ -51,19 +50,27 @@
     {% endfor %}
 </div>
 
-<div>
-    <div class="col12 pad2y clearfix limiter">
-        <div class="col3 pad1y">
-            <h1>Data Hubs</h1>
-        </div>
-        <div class="col9 pad1y">Browse data hubs, or go to the <a href="#">Projects Page</a> to read more about each.</div>
-    </div>
-</div>
-</div>
+<section></section>
 {% endif %}
 
+<section class="fill-dark clearfix">
+    <div class="limiter center dark">
+        <div class="col4 pad2x pad2y">
+            <h2 class="keyline-bottom">Explore the Data</h2>
+            <div class="pad2 quiet">Interact with the project database's extensive data on land use in the DRC via the interactive map below.  Export a map as a print copy, an embeddable url, or <a href="#">download</a> the raw geographic data.</div>
+        </div>
+        <div class="col4 pad2x pad2y">
+            <h2 class="keyline-bottom">View the Projects</h2>
+            <div class="pad2 quiet">Each user-generated data hub presents specific data and analysis on a single topic.  <a href="#">Browse projects</a> to gain an in-depth understanding of the data, or build your own project hub using uploaded data.</div>
+        </div>
+        <div class="col4 pad2x pad2y">
+            <h2 class="keyline-bottom">Open for Collaboration</h2>
+            <div class="pad2 quiet">Moabi is built on a clone of the OpenStreetMap project, an open, user-generated map of the world containing geographic data on buildings and navigation.  Moabi extends OSM's collaborative model to tackle difficult developmental problems relating to land use planning and natural resource management.  Learn more about the <a href="#">Moabi</a>, or <a href="#">download and collaborate on</a> the data.</div>
+        </div>
+    </div>
+</section>
 {% if page.basemap %}
-<section class="row12 contain">
+<section class="row16 contain">
     <div id="map"></div>
 </section>
 {% endif %}
