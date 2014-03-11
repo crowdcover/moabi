@@ -1,13 +1,4 @@
 ---
-basemap:
-    center:
-        lat: -2.877
-        lon: 22.830
-        zoom: 5
-    layers:
-      - id: 'moabi_base'
-        z: -1
-gradient: true
 ---
 <!doctype html>
 <html>
@@ -17,46 +8,43 @@ gradient: true
 
 <body>
 
-<div id="map"></div>
-{% if page.gradient %}<div class="gradient"></div>{% endif %}
-
-<header class="header">
-    {% include language_toggle.html %}
+<header class="fill-dark">
+    <div class="limiter clearfix">
+        <h1 class="nav col1 pad1y center"><a href="{{site.baseurl}}/">Moabi</a></h1>
+        <a class="nav pad2 fr" href="http://osm.moabi.org/">Data</a>
+        <a class="nav pad2 fr" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
+        <a class="nav pad2 fr" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
+        <a class="nav pad2 fr" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
+    </div>
 </header>
 
-<div class="contentbar limiter">
-    <div class="contentbar-header">
-        <h1 class="landing-title center"><a href="{{site.baseurl}}/">Moabi</a></h1>
-    </div>
-
-    <ul class="boxmenu width-5 clearfix">
-        <li><a href="{{site.baseurl}}/about/{{page.language}}" data-id="about" {% if page.id == "about" %}class="active"{% endif %} >About</a></li>
-        <li><a href="{{site.baseurl}}/projects/{{page.language}}" data-id="projects" {% if page.id == "projects" %}class="active"{% endif %} >Projects</a></li>
-        <li><a href="{{site.baseurl}}/blog/{{page.language}}" data-id="blog" {% if page.id == "blog" %}class="active"{% endif %} >Blog</a></li>
-        <li><a href="{{site.baseurl}}/register/{{page.language}}" data-id="register" {% if page.id == "register" %}class="active"{% endif %} >Register</a></li>
-        <li><a href="{{site.baseurl}}/data/{{page.language}}" data-id="edit" {% if page.id == "data" %}class="active"{% endif %} >Add/Edit Data</a></li>
-    </ul>
-
-    <div class="contentbar-fill">
-        <div class="main-panel active">
-            <div class="blog-post">
-                <h1 class="title center">{{page.title}}</h1>
-                <div class="date center">{{page.date | date: "%d %B, %Y"}}</div>
-                {% if page.img %}
-                    <div class='image-border center'>
-                        <div class='image'>
-                            <img src="{{site.baseurl}}/img/{{page.img}}" alt="Blog Image">
-                        </div>
-                    </div>
-                {% endif %}
-                {{content}}
-            </div>
-        </div>
-    </div>
-
+<div class="position">
+    <a href="#" class="slide-control" data-slide="left">
+        <span class="icon big arrow-left"></span>
+    </a>
+    <a href="#" class="slide-control" data-slide="right">
+        <span class="icon big uniE687"></span>
+    </a>
 </div>
 
-    {% if page.basemap %}{% include parse_layers.html %}{% endif %}
-    <script src='{{site.baseurl}}/site.js'></script>
+<section class="clearfix">
+    <div class="limiter">
+        <h1 class="center"><a href="{{page.url}}">{{page.title}}</a></h1>
+        <div class="pad1 center keyline-bottom quiet">{{page.date | date: "%d %B, %Y"}}</div>
+        {% if page.img %}
+        <div class="clearfix">
+            <div class="col10 margin1 margin1r pad1y">
+                <img src="{{site.baseurl}}/img/{{page.img}}" alt="Blog Image">
+            </div>
+        </div>
+        {% endif %}
+        <div class="pad2y keyline-top">
+            {{content}}
+        </div>
+    </div>
+</section>
+
+{% if page.basemap %}{% include parse_layers.html %}{% endif %}
+<script src='{{site.baseurl}}/site.js'></script>
 </body>
 </html>

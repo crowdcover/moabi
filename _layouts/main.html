@@ -1,6 +1,5 @@
 ---
 ---
-
 <!doctype html>
 <html>
 <head>
@@ -13,9 +12,9 @@
     <div class="limiter clearfix">
         <h1 class="nav col1 pad1y center"><a href="{{site.baseurl}}/">Moabi</a></h1>
         <a class="nav pad2 fr" href="http://osm.moabi.org/">Data</a>
-        <a class="nav pad2 fr" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
-        <a class="nav pad2 fr" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
-        <a class="nav pad2 fr" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
+        <a class="nav pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
+        <a class="nav pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
+        <a class="nav pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
     </div>
 </header>
 

@@ -72,8 +72,12 @@ header {
     color: #758B54;
   }
   header a:hover,
+  header a.active,
   strong {
     color: #F8AA04;
+  }
+  header a:active {
+    color: #758B54;
   }
 
 footer {
