@@ -8,9 +8,16 @@ var moabi = {
     init: function() {
 
         if (window.mapLayers){
-            var map = L.mapbox.map('map', undefined, {
-                shareControl: true
-            });
+            if (mapLayers.baseLayer.noScrollZoom){
+                var map = L.mapbox.map('map', undefined, {
+                    shareControl: true,
+                    scrollWheelZoom: false
+                });
+            } else {
+                var map = L.mapbox.map('map', undefined, {
+                    shareControl: true
+                });
+            }
 
             map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
             map.zoomControl.setPosition('topright');

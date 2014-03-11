@@ -2,16 +2,17 @@
 
 var mapLayers = {
     baseLayer: {
-        latlon: [{{page.basemap.center.lat}}, {{page.basemap.center.lon}}],
-        zoom: {{page.basemap.center.zoom}},
         id: [
             {% for layer in page.basemap.layers %}
                 ['{{ layer.id }}',{{layer.z}}]{% unless forloop.last %},{% endunless %}
             {% endfor %}
-            ]
+            ],
+        latlon: [{{page.basemap.center.lat}}, {{page.basemap.center.lon}}],
+        zoom: {{page.basemap.center.zoom}}{% if page.basemap.noScrollZoom %},
+        noScrollZoom: true {% endif %}
     },
     dataLayers: {},
-    currentLanguage: '{{page.language}}'
+    currentLanguage: '{{page.language}}',
 }
 
 

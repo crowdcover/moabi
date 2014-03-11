@@ -19,7 +19,10 @@
     </div>
 </header>
 
-<div class="fill-light slideshow">
+{% if page.slideshow %}
+<div class="slideshow">
+<div class="fill-light">
+    <div class="gradient"></div>
     <a href="#" class="slide-control" data-slide="left">
         <span class="icon big arrow-left"></span>
     </a>
@@ -27,31 +30,52 @@
         <span class="icon big uniE687"></span>
     </a>
 
-    {% if page.slideshow %}
-        <div class="slide active" style="background-image: url('/img/wb_temp.jpg');" data-index="0">
+    <div class="slide active" style="background-image: url('/img/wb_temp.jpg');" data-index="0">
+        <div class="col12 pad2y clearfix dark limiter contain">
+            <div class="col3 pad1y">
+                <h1 class="">{{page.slideshow.title}}</h1>
+            </div>
+            <div class="col9 pad1y intro">{{page.slideshow.description}}</div>
+        </div>
+    </div>
+
+    {% for project in site.categories.project_en %}
+        <div class="slide" style="background-image: url('{{project.img}}');" data-index="{{forloop.index}}">
             <div class="col12 pad2y clearfix dark pin-bottom limiter">
                 <div class="col3 pad1y">
-                    <h1 class="">{{page.slideshow.title}}</h1>
+                    <h1 class="">{{project.title}}</h1>
                 </div>
-                <div class="col9 pad1y intro">{{page.slideshow.description}}</div>
+                <div class="col9 pad1y intro">{{project.title}}</div>
             </div>
         </div>
-        {% for project in site.categories.project_en %}
-            <div class="slide" style="background-image: url('{{project.img}}');" data-index="{{forloop.index}}">
-                <div class="col12 pad2y clearfix dark pin-bottom limiter">
-                    <div class="col3 pad1y">
-                        <h1 class="">{{project.title}}</h1>
-                    </div>
-                    <div class="col9 pad1y intro">{{project.title}}</div>
-                </div>
-            </div>
-        {% endfor %}
-    {% endif %}
-
-    {{content}}
-
+    {% endfor %}
 </div>
 
+<div>
+    <div class="col12 pad2y clearfix limiter">
+        <div class="col3 pad1y">
+            <h1>Data Hubs</h1>
+        </div>
+        <div class="col9 pad1y">Browse data hubs, or go to the <a href="#">Projects Page</a> to read more about each.</div>
+    </div>
+</div>
+</div>
+{% endif %}
+
+{% if page.basemap %}
+<section class="row12 contain">
+    <div id="map"></div>
+</section>
+{% endif %}
+
+<footer class="limiter">
+    <h1 class="center pad1">PARTNERS</h1>
+    <a href=""><img class="pad2" src="{{site.baseurl}}/img/OGF_logo_80.png" alt="OGF"></a>
+    <a href=""><img class="pad2" src="{{site.baseurl}}/img/OSFAC_logo_80.png" alt="OSFAC"></a>
+    <a href=""><img class="pad2" src="{{site.baseurl}}/img/IIASA_logo_80.png" alt="IIASA"></a>
+</footer>
+
+{{content}}
 
 {% if page.basemap %}{% include parse_layers.html %}{% endif %}
 <script src='{{site.baseurl}}/map.js'></script>

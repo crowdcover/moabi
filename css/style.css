@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(255, 252, 248);;
+  background-color: rgb(255, 252, 248);
 }
 
 #map {
@@ -11,13 +11,23 @@ body {
   background-color: #333;
 }
 
-.gradient {
+/*.gradient {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
   background: url(../img/gradient_a70.png);
   z-index: -1;
+}*/
+
+.gradient {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background: transparent url(../img/gradient_a70.png) repeat-x 0 0;
+  opacity: 0.8;
+  z-index: 1;
 }
 
 header {
@@ -43,6 +53,19 @@ section {
   text-align: justify;
 }
 
+footer {
+    text-align: center;
+    padding: 40px 0;
+}
+
+footer a {
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+footer a:hover {
+    border: 1px solid #DDD;
+}
 
 
 
@@ -599,7 +622,7 @@ a:hover {
 .slideshow {
     position: relative;
     width: 100%;
-    height: 320px;
+    height: 340px;
 }
 
 .slide-control {
@@ -647,6 +670,9 @@ a:hover {
 }
     .slide.active {
         opacity: 1;
+    }
+    .slide div {
+        z-index: 1;
     }
 
 /*********************** UI Controls ***********************/
