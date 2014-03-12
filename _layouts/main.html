@@ -43,7 +43,7 @@
     {% endif %}
 
     {% for project in site.categories.project_en %}
-        <div class="slide" style="background-image: url('{{project.img}}');" data-index="{% if page.slideshow.introslide %} {{forloop.index0}} {% else %} {{forloop.index}} {% endif %}">
+        <div class="slide" style="background-image: url('{{project.img}}');" data-index="{% if page.slideshow.introslide %}{{forloop.index}}{% else %}{{forloop.index0}}{% endif %}">
             <div class="col12 pad4y clearfix dark limiter pin-bottom">
                 <div class="col3">
                     <h1 class="">{{project.title}}</h1>
