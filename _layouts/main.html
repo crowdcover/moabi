@@ -19,7 +19,7 @@
 </header>
 
 {% if page.slideshow %}
-<div class="slideshow fill-light">
+<div class="slideshow fill-light row10">
     <div class="gradient"></div>
     <a href="#" class="slide-control" data-slide="left">
         <span class="icon big arrow-left"></span>
@@ -30,7 +30,7 @@
 
     {% if page.slideshow.introslide %}
     <div class="slide active" style="background-image: url('/img/wb_temp.jpg');" data-index="0">
-        <div class="col12 pad4 clearfix dark limiter pin-bottom">
+        <div class="col12 pad4y clearfix dark limiter pin-bottom">
             <div class="col3">
                 <h1 class="">{{page.slideshow.introslide.title}}</h1>
             </div>
@@ -59,14 +59,27 @@
 {{content}}
 
 {% if page.basemap %}
-<section class="row16 contain">
-    <div id="map"></div>
-</section>
+<div class="clearfix">
+    <div class="layer-ui col4 row16 pad1 fill-dark dark activate">
+        <ul class="displayed row6 keyline-all scroll-styled">
+        </ul>
+        <ul class="available row10 keyline-all scroll-styled">
+            {% for layer in page.basemap.data_layers %}
+                <li class="pad1x pad0y layer-toggle">
+                    <a class="pad0 keyline-left keyline-bottom" href="#">{{layer.name}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col8 row16 contain">
+        <div id="map"></div>
+    </div>
+</div>
 {% endif %}
 
 <footer class="fill-gray">
     <div class="limiter">
-        <h1 class="center pad1">PARTNERS</h1>
+        <h2 class="center pad1 quiet">PARTNERS</h2>
         <a href=""><img class="pad2" src="{{site.baseurl}}/img/OGF_logo_80.png" alt="OGF"></a>
         <a href=""><img class="pad2" src="{{site.baseurl}}/img/OSFAC_logo_80.png" alt="OSFAC"></a>
         <a href=""><img class="pad2" src="{{site.baseurl}}/img/IIASA_logo_80.png" alt="IIASA"></a>

@@ -10,23 +10,30 @@ var moabi = {
         if (window.mapLayers){
             if (mapLayers.baseLayer.noScrollZoom){
                 var map = L.mapbox.map('map', undefined, {
-                    shareControl: true,
                     scrollWheelZoom: false
                 });
+
+            map.zoomControl.setPosition('topright');
+            map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
+
+            //build base layer
+                for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
+                    L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
+                }
             } else {
                 var map = L.mapbox.map('map', undefined, {
                     shareControl: true
                 });
-            }
 
-            map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
-            map.zoomControl.setPosition('topright');
-            map.shareControl.setPosition('topright');
-            map.legendControl.addLegend('<h3>Data Layers</h3>');
+                map.shareControl.setPosition('topright');
+                map.legendControl.addLegend('<h3>Data Layers</h3>');
+                map.zoomControl.setPosition('topright');
+                map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
 
-            //build base layer
-            for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
-                L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
+                //build base layer
+                for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
+                    L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
+                }
             }
         }
 
@@ -40,7 +47,21 @@ var moabi = {
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
+        // $('.layer-ui').on('click', 'a', this.uiSwitch)
     },
+
+    // uiSwitch: function(e) {
+    //     e.preventDefault();
+    //     e.stopPropagation();
+
+    //     var $this = $(this),
+    //         displayedList = $('.layer-ui .displayed'),
+    //         availableList = $('.layer-ui .available');
+
+    //     if $this.hasClass('active') {
+    //         availableList.append()
+    //     }
+    // }
 
     legendToggleLayer: function(e) {
         var mapId = $(this).data('id');
