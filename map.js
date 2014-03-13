@@ -2,66 +2,92 @@
 ---
 {% include js/jquery-1.10.2.min.js %}
 
+var map = L.mapbox.map('map', undefined, {
+    scrollWheelZoom: false
+});
+
+map.zoomControl.setPosition('topright');
+map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
+
+//build base layer
+for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
+    L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
+}
+
 (function(context) {
 var moabi = {
 
     init: function() {
-
-        if (window.mapLayers){
-            if (mapLayers.baseLayer.noScrollZoom){
-                var map = L.mapbox.map('map', undefined, {
-                    scrollWheelZoom: false
-                });
-
-            map.zoomControl.setPosition('topright');
-            map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
-
-            //build base layer
-                for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
-                    L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
-                }
-            } else {
-                var map = L.mapbox.map('map', undefined, {
-                    shareControl: true
-                });
-
-                map.shareControl.setPosition('topright');
-                map.legendControl.addLegend('<h3>Data Layers</h3>');
-                map.zoomControl.setPosition('topright');
-                map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
-
-                //build base layer
-                for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
-                    L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
-                }
-            }
-        }
 
         $(document).ready(this.contentBarResize);
         $(window).resize(this.contentBarResize);
 
         $('.boxmenu').on('click', 'a', this.showMajorPanel);
         $('.minor-panel-viewer').on('click', 'a', this.showMinorPanel);
-        $('.navigate').on('click', 'a', this.navigate);
+        $('.layer-ui').on('click', 'a', this.uiSwitch);
         $('.toggle-layer').on('click', 'a', this.toggleLayer);
+        $('.navigate').on('click', 'a', this.navigate);
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
-        // $('.layer-ui').on('click', 'a', this.uiSwitch)
     },
 
-    // uiSwitch: function(e) {
-    //     e.preventDefault();
-    //     e.stopPropagation();
+    toggleLayer: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-    //     var $this = $(this),
-    //         displayedList = $('.layer-ui .displayed'),
-    //         availableList = $('.layer-ui .available');
+        var $this = $(this),
+            mapId = $this.data('id');
 
-    //     if $this.hasClass('active') {
-    //         availableList.append()
-    //     }
-    // }
+        if (! mapLayers.dataLayers[mapId]){
+            mapLayers.dataLayers[mapId] = [
+                L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
+                $('.moabi-legend[data-id="' + mapId + '"]')
+            ];
+        }
+
+        var layer = mapLayers.dataLayers[mapId][0],
+            layerLegend = mapLayers.dataLayers[mapId][1],
+            $mapLegend = $('.map-legend');
+
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            $this.removeClass('active');
+
+            layerLegend.removeClass('active icon');
+            if ($mapLegend.children('.moabi-legend.active').length === 0) {
+                $mapLegend.removeClass('active');
+            }
+            moabi.legendResize();
+
+        } else {
+            map.addLayer(layer);
+            $this.addClass('active');
+
+            if (! $mapLegend.hasClass('active')) {
+                $mapLegend.addClass('active');
+            }
+            layerLegend.addClass('active icon');
+            moabi.legendResize();
+        }
+    },
+
+    uiSwitch: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $this = $(this),
+            index = $this.data('index'),
+            displayedList = $('.layer-ui .displayed'),
+            availableList = $('.layer-ui .available');
+
+        if ($this.hasClass('active')) {
+            availableList.prepend($this.parent());
+
+        } else {
+            displayedList.prepend($this.parent());
+        }
+    },
 
     legendToggleLayer: function(e) {
         var mapId = $(this).data('id');
@@ -121,46 +147,6 @@ var moabi = {
 
         $this.parent('li').siblings('li').children('a.active').removeClass('active');
         $this.addClass('active');
-    },
-
-    toggleLayer: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        var $this = $(this),
-            mapId = $this.data('id');
-
-        if (! mapLayers.dataLayers[mapId]){
-            mapLayers.dataLayers[mapId] = [
-                L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
-                $('.moabi-legend[data-id="' + mapId + '"]')
-            ];
-        }
-
-        var layer = mapLayers.dataLayers[mapId][0],
-            layerLegend = mapLayers.dataLayers[mapId][1],
-            $mapLegend = $('.map-legend');
-
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            $this.removeClass('active');
-
-            layerLegend.removeClass('active icon');
-            if ($mapLegend.children('.moabi-legend.active').length === 0) {
-                $mapLegend.removeClass('active');
-            }
-            moabi.legendResize();
-
-        } else {
-            map.addLayer(layer);
-            $this.addClass('active');
-
-            if (! $mapLegend.hasClass('active')) {
-                $mapLegend.addClass('active');
-            }
-            layerLegend.addClass('active icon');
-            moabi.legendResize();
-        }
     },
 
     toggleLanguage: function(e) {

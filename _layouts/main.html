@@ -56,17 +56,15 @@
 
 {% endif %}
 
-{{content}}
-
 {% if page.basemap %}
 <div class="clearfix">
-    <div class="layer-ui col4 row16 pad1 fill-dark dark activate">
+    <div class="layer-ui toggle-layer col4 row16 pad1 fill-dark dark activate">
         <ul class="displayed row6 keyline-all scroll-styled">
         </ul>
         <ul class="available row10 keyline-all scroll-styled">
             {% for layer in page.basemap.data_layers %}
-                <li class="pad1x pad0y layer-toggle">
-                    <a class="pad0 keyline-left keyline-bottom" href="#">{{layer.name}}</a>
+                <li class="pad1x pad0y" data-index="{{forloop.index}}">
+                    <a class="pad0 keyline-left keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
                 </li>
             {% endfor %}
         </ul>
@@ -76,6 +74,8 @@
     </div>
 </div>
 {% endif %}
+
+{{content}}
 
 <footer class="fill-gray">
     <div class="limiter">
