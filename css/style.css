@@ -1005,6 +1005,9 @@ footer a:hover {
     font: 30px 'Icon-Set';
 }
 
+/* make my base.css icons play nice with mine */
+.col1.big.icon:empty { float:left; width:08.3333%; }
+
 /*.rcon:after,
 .icon:before {
     font: 22px/0.4 'EntypoRegular';
@@ -1164,7 +1167,7 @@ footer a:hover {
 .icon.arrow-left:before { content: "\e684" }
 .icon.arrow-down:before { content: "\e685" }
 .icon.arrow-up:before { content: "\e686" }
-.icon.uniE687:before { content: "\e687" }
+.icon.arrow-right:before { content: "\e687" }
 .icon.cc:before { content: "\e688" }
 .icon.cc-nc:before { content: "\e689" }
 .icon.cc-pd:before { content: "\e68a" }
