@@ -24,7 +24,7 @@ var moabi = {
 
         $('.boxmenu').on('click', 'a', this.showMajorPanel);
         $('.minor-panel-viewer').on('click', 'a', this.showMinorPanel);
-        $('.layer-ui').on('click', 'a', this.uiSwitch);
+        $('.layer-ui').on('click', 'a', this.layerUi);
         $('.toggle-layer').on('click', 'a', this.toggleLayer);
         $('.navigate').on('click', 'a', this.navigate);
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
@@ -72,20 +72,57 @@ var moabi = {
         }
     },
 
-    uiSwitch: function(e) {
+    layerUi: function(e) {
         e.preventDefault();
         e.stopPropagation();
 
         var $this = $(this),
-            index = $this.data('index'),
-            displayedList = $('.layer-ui .displayed'),
-            availableList = $('.layer-ui .available');
+            $thisIndex = $this.parent().data('index'),
+            displayedList = $('.layer-ui .display'),
+            availableList = $('.layer-ui .nodisplay');
 
+            mapId = $this.data('id');
+
+        if (! mapLayers.dataLayers[mapId]){
+            mapLayers.dataLayers[mapId] = [
+                L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
+                $('.moabi-legend[data-id="' + mapId + '"]')
+            ];
+        }
+
+        var layer = mapLayers.dataLayers[mapId][0],
+            layerLegend = mapLayers.dataLayers[mapId][1],
+            $mapLegend = $('.map-legend');
+
+        // if button is active, remove layer from map and move button to availableList
         if ($this.hasClass('active')) {
-            availableList.prepend($this.parent());
+            $this.removeClass('active');
+            map.removeLayer(layer);
 
+            // find the largest index in availableList that is smaller than $thisIndex and append $thisIndex after it
+            var availableIndices = availableList.children('li').map(function(){
+                return $(this).data('index');
+            }).get().sort(function (a, b) { return a - b; });
+
+            // if $thisIndex is last
+            if ($thisIndex > availableIndices[availableIndices.length - 1]){
+                availableList.append($this.parent());
+            } else {
+                for (i = 0; i < availableIndices.length; i++){
+                    if (availableIndices[i] > $thisIndex){
+                        nextLargestIndex = availableIndices[i - 1];
+                        break;
+                    }
+                }
+
+                availableList.children('li').filter('[data-index="' + nextLargestIndex + '"]').after($this.parent());
+            }
+
+        // else if button is not active: add layer to map and move button to displayList
         } else {
+            $this.addClass('active');
             displayedList.prepend($this.parent());
+            map.addLayer(layer);
         }
     },
 

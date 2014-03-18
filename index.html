@@ -12,25 +12,45 @@ basemap:
     noScrollZoom: true
     data_layers:
       - id: moabi_community_mapping
-        name: community mapping
+        name: 1 ## community mapping
+        categories: [indigenous]
+
       - id: moabi_energy
-        name: energy
+        name: 2 ## energy
+        categories: [infrastructure]
+
       - id: moabi_forest_cover
-        name: Forest Cover
+        name: 3 ## Forest Cover
+        categories: [forestry, raster]
+
       - id: moabi_forest_lossyear
-        name: Forest Loss
+        name: 4 ## Forest Loss
+        categories: [forestry, raster]
+
       - id: moabi_indigenous
-        name: indigenous lands
+        name: 5 ## indigenous lands
+        categories: [indigenous]
+
       - id: moabi_logging
-        name: logging concessions
+        name: 6 ## logging concessions
+        categories: [forestry, concession]
+
       - id: moabi_mining
-        name: mining concessions
+        name: 7 ## mining concessions
+        categories: [concession]
+
       - id: moabi_oil
-        name: oil concessions
+        name: 8 ## oil concessions
+        categories: [concession]
+
       - id: moabi_palm
-        name: palm concessions
+        name: 9 ## palm concessions
+        categories: [concession, forestry]
+
       - id: moabi_transport
-        name: transportation projects
+        name: 10 ## transportation projects
+        categories: [infrastructure]
+
 gradient: true
 language: en
 
