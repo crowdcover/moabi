@@ -147,10 +147,25 @@ footer a:hover {
 .layer-ui {
 
 }
-
-.layer-ui a {
+  .layer-ui .display {
+    min-height: 120px;
+    max-height: 200px;
+    margin: 4px 0 16px;
+  }
+  .layer-ui .nodisplay {
+    min-height: 200px;
+    max-height: 300px;
+    margin: 4px 0 16px;
+  }
+  .layer-ui > span {
+    position: relative;
+    bottom: 8px;
+    display: inline-block;
+    width: 70px;
+  }
+  .layer-ui a {
     display: block;
-}
+  }
 /*.header, .contentbar-header {
     height: 60px;
     border-bottom: 1px solid #CCC;

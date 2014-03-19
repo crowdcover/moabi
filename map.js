@@ -79,7 +79,7 @@ var moabi = {
         var $this = $(this),
             $thisIndex = $this.parent().data('index'),
             displayedList = $('.layer-ui .display'),
-            availableList = $('.layer-ui .nodisplay');
+            nodisplayList = $('.layer-ui .nodisplay');
 
             mapId = $this.data('id');
 
@@ -94,28 +94,32 @@ var moabi = {
             layerLegend = mapLayers.dataLayers[mapId][1],
             $mapLegend = $('.map-legend');
 
-        // if button is active, remove layer from map and move button to availableList
+        // if button is active, remove layer from map and move button to nodisplayList
         if ($this.hasClass('active')) {
             $this.removeClass('active');
             map.removeLayer(layer);
 
-            // find the largest index in availableList that is smaller than $thisIndex and append $thisIndex after it
-            var availableIndices = availableList.children('li').map(function(){
+            // find all indices in nodisplayList
+            var nodisplayIndices = nodisplayList.children('li').map(function(){
                 return $(this).data('index');
             }).get().sort(function (a, b) { return a - b; });
 
-            // if $thisIndex is last
-            if ($thisIndex > availableIndices[availableIndices.length - 1]){
-                availableList.append($this.parent());
+            // if $thisIndex greater than the largest nodisplay index, append to end
+            if ($thisIndex > nodisplayIndices[nodisplayIndices.length - 1]){
+                nodisplayList.append($this.parent());
+            // if $thisIndex less than the smallest nodisplay Index, prepend to beginning
+            } else if ($thisIndex < nodisplayIndices[0]){
+                nodisplayList.prepend($this.parent());
+            // else, find next smallest
             } else {
-                for (i = 0; i < availableIndices.length; i++){
-                    if (availableIndices[i] > $thisIndex){
-                        nextLargestIndex = availableIndices[i - 1];
+                for (i = 0; i < nodisplayIndices.length; i++){
+                    if (nodisplayIndices[i] > $thisIndex){
+                        nextLargestIndex = nodisplayIndices[i - 1];
                         break;
                     }
                 }
 
-                availableList.children('li').filter('[data-index="' + nextLargestIndex + '"]').after($this.parent());
+                nodisplayList.children('li').filter('[data-index="' + nextLargestIndex + '"]').after($this.parent());
             }
 
         // else if button is not active: add layer to map and move button to displayList
@@ -124,6 +128,21 @@ var moabi = {
             displayedList.prepend($this.parent());
             map.addLayer(layer);
         }
+    },
+
+    filterLayers: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $this = $(this),
+            category = $this.data('category');
+
+        $this.siblings('ul.nodisplay').children('li').each(function(){
+            $this = $(this)
+            if ($this.data('categories').split(',').indexOf(category) == -1) {
+                $this.hide()
+            }
+        });
     },
 
     legendToggleLayer: function(e) {
