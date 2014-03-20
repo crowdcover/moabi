@@ -42,15 +42,17 @@ var moabi = {
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
             update: function( event, ui ){
-                ui['item'].siblings('li').each(function(index){
+                ui['item'].siblings('li').addBack().each(function(index) {
+                    // this is repetitive.  how to calculate w/o two queries?
+                    var numLayers = ui['item'].siblings('li').addBack().length,
+                        mapId = ui['item'].children('a').data('id'),
+                        layer = mapLayers.dataLayers[mapId][0];
 
-                    // console.log(index + " : " + $(this).children('a').text() );
+                    layer.setZIndex(numLayers - index);
+                    console.log(numLayers - index + " : " + $(this).children('a').text() );
+
                 });
-                // var mapId = ui['item'].children('a').data('id'),
-                //     layer = mapLayers.dataLayers[mapId][0];
-
-
-                // layer.setZIndex(ui['item'].nextAll().length);
+                console.log("----")
             }
         });
         $( ".sortable" ).disableSelection();
