@@ -1,6 +1,7 @@
 ---
 ---
 {% include js/jquery-1.10.2.min.js %}
+{% include js/jquery-ui-1.10.4.custom.min.js %}
 
 var map = L.mapbox.map('map', undefined, {
     scrollWheelZoom: false
@@ -13,6 +14,13 @@ map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
 for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
     L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
 }
+
+  $(function() {
+    $( ".sortable" ).sortable({
+      placeholder: "ui-state-highlight"
+    });
+    $( ".sortable" ).disableSelection();
+  });
 
 (function(context) {
 var moabi = {
@@ -30,6 +38,25 @@ var moabi = {
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
+
+        $('.sortable').sortable({
+            placeholder: "ui-state-highlight",
+            update: function( event, ui ){
+                var mapId = ui['item'].children('a').data('id'),
+                    layer = mapLayers.dataLayers[mapId][0];
+
+
+                layer.setZIndex(ui['item'].prevAll().length);
+                // layer.bringToFront();
+                console.log(ui['item'].nextAll().length);
+            }
+        });
+        $( ".sortable" ).disableSelection();
+    },
+
+    setLayerZ: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
     },
 
     toggleLayer: function(e) {

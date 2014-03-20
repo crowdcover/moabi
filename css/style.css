@@ -1,3 +1,11 @@
+/*
+palette
+
+dark: #222;
+light brown: rgb(255, 252, 248);
+orange: #F8AA04;
+*/
+
 #map {
   position:absolute;
   top:0;
@@ -153,11 +161,12 @@ footer a:hover {
     margin: 4px 0 16px;
   }
   .layer-ui .nodisplay {
-    min-height: 200px;
-    max-height: 300px;
+    /*min-height: 200px;*/
+    /*max-height: 300px;*/
+    height: 250px;
     margin: 4px 0 16px;
   }
-  .layer-ui > span {
+  .layer-ui > div > span {
     position: relative;
     bottom: 8px;
     display: inline-block;
@@ -166,6 +175,29 @@ footer a:hover {
   .layer-ui a {
     display: block;
   }
+  .layer-ui li:last-child a {
+    border-bottom: 0;
+  }
+  .layer-ui .ui-state-highlight {
+    height: 29px;
+    border: 1px dashed #F8AA04;
+    background-color: rgba(200,200,200,0.1);
+  }
+
+.rounded-toggle {
+  padding: 2px;
+  border-radius: 3px;
+  background: #555;
+}
+  .rounded-toggle input[type=radio]:checked + label {
+    background: #F8AA04;
+    box-shadow: inset 0px 2px 3px rgba(0,0,0,0.2);
+  }
+  .rounded-toggle input[type=radio] + label {
+    color: rgb(255, 252, 248);
+    border-radius: 3px;
+  }
+
 /*.header, .contentbar-header {
     height: 60px;
     border-bottom: 1px solid #CCC;
@@ -1020,7 +1052,7 @@ footer a:hover {
     font: 30px 'Icon-Set';
 }
 
-/* make my base.css icons play nice with mine */
+/* make base.css icons play nice with mine */
 .col1.big.icon:empty { float:left; width:08.3333%; }
 
 /*.rcon:after,
