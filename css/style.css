@@ -159,14 +159,16 @@ footer a:hover {
     min-height: 120px;
     max-height: 200px;
     margin: 4px 0 16px;
+    box-shadow: inset 0px 2px 3px rgba(255,255,255,0.1);
   }
   .layer-ui .nodisplay {
     /*min-height: 200px;*/
     /*max-height: 300px;*/
     height: 250px;
     margin: 4px 0 16px;
+    box-shadow: inset 0px 2px 3px rgba(255,255,255,0.1);
   }
-  .layer-ui > div > span {
+  .layer-ui .filter-name {
     position: relative;
     bottom: 8px;
     display: inline-block;
@@ -196,6 +198,7 @@ footer a:hover {
   .rounded-toggle input[type=radio] + label {
     color: rgb(255, 252, 248);
     border-radius: 3px;
+    line-height: 16px;
   }
 
 /*.header, .contentbar-header {
@@ -1231,10 +1234,10 @@ footer a:hover {
 .layer-toggle.icon.active:hover:before,
 .layer-toggle.rcon.active:hover:after {
     content: "\e656";
-    font-size: 14px;
-    cursor: pointer;
-    top: 3px;
-    right: -2px;
+    /*font-size: 14px;*/
+    /*cursor: pointer;*/
+    /*top: 3px;*/
+    /*right: -2px;*/
 }
 
 .moabi-legend.layer-toggle.icon:before {

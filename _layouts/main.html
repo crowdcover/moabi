@@ -48,7 +48,7 @@
                 <div class="col3">
                     <h1 class="">{{project.title}}</h1>
                 </div>
-                <div class="col9">{{project.title}}</div>
+                <div class="col9">{{project.description}}</div>
             </div>
         </div>
     {% endfor %}
@@ -73,36 +73,32 @@
 <div class="clearfix">
     <div class="layer-ui col4 row16 pad1 fill-dark dark activate">
 
-        <div class="col12">
-            <span class="quiet small pad1">Theme:</span>
-            <div class="rounded-toggle inline">
-                <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
-                <label for="allthemes">All</label>
-                <input id="concession" type="radio" name='theme' value="concession">
-                <label for="concession">Concessions</label>
-                <input id="rainforest" type="radio" name='theme' value="rainforest">
-                <label for="rainforest">Rainforest</label>
-                <input id="community" type="radio" name='theme' value="community">
-                <label for="community">Community</label>
-            </div>
+        <div class="filter-name text-right quiet pad0">Theme</div>
+        <div class="rounded-toggle inline">
+            <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
+            <label for="allthemes">All</label>
+            <input id="concession" type="radio" name='theme' value="concession">
+            <label for="concession">Concessions</label>
+            <input id="rainforest" type="radio" name='theme' value="rainforest">
+            <label for="rainforest">Rainforest</label>
+            <input id="community" type="radio" name='theme' value="community">
+            <label for="community">Community</label>
         </div>
 
-        <div class="col12">
-            <span class="quiet small pad1">Type:</span>
-            <div class="rounded-toggle inline">
-                <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
-                <label for="alltypes">All</label>
-                <input id="raster" type="radio" name='type' value="raster">
-                <label for="raster">Raster</label>
-                <input id="vector" type="radio" name='type' value="vector">
-                <label for="vector">Vector</label>
-            </div>
+        <div class="filter-name text-right quiet pad0">Type:</div>
+        <div class="rounded-toggle inline">
+            <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
+            <label for="alltypes">All</label>
+            <input id="raster" type="radio" name='type' value="raster">
+            <label for="raster">Raster</label>
+            <input id="vector" type="radio" name='type' value="vector">
+            <label for="vector">Vector</label>
         </div>
 
         <ul class="nodisplay sortable keyline-all scroll-styled">
             {% for layer in page.basemap.data_layers %}
                 <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                    <a class="pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                    <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
                 </li>
             {% endfor %}
         </ul>

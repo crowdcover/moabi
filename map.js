@@ -42,13 +42,15 @@ var moabi = {
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
             update: function( event, ui ){
-                var mapId = ui['item'].children('a').data('id'),
-                    layer = mapLayers.dataLayers[mapId][0];
+                ui['item'].siblings('li').each(function(index){
+
+                    // console.log(index + " : " + $(this).children('a').text() );
+                });
+                // var mapId = ui['item'].children('a').data('id'),
+                //     layer = mapLayers.dataLayers[mapId][0];
 
 
-                layer.setZIndex(ui['item'].prevAll().length);
-                // layer.bringToFront();
-                console.log(ui['item'].nextAll().length);
+                // layer.setZIndex(ui['item'].nextAll().length);
             }
         });
         $( ".sortable" ).disableSelection();
