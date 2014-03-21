@@ -72,7 +72,7 @@
 {% if page.basemap %}
 <div class="clearfix">
     <div class="layer-ui col4 row16 pad1 fill-dark dark activate">
-
+    <div class="col12">
         <div class="filter-name text-right quiet pad0">Theme</div>
         <div class="rounded-toggle inline">
             <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
@@ -84,7 +84,8 @@
             <input id="community" type="radio" name='theme' value="community">
             <label for="community">Community</label>
         </div>
-
+    </div>
+    <div class="col12">
         <div class="filter-name text-right quiet pad0">Type:</div>
         <div class="rounded-toggle inline">
             <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
@@ -94,6 +95,7 @@
             <input id="vector" type="radio" name='type' value="vector">
             <label for="vector">Vector</label>
         </div>
+    </div>
 
         <ul class="nodisplay sortable keyline-all scroll-styled">
             {% for layer in page.basemap.data_layers %}

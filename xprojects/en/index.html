@@ -6,11 +6,25 @@ language: en
 ---
 
 <section class="fill-light">
-    <div class="limiter">
+    <div class="limiter pad2y">
         {% for project in site.categories.project_en %}
-            <div class="clearfix pad2y">
-                <div class="col3 row3 pad2 contain">
-                {% if project.thumb.img %}
+            <div class="project-container col12 row6 space-bottom contain" style="background-image: url({{project.img}})">
+                <div class="gradient"></div>
+                <img class="grayscale row6 pin-right" src="http://tiles.osm.moabi.org/moabi_transport/5/18/16.png" alt="">
+                <div class="project-info col12 pad4 clearfix dark limiter pin-bottom">
+                    <div class="col3">
+                        <h1 class="">{{project.title}}</h1>
+                    </div>
+                    <div class="col9">
+                        <p>{{project.description}}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!--                 {% if project.thumb.img %}
                     <a href="{{site.baseurl}}{{project.url}}"><img src="{{site.baseurl}}/img/{{project.thumb.img}}" alt="{{project.url}}">
                 {% elsif project.thumb.map_id %}
                     {% if project.thumb.lat and project.thumb.lon and project.thumb.zoom %}
@@ -19,7 +33,6 @@ language: en
                         <div class="row3" style='background-image:url("http://api.tiles.mapbox.com/v3/{{project.thumb.map_id}}/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/200x140.png");'><div class="shadow"></div></div>
                     {% endif %}
                 {% else %}
-                    <!-- <img src="{{site.baseurl}}/img/logo.png" alt=""> -->
                     <div class="row3" style='background-image:url("http://api.tiles.mapbox.com/v3/helsinki.moabi_base/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/200x140.png");'></div>
                 {% endif %}
                 </div>
@@ -31,7 +44,4 @@ language: en
                         {% endif %}
                     {% endfor %}
                 </div>
-            </div>
-        {% endfor %}
-    </div>
-</section>
+            </div> -->
