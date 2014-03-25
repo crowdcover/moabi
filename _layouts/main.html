@@ -19,13 +19,13 @@
 </header>
 
 {% if page.slideshow %}
-<div class="slideshow fill-light row10">
+<div class="slideshow fill-light row10 text-shadow">
     <div class="gradient"></div>
     <a href="#" class="slide-control" data-slide="left">
         <span class="icon big arrow-left"></span>
     </a>
     <a href="#" class="slide-control" data-slide="right">
-        <span class="icon big uniE687"></span>
+        <span class="icon big arrow-right"></span>
     </a>
 
     {% if page.slideshow.introslide %}
@@ -44,34 +44,41 @@
 
     {% for project in site.categories.project_en %}
         <div class="slide" style="background-image: url('{{project.img}}');" data-index="{% if page.slideshow.introslide %}{{forloop.index}}{% else %}{{forloop.index0}}{% endif %}">
-            <div class="col12 pad4y clearfix dark limiter pin-bottom">
+            <div class="col12 pad4y dark prose limiter clearfix pin-bottom">
                 <div class="col3">
                     <h1 class="">{{project.title}}</h1>
                 </div>
-                <div class="col9">{{project.description}}</div>
+                <div class="col9">
+                    <div>{{project.description}}</div>
+                    <div class="pad1y">
+                        <a class="pad1y" href="{{project.url}}">Read More</a>
+                    </div>
+                </div>
             </div>
         </div>
     {% endfor %}
 </div>
 
-<div class="fill-light">
+<div class="browse-title-bar fill-light">
+    <div class="big arrow up"></div>
     <div class="limiter">
-        <div class="keyline-bottom clearfix pad1x pad2y mobile-cols" style="padding-top: 26px;">
-            <span class="col1 icon big arrow-left"></span>
-            <h1 class="col10 center">Browse Projects</h1>
-            <span class="col1 icon big arrow-right text-right"></span>
+        <div class="keyline-bottom clearfix pad1 mobile-cols">
+            <!-- <span class="col1 icon big arrow-left"></span> -->
+            <h1 class="center">Browse Projects</h1>
+            <!-- <span class="col1 icon big arrow-right text-right"></span> -->
         </div>
         <div class="clearfix pad1 mobile-cols">
-            <h1 class="center pad1">Explore the Data</h1>
-            <div class="margin6 icon big arrow-down"></div>
+            <h1 class="center">Explore the Data</h1>
+            <!-- <div class="margin6 icon big arrow-down"></div> -->
         </div>
     </div>
+    <div class="big arrow down"></div>
 </div>
 {% endif %}
 
 {% if page.basemap %}
 <div class="clearfix">
-    <div class="layer-ui col4 row16 pad1 fill-dark dark activate">
+    <div class="layer-ui col4 row16 pad1x pad4y fill-dark dark activate">
     <div class="col12">
         <div class="filter-name text-right quiet pad0">Theme</div>
         <div class="rounded-toggle inline">

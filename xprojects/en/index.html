@@ -5,13 +5,14 @@ id: projects
 language: en
 ---
 
+<!-- work background image opacity gradients thusly: http://stackoverflow.com/questions/5681813/transparent-background-image-with-a-gradient -->
 <section class="fill-light">
     <div class="limiter pad2y">
         {% for project in site.categories.project_en %}
-            <div class="project-container col12 row6 space-bottom contain" style="background-image: url({{project.img}})">
+            <div class="project-container col12 row6 prose space-bottom contain" style="background-image: url({{project.img}})">
                 <div class="gradient"></div>
                 <img class="grayscale row6 pin-right" src="http://tiles.osm.moabi.org/moabi_transport/5/18/16.png" alt="">
-                <div class="project-info col12 pad4 clearfix dark limiter pin-bottom">
+                <div class="project-info col12 pad4 clearfix dark limiter text-shadow pin-bottom">
                     <div class="col3">
                         <h1 class="">{{project.title}}</h1>
                     </div>
@@ -23,25 +24,3 @@ language: en
         {% endfor %}
     </div>
 </section>
-
-<!--                 {% if project.thumb.img %}
-                    <a href="{{site.baseurl}}{{project.url}}"><img src="{{site.baseurl}}/img/{{project.thumb.img}}" alt="{{project.url}}">
-                {% elsif project.thumb.map_id %}
-                    {% if project.thumb.lat and project.thumb.lon and project.thumb.zoom %}
-                        <div class="row3" style='background-image:url("http://api.tiles.mapbox.com/v3/{{project.thumb.map_id}}/{{project.thumb.lon}},{{project.thumb.lat}},{{project.thumb.zoom}}/200x140.png");'></div>
-                    {% else %}
-                        <div class="row3" style='background-image:url("http://api.tiles.mapbox.com/v3/{{project.thumb.map_id}}/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/200x140.png");'><div class="shadow"></div></div>
-                    {% endif %}
-                {% else %}
-                    <div class="row3" style='background-image:url("http://api.tiles.mapbox.com/v3/helsinki.moabi_base/{{project.basemap.center.lon}},{{project.basemap.center.lat}},{{project.basemap.center.zoom}}/200x140.png");'></div>
-                {% endif %}
-                </div>
-                <div class="col9">
-                    <h2>{{project.title}}</h2>
-                    {% for main_panel in project.main_panels %}
-                        {% if main_panel.id == 'about' %}
-                            <p class="">{{main_panel.description | truncate: 340 }}</p>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </div> -->
