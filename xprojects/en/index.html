@@ -10,16 +10,19 @@ language: en
     <div class="limiter pad2y">
         {% for project in site.categories.project_en %}
             <div class="project-container col12 row6 prose space-bottom contain" style="background-image: url({{project.img}})">
-                <div class="gradient"></div>
-                <img class="grayscale row6 pin-right" src="http://tiles.osm.moabi.org/moabi_transport/5/18/16.png" alt="">
-                <div class="project-info col12 pad4 clearfix dark limiter text-shadow pin-bottom">
-                    <div class="col3">
-                        <h1 class="">{{project.title}}</h1>
+                <a href="{{project.url}}">
+                    <div class="gradient"></div>
+                    <img class="grayscale row6 pin-right" src="http://tiles.osm.moabi.org/moabi_transport/5/18/16.png" alt="">
+                    <div class="project-info col12 pad4 clearfix dark limiter text-shadow pin-bottom">
+
+                        <div class="col3 pad1x">
+                            <h1 class="">{{project.title}}</h1>
+                        </div>
+                        <div class="col9 pad1x">
+                            <p>{{project.description}}</p>
+                        </div>
                     </div>
-                    <div class="col9">
-                        <p>{{project.description}}</p>
-                    </div>
-                </div>
+                </a>
             </div>
         {% endfor %}
     </div>
