@@ -38,6 +38,8 @@ body {
   z-index: 1;
 }
 
+h1, h2, h3 { letter-spacing: 1px; }
+
 h1 a,
 h2 a,
 h3 a {
@@ -50,24 +52,27 @@ h3 a:hover {
   color: #888;
 }
 
-h1.bold,
-h2.bold,
-h3.bold {
+h1.bold, h1.bold a,
+h2.bold, h2.bold a,
+h3.bold, h3.bold a {
   font-family: 'Open Sans XBold', sans-serif;
 }
 
-h1.xbold,
-h2.xbold,
-h3.xbold {
+h1.xbold, h1.xbold a,
+h2.xbold, h2.xbold a,
+h3.xbold, h3.xbold a {
   font-family: 'Open Sans XXBold', sans-serif;
 }
 
-h1.light,
-h2.light,
-h3.light {
+h1.light, h1.light a,
+h2.light, h2.light a,
+h3.light, h3.light a {
   font-family: 'Open Sans Light', sans-serif;
 }
 
+.caps { text-transform: uppercase; }
+  .upper-caps { text-transform: uppercase; }
+  .upper-caps:first-letter { font-size: 1.3em; }
 
 .dark {
     color: #FFFCF8;
@@ -96,20 +101,19 @@ h3.light {
   }
 
 
-header.header .nav {
-  font-family: 'Open Sans Bold';
-  text-transform: uppercase;
+.header {
   letter-spacing: 1px;
   }
-  header.header a {
+  .header a {
+    font-family: 'Open Sans Bold';
     color: #758B54;
   }
-  header.header a:hover,
-  header.header a.active,
+  .header a:hover,
+  .header a.active,
   strong {
     color: #F8AA04;
   }
-  header.header a:active {
+  .header a:active {
     color: #758B54;
   }
 
@@ -840,7 +844,7 @@ footer {
 
 /*********************** UI Controls ***********************/
 .leaflet-top.leaflet-right{
-    top: 44px;
+    top: 64px;
 }
 
 

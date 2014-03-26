@@ -8,17 +8,7 @@
 
 <body>
 
-<header class="header fill-dark dark dropshadow-down strongline-bottom">
-    <div class="limiter clearfix">
-        <h1 class="nav col4 pad1y">
-            <a href="{{site.baseurl}}/">Moabi</a>
-        </h1>
-        <a class="nav pad2 fr" href="http://osm.moabi.org/">Data</a>
-        <a class="nav pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
-        <a class="nav pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
-        <a class="nav pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
-    </div>
-</header>
+{% include header.html %}
 
 {% if page.slideshow %}
 <div class="slideshow fill-light row10 text-shadow strongline-bottom">
@@ -34,7 +24,7 @@
     <div class="slide active" style="background-image: url('/img/wb_temp.jpg');" data-index="0">
         <div class="col12 pad4y dark prose limiter clearfix pin-bottom">
             <div class="col3">
-                <h1 class="">{{page.slideshow.introslide.title}}</h1>
+                <h1 class="bold">{{page.slideshow.introslide.title}}</h1>
             </div>
             <div class="col9">
                 <p>{{page.slideshow.introslide.description}}</p>
@@ -48,7 +38,7 @@
         <div class="slide" style="background-image: url('{{project.img}}');" data-index="{% if page.slideshow.introslide %}{{forloop.index}}{% else %}{{forloop.index0}}{% endif %}">
             <div class="col12 pad4y dark prose limiter clearfix pin-bottom">
                 <div class="col3">
-                    <h1 class="">{{project.title}}</h1>
+                    <h1 class="bold">{{project.title}}</h1>
                 </div>
                 <div class="col9">
                     <div>{{project.description}}</div>
@@ -66,11 +56,11 @@
     <div class="limiter">
         <div class="keyline-bottom clearfix pad1 mobile-cols">
             <!-- <span class="col1 icon big arrow-left"></span> -->
-            <h1 class="center">Browse Projects</h1>
+            <h1 class="center caps">Browse Projects</h1>
             <!-- <span class="col1 icon big arrow-right text-right"></span> -->
         </div>
         <div class="clearfix pad1 mobile-cols">
-            <h1 class="center">Explore the Data</h1>
+            <h1 class="center caps">Explore the Data</h1>
             <!-- <div class="margin6 icon big arrow-down"></div> -->
         </div>
     </div>
@@ -82,7 +72,7 @@
 <div class="clearfix strongline-bottom">
     <div class="layer-ui col4 row16 pad1x pad4y fill-dark dark dropshadow-right activate">
     <div class="col12">
-        <div class="filter-name text-right quiet pad0">Theme</div>
+        <div class="filter-name text-right quiet pad0"><h3 class="light">Theme:</h3></div>
         <div class="rounded-toggle inline">
             <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
             <label for="allthemes">All</label>
@@ -95,7 +85,7 @@
         </div>
     </div>
     <div class="col12">
-        <div class="filter-name text-right quiet pad0">Type:</div>
+        <div class="filter-name text-right quiet pad0"><h3 class="light">Type:</h3></div>
         <div class="rounded-toggle inline">
             <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
             <label for="alltypes">All</label>

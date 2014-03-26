@@ -1,0 +1,22 @@
+{% if page.categories contains 'project_en' or page.categories contains 'project_fr' %}
+<header class="header fill-dark dark dropshadow-down strongline-bottom caps">
+    <div class="clearfix">
+        <h1 class="col4 pad1y center light strongline-right">
+            <a href="{{page.permalink}}/">{{page.title}}</a>
+        </h1>
+        <a class="pad2 fr" href="{{site.baseurl}}">Home</a>
+    </div>
+</header>
+{% else %}
+<header class="header fill-dark dark dropshadow-down strongline-bottom caps">
+    <div class="limiter clearfix">
+        <h1 class="col4 pad1y light">
+            <a href="{{site.baseurl}}/">Moabi</a>
+        </h1>
+        <a class="pad2 fr" href="http://osm.moabi.org/">Data</a>
+        <a class="pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
+        <a class="pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
+        <a class="pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
+    </div>
+</header>
+{% endif %}

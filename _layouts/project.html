@@ -8,17 +8,7 @@
 
 <body>
 
-<header class="header fill-dark dark drop-shadow strongline-bottom">
-    <div class="clearfix">
-        <h1 class="nav col4 pad1y center strongline-right">
-            <a href="{{page.permalink}}/">{{page.title}}</a>
-        </h1>
-        <a class="nav pad2 fr" href="http://osm.moabi.org/">Data</a>
-        <a class="nav pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
-        <a class="nav pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
-        <a class="nav pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
-    </div>
-</header>
+{% include header.html %}
 
 <div id="map"></div>
 
