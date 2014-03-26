@@ -50,6 +50,25 @@ h3 a:hover {
   color: #888;
 }
 
+h1.bold,
+h2.bold,
+h3.bold {
+  font-family: 'Open Sans XBold', sans-serif;
+}
+
+h1.xbold,
+h2.xbold,
+h3.xbold {
+  font-family: 'Open Sans XXBold', sans-serif;
+}
+
+h1.light,
+h2.light,
+h3.light {
+  font-family: 'Open Sans Light', sans-serif;
+}
+
+
 .dark {
     color: #FFFCF8;
 }
