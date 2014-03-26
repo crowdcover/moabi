@@ -8,9 +8,11 @@
 
 <body>
 
-<header class="fill-dark">
+<header class="header fill-dark dark dropshadow-down strongline-bottom">
     <div class="limiter clearfix">
-        <h1 class="nav col1 pad1y center"><a href="{{site.baseurl}}/">Moabi</a></h1>
+        <h1 class="nav col4 pad1y">
+            <a href="{{site.baseurl}}/">{{page.title}}</a>
+        </h1>
         <a class="nav pad2 fr" href="http://osm.moabi.org/">Data</a>
         <a class="nav pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
         <a class="nav pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
@@ -19,7 +21,7 @@
 </header>
 
 {% if page.slideshow %}
-<div class="slideshow fill-light row10 text-shadow">
+<div class="slideshow fill-light row10 text-shadow strongline-bottom">
     <div class="gradient"></div>
     <a href="#" class="slide-control" data-slide="left">
         <span class="icon big arrow-left"></span>
@@ -59,7 +61,7 @@
     {% endfor %}
 </div>
 
-<div class="browse-title-bar fill-light">
+<div class="browse-title-bar fill-light strongline-bottom">
     <div class="big arrow up"></div>
     <div class="limiter">
         <div class="keyline-bottom clearfix pad1 mobile-cols">
@@ -77,8 +79,8 @@
 {% endif %}
 
 {% if page.basemap %}
-<div class="clearfix">
-    <div class="layer-ui col4 row16 pad1x pad4y fill-dark dark activate">
+<div class="clearfix strongline-bottom">
+    <div class="layer-ui col4 row16 pad1x pad4y fill-dark dark dropshadow-right activate">
     <div class="col12">
         <div class="filter-name text-right quiet pad0">Theme</div>
         <div class="rounded-toggle inline">
@@ -126,9 +128,9 @@
 <footer class="fill-gray">
     <div class="limiter">
         <h2 class="center pad1 quiet">PARTNERS</h2>
-        <a href=""><img class="pad2" src="{{site.baseurl}}/img/OGF_logo_80.png" alt="OGF"></a>
-        <a href=""><img class="pad2" src="{{site.baseurl}}/img/OSFAC_logo_80.png" alt="OSFAC"></a>
-        <a href=""><img class="pad2" src="{{site.baseurl}}/img/IIASA_logo_80.png" alt="IIASA"></a>
+        <a href=""><img class="pad2y pad4x" src="{{site.baseurl}}/img/OGF_logo_80.png" alt="OGF"></a>
+        <a href=""><img class="pad2y pad4x" src="{{site.baseurl}}/img/OSFAC_logo_80.png" alt="OSFAC"></a>
+        <a href=""><img class="pad2y pad4x" src="{{site.baseurl}}/img/IIASA_logo_80.png" alt="IIASA"></a>
     </div>
 </footer>
 

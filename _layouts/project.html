@@ -1,6 +1,5 @@
 ---
 ---
-
 <!doctype html>
 <html>
 <head>
@@ -9,13 +8,40 @@
 
 <body>
 
-<div id="map"></div>
-
-<header class="header">
-    {% include language_toggle.html %}
-    <a class="nav home" href="{{site.baseurl}}/">Home</a>
+<header class="header fill-dark dark drop-shadow strongline-bottom">
+    <div class="clearfix">
+        <h1 class="nav col4 pad1y center strongline-right">
+            <a href="{{page.permalink}}/">{{page.title}}</a>
+        </h1>
+        <a class="nav pad2 fr" href="http://osm.moabi.org/">Data</a>
+        <a class="nav pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
+        <a class="nav pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
+        <a class="nav pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
+    </div>
 </header>
 
+<div id="map"></div>
+
+<div class="sidebar col4 fill-light pin-left clearfix contain strongline-right strongline-bottom">
+
+    {% capture width_n %}width-{{page.main_panels.size}}{% endcapture %}
+    <ul class="boxmenu {{width_n}} clearfix col12">
+        {% for main_panel in page.main_panels %}
+        <li><a data-id="{{main_panel.id}}" class="{% if forloop.first %}active{% endif %}" href="#">{{main_panel.name}}</a></li>
+        {% endfor %}
+    </ul>
+
+    <div class="col12 pad2 prose dropshadow-down-right">
+        {% for main_panel in page.main_panels %}
+            <div data-id="{{main_panel.id}}" class="main-panel {%if forloop.first %}active{% endif %}">
+                {% if main_panel.title %} <h2>{{main_panel.title}}</h2> {% endif %}
+                {% if main_panel.description %} <p class="">{{main_panel.description}}</p> {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+<!--
 <div class="contentbar">
     <div class="contentbar-header">
         <h1 class="title">{{page.title}}</h1>
@@ -81,7 +107,7 @@
 
             {% endif %}
 
-            <!-- media slideshow -->
+
             {% if main_panel.panel_media %}
                 {% if main_panel.panel_media.aside %}
                     <div class="aside">{{main_panel.panel_media.aside}}</div>
@@ -109,7 +135,7 @@
 
 
     </div>
-</div>
+</div> -->
 
 
     {% if page.basemap %}{% include parse_layers.html %}{% endif %}

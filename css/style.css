@@ -11,7 +11,7 @@ orange: #F8AA04;
   top:0;
   bottom:0;
   width:100%;
-  /*z-index: -1;*/
+  z-index: -1;
   background-color: #333;
 }
 
@@ -76,30 +76,27 @@ h3 a:hover {
     padding-bottom: 4px;
   }
 
-header {
-  border-bottom: 1px solid #CCC;
-  box-shadow: rgba(0,0,0,0.25) 0 0 10px 3px;
-}
-  header .nav {
-    font-family: 'Open Sans Bold';
-    text-transform: uppercase;
-    letter-spacing: 1px;
+
+header.header .nav {
+  font-family: 'Open Sans Bold';
+  text-transform: uppercase;
+  letter-spacing: 1px;
   }
-  header a {
+  header.header a {
     color: #758B54;
   }
-  header a:hover,
-  header a.active,
+  header.header a:hover,
+  header.header a.active,
   strong {
     color: #F8AA04;
   }
-  header a:active {
+  header.header a:active {
     color: #758B54;
   }
 
 footer {
   text-align: center;
-  padding: 20px 0;
+  padding: 6px 0;
   }
   footer a {
     display: inline-block;
@@ -109,13 +106,25 @@ footer {
     border: 1px solid #DDD;
   }
 
+.strongline-all    { border:2px solid #CCC; }
+.strongline-top    { border-top:2px solid #CCC; }
+.strongline-right  { border-right:2px solid #CCC; }
+.strongline-bottom { border-bottom:2px solid #CCC; }
+.strongline-left   { border-left:2px solid #CCC; }
+
 .scroll-styled {
     padding-right: 12px;
 }
 
-.drop-shadow {
-  box-shadow: rgba(0,0,0,0.25) 0 6px 10px 4px;
+.dropshadow-down {
+  box-shadow: rgba(0,0,0,0.25) 0 8px 6px -2px;
 }
+  .dropshadow-right {
+    box-shadow: rgba(0,0,0,0.2) 8px 0 6px -2px;
+  }
+  .dropshadow-down-right {
+    box-shadow: rgba(0,0,0,0.2) 4px 4px 6px 0;
+  }
 
 .text-shadow {
   text-shadow: 0 1px 2px rgba(0,0,0,0.5);
@@ -158,8 +167,11 @@ footer {
 
 
 .layer-ui {
-
+  border-right: 2px solid #555;
 }
+  .layer-ui ul {
+    background-color: #282828;
+  }
   .layer-ui .display {
     min-height: 120px;
     max-height: 200px;
@@ -599,7 +611,6 @@ footer {
 /**************************Panels**************************/
 .main-panel {
     display: none;
-    padding: 20px 24px;
 }
 
 .main-panel.active {

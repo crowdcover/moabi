@@ -186,13 +186,16 @@ var moabi = {
         e.preventDefault();
         e.stopPropagation();
 
-        var panelId = $(this).data('id');
+        var $this = $(this),
+            panelId = $this.data('id'),
+            sidebar = $this.parents('.sidebar');
 
         // make button .active
-        $(this).addClass('active').parent('li').siblings('li').children('a.active').removeClass('active');
+        $this.parents('ul').find('a.active').removeClass('active');
+        $this.addClass('active');
 
-        $('.main-panel.active').removeClass('active');
-        $('.main-panel[data-id="' + panelId + '"]').addClass('active');
+        sidebar.find('.main-panel.active').removeClass('active');
+        sidebar.find('.main-panel[data-id="' + panelId + '"]').addClass('active');
 
         moabi.contentBarResize();
     },
