@@ -1056,6 +1056,27 @@ footer {
 }
 
 @font-face {
+  font-family:'Open Sans Light';
+    src:url('../fonts/opensans-light.eot');
+    src:url('../fonts/opensans-light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/opensans-light.woff') format('woff');
+}
+
+@font-face {
+  font-family:'Open Sans XBold';
+    src:url('../fonts/opensans-bold.eot');
+    src:url('../fonts/opensans-bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/opensans-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family:'Open Sans XXBold';
+    src:url('../fonts/opensans-extrabold.eot');
+    src:url('../fonts/opensans-extrabold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/opensans-extrabold.woff') format('woff');
+}
+
+@font-face {
     font-family: 'Icon-Set';
     src:url('../fonts/icon.eot?-shfr1q');
     src:url('../fonts/icon.eot?#iefix-shfr1q') format('embedded-opentype'),
