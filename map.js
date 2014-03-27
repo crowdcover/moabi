@@ -11,9 +11,9 @@ if (mapLayers.pageType == 'project'){
         scrollWheelZoom: false
     });
 
-    var hash = L.hash(this.map);
-
+    this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
     this.map.zoomControl.setPosition('topright');
+    var hash = L.hash(this.map);
 
     //build base layer
     for(i = 0; i < mapLayers.baseLayer["id"].length; i++){

@@ -175,7 +175,7 @@ strong { color: #FF6600; } /* darker red orange */
     margin: 4px 0 16px;
   }
   .layer-ui .displayed {
-    min-height: 60px;
+    min-height: 70px;
     max-height: 200px;
     margin: 4px 0 16px;
   }
