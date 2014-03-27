@@ -160,7 +160,7 @@ footer {
     color: rgb(255, 252, 248);
   }
   .activate a:hover {
-    background-color: #CCC;
+    background-color: #444;
   }
   .dark .activate a:hover {
     background-color: rgb(224, 218, 210);
