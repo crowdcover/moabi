@@ -5,10 +5,38 @@
 
 
 ;(function(context) {
+// if project map
+if (mapLayers.pageType == 'project'){
+    this.map = L.mapbox.map('map', undefined, {
+        scrollWheelZoom: false
+    });
+
+    var hash = L.hash(this.map);
+
+    this.map.zoomControl.setPosition('topright');
+
+    //build base layer
+    for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
+        L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(this.map);
+    }
+// otherwise, (landing page, blog, etc...)
+} else {
+    this.map = L.mapbox.map('map', undefined, {
+        scrollWheelZoom: false
+    });
+
+    this.map.zoomControl.setPosition('topright');
+    this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
+
+    //build base layer
+    for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
+        L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(this.map);
+    }
+}
+
 var moabi = {
 
     global: function() {
-        this.init_map();
         // $(document).ready(this.contentBarResize);
         // $(window).resize(this.contentBarResize);
 
@@ -38,37 +66,6 @@ var moabi = {
             }
         });
         $( ".sortable" ).disableSelection();
-    },
-
-    init_map: function() {
-        // if project map
-        if (mapLayers.pageType == 'project'){
-            var map = L.mapbox.map('map', undefined, {
-                scrollWheelZoom: false
-            });
-
-            var hash = L.hash(map);
-
-            map.zoomControl.setPosition('topright');
-
-            //build base layer
-            for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
-                L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
-            }
-        // otherwise, (landing page, blog, etc...)
-        } else {
-            var map = L.mapbox.map('map', undefined, {
-                scrollWheelZoom: false
-            });
-
-            map.zoomControl.setPosition('topright');
-            map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
-
-            //build base layer
-            for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
-                L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
-            }
-        }
     },
 
     setLayerZ: function(e) {
@@ -325,8 +322,8 @@ var moabi = {
 
 };
 
-moabi.global();
-
 window.moabi = moabi;
 
 })(window);
+
+moabi.global();
