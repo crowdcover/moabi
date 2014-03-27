@@ -7,6 +7,8 @@ var map = L.mapbox.map('map', undefined, {
     scrollWheelZoom: false
 });
 
+var hash = L.hash(map);
+
 map.zoomControl.setPosition('topright');
 map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
 
