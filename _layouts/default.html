@@ -12,11 +12,11 @@
 <div id="map"></div>
 {% if page.gradient %}<div class="gradient"></div>{% endif %}
 
-<header class="header">
+<!-- <header class="header">
     {% include language_toggle.html %}
 </header>
-
-<div class="contentbar limiter">
+ -->
+<!-- <div class="contentbar limiter">
     <div class="contentbar-header">
         <h1 class="landing-title center"><a href="{{site.baseurl}}/">Moabi</a></h1>
     </div>
@@ -50,7 +50,13 @@
         </div>
     {% endif %}
 
-</div>
+</div> -->
+
+
+
+{{content}}
+
+
 
     {% if page.basemap %}{% include parse_layers.html %}{% endif %}
 	<script src='{{site.baseurl}}/site.js'></script>
