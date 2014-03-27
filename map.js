@@ -3,34 +3,14 @@
 {% include js/jquery-1.10.2.min.js %}
 {% include js/jquery-ui-1.10.4.custom.min.js %}
 
-var map = L.mapbox.map('map', undefined, {
-    scrollWheelZoom: false
-});
 
-var hash = L.hash(map);
-
-map.zoomControl.setPosition('topright');
-map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
-
-//build base layer
-for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
-    L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
-}
-
-  $(function() {
-    $( ".sortable" ).sortable({
-      placeholder: "ui-state-highlight"
-    });
-    $( ".sortable" ).disableSelection();
-  });
-
-(function(context) {
+;(function(context) {
 var moabi = {
 
-    init: function() {
-
-        $(document).ready(this.contentBarResize);
-        $(window).resize(this.contentBarResize);
+    global: function() {
+        this.init_map();
+        // $(document).ready(this.contentBarResize);
+        // $(window).resize(this.contentBarResize);
 
         $('.boxmenu').on('click', 'a', this.showMajorPanel);
         $('.minor-panel-viewer').on('click', 'a', this.showMinorPanel);
@@ -54,10 +34,41 @@ var moabi = {
                     console.log(numLayers - index + " : " + $(this).children('a').text() );
 
                 });
-                console.log("----")
+                console.log("----");
             }
         });
         $( ".sortable" ).disableSelection();
+    },
+
+    init_map: function() {
+        // if project map
+        if (mapLayers.pageType == 'project'){
+            var map = L.mapbox.map('map', undefined, {
+                scrollWheelZoom: false
+            });
+
+            var hash = L.hash(map);
+
+            map.zoomControl.setPosition('topright');
+
+            //build base layer
+            for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
+                L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
+            }
+        // otherwise, (landing page, blog, etc...)
+        } else {
+            var map = L.mapbox.map('map', undefined, {
+                scrollWheelZoom: false
+            });
+
+            map.zoomControl.setPosition('topright');
+            map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
+
+            //build base layer
+            for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
+                L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(map);
+            }
+        }
     },
 
     setLayerZ: function(e) {
@@ -314,7 +325,7 @@ var moabi = {
 
 };
 
-moabi.init();
+moabi.global();
 
 window.moabi = moabi;
 
