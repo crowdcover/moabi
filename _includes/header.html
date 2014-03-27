@@ -4,7 +4,7 @@
         <h1 class="col4 pad1y center strongline-right" style="width: 30%; max-width: 540px; min-width: 400px;">
             <a href="{{page.permalink}}/">{{page.title}}</a>
         </h1>
-        <a class="pad2 fr" href="{{site.baseurl}}">Home</a>
+        <a class="pad2 fr" href="{{site.baseurl}}/">Home</a>
     </div>
 </header>
 {% else %}
@@ -14,9 +14,9 @@
             <a href="{{site.baseurl}}/">Moabi</a>
         </h1>
         <a class="pad2 fr" href="http://osm.moabi.org/">Data</a>
-        <a class="pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
-        <a class="pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
-        <a class="pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
+        <a class="pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">Blog</a>
+        <a class="pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/projects/{{page.language}}">Projects</a>
+        <a class="pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">About</a>
     </div>
 </header>
 {% endif %}
