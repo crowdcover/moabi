@@ -105,7 +105,7 @@ h3.light, h3.light a {
 
 
 /* links and color accents */
-strong { color: #F77600; } /* darker red orange */
+strong { color: #FF6600; } /* darker red orange */
   .dark strong { color: #F8AA04; } /* brigher orange */
   a:hover strong { color: #CF710B; } /* darken further on hover */
   .dark a:hover strong { color: #FFC145; } /* lighten further on hover */
@@ -130,7 +130,7 @@ strong { color: #F77600; } /* darker red orange */
     background-color: #666;
   }
   .activate a:active, .activate a.active {
-    color: #F77600;
+    color: #FF6600;
   }
   .dark .activate a:active, .dark .activate a.active {
     color: #F8AA04;
