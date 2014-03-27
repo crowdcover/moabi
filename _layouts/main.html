@@ -100,7 +100,7 @@
         <ul class="not-displayed keyline-all scroll-styled activate">
             {% for layer in page.basemap.data_layers %}
                 <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                    <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                    <a class="icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
                 </li>
             {% endfor %}
         </ul>

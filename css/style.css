@@ -175,7 +175,7 @@ footer {
     color: #F8AA04;
   }
   .activate a.active {
-    color: #F8AA04;
+    color: #F77600;
   }
   .dark .activate a.active {
     color: #F8AA04;
@@ -197,25 +197,27 @@ footer {
 
 .layer-ui {
 
-}
+  }
   .layer-ui ul {
     background-color: rgba(120,120,120,0.1);
+    box-shadow: inset 0px 2px 3px rgba(255,255,255,0.15);
+  }
+  .dark .layer-ui ul {
+    box-shadow: inset 0px 2px 3px rgba(100,100,100,0.15);
   }
   .layer-ui ul li {
     margin: 0;
   }
   .layer-ui .not-displayed {
-    min-height: 80px;
-    max-height: 280px;
-    /*height: 250px;*/
+    /*min-height: 80px;*/
+    /*max-height: 280px;*/
+    height: 250px;
     margin: 4px 0 16px;
-    box-shadow: inset 0px 2px 3px rgba(255,255,255,0.1);
   }
   .layer-ui .displayed {
     min-height: 60px;
     max-height: 200px;
     margin: 4px 0 16px;
-    box-shadow: inset 0px 2px 3px rgba(255,255,255,0.1);
   }
   .layer-ui .filter-name {
     position: relative;

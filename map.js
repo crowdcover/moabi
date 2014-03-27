@@ -107,12 +107,10 @@ var moabi = {
         e.preventDefault();
         e.stopPropagation();
 
-        console.log('fired')
-
         var $this = $(this),
             $thisIndex = $this.parent().data('index'),
-            displayedList = $('.layer-ui .display'),
-            nodisplayList = $('.layer-ui .nodisplay');
+            displayedList = $('.layer-ui .displayed'),
+            nodisplayList = $('.layer-ui .not-displayed');
 
             mapId = $this.data('id');
 
