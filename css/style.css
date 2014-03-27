@@ -390,7 +390,107 @@ footer {
 }
 
 
+/*pillmenu*/
+.pillmenu {
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 4px;
+    text-align: center;
+}
 
+.pillmenu li {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.pillmenu li a {
+    background-color: #CCC;
+    color: #333;
+    margin-left: 2px;
+    padding: 2px 10px;
+    border-radius: 2px;
+    border: 1px solid #BBBBBB;
+}
+
+.pillmenu li a:hover {
+    background-color: #777;
+    color: #DDD;
+    border: 1px solid #777777;
+}
+
+.pillmenu li a:active {
+    background-color: #798A69;
+    color: #FFFFFF;
+    border: 1px solid #777777;
+}
+
+.pillmenu li a.active {
+    background-color: #C5CDAC;
+    color: #333;
+    border: 1px solid #999;
+    box-shadow: inset 0px 2px 3px rgba(0,0,0,0.1);
+}
+
+
+.minor-panel {
+    background-color: rgb(206, 196, 180);
+    background-color: rgba(87, 70, 41, 0.37);
+    padding: 8px;
+    border: 1px solid #888;
+
+    /*no transition*/
+    display: none;
+
+    /*vertical expand*/
+/*    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s ease;
+    -moz-transition: max-height 0.5s ease;
+    -o-transition: max-height 0.5s ease;
+    -ms-transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease;*/
+}
+
+.minor-panel.active {
+
+    /*no transition*/
+    display: block;
+
+    /*vertical expand*/
+/*    height: auto;
+    max-height: 300px;
+    overflow: auto;*/
+}
+
+.minor-panel ul {
+    padding: 4px;
+    margin: 2px;
+}
+
+.minor-panel ul p {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.minor-panel li {
+    border-bottom: 1px solid #888;
+}
+
+.minor-panel li .title {
+    float: left;
+    width: 20%;
+    color: #606060;
+}
+
+.minor-panel li .content {
+    /*float: left;*/
+}
+
+.minor-panel li .content a {
+    display: block;
+    float: left;
+    width: 40%;
+    cursor: pointer;
+}
 /*********************** Media ***********************/
 .slideshow {
     position: relative;

@@ -34,47 +34,58 @@
                     {% capture event_handlers %}{% for action in main_panel.panel_data.actions %}{{action}} {% endfor %}{% endcapture %}
 
                     {% if main_panel.panel_data.ui_style == 'layer-ui' %}
-                    <div class="layer-ui row16 activate">
-                        <div class="col12">
-                            <div class="filter-name text-right quiet pad0"><h3 class="light">Theme:</h3></div>
-                            <div class="rounded-toggle inline">
-                                <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
-                                <label for="allthemes">All</label>
-                                <input id="concession" type="radio" name='theme' value="concession">
-                                <label for="concession">Concessions</label>
-                                <input id="rainforest" type="radio" name='theme' value="rainforest">
-                                <label for="rainforest">Rainforest</label>
-                                <input id="community" type="radio" name='theme' value="community">
-                                <label for="community">Community</label>
+                        <div class="layer-ui row16 activate">
+                            <div class="col12">
+                                <div class="filter-name text-right quiet pad0"><h3 class="light">Theme:</h3></div>
+                                <div class="rounded-toggle inline">
+                                    <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
+                                    <label for="allthemes">All</label>
+                                    <input id="concession" type="radio" name='theme' value="concession">
+                                    <label for="concession">Concessions</label>
+                                    <input id="rainforest" type="radio" name='theme' value="rainforest">
+                                    <label for="rainforest">Rainforest</label>
+                                    <input id="community" type="radio" name='theme' value="community">
+                                    <label for="community">Community</label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col12">
-                            <div class="filter-name text-right quiet pad0"><h3 class="light">Type:</h3></div>
-                            <div class="rounded-toggle inline">
-                                <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
-                                <label for="alltypes">All</label>
-                                <input id="raster" type="radio" name='type' value="raster">
-                                <label for="raster">Raster</label>
-                                <input id="vector" type="radio" name='type' value="vector">
-                                <label for="vector">Vector</label>
+                            <div class="col12">
+                                <div class="filter-name text-right quiet pad0"><h3 class="light">Type:</h3></div>
+                                <div class="rounded-toggle inline">
+                                    <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
+                                    <label for="alltypes">All</label>
+                                    <input id="raster" type="radio" name='type' value="raster">
+                                    <label for="raster">Raster</label>
+                                    <input id="vector" type="radio" name='type' value="vector">
+                                    <label for="vector">Vector</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <ul class="not-displayed keyline-all scroll-styled">
-                            {% for layer in main_panel.panel_data.data_elements %}
-                                <li class="toggle-layer minor-panel-viewer" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                                    <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                            <ul class="not-displayed keyline-all scroll-styled">
+                                {% for layer in main_panel.panel_data.data_elements %}
+                                    <li class="toggle-layer minor-panel-viewer" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
+                                        <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+
+                            <ul class="displayed sortable keyline-all scroll-styled"></ul>
+
+                        </div>
+                    {% elsif main_panel.panel_data.ui_style == 'navigate' %}
+                        <ul class="{{main_panel.panel_data.ui_style}} {{event_handlers}} pillmenu">
+                            {% for button in main_panel.panel_data.data_elements %}
+                                <li>
+                                    <a class="ui-button {% if {{event_handlers}} contains 'toggle-layer' %}rcon float layer-toggle{% endif %}"
+                                    {% if {{event_handlers}} contains 'toggle-layer' or {{event_handlers}} contains 'minor-panel-viewer' %}data-id="{{button.id}}"{% endif %}
+                                    {% if {{event_handlers}} contains 'navigate' %}data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]'{% endif %}
+                                    href="#">{{button.name}}</a>
                                 </li>
                             {% endfor %}
                         </ul>
-
-                        <ul class="displayed sortable keyline-all scroll-styled"></ul>
-
-                    </div>
                     {% endif %}
 
                     {% for minor_panel in main_panel.panel_data.data_elements %}
-                        {% if minor_panel.description %}
+                        {% if minor_panel.XXX %}
                         <div class="minor-panel small" data-id="{{minor_panel.id}}">
                             <div class="clearfix">
                                 <h3>{{minor_panel.name}}</h3>
