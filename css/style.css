@@ -29,6 +29,7 @@ body {
   z-index: 1;
 }
 
+/* typography and spacing */
 h1, h2, h3 { letter-spacing: 1px; }
 
 h1 a,
@@ -65,6 +66,79 @@ h3.light, h3.light a {
   .upper-caps { text-transform: uppercase; }
   .upper-caps:first-letter { font-size: 1.3em; }
 
+.text-shadow {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.pad0 {
+  padding: 4px;
+  }
+  .pad0x {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .pad0y {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+.strongline-all    { border:2px solid #CCC; }
+.strongline-top    { border-top:2px solid #CCC; }
+.strongline-right  { border-right:2px solid #CCC; }
+.strongline-bottom { border-bottom:2px solid #CCC; }
+.strongline-left   { border-left:2px solid #CCC; }
+
+.scroll-styled {
+    padding-right: 18px;
+}
+
+.dropshadow-down {
+  box-shadow: rgba(0,0,0,0.25) 0 8px 6px -2px;
+}
+  .dropshadow-right {
+    box-shadow: rgba(0,0,0,0.2) 8px 0 6px -2px;
+  }
+  .dropshadow-down-right {
+    box-shadow: rgba(0,0,0,0.2) 4px 4px 6px 0;
+  }
+
+
+
+/* links and color accents */
+strong { color: #F77600; } /* darker red orange */
+  .dark strong { color: #F8AA04; } /* brigher orange */
+  a:hover strong { color: #CF710B; } /* darken further on hover */
+  .dark a:hover strong { color: #FFC145; } /* lighten further on hover */
+
+.activate a {
+  color: #404040;
+}
+  .dark .activate a {
+    color: rgb(255, 252, 248);
+  }
+  .activate a:hover {
+    background-color: #CCC;
+  }
+  .dark .activate a:hover {
+    background-color: #444;
+    /*color: rgb(224, 218, 210);*/
+  }
+  .activate a:active {
+    background-color: rgb(224, 218, 210);
+  }
+  .dark .activate a:active {
+    background-color: #666;
+  }
+  .activate a:active, .activate a.active {
+    color: #F77600;
+  }
+  .dark .activate a:active, .dark .activate a.active {
+    color: #F8AA04;
+  }
+
+
+
+/* backgrounds */
 .dark {
     color: #FFFCF8;
 }
@@ -79,122 +153,8 @@ h3.light, h3.light a {
     background-color: rgba(255, 252, 248, 0.9);
   }
 
-.pad0 {
-  padding: 4px;
-  }
-  .pad0x {
-    padding-left: 4px;
-    padding-right: 4px;
-  }
-  .pad0y {
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
 
-
-.header {
-  letter-spacing: 1px;
-  }
-  .header a {
-    font-family: 'Open Sans Bold';
-    color: #758B54;
-  }
-  .header a:hover,
-  .header a.active,
-  strong {
-    color: #F8AA04;
-  }
-  .header a:active {
-    color: #758B54;
-  }
-
-footer {
-  text-align: center;
-  padding: 6px 0;
-  }
-  footer a {
-    display: inline-block;
-    border: 1px solid transparent;
-  }
-  footer a:hover {
-    border: 1px solid #DDD;
-  }
-
-.strongline-all    { border:2px solid #CCC; }
-.strongline-top    { border-top:2px solid #CCC; }
-.strongline-right  { border-right:2px solid #CCC; }
-.strongline-bottom { border-bottom:2px solid #CCC; }
-.strongline-left   { border-left:2px solid #CCC; }
-
-.scroll-styled {
-    padding-right: 12px;
-}
-
-.dropshadow-down {
-  box-shadow: rgba(0,0,0,0.25) 0 8px 6px -2px;
-}
-  .dropshadow-right {
-    box-shadow: rgba(0,0,0,0.2) 8px 0 6px -2px;
-  }
-  .dropshadow-down-right {
-    box-shadow: rgba(0,0,0,0.2) 4px 4px 6px 0;
-  }
-
-.text-shadow {
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-
-.shadow {
-    background-color: rgba(0,0,0,0.1);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-}
-
-/* how comprehensive to be w/ .dark/.activate ordering? */
-.activate a {
-  color: #404040;
-}
-  .dark .activate a, .activate .dark a, .activate.dark a {
-    color: rgb(255, 252, 248);
-  }
-  .activate a:hover {
-    background-color: #CCC;
-  }
-  .dark .activate a:hover {
-    background-color: #444;
-    color: rgb(224, 218, 210);
-  }
-  .activate a:active {
-    background-color: rgb(224, 218, 210);
-    color: #F77600;
-  }
-  .dark .activate a:active {
-    background-color: #666;
-    color: #F8AA04;
-  }
-  .activate a.active {
-    color: #F77600;
-  }
-  .dark .activate a.active {
-    color: #F8AA04;
-  }
-
-
-
-.browse-title-bar .big.arrow {
-  z-index: 1;
-  position: relative;
-  left: 50%;
-  bottom: 16px;
-  border-bottom-color: rgb(255, 252, 248);
-  }
-  .browse-title-bar .big.arrow.down {
-    top: 16px;
-  }
-
-
+/* buttons/widgets/controls */
 .layer-ui {
 
   }
@@ -241,9 +201,11 @@ footer {
 .rounded-toggle {
   padding: 2px;
   border-radius: 3px;
+  border: 1px solid #CCC;
 }
   .dark .rounded-toggle {
     background-color: #555;
+    border-color: #666;
   }
   .rounded-toggle input[type=radio] + label {
     color: #333;
@@ -261,14 +223,39 @@ footer {
     color: #444;
   }
 
+/* custom layout elements */
+.header {
+  letter-spacing: 1px;
+  }
+  .header a {
+    font-family: 'Open Sans Bold';
+    color: #758B54;
+  }
+  .header a:hover,
+  .header a.active {
+    color: #F8AA04;
+  }
+  .header a:active {
+    color: #758B54;
+  }
+
+footer {
+  text-align: center;
+  padding: 6px 0;
+  }
+  footer a {
+    display: inline-block;
+    border: 1px solid transparent;
+  }
+  footer a:hover {
+    border: 1px solid #DDD;
+  }
 
 .project-container {
-
-}
-
-.project-container:hover .project-info {
-  z-index: 1;
-}
+  }
+  .project-container:hover .project-info {
+    z-index: 1;
+  }
 
 .grayscale {
   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
@@ -280,6 +267,27 @@ footer {
   filter: none;
   -webkit-filter: grayscale(0%);
 }
+
+.browse-title-bar .big.arrow {
+  z-index: 1;
+  position: relative;
+  left: 50%;
+  bottom: 16px;
+  border-bottom-color: rgb(255, 252, 248);
+  }
+  .browse-title-bar .big.arrow.down {
+    top: 16px;
+  }
+
+/*
+.shadow {
+    background-color: rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+*/
 
 /* Project Hubs */
 .sidebar {

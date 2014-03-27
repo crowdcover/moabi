@@ -12,25 +12,33 @@ basemap:
         z: -1
     noScrollZoom: true
     data_layers:
+      - id: moabi_forest_cover
+        name: UMD Forest Cover (2012)
+        categories: [forestry, raster]
+
+      - id: moabi_forest_lossyear
+        name: UMD Forest Loss (2001 - 2012)
+        categories: [forestry, raster]
+
+      - id: moabi_redd_projects
+        name: REDD+ Projects
+        categories: []
+
+      - id: moabi_protected
+        name: Protected Forest Areas
+        categories: [forestry]
+
       - id: moabi_community_mapping
         name: Community Mapping
+        categories: [indigenous]
+
+      - id: moabi_indigenous
+        name: Indigenous Lands
         categories: [indigenous]
 
       - id: moabi_energy
         name: Energy
         categories: [infrastructure]
-
-      - id: moabi_forest_cover
-        name: Forest Cover
-        categories: [forestry, raster]
-
-      - id: moabi_forest_lossyear
-        name: Forest Loss
-        categories: [forestry, raster]
-
-      - id: moabi_indigenous
-        name: Indigenous Lands
-        categories: [indigenous]
 
       - id: moabi_logging
         name: Logging Concessions
@@ -49,7 +57,7 @@ basemap:
         categories: [concession, forestry]
 
       - id: moabi_transport
-        name: Transportation Projects
+        name: Road Rehabilitation Projects
         categories: [infrastructure]
 
 gradient: true
