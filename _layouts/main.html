@@ -71,30 +71,30 @@
 {% if page.basemap %}
 <div class="clearfix strongline-bottom">
     <div class="layer-ui col4 row16 pad1x pad4y fill-dark dark dropshadow-right activate">
-    <div class="col12">
-        <div class="filter-name text-right quiet pad0"><h3 class="light">Theme:</h3></div>
-        <div class="rounded-toggle inline">
-            <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
-            <label for="allthemes">All</label>
-            <input id="concession" type="radio" name='theme' value="concession">
-            <label for="concession">Concessions</label>
-            <input id="rainforest" type="radio" name='theme' value="rainforest">
-            <label for="rainforest">Rainforest</label>
-            <input id="community" type="radio" name='theme' value="community">
-            <label for="community">Community</label>
+        <div class="col12">
+            <div class="filter-name text-right quiet pad0"><h3 class="light">Theme:</h3></div>
+            <div class="rounded-toggle inline">
+                <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
+                <label for="allthemes">All</label>
+                <input id="concession" type="radio" name='theme' value="concession">
+                <label for="concession">Concessions</label>
+                <input id="rainforest" type="radio" name='theme' value="rainforest">
+                <label for="rainforest">Rainforest</label>
+                <input id="community" type="radio" name='theme' value="community">
+                <label for="community">Community</label>
+            </div>
         </div>
-    </div>
-    <div class="col12">
-        <div class="filter-name text-right quiet pad0"><h3 class="light">Type:</h3></div>
-        <div class="rounded-toggle inline">
-            <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
-            <label for="alltypes">All</label>
-            <input id="raster" type="radio" name='type' value="raster">
-            <label for="raster">Raster</label>
-            <input id="vector" type="radio" name='type' value="vector">
-            <label for="vector">Vector</label>
+        <div class="col12">
+            <div class="filter-name text-right quiet pad0"><h3 class="light">Type:</h3></div>
+            <div class="rounded-toggle inline">
+                <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
+                <label for="alltypes">All</label>
+                <input id="raster" type="radio" name='type' value="raster">
+                <label for="raster">Raster</label>
+                <input id="vector" type="radio" name='type' value="vector">
+                <label for="vector">Vector</label>
+            </div>
         </div>
-    </div>
 
         <ul class="nodisplay sortable keyline-all scroll-styled">
             {% for layer in page.basemap.data_layers %}

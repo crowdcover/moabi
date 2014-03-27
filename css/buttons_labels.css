@@ -1,0 +1,222 @@
+/*pillmenu*/
+.pillmenu {
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.pillmenu li {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.pillmenu li a {
+    background-color: #CCC;
+    color: #333;
+    margin-left: 2px;
+    padding: 2px 10px;
+    border-radius: 2px;
+    border: 1px solid #BBBBBB;
+}
+
+.pillmenu li a:hover {
+    background-color: #777;
+    color: #DDD;
+    border: 1px solid #777777;
+}
+
+.pillmenu li a:active {
+    background-color: #798A69;
+    color: #FFFFFF;
+    border: 1px solid #777777;
+}
+
+.pillmenu li a.active {
+    background-color: #C5CDAC;
+    color: #333;
+    border: 1px solid #999;
+    box-shadow: inset 0px 2px 3px rgba(0,0,0,0.1);
+}
+
+
+/*listmenu*/
+.listmenu {
+    margin: 0 14px 8px;
+}
+
+.listmenu li {
+    margin-bottom: 4px;
+}
+
+.listmenu li a {
+    display: block;
+    border: 1px solid #CCC;
+    border-top: 0;
+    border-right: 0;
+    padding: 2px 2px 0 4px;
+    color: #333;
+    font-size: 0.8em;
+}
+
+.listmenu li a:hover {
+    background-color: #666;
+    color: #DDD;
+}
+
+.listmenu li a:active,
+.listmenu li a.active {
+    color: #EE9A00;
+}
+
+
+/*thumb menu*/
+.thumb-menu {
+    margin: 24px 40px;
+}
+
+.thumb-menu li {
+    margin-bottom: 8px;
+}
+
+.thumb-menu li .thumbnail {
+    position: relative;
+    width: 200px;
+    height: 140px;
+    border: 1px solid #aaa;
+    float: left;
+    margin-right: 12px;
+}
+
+.thumb-menu li .shadow {
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    -webkit-transition: background 0.2s ease;
+    -moz-transition: background 0.2s ease;
+    -o-transition: background 0.2s ease;
+    -ms-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+}
+
+.thumb-menu li:hover .shadow {
+    background: transparent;
+}
+
+.thumb-menu li .description {
+    position: relative;
+    height: 140px;
+    color: #404040;
+    color: rgba(0,0,0,0.75);
+}
+
+.thumb-menu li .description h2 {
+    margin-bottom: 12px;
+    padding: 0;
+}
+
+.thumb-menu li .description p {
+    height: 60px;
+    overflow: hidden;
+    text-align: justify;
+}
+
+.thumb-menu li p:after {
+    content: "... View Project";
+    position: absolute;
+    top: 122px;
+    right: -1000px;
+    -webkit-transition: right 0.2s ease;
+    -moz-transition: right 0.2s ease;
+    -o-transition: right 0.2s ease;
+    -ms-transition: right 0.2s ease;
+    transition: right 0.2s ease;
+}
+
+.thumb-menu li:hover p:after {
+    right: 0;
+}
+
+.thumb-menu li .description.more {
+    height: auto;
+}
+
+.thumb-menu.centered li {
+    height: auto;
+    border: 1px solid #CCC;
+    margin: 12px 60px;
+}
+
+.thumb-menu.centered li a {
+    display: block;
+    height: 96px;
+    padding: 8px 0;
+}
+
+.thumb-menu.centered li a:hover {
+    border: 1px solid #999;
+}
+
+
+/******************** REDD Project Sites ********************/
+.minor-panel {
+    background-color: rgb(206, 196, 180);
+    background-color: rgba(87, 70, 41, 0.37);
+    padding: 8px;
+    border: 1px solid #888;
+
+    /*no transition*/
+    display: none;
+
+    /*vertical expand*/
+/*    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.5s ease;
+    -moz-transition: max-height 0.5s ease;
+    -o-transition: max-height 0.5s ease;
+    -ms-transition: max-height 0.5s ease;
+    transition: max-height 0.5s ease;*/
+}
+
+.minor-panel.active {
+
+    /*no transition*/
+    display: block;
+
+    /*vertical expand*/
+/*    height: auto;
+    max-height: 300px;
+    overflow: auto;*/
+}
+
+.minor-panel ul {
+    padding: 4px;
+    margin: 2px;
+}
+
+.minor-panel ul p {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.minor-panel li {
+    border-bottom: 1px solid #888;
+}
+
+.minor-panel li .title {
+    float: left;
+    width: 20%;
+    color: #606060;
+}
+
+.minor-panel li .content {
+    /*float: left;*/
+}
+
+.minor-panel li .content a {
+    display: block;
+    float: left;
+    width: 40%;
+    cursor: pointer;
+}

@@ -15,15 +15,6 @@ orange: #F8AA04;
   background-color: #333;
 }
 
-.gradient {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background: url(../img/gradient_a70.png);
-  z-index: -1;
-}
-
 body {
   background-color: rgb(255, 252, 248);
 }
@@ -34,7 +25,7 @@ body {
   bottom: 0;
   width: 100%;
   background: transparent url(../img/gradient_a70.png) repeat-x 0 0;
-  opacity: 0.8;
+  opacity: 0.4;
   z-index: 1;
 }
 
@@ -192,7 +183,7 @@ footer {
 .layer-ui {
   border-right: 2px solid #555;
 }
-  .layer-ui ul {
+  .dark .layer-ui ul, .layer-ui.dark ul {
     background-color: #282828;
   }
   .layer-ui .display {
@@ -225,6 +216,7 @@ footer {
     border: 1px dashed #F8AA04;
     background-color: rgba(200,200,200,0.1);
   }
+
 
 .rounded-toggle {
   padding: 2px;
@@ -260,122 +252,23 @@ footer {
   -webkit-filter: grayscale(0%);
 }
 
-
-/*.header, .contentbar-header {
-    height: 60px;
-    border-bottom: 1px solid #CCC;
+/* Project Hubs */
+.sidebar {
+  position: absolute;
+  top: 62px;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  max-width: 360px;
+  min-width: 400px;
 }
 
-.header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    box-shadow: rgba(0,0,0,0.25) 0 0 10px 3px;
-    background-color: #000;
+.sidebar-content {
+  position: absolute;
+  top: 46px; /* ul.boxmenu width */
+  bottom: 0;
 }
 
-.header .title, .header .landing-title, .header .nav,
-.contentbar-header .title {
-    color: rgb(250, 244, 236);
-    height: 100%;
-}
-
-.header .nav:hover {
-    color: #798A69;
-}
-
-.header .title,
-.contentbar-header .title {
-    float: left;
-    padding-left: 12px;
-    margin-bottom: 0;
-}
-
-.header .nav {
-    float: right;
-    margin-right: 28px;
-    padding: 12px 0;
-    font-size: 125%;
-    font-family:'Open Sans Bold', sans-serif;
-}
-
-.contentbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 360px;
-    width: 30%;
-    border-right: 2px solid #CCC;
-    border-bottom: 2px solid #CCC;
-    box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
-}
-
-.limiter,
-.contentbar.limiter {
-    right: 0;
-    width: 80%;
-    max-width: 1000px;
-    min-width: 840px;
-    margin: 0 auto;
-    border-left: 2px solid #CCC;
-}
-
-.contentbar-header .landing-title a {
-    font-family: 'Open Sans Bold', sans-serif;
-    color: #FFFFFF;
-}
-
-.contentbar-header .landing-title a:hover {
-    color: #798A69;
-}*/
-
-.contentbar-fill {
-    /*position: relative;*/  /* can't scroll w/ position: relative and z-index: -1; re-activate if this needs relative positioning */
-    background-color: rgb(255, 252, 248);
-    background-color: rgba(255, 252, 248, 0.9);
-    width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-transition: height 0.2s ease;
-    -moz-transition: height 0.2s ease;
-    -o-transition: height 0.2s ease;
-    -ms-transition: height 0.2s ease;
-    transition: height 0.2s ease;
-    z-index: -1;
-}
-
-/*intro blurbs.  [landing page, and where else?]*/
-.main-panel.intro {
-    display: none;
-    background-color: rgb(255, 252, 248);
-    background-color: rgba(255, 252, 248, 0.9);
-
-/*    -webkit-transition: height 0.2s ease;
-    -moz-transition: height 0.2s ease;
-    -o-transition: height 0.2s ease;
-    -ms-transition: height 0.2s ease;
-    transition: height 0.2s ease;
-*/}
-
-.main-panel.intro.active{
-    display: block;
-}
-
-.intro .titlefloat {
-    float: left;
-    margin-right: 16px;
-    margin-bottom: 12px;
-    width: 22%;
-}
-
-.intro h1 {
-    text-align: right;
-}
-
-.intro p {
-    padding-top: 6px;
-}
 
 /***********************Menus***********************/
 /*boxmenu*/
@@ -470,320 +363,6 @@ footer {
 }
 
 
-/*pillmenu*/
-.pillmenu {
-    border-bottom: 1px solid #CCC;
-    margin-bottom: 4px;
-    text-align: center;
-}
-
-.pillmenu li {
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.pillmenu li a {
-    background-color: #CCC;
-    color: #333;
-    margin-left: 2px;
-    padding: 2px 10px;
-    border-radius: 2px;
-    border: 1px solid #BBBBBB;
-}
-
-.pillmenu li a:hover {
-    background-color: #777;
-    color: #DDD;
-    border: 1px solid #777777;
-}
-
-.pillmenu li a:active {
-    background-color: #798A69;
-    color: #FFFFFF;
-    border: 1px solid #777777;
-}
-
-.pillmenu li a.active {
-    background-color: #C5CDAC;
-    color: #333;
-    border: 1px solid #999;
-    box-shadow: inset 0px 2px 3px rgba(0,0,0,0.1);
-}
-
-
-/*listmenu*/
-.listmenu {
-    margin: 0 14px 8px;
-}
-
-.listmenu li {
-    margin-bottom: 4px;
-}
-
-.listmenu li a {
-    display: block;
-    border: 1px solid #CCC;
-    border-top: 0;
-    border-right: 0;
-    padding: 2px 2px 0 4px;
-    color: #333;
-    font-size: 0.8em;
-}
-
-.listmenu li a:hover {
-    background-color: #666;
-    color: #DDD;
-}
-
-.listmenu li a:active,
-.listmenu li a.active {
-    color: #EE9A00;
-}
-
-
-/*thumb menu*/
-.thumb-menu {
-    margin: 24px 40px;
-}
-
-.thumb-menu li {
-    margin-bottom: 8px;
-}
-
-.thumb-menu li .thumbnail {
-    position: relative;
-    width: 200px;
-    height: 140px;
-    border: 1px solid #aaa;
-    float: left;
-    margin-right: 12px;
-}
-
-.thumb-menu li .shadow {
-    background: rgba(0,0,0,0.6);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    -webkit-transition: background 0.2s ease;
-    -moz-transition: background 0.2s ease;
-    -o-transition: background 0.2s ease;
-    -ms-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-
-.thumb-menu li:hover .shadow {
-    background: transparent;
-}
-
-.thumb-menu li .description {
-    position: relative;
-    height: 140px;
-    color: #404040;
-    color: rgba(0,0,0,0.75);
-}
-
-.thumb-menu li .description h2 {
-    margin-bottom: 12px;
-    padding: 0;
-}
-
-.thumb-menu li .description p {
-    height: 60px;
-    overflow: hidden;
-    text-align: justify;
-}
-
-.thumb-menu li p:after {
-    content: "... View Project";
-    position: absolute;
-    top: 122px;
-    right: -1000px;
-    -webkit-transition: right 0.2s ease;
-    -moz-transition: right 0.2s ease;
-    -o-transition: right 0.2s ease;
-    -ms-transition: right 0.2s ease;
-    transition: right 0.2s ease;
-}
-
-.thumb-menu li:hover p:after {
-    right: 0;
-}
-
-.thumb-menu li .description.more {
-    height: auto;
-}
-
-.thumb-menu.centered li {
-    height: auto;
-    border: 1px solid #CCC;
-    margin: 12px 60px;
-}
-
-.thumb-menu.centered li a {
-    display: block;
-    height: 96px;
-    padding: 8px 0;
-}
-
-.thumb-menu.centered li a:hover {
-    border: 1px solid #999;
-}
-
-
-/**************************Panels**************************/
-.main-panel {
-    display: none;
-}
-
-.main-panel.active {
-    display: block;
-    clear: both;
-}
-
-.contentbar.limiter .main-panel p.description {
-    padding: 0 40px 18px;
-    border-bottom: 2px solid #CCC;
-}
-
-/******************** REDD Project Sites ********************/
-.minor-panel {
-    background-color: rgb(206, 196, 180);
-    background-color: rgba(87, 70, 41, 0.37);
-    padding: 8px;
-    border: 1px solid #888;
-
-    /*no transition*/
-    display: none;
-
-    /*vertical expand*/
-/*    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: max-height 0.5s ease;
-    -moz-transition: max-height 0.5s ease;
-    -o-transition: max-height 0.5s ease;
-    -ms-transition: max-height 0.5s ease;
-    transition: max-height 0.5s ease;*/
-}
-
-.minor-panel.active {
-
-    /*no transition*/
-    display: block;
-
-    /*vertical expand*/
-/*    height: auto;
-    max-height: 300px;
-    overflow: auto;*/
-}
-
-.minor-panel ul {
-    padding: 4px;
-    margin: 2px;
-}
-
-.minor-panel ul p {
-    font-size: 12px;
-    line-height: 16px;
-}
-
-.minor-panel li {
-    border-bottom: 1px solid #888;
-}
-
-.minor-panel li .title {
-    float: left;
-    width: 20%;
-    color: #606060;
-}
-
-.minor-panel li .content {
-    /*float: left;*/
-}
-
-.minor-panel li .content a {
-    display: block;
-    float: left;
-    width: 40%;
-    cursor: pointer;
-}
-
-
-/******************** Blog ********************/
-.blog-post {
-    margin: 8px 10px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #BBB;
-}
-
-.blog-post:last-child {
-    padding-bottom: 0;
-    border-bottom: 0;
-}
-
-.blog-post .image-border {
-    float: left;
-    width: 44%;
-    margin-right: 12px;
-    padding: 4px 6px 6px 4px;
-    border-right: 1px solid #BBB;
-    border-bottom: 1px solid #BBB;
-}
-
-.blog-post .image-border.center {
-    float: none;
-    margin: 0 auto 18px;
-    width: 700px;
-    max-width: 100%;
-    border-right: 0;
-    border-top: 1px solid #BBB;
-}
-
-.blog-post .image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.blog-post .image-border,
-.blog-post img {
-    height: 280px;
-}
-
-.blog-post .title {
-
-}
-
-.blog-post .title a {
-    color: #404040;
-}
-
-.blog-post .title a:hover {
-    color: #404040;
-    text-decoration: underline;
-}
-.blog-post .date {
-    position: relative;
-    left: 22px;
-    margin-bottom: 12px;
-    font-family:'Open Sans Italic', sans-serif;
-    color: #5f5f5f;
-}
-
-.blog-post .date.center {
-    position: static;
-}
-
-.blog-post .post_content {
-
-}
-
-.blog-post .more {
-    float: right;
-    margin-right: 18px;
-}
-
-
 
 /*********************** Media ***********************/
 .slideshow {
@@ -841,6 +420,23 @@ footer {
     .slide div {
         z-index: 1;
     }
+
+
+/**************************Panels**************************/
+.main-panel {
+    display: none;
+}
+
+.main-panel.active {
+    display: block;
+    clear: both;
+}
+
+.contentbar.limiter .main-panel p.description {
+    padding: 0 40px 18px;
+    border-bottom: 2px solid #CCC;
+}
+
 
 /*********************** UI Controls ***********************/
 .leaflet-top.leaflet-right{
@@ -1337,16 +933,3 @@ footer {
     left: -4px;
     top: 3px;
 }
-
-
-/* Markup free clearing
-Details: http://www.positioniseverything.net/easyclearing.html
-------------------------------------------------------- */
-.clearfix { display:block; }
-.clearfix:after {
-  content:'.';
-  display:block;
-  height:0;
-  clear:both;
-  visibility:hidden;
-  }
