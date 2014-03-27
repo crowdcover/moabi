@@ -107,6 +107,8 @@ var moabi = {
         e.preventDefault();
         e.stopPropagation();
 
+        console.log('fired')
+
         var $this = $(this),
             $thisIndex = $this.parent().data('index'),
             displayedList = $('.layer-ui .display'),

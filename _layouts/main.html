@@ -70,7 +70,7 @@
 
 {% if page.basemap %}
 <div class="clearfix strongline-bottom">
-    <div class="layer-ui col4 row16 pad1x pad4y fill-dark dark dropshadow-right activate">
+    <div class="layer-ui col4 row16 pad1x pad4y fill-dark dark dropshadow-right activate" style="border-right: 2px solid #555;">
         <div class="col12">
             <div class="filter-name text-right quiet pad0"><h3 class="light">Theme:</h3></div>
             <div class="rounded-toggle inline">
@@ -96,7 +96,7 @@
             </div>
         </div>
 
-        <ul class="nodisplay sortable keyline-all scroll-styled">
+        <ul class="not-displayed keyline-all scroll-styled">
             {% for layer in page.basemap.data_layers %}
                 <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
                     <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
@@ -104,7 +104,7 @@
             {% endfor %}
         </ul>
 
-        <ul class="display sortable keyline-all scroll-styled"></ul>
+        <ul class="displayed sortable keyline-all scroll-styled"></ul>
 
     </div>
     <div class="col8 row16 contain">

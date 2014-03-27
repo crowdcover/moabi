@@ -152,10 +152,17 @@ footer {
     width: 100%;
 }
 
+/* how comprehensive to be w/ .dark/.activate ordering? */
 .activate a {
-  color: rgb(255, 252, 248);
+  color: #404040;
 }
+  .dark .activate a, .activate .dark a, .activate.dark a {
+    color: rgb(255, 252, 248);
+  }
   .activate a:hover {
+    background-color: #CCC;
+  }
+  .dark .activate a:hover {
     background-color: rgb(224, 218, 210);
     color: #222;
   }
@@ -163,9 +170,17 @@ footer {
     background-color: rgb(224, 218, 210);
     color: #F8AA04;
   }
+  .dark .activate a:active {
+    background-color: rgb(224, 218, 210);
+    color: #F8AA04;
+  }
   .activate a.active {
     color: #F8AA04;
   }
+  .dark .activate a.active {
+    color: #F8AA04;
+  }
+
 
 
 .browse-title-bar .big.arrow {
@@ -181,21 +196,24 @@ footer {
 
 
 .layer-ui {
-  border-right: 2px solid #555;
+
 }
-  .dark .layer-ui ul, .layer-ui.dark ul {
-    background-color: #282828;
+  .layer-ui ul {
+    background-color: rgba(120,120,120,0.1);
   }
-  .layer-ui .display {
-    min-height: 120px;
-    max-height: 200px;
+  .layer-ui ul li {
+    margin: 0;
+  }
+  .layer-ui .not-displayed {
+    min-height: 80px;
+    max-height: 280px;
+    /*height: 250px;*/
     margin: 4px 0 16px;
     box-shadow: inset 0px 2px 3px rgba(255,255,255,0.1);
   }
-  .layer-ui .nodisplay {
-    /*min-height: 200px;*/
-    /*max-height: 300px;*/
-    height: 250px;
+  .layer-ui .displayed {
+    min-height: 60px;
+    max-height: 200px;
     margin: 4px 0 16px;
     box-shadow: inset 0px 2px 3px rgba(255,255,255,0.1);
   }
@@ -221,17 +239,26 @@ footer {
 .rounded-toggle {
   padding: 2px;
   border-radius: 3px;
-  background: #555;
 }
+  .dark .rounded-toggle {
+    background-color: #555;
+  }
+  .rounded-toggle input[type=radio] + label {
+    color: #333;
+    border-radius: 3px;
+    line-height: 16px;
+  }
+  .dark .rounded-toggle input[type=radio] + label {
+    color: rgb(255, 252, 248);
+  }
   .rounded-toggle input[type=radio]:checked + label {
     background: #F8AA04;
     box-shadow: inset 0px 2px 3px rgba(0,0,0,0.2);
   }
-  .rounded-toggle input[type=radio] + label {
-    color: rgb(255, 252, 248);
-    border-radius: 3px;
-    line-height: 16px;
+  .dark .rounded-toggle input[type=radio]:checked + label {
+    color: #444;
   }
+
 
 .project-container {
 
@@ -259,7 +286,7 @@ footer {
   left: 0;
   bottom: 0;
   width: 30%;
-  max-width: 360px;
+  max-width: 540px;
   min-width: 400px;
 }
 

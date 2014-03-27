@@ -20,7 +20,7 @@
         {% endfor %}
     </ul>
 
-    <div class="sidebar-content col12 pad2 prose scroll-styled">
+    <div class="sidebar-content col12 pad2 scroll-styled">
         {% for main_panel in page.main_panels %}
             <div data-id="{{main_panel.id}}" class="main-panel {%if forloop.first %}active{% endif %}">
                 {% if main_panel.title %} <h2>{{main_panel.title}}</h2> {% endif %}
@@ -33,8 +33,8 @@
 
                     {% capture event_handlers %}{% for action in main_panel.panel_data.actions %}{{action}} {% endfor %}{% endcapture %}
 
-
-                    <div class="layer-ui col4 row16 pad1x pad4y fill-dark dark dropshadow-right activate">
+                    {% if main_panel.panel_data.ui_style == 'layer-ui' %}
+                    <div class="layer-ui row16 activate">
                         <div class="col12">
                             <div class="filter-name text-right quiet pad0"><h3 class="light">Theme:</h3></div>
                             <div class="rounded-toggle inline">
@@ -60,17 +60,18 @@
                             </div>
                         </div>
 
-                        <ul class="nodisplay sortable keyline-all scroll-styled">
-                            {% for layer in page.basemap.data_layers %}
-                                <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
+                        <ul class="not-displayed keyline-all scroll-styled">
+                            {% for layer in main_panel.panel_data.data_elements %}
+                                <li class="toggle-layer minor-panel-viewer" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
                                     <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
                                 </li>
                             {% endfor %}
                         </ul>
 
-                        <ul class="display sortable keyline-all scroll-styled"></ul>
+                        <ul class="displayed sortable keyline-all scroll-styled"></ul>
 
                     </div>
+                    {% endif %}
 
                     {% for minor_panel in main_panel.panel_data.data_elements %}
                         {% if minor_panel.description %}
