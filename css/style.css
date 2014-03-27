@@ -168,7 +168,7 @@ footer {
   }
   .activate a:active {
     background-color: rgb(224, 218, 210);
-    color: #F8AA04;
+    color: #F77600;
   }
   .dark .activate a:active {
     background-color: #666;
