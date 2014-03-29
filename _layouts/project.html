@@ -20,11 +20,11 @@
         {% endfor %}
     </ul>
 
-    <div class="sidebar-content col12 pad2 scroll-styled">
+    <div class="sidebar-content col12 pad2 prose scroll-styled">
         {% for main_panel in page.main_panels %}
             <div data-id="{{main_panel.id}}" class="main-panel {%if forloop.first %}active{% endif %}">
                 {% if main_panel.title %} <h2>{{main_panel.title}}</h2> {% endif %}
-                {% if main_panel.description %} <p class="small">{{main_panel.description}}</p> {% endif %}
+                {% if main_panel.description %} <p class="">{{main_panel.description}}</p> {% endif %}
 
                 {% if main_panel.panel_data %}
                     {% if main_panel.panel_data.aside %}

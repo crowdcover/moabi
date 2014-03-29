@@ -295,16 +295,17 @@ footer {
   top: 62px;
   left: 0;
   bottom: 0;
-  width: 30%;
-  max-width: 540px;
-  min-width: 400px;
-}
-
-.sidebar-content {
-  position: absolute;
-  top: 46px; /* ul.boxmenu width */
-  bottom: 0;
-}
+  }
+  .sidebar, .prj-header {
+    width: 40%;
+    max-width: 540px;
+    min-width: 400px;
+  }
+  .sidebar-content {
+    position: absolute;
+    top: 46px; /* ul.boxmenu width */
+    bottom: 0;
+  }
 
 
 /***********************Menus***********************/
