@@ -34,6 +34,21 @@ if (mapLayers.pageType == 'project'){
     }
 }
 
+document.getElementById('snap').addEventListener('click', function() {
+    leafletImage(map, doImage);
+});
+
+function doImage(err, canvas) {
+    console.log('do Image fired: this=' + this);
+    var img = document.createElement('img');
+    var dimensions = map.getSize();
+    img.width = dimensions.x;
+    img.height = dimensions.y;
+    img.src = canvas.toDataURL();
+    document.getElementById('images').innerHTML = '';
+    document.getElementById('images').appendChild(img);
+}
+
 var moabi = {
 
     global: function() {
@@ -48,6 +63,8 @@ var moabi = {
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
+
+        // $('#snap').on('click', leafletImage(map, moabi.doImage));
 
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
@@ -66,6 +83,17 @@ var moabi = {
             }
         });
         $( ".sortable" ).disableSelection();
+    },
+
+    doImage: function(err, canvas) {
+        this.console.log('doImage fired')
+        var img = document.createElement('img');
+        var dimensions = map.getSize();
+        img.width = dimensions.x;
+        img.height = dimensions.y;
+        img.src = canvas.toDataURL();
+        document.getElementById('images').innerHTML = '';
+        document.getElementById('images').appendChild(img);
     },
 
     setLayerZ: function(e) {
