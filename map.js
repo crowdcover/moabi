@@ -34,19 +34,23 @@ if (mapLayers.pageType == 'project'){
     }
 }
 
-document.getElementById('snap').addEventListener('click', function() {
+document.getElementById('snap').addEventListener('click', function(e) {
+    e.preventDefault();
     leafletImage(map, doImage);
 });
 
 function doImage(err, canvas) {
+
+    var $imgContainer = $('#images');
     console.log('do Image fired: this=' + this);
-    var img = document.createElement('img');
+
+    var mapCapture = document.createElement('img');
     var dimensions = map.getSize();
-    img.width = dimensions.x;
-    img.height = dimensions.y;
-    img.src = canvas.toDataURL();
-    document.getElementById('images').innerHTML = '';
-    document.getElementById('images').appendChild(img);
+    // img.width = dimensions.x;
+    // img.height = dimensions.y;
+    mapCapture.src = canvas.toDataURL();
+    $imgContainer.children('img').remove();
+    $imgContainer.append(mapCapture);
 }
 
 var moabi = {
@@ -64,7 +68,7 @@ var moabi = {
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
 
-        // $('#snap').on('click', leafletImage(map, moabi.doImage));
+        // $('#snap').on('click', leafletImage(map, this.doImage));
 
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
@@ -89,10 +93,10 @@ var moabi = {
         this.console.log('doImage fired')
         var img = document.createElement('img');
         var dimensions = map.getSize();
-        img.width = dimensions.x;
-        img.height = dimensions.y;
+        // img.width = dimensions.x;
+        // img.height = dimensions.y;
         img.src = canvas.toDataURL();
-        document.getElementById('images').innerHTML = '';
+        // document.getElementById('images').innerHTML = '';
         document.getElementById('images').appendChild(img);
     },
 
