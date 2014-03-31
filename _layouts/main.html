@@ -72,42 +72,71 @@
 
 {% if page.basemap %}
 <div class="clearfix strongline-bottom">
-    <div class="layer-ui col4 row16 pad1x pad4y fill-dark dark dropshadow-right" style="border-right: 2px solid #555;">
-        <div class="col12">
-            <div class="filter-name text-right quiet pad0"><h3 class="light">Theme:</h3></div>
-            <div class="rounded-toggle inline">
-                <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
-                <label for="allthemes">All</label>
-                <input id="concession" type="radio" name='theme' value="concession">
-                <label for="concession">Concessions</label>
-                <input id="rainforest" type="radio" name='theme' value="rainforest">
-                <label for="rainforest">Rainforest</label>
-                <input id="community" type="radio" name='theme' value="community">
-                <label for="community">Community</label>
+    <div class="col4 row16 pad1x pad4y fill-dark dark scroll-styled dropshadow-right" style="border-right: 2px solid #555;">
+        <div class="layer-ui">
+            <div class="col12 clearfix">
+                <div class="col2 filter-name text-right pad0">
+                    <h3 class="light">Theme:</h3>
+                </div>
+                <div class="col10">
+                    <div class="rounded-toggle inline">
+                        <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
+                        <label for="allthemes">All</label>
+                        <input id="concession" type="radio" name='theme' value="concession">
+                        <label for="concession">Concessions</label>
+                        <input id="rainforest" type="radio" name='theme' value="rainforest">
+                        <label for="rainforest">Rainforest</label>
+                        <input id="community" type="radio" name='theme' value="community">
+                        <label for="community">Community</label>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col12">
-            <div class="filter-name text-right quiet pad0"><h3 class="light">Type:</h3></div>
-            <div class="rounded-toggle inline">
-                <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
-                <label for="alltypes">All</label>
-                <input id="raster" type="radio" name='type' value="raster">
-                <label for="raster">Raster</label>
-                <input id="vector" type="radio" name='type' value="vector">
-                <label for="vector">Vector</label>
+            <div class="col12 clearfix">
+                <div class="col2 filter-name text-right pad0">
+                    <h3 class="light">Type:</h3>
+                </div>
+                <div class="col10">
+                    <div class="rounded-toggle inline">
+                        <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
+                        <label for="alltypes">All</label>
+                        <input id="raster" type="radio" name='type' value="raster">
+                        <label for="raster">Raster</label>
+                        <input id="vector" type="radio" name='type' value="vector">
+                        <label for="vector">Vector</label>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <ul class="not-displayed keyline-all scroll-styled activate">
-            {% for layer in page.basemap.data_layers %}
-                <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                    <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+            <ul class="not-displayed keyline-all scroll-styled activate">
+                {% for layer in page.basemap.data_layers %}
+                    <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
+                        <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <ul class="displayed sortable keyline-all scroll-styled activate"></ul>
+        </div>
+        <div>
+            <h2 class="pad0x light strongline-bottom">Export</h2>
+            <ul class="pad1">
+                <li class="pad0">
+                    <div><a href="http://osm.moabi.org" class="space">Data</a><span class="small quiet pad1x">(Shp, OSM, GeoJson)</span></div>
                 </li>
-            {% endfor %}
-        </ul>
-
-        <ul class="displayed sortable keyline-all scroll-styled activate"></ul>
-
+                <li class="pad0 clearfix">
+                    <div class="col12">Map Embed</div>
+                    <fieldset>
+                        <input type="text" value="" class="stretch">
+                    </fieldset>
+                </li>
+                <li class="pad0 clearfix">
+                    <div class="col12">Print Map</div>
+                    <fieldset>
+                        <input type="text" value="" class="stretch">
+                    </fieldset>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="col8 row16 contain">
         <div id="map" style="z-index:0"></div>

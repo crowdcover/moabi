@@ -93,13 +93,13 @@ h3.light, h3.light a {
 }
 
 .dropshadow-down {
-  box-shadow: rgba(0,0,0,0.25) 0 8px 6px -2px;
+  box-shadow: rgba(0,0,0,0.25) 0 5px 10px -2px;
 }
   .dropshadow-right {
-    box-shadow: rgba(0,0,0,0.2) 8px 0 6px -2px;
+    box-shadow: rgba(0,0,0,0.2) 5px 0 10px -2px;
   }
   .dropshadow-down-right {
-    box-shadow: rgba(0,0,0,0.2) 4px 4px 6px 0;
+    box-shadow: rgba(0,0,0,0.2) 4px 4px 10px 0;
   }
 
 
@@ -156,13 +156,12 @@ strong { color: #FF6600; } /* darker red orange */
 
 /* buttons/widgets/controls */
 .layer-ui {
-
   }
-  .layer-ui ul {
+  .layer-ui ul.displayed, .layer-ui ul.not-displayed {
     background-color: rgba(120,120,120,0.1);
     box-shadow: inset 0px 2px 3px rgba(255,255,255,0.15);
   }
-  .dark .layer-ui ul {
+  .dark .layer-ui ul.displayed, .dark .layer-ui ul.not-displayed {
     box-shadow: inset 0px 2px 3px rgba(100,100,100,0.15);
   }
   .layer-ui ul li {
@@ -210,7 +209,7 @@ strong { color: #FF6600; } /* darker red orange */
   .rounded-toggle input[type=radio] + label {
     color: #333;
     border-radius: 3px;
-    line-height: 16px;
+    line-height: 18px;
   }
   .dark .rounded-toggle input[type=radio] + label {
     color: rgb(255, 252, 248);
