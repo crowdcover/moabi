@@ -60,7 +60,7 @@
                                 </div>
                             </div>
 
-                            <ul class="not-displayed keyline-all scroll-styled">
+                            <ul class="not-displayed keyline-all fill-darken scroll-styled">
                                 {% for layer in main_panel.panel_data.data_elements %}
                                     <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
                                         <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>

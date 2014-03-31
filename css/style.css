@@ -145,6 +145,9 @@ strong { color: #FF6600; } /* darker red orange */
   .fill-black {
     background-color: #000;
   }
+  .fill-darken {
+    background-color: rgba(0,0,0,0.1);
+  }
   .fill-dark {
     background-color: #222;
   }
@@ -158,7 +161,6 @@ strong { color: #FF6600; } /* darker red orange */
 .layer-ui {
   }
   .layer-ui ul.displayed, .layer-ui ul.not-displayed {
-    background-color: rgba(120,120,120,0.1);
     box-shadow: inset 0px 2px 3px rgba(255,255,255,0.15);
   }
   .dark .layer-ui ul.displayed, .dark .layer-ui ul.not-displayed {
