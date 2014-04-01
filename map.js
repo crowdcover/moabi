@@ -69,7 +69,7 @@ var moabi = {
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
 
         // $('#snap').on('click', leafletImage(map, this.doImage));
-        $('.tabs a').on('click', this.horizontalSlide);
+        // $('.tabs a').on('click', this.horizontalSlide);
 
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
