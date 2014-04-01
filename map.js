@@ -73,11 +73,9 @@ var moabi = {
         // $(document).ready(this.contentBarResize);
         // $(window).resize(this.contentBarResize);
 
-        $('.toggle-sibling-vis').on('click', this.toggleVis)
         $('.boxmenu').on('click', 'a', this.showMajorPanel);
-        $('.minor-panel-viewer').on('click', 'a', this.showMinorPanel);
-        $('.layer-ui').on('click', 'a', this.layerUi);
-        // $('.toggle-layer').on('click', 'a', this.toggleLayer);
+        $('.minor-panel-viewer').on('click', 'a.event-button', this.showMinorPanel);
+        $('.layer-ui').on('click', 'a.event-button', this.layerUi);
         $('.navigate').on('click', 'a', this.navigate);
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
@@ -105,11 +103,6 @@ var moabi = {
         $( ".sortable" ).disableSelection();
     },
 
-    toggleVis: function() {
-        console.log('togglevis fired')
-        $(this).siblings('.toggle-this-vis').toggleClass('vis');
-    },
-
     horizontalSlide: function() {
         var tabgroup = $(this).parent();
         var slidecontainer = tabgroup.next();
@@ -131,51 +124,6 @@ var moabi = {
         img.src = canvas.toDataURL();
         // document.getElementById('images').innerHTML = '';
         document.getElementById('images').appendChild(img);
-    },
-
-    setLayerZ: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-    },
-
-    toggleLayer: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        var $this = $(this),
-            mapId = $this.data('id');
-
-        if (! mapLayers.dataLayers[mapId]){
-            mapLayers.dataLayers[mapId] = [
-                L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
-                $('.moabi-legend[data-id="' + mapId + '"]')
-            ];
-        }
-
-        var layer = mapLayers.dataLayers[mapId][0],
-            layerLegend = mapLayers.dataLayers[mapId][1],
-            $mapLegend = $('.map-legend');
-
-        if (map.hasLayer(layer)) {
-            map.removeLayer(layer);
-            $this.removeClass('active');
-
-            layerLegend.removeClass('active icon');
-            if ($mapLegend.children('.moabi-legend.active').length === 0) {
-                $mapLegend.removeClass('active');
-            }
-            moabi.legendResize();
-
-        } else {
-            map.addLayer(layer);
-            $this.addClass('active');
-
-            if (! $mapLegend.hasClass('active')) {
-                $mapLegend.addClass('active');
-            }
-            layerLegend.addClass('active icon');
-            moabi.legendResize();
-        }
     },
 
     layerUi: function(e) {
@@ -282,6 +230,8 @@ var moabi = {
         var $this = $(this),
             panelId = $(this).data('id');
 
+        console.log('show minor panel fired')
+
         if ($this.hasClass('active')) {
             // close the active panel and open the previous one
             $('.minor-panel[data-id="' + panelId + '"]').removeClass('active');
@@ -292,7 +242,7 @@ var moabi = {
             }
         } else {
             // close any active panel and open the new one
-            $(this).closest('.main-panel').children('.minor-panel.active').removeClass('active');
+            $('.minor-panel.active').removeClass('active');
             $('.minor-panel[data-id="' + panelId + '"]').addClass('active');
         }
 
