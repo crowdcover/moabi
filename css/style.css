@@ -180,13 +180,13 @@ strong { color: #FF6600; } /* darker red orange */
     max-height: 200px;
     margin: 4px 0 16px;
   }
-  .layer-ui .filter-name {
+/*  .layer-ui .filter-name {
     position: relative;
     bottom: 8px;
     display: inline-block;
     width: 70px;
   }
-  .layer-ui a {
+*/  .layer-ui a {
     display: block;
   }
   .layer-ui li:last-child a {
