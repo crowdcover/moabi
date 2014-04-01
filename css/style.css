@@ -177,7 +177,7 @@ strong { color: #FF6600; } /* darker red orange */
   }
   .layer-ui .displayed {
     min-height: 70px;
-    max-height: 200px;
+    max-height: 166px;
     margin: 4px 0 16px;
   }
 /*  .layer-ui .filter-name {

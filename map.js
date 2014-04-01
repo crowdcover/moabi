@@ -53,6 +53,20 @@ function doImage(err, canvas) {
     $imgContainer.append(mapCapture);
 }
 
+
+$(function() {
+    $('.tabs a').click(function() {
+        var tabgroup = $(this).parent();
+        var slidecontainer = tabgroup.next();
+        var tab = $(this).attr('href').split('#')[1];
+        $('a', tabgroup).removeClass('active');
+
+        $(this).addClass('active');
+        slidecontainer.removeClass('active1 active2 active3').addClass(tab);
+        return false;
+    });
+});
+
 var moabi = {
 
     global: function() {
