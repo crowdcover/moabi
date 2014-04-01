@@ -112,7 +112,12 @@
                 <ul class="not-displayed fill-darken keyline-all scroll-styled activate">
                     {% for layer in page.basemap.data_layers %}
                         <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                            <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                            <a class="layer-toggle toggle-sibling-vis icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                            <ul class="toggle-this-vis small pad0">
+                                <li class="pad0">{{layer.description}}</li>
+                                <li class="pad0y keyline-bottom">Source: {{layer.source}}</li>
+                                <li class="pad0y keyline-bottom">Availability: {{layer.availability}}</li>
+                            </ul>
                         </li>
                     {% endfor %}
                 </ul>
@@ -132,7 +137,7 @@
                         <div class="col12">Map Embed</div>
                         <div class="col12 pad1x pad0y quiet small">Easily embed the map in any blog or website using simple HTML</div>
                         <fieldset class="">
-                            <input type="text" value="" class="stretch">
+                            <input type="text" value="<iframe src='rdc.moabi.org/mapi/#6/28.00/26.10' frameborder='0' width='650' height='500'></iframe>" class="stretch">
                         </fieldset>
                     </li>
                     <li class="pad0x pad1y clearfix">

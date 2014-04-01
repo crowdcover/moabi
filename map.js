@@ -73,10 +73,11 @@ var moabi = {
         // $(document).ready(this.contentBarResize);
         // $(window).resize(this.contentBarResize);
 
+        $('.toggle-sibling-vis').on('click', this.toggleVis)
         $('.boxmenu').on('click', 'a', this.showMajorPanel);
         $('.minor-panel-viewer').on('click', 'a', this.showMinorPanel);
         $('.layer-ui').on('click', 'a', this.layerUi);
-        $('.toggle-layer').on('click', 'a', this.toggleLayer);
+        // $('.toggle-layer').on('click', 'a', this.toggleLayer);
         $('.navigate').on('click', 'a', this.navigate);
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
@@ -102,6 +103,11 @@ var moabi = {
             }
         });
         $( ".sortable" ).disableSelection();
+    },
+
+    toggleVis: function() {
+        console.log('togglevis fired')
+        $(this).siblings('.toggle-this-vis').toggleClass('vis');
     },
 
     horizontalSlide: function() {
@@ -177,7 +183,7 @@ var moabi = {
         e.stopPropagation();
 
         var $this = $(this),
-            $thisIndex = $this.parent().data('index'),
+            $thisIndex = $this.parent('li').data('index'),
             displayedList = $('.layer-ui .displayed'),
             nodisplayList = $('.layer-ui .not-displayed');
 
@@ -206,10 +212,10 @@ var moabi = {
 
             // if $thisIndex greater than the largest nodisplay index, append to end
             if ($thisIndex > nodisplayIndices[nodisplayIndices.length - 1]){
-                nodisplayList.append($this.parent());
+                nodisplayList.append($this.parent('li'));
             // if $thisIndex less than the smallest nodisplay Index, prepend to beginning
             } else if ($thisIndex < nodisplayIndices[0]){
-                nodisplayList.prepend($this.parent());
+                nodisplayList.prepend($this.parent('li'));
             // else, find next smallest
             } else {
                 for (i = 0; i < nodisplayIndices.length; i++){
@@ -219,13 +225,13 @@ var moabi = {
                     }
                 }
 
-                nodisplayList.children('li').filter('[data-index="' + nextLargestIndex + '"]').after($this.parent());
+                nodisplayList.children('li').filter('[data-index="' + nextLargestIndex + '"]').after($this.parent('li'));
             }
 
         // else if button is not active: add layer to map and move button to displayList
         } else {
             $this.addClass('active');
-            displayedList.prepend($this.parent());
+            displayedList.prepend($this.parent('li'));
             map.addLayer(layer);
         }
     },
@@ -238,9 +244,9 @@ var moabi = {
             category = $this.data('category');
 
         $this.siblings('ul.nodisplay').children('li').each(function(){
-            $this = $(this)
+            $this = $(this);
             if ($this.data('categories').split(',').indexOf(category) == -1) {
-                $this.hide()
+                $this.hide();
             }
         });
     },
