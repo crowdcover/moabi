@@ -69,6 +69,7 @@ var moabi = {
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
 
         // $('#snap').on('click', leafletImage(map, this.doImage));
+        $('.tabs a').on('click', this.horizontalSlide);
 
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
@@ -87,6 +88,18 @@ var moabi = {
             }
         });
         $( ".sortable" ).disableSelection();
+    },
+
+    horizontalSlide: function() {
+        var tabgroup = $(this).parent();
+        var slidecontainer = tabgroup.next();
+        var tab = $(this).attr('href').split('#')[1];
+        $('a', tabgroup).removeClass('active');
+
+        $(this).addClass('active');
+        slidecontainer.removeClass('active1 active2').addClass(tab);
+        console.log("horizontalSlide fired")
+        return false;
     },
 
     doImage: function(err, canvas) {
