@@ -87,11 +87,11 @@ h3.light, h3.light a {
 .row17 { height:auto; min-height: 680px;}
 .row18 { height:auto; min-height: 720px;}
 
-.strongline-all    { border:2px solid #CCC; }
-.strongline-top    { border-top:2px solid #CCC; }
-.strongline-right  { border-right:2px solid #CCC; }
-.strongline-bottom { border-bottom:2px solid #CCC; }
-.strongline-left   { border-left:2px solid #CCC; }
+.strongline-all    { border:2px solid rgba(0,0,0,0.25); }
+.strongline-top    { border-top:2px solid rgba(0,0,0,0.25); }
+.strongline-right  { border-right:2px solid rgba(0,0,0,0.25); }
+.strongline-bottom { border-bottom:2px solid rgba(0,0,0,0.25); }
+.strongline-left   { border-left:2px solid rgba(0,0,0,0.25); }
 
 .scroll-styled {
     padding-right: 18px;
@@ -165,7 +165,7 @@ button:hover, .button:hover, .button.active,
   }
   .fill-light {
     background-color: rgb(255, 252, 248);
-    background-color: rgba(255, 252, 248, 0.9);
+    background-color: rgba(255, 252, 248, 0.75);
   }
 
 
@@ -229,6 +229,12 @@ button:hover, .button:hover, .button.active,
   .dark .rounded-toggle input[type=radio]:checked + label {
     color: #444;
   }
+
+.single-tab > a {
+  border-radius: 3px 3px 0 0 !important;
+  border-bottom-width: 0 !important;
+  background-color: rgba(0,0,0,0.05) !important;
+}
 
 /* custom layout elements */
 .header {
@@ -310,10 +316,8 @@ footer {
     max-width: 540px;
     min-width: 400px;
   }
-  .sidebar-content {
-    position: absolute;
-    top: 46px; /* ul.boxmenu width */
-    bottom: 0;
+  .prjslide-container {
+    height: calc(100% - 60px);
   }
 
 

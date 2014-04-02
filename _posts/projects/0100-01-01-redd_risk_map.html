@@ -17,153 +17,94 @@ basemap:
         z: -1
       - id: moabi_redd_projects
         z: 0
-thumb:
-    map_id: helsinki.moabi_base,helsinki.moabi_mining
-    lat:
-    lon:
-    zoom:
-    img:
 
-main_panels:
-  - id: about
-    name: About
-    title: Managing the DRC's Forests
-    description: Future forest loss in DRC is very uncertain. Decades of conflict and under investment have prevented the industrial scale of forestry and agricultural activities that characterized deforestation in Brazil and Indonesia – the other two large rainforest countries. As the country stabilizes, deforestation will increase, but predicting when and where it will occur presents an ongoing challenge to REDD+ implementation. The maps illustrate 7 potential land use activities overlapping REDD+ pilot projects locations including mines, roads, and logging permits. Some are active, many are speculative, but over the next thirty years, it is inevitable that they could compete with REDD+ activities. These land uses will also overlap with customary rights of local communities and could impede their access and use of the forest.
-
-  - id: data
-    name: Data Layers
+report:
+  - title: Managing the DRC's Forests
+    text: Future forest loss in DRC is very uncertain. Decades of conflict and under investment have prevented the industrial scale of forestry and agricultural activities that characterized deforestation in Brazil and Indonesia – the other two large rainforest countries. As the country stabilizes, deforestation will increase, but predicting when and where it will occur presents an ongoing challenge to REDD+ implementation. The maps illustrate 7 potential land use activities overlapping REDD+ pilot projects locations including mines, roads, and logging permits. Some are active, many are speculative, but over the next thirty years, it is inevitable that they could compete with REDD+ activities. These land uses will also overlap with customary rights of local communities and could impede their access and use of the forest.
+  - title: Still Managing the DRC's Forests
+    text: The success of REDD depends on a coordinated effort and open data sharing between the Government of the DRC, Industry, and NGOs
+  - title: Yet still Managing the DRC's Forests
+    text: The success of REDD depends on a coordinated effort and open data sharing between the Government of the DRC, Industry, and NGOs
+data:
+  - slide:
+    type: layer-ui
     title: Deforestation Drivers
-    description: The success of REDD depends on a coordinated effort and open data sharing between the Government of the DRC, Industry, and NGOs.  The following resource concessions and infrastructure projects are possible drivers of deforestation.  In cases where they overlap with REDD projects, they will directly undermine the initiative.
-    panel_data:
-        ui_style: layer-ui
-        actions: [minor-panel-viewer, toggle-layer]
-        aside: Click on a layer to add/remove from the map
-        data_elements:
-          - id: moabi_indigenous
-            name: Indigenous Lands
-            legend: true
-            color: '#BFC7E4'
-            source:
-                name: DGPA, Atlas de Localisation des Peuples Autochtones Pygmees
-                url: www.dgpa.cd
-            description: Don't exproriate indigenous lands. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: moabi_transport
-            name: Transport
-            legend: false
-            color:
-            source:
-                name: Ministry of Information
-                url: www.com
-            description: Roads and rivers provide the major arteries for travel and trade across DRC. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: moabi_mining
-            name: Mining
-            legend: true
-            color: '#F6EE98'
-            source:
-                name: CAMI (November 2013)
-                url:
-            description: Mining and Energy. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: moabi_logging
-            name: Logging
-            legend: true
-            color: '#AC9270'
-            source:
-                name: Ministry of Logging
-                url:
-            description: Logging cuts down trees. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: moabi_oil
-            name: Oil
-            legend: true
-            color: '#EAC096'
-            source:
-                name: CAMI (November 2013)
-                url:
-            description: So much Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: moabi_palm
-            name: Palm Oil
-            legend: true
-            color: '#767436'
-            source:
-                name: Ministry of Agriculture
-                url:
-            description: So much Palm Oil. After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-          - id: moabi_energy
-            name: Energy
-            legend: false
-            source:
-                name: Ministry of Energy
-                url:
-            description: Energy Corridors! After decades of neglect, 16,760 kilometers of road are being rehabilitated including 820 kilometers directly overlapping with REDD+ pilot projects.  Forest located within two kilometers of roads will be vulnerable to clearance and other impacts such as poaching will affect a far broader area.
-
-  - id: sites
-    name: REDD+ Projects
+    description: The following resource concessions and infrastructure projects are possible drivers of deforestation.  In cases where they overlap with REDD projects, they will directly undermine the initiative.
+    aside: Toggle map layers
+    layers:
+        - id: moabi_indigenous
+        - id: moabi_transport
+        - id: moabi_logging
+        - id: moabi_oil
+        - id: moabi_mining
+  - slide:
+    type: map-nav
     title: REDD+ Project Sites
     description: REDD+ Projects cover a significant amount of the DRC's valuable rainforest resources. If managed correctly, they could provide an a steady revenue stream while protecting the country's ecological hertigage and acting as an important carbon sink for the world.
-    panel_data:
-        ui_style: navigate
-        actions: [minor-panel-viewer, navigate]
-        aside: Click on a REDD+ Project to navigate to its location.
-        data_elements:
-          - id: era
-            name: Era
-            lat: -2
-            lon: 18
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-          - id: luki
-            name: Luki
-            lat: -5.6
-            lon: 13.2
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-          - id: tayna
-            name: Tayna
-            lat: -0.35
-            lon: 28.7
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-          - id: kwamouth
-            name: Kwamouth
-            lat: -3.9
-            lon: 16.6
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-          - id: ecomakala
-            name: Ecomakala
-            lat: -1
-            lon: 29.3
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-          - id: mambasa
-            name: Mambasa
-            lat: 1.1
-            lon: 29.1
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-          - id: isangi
-            name: Isangi
-            lat: 0.9
-            lon: 24.1
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-          - id: mitsoshi
-            name: Mitsoshi Kabobo
-            lat: -5.1
-            lon: 29.1
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-          - id: jadora
-            name: Jadora
-            lat: 0.4
-            lon: 23.95
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-          - id: maindombe
-            name: Mai Ndombe
-            lat: -2.75
-            lon: 16.4
-            zoom: 8
-            description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+    aside: Click on a REDD+ Project to navigate to its location.
+    location:
+      - id: era
+        name: Era
+        lat: -2
+        lon: 18
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+      - id: luki
+        name: Luki
+        lat: -5.6
+        lon: 13.2
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+      - id: tayna
+        name: Tayna
+        lat: -0.35
+        lon: 28.7
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+      - id: kwamouth
+        name: Kwamouth
+        lat: -3.9
+        lon: 16.6
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+      - id: ecomakala
+        name: Ecomakala
+        lat: -1
+        lon: 29.3
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+      - id: mambasa
+        name: Mambasa
+        lat: 1.1
+        lon: 29.1
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+      - id: isangi
+        name: Isangi
+        lat: 0.9
+        lon: 24.1
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+      - id: mitsoshi
+        name: Mitsoshi Kabobo
+        lat: -5.1
+        lon: 29.1
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+      - id: jadora
+        name: Jadora
+        lat: 0.4
+        lon: 23.95
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+      - id: maindombe
+        name: Mai Ndombe
+        lat: -2.75
+        lon: 16.4
+        zoom: 8
+        description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
+
+
 ---
 {% for main_panel in page.main_panels %}
     {% if main_panel.panel_data.actions contains 'toggle-layer' %}

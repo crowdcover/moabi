@@ -1,10 +1,12 @@
 {% if page.categories contains 'project_en' or page.categories contains 'project_fr' %}
-<header class="header fill-dark dark dropshadow-down strongline-bottom caps">
+<header class="header caps">
     <div class="clearfix">
-        <h1 class="col4 prj-header pad1y center strongline-right">
+        <h1 class="col4 prj-header pad1y center fill-light strongline-right strongline-bottom dropshadow-right">
             <a href="{{page.permalink}}">{{page.title}}</a>
         </h1>
-        <a class="pad2 fr" href="{{site.baseurl}}/">Home</a>
+        <div class="fr text-shadow pad2">
+            <a class="pad2" href="{{site.baseurl}}/">Home</a>
+        </div>
     </div>
 </header>
 {% else %}

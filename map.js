@@ -67,6 +67,7 @@ $(function() {
     });
 });
 
+
 var moabi = {
 
     global: function() {
