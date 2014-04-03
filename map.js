@@ -130,8 +130,8 @@ var moabi = {
 
         var $this = $(this),
             $thisIndex = $this.parent('li').data('index'),
-            displayedList = $('.layer-ui .displayed'),
-            nodisplayList = $('.layer-ui .not-displayed');
+            displayed = $('.layer-ui .displayed'),
+            notDisplayed = $('.layer-ui .not-displayed');
 
             mapId = $this.data('id');
 
@@ -146,38 +146,38 @@ var moabi = {
             layerLegend = mapLayers.dataLayers[mapId][1],
             $mapLegend = $('.map-legend');
 
-        // if button is active, remove layer from map and move button to nodisplayList
+        // if button is active, remove layer from map and move button to notDisplayed
         if ($this.hasClass('active')) {
             $this.removeClass('active');
             map.removeLayer(layer);
 
-            // find all indices in nodisplayList
-            var nodisplayIndices = nodisplayList.children('li').map(function(){
+            // find all indices in notDisplayed
+            var notDisplayedIndices = notDisplayed.children('li').map(function(){
                 return $(this).data('index');
             }).get().sort(function (a, b) { return a - b; });
 
             // if nodisplay is empty OR if $thisIndex greater than the largest nodisplay index, append to end
-            if (nodisplayIndices.length === 0 || $thisIndex > nodisplayIndices[nodisplayIndices.length - 1]){
-                nodisplayList.append($this.parent('li'));
+            if (notDisplayedIndices.length === 0 || $thisIndex > notDisplayedIndices[notDisplayedIndices.length - 1]){
+                notDisplayed.append($this.parent('li'));
             // if $thisIndex less than the smallest nodisplay Index, prepend to beginning
-            } else if ($thisIndex < nodisplayIndices[0]){
-                nodisplayList.prepend($this.parent('li'));
+            } else if ($thisIndex < notDisplayedIndices[0]){
+                notDisplayed.prepend($this.parent('li'));
             // else, find next smallest
             } else {
-                for (i = 0; i < nodisplayIndices.length; i++){
-                    if (nodisplayIndices[i] > $thisIndex){
-                        nextLargestIndex = nodisplayIndices[i - 1];
+                for (i = 0; i < notDisplayedIndices.length; i++){
+                    if (notDisplayedIndices[i] > $thisIndex){
+                        nextLargestIndex = notDisplayedIndices[i - 1];
                         break;
                     }
                 }
 
-                nodisplayList.children('li').filter('[data-index="' + nextLargestIndex + '"]').after($this.parent('li'));
+                notDisplayed.children('li').filter('[data-index="' + nextLargestIndex + '"]').after($this.parent('li'));
             }
 
         // else if button is not active: add layer to map and move button to displayList
         } else {
             $this.addClass('active');
-            displayedList.prepend($this.parent('li'));
+            displayed.prepend($this.parent('li'));
             map.addLayer(layer);
         }
     },
