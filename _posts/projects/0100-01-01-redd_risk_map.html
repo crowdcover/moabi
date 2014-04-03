@@ -42,25 +42,9 @@ report:
         zoom: 8
 
 data:
-  - title: Deforestation Drivers
-    type: layer-ui
-    description: The following resource concessions and infrastructure projects are possible drivers of deforestation.  In cases where they overlap with REDD projects, they will directly undermine the initiative.
-    aside: Toggle map layers
-    layers:
-        - name: Indigenous Lands
-          id: moabi_indigenous
-        - name: Transportation
-          id: moabi_transport
-        - name: Logging Concessions
-          id: moabi_logging
-        - name: Oil Concessions
-          id: moabi_oil
-        - name: Mining Concessions
-          id: moabi_mining
   - title: REDD+ Project Sites
     type: map-nav
-    description: REDD+ Projects cover a significant amount of the DRC's valuable rainforest resources. If managed correctly, they could provide an a steady revenue stream while protecting the country's ecological hertigage and acting as an important carbon sink for the world.
-    aside: Click on a REDD+ Project to navigate to its location.
+    description: REDD+ Projects cover a significant amount of the DRC's valuable rainforest resources. If managed correctly, they could provide an a steady revenue stream while protecting the country's ecological hertigage and acting as an important carbon sink for the world. Click on a REDD+ Project to navigate to its location.
     location:
       - id: era
         name: Era
@@ -122,7 +106,20 @@ data:
         lon: 16.4
         zoom: 8
         description: FILLERTEXT- Located in the restive east of the country, the Ecomakala forest project covers over xx hectares of land.  However, portions of the forest have already been cut by artisanal logging operations and locals trading in charcole.  Illegal poching has also been reported throughout the project site.
-
+  - title: Deforestation Drivers
+    type: layer-ui
+    description: The following resource concessions and infrastructure projects are possible drivers of deforestation.  In cases where they overlap with REDD projects, they will directly undermine the initiative.  Click on a layer to add it to the map.
+    layers:
+        - name: Indigenous Lands
+          id: moabi_indigenous
+        - name: Transportation
+          id: moabi_transport
+        - name: Logging Concessions
+          id: moabi_logging
+        - name: Oil Concessions
+          id: moabi_oil
+        - name: Mining Concessions
+          id: moabi_mining
 
 ---
 {% for main_panel in page.main_panels %}

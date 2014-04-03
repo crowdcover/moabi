@@ -73,11 +73,13 @@
 {% if page.basemap %}
 <div class="clearfix strongline-bottom">
     <div class="col4 row18 pad1x fill-dark dark dropshadow-right" style="border-right: 2px solid #555;">
-        <div class='slider tabs row2 col8 pad2y margin2 margin2r'>
-           <a data-index="1" class='col6 active'>Visualize</a><!--
-        --><a data-index="2" class='col6'>Export</a>
+        <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
+            <div class='slider tabs col10 margin1 pad1y clearfix'>
+                <a data-index="1" class='col6 active'>Visualize</a><!--
+             --><a data-index="2" class='col6'>Export</a>
+            </div>
         </div>
-        <div class="col12 row16 pad2y keyline-top clip sliding h active1">
+        <div class="col12 row16 pad2y clip sliding h active1">
             <div class="layer-ui col12 minor-panel-viewer animate">
                 <div class="col2 text-right pad0">
                     <h3 class="light">Theme:</h3>
@@ -134,19 +136,19 @@
                 <ul class="pad1">
                     <li class="pad0x pad1y clearfix">
                         <div>
-                            <a href="http://osm.moabi.org" class="space">Data Extracts</a><span class="small quiet pad1x">(Shp, OSM, GeoJson)</span>
+                            <a href="http://osm.moabi.org" class="space"><strong>Data Extracts</strong></a><span class="small quiet pad1x">(Shp, OSM, GeoJson)</span>
                         </div>
                         <div class="col12 pad1x pad0y quiet small">Download extracts of the Database via Moabi.OSM iD interface</div>
                     </li>
                     <li class="pad0x pad1y clearfix">
-                        <div class="col12">Map Embed</div>
+                        <div class="col12"><strong>Map Embed</strong></div>
                         <div class="col12 pad1x pad0y quiet small">Easily embed the map in any blog or website using simple HTML</div>
                         <fieldset class="">
                             <input type="text" value="<iframe src='rdc.moabi.org/mapi/#6/28.00/26.10' frameborder='0' width='650' height='500'></iframe>" class="stretch">
                         </fieldset>
                     </li>
                     <li class="pad0x pad1y clearfix">
-                        <div class="col12">Print Map</div>
+                        <div class="col12"><strong>Print Map</strong></div>
                         <div class="col12 pad1x pad0y quiet small">Take a screen shot of the current map view</div>
                         <div id="images" class="col12 fill-darken keyline-all contain" style="min-height: 32px;">
                             <a id="snap" href="#" class="button pin-left short fill-dark" style="border-radius: 0;">capture</a>

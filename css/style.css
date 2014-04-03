@@ -230,14 +230,7 @@ button:hover, .button:hover, .button.active,
     color: #444;
   }
 
-.tabs.single-tab-t > a {
-  border-radius: 0 0 3px 3px;
-  border-top-width: 0;
-  }
-  .tabs.single-tab-b > a {
-    border-radius: 3px 3px 0 0;
-    border-top-width: 0;
-  }
+.tabs a { cursor: pointer; } /*not sure why this needs to be restated*/
 
 /* custom layout elements */
 .header {
@@ -319,12 +312,15 @@ footer {
     max-width: 540px;
     min-width: 400px;
   }
-  .report-container {
+  .report-container, .data-container {
     position: absolute;
     /*top: 60px;*/
     top: 0;
     bottom: 0;
     width: 100%;
+  }
+  .data-container {
+    overflow: auto;
   }
   .report {
     padding: 0 20px;
@@ -440,12 +436,6 @@ footer {
 
 
 /*pillmenu*/
-.pillmenu {
-    border-bottom: 1px solid #CCC;
-    margin-bottom: 4px;
-    text-align: center;
-}
-
 .pillmenu li {
     display: inline-block;
     margin-bottom: 10px;

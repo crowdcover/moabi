@@ -91,7 +91,7 @@ var moabi = {
 
     slide: function() {
         var $this = $(this),
-            tabgroup = $this.parent(),
+            tabgroup = $this.parents('.tab-group'),
             index = $this.data('index'),
             oldIndex = $(this).siblings('.active').removeClass('active').data('index'),
             slidecontainer = tabgroup.next();

@@ -13,11 +13,13 @@
 <div id="map"></div>
 
 <div class="sidebar col12 fill-light strongline-right dropshadow-right" style="padding-top: 12px">
-    <div class='slider tabs col8 margin2 space-bottom1'>
-        <a data-index="1" class='col6 active'>Report</a><!--
-     --><a data-index="2" class='col6'>Data</a>
+    <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
+        <div class='slider tabs col10 margin1 space-bottom1 clearfix'>
+            <a data-index="1" class='col6 active'>Report</a><!--
+         --><a data-index="2" class='col6'>Data</a>
+        </div>
     </div>
-    <div class="col12 clip sliding h active1" style="height: calc(100% - 50px)">
+    <div class="col12 clip sliding h active1" style="height: calc(100% - 61px)">
         <div class="report-container col12 clip sliding v active1 animate">
             {% for report in page.report %}
                 <div class="report col12 animate" style="height: 100%" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}">
@@ -38,32 +40,33 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="col12 pad2x animate" style="height: calc(100% - 50px); overflow: auto;">
+        <div class="data-container col12 pad2x animate">
             {% for data in page.data %}
-                <h2 class="pad2y center">{{data.title}}</h2>
-                <p class="prose">{{data.description}}</p>
-                <p class="small quiet">{{data.aside}}</p>
-                {% if data.type == 'layer-ui' %}
-                    <div class="layer-ui activate">
-                        <ul class="not-displayed keyline-all fill-darken scroll-styled">
-                            {% for layer in data.layers %}
-                                <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                                    <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                <div class="data col12 space-bottom4 {% unless forloop.last %}keyline-bottom{% endunless %}">
+                    <h2 class="space-bottom1 center">{{data.title}}</h2>
+                    <p class="prose small">{{data.description}}</p>
+                    {% if data.type == 'map-nav' %}
+                        <ul class="navigate pillmenu center pad2x space-bottom1">
+                            {% for button in data.location %}
+                                <li>
+                                    <a class="" data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]' href="#">{{button.name}}</a>
                                 </li>
                             {% endfor %}
                         </ul>
+                    {% elsif data.type == 'layer-ui' %}
+                        <div class="layer-ui activate pad2x">
+                            <ul class="not-displayed keyline-all fill-darken scroll-styled">
+                                {% for layer in data.layers %}
+                                    <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
+                                        <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
 
-                        <ul class="displayed sortable keyline-all scroll-styled"></ul>
-                    </div>
-                {% elsif data.type == 'map-nav' %}
-                    <ul class="navigate pillmenu">
-                        {% for button in data.location %}
-                            <li>
-                                <a class="" data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]' href="#">{{button.name}}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
+                            <ul class="displayed sortable keyline-all fill-darken scroll-styled"></ul>
+                        </div>
+                    {% endif %}
+                </div>
             {% endfor %}
         </div>
     </div>
