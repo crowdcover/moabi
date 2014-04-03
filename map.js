@@ -156,8 +156,8 @@ var moabi = {
                 return $(this).data('index');
             }).get().sort(function (a, b) { return a - b; });
 
-            // if $thisIndex greater than the largest nodisplay index, append to end
-            if ($thisIndex > nodisplayIndices[nodisplayIndices.length - 1]){
+            // if nodisplay is empty OR if $thisIndex greater than the largest nodisplay index, append to end
+            if (nodisplayIndices.length === 0 || $thisIndex > nodisplayIndices[nodisplayIndices.length - 1]){
                 nodisplayList.append($this.parent('li'));
             // if $thisIndex less than the smallest nodisplay Index, prepend to beginning
             } else if ($thisIndex < nodisplayIndices[0]){
