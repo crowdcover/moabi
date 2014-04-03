@@ -21,21 +21,24 @@ basemap:
 report:
   - title: Managing the DRC's Forests
     text: Future forest loss in DRC is very uncertain. Decades of conflict and under investment have prevented the industrial scale of forestry and agricultural activities that characterized deforestation in Brazil and Indonesia – the other two large rainforest countries. As the country stabilizes, deforestation will increase, but predicting when and where it will occur presents an ongoing challenge to REDD+ implementation. The maps illustrate 7 potential land use activities overlapping REDD+ pilot projects locations including mines, roads, and logging permits. Some are active, many are speculative, but over the next thirty years, it is inevitable that they could compete with REDD+ activities. These land uses will also overlap with customary rights of local communities and could impede their access and use of the forest.
-    layers: []
+    layers: [moabi_redd_projects]
+                    ## first slide's layers property below should contain all additional base layers (in this case moabi_redd_projects)
+                    ## if layers is ever empty, it should not be assigned anything, rather than being assigned '[]'
+                    ## the way I have things configured, layers can only point to a layer that appears in layer-ui (defined below) (also, layer-ui must exist)
     zoom_to:
-        lat:
-        lon:
-        zoom:
+        lat: -2.877
+        lon: 22.830
+        zoom: 5
   - title: Still Managing the DRC's Forests
     text: The success of REDD depends on a coordinated effort and open data sharing between the Government of the DRC, Industry, and NGOs.  The success of REDD depends on a coordinated effort and open data sharing between the Government of the DRC, Industry, and NGOs
-    layers: []
+    layers: [moabi_logging]
     zoom_to:
         lat: -3.4
         lon: 22.0
         zoom: 8
   - title: Yet still Managing the DRC's Forests
     text: The success of REDD depends on a coordinated effort and open data sharing between the Government of the DRC, Industry, and NGOs
-    layers: []
+    layers: [moabi_indigenous, moabi_mining]
     zoom_to:
         lat: -2.0
         lon: 23.0

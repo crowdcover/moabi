@@ -75,7 +75,6 @@ var moabi = {
             $('.not-displayed').children('li').each(function(){
                 totalHeight += $(this).outerHeight();
             });
-            console.log("total height" + totalHeight);
             return totalHeight;
         });
     },
@@ -126,9 +125,35 @@ var moabi = {
         if ( $this.data('slide') == 'up' ){
             newIndex = reportIndex - 1;
             reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
+
+            // toggle layers/navigate according to previous slide location
+            var prevSlide = report.prev(),
+                prevMapId = prevSlide.data('id'),
+                prevNav = prevSlide.data('nav');
+            if (prevMapId){
+                for (i = 0; i < prevMapId.length; i++){
+                    $('.layer-ui .layer-toggle[data-id="' + prevMapId[i] + '"]').trigger('click');
+                }
+            }
+            if (prevNav){
+                map.setView([prevNav[0], prevNav[1]], prevNav[2]);
+            }
         } else {
             newIndex = reportIndex + 1;
             reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
+
+            // toggle layers/navigate according to next slide location
+            var nextSlide = report.next(),
+                nextMapId = nextSlide.data('id'),
+                nextNav = nextSlide.data('nav');
+            if (nextMapId){
+                for (i = 0; i < nextMapId.length; i++){
+                    $('.layer-ui .layer-toggle[data-id="' + nextMapId[i] + '"]').trigger('click');
+                }
+            }
+            if (nextNav){
+                map.setView([nextNav[0], nextNav[1]], nextNav[2]);
+            }
         }
 
     },
