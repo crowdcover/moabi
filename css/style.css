@@ -93,6 +93,12 @@ h3.light, h3.light a {
 .strongline-bottom { border-bottom:2px solid rgba(0,0,0,0.25); }
 .strongline-left   { border-left:2px solid rgba(0,0,0,0.25); }
 
+.dashline-all    { border:1px dashed rgba(0,0,0,0.25); }
+.dashline-top    { border-top:1px dashed rgba(0,0,0,0.25); }
+.dashline-right  { border-right:1px dashed rgba(0,0,0,0.25); }
+.dashline-bottom { border-bottom:1px dashed rgba(0,0,0,0.25); }
+.dashline-left   { border-left:1px dashed rgba(0,0,0,0.25); }
+
 .scroll-styled {
     padding-right: 18px;
 }
@@ -179,9 +185,7 @@ button:hover, .button:hover, .button.active,
     margin: 0;
   }
   .layer-ui .not-displayed {
-    /*min-height: 80px;*/
-    /*max-height: 280px;*/
-    height: 195px;
+    max-height: 195px;
     margin: 4px 0 16px;
   }
   .layer-ui .displayed {

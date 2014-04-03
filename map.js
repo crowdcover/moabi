@@ -69,6 +69,15 @@ var moabi = {
             }
         });
         $( ".sortable" ).disableSelection();
+
+        $('.not-displayed').css('height', function(){
+            totalHeight = 2;
+            $('.not-displayed').children('li').each(function(){
+                totalHeight += $(this).outerHeight();
+            });
+            console.log("total height" + totalHeight);
+            return totalHeight;
+        });
     },
 
     mapCapture: function(e) {
@@ -243,8 +252,6 @@ var moabi = {
             $('.minor-panel.active').removeClass('active');
             $('.minor-panel[data-id="' + panelId + '"]').addClass('active');
         }
-
-        moabi.contentBarResize();
     },
 
     navigate: function(e) {
