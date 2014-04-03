@@ -126,6 +126,9 @@ var moabi = {
             newIndex = reportIndex - 1;
             reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
 
+            // remove all layers
+            moabi.removeAllLayers();
+
             // toggle layers/navigate according to previous slide location
             var prevSlide = report.prev(),
                 prevMapId = prevSlide.data('id'),
@@ -141,6 +144,9 @@ var moabi = {
         } else {
             newIndex = reportIndex + 1;
             reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
+
+            // remove all layers
+            moabi.removeAllLayers();
 
             // toggle layers/navigate according to next slide location
             var nextSlide = report.next(),
@@ -237,32 +243,12 @@ var moabi = {
         $('.ui-button[data-id="' + mapId + '"]' ).trigger('click');
     },
 
-    showMajorPanel: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        var $this = $(this),
-            panelId = $this.data('id'),
-            sidebar = $this.parents('.sidebar');
-
-        // make button .active
-        $this.parents('ul').find('a.active').removeClass('active');
-        $this.addClass('active');
-
-        sidebar.find('.main-panel.active').removeClass('active');
-        sidebar.find('.main-panel[data-id="' + panelId + '"]').addClass('active');
-
-        moabi.contentBarResize();
-    },
-
     showMinorPanel: function(e) {
         e.preventDefault();
         e.stopPropagation();
 
         var $this = $(this),
             panelId = $(this).data('id');
-
-        console.log('show minor panel fired')
 
         if ($this.hasClass('active')) {
             // close the active panel and open the previous one
@@ -310,25 +296,6 @@ var moabi = {
         // }
     },
 
-    contentBarResize: function() {
-        // in order to allow for an animated height transition:
-        // calculate height of content-bar's children,
-        // calculate max height of content bar based on window size - content-bar's siblings
-        // set content-bar height to the smaller of the two
-        var $boxmenu = $('.boxmenu'),
-            $contentbarFill = $('.contentbar-fill');
-
-        var contentHeight = $contentbarFill.children('.main-panel.active').outerHeight();
-        var maxHeight = $(window).height() - $('.contentbar-header').height() - $boxmenu.height() - 3; //minus 3 for border-bottom of .contentbar-fill (2) and .contentbar-header (1)
-        if(contentHeight < maxHeight ) {
-            $boxmenu.removeClass('shadow');
-            $contentbarFill.height(contentHeight);
-        } else {
-            $boxmenu.addClass('shadow');
-            $contentbarFill.height(maxHeight);
-        }
-    },
-
     legendResize: function() {
         // set .map-egend height to it's new height every time .moabi-legends are added/removed
         var $mapLegend = $('.map-legend'),
@@ -363,6 +330,15 @@ var moabi = {
             if (newIndex === -1){ var newIndex = slideCount; }
             slides.filter('[data-index="' + newIndex + '"]').addClass('active');
         }
+    },
+
+    removeAllLayers: function() {
+        $('.layer-ui .displayed .layer-toggle').trigger('click');
+
+        // below doesn't work if layers were added via .layer-ui trigger click
+        // for (var id in mapLayers['dataLayers']){
+        //     map.removeLayer(mapLayers['dataLayers'][id][0]);
+        // }
     }
 
 };
