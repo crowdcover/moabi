@@ -34,25 +34,6 @@ if (mapLayers.pageType == 'project'){
     }
 }
 
-$('#snap').on('click', function(e) {
-    e.preventDefault();
-    leafletImage(map, doImage);
-});
-
-function doImage(err, canvas) {
-
-    var $imgContainer = $('#images');
-    console.log('do Image fired: this=' + this);
-
-    var mapCapture = document.createElement('img');
-    var dimensions = map.getSize();
-    // img.width = dimensions.x;
-    // img.height = dimensions.y;
-    mapCapture.src = canvas.toDataURL();
-    $imgContainer.children('img').remove();
-    $imgContainer.append(mapCapture);
-}
-
 var moabi = {
 
     global: function() {
@@ -69,7 +50,7 @@ var moabi = {
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
 
-        // $('#snap').on('click', leafletImage(map, this.doImage));
+        $('#snap').on('click', this.mapCapture);
 
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
@@ -88,6 +69,24 @@ var moabi = {
             }
         });
         $( ".sortable" ).disableSelection();
+    },
+
+    mapCapture: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        leafletImage(map, function(err, canvas) {
+            var $imgContainer = $('#images');
+            console.log('image capture fired: this= ' + this);
+
+            var mapCapture = document.createElement('img');
+            var dimensions = map.getSize();
+            // img.width = dimensions.x;
+            // img.height = dimensions.y;
+            mapCapture.src = canvas.toDataURL();
+            $imgContainer.children('img').remove();
+            $imgContainer.append(mapCapture);
+        });
     },
 
     slide: function() {
