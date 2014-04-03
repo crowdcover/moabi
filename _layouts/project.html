@@ -12,19 +12,28 @@
 
 <div id="map"></div>
 
-<div class="sidebar col12 pad2 scroll-styled fill-light strongline-right dropshadow-right">
-    <div class='tabs col8 margin2 space-bottom'>
+<div class="sidebar col12 fill-light strongline-right dropshadow-right" style="padding-top: 12px">
+    <div class='tabs col8 margin2 space-bottom1'>
         <a href='#active1' class='col6 active'>Report</a><!--
      --><a href='#active2' class='col6'>Data</a>
     </div>
-    <div class="prjslide-container col12 clip sliding h active1">
-        {% for prjslide in page.report %}
-            <div class="prjslide col12" style="height: 100%">
-                <h2>{{prjslide.title}}</h2>
-                <p class="prose">{{prjslide.text}}</p>
-                <div class="tabs single-tab col2 margin5 margin5r pin-bottom">
-                    <a href="#">Next Page</a>
-                </div>
+    <div class="report-container col12 clip sliding v active1">
+        {% for report in page.report %}
+            <div class="report col12 animate" style="height: 100%" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}">
+                {% unless forloop.first %}
+                    <a href="#" class="report-slider slide-control h animate clearfix center" data-slide="up">
+                        <span class="icon arrow-up col12"></span>
+                        <span class="small">Page Up</span>
+                    </a>
+                {% endunless %}
+                <h2 class="pad2y">{{report.title}}</h2>
+                <p class="prose space-bottom4">{{report.text}}</p>
+                {% unless forloop.last %}
+                    <a href="#" class="report-slider slide-control h animate clearfix center" data-slide="down">
+                        <span class="small">Page Down</span>
+                        <span class="icon arrow-down col12"></span>
+                    </a>
+                {% endunless %}
             </div>
         {% endfor %}
     </div>

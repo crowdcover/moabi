@@ -230,11 +230,14 @@ button:hover, .button:hover, .button.active,
     color: #444;
   }
 
-.single-tab > a {
-  border-radius: 3px 3px 0 0 !important;
-  border-bottom-width: 0 !important;
-  background-color: rgba(0,0,0,0.05) !important;
-}
+.tabs.single-tab-t > a {
+  border-radius: 0 0 3px 3px;
+  border-top-width: 0;
+  }
+  .tabs.single-tab-b > a {
+    border-radius: 3px 3px 0 0;
+    border-top-width: 0;
+  }
 
 /* custom layout elements */
 .header {
@@ -316,8 +319,15 @@ footer {
     max-width: 540px;
     min-width: 400px;
   }
-  .prjslide-container {
-    height: calc(100% - 60px);
+  .report-container {
+    position: absolute;
+    top: 60px;
+    bottom: 0;
+    width: 100%;
+  }
+  .report {
+    padding: 0 20px;
+    overflow: auto;
   }
 
 
@@ -486,7 +496,6 @@ footer {
 .slideshow {
     position: relative;
     width: 100%;
-    /*height: 340px;*/
 }
 
 .slide-control {
@@ -494,50 +503,68 @@ footer {
     width: 60px;
     height: 100%;
     z-index: 1;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-}
-    .slide-control[data-slide="right"] {
-        right: 0;
-    }
-    .slide-control[data-slide="left"] {
-        left: 0;
-    }
-    .slide-control[data-slide="right"] span {
-        left: 18px;
-    }
-    .slide-control[data-slide="left"] span {
-        right: 8px;
-    }
-    .slide-control[data-slide="right"]:hover,
-    .slide-control[data-slide="left"]:hover {
-        background: rgba(0,0,0,0.2);
-    }
-    .slide-control span {
-        position: absolute;
-        top: 50%;
-        margin-top: -24px;
-        color: white;
-    }
-    .slide-control:hover span {
-        color: orange;
-    }
+  }
+  .slide-control.h {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .slide-control[data-slide="right"] {
+    right: 0;
+  }
+  .slide-control[data-slide="left"] {
+    left: 0;
+  }
+  .slide-control[data-slide="right"] span {
+    left: 18px;
+  }
+  .slide-control[data-slide="left"] span {
+    right: 8px;
+  }
+  .slide-control:hover {
+    background: rgba(0,0,0,0.2);
+  }
+  .slide-control.h:hover {
+    background: transparent;
+  }
+  .slide-control.h[data-slide="up"]:hover {
+    bottom: 4px;
+  }
+  .slide-control.h[data-slide="down"]:hover {
+    top: 4px;
+  }
+  .slide-control span {
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    color: white;
+  }
+  .slide-control.h span {
+    position: static;
+    display: block;
+    margin: 0;
+    color: #333;
+  }
+  .slide-control:hover span {
+    color: #666;
+  }
 
 .slide {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-    opacity: 0;
-}
-    .slide.active {
-        opacity: 1;
-    }
-    .slide div {
-        z-index: 1;
-    }
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  opacity: 0;
+  }
+  .slide.active {
+    opacity: 1;
+  }
+  .slide div {
+    z-index: 1;
+  }
 
 
 /**************************Panels**************************/

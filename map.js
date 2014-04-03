@@ -34,7 +34,7 @@ if (mapLayers.pageType == 'project'){
     }
 }
 
-document.getElementById('snap').addEventListener('click', function(e) {
+$('#snap').on('click', function(e) {
     e.preventDefault();
     leafletImage(map, doImage);
 });
@@ -67,14 +67,14 @@ $(function() {
     });
 });
 
-
 var moabi = {
 
     global: function() {
         // $(document).ready(this.contentBarResize);
         // $(window).resize(this.contentBarResize);
 
-        $('.boxmenu').on('click', 'a', this.showMajorPanel);
+        $('.report-slider').on('click', this.slidePage);
+        // $('.boxmenu').on('click', 'a', this.showMajorPanel);
         $('.minor-panel-viewer').on('click', 'a.event-button', this.showMinorPanel);
         $('.layer-ui').on('click', 'a.event-button', this.layerUi);
         $('.navigate').on('click', 'a', this.navigate);
@@ -102,6 +102,28 @@ var moabi = {
             }
         });
         $( ".sortable" ).disableSelection();
+    },
+
+    slidePage: function() {
+        // e.preventDefault();
+        // e.stopPropagation();
+
+        var $this = $(this),
+            report = $(this).parent(),
+
+            reportIndex = report.data('index'),
+            reportCount = report.data('ixcount'),
+            reportContainer = report.parent('.report-container');
+
+        // console.log(reportIndex + " : " + reportCount);
+        if ( $this.data('slide') == 'up' ){
+            newIndex = reportIndex - 1;
+            reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
+        } else {
+            newIndex = reportIndex + 1;
+            reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
+        }
+
     },
 
     horizontalSlide: function() {
