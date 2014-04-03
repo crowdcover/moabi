@@ -53,37 +53,23 @@ function doImage(err, canvas) {
     $imgContainer.append(mapCapture);
 }
 
-
-$(function() {
-    $('.tabs a').click(function() {
-        var tabgroup = $(this).parent();
-        var slidecontainer = tabgroup.next();
-        var tab = $(this).attr('href').split('#')[1];
-        $('a', tabgroup).removeClass('active');
-
-        $(this).addClass('active');
-        slidecontainer.removeClass('active1 active2 active3').addClass(tab);
-        return false;
-    });
-});
-
 var moabi = {
 
     global: function() {
         // $(document).ready(this.contentBarResize);
         // $(window).resize(this.contentBarResize);
 
+        $('.slider').on('click', 'a', this.slide);
         $('.report-slider').on('click', this.slidePage);
         // $('.boxmenu').on('click', 'a', this.showMajorPanel);
-        $('.minor-panel-viewer').on('click', 'a.event-button', this.showMinorPanel);
-        $('.layer-ui').on('click', 'a.event-button', this.layerUi);
+        $('.minor-panel-viewer').on('click', 'a.layer-toggle', this.showMinorPanel);
+        $('.layer-ui').on('click', 'a.layer-toggle', this.layerUi);
         $('.navigate').on('click', 'a', this.navigate);
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
 
         // $('#snap').on('click', leafletImage(map, this.doImage));
-        // $('.tabs a').on('click', this.horizontalSlide);
 
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
@@ -104,6 +90,20 @@ var moabi = {
         $( ".sortable" ).disableSelection();
     },
 
+    slide: function() {
+        var $this = $(this),
+            tabgroup = $this.parent(),
+            index = $this.data('index'),
+            oldIndex = $(this).siblings('.active').removeClass('active').data('index'),
+            slidecontainer = tabgroup.next();
+
+        // $('a', tabgroup).removeClass('active');
+
+        $this.addClass('active');
+        slidecontainer.removeClass('active' + oldIndex).addClass('active' + index);
+        return false;
+    },
+
     slidePage: function() {
         // e.preventDefault();
         // e.stopPropagation();
@@ -115,7 +115,6 @@ var moabi = {
             reportCount = report.data('ixcount'),
             reportContainer = report.parent('.report-container');
 
-        // console.log(reportIndex + " : " + reportCount);
         if ( $this.data('slide') == 'up' ){
             newIndex = reportIndex - 1;
             reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
@@ -124,18 +123,6 @@ var moabi = {
             reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
         }
 
-    },
-
-    horizontalSlide: function() {
-        var tabgroup = $(this).parent();
-        var slidecontainer = tabgroup.next();
-        var tab = $(this).attr('href').split('#')[1];
-        $('a', tabgroup).removeClass('active');
-
-        $(this).addClass('active');
-        slidecontainer.removeClass('active1 active2').addClass(tab);
-        console.log("horizontalSlide fired")
-        return false;
     },
 
     doImage: function(err, canvas) {

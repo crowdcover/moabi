@@ -165,7 +165,7 @@ button:hover, .button:hover, .button.active,
   }
   .fill-light {
     background-color: rgb(255, 252, 248);
-    background-color: rgba(255, 252, 248, 0.75);
+    background-color: rgba(255, 252, 248, 0.82);
   }
 
 
@@ -321,7 +321,8 @@ footer {
   }
   .report-container {
     position: absolute;
-    top: 60px;
+    /*top: 60px;*/
+    top: 0;
     bottom: 0;
     width: 100%;
   }
