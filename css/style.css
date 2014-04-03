@@ -528,10 +528,16 @@ footer {
     background: transparent;
   }
   .slide-control.h[data-slide="up"]:hover {
-    bottom: 4px;
+    -webkit-transform:translateY(-4px);
+       -moz-transform:translateY(-4px);
+        -ms-transform:translateY(-4px);
+            transform:translateY(-4px);
   }
   .slide-control.h[data-slide="down"]:hover {
-    top: 4px;
+    -webkit-transform:translateY(4px);
+       -moz-transform:translateY(4px);
+        -ms-transform:translateY(4px);
+            transform:translateY(4px);
   }
   .slide-control span {
     position: absolute;
