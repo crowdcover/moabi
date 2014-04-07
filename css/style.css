@@ -93,6 +93,12 @@ h3.light, h3.light a {
 .strongline-bottom { border-bottom:2px solid rgba(0,0,0,0.25); }
 .strongline-left   { border-left:2px solid rgba(0,0,0,0.25); }
 
+.dark .strongline-all, .dark.strongline-all    { border:2px solid rgba(255,255,255,0.25); }
+.dark .strongline-top, .dark.strongline-top    { border-top:2px solid rgba(255,255,255,0.25); }
+.dark .strongline-right, .dark.strongline-right  { border-right:2px solid rgba(255,255,255,0.25); }
+.dark .strongline-bottom, .dark.strongline-bottom { border-bottom:2px solid rgba(255,255,255,0.25); }
+.dark .strongline-left, .dark.strongline-left   { border-left:2px solid rgba(255,255,255,0.25); }
+
 .dashline-all    { border:1px dashed rgba(0,0,0,0.25); }
 .dashline-top    { border-top:1px dashed rgba(0,0,0,0.25); }
 .dashline-right  { border-right:1px dashed rgba(0,0,0,0.25); }
