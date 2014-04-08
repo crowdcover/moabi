@@ -4,7 +4,7 @@ published: false
 
 ## Presets and iD
 
-Presets and predefined set of tag(s) that represent a feature on the ground, for example, a Park. The idea of presets is widely used in OpenStreetMap and the iD editor makes it much easier. Presets can define fields, icons and more metadata to make the feature unambiguous.  
+Presets are predefined set of tag(s) that represent a feature on the ground, for example, a Park. The idea of presets is widely used in OpenStreetMap and the iD editor makes it much easier. Presets can define fields, icons, and more metadata to make the feature unambiguous.  
 
 Though, it is still pretty difficult to create a new preset or edit an existing preset without having to rebuild iD. [The HOT Visual Tag Chooser](http://visualtags.hotosm.org/) is a great preset editor which is compatible with JOSM. It allows you to export and import presets as an XML. iD makes it easy to deal with presets by defining them as JSON and parsing them appropriately. This makes us think that the preset editor is a sensible feature for iD. 
 
@@ -20,5 +20,7 @@ The modifications in iD is very crude because this is a proof of concept. We rea
 2. We have forked the UI rendering into separate files like ui/preset_editor.js and ui/edit_preset_list.js. This essentially contains code similar to the rendering of the preset list and raw tag editor. Is this the right approach?
 3. Right now, presets are tied to the geometry of the entity in the context. This doesn't make sense when editing a preset because the user would want to search for all presets and pick whichever. We made changes in ui/edit_preset_list.js to incorporate this. Is this good? Can we rethink the idea of geometry to include something like 'all'? 
 4. Does the overall structure of code look sensible?
+
+We are hoping that this blog post will encourage conversations around the work that we have been doing and we can hopefully make the preset editor more concrete.
 
 
