@@ -34,13 +34,6 @@ if (mapLayers.pageType == 'project'){
     }
 }
 
-//test grid here
-var tilejson = {"tilejson":"2.0.0","grids":["http://grids.osm.moabi.org/grids/grid/{z}/{x}/{y}.json"],"template":"{{#__location__}}{{/__location__}}{{#__teaser__}}<div class='name'>\n\t<div class='title'>{{{name}}}</div></div>{{/__teaser__}}{{#__full__}}{{/__full__}}"};
-//tilejson = {"bounds":[11.7993,-13.6033,31.0474,5.5941],"center":[21.9727,-5.2879,6],"description":"","download":"http://a.tiles.mapbox.com/v3/helsinki.drc_concessions.mbtiles","filesize":12569600,"format":"png","grids":["http://grids.osm.moabi.org/tiles.py/grid/{z}/{x}/{y}.json"],"id":"helsinki.drc_concessions","legend":"","maxzoom":10,"minzoom":0,"name":"DRC Mine Concessions","private":false,"scheme":"xyz","template":"{{#__location__}}{{/__location__}}{{#__teaser__}}<div class='name'>\n\t<div class='title'>{{{Parties}}}</div>\n\t<div class='subtitle'>License #{{{Code}}}</div>\n</div>\n<div class='details'>\n    <ul class='details'>\n\t<li>Resource: <span class='value'>{{{Resource}}}</span></li>\n\t<li>Status: <span class='value'>{{{Statut}}}</span></li>\n\t<li>Requested: <span class='value'>{{{Demandée}}}</span></li>\n\t<li>Awarded: <span class='value'>{{{Octroyé}}}</span></li>\n        <li>Expires: <span class='value'>{{{Expire}}}</span></li>\n    </ul>\n    <div class='clear'></div>\n</div>{{/__teaser__}}{{#__full__}}{{/__full__}}","tilejson":"2.0.0","tiles":["http://a.tiles.mapbox.com/v3/helsinki.drc_concessions/{z}/{x}/{y}.png","http://b.tiles.mapbox.com/v3/helsinki.drc_concessions/{z}/{x}/{y}.png"],"version":"1.0.0","webpage":"http://a.tiles.mapbox.com/v3/helsinki.drc_concessions/page.html"};
-var gridLayer = L.mapbox.gridLayer(tilejson);
-this.map.addLayer(gridLayer);
-this.map.addControl(L.mapbox.gridControl(gridLayer));
-
 var moabi = {
 
     global: function() {
@@ -72,6 +65,7 @@ var moabi = {
                     console.log(numLayers - index + " : " + $(this).children('a').text() );
 
                 });
+                moabi.setGrid(map);
                 console.log("----");
             }
         });
@@ -226,8 +220,8 @@ var moabi = {
             $this.addClass('active');
             displayed.prepend($this.parent('li'));
             map.addLayer(layer);
-            //GRID HERE?
         }
+        moabi.setGrid(map);
     },
 
     filterLayers: function(e) {
@@ -338,6 +332,42 @@ var moabi = {
             if (newIndex === -1){ var newIndex = slideCount; }
             slides.filter('[data-index="' + newIndex + '"]').addClass('active');
         }
+    },
+
+    setGrid: function(map) {
+      try {
+        // get moabi_id and tooltip of first item in the displayed list, and build a tooltip template
+        var moabi_id = $($('.layer-ui .displayed')[0].firstChild).children('a').data('id');
+        var tooltip = $($('.layer-ui .displayed')[0].firstChild).children('a').data('tooltip');
+        var tooltip_list = tooltip.split(',');
+        var template = "";
+        for (var x in tooltip_list) {      
+          template = template + tooltip_list[x] + ": \{\{" + tooltip_list[x] + "\}\}<br/>";
+        }
+      } catch(err) { return; }
+
+      var grid_url = "http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json";
+
+      //
+      var present = false;
+      map.eachLayer(function (layer) {
+        if (layer.options['grids']) {
+          if (layer.options.grids[0] == grid_url) { present = true; } //grid already loaded
+          else { 
+            map.removeLayer(layer); 
+            $('.map-tooltip').each( function() { $(this).remove(); } ); 
+          }
+        }
+      });
+
+      
+
+      if (tooltip != "" && ! present) {
+        var tilejson = {"tilejson":"2.0.0","grids":["http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json"],"template":"\{\{#__teaser__\}\}" + template + "{\{/__teaser__\}\}"};
+        var gridLayer = L.mapbox.gridLayer(tilejson);
+        map.addLayer(gridLayer);
+        map.addControl(L.mapbox.gridControl(gridLayer));
+      }
     },
 
     removeAllLayers: function() {
