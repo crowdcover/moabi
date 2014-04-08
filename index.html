@@ -2,197 +2,69 @@
 layout: main
 id: home
 title: Moabi
-basemap:
-    center:
-        lat: -2.877
-        lon: 22.830
-        zoom: 5
-    layers:
-      - id: 'moabi_base'
-        z: -1
-    noScrollZoom: true
-    data_layers:
-      - id: moabi_forest_cover
-        name: UMD Forest Cover (2012)
-        categories: [forestry, raster]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_forest_lossyear
-        name: UMD Forest Loss (2001 - 2012)
-        categories: [forestry, raster]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_redd_projects
-        name: REDD+ Projects
-        categories: []
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_protected
-        name: Protected Forest Areas
-        categories: [forestry]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_community_mapping
-        name: Community Mapping
-        categories: [indigenous]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_indigenous
-        name: Indigenous Lands
-        categories: [indigenous]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_energy
-        name: Energy
-        categories: [infrastructure]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_logging
-        name: Logging Concessions
-        categories: [forestry, concession]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_mining
-        name: Mining Concessions
-        categories: [concession]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_oil
-        name: Oil Concessions
-        categories: [concession]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_palm
-        name: Palm Concessions
-        categories: [concession, forestry]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-      - id: moabi_transport
-        name: Road Rehabilitation Projects
-        categories: [infrastructure]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made. Forest loss surrounding city centers is likely due to urban sprawl; loss patterns in orderly, rectangular grids are likely the result of industrial logging; while loss with no discernable pattern is likely due to natural causes or artisanal logging.
-        source: Congolese Ministry of the Environment
-        availability: Public
-
-gradient: true
 language: en
-
 
 slideshow:
     introslide:
         title: Collaborative Land Use Mapping
         description: Moabi DRC is an independent mapping initiative that collaboratively monitors land use in the Democratic Republic of the Congo. Our community works towards a more <strong>Transparent</strong>, <strong>Equitable</strong>, and <strong>Sustainable</strong> future for the environment and people of DRC. You can use Moabi DRC to explore, share, and create projects on a wide range of issues from REDD+ to community mapping and more.
 ---
-<!-- Data Layer UI -->
-<div class="clearfix strongline-bottom">
-    <div class="col4 row18 pad1x fill-dark dark strongline-right dropshadow-right">
-        <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
-            <div class='slider tabs col10 margin1 pad1y clearfix'>
-                <a data-index="1" class='col6 active'>Visualize</a><!--
-             --><a data-index="2" class='col6'>Export</a>
+{% if page.slideshow %}
+<div class="slideshow fill-light row10 text-shadow strongline-bottom">
+    <div class="gradient"></div>
+    <a href="#" class="slide-control" data-slide="left">
+        <span class="icon big arrow-left"></span>
+    </a>
+    <a href="#" class="slide-control" data-slide="right">
+        <span class="icon big arrow-right"></span>
+    </a>
+
+    {% if page.slideshow.introslide %}
+    <div class="slide active" style="background-image: url('/img/wb_temp.jpg');" data-index="0">
+        <div class="col12 pad4y dark prose limiter clearfix pin-bottom">
+            <div class="col3">
+                <h1 class="bold">{{page.slideshow.introslide.title}}</h1>
             </div>
-        </div>
-        <div class="col12 row16 pad2y clip sliding h active1">
-            <div class="layer-ui col12 minor-panel-viewer animate">
-                <div class="col2 text-right pad0y" style="padding-right: 8px">
-                    <div class="light small">Theme:</div>
-                </div>
-                <div class="col10">
-                    <div class="rounded-toggle inline">
-                        <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
-                        <label for="allthemes">All</label>
-                        <input id="concession" type="radio" name='theme' value="concession">
-                        <label for="concession">Concessions</label>
-                        <input id="rainforest" type="radio" name='theme' value="rainforest">
-                        <label for="rainforest">Rainforest</label>
-                        <input id="community" type="radio" name='theme' value="community">
-                        <label for="community">Community</label>
-                    </div>
-                </div>
-                <div class="col2 text-right pad0y space-bottom1" style="padding-right: 8px">
-                    <div class="light small">Type:</div>
-                </div>
-                <div class="col10 space-bottom1">
-                    <div class="rounded-toggle inline">
-                        <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
-                        <label for="alltypes">All</label>
-                        <input id="raster" type="radio" name='type' value="raster">
-                        <label for="raster">Raster</label>
-                        <input id="vector" type="radio" name='type' value="vector">
-                        <label for="vector">Vector</label>
-                    </div>
-                </div>
-
-                <ul class="not-displayed fill-darken keyline-all scroll-styled activate">
-                    {% for layer in page.basemap.data_layers %}
-                        <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                            <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-
-                <ul class="displayed sortable fill-darken keyline-all scroll-styled activate"></ul>
-
-                {% for layer in page.basemap.data_layers %}
-                    <ul data-id="{{layer.id}}" class="minor-panel small">
-                        <li class="pad0">
-                            <h3>{{layer.name}}</h3>
-                        </li>
-                        <li class="pad0 keyline-bottom">{{layer.description | truncate:250 }}</li>
-                        <li class="pad0y keyline-bottom space"><strong class="quiet">Source:</strong> {{layer.source}}</li>
-                        <li class="pad0y space"><strong class="quiet">Availability:</strong> {{layer.availability}}</li>
-                    </ul>
-                {% endfor %}
-            </div>
-            <div class="col12 animate">
-                <ul class="pad1">
-                    <li class="pad0x pad1y clearfix">
-                        <div>
-                            <a href="http://osm.moabi.org" class="space"><strong>Data Extracts</strong></a><span class="small quiet pad1x">(Shp, OSM, GeoJson)</span>
-                        </div>
-                        <div class="col12 pad1x pad0y quiet small">Download extracts of the Database via Moabi.OSM iD interface</div>
-                    </li>
-                    <li class="pad0x pad1y clearfix">
-                        <div class="col12">Map Embed</div>
-                        <div class="col12 pad1x pad0y quiet small">Easily embed the map in any blog or website using simple HTML</div>
-                        <fieldset class="">
-                            <input type="text" value="<iframe src='rdc.moabi.org/mapi/#6/28.00/26.10' frameborder='0' width='650' height='500'></iframe>" class="stretch">
-                        </fieldset>
-                    </li>
-                    <li class="pad0x pad1y clearfix">
-                        <div class="col12">Print Map</div>
-                        <div class="col12 pad1x pad0y quiet small">Take a screen shot of the current map view</div>
-                        <div id="images" class="col12 fill-darken keyline-all contain" style="min-height: 32px;">
-                            <a id="snap" href="#" class="button pin-left short fill-dark" style="border-radius: 0;">capture</a>
-                        </div>
-                    </li>
-                </ul>
+            <div class="col9">
+                <p>{{page.slideshow.introslide.description}}</p>
+                <p><em>Use the slide arrows to the left and right to explore Projects</em></p>
+                <h2><em><strong>Moabi is currently under development.  Expect more soon...</strong></em></h2>
             </div>
         </div>
     </div>
-    <div class="col8 row18 contain">
-        <div id="map" style="z-index:0"></div>
-    </div>
+    {% endif %}
+
+    {% for project in site.categories.project_en %}
+        <div class="slide" style="background-image: url('{{project.img}}');" data-index="{% if page.slideshow.introslide %}{{forloop.index}}{% else %}{{forloop.index0}}{% endif %}">
+            <div class="col12 pad4y dark prose limiter clearfix pin-bottom">
+                <div class="col3">
+                    <h1 class="bold">{{project.title}}</h1>
+                </div>
+                <div class="col9">
+                    <div>{{project.description}}</div>
+                    <div class="pad1y">
+                        <a class="pad1y" href="{{site.baseurl}}/projects/en/"><strong>Read More</strong></a>
+                        <!-- <a class="pad1y" href="{{project.url}}"><strong>Read More</strong></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 </div>
+
+<div class="browse-title-bar fill-light strongline-bottom">
+    <div class="big arrow up"></div>
+    <div class="limiter">
+        <div class="keyline-bottom clearfix pad1 mobile-cols">
+            <!-- <span class="col1 icon big arrow-left"></span> -->
+            <h1 class="center caps">Browse Projects</h1>
+            <!-- <span class="col1 icon big arrow-right text-right"></span> -->
+        </div>
+        <div class="clearfix pad1 mobile-cols">
+            <h1 class="center caps">Explore the Data</h1>
+            <!-- <div class="margin6 icon big arrow-down"></div> -->
+        </div>
+    </div>
+    <div class="big arrow down"></div>
+</div>
+{% endif %}
