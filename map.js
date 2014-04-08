@@ -2,7 +2,7 @@
 ---
 {% include js/jquery-1.10.2.min.js %}
 {% include js/jquery-ui-1.10.4.custom.min.js %}
-
+{% include js/leaflet-image.js %}
 
 ;(function(context) {
 // if project map
