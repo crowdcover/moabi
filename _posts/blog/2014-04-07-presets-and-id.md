@@ -18,7 +18,7 @@ Finally, we [created a new 'mode' within iD](https://github.com/crowdcover/iD/co
 
 ![Search and edit presets.](/_posts/blog/Screen%20Shot%202014-04-08%20at%2012.27.27%20pm.png)
 
-The modifications in iD is very crude because this is a proof of concept. We realize that there's a lot of room for improvement. Since we don't have a great handle on how things work in iD, there are several questions that came up during this process - 
+The modifications in iD are a bit crude because this is a proof of concept. We realize that there's a lot of room for improvement. Since we are still getting a handle on how everything works in iD, there are several questions that came up during this process, such as -
 
 1. We created a new mode for the preset editor to separate the interactions in the browse and edit mode. Is this a good approach? 
 2. We have forked the UI rendering into separate files like ui/preset_editor.js and ui/edit_preset_list.js. This essentially contains code similar to the rendering of the preset list and raw tag editor. Is this the right approach?
