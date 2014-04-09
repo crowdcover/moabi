@@ -1,0 +1,41 @@
+<div class="slideshow fill-light row10 text-shadow strongline-bottom">
+    <div class="gradient"></div>
+    <a href="#" class="slide-control" data-slide="left">
+        <span class="icon big arrow-left"></span>
+    </a>
+    <a href="#" class="slide-control" data-slide="right">
+        <span class="icon big arrow-right"></span>
+    </a>
+
+    {% if page.slideshow.introslide %}
+    <div class="slide active" style="background-image: url('/img/wb_temp.jpg');" data-index="0">
+        <div class="col12 pad4y dark prose limiter clearfix pin-bottom">
+            <div class="col3">
+                <h1 class="bold">{{page.slideshow.introslide.title}}</h1>
+            </div>
+            <div class="col9">
+                <p>{{page.slideshow.introslide.description}}</p>
+                <p><em>Use the slide arrows to the left and right to explore Projects</em></p>
+                <h2><em><strong>Moabi is currently under development.  Expect more soon...</strong></em></h2>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% for project in site.categories.project_en %}
+        <div class="slide" style="background-image: url('{{project.img}}');" data-index="{% if page.slideshow.introslide %}{{forloop.index}}{% else %}{{forloop.index0}}{% endif %}">
+            <div class="col12 pad4y dark prose limiter clearfix pin-bottom">
+                <div class="col3">
+                    <h1 class="bold">{{project.title}}</h1>
+                </div>
+                <div class="col9">
+                    <div>{{project.description}}</div>
+                    <div class="pad1y">
+                        <a class="pad1y" href="{{site.baseurl}}/projects/en/"><strong>Read More</strong></a>
+                        <!-- <a class="pad1y" href="{{project.url}}"><strong>Read More</strong></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
