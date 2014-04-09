@@ -30,7 +30,7 @@
         </div>
 
         <ul class="not-displayed fill-darken keyline-all scroll-styled activate">
-            {% for layer in page.data.layers %}
+            {% for layer in page.map_layers %}
                 <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
                     <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
                 </li>
@@ -39,7 +39,7 @@
 
         <ul class="displayed sortable fill-darken keyline-all scroll-styled activate"></ul>
 
-        {% for layer in page.data.layers %}
+        {% for layer in page.map_layers %}
             <ul data-id="{{layer.id}}" class="minor-panel small">
                 <li class="pad0">
                     <h3>{{layer.name}}</h3>
@@ -55,7 +55,7 @@
 
     <div class="layer-ui minor-panel-viewer activate pad2x">
         <ul class="not-displayed keyline-all fill-darken scroll-styled">
-            {% for layer in data.layers %}
+            {% for layer in page.map_layers %}
                 <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
                     <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}" data-tooltip="{{layer.tooltip}}">{{layer.name}}</a>
                 </li>
@@ -64,7 +64,7 @@
 
         <ul class="displayed sortable keyline-all fill-darken scroll-styled"></ul>
 
-        {% for layer in data.layers %}
+        {% for layer in page.map_layers %}
             <ul data-id="{{layer.id}}" class="minor-panel small">
                 <li class="pad0">
                     <h3>{{layer.name}}</h3>
