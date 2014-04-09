@@ -151,54 +151,56 @@ data:
     description: The following resource concessions and infrastructure projects are possible drivers of deforestation.  In cases where they overlap with REDD projects, they will directly undermine the initiative.  Click on a layer to add it to the map.
 
 map_layers:
-  - id: moabi_indigenous
-    name: Indigenous Lands
-    categories: [indigenous]
-    description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-    source: Congolese Ministry of the Environment
-    availability: Public
+    filter:
+    layers:
+      - id: moabi_indigenous
+        name: Indigenous Lands
+        categories: [indigenous]
+        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        source: Congolese Ministry of the Environment
+        availability: Public
 
-  - id: moabi_energy
-    name: Energy
-    categories: [infrastructure]
-    description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-    source: Congolese Ministry of the Environment
-    availability: Public
+      - id: moabi_energy
+        name: Energy
+        categories: [infrastructure]
+        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        source: Congolese Ministry of the Environment
+        availability: Public
 
-  - id: moabi_logging
-    name: Logging Concessions
-    categories: [forestry, concession]
-    description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-    source: Congolese Ministry of the Environment
-    availability: Public
+      - id: moabi_logging
+        name: Logging Concessions
+        categories: [forestry, concession]
+        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        source: Congolese Ministry of the Environment
+        availability: Public
 
-  - id: moabi_mining
-    name: Mining Concessions
-    categories: [concession]
-    description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-    source: Congolese Ministry of the Environment
-    availability: Public
+      - id: moabi_mining
+        name: Mining Concessions
+        categories: [concession]
+        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        source: Congolese Ministry of the Environment
+        availability: Public
 
-  - id: moabi_oil
-    name: Oil Concessions
-    categories: [concession]
-    description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-    source: Congolese Ministry of the Environment
-    availability: Public
+      - id: moabi_oil
+        name: Oil Concessions
+        categories: [concession]
+        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        source: Congolese Ministry of the Environment
+        availability: Public
 
-  - id: moabi_palm
-    name: Palm Concessions
-    categories: [concession, forestry]
-    description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-    source: Congolese Ministry of the Environment
-    availability: Public
+      - id: moabi_palm
+        name: Palm Concessions
+        categories: [concession, forestry]
+        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        source: Congolese Ministry of the Environment
+        availability: Public
 
-  - id: moabi_transport
-    name: Road Rehabilitation Projects
-    categories: [infrastructure]
-    description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made. Forest loss surrounding city centers is likely due to urban sprawl; loss patterns in orderly, rectangular grids are likely the result of industrial logging; while loss with no discernable pattern is likely due to natural causes or artisanal logging.
-    source: Congolese Ministry of the Environment
-    availability: Public
+      - id: moabi_transport
+        name: Road Rehabilitation Projects
+        categories: [infrastructure]
+        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made. Forest loss surrounding city centers is likely due to urban sprawl; loss patterns in orderly, rectangular grids are likely the result of industrial logging; while loss with no discernable pattern is likely due to natural causes or artisanal logging.
+        source: Congolese Ministry of the Environment
+        availability: Public
 ---
 {% for main_panel in page.main_panels %}
     {% if main_panel.panel_data.actions contains 'toggle-layer' %}

@@ -125,7 +125,7 @@ h3.light, h3.light a {
 /* links and color accents */
 strong {
   font-family: 'Open Sans Bold', serif;
-  color: #FF6600;
+  color: #F86D00;
   } /* darker red orange */
   .dark strong { color: #F8AA04; } /* brigher orange */
   a:hover strong { color: #CF710B; } /* darken further on hover */
@@ -151,7 +151,7 @@ strong {
     background-color: #666;
   }
   .activate a:active, .activate a.active {
-    color: #FF6600;
+    color: #F86D00;
   }
   .dark .activate a:active, .dark .activate a.active {
     color: #F8AA04;
@@ -167,15 +167,10 @@ button:hover, .button:hover, .button.active,
 .dark {
     color: #FFFCF8;
 }
-  .fill-black {
-    background-color: #000;
-  }
-  .fill-darken {
-    background-color: rgba(0,0,0,0.1);
-  }
-  .fill-dark {
-    background-color: #222;
-  }
+  .fill-black { background-color: #000; }
+  .fill-darken { background-color: rgba(0,0,0,0.1); }
+  .dark .fill-darken { background-color: rgba(80, 80, 80, 0.1); }
+  .fill-dark { background-color: #222; }
   .fill-light {
     background-color: rgb(255, 252, 248);
     background-color: rgba(255, 252, 248, 0.82);
@@ -199,6 +194,18 @@ button:hover, .button:hover, .button.active,
     min-height: 70px;
     max-height: 136px;
     margin: 4px 0 16px;
+  }
+  .layer-ui .displayed:empty,
+  .layer-ui .not-displayed:empty {
+    background-color: transparent;
+  }
+  .layer-ui .displayed:empty:before {
+    content: "empty";
+    font: 12px/20px 'Open Sans Italic', sans-serif;
+    color: rgba(120, 120, 120, 0.4);
+    padding-top: 8px;
+    text-align: center;
+    display: block;
   }
   .layer-ui a {
     display: block;
