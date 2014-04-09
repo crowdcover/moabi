@@ -15,10 +15,10 @@
         <h1 class="col4 pad1y">
             <a href="{{site.baseurl}}/">Moabi</a>
         </h1>
-        <a class="pad2 fr" href="http://osm.moabi.org/">Data</a>
-        <a class="pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">Blog</a>
-        <a class="pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/projects/{{page.language}}">Projects</a>
         <a class="pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">About</a>
+        <a class="pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">Blog</a>
+        <a class="pad2 fr" href="{{site.baseurl}}/data/{{page.language}}">Data</a>
+        <a class="pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/projects/{{page.language}}">Reports</a>
     </div>
 </header>
 {% endif %}
