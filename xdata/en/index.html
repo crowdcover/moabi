@@ -11,8 +11,8 @@ basemap:
     layers:
       - id: 'moabi_base'
         z: -1
-    noScrollZoom: true
-    data_layers:
+data:
+    layers:
       - id: moabi_forest_cover
         name: UMD Forest Cover (2012)
         categories: [forestry, raster]
@@ -97,7 +97,6 @@ basemap:
         source: Congolese Ministry of the Environment
         availability: Public
 ---
-<!-- Data Layer UI -->
 <div class="clearfix strongline-bottom">
     <div class="col4 row18 pad1x fill-dark dark strongline-right dropshadow-right">
         <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
@@ -107,57 +106,9 @@ basemap:
             </div>
         </div>
         <div class="col12 row16 pad2y clip sliding h active1">
-            <div class="layer-ui col12 minor-panel-viewer animate">
-                <div class="col2 text-right pad0y" style="padding-right: 8px">
-                    <div class="light small">Theme:</div>
-                </div>
-                <div class="col10">
-                    <div class="rounded-toggle inline">
-                        <input id="allthemes" type="radio" name='theme' value="allthemes" checked='checked'>
-                        <label for="allthemes">All</label>
-                        <input id="concession" type="radio" name='theme' value="concession">
-                        <label for="concession">Concessions</label>
-                        <input id="rainforest" type="radio" name='theme' value="rainforest">
-                        <label for="rainforest">Rainforest</label>
-                        <input id="community" type="radio" name='theme' value="community">
-                        <label for="community">Community</label>
-                    </div>
-                </div>
-                <div class="col2 text-right pad0y space-bottom1" style="padding-right: 8px">
-                    <div class="light small">Type:</div>
-                </div>
-                <div class="col10 space-bottom1">
-                    <div class="rounded-toggle inline">
-                        <input id="alltypes" type="radio" name='type' value="alltypes" checked='checked'>
-                        <label for="alltypes">All</label>
-                        <input id="raster" type="radio" name='type' value="raster">
-                        <label for="raster">Raster</label>
-                        <input id="vector" type="radio" name='type' value="vector">
-                        <label for="vector">Vector</label>
-                    </div>
-                </div>
 
-                <ul class="not-displayed fill-darken keyline-all scroll-styled activate">
-                    {% for layer in page.basemap.data_layers %}
-                        <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                            <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
+            {% include layer_ui.html %}
 
-                <ul class="displayed sortable fill-darken keyline-all scroll-styled activate"></ul>
-
-                {% for layer in page.basemap.data_layers %}
-                    <ul data-id="{{layer.id}}" class="minor-panel small">
-                        <li class="pad0">
-                            <h3>{{layer.name}}</h3>
-                        </li>
-                        <li class="pad0 keyline-bottom">{{layer.description | truncate:250 }}</li>
-                        <li class="pad0y keyline-bottom space"><strong class="quiet">Source:</strong> {{layer.source}}</li>
-                        <li class="pad0y space"><strong class="quiet">Availability:</strong> {{layer.availability}}</li>
-                    </ul>
-                {% endfor %}
-            </div>
             <div class="col12 animate">
                 <ul class="pad1">
                     <li class="pad0x pad1y clearfix">
@@ -188,4 +139,3 @@ basemap:
         <div id="map" style="z-index:0"></div>
     </div>
 </div>
-

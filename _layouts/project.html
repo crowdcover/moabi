@@ -56,28 +56,9 @@
                             {% endfor %}
                         </ul>
                     {% elsif data.type == 'layer-ui' %}
-                        <div class="layer-ui minor-panel-viewer activate pad2x">
-                            <ul class="not-displayed keyline-all fill-darken scroll-styled">
-                                {% for layer in data.layers %}
-                                    <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                                        <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}" data-tooltip="{{layer.tooltip}}">{{layer.name}}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
 
-                            <ul class="displayed sortable keyline-all fill-darken scroll-styled"></ul>
+                        {% include layer_ui.html %}
 
-                            {% for layer in data.layers %}
-                                <ul data-id="{{layer.id}}" class="minor-panel small">
-                                    <li class="pad0">
-                                        <h3>{{layer.name}}</h3>
-                                    </li>
-                                    <li class="pad0 keyline-bottom">{{layer.description | truncate:250 }}</li>
-                                    <li class="pad0y keyline-bottom space"><strong class="quiet">Source:</strong> {{layer.source}}</li>
-                                    <li class="pad0y space"><strong class="quiet">Availability:</strong> {{layer.availability}}</li>
-                                </ul>
-                            {% endfor %}
-                        </div>
                     {% endif %}
                 </div>
             {% endfor %}
