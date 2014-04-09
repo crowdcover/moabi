@@ -14,7 +14,7 @@ if (mapLayers.pageType == 'project'){
 
     this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
     this.map.zoomControl.setPosition('topright');
-    var hash = L.hash(this.map);
+    this.leaflet_hash = L.hash(this.map);
 
     //build base layer
     for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
@@ -67,12 +67,13 @@ var moabi = {
 
                 });
                 moabi.setGrid(map);
-                moabi.setLayerHash();
+                leaflet_hash.onMapMove();
                 //console.log("----");
             }
         });
         $( ".sortable" ).disableSelection();
-
+        leaflet_hash.on('update', moabi.getLayerHash);
+        leaflet_hash.on('change', moabi.setLayerHash);
         $('.not-displayed').css('height', function(){
             totalHeight = 2;
             $('.not-displayed').children('li').each(function(){
@@ -224,7 +225,7 @@ var moabi = {
             map.addLayer(layer);
         }
         moabi.setGrid(map);
-        moabi.setLayerHash();
+        leaflet_hash.onMapMove();
     },
 
     filterLayers: function(e) {
@@ -373,13 +374,22 @@ var moabi = {
       }
     },
 
-    setLayerHash: function() {
+    setLayerHash: function(hash) {
       var displayed = $('.layer-ui .displayed');
       var mapids = [];
       for (var x = 0; x < displayed[0].children.length; x++) {
         mapids.push($(displayed[0].children[x]).children('a').data('id'));
       }
-      location.hash = moabi.setQueryVariable(location.hash, "layers", mapids.join(','));
+      return moabi.setQueryVariable(hash, "layers", mapids.join(','));
+    },
+
+    getLayerHash: function() {
+      var layers = moabi.getQueryVariable(location.hash, "layers");
+      if (layers) { layers = layers.split(','); } 
+      moabi.removeAllLayers(); //could be smarter
+      for (i = layers.length-1; i >= 0; i--){
+        $('.layer-ui .layer-toggle[data-id="' + layers[i] + '"]').trigger('click');
+      }
     },
 
     removeAllLayers: function() {

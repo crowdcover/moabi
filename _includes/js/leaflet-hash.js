@@ -11,6 +11,8 @@
 		if (map) {
 			this.init(map);
 		}
+
+    this.events = new Object();
 	};
 
 	L.Hash.parseHash = function(hash) {
@@ -86,8 +88,12 @@
 			}
 
 			var hash = this.formatHash(this.map);
-      var layers = moabi.getQueryVariable(location.hash, "layers");
-      if (layers) { hash = hash + "&layers=" + layers; }
+      if (this.events['change']) {
+        for (var i=0; i<this.events['change'].length; i++) {
+          hash = this.events['change'][i](hash);
+        }
+      }
+
 			if (this.lastHash != hash) {
 				location.replace(hash);
 				this.lastHash = hash;
@@ -106,12 +112,27 @@
 
 				this.map.setView(parsed.center, parsed.zoom);
 
+        if (this.events['update']) {
+          for (var i=0; i<this.events['update'].length; i++) {
+            this.events['update'][i]();
+          }
+        }
 				this.movingMap = false;
 			} else {
 				this.onMapMove(this.map);
 			}
 		},
 
+    on: function(event, func) {
+      if (! this.events[event]) {
+        this.events[event] = [ func ];
+      } else {
+        this.events[event].push(func);
+      }
+    },
+    off: function(event, func) {
+
+    },
 		// defer hash change updates every 100ms
 		changeDefer: 100,
 		changeTimeout: null,
