@@ -586,16 +586,15 @@ footer a {
             transform:translateY(4px);
   }
   .slide-control span {
+    font-family: 'Open Sans Bold';
     position: absolute;
     top: 50%;
     margin-top: -24px;
-    color: white;
   }
   .slide-control.h span {
     position: static;
     display: block;
     margin: 0;
-    color: #333;
   }
   .slide-control:hover span {
     color: #666;
@@ -893,6 +892,13 @@ footer a {
 }
 
 @font-face {
+  font-family:'Deja Vu Serif';
+    src:url('../fonts/DejaVuSerif-webfont.eot');
+    src:url('../fonts/DejaVuSerif-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DejaVuSerif-webfont.woff') format('woff');
+}
+
+@font-face {
     font-family: 'Icon-Set';
     src:url('../fonts/icon.eot?-shfr1q');
     src:url('../fonts/icon.eot?#iefix-shfr1q') format('embedded-opentype'),
@@ -902,6 +908,14 @@ footer a {
     font-weight: normal;
     font-style: normal;
 }
+
+.prose.serif {
+  font-family: 'Deja Vu Serif';
+  }
+  h1.prose,
+  h2.prose {
+    line-height: 30px;
+  }
 
 .icon:before,
 .rcon:after {

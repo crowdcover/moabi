@@ -25,15 +25,15 @@
             {% for report in page.report %}
                 <div class="report col12 animate" style="height: 100%" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}"{% if report.zoom_to %} data-nav='["{{report.zoom_to.lat}}", "{{report.zoom_to.lon}}", "{{report.zoom_to.zoom}}"]'{% endif %}{% if report.layers %} data-id='[{% for layer in report.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}>
                     {% unless forloop.first %}
-                        <a href="#" class="report-slider slide-control h animate clearfix center" data-slide="up">
+                        <a href="#" class="report-slider slide-control h animate quiet clearfix center" data-slide="up">
                             <span class="icon arrow-up col12"></span>
                             <span class="small">Page Up</span>
                         </a>
                     {% endunless %}
-                    <h2 class="pad2y">{{report.title}}</h2>
-                    <p class="prose space-bottom4">{{report.text}}</p>
+                    <h2 class="prose serif pad2y">{{report.title}}</h2>
+                    <p class="prose serif space-bottom4">{{report.text}}</p>
                     {% unless forloop.last %}
-                        <a href="#" class="report-slider slide-control h animate clearfix center" data-slide="down">
+                        <a href="#" class="report-slider slide-control h animate quiet clearfix center" data-slide="down">
                             <span class="small">Page Down</span>
                             <span class="icon arrow-down col12"></span>
                         </a>
