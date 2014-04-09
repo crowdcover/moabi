@@ -26,7 +26,7 @@ body {
   width: 100%;
   background: transparent url(../img/gradient_a70.png) repeat-x 0 0;
   opacity: 0.7;
-  z-index: 1;
+  /*z-index: 1;*/
 }
 
 /* typography and spacing */
@@ -119,6 +119,7 @@ h3.light, h3.light a {
     box-shadow: rgba(0,0,0,0.2) 4px 4px 10px 0;
   }
 
+.wide-text { letter-spacing: 2px; }
 
 
 /* links and color accents */
@@ -242,6 +243,35 @@ button:hover, .button:hover, .button.active,
 
 .tabs a { cursor: pointer; } /*not sure why this needs to be restated*/
 
+.button.contain-children {
+  height: auto;
+  background-color: rgba(255, 252, 248, 0.1);
+  border: 1px solid rgba(255, 252, 248, 0.3);
+  border-right: 0;
+  font-size: 13px;
+  white-space: normal;
+  }
+  .button.contain-children:last-child {
+    border-right: 1px solid rgba(255, 252, 248, 0.3);
+  }
+  .button.contain-children:hover {
+    background-color: rgba(255, 252, 248, 0.2);
+  }
+/*  .button.contain-children:first-child {
+    text-align: right;
+  }
+  .button.contain-children:last-child {
+    text-align: left;
+  }
+  .button.contain-children:first-child h2 {
+    padding-right: 8px;
+  }
+  .button.contain-children:last-child h2 {
+    padding-left: 8px;
+  }*/
+
+
+
 /* custom layout elements */
 .header {
   letter-spacing: 1px;
@@ -258,16 +288,31 @@ button:hover, .button:hover, .button.active,
     color: #758B54;
   }
 
-footer {
-  text-align: center;
-  padding: 6px 0;
+.landing {
+  width: 100%;
+  background-image: url('/img/wb_temp.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
   }
-  footer a {
-    display: inline-block;
-    border: 1px solid transparent;
+/*  .landing .landing-button {
+    border: 4px solid transparent;
+  }
+  .landing .landing-button:hover {
+    background-color: rgba(255, 252, 248, 0.1);
+    border: 4px solid rgba(255, 163, 0, 0.82);
+  }*/
+
+
+footer a {
+  display: inline-block;
+  border: 1px solid transparent;
   }
   footer a:hover {
     border: 1px solid #DDD;
+  }
+  footer img {
+    height: 50px;
   }
 
 .project-container .project-info {
