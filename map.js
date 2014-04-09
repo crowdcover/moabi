@@ -2,7 +2,8 @@
 ---
 {% include js/jquery-1.10.2.min.js %}
 {% include js/jquery-ui-1.10.4.custom.min.js %}
-
+{% include js/leaflet-image.js %}
+{% include js/leaflet-hash.js %}
 
 ;(function(context) {
 // if project map
@@ -13,7 +14,7 @@ if (mapLayers.pageType == 'project'){
 
     this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
     this.map.zoomControl.setPosition('topright');
-    var hash = L.hash(this.map);
+    this.leaflet_hash = L.hash(this.map);
 
     //build base layer
     for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
@@ -62,14 +63,17 @@ var moabi = {
                         layer = mapLayers.dataLayers[mapId][0];
 
                     layer.setZIndex(numLayers - index);
-                    console.log(numLayers - index + " : " + $(this).children('a').text() );
+                    //console.log(numLayers - index + " : " + $(this).children('a').text() );
 
                 });
-                console.log("----");
+                moabi.setGrid(map);
+                leaflet_hash.onMapMove();
+                //console.log("----");
             }
         });
         $( ".sortable" ).disableSelection();
-
+        leaflet_hash.on('update', moabi.getLayerHash);
+        leaflet_hash.on('change', moabi.setLayerHash);
         $('.not-displayed').css('height', function(){
             totalHeight = 2;
             $('.not-displayed').children('li').each(function(){
@@ -220,6 +224,8 @@ var moabi = {
             displayed.prepend($this.parent('li'));
             map.addLayer(layer);
         }
+        moabi.setGrid(map);
+        leaflet_hash.onMapMove();
     },
 
     filterLayers: function(e) {
@@ -332,6 +338,60 @@ var moabi = {
         }
     },
 
+    setGrid: function(map) {
+      try {
+        // get moabi_id and tooltip of first item in the displayed list, and build a tooltip template
+        var moabi_id = $($('.layer-ui .displayed')[0].firstChild).children('a').data('id');
+        var tooltip = $($('.layer-ui .displayed')[0].firstChild).children('a').data('tooltip');
+        var tooltip_list = tooltip.split(',');
+        var template = "";
+        for (var x in tooltip_list) {      
+          template = template + tooltip_list[x] + ": \{\{" + tooltip_list[x] + "\}\}<br/>";
+        }
+      } catch(err) { return; }
+
+      var grid_url = "http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json";
+
+      //
+      var present = false;
+      map.eachLayer(function (layer) {
+        if (layer.options['grids']) {
+          if (layer.options.grids[0] == grid_url) { present = true; } //grid already loaded
+          else { 
+            map.removeLayer(layer); 
+            $('.map-tooltip').each( function() { $(this).remove(); } ); 
+          }
+        }
+      });
+
+      
+
+      if (tooltip != "" && ! present) {
+        var tilejson = {"tilejson":"2.0.0","grids":["http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json"],"template":"\{\{#__teaser__\}\}" + template + "{\{/__teaser__\}\}"};
+        var gridLayer = L.mapbox.gridLayer(tilejson);
+        map.addLayer(gridLayer);
+        map.addControl(L.mapbox.gridControl(gridLayer));
+      }
+    },
+
+    setLayerHash: function(hash) {
+      var displayed = $('.layer-ui .displayed');
+      var mapids = [];
+      for (var x = 0; x < displayed[0].children.length; x++) {
+        mapids.push($(displayed[0].children[x]).children('a').data('id'));
+      }
+      return moabi.setQueryVariable(hash, "layers", mapids.join(','));
+    },
+
+    getLayerHash: function() {
+      var layers = moabi.getQueryVariable(location.hash, "layers");
+      if (layers) { layers = layers.split(','); } 
+      moabi.removeAllLayers(); //could be smarter
+      for (i = layers.length-1; i >= 0; i--){
+        $('.layer-ui .layer-toggle[data-id="' + layers[i] + '"]').trigger('click');
+      }
+    },
+
     removeAllLayers: function() {
         $('.layer-ui .displayed .layer-toggle').trigger('click');
 
@@ -339,8 +399,30 @@ var moabi = {
         // for (var id in mapLayers['dataLayers']){
         //     map.removeLayer(mapLayers['dataLayers'][id][0]);
         // }
-    }
+    },
 
+    getQueryVariable: function(hash, variable) {
+      var vars = hash.split("&");
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+      }
+      return(false);
+    },
+
+    setQueryVariable: function(hash, key, value) {
+      var vars = hash.split("&");
+      var found = false;
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == key){
+          vars[i] = key + "=" + value;
+          found = true;
+        }
+      }
+      if (! found) { vars.push(  key + "=" + value ); }
+      return(vars.join("&"));
+    },
 };
 
 window.moabi = moabi;

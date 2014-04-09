@@ -60,7 +60,7 @@
                             <ul class="not-displayed keyline-all fill-darken scroll-styled">
                                 {% for layer in data.layers %}
                                     <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                                        <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                                        <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}" data-tooltip="{{layer.tooltip}}">{{layer.name}}</a>
                                     </li>
                                 {% endfor %}
                             </ul>
@@ -109,7 +109,6 @@
 </div>
 
     {% if page.basemap %}{% include parse_layers.html %}{% endif %}
-    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
     <script src='{{site.baseurl}}/map.js'></script>
 </body>
 </html>
