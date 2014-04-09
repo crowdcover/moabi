@@ -114,7 +114,7 @@
 
         if (this.events['update']) {
           for (var i=0; i<this.events['update'].length; i++) {
-            this.events['update'][i]();
+            this.events['update'][i](hash);
           }
         }
 				this.movingMap = false;
@@ -131,7 +131,29 @@
       }
     },
     off: function(event, func) {
-
+      if (this.events[event]) {
+        for (var i=0; i<this.events[event].length; i++) {
+          if (this.events[event][i] == func) {
+            this.events[event].splice(i);
+            return;
+          }
+        }
+      }
+    },
+    trigger: function(event) {
+      if (event == "move") {
+        if (! this.movingMap) {
+            this.onMapMove();
+        }
+      }
+    },
+    // setMovingMap()/clearMovingMap() when making multiple changes that affect hash arguments
+    //   ie when moving location and changing visible layers
+    setMovingMap: function() {
+      this.movingMap = true;
+    },
+    clearMovingMap: function() {
+      this.movingMap = false;
     },
 		// defer hash change updates every 100ms
 		changeDefer: 100,

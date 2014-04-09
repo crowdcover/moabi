@@ -67,7 +67,7 @@ var moabi = {
 
                 });
                 moabi.setGrid(map);
-                leaflet_hash.onMapMove();
+                leaflet_hash.trigger('move');
                 //console.log("----");
             }
         });
@@ -125,7 +125,7 @@ var moabi = {
             reportIndex = report.data('index'),
             reportCount = report.data('ixcount'),
             reportContainer = report.parent('.report-container');
-
+        leaflet_hash.setMovingMap();
         if ( $this.data('slide') == 'up' ){
             newIndex = reportIndex - 1;
             reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
@@ -165,7 +165,7 @@ var moabi = {
                 map.setView([nextNav[0], nextNav[1]], nextNav[2]);
             }
         }
-
+        leaflet_hash.clearMovingMap();
     },
 
     layerUi: function(e) {
@@ -225,7 +225,7 @@ var moabi = {
             map.addLayer(layer);
         }
         moabi.setGrid(map);
-        leaflet_hash.onMapMove();
+        leaflet_hash.trigger('move');
     },
 
     filterLayers: function(e) {
