@@ -258,11 +258,14 @@ var moabi = {
 
         if ($this.hasClass('active')) {
             // close the active panel and open the previous one
-            $('.minor-panel[data-id="' + panelId + '"]').removeClass('active');
+            var minorPanel = $('.minor-panel[data-id="' + panelId + '"]');
 
-            var nextInLine = $this.closest('li').siblings('li').children('a.active:last').data('id');
-            if (nextInLine) {
-                $('.minor-panel[data-id="' + nextInLine + '"]').addClass('active');
+            if (minorPanel.hasClass('active')) {
+                minorPanel.removeClass('active');
+                var nextInLine = $this.closest('li').siblings('li').children('a.active:last').data('id');
+                if (nextInLine) {
+                    $('.minor-panel[data-id="' + nextInLine + '"]').addClass('active');
+                }
             }
         } else {
             // close any active panel and open the new one
@@ -345,7 +348,7 @@ var moabi = {
         var tooltip = $($('.layer-ui .displayed')[0].firstChild).children('a').data('tooltip');
         var tooltip_list = tooltip.split(',');
         var template = "";
-        for (var x in tooltip_list) {      
+        for (var x in tooltip_list) {
           template = template + tooltip_list[x] + ": \{\{" + tooltip_list[x] + "\}\}<br/>";
         }
       } catch(err) { return; }
@@ -357,14 +360,14 @@ var moabi = {
       map.eachLayer(function (layer) {
         if (layer.options['grids']) {
           if (layer.options.grids[0] == grid_url) { present = true; } //grid already loaded
-          else { 
-            map.removeLayer(layer); 
-            $('.map-tooltip').each( function() { $(this).remove(); } ); 
+          else {
+            map.removeLayer(layer);
+            $('.map-tooltip').each( function() { $(this).remove(); } );
           }
         }
       });
 
-      
+
 
       if (tooltip != "" && ! present) {
         var tilejson = {"tilejson":"2.0.0","grids":["http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json"],"template":"\{\{#__teaser__\}\}" + template + "{\{/__teaser__\}\}"};
@@ -385,7 +388,7 @@ var moabi = {
 
     getLayerHash: function() {
       var layers = moabi.getQueryVariable(location.hash, "layers");
-      if (layers) { layers = layers.split(','); } 
+      if (layers) { layers = layers.split(','); }
       moabi.removeAllLayers(); //could be smarter
       for (i = layers.length-1; i >= 0; i--){
         $('.layer-ui .layer-toggle[data-id="' + layers[i] + '"]').trigger('click');
