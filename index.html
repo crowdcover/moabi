@@ -4,27 +4,25 @@ id: home
 title: Moabi
 language: en
 
-slideshow:
-    introslide:
-        title: Collaborative Land Use Mapping
-        description: Moabi DRC is an independent mapping initiative that collaboratively monitors land use in the Democratic Republic of the Congo. Our community works towards a more <strong>Transparent</strong>, <strong>Equitable</strong>, and <strong>Sustainable</strong> future for the environment and people of DRC. You can use Moabi DRC to explore, share, and create projects on a wide range of issues from REDD+ to community mapping and more.
+header: Collaborative Land Use Mapping
+description: Moabi DRC is an independent mapping initiative that collaboratively monitors land use in the Democratic Republic of the Congo. Our community works towards a more <strong>Transparent</strong>, <strong>Equitable</strong>, and <strong>Sustainable</strong> future for the environment and people of DRC. You can use Moabi DRC to explore, share, and create projects on a wide range of issues from REDD+ to community mapping and more.
 ---
 <div class="landing row16 strongline-bottom contain text-shadow">
     <div class="gradient"></div>
     <div class="col12 pad4y dark limiter clearfix contain" style="padding-top: 60px;">
         <div class="col6 pad2 margin3 margin3r center space-bottom1 caps">
-            <h1 class="wide-text">Collaborative Land Use Mapping</h1>
+            <h1 class="wide-text">{{page.header}}</h1>
         </div>
         <div class="row4 col10 margin1 prose space-bottom4">
-            <p>{{page.slideshow.introslide.description}}</p>
+            <p>{{page.description}}</p>
         </div>
 
         <div class='pill col8 margin2'><!--
-          --><a href='#' class='button contain-children row4 col6'>
+          --><a href='{{site.baseurl}}/xprojects/en' class='button contain-children row4 col6'>
               <h2 class="caps">Report</h2>
               <p class="pad1">Browse projects exploring key dynamics of land use and environmental policy.</p>
           </a><!--
-          --><a href='#' class='button contain-children row4 col6'>
+          --><a href='{{site.baseurl}}/xdata/en' class='button contain-children row4 col6'>
               <h2 class="caps">Data</h2>
               <p class="pad1">Explore, share, contribute, and download the data.</p>
           </a>
