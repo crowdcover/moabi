@@ -3,6 +3,7 @@
 {% include js/jquery-1.10.2.min.js %}
 {% include js/jquery-ui-1.10.4.custom.min.js %}
 {% include js/leaflet-image.js %}
+{% include js/leaflet-hash.js %}
 
 ;(function(context) {
 // if project map
@@ -62,11 +63,12 @@ var moabi = {
                         layer = mapLayers.dataLayers[mapId][0];
 
                     layer.setZIndex(numLayers - index);
-                    console.log(numLayers - index + " : " + $(this).children('a').text() );
+                    //console.log(numLayers - index + " : " + $(this).children('a').text() );
 
                 });
                 moabi.setGrid(map);
-                console.log("----");
+                moabi.setLayerHash();
+                //console.log("----");
             }
         });
         $( ".sortable" ).disableSelection();
@@ -222,6 +224,7 @@ var moabi = {
             map.addLayer(layer);
         }
         moabi.setGrid(map);
+        moabi.setLayerHash();
     },
 
     filterLayers: function(e) {
@@ -370,6 +373,15 @@ var moabi = {
       }
     },
 
+    setLayerHash: function() {
+      var displayed = $('.layer-ui .displayed');
+      var mapids = [];
+      for (var x = 0; x < displayed[0].children.length; x++) {
+        mapids.push($(displayed[0].children[x]).children('a').data('id'));
+      }
+      location.hash = moabi.setQueryVariable(location.hash, "layers", mapids.join(','));
+    },
+
     removeAllLayers: function() {
         $('.layer-ui .displayed .layer-toggle').trigger('click');
 
@@ -377,8 +389,30 @@ var moabi = {
         // for (var id in mapLayers['dataLayers']){
         //     map.removeLayer(mapLayers['dataLayers'][id][0]);
         // }
-    }
+    },
 
+    getQueryVariable: function(hash, variable) {
+      var vars = hash.split("&");
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == variable){return pair[1];}
+      }
+      return(false);
+    },
+
+    setQueryVariable: function(hash, key, value) {
+      var vars = hash.split("&");
+      var found = false;
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if(pair[0] == key){
+          vars[i] = key + "=" + value;
+          found = true;
+        }
+      }
+      if (! found) { vars.push(  key + "=" + value ); }
+      return(vars.join("&"));
+    },
 };
 
 window.moabi = moabi;
