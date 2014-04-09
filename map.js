@@ -7,13 +7,14 @@
 
 ;(function(context) {
 // if project map
-if (mapLayers.pageType == 'project'){
+// if (mapLayers.pageType == 'project'){
+if (true){
     this.map = L.mapbox.map('map', undefined, {
         scrollWheelZoom: false
     });
 
-    this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
     this.map.zoomControl.setPosition('topright');
+    this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
     this.leaflet_hash = L.hash(this.map);
 
     //build base layer
