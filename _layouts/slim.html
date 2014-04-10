@@ -1,0 +1,17 @@
+---
+---
+<html>
+<head>
+    {% include dochead.html %}
+</head>
+
+<body>
+
+<div id="map"></div>
+
+{{content}}
+
+{% include parse_layers.html %}
+<script src='{{site.baseurl}}/map.js'></script>
+</body>
+</html>

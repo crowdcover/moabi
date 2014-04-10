@@ -74,7 +74,9 @@ var moabi = {
         });
         $( ".sortable" ).disableSelection();
         leaflet_hash.on('update', moabi.getLayerHash);
-        leaflet_hash.on('change', moabi.setLayerHash);
+        if(mapLayers['pageType'] != 'slim'){
+            leaflet_hash.on('change', moabi.setLayerHash);
+        }
         $('.not-displayed').css('height', function(){
             totalHeight = 2;
             $('.not-displayed').children('li').each(function(){
