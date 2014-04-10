@@ -1,4 +1,3 @@
-
 <div class="layer-ui col12 minor-panel-viewer animate">
     {% if page.map_layers.filter %}
         <div class="col2 text-right pad0y" style="padding-right: 8px">
@@ -35,7 +34,7 @@
     <ul class="not-displayed fill-darken keyline-all scroll-styled activate animate">
         {% for layer in page.map_layers.layers %}
             <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}">{{layer.name}}</a>
+                <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}" data=tooltip="{{layer.tooltip}}">{{layer.name}}</a>
             </li>
         {% endfor %}
     </ul>
