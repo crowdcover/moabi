@@ -123,8 +123,9 @@ h3.light, h3.light a {
 
 
 /* links and color accents */
+a.quiet { text-decoration: underline; }
+
 strong {
-  font-family: 'Open Sans Bold', serif;
   color: #F86D00;
   } /* darker red orange */
   .dark strong { color: #F8AA04; } /* brigher orange */
@@ -207,7 +208,8 @@ button:hover, .button:hover, .button.active,
     text-align: center;
     display: block;
   }
-  .layer-ui a {
+  .layer-ui .displayed a,
+  .layer-ui .not-displayed a {
     display: block;
   }
   .layer-ui li:last-child a {
@@ -712,118 +714,54 @@ footer a {
 
 
 /******************************* Map Legends *******************************/
-.leaflet-container a {
-    color: #5A6943;
-}
-
-.leaflet-container a:hover {
-    color: #2A3508;
-    text-decoration: underline;
-}
-
 .map-legends {
-    background-color: rgb(255, 252, 248);
-    background-color: rgba(255, 252, 248, 0.9);
-    border-radius: 0;
-    box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+  background-color: rgb(255, 252, 248);
+  background-color: rgba(255, 252, 248, 0.9);
+  border-radius: 0;
+  box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+  }
+  .map-legends .map-legend {
+    width: 260px;
+    max-height: 400px;
+    padding: 0 18px 0 0;
+    margin: 10px 0 10px 10px;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-
-.map-legend {
-    width: 268px;
-    display: none;
-    height: 0;
-    overflow: hidden;
-    -webkit-transition: height 0.2s ease;
-    -moz-transition: height 0.2s ease;
-    -o-transition: height 0.2s ease;
-    -ms-transition: height 0.2s ease;
-    transition: height 0.2s ease;
-}
-  .map-legend.active{
-      display: block;
-  }
-  .map-legend > h3 {
-      font: 18px/28px 'Open Sans Bold', sans-serif;
-      text-align: center;
-      border-bottom: 2px solid #999;
-  }
-  .moabi-legend {
-      display: none;
-      height: 0;
-      position: relative;
-      margin-bottom: 8px;
-      padding-left: 12px;
+.moabi-legend {
+  display: none;
   }
   .moabi-legend.active {
-      display: block;
-      height: auto;
-      cursor: pointer;
+    display: block;
   }
-
-.moabi-legend h1,
-.moabi-legend h2,
-.moabi-legend h3,
-.moabi-legend h4,
-.moabi-legend h5,
-.moabi-legend h6 {
-    font: 15px/18px 'Open Sans Bold', sans-serif;
-    text-align: center;
-    margin-bottom: 4px;
-}
-
-.moabi-legend .legend-category .symbol {
+  .moabi-legend .legend-source { margin-left: 8px; }
+  .moabi-legend .legend-category .symbol {
     height: 20px;
-    width: 30px;
+    width: 32px;
     float: left;
     margin-right: 8px;
     border: 1px solid #888;
-}
-
-.moabi-legend .legend-category .value {
-    font-size: 14px;
-    line-height: 22px;
-}
-
-
-/*.moabi-legend .legend-graduated ul {
-    display: inline-block;
-    width: 100%;
-}
-
-.moabi-legend .legend-graduated ul li {
-    display: block;
-    float: left;
-    text-align: center;
-}
-
-.moabi-legend .legend-graduated li span {
-    display: block;
-    float: left;
-    height: 15px;
-    width: 50px;
-    background: #999;
-}*/
-
-.moabi-legend .legend-table {
+  }
+  .moabi-legend .legend-table {
     font: 12px/16px 'Open Sans', sans-serif;
     margin-bottom: 8px;
-}
-
-.moabi-legend .legend-table th {
+  }
+  .moabi-legend .legend-table th {
     width: 33%;
-}
-
-.moabi-legend .legend-table td {
+  }
+  .moabi-legend .legend-table td {
     font-size: 0.9em;
     line-height: 1.2em;
     width: 33%;
-}
-
-.moabi-legend .legend-table td:first-child {
+  }
+  .moabi-legend .legend-table td:first-child {
     text-align: right;
     padding-right: 4px;
-}
+  }
 
 
 .moabi-legend .source {
@@ -1141,7 +1079,7 @@ footer a {
     /*right: -2px;*/
 }
 
-.moabi-legend.layer-toggle.icon:before {
+/*.moabi-legend.layer-toggle.icon:before {
     position: absolute;
     left: -2px;
     top: 5px;
@@ -1151,4 +1089,4 @@ footer a {
     position: absolute;
     left: -4px;
     top: 3px;
-}
+}*/

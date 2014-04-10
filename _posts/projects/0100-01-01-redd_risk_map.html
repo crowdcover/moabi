@@ -158,7 +158,7 @@ map_layers:
         categories: [indigenous]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
         source:
-            name: Congolese Ministry of the Environment
+            name: Ministry of the Environment
             url: http://www.com
             availability: Public
 
@@ -167,7 +167,7 @@ map_layers:
         categories: [infrastructure]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
         source:
-            name: Congolese Ministry of the Environment
+            name: Ministry of the Environment
             url: http://www.com
             availability: Public
 
@@ -176,7 +176,7 @@ map_layers:
         categories: [forestry, concession]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
         source:
-            name: Congolese Ministry of the Environment
+            name: Ministry of the Environment
             url: http://www.com
             availability: Public
 
@@ -185,7 +185,7 @@ map_layers:
         categories: [concession]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
         source:
-            name: Congolese Ministry of the Environment
+            name: Ministry of the Environment
             url: http://www.com
             availability: Proprietary
 
@@ -194,7 +194,7 @@ map_layers:
         categories: [concession]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
         source:
-            name: Congolese Ministry of the Environment
+            name: Ministry of the Environment
             url: http://www.com
             availability: Public
         tooltip: name
@@ -204,7 +204,7 @@ map_layers:
         categories: [concession, forestry]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
         source:
-            name: Congolese Ministry of the Environment
+            name: Ministry of the Environment
             url: http://www.com
             availability: Public
 
@@ -213,22 +213,24 @@ map_layers:
         categories: [infrastructure]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made. Forest loss surrounding city centers is likely due to urban sprawl; loss patterns in orderly, rectangular grids are likely the result of industrial logging; while loss with no discernable pattern is likely due to natural causes or artisanal logging.
         source:
-            name: Congolese Ministry of the Environment
+            name: Ministry of the Environment
             url: http://www.com
             availability: Public
 ---
 {% for layer in page.map_layers.layers %}
-<div class="moabi-legend icon layer-toggle" data-id="{{layer.id}}">
+<div class="moabi-legend pad0y" data-id="{{layer.id}}">
     <div class="legend-category">
-        <div class="symbol" style="background-color: {{layer.color}}"></div>
+        <div class="symbol" style="background-color: orange"></div>
         <span class="value">{{layer.name}}</span>
     </div>
     {% if layer.source.availability == 'Public' %}
-        <div class="quiet">
-            <strong>Source:</strong> {% if layer.source.url %}<a href="{{layer.source.ulr}}">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %} [<a href="http://planet.osm.moabi.org/extracts/">download</a>]</div>
+        <div class="small legend-source">
+            <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="quiet">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
+        </div>
     {% else %}
-        <div class="quiet">
-            <strong>Source:</strong> {% if layer.source.url %}<a href="{{layer.source.ulr}}">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %} [<a href="#" class="button disabled">not public</a>]</div>
+        <div class="small legend-source">
+            <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="quiet">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
+        </div>
     {% endif %}
 </div>
 {% endfor %}

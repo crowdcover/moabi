@@ -15,7 +15,7 @@ this.map.zoomControl.setPosition('topright');
 this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
 this.leaflet_hash = L.hash(this.map);
 
-this.map.legendControl.addLegend("<h2 class='center'>Legend</h2>");
+this.map.legendControl.addLegend("<h2 class='center keyline-bottom'>Legend</h2>");
 
 //build base layer
 for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
@@ -171,14 +171,14 @@ var moabi = {
             ];
         }
 
-        var layer = mapLayers.dataLayers[mapId][0],
-            layerLegend = mapLayers.dataLayers[mapId][1],
-            $mapLegend = $('.map-legend');
+        var layer = mapLayers.dataLayers[mapId][0];
+            layerLegend = mapLayers.dataLayers[mapId][1];
 
         // if button is active, remove layer from map and move button to notDisplayed
         if ($this.hasClass('active')) {
             $this.removeClass('active');
             map.removeLayer(layer);
+            layerLegend.removeClass('active');
 
             // find all indices in notDisplayed
             var notDisplayedIndices = notDisplayed.children('li').map(function(){
@@ -208,6 +208,8 @@ var moabi = {
             $this.addClass('active');
             displayed.prepend($this.parent('li'));
             map.addLayer(layer);
+
+            layerLegend.addClass('active');
         }
         moabi.setGrid(map);
         leaflet_hash.trigger('move');
