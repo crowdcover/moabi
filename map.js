@@ -399,7 +399,7 @@ var moabi = {
     },
 
     updateExportLink: function(hash) {
-      if ($('#map-embed')[0]) {
+      if ($('#map-embed')[0] ) {
         $('#map-embed')[0].value = "<iframe src='http://rdc.moabi.org/embed/" + hash + "' frameborder='0' width='900' height='700'></iframe>";
       }
     },
