@@ -6,45 +6,27 @@
 {% include js/leaflet-hash.js %}
 
 ;(function(context) {
-// if project map
-// if (mapLayers.pageType == 'project'){
-if (true){
-    this.map = L.mapbox.map('map', undefined, {
-        scrollWheelZoom: false
-    });
 
-    this.map.zoomControl.setPosition('topright');
-    this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
-    this.leaflet_hash = L.hash(this.map);
+this.map = L.mapbox.map('map', undefined, {
+    scrollWheelZoom: false
+});
 
-    //build base layer
-    for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
-        L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(this.map);
-    }
-// otherwise, (landing page, blog, etc...)
-} else {
-    this.map = L.mapbox.map('map', undefined, {
-        scrollWheelZoom: false
-    });
+this.map.zoomControl.setPosition('topright');
+this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
+this.leaflet_hash = L.hash(this.map);
 
-    this.map.zoomControl.setPosition('topright');
-    this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
+this.map.legendControl.addLegend("<h2 class='center'>Legend</h2>");
 
-    //build base layer
-    for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
-        L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(this.map);
-    }
+//build base layer
+for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
+    L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(this.map);
 }
 
 var moabi = {
 
     global: function() {
-        // $(document).ready(this.contentBarResize);
-        // $(window).resize(this.contentBarResize);
-
         $('.slider').on('click', 'a', this.slide);
         $('.report-slider').on('click', this.slidePage);
-        // $('.boxmenu').on('click', 'a', this.showMajorPanel);
         $('.minor-panel-viewer').on('click', 'a.layer-toggle', this.showMinorPanel);
         $('.layer-ui').on('click', 'a.layer-toggle', this.layerUi);
         $('.navigate').on('click', 'a', this.navigate);

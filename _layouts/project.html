@@ -13,9 +13,9 @@
 
 <body>
 
-{% include header.html %}
-
 <div id="map"></div>
+
+{% include header.html %}
 
 <div class="sidebar col12 fill-light strongline-right dropshadow-right" style="padding-top: 12px">
     <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
@@ -72,6 +72,8 @@
         </div>
     </div>
 </div>
+
+{{content}}
 
     {% if page.basemap %}{% include parse_layers.html %}{% endif %}
     <script src='{{site.baseurl}}/map.js'></script>

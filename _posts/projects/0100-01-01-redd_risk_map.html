@@ -157,71 +157,83 @@ map_layers:
         name: Indigenous Lands
         categories: [indigenous]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
+        source:
+            name: Congolese Ministry of the Environment
+            url: http://www.com
+            availability: Public
 
       - id: moabi_energy
         name: Energy
         categories: [infrastructure]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
+        source:
+            name: Congolese Ministry of the Environment
+            url: http://www.com
+            availability: Public
 
       - id: moabi_logging
         name: Logging Concessions
         categories: [forestry, concession]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
+        source:
+            name: Congolese Ministry of the Environment
+            url: http://www.com
+            availability: Public
 
       - id: moabi_mining
         name: Mining Concessions
         categories: [concession]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Proprietary
+        source:
+            name: Congolese Ministry of the Environment
+            url: http://www.com
+            availability: Proprietary
 
       - id: moabi_oil
         name: Oil Concessions
         categories: [concession]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
+        source:
+            name: Congolese Ministry of the Environment
+            url: http://www.com
+            availability: Public
         tooltip: name
 
       - id: moabi_palm
         name: Palm Concessions
         categories: [concession, forestry]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
-        source: Congolese Ministry of the Environment
-        availability: Public
+        source:
+            name: Congolese Ministry of the Environment
+            url: http://www.com
+            availability: Public
 
       - id: moabi_transport
         name: Road Rehabilitation Projects
         categories: [infrastructure]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made. Forest loss surrounding city centers is likely due to urban sprawl; loss patterns in orderly, rectangular grids are likely the result of industrial logging; while loss with no discernable pattern is likely due to natural causes or artisanal logging.
-        source: Congolese Ministry of the Environment
-        availability: Public
+        source:
+            name: Congolese Ministry of the Environment
+            url: http://www.com
+            availability: Public
 ---
-{% for main_panel in page.main_panels %}
-    {% if main_panel.panel_data.actions contains 'toggle-layer' %}
-        {% for data_element in main_panel.panel_data.data_elements %}
-            {% if data_element.legend %}
-                <div class="moabi-legend icon layer-toggle" data-id="{{data_element.id}}">
-                    <div class="legend-category">
-                        <div class="symbol" style="background-color: {{data_element.color}}"></div>
-                        <span class="value">{{data_element.name}}</span>
-                    </div>
-                    {% if data_element.source %}
-                        <div class="source"><span>Source:</span> {% if data_element.source.url %}<a href="{{data_element.source.ulr}}">{{data_element.source.name}}</a>{% else %}{{data_element.source.name}}{% endif %}</div>
-                    {% endif %}
-                </div>
-            {% endif %}
-        {% endfor %}
+{% for layer in page.map_layers.layers %}
+<div class="moabi-legend icon layer-toggle" data-id="{{layer.id}}">
+    <div class="legend-category">
+        <div class="symbol" style="background-color: {{layer.color}}"></div>
+        <span class="value">{{layer.name}}</span>
+    </div>
+    {% if layer.source.availability == 'Public' %}
+        <div class="quiet">
+            <strong>Source:</strong> {% if layer.source.url %}<a href="{{layer.source.ulr}}">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %} [<a href="http://planet.osm.moabi.org/extracts/">download</a>]</div>
+    {% else %}
+        <div class="quiet">
+            <strong>Source:</strong> {% if layer.source.url %}<a href="{{layer.source.ulr}}">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %} [<a href="#" class="button disabled">not public</a>]</div>
     {% endif %}
+</div>
 {% endfor %}
 
-<div class="moabi-legend icon layer-toggle" data-id="moabi_transport">
+<!-- <div class="moabi-legend icon layer-toggle" data-id="moabi_transport">
     <div class="legend-category">
         <div class="symbol"></div>
         <span class="value">Road Reconstruction</span>
@@ -249,7 +261,7 @@ map_layers:
         </tr>
     </table>
     <div class="source"><span>Source:</span> <a href="www.com">Africa Energy</a></div>
-</div>
+</div> -->
 
 
 

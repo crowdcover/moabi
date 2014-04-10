@@ -282,6 +282,7 @@ button:hover, .button:hover, .button.active,
 /* custom layout elements */
 .header {
   letter-spacing: 1px;
+  z-index: 1;
   }
   .header a {
     font-family: 'Open Sans Bold';
