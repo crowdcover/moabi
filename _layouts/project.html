@@ -63,28 +63,7 @@
                 </div>
             {% endfor %}
             <h2 class="center">Export</h2>
-            <ul class="pad1 space-bottom4">
-                <li class="pad0x pad1y clearfix">
-                    <div>
-                        <a href="http://osm.moabi.org" class="space"><strong>Data Extracts</strong></a><span class="small quiet pad1x">(Shp, OSM, GeoJson)</span>
-                    </div>
-                    <div class="col12 pad1x pad0y quiet small">Download extracts of the Database via Moabi.OSM iD interface</div>
-                </li>
-                <li class="pad0x pad1y clearfix">
-                    <div class="col12">Map Embed</div>
-                    <div class="col12 pad1x pad0y quiet small">Easily embed the map in any blog or website using simple HTML</div>
-                    <fieldset class="">
-                        <input type="text" value="<iframe src='rdc.moabi.org/mapi/#6/28.00/26.10' frameborder='0' width='650' height='500'></iframe>" class="stretch">
-                    </fieldset>
-                </li>
-                <li class="pad0x pad1y clearfix">
-                    <div class="col12">Print Map</div>
-                    <div class="col12 pad1x pad0y quiet small">Take a screen shot of the current map view</div>
-                    <div id="images" class="col12 fill-darken keyline-all contain" style="min-height: 32px;">
-                        <a id="snap" href="#" class="button pin-left short fill-dark" style="border-radius: 0;">capture</a>
-                    </div>
-                </li>
-            </ul>
+                {% include data_export.html %}
         </div>
     </div>
 </div>
