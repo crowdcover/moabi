@@ -75,6 +75,8 @@ var moabi = {
         $( ".sortable" ).disableSelection();
         leaflet_hash.on('update', moabi.getLayerHash);
         leaflet_hash.on('change', moabi.setLayerHash);
+        leaflet_hash.on('hash', moabi.updateExportLink);
+        moabi.updateExportLink(location.hash);
         $('.not-displayed').css('height', function(){
             totalHeight = 2;
             $('.not-displayed').children('li').each(function(){
@@ -393,6 +395,12 @@ var moabi = {
       moabi.removeAllLayers(); //could be smarter
       for (i = layers.length-1; i >= 0; i--){
         $('.layer-ui .layer-toggle[data-id="' + layers[i] + '"]').trigger('click');
+      }
+    },
+
+    updateExportLink: function(hash) {
+      if ($('#map-embed')) {
+        $('#map-embed')[0].value = "<iframe src='http://rdc.moabi.org/embed/" + hash + "' frameborder='0' width='900' height='700'></iframe>";
       }
     },
 
