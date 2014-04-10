@@ -48,7 +48,7 @@
                 <h3>{{layer.name}}</h3>
             </li>
             <li class="pad0 keyline-bottom">{{layer.description | truncate:250 }}</li>
-            <li class="pad0y keyline-bottom space"><strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="quiet">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}</li>
+            <li class="pad0y keyline-bottom space"><strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="desaturate">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}</li>
             <li class="pad0y space"><strong class="quiet">Availability:</strong> {{layer.source.availability}}</li>
         </ul>
     {% endfor %}

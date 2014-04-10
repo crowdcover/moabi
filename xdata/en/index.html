@@ -178,11 +178,11 @@ map_layers:
     </div>
     {% if layer.source.availability == 'Public' %}
         <div class="micro legend-source">
-            <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="quiet">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
+            <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="desaturate">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
         </div>
     {% else %}
         <div class="micro legend-source">
-            <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="quiet">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
+            <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="desaturate">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
         </div>
     {% endif %}
 </div>

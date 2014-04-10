@@ -123,14 +123,13 @@ h3.light, h3.light a {
 
 
 /* links and color accents */
-a.quiet { text-decoration: underline; }
+a.desaturate { text-decoration: underline; color: #444; }
+.dark a.desaturate { text-decoration: underline; color: #DDD; }
 
-strong {
-  color: #F86D00;
-  } /* darker red orange */
-  .dark strong { color: #F8AA04; } /* brigher orange */
-  a:hover strong { color: #CF710B; } /* darken further on hover */
-  .dark a:hover strong { color: #FFC145; } /* lighten further on hover */
+.prose strong { color: #F86D00; } /* darker red orange */
+.prose .dark strong { color: #F8AA04; } /* brigher orange */
+.prose a:hover strong { color: #CF710B; } /* darken further on hover */
+.prose .dark a:hover strong { color: #FFC145; } /* lighten further on hover */
 
 .activate a {
   color: #404040;
