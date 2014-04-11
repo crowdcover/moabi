@@ -25,10 +25,12 @@ Finally, we [created a new 'mode' within iD](https://github.com/crowdcover/iD/co
 
 The modifications in iD are a bit crude because this is a proof of concept. We realize that there's a lot of room for improvement. Since we are still getting a handle on how everything works in iD, there are several questions that came up during this process, such as:
 
-
-1. We created a new mode for the preset editor to separate the interactions in the browse and edit mode. Is this a good approach?
-2. We have forked the UI rendering into separate files like ui/preset_editor.js and ui/edit_preset_list.js. This essentially contains code similar to the rendering of the preset list and raw tag editor. Is this the right approach?
-3. Right now, presets are tied to the geometry of the entity in the context. This doesn't make sense when editing a preset because the user would want to search for all presets and pick whichever. We made changes in ui/edit_preset_list.js to incorporate this. Is this good? Can we rethink the idea of geometry to include something like 'all'?
-4. Does the overall structure of code look sensible?
+<!-- FIXME : why is markdown not handling ordered list. HTML to get it working. -->
+<ol>
+<li> We created a new mode for the preset editor to separate the interactions in the browse and edit mode. Is this a good approach?</li>
+<li> We have forked the UI rendering into separate files like ui/preset_editor.js and ui/edit_preset_list.js. This essentially contains code similar to the rendering of the preset list and raw tag editor. Is this the right approach?</li>
+<li> Right now, presets are tied to the geometry of the entity in the context. This doesn't make sense when editing a preset because the user would want to search for all presets and pick whichever. We made changes in ui/edit_preset_list.js to incorporate this. Is this good? Can we rethink the idea of geometry to include something like 'all'?</li>
+<li> Does the overall structure of code look sensible?</li>
+</ol>
 
 We are hoping that this blog post will encourage conversations around the work that we have been doing and we can hopefully make the preset editor more concrete.
