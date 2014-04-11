@@ -1,12 +1,14 @@
 ---
 layout: blog_post
-categories: 
+categories:
   - blog_post
 title: Presets and iD
 subtitle: "Presets are predefined set of tag(s) that represent a feature on the ground, for example, a Park. The idea of presets is widely used in OpenStreetMap and the iD editor makes it much easier. Presets can define fields, icons, and more metadata to make the feature unambiguous."
 author: Sajjad Anwar
 language: en
 published: true
+
+img: https://farm4.staticflickr.com/3795/13779212885_2be158bced.jpgjke
 ---
 
 Presets are predefined set of tag(s) that represent a feature on the ground, for example, a Park. The idea of presets is widely used in OpenStreetMap and the iD editor makes it much easier. Presets can define fields, icons, and more metadata to make the feature unambiguous.
