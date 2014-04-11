@@ -2,7 +2,7 @@
 layout: blog_post
 categories:
   - blog_post
-title: Previewing Moabi at SotM-US
+title: Moabi Previewing at SotM-US
 subtitle: "The Moabi development team is *excited* for State of the Map US this weekend. We are sharing a preview of the new Moabi (to be fully launched on Earth Day), and presenting our work on Sunday at 4pm, [OpenStreetMap as Infrastructure](http://stateofthemap.us/session/openstreetmap-as-infrastructure/), sharing the stage with the USGS National Map Corps project, and NPS Park Tiles. Hope to see you there!"
 author: Mikel Maron
 language: en
@@ -10,7 +10,7 @@ published: true
 
 ---
 
-The Moabi development team is *excited* for State of the Map US this weekend. We are sharing a preview of the new Moabi (to be fully launched on Earth Day), and presenting our work on Sunday at 4pm, [OpenStreetMap as Infrastructure](http://stateofthemap.us/session/openstreetmap-as-infrastructure/), sharing the stage with the USGS National Map Corps project, and NPS Park Tiles. Hope to see you there! And if you want a demo any time this weekend, find one of the team, [Sajjad](https://twitter.com/geohacker), [James](https://twitter.com/jamesconkling), [Leo](https://twitter.com/leojb), and [myself](https://twitter.com/mikel).
+The Moabi development team is *excited* for State of the Map US this weekend. We are sharing a preview of the new Moabi (to be fully launched on Earth Day), and presenting our work on Sunday at 4pm, [OpenStreetMap as Infrastructure](http://stateofthemap.us/session/openstreetmap-as-infrastructure/), sharing the stage with the USGS National Map Corps project, and NPS Park Tiles. Hope to see you there! And if you want a demo any time this weekend, find one of the team, [Sajjad](https://twitter.com/geohacker), [James](https://twitter.com/jamesconkling), [Leo](https://twitter.com/leojb), [Chippy](http://rdc.moabi.org/previewing-moabi-at-sotm-us/) (virtually) and [myself](https://twitter.com/mikel).
 
 ## First why Moabi?
 
