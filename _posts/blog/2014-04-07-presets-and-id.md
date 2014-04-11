@@ -23,7 +23,7 @@ Finally, we [created a new 'mode' within iD](https://github.com/crowdcover/iD/co
 
 ![Search and edit presets.](https://farm6.staticflickr.com/5465/13779214503_f817a133ce.jpg)
 
-The modifications in iD are a bit crude because this is a proof of concept. We realize that there's a lot of room for improvement. Since we are still getting a handle on how everything works in iD, there are several questions that came up during this process, such as -
+The modifications in iD are a bit crude because this is a proof of concept. We realize that there's a lot of room for improvement. Since we are still getting a handle on how everything works in iD, there are several questions that came up during this process, such as:
 
 - We created a new mode for the preset editor to separate the interactions in the browse and edit mode. Is this a good approach?
 
