@@ -153,10 +153,23 @@ data:
 map_layers:
     filter:
     layers:
+      - id: moabi_protected
+        name: Protected Forest Areas
+        categories: [forestry]
+        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        legend_template:
+        legend_color:
+        source:
+            name: Ministry of the Environment
+            url: http://www.com
+            availability: Public
+
       - id: moabi_indigenous
         name: Indigenous Lands
         categories: [indigenous]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        legend_template: true
+        legend_color: '#8697d1'
         source:
             name: Ministry of the Environment
             url: http://www.com
@@ -166,6 +179,8 @@ map_layers:
         name: Energy
         categories: [infrastructure]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        legend_template:
+        legend_color:
         source:
             name: Ministry of the Environment
             url: http://www.com
@@ -175,6 +190,8 @@ map_layers:
         name: Logging Concessions
         categories: [forestry, concession]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        legend_template: true
+        legend_color: '#976A2F'
         source:
             name: Ministry of the Environment
             url: http://www.com
@@ -184,6 +201,8 @@ map_layers:
         name: Mining Concessions
         categories: [concession]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        legend_template: true
+        legend_color: '#fae78f'
         source:
             name: Ministry of the Environment
             url: http://www.com
@@ -193,6 +212,8 @@ map_layers:
         name: Oil Concessions
         categories: [concession]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        legend_template: true
+        legend_color: '#d8912e'
         source:
             name: Ministry of the Environment
             url: http://www.com
@@ -203,6 +224,8 @@ map_layers:
         name: Palm Concessions
         categories: [concession, forestry]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        legend_template: true
+        legend_color: '#79750A'
         source:
             name: Ministry of the Environment
             url: http://www.com
@@ -212,58 +235,132 @@ map_layers:
         name: Road Rehabilitation Projects
         categories: [infrastructure]
         description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made. Forest loss surrounding city centers is likely due to urban sprawl; loss patterns in orderly, rectangular grids are likely the result of industrial logging; while loss with no discernable pattern is likely due to natural causes or artisanal logging.
+        legend_template:
+        legend_color:
         source:
             name: Ministry of the Environment
             url: http://www.com
             availability: Public
 ---
-{% for layer in page.map_layers.layers %}
-<div class="moabi-legend pad0y" data-id="{{layer.id}}">
-    <div class="legend-category">
-        <div class="symbol" style="background-color: orange"></div>
-        <span class="value">{{layer.name}}</span>
+<!-- Legends -->
+{% for layer in page.map_layers.layers %}{% if layer.legend_template %}
+<div class="moabi-legend space-bottom1" data-id="{{layer.id}}">
+    <div class="">
+        <div class="block" style="background-color: {{layer.legend_color}}"></div>
+        <h3 class="">{{layer.name}}</h3>
     </div>
-    {% if layer.source.availability == 'Public' %}
-        <div class="small legend-source">
-            <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="quiet">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
-        </div>
-    {% else %}
-        <div class="small legend-source">
-            <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="quiet">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
-        </div>
-    {% endif %}
-</div>
-{% endfor %}
-
-<!-- <div class="moabi-legend icon layer-toggle" data-id="moabi_transport">
-    <div class="legend-category">
-        <div class="symbol"></div>
-        <span class="value">Road Reconstruction</span>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="desaturate">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
     </div>
-    <div class="source"><span>Source:</span> Ministry of Transportation</div>
 </div>
+{% endif %}{% endfor %}
 
-<div class="moabi-legend icon layer-toggle" data-id="moabi_energy">
-    <h4>Hydropower and Energy Corridors</h4>
-    <table class="legend-table named-rows">
-        <tr>
-            <th></th>
-            <th>Existing</th>
-            <th>Future</th>
-        </tr>
-        <tr>
-            <td>Dam</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Energy Line</td>
-            <td></td>
-            <td></td>
-        </tr>
+<div class="moabi-legend space-bottom1" data-id="moabi_forest_cover">
+    <div class="col12">
+        <h3 class="">Forest Cover(%), 2000</h3>
+    </div>
+    <table class="fixed">
+        <thead>
+            <tr>
+                <th class="center">20</th>
+                <th class="center">50</th>
+                <th class="center">70</th>
+                <th class="center">80</th>
+                <th class="center">90</th>
+                <th class="center">100</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="background-color: #2B83BA;"></td>
+                <td style="background-color: #ABDDA4;"></td>
+                <td style="background-color: #FFFFBF;"></td>
+                <td style="background-color: #FDAE61;"></td>
+                <td style="background-color: #D7191C;"></td>
+                <td style="background-color: #990700;"></td>
+            </tr>
+        </tbody>
     </table>
-    <div class="source"><span>Source:</span> <a href="www.com">Africa Energy</a></div>
-</div> -->
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a class="desaturate" href="http://www.earthenginepartners.appspot.com/science-2013-global-forest">University of Maryland</a>
+    </div>
+</div>
 
+<div class="moabi-legend space-bottom1" data-id="moabi_forest_lossyear">
+    <div class="col12">
+        <h3 class="">Forest Loss by Year</h3>
+    </div>
+    <table class="fixed">
+        <thead>
+            <tr>
+                <th class="center">2001</th>
+                <th class="center">2003</th>
+                <th class="center">2006</th>
+                <th class="center">2009</th>
+                <th class="center">2012</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="background-color: #ffeb88;"></td>
+                <td style="background-color: #ffb34a;"></td>
+                <td style="background-color: #f07c2e;"></td>
+                <td style="background-color: #e34a28;"></td>
+                <td style="background-color: #c62107;"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a class="desaturate" href="http://www.earthenginepartners.appspot.com/science-2013-global-forest">University of Maryland</a>
+    </div>
+</div>
 
+<div class="moabi-legend space-bottom1" data-id="moabi_protected">
+    <div class="">
+        <div class="block" style="background-image: url({{site.baseurl}}/img/ex_small.png)"></div>
+        <h3 class="">Protected Areas</h3>
+    </div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">...</a>
+    </div>
+</div>
 
+<div class="moabi-legend space-bottom1" data-id="moabi_transport">
+    <div class="">
+        <span class="legend-icon" style="color: #F8CC00;">━━</span>
+        <h3 class="">Road Rehabilitation Projects</h3>
+    </div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">Ministry of Transportation</a>
+    </div>
+</div>
+
+<div class="moabi-legend space-bottom1" data-id="moabi_community_mapping">
+    <div class="">
+        <h3 class="">Community Mapping, Ingendi</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/chainsaw.svg"></img><h3 class="micro">Logging (legal)</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/chainsaw_illegal.svg"></img><h3 class="micro">Logging (illegal)</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/community.svg"></img><h3 class="micro">Community Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/tree.svg"></img><h3 class="micro">Sacred Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/paw.svg"></img><h3 class="micro">Hunting Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/fish.svg"></img><h3 class="micro">Fishing Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/food_bag.svg"></img><h3 class="micro">Foraging Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/agriculture.svg"></img><h3 class="micro">Farming Site</h3>
+    </div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">OGF</a>
+    </div>
+</div>
+
+<div class="moabi-legend space-bottom1" data-id="moabi_energy">
+    <div class="">
+        <h3 class="">Hydro and Transmission Lines</h3>
+        <span class="legend-icon dot" style="background-color: white; border: 2px solid #D12F3E"></span><h3 class="micro">Dam (existing)</h3>
+        <span class="legend-icon dot" style="background-color: #DEA2A9; border: 2px solid #D12F3E"></span><h3 class="micro">Dam (planned)</h3>
+        <span class="legend-icon" style="border-bottom: 3px solid #D12F3E; position: relative; bottom: 6px; width: 27px;"></span><h3 class="micro">Transmission Line (existing)</h3>
+        <span class="legend-icon" style="border-bottom: 3px dotted #D12F3E; position: relative; bottom: 6px; width: 27px;"></span><h3 class="micro">Transmission Line (planned)</h3>
+    </div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">Ministry of Energy</a>
+    </div>
+</div>
