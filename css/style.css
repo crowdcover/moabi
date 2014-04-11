@@ -123,8 +123,9 @@ h3.light, h3.light a {
 
 
 /* links and color accents */
-a.desaturate { text-decoration: underline; color: #444; }
+a.desaturate { text-decoration: underline; color: #7F7F7F; }
 .dark a.desaturate { text-decoration: underline; color: #DDD; }
+a.desaturate:hover { color: #999;}
 
 .prose strong { color: #F86D00; } /* darker red orange */
 .prose .dark strong { color: #F8AA04; } /* brigher orange */
@@ -724,6 +725,7 @@ footer a {
     max-height: 400px;
     padding: 0 18px 0 0;
     margin: 10px 0 10px 10px;
+    overflow: auto;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -736,16 +738,51 @@ footer a {
   }
   .moabi-legend.active {
     display: block;
+    border-bottom: 1px dashed #CCC;
   }
-  .moabi-legend .legend-source { margin-left: 8px; }
-  .moabi-legend .legend-category .symbol {
-    height: 20px;
-    width: 32px;
+  .moabi-legend.active:last-child {
+    border-bottom: 0;
+  }
+  .moabi-legend .block {
+    height: 18px;
+    width: 28px;
     float: left;
     margin-right: 8px;
     border: 1px solid #888;
   }
-  .moabi-legend .legend-table {
+  .moabi-legend .legend-icon {
+    height: 18px;
+    width: 28px;
+    float: left;
+    margin-right: 8px;
+  }
+  .moabi-legend h3 {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  .moabi-legend h3.micro {
+    font-size: 11px;
+  }
+  .moabi-legend table {
+    margin-bottom: 2px;
+  }
+  .moabi-legend table th {
+    padding: 0;
+  }
+  .moabi-legend table td {
+    height: 18px;
+    border-left: 1px solid #ddd;
+  }
+  .moabi-legend table td:last-child {
+    border-right: 1px solid #ddd;
+  }
+  .moabi-legend .legend-icon.dot {
+    height: 10px;
+    width: 10px;
+    margin: 5px 17px 0 8px;
+  }
+  .moabi-legend .legend-source { margin-left: 8px; }
+/*  .moabi-legend .legend-table {
     font: 12px/16px 'Open Sans', sans-serif;
     margin-bottom: 8px;
   }
@@ -772,7 +809,7 @@ footer a {
 
 .moabi-legend .source span {
     font-family: 'Open Sans Bold Italic', sans-serif;
-}
+}*/
 
 
 
