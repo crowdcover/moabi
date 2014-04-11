@@ -25,7 +25,6 @@ body {
   bottom: 0;
   width: 100%;
   background: transparent url(../img/gradient_a70.png) repeat-x 0 0;
-  opacity: 0.7;
   /*z-index: 1;*/
 }
 
@@ -300,7 +299,7 @@ button:hover, .button:hover, .button.active,
 
 .landing {
   width: 100%;
-  background-image: url('/img/wb_temp.jpg');
+  background-image: url('https://farm8.staticflickr.com/7207/13771392474_4186a5f467_h.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;

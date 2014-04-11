@@ -3,10 +3,9 @@ layout: blog_post
 categories: [blog_post]
 title: Introducing Moabi
 subtitle: a sample blog post, written as a proof of concept
-permalink: welcome_post/en
 language: en
 
-img: wb_temp.jpg
+img: https://farm8.staticflickr.com/7207/13771392474_4186a5f467_h.jpg
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, dicta, explicabo, totam consequatur sapiente maiores eaque aperiam provident molestiae labore dolorem reiciendis dolores laborum nam nostrum beatae repellendus. Voluptatum, iusto soluta consequuntur voluptates. Tenetur, necessitatibus, officia, voluptatibus officiis nemo quam architecto obcaecati sint rerum optio ad dignissimos atque sed esse quisquam modi ea possimus incidunt veritatis asperiores perferendis autem error fugit repellendus animi.
