@@ -325,12 +325,21 @@ footer a {
     height: 50px;
   }
 
-.project-container .project-info {
+.prj-container .prj-info {
   z-index: 1;
   color: #AAA;
   }
-  .project-container:hover .project-info {
+  .prj-container:hover .prj-info {
     color: #FAFAFA;
+  }
+  .prj-container:hover .prj-hidden .prj-info {
+    color: #AAA;
+  }
+  .prj-container a.prj-hidden {
+    cursor: not-allowed;
+  }
+  .prj-hidden .gradient {
+    background: rgba(0,0,0,0.75);
   }
 
 .grayscale {
@@ -376,8 +385,8 @@ footer a {
     width: 40%;
     max-width: 540px;
     min-width: 400px;
-    white-space: nowrap;
-    overflow: center;
+    /*white-space: nowrap;*/
+    /*overflow: center;*/
   }
   .report-container, .data-container {
     position: absolute;

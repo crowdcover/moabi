@@ -9,17 +9,26 @@ language: en
 <section class="fill-light strongline-bottom">
     <div class="limiter pad2y">
         {% for project in site.categories.project_en %}
-            <div class="project-container col12 row6 prose space-bottom contain" style="background-image: url({{project.img}})">
-                <a href="{{project.url}}">
+            <div class="prj-container col12 row6 prose space-bottom contain" style="background-image: url({{project.img}})">
+                {% if project.hidden %}
+                    <a class="clearfix prj-hidden" href="#">
+                {% else %}
+                    <a class="clearfix" href="{{project.url}}">
+                {% endif %}
                     <div class="gradient"></div>
                     <img class="grayscale row6 pin-right" src="http://tiles.osm.moabi.org/moabi_transport/5/18/16.png" alt="">
-                    <div class="project-info col12 pad4 clearfix dark limiter text-shadow pin-bottom animate">
+                    <div class="prj-info col12 pad4 clearfix dark limiter text-shadow pin-bottom animate">
 
                         <div class="col3 pad1x">
                             <h1 class="">{{project.title}}</h1>
                         </div>
                         <div class="col9 pad1x">
-                            <p>{{project.description}}</p>
+                            {% if project.hidden %}
+                                <p><em><strong>Comming Soon...</strong></em></p>
+                                <p>{{project.description | truncate:120 }} </p>
+                            {% else %}
+                                <p>{{project.description}}</p>
+                            {% endif %}
                         </div>
                     </div>
                 </a>
