@@ -4,6 +4,7 @@ categories: [blog_post]
 title: Introducing Moabi
 subtitle: a sample blog post, written as a proof of concept
 language: en
+published: false
 
 img: https://farm8.staticflickr.com/7207/13771392474_4186a5f467_h.jpg
 ---

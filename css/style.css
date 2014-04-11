@@ -16,7 +16,8 @@ orange: #F8AA04;
 }
 
 body {
-  background-color: rgb(255, 252, 248);
+  background-color: #EEE;
+  /*background-color: rgb(255, 252, 248);*/
 }
 
 .gradient {
