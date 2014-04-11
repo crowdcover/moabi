@@ -9,27 +9,15 @@
         </div>
     </div>
 </header>
-{% elsif page.id == 'data' %}
-<header class="header fill-dark dark dropshadow-down strongline-bottom caps">
-    <div class="clearfix">
-        <h1 class="col4 pad1y center">
-            <a href="{{site.baseurl}}/">Moabi</a>
-        </h1>
-        <a class="pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">About</a>
-        <a class="pad2 fr {% if page.id == 'blog' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">Blog</a>
-        <a class="pad2 fr" href="{{site.baseurl}}/data/{{page.language}}">Data</a>
-        <a class="pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/projects/{{page.language}}">Reports</a>
-    </div>
-</header>
 {% else %}
 <header class="header fill-dark dark dropshadow-down strongline-bottom caps">
-    <div class="limiter clearfix">
-        <h1 class="col4 pad1y">
+    <div class="{% unless page.id == 'data' %}limiter{% endunless %} clearfix">
+        <h1 class="col4 pad1y {% unless page.id == 'data' %}center{% endunless %}">
             <a href="{{site.baseurl}}/">Moabi</a>
         </h1>
         <a class="pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">About</a>
         <a class="pad2 fr {% if page.id == 'blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">Blog</a>
-        <a class="pad2 fr" href="{{site.baseurl}}/data/{{page.language}}">Data</a>
+        <a class="pad2 fr {% if page.id == 'data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">Data</a>
         <a class="pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/projects/{{page.language}}">Reports</a>
     </div>
 </header>
