@@ -127,10 +127,10 @@ a.desaturate { text-decoration: underline; color: #7F7F7F; }
 .dark a.desaturate { text-decoration: underline; color: #DDD; }
 a.desaturate:hover { color: #999;}
 
-.prose strong { color: #F86D00; } /* darker red orange */
-.prose .dark strong { color: #F8AA04; } /* brigher orange */
-.prose a:hover strong { color: #CF710B; } /* darken further on hover */
-.prose .dark a:hover strong { color: #FFC145; } /* lighten further on hover */
+strong { color: #F37500; } /* darker red orange */
+.dark strong { color: #F8AA04; } /* brigher orange */
+a:hover strong { color: #CF710B; } /* darken further on hover */
+.dark a:hover strong { color: #FFC145; } /* lighten further on hover */
 
 .activate a {
   color: #404040;

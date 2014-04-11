@@ -8,28 +8,12 @@
 
 <body>
 
-<header class="fill-dark">
-    <div class="limiter clearfix">
-        <h1 class="nav col1 pad1y center"><a href="{{site.baseurl}}/">Moabi</a></h1>
-        <a class="nav pad2 fr" href="http://osm.moabi.org/">Data</a>
-        <a class="nav pad2 fr" href="{{site.baseurl}}/xblog/{{page.language}}">Blog</a>
-        <a class="nav pad2 fr" href="{{site.baseurl}}/xprojects/{{page.language}}">Projects</a>
-        <a class="nav pad2 fr" href="{{site.baseurl}}/xabout/{{page.language}}">About</a>
-    </div>
-</header>
-
-<div class="position">
-    <a href="#" class="slide-control" data-slide="left">
-        <span class="icon big arrow-left"></span>
-    </a>
-    <a href="#" class="slide-control" data-slide="right">
-        <span class="icon big uniE687"></span>
-    </a>
-</div>
+{% include header.html %}
 
 <section class="clearfix">
-    <div class="limiter">
+    <div class="limiter pad4y">
         <h1 class="center"><a href="{{page.url}}">{{page.title}}</a></h1>
+        <div class="pad1 center">{{page.author}}</div>
         <div class="pad1 center keyline-bottom quiet">{{page.date | date: "%d %B, %Y"}}</div>
         {% if page.img %}
         <div class="clearfix">
@@ -44,7 +28,7 @@
     </div>
 </section>
 
-{% if page.basemap %}{% include parse_layers.html %}{% endif %}
+{% include footer.html %}
 <script src='{{site.baseurl}}/map.js'></script>
 </body>
 </html>
