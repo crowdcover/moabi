@@ -36,6 +36,7 @@
                         </a>
                     {% endunless %}
                     <h2 class="prose serif pad2y">{{report.title}}</h2>
+                    {% if page.author and forloop.first %}<div class="quiet space-bottom1 small">By {{page.author}}</div>{% endif %}
                     <p class="prose serif space-bottom4">{{report.text}}</p>
                     {% unless forloop.last %}
                         <a href="#" class="report-slider slide-control h animate quiet clearfix center" data-slide="down">
