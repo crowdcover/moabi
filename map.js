@@ -122,13 +122,13 @@ var moabi = {
             var prevSlide = report.prev(),
                 prevMapId = prevSlide.data('id'),
                 prevNav = prevSlide.data('nav');
+            if (prevNav){
+                map.setView([prevNav[0], prevNav[1]], prevNav[2]);
+            }
             if (prevMapId){
                 for (i = 0; i < prevMapId.length; i++){
                     $('.layer-ui .layer-toggle[data-id="' + prevMapId[i] + '"]').trigger('click');
                 }
-            }
-            if (prevNav){
-                map.setView([prevNav[0], prevNav[1]], prevNav[2]);
             }
         } else {
             newIndex = reportIndex + 1;
@@ -141,13 +141,13 @@ var moabi = {
             var nextSlide = report.next(),
                 nextMapId = nextSlide.data('id'),
                 nextNav = nextSlide.data('nav');
+            if (nextNav){
+                map.setView([nextNav[0], nextNav[1]], nextNav[2]);
+            }
             if (nextMapId){
                 for (i = 0; i < nextMapId.length; i++){
                     $('.layer-ui .layer-toggle[data-id="' + nextMapId[i] + '"]').trigger('click');
                 }
-            }
-            if (nextNav){
-                map.setView([nextNav[0], nextNav[1]], nextNav[2]);
             }
         }
         leaflet_hash.clearMovingMap();
