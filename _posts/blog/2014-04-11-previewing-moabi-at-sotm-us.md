@@ -33,7 +33,7 @@ We've been working on customizations like...
 <a href="https://www.flickr.com/photos/mikel_maron/13781120514" title="Screenshot from 2014-04-11 11:53:50 by Mikel Maron, on Flickr"><img src="https://farm4.staticflickr.com/3726/13781120514_8ec42492f1_c.jpg" width="800" height="450" alt="Screenshot from 2014-04-11 11:53:50"></a>
 
 ## Map Story Building in OSM
-<a href="https://www.flickr.com/photos/mikel_maron/13781027094" title="Screenshot from 2014-04-11 07:30:01 by Mikel Maron, on Flickr"><img src="https://farm8.staticflickr.com/7059/13781027094_8edbd722c0_c.jpg" width="800" height="450" alt="Screenshot from 2014-04-11 07:30:01"></a>
+<a href="https://www.flickr.com/photos/mikel_maron/13781425503" title="35022736-c197-11e3-8083-b99f59e0c496 by Mikel Maron, on Flickr"><img src="https://farm8.staticflickr.com/7434/13781425503_ac32442c06_c.jpg" width="800" height="627" alt="35022736-c197-11e3-8083-b99f59e0c496"></a>
 
 ## Showcase Map Sites in Jekyll/GitPages
 <a href="https://www.flickr.com/photos/mikel_maron/13780792745" title="redd-risk by Mikel Maron, on Flickr"><img src="https://farm8.staticflickr.com/7390/13780792745_8059466fa2_c.jpg" width="800" height="406" alt="redd-risk"></a>
