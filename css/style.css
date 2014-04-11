@@ -725,6 +725,7 @@ footer a {
 
 
 /******************************* Map Legends *******************************/
+.map-tooltip,
 .map-legends {
   background-color: rgb(255, 252, 248);
   background-color: rgba(255, 252, 248, 0.9);
@@ -793,34 +794,16 @@ footer a {
     margin: 5px 17px 0 8px;
   }
   .moabi-legend .legend-source { margin-left: 8px; }
-/*  .moabi-legend .legend-table {
-    font: 12px/16px 'Open Sans', sans-serif;
-    margin-bottom: 8px;
-  }
-  .moabi-legend .legend-table th {
-    width: 33%;
-  }
-  .moabi-legend .legend-table td {
-    font-size: 0.9em;
-    line-height: 1.2em;
-    width: 33%;
-  }
-  .moabi-legend .legend-table td:first-child {
-    text-align: right;
-    padding-right: 4px;
-  }
 
-
-.moabi-legend .source {
-    font-size: 0.7em;
-    line-height: 1.6em;
-    color: #777;
-    margin-top: -4px;
+.map-tooltip {
+  width: 260px;
+  font: 14px/20px 'Open Sans', sans-serif;
 }
-
-.moabi-legend .source span {
-    font-family: 'Open Sans Bold Italic', sans-serif;
-}*/
+.map-tooltip-content {}
+.map-tooltip .key {
+  font-family: 'Open Sans Bold';
+  text-transform: capitalize;
+}
 
 
 

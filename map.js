@@ -336,7 +336,7 @@ var moabi = {
         var tooltip_list = tooltip.split(',');
         var template = "";
         for (var x in tooltip_list) {
-          template = template + tooltip_list[x] + ": \{\{" + tooltip_list[x] + "\}\}<br/>";
+          template = "<div class='tooltip-attribute'>" + template + "<span class='key'>" + tooltip_list[x] + "</span>" + ": \{\{" + tooltip_list[x] + "\}\}</div>";
         }
       } catch(err) { return; }
 
