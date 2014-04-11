@@ -164,91 +164,90 @@ map_layers:
       - id: moabi_protected
         name: Protected Forest Areas
         categories: [forestry]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template:
         legend_color:
+        date:
         source:
-            name: Ministry of the Environment
-            url: http://www.com
-            availability: Public
+            name: World Ressources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
 
       - id: moabi_indigenous
         name: Indigenous Lands
         categories: [indigenous]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#8697d1'
+        date: 2012
         source:
-            name: Ministry of the Environment
-            url: http://www.com
-            availability: Public
+            name: Dynamique des Groupes des Peuples Autochtones (DGPA)
+            url: www.dgpa.cd
 
       - id: moabi_energy
         name: Energy
         categories: [infrastructure]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template:
         legend_color:
+        date: 2013
         source:
-            name: Ministry of the Environment
-            url: http://www.com
-            availability: Public
+            name: African Energy / Societe National d' Electricite (AE / SNEL)
+            url:
 
       - id: moabi_logging
         name: Logging Concessions
         categories: [forestry, concession]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#976A2F'
+        date: 2013
         source:
-            name: Ministry of the Environment
-            url: http://www.com
-            availability: Public
+            name: World Ressources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
+            url:
 
       - id: moabi_mining
         name: Mining Concessions
         categories: [concession]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#fae78f'
+        date: 2014
         source:
-            name: Ministry of the Environment
-            url: http://www.com
-            availability: Proprietary
+            name: Cadastre Minier (CAMI)
+            url:
 
       - id: moabi_oil
         name: Oil Concessions
         categories: [concession]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#d8912e'
-        source:
-            name: Ministry of the Environment
-            url: http://www.com
-            availability: Public
+        date: 2013
         tooltip: name
+        source:
+            name: Ministere des Hydrocarbures (MIN.HYDRO)
+            url:
 
       - id: moabi_palm
         name: Palm Concessions
         categories: [concession, forestry]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#79750A'
+        date: 2014
         source:
-            name: Ministry of the Environment
-            url: http://www.com
-            availability: Public
+            name: World Ressources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
+            url:
 
       - id: moabi_transport
         name: Road Rehabilitation Projects
         categories: [infrastructure]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made. Forest loss surrounding city centers is likely due to urban sprawl; loss patterns in orderly, rectangular grids are likely the result of industrial logging; while loss with no discernable pattern is likely due to natural causes or artisanal logging.
+        description:
         legend_template:
         legend_color:
+        date: 2013
         source:
-            name: Ministry of the Environment
-            url: http://www.com
-            availability: Public
+            name: Cellule Infrastructures (CI)
+            url:
 ---
 <!-- Legends -->
 {% for layer in page.map_layers.layers %}{% if layer.legend_template %}
