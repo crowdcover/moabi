@@ -375,6 +375,8 @@ footer a {
     width: 40%;
     max-width: 540px;
     min-width: 400px;
+    white-space: nowrap;
+    overflow: center;
   }
   .report-container, .data-container {
     position: absolute;

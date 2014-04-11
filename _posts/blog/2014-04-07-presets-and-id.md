@@ -8,7 +8,7 @@ author: Sajjad Anwar
 language: en
 published: true
 
-img: https://farm4.staticflickr.com/3795/13779212885_2be158bced.jpgjke
+img: https://farm4.staticflickr.com/3795/13779212885_2be158bced.jpg
 ---
 
 Presets are predefined set of tag(s) that represent a feature on the ground, for example, a Park. The idea of presets is widely used in OpenStreetMap and the iD editor makes it much easier. Presets can define fields, icons, and more metadata to make the feature unambiguous.
@@ -16,8 +16,6 @@ Presets are predefined set of tag(s) that represent a feature on the ground, for
 Though, it is still pretty difficult to create a new preset or edit an existing preset without having to rebuild iD. [The HOT Visual Tag Chooser](http://visualtags.hotosm.org/) is a great preset editor which is compatible with JOSM. It allows you to export and import presets as an XML. iD makes it easy to deal with presets by defining them as JSON and parsing them appropriately. This makes us think that the preset editor is a sensible feature for iD.
 
 Broadly, we should be able to create new presets and edit existing ones. This means that there should be a way to keep track of the presets. We thought it made sense to extend the OpenStreetMap rails API to include end-points to create, edit and delete presets. This can be used to fetch the presets and then loaded into iD. As a first step, we [modified iD](https://github.com/crowdcover/iD/commit/b6c058c361d2b24e4851c3a3a89c7eb8c346e3a2#diff-c4bea94eae91e15ace0139d7ff52d5b2R44) to enable sideloading of presets via an external JSON or an HTTP request.
-
-![preset editor](https://farm4.staticflickr.com/3795/13779212885_2be158bced.jpg)
 
 Next, we [extended the OpenStreetMap rails API](https://github.com/crowdcover/openstreetmap-website/commit/a235bda8302422122641b236e4a81d63e0ca3802) to include CRUD for presets.
 
