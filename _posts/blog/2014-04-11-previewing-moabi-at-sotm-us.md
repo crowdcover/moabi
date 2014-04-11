@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 ## Previewing Moabi at State of the Map US
