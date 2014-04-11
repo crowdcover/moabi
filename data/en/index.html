@@ -17,7 +17,7 @@ map_layers:
       - id: moabi_forest_cover
         name: UMD Forest Cover (2000)
         categories: [forestry, raster]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description: Tree cover, 2000, defined as canopy closure for all vegetation taller than 5m in height. Categorized as a percentage (0 - 100) of each pixel cell.  Resolution: 1 arc-second (~30m).
         legend_template:
         legend_color:
         date: 2013
@@ -28,7 +28,7 @@ map_layers:
       - id: moabi_forest_lossyear
         name: UMD Forest Loss (2000 - 2012)
         categories: [forestry, raster]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description: Total forest loss, 2000 - 2010, defined as a standard-replacement disturbance, or a change from forest to non-forest.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.  Resolution: 1 arc-second (~30m).
         legend_template:
         legend_color:
         date: 2013
@@ -39,7 +39,7 @@ map_layers:
       - id: moabi_redd_projects
         name: REDD+ Projects
         categories: []
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#dae57e'
         date: 2013
@@ -50,7 +50,7 @@ map_layers:
       - id: moabi_protected
         name: Protected Forest Areas
         categories: [forestry]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template:
         legend_color:
         date:
@@ -60,7 +60,7 @@ map_layers:
       - id: moabi_community_mapping
         name: Community Mapping
         categories: [indigenous]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template:
         legend_color:
         date: 2014
@@ -71,7 +71,7 @@ map_layers:
       - id: moabi_indigenous
         name: Indigenous Lands
         categories: [indigenous]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#8697d1'
         date: 2012
@@ -82,7 +82,7 @@ map_layers:
       - id: moabi_energy
         name: Energy
         categories: [infrastructure]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template:
         legend_color:
         date: 2013
@@ -93,7 +93,7 @@ map_layers:
       - id: moabi_logging
         name: Logging Concessions
         categories: [forestry, concession]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#976A2F'
         date: 2013
@@ -104,7 +104,7 @@ map_layers:
       - id: moabi_mining
         name: Mining Concessions
         categories: [concession]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#fae78f'
         date: 2014
@@ -115,7 +115,7 @@ map_layers:
       - id: moabi_oil
         name: Oil Concessions
         categories: [concession]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#d8912e'
         date: 2013
@@ -127,7 +127,7 @@ map_layers:
       - id: moabi_palm
         name: Palm Concessions
         categories: [concession, forestry]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.
+        description:
         legend_template: true
         legend_color: '#79750A'
         date: 2014
@@ -138,7 +138,7 @@ map_layers:
       - id: moabi_transport
         name: Road Rehabilitation Projects
         categories: [infrastructure]
-        description: This map layer charts total forest loss from 2000 - 2010.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made. Forest loss surrounding city centers is likely due to urban sprawl; loss patterns in orderly, rectangular grids are likely the result of industrial logging; while loss with no discernable pattern is likely due to natural causes or artisanal logging.
+        description:
         legend_template:
         legend_color:
         date: 2013
@@ -247,7 +247,7 @@ map_layers:
         <h3 class="">Protected Areas</h3>
     </div>
     <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">...</a>
+        <strong class="quiet">Source:</strong> World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
     </div>
 </div>
 
@@ -257,7 +257,7 @@ map_layers:
         <h3 class="">Road Rehabilitation Projects</h3>
     </div>
     <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">Ministry of Transportation</a>
+        <strong class="quiet">Source:</strong> Cellule Infrastructures (CI)
     </div>
 </div>
 
@@ -274,7 +274,7 @@ map_layers:
         <img class="legend-icon" src="{{site.baseurl}}/img/agriculture.svg"></img><h3 class="micro">Farming Site</h3>
     </div>
     <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">OGF</a>
+        <strong class="quiet">Source:</strong> Ligue Nationale des pygmees du Congo (LINAPYCO)
     </div>
 </div>
 
@@ -287,6 +287,6 @@ map_layers:
         <span class="legend-icon" style="border-bottom: 3px dotted #D12F3E; position: relative; bottom: 6px; width: 27px;"></span><h3 class="micro">Transmission Line (planned)</h3>
     </div>
     <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">Ministry of Energy</a>
+        <strong class="quiet">Source:</strong> African Energy / Societe National d' Electricite (AE / SNEL)
     </div>
 </div>
