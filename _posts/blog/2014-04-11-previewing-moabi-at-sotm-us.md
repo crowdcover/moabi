@@ -10,8 +10,6 @@ published: true
 
 ---
 
-## Previewing Moabi at State of the Map US
-
 The Moabi development team is *excited* for State of the Map US this weekend. We are sharing a preview of the new Moabi (to be fully launched on Earth Day), and presenting our work on Sunday at 4pm, [OpenStreetMap as Infrastructure](http://stateofthemap.us/session/openstreetmap-as-infrastructure/), sharing the stage with the USGS National Map Corps project, and NPS Park Tiles. Hope to see you there! And if you want a demo any time this weekend, find one of the team, [Sajjad](https://twitter.com/geohacker), [James](https://twitter.com/jamesconkling), [Leo](https://twitter.com/leojb), and [myself](https://twitter.com/mikel).
 
 ## First why Moabi?
