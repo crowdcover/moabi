@@ -178,6 +178,15 @@ button:hover, .button:hover, .button.active,
   }
 
 
+/* animations */
+.animate {
+  -webkit-transition:all .25s;
+     -moz-transition:all .25s;
+      -ms-transition:all .25s;
+          transition:all .25s;
+  }
+
+
 /* buttons/widgets/controls */
 .layer-ui {
   }
