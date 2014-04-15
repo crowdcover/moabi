@@ -314,14 +314,14 @@ button:hover, .button:hover, .button.active,
   }*/
 
 
-footer a {
+.logo a {
   display: inline-block;
   border: 1px solid transparent;
   }
-  footer a:hover {
+  .logo a:hover {
     border: 1px solid #DDD;
   }
-  footer img {
+  .logo img {
     height: 50px;
   }
 
