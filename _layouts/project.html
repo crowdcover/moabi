@@ -26,18 +26,18 @@
             {% for report in page.report %}
                 <div class="report col12 animate" style="height: 100%" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}"{% if report.zoom_to %} data-nav='["{{report.zoom_to.lat}}", "{{report.zoom_to.lon}}", "{{report.zoom_to.zoom}}"]'{% endif %}{% if report.layers %} data-id='[{% for layer in report.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}>
                     {% unless forloop.first %}
-                        <a href="#" class="report-slider slide-control h animate quiet clearfix center" data-slide="up">
+                        <a href="#" class="report-slider h animate quiet center clearfix" data-slide="up">
                             <span class="icon arrow-up col12"></span>
                             <span class="small">Page Up</span>
                         </a>
                     {% endunless %}
-                    <div class="report-content dashline-bottom dashline-top">
+                    <div class="report-content">
                         <h2 class="prose serif pad2y">{{report.title}}</h2>
                         {% if page.author and forloop.first %}<div class="quiet space-bottom1 small">By {{page.author}}</div>{% endif %}
                         <p class="prose space-bottom4">{{report.text}}</p>
                     </div>
                     {% unless forloop.last %}
-                        <a href="#" class="report-slider slide-control h animate quiet clearfix center" data-slide="down">
+                        <a href="#" class="report-slider h animate quiet center pin-bottom" data-slide="down" style="bottom: 10px">
                             <span class="small">Page Down</span>
                             <span class="icon arrow-down col12"></span>
                         </a>

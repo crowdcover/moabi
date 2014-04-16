@@ -414,9 +414,9 @@ button:hover, .button:hover, .button.active,
     overflow: auto;
   }
   .report .report-content {
-    height: calc(100% - 124px);
+/*    height: calc(100% - 124px);
     overflow: scroll;
-    margin: 8px 0;
+    margin: 8px 0;*/
   }
   .report:first-child .report-content,
   .report:last-child .report-content {
