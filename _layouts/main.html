@@ -12,7 +12,9 @@
 
 {{content}}
 
-{% include footer.html %}
+{% unless page.id == 'home' %}
+    {% include footer.html %}
+{% endunless %}
 
 {% if page.basemap %}{% include parse_layers.html %}{% endif %}
 <script src='{{site.baseurl}}/map.js'></script>
