@@ -287,6 +287,50 @@ button:hover, .button:hover, .button.active,
   .button.contain-children:last-child h2 {
     padding-left: 8px;
   }*/
+  .button.quiet {
+    background-color: #eee;
+    background-color: rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.25);
+    color: rgba(0,0,0,.5);
+  }
+
+  .tab-group .tabs > a {
+    /*border-radius: 0;*/
+  }
+
+/*pillmenu*/
+.pillmenu li {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.pillmenu li a {
+    background-color: #CCC;
+    color: #333;
+    margin-left: 2px;
+    padding: 2px 10px;
+    border-radius: 2px;
+    border: 1px solid #BBBBBB;
+}
+
+.pillmenu li a:hover {
+    background-color: #777;
+    color: #DDD;
+    border: 1px solid #777777;
+}
+
+.pillmenu li a:active {
+    background-color: #798A69;
+    color: #FFFFFF;
+    border: 1px solid #777777;
+}
+
+.pillmenu li a.active {
+    background-color: #C5CDAC;
+    color: #333;
+    border: 1px solid #999;
+    box-shadow: inset 0px 2px 3px rgba(0,0,0,0.1);
+}
 
 
 
@@ -425,12 +469,12 @@ button:hover, .button:hover, .button.active,
 
 
 /* Animation */
-.toggle-this-vis {
+.invis {
   height: 0;
   overflow: hidden;
   padding: 0;
   }
-  .toggle-this-vis.vis {
+  .invis.active {
     height: auto;
   }
 
@@ -438,133 +482,7 @@ button:hover, .button:hover, .button.active,
 .clipy { overflow-y: hidden; }
 
 
-/***********************Menus***********************/
-/*boxmenu*/
-.boxmenu {
-    clear: both;
-}
-
-.boxmenu.shadow {
-    box-shadow: rgba(0,0,0,0.2) 0px 2px 4px 0px;
-    position: relative;
-}
-
-.boxmenu li {
-    /*float left or display inline-block and set li { letter-spacing: 0;}, ul { whitespace: nowrap; letter-spacing: -4px; }, and remove ul's clearfix*/
-    float: left;
-    /*display: inline-block;*/
-    border: 1px solid #AAA;
-    border-left: 0;
-}
-
-.boxmenu li:last-child {
-    border-right: 0;
-}
-
-.boxmenu li a {
-    /* made sure anchor text doesn't wrap, or explicitly change top/bottom padding on text wrap, or set a { display: table-cell; height: 48px; width: 9999px; } and deal with whitespace*/
-    display: block;
-    background-color: #C5CDAC;
-    color: #333;
-    padding: 12px 0;
-    text-align: center;
-    font-family: 'Open Sans Bold', sans-serif;
-}
-
-.boxmenu li a:hover {
-    background-color: #798A69;
-    color: rgb(255, 252, 248);
-}
-
-.boxmenu li a:active {
-    background-color: rgb(255, 252, 248);
-    color: #EE9A00;
-}
-
-.boxmenu li a.active {
-    background-color: rgb(255, 252, 248);
-    color: #333;
-}
-
-.boxmenu li a.two-line {
-    padding: 2px 0;
-}
-
-.boxmenu.width-1 > li {
-    width: 100%;
-}
-
-.boxmenu.width-2 > li {
-    width: 50%;
-}
-
-.boxmenu.width-3 > li {
-    width: 33%;
-}
-
-.boxmenu.width-3 > li:last-child {
-    width: 34%;
-}
-
-.boxmenu.width-4 > li {
-    width: 25%;
-}
-
-.boxmenu.width-5 > li {
-    width: 20%;
-}
-
-.boxmenu.width-6 > li {
-    width: 17%;
-}
-
-.boxmenu.width-6 > li:first-child, .boxmenu.width-6 > li:last-child {
-    width: 16%;
-}
-
-.boxmenu.width-7 > li {
-    width: 14%;
-}
-
-.boxmenu.width-7 > li:first-child, .boxmenu.width-7 > li:last-child {
-    width: 15%;
-}
-
-
-/*pillmenu*/
-.pillmenu li {
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.pillmenu li a {
-    background-color: #CCC;
-    color: #333;
-    margin-left: 2px;
-    padding: 2px 10px;
-    border-radius: 2px;
-    border: 1px solid #BBBBBB;
-}
-
-.pillmenu li a:hover {
-    background-color: #777;
-    color: #DDD;
-    border: 1px solid #777777;
-}
-
-.pillmenu li a:active {
-    background-color: #798A69;
-    color: #FFFFFF;
-    border: 1px solid #777777;
-}
-
-.pillmenu li a.active {
-    background-color: #C5CDAC;
-    color: #333;
-    border: 1px solid #999;
-    box-shadow: inset 0px 2px 3px rgba(0,0,0,0.1);
-}
-
+/*********************** Menus ***********************/
 
 .minor-panel {
   display: none;
@@ -578,6 +496,7 @@ button:hover, .button:hover, .button.active,
   .minor-panel.active .animate {
     opacity: 1;
   }*/
+
 
 /*********************** Media ***********************/
 .slideshow {
