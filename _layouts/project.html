@@ -13,8 +13,6 @@
 
 <div id="map"></div>
 
-{% include header.html %}
-
 <div class="sidebar col12 fill-light strongline-right dropshadow-right" style="padding-top: 12px">
     <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
         <div class='slider tabs col10 margin1 space-bottom1 clearfix'>
@@ -33,9 +31,11 @@
                             <span class="small">Page Up</span>
                         </a>
                     {% endunless %}
-                    <h2 class="prose serif pad2y">{{report.title}}</h2>
-                    {% if page.author and forloop.first %}<div class="quiet space-bottom1 small">By {{page.author}}</div>{% endif %}
-                    <p class="prose serif space-bottom4">{{report.text}}</p>
+                    <div class="report-content dashline-bottom dashline-top">
+                        <h2 class="prose serif pad2y">{{report.title}}</h2>
+                        {% if page.author and forloop.first %}<div class="quiet space-bottom1 small">By {{page.author}}</div>{% endif %}
+                        <p class="prose space-bottom4">{{report.text}}</p>
+                    </div>
                     {% unless forloop.last %}
                         <a href="#" class="report-slider slide-control h animate quiet clearfix center" data-slide="down">
                             <span class="small">Page Down</span>
