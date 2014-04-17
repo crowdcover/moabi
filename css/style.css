@@ -32,7 +32,6 @@ body {
 /* typography and spacing */
 h1, h2 {
   font-family: 'Open Sans XBold';
-  font-style: italic;
 }
 
 h1 a,
@@ -161,11 +160,6 @@ a:hover strong { color: #CF710B; } /* darken further on hover */
     color: #F8AA04;
   }
 
-button:hover, .button:hover, .button.active,
-[type=submit]:hover, [type=button]:hover {
-  background-color: #F8AA04;
-}
-
 
 /* backgrounds */
 .dark {
@@ -263,42 +257,19 @@ button:hover, .button:hover, .button.active,
 
 .tabs a { cursor: pointer; } /*not sure why this needs to be restated*/
 
-.button.contain-children {
-  height: auto;
-  background-color: rgba(255, 252, 248, 0.1);
-  border: 1px solid rgba(255, 252, 248, 0.3);
-  border-right: 0;
-  font-size: 13px;
-  white-space: normal;
-  }
-  .button.contain-children:last-child {
-    border-right: 1px solid rgba(255, 252, 248, 0.3);
-  }
-  .button.contain-children:hover {
-    background-color: rgba(255, 252, 248, 0.2);
-  }
-/*  .button.contain-children:first-child {
-    text-align: right;
-  }
-  .button.contain-children:last-child {
-    text-align: left;
-  }
-  .button.contain-children:first-child h2 {
-    padding-right: 8px;
-  }
-  .button.contain-children:last-child h2 {
-    padding-left: 8px;
-  }*/
-  .button.quiet {
-    background-color: #eee;
-    background-color: rgba(0,0,0,0.1);
-    border: 1px solid rgba(0,0,0,0.25);
-    color: rgba(0,0,0,.5);
-  }
 
-  .tab-group .tabs > a {
-    /*border-radius: 0;*/
-  }
+
+.button.quiet {
+  /*background-color: #eee;*/
+  /*background-color: rgba(0,0,0,0.1);*/
+  background-color: transparent;
+  border: 1px solid rgba(0,0,0,0.25);
+  color: rgba(0,0,0,.5);
+}
+
+.tab-group .tabs > a {
+  /*border-radius: 0;*/
+}
 
 /*pillmenu*/
 .pillmenu li {
@@ -369,13 +340,19 @@ button:hover, .button:hover, .button.active,
   background-size: cover;
   background-position: center top;
   }
-/*  .landing .landing-button {
-    border: 4px solid transparent;
+  .landing .pill {
+    border: 1px solid rgba(255, 252, 248, 0.3);
+    border-radius: 3px;
   }
-  .landing .landing-button:hover {
+  .landing .pill a {
+    color: #FFFCF8;
+    height: 100%;
+    border-color: rgba(255, 252, 248, 0.3);
     background-color: rgba(255, 252, 248, 0.1);
-    border: 4px solid rgba(255, 163, 0, 0.82);
-  }*/
+  }
+  .landing .pill a:hover {
+    background-color: rgba(255, 252, 248, 0.2);
+  }
 
 
 .logo a {
