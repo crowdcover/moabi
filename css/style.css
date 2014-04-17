@@ -312,7 +312,10 @@ a:hover strong { color: #CF710B; } /* darken further on hover */
   width: 40%;
   right: 48px;
   margin-top: 11px;
-}
+  }
+  .mapbox-modal-body .mapbox-share-buttons a {
+    background-color: #666;
+  }
 
 /* custom layout elements */
 .header {
@@ -577,12 +580,6 @@ a:hover strong { color: #CF710B; } /* darken further on hover */
     padding: 0 40px 18px;
     border-bottom: 2px solid #CCC;
 }
-
-
-/*********************** UI Controls ***********************/
-/*.leaflet-top.leaflet-right{
-    top: 64px;
-}*/
 
 
 
