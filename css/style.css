@@ -30,7 +30,10 @@ body {
 }
 
 /* typography and spacing */
-h1, h2, h3 { letter-spacing: 1px; }
+h1, h2 {
+  font-family: 'Open Sans XBold';
+  font-style: italic;
+}
 
 h1 a,
 h2 a,
@@ -133,7 +136,7 @@ a:hover strong { color: #CF710B; } /* darken further on hover */
 .dark a:hover strong { color: #FFC145; } /* lighten further on hover */
 
 .activate a {
-  color: #404040;
+  color: #222;
 }
   .dark .activate a {
     color: rgb(255, 252, 248);
@@ -212,7 +215,6 @@ button:hover, .button:hover, .button.active,
   .layer-ui .displayed:empty:before {
     content: "empty";
     font: 12px/20px 'Open Sans Italic', sans-serif;
-    color: rgba(120, 120, 120, 0.4);
     padding-top: 8px;
     text-align: center;
     display: block;
@@ -301,16 +303,16 @@ button:hover, .button:hover, .button.active,
 /*pillmenu*/
 .pillmenu li {
     display: inline-block;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .pillmenu li a {
-    background-color: #CCC;
-    color: #333;
+    background-color: #C1BFBC;
+    color: #222;
     margin-left: 2px;
     padding: 2px 10px;
     border-radius: 2px;
-    border: 1px solid #BBBBBB;
+    border: 1px solid #AEACA9;
 }
 
 .pillmenu li a:hover {

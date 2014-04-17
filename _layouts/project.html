@@ -32,8 +32,13 @@
                         </a>
                     {% endunless %}
                     <div class="report-content">
-                        <h2 class="prose serif pad2y">{{report.title}}</h2>
+                        <h2 class="prose serif pad1y space-bottom1 keyline-bottom">{{report.title}}</h2>
                         {% if page.author and forloop.first %}<div class="quiet space-bottom1 small">By {{page.author}}</div>{% endif %}
+                        {% if forloop.first %}
+                            <div class="row6 space-bottom2 contain" style="overflow: hidden;">
+                                <img class="space-bottom2" src="{{page.img}}" style="position: absolute; bottom: -25%;"></img>
+                            </div>
+                        {% endif %}
                         <p class="prose space-bottom4">{{report.text}}</p>
                     </div>
                     {% unless forloop.last %}
@@ -49,10 +54,10 @@
         <div class="data-container col12 pad2x animate">
             {% for data in page.data %}
                 <div class="data col12 space-bottom4 dashline-bottom">
-                    <h2 class="space-bottom1 center">{{data.title}}</h2>
+                    <h2 class="space-bottom1 ">{{data.title}}</h2>
                     <p class="prose small">{{data.description}}</p>
                     {% if data.type == 'map-nav' %}
-                        <ul class="navigate pillmenu center pad2x space-bottom1">
+                        <ul class="navigate pillmenu space-bottom1">
                             {% for button in data.location %}
                                 <li>
                                     <a data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]' href="#">{{button.name}}</a>
@@ -66,7 +71,7 @@
                     {% endif %}
                 </div>
             {% endfor %}
-            <h2 class="center">Export</h2>
+            <h2 class="">Export</h2>
                 {% include data_export.html %}
         </div>
     </div>
