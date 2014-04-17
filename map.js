@@ -8,10 +8,12 @@
 ;(function(context) {
 
 this.map = L.mapbox.map('map', undefined, {
+    shareControl: true,
     scrollWheelZoom: false
 });
 
 this.map.zoomControl.setPosition('topright');
+this.map.shareControl.setPosition('topright');
 this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
 this.leaflet_hash = L.hash(this.map);
 

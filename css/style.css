@@ -333,6 +333,13 @@ button:hover, .button:hover, .button.active,
 }
 
 
+/* share controls */
+.mapbox-modal-body {
+  position: absolute;
+  width: 40%;
+  right: 48px;
+  margin-top: 11px;
+}
 
 /* custom layout elements */
 .header {
@@ -478,8 +485,7 @@ button:hover, .button:hover, .button.active,
     height: auto;
   }
 
-.clipx { overflow-x: hidden; }
-.clipy { overflow-y: hidden; }
+
 
 
 /*********************** Menus ***********************/
