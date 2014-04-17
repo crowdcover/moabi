@@ -10,6 +10,8 @@ published: true
 
 ---
 
+*Update: we had an excellent time at SotM-US and the Sprint day. The presentation [slides](https://docs.google.com/presentation/d/1p5uBtNiIsL_mF4eT0qIei_sbP7xAjNAKEDGITfrOe6E/edit?usp=sharing) and [video](http://vimeo.com/92001606) are now posted.*
+
 The Moabi development team is *excited* for State of the Map US this weekend. We are sharing a preview of the new Moabi (to be fully launched on Earth Day), and presenting our work on Sunday at 4pm, [OpenStreetMap as Infrastructure](http://stateofthemap.us/session/openstreetmap-as-infrastructure/), sharing the stage with the USGS National Map Corps project, and NPS Park Tiles. Hope to see you there! And if you want a demo any time this weekend, find one of the team, [Sajjad](https://twitter.com/geohacker), [James](https://twitter.com/jamesconkling), [Leo](https://twitter.com/leojb), [Chippy](http://rdc.moabi.org/previewing-moabi-at-sotm-us/) (virtually) and [myself](https://twitter.com/mikel).
 
 ## First why Moabi?
