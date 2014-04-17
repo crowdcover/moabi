@@ -850,6 +850,9 @@ button:hover, .button:hover, .button.active,
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    /* jlc - make base play nice */
+    display: inline;
 }
     .icon.float:before {
         float: left;
@@ -866,27 +869,6 @@ button:hover, .button:hover, .button.active,
 /* make base.css icons play nice with mine */
 .col1.big.icon:empty { float:left; width:08.3333%; }
 
-/*.rcon:after,
-.icon:before {
-    font: 22px/0.4 'EntypoRegular';
-    height: 18px;
-    width: 14px;
-    margin-right: 2px;
-    vertical-align: 0;
-    text-decoration: none;
-    display: inline-block;
-    zoom: 1;
-}
-
-.rcon.big:after,
-.icon.big:before {
-    font: 48px/.75 'EntypoRegular';
-    height: 36px;
-    width: 32px;
-    margin-right: 5px;
-    vertical-align: -2px;
-}
-*/
 
 .icon.mobile:before { content: "\e600" }
 .icon.mail:before { content: "\e601" }

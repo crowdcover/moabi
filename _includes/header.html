@@ -10,7 +10,7 @@
     </div>
 </header>
 {% else %}
-<header class="header fill-dark dark dropshadow-down strongline-bottom caps">
+<header class="header {% if page.id == 'data' %}fill-light {% else %}fill-dark dark {% endif %}dropshadow-down strongline-bottom caps">
     <div class="{% unless page.id == 'data' %}limiter{% endunless %} clearfix">
         <h1 class="col4 pad1y {% if page.id == 'data' %}center{% endif %}">
             <a href="{{site.baseurl}}/">Moabi</a>
