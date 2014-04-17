@@ -1,24 +1,9 @@
-{% if page.categories contains 'project_en' or page.categories contains 'project_fr' %}
-<header class="header caps">
-    <div class="clearfix">
-        <h1 class="col4 prj-header pad1y center fill-light strongline-right strongline-bottom dropshadow-right">
-            <a href="{{page.permalink}}">{{page.title}}</a>
-        </h1>
-        <div class="fr text-shadow pad2">
-            <a class="pad2" href="{{site.baseurl}}/">Home</a>
-        </div>
-    </div>
-</header>
-{% else %}
-<header class="header {% if page.id == 'data' %}fill-light {% else %}fill-dark dark {% endif %}dropshadow-down strongline-bottom caps">
+<header class="header {% if page.id == 'data' %}fill-light {% else %}fill-dark dark {% endif %}dropshadow-down strongline-bottom">
     <div class="{% unless page.id == 'data' %}limiter{% endunless %} clearfix">
-        <h1 class="col4 pad1y {% if page.id == 'data' %}center{% endif %}">
-            <a href="{{site.baseurl}}/">Moabi</a>
-        </h1>
-        <a class="pad2 fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">About</a>
-        <a class="pad2 fr {% if page.id == 'blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">Blog</a>
-        <a class="pad2 fr {% if page.id == 'data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">Data</a>
-        <a class="pad2 fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">Reports</a>
+        <a class="col4 pad1y caps{% if page.id == 'data' %} center{% endif %}" href="{{site.baseurl}}/">Moabi</a>
+        <a {% if page.id == 'data' %}style="margin-right: 20px;" {% endif %}class="pad1y fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">About</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.id == 'blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">Blog</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.id == 'data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">Data</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">Reports</a>
     </div>
 </header>
-{% endif %}
