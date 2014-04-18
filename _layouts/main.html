@@ -24,8 +24,10 @@
     {% include footer.html %}
 {% endunless %}
 
-{% if page.basemap %}{% include parse_layers.html %}{% endif %}
-<script src='{{site.baseurl}}/map.js'></script>
+{% if page.basemap %}
+    {% include parse_layers.html %}
+    <script src='{{site.baseurl}}/map.js'></script>
+{% endif %}
 </body>
 </html>
 
