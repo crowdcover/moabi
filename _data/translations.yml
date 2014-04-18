@@ -1,0 +1,82 @@
+en:
+  coming_soon: coming soon...
+
+  header:
+    reports: reports
+    data: data
+    blog: blog
+    about: about
+
+  footer:
+    partners: partners
+
+  layer_ui:
+    available: Available Map Layers
+    displayed: Displayed Map Layers
+    empty: empty
+
+  data_extract:
+    extract: Data Extracts
+    extract_text: Download extracts of the Database via Moabi.OSM iD interface
+    embed: Map Embed
+    embed_text: Easily embed the map in any blog or website using simple HTML
+    print: Print Map
+    print_text: Take a screenshot of the current map view
+    snap: capture
+
+  landing:
+    title: Collaborative Land Use Mapping
+    description: Moabi-DRC is an independent mapping initiative that collaboratively monitors land use in the Democratic Republic of the Congo. Our community works towards a more Transparent, Equitable, and Sustainable future for the environment and people of DRC. You can use Moabi DRC to explore, share, and create projects on a wide range of issues from REDD+ to community mapping and more.
+    report_button_name: Report
+    report_button_text: Browse projects exploring key dynamics of land use and environment policy
+    data_button_name: Data
+    data_button_text: Explore, share, contribute, and download the data
+
+  about:
+
+  data:
+    visualize: Visualize
+    export: Export
+
+
+
+fr:
+  coming_soon: coming soon...
+
+  header:
+    reports: reports
+    data: data
+    blog: blog
+    about: about
+
+  footer:
+    partners: partners
+
+  layer_ui:
+    available: Available Map Layers
+    displayed: Displayed Map Layers
+    empty: empty
+
+  data_extract:
+    extract: Data Extracts
+    extract_description: Download extracts of the Database via Moabi.OSM iD interface
+    embed: Map Embed
+    embed_description: Easily embed the map in any blog or website using simple HTML
+    print: Print Map
+    print_description: Take a screenshot of the current map view
+    snap: capture
+
+  landing:
+    title: Collaborative Land Use Mapping
+    description: Moabi-DRC is an independent mapping initiative that collaboratively monitors land use in the Democratic Republic of the Congo. Our community works towards a more Transparent, Equitable, and Sustainable future for the environment and people of DRC. You can use Moabi DRC to explore, share, and create projects on a wide range of issues from REDD+ to community mapping and more.
+    report_button_name: Report
+    report_button_text: Browse projects exploring key dynamics of land use and environment policy
+    data_button_name: Data
+    data_button_text: Explore, share, contribute, and download the data
+
+  about:
+
+  data:
+    visualize: Visualize
+    export: Export
+
