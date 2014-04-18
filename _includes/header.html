@@ -1,9 +1,10 @@
-<header class="header {% if page.id == 'data' %}fill-light {% else %}fill-dark dark {% endif %}dropshadow-down strongline-bottom">
-    <div class="{% unless page.id == 'data' %}limiter{% endunless %} clearfix">
-        <a class="col4 pad1y caps{% if page.id == 'data' %} center{% endif %}" href="{{site.baseurl}}/">Moabi</a>
-        <a {% if page.id == 'data' %}style="margin-right: 20px;" {% endif %}class="pad1y fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">About</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.id == 'blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">Blog</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.id == 'data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">Data</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">Reports</a>
+{% assign t = site.data.translations %}
+<header class="header fill-light dropshadow-down strongline-bottom">
+    <div class="limiter clearfix">
+        <a class="col4 pad1y caps" href="{{site.baseurl}}/">Moabi</a>
+        <a class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
     </div>
 </header>
