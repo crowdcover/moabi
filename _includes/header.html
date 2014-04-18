@@ -1,9 +1,10 @@
-<header class="header {% if page.id == 'data' %}fill-light {% else %}fill-dark dark {% endif %}dropshadow-down strongline-bottom">
-    <div class="{% unless page.id == 'data' %}limiter{% endunless %} clearfix">
-        <a class="col4 pad1y caps{% if page.id == 'data' %} center{% endif %}" href="{{site.baseurl}}/">Moabi</a>
-        <a {% if page.id == 'data' %}style="margin-right: 20px;" {% endif %}class="pad1y fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">About</a>
+{% assign t = site.tags.translations[0] %}
+<header class="header {% if page.title == 'Data' %}fill-light {% else %}fill-dark dark {% endif %}dropshadow-down strongline-bottom">
+    <div class="{% unless page.title == 'Data' %}limiter{% endunless %} clearfix">
+        <a class="col4 pad1y caps{% if page.title == 'Data' %} center{% endif %}" href="{{site.baseurl}}/">Moabi</a>
+        <a {% if page.title == 'Data' %}style="margin-right: 20px;" {% endif %}class="pad1y fr {% if page.id == 'about' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">About | {{t.[page.language].header.about}}</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.id == 'blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">Blog</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.id == 'data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">Data</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">Data</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.id == 'projects' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">Reports</a>
     </div>
 </header>
