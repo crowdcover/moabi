@@ -1,0 +1,26 @@
+---
+layout: main
+---
+{% assign t = site.data.translations %}
+<div class="landing strongline-bottom contain text-shadow">
+    <div class="gradient"></div>
+    <div class="col12 pad4y dark limiter clearfix contain" style="padding-top: 60px;">
+        <div class="col6 pad2 margin3 margin3r center space-bottom1 caps">
+            <h1 class="wide-text">{{t.[page.language].landing.title}}</h1>
+        </div>
+        <div class="row4 col10 margin1 prose space-bottom4">
+            <p>{{t.[page.language].landing.description}}</p>
+        </div>
+
+        <div class='pill row4 col10 margin1 center'><!--
+          --><a href='{{site.baseurl}}/reports/{{page.language}}' class='col6'>
+              <h2 class="caps pad2">{{t.[page.language].landing.report_button_name}}</h2>
+              <p class="pad2x">{{t.[page.language].landing.report_button_text}}</p>
+          </a><!--
+          --><a href='{{site.baseurl}}/data/{{page.language}}' class='col6'>
+              <h2 class="caps pad2">{{t.[page.language].landing.data_button_name}}</h2>
+              <p class="pad2x">{{t.[page.language].landing.data_button_text}}</p>
+          </a>
+        </div>
+    </div>
+</div>
