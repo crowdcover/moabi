@@ -1,4 +1,5 @@
 {% assign t = site.data.translations %}
+{% if page.title != 'Data' %}
 <header class="header fill-light dropshadow-down strongline-bottom">
     <div class="limiter clearfix">
         <a class="col4 pad1y caps" href="{{site.baseurl}}/">Moabi</a>
@@ -8,3 +9,14 @@
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
     </div>
 </header>
+{% else %}
+<header class="header fill-light dropshadow-down strongline-bottom">
+    <div class="clearfix">
+        <a class="col4 pad1y caps center" href="{{site.baseurl}}/">Moabi</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
+        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
+    </div>
+</header>
+{% endif %}
