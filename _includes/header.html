@@ -1,6 +1,6 @@
 {% assign t = site.data.translations %}
 {% if page.title != 'Data' %}
-<header class="header fill-light dropshadow-down strongline-bottom">
+<header class="header fill-dark dark dropshadow-down strongline-bottom">
     <div class="limiter clearfix">
         <a class="col4 pad1y caps" href="{{site.baseurl}}/{{page.language}}">Moabi</a>
         <a class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
@@ -10,7 +10,7 @@
     </div>
 </header>
 {% else %}
-<header class="header fill-light dropshadow-down strongline-bottom">
+<header class="header fill-dark dark dropshadow-down strongline-bottom">
     <div class="clearfix">
         <a class="col4 pad1y caps center" href="{{site.baseurl}}/{{page.language}}">Moabi</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
