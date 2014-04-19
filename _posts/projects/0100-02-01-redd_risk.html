@@ -1,11 +1,13 @@
 ---
 layout: project
+language: en
+categories:
+  - en
+  - report
+
 title: REDD+ Risk
 description: Future forest loss in DRC is very uncertain. Decades of conflict and under investment have prevented the industrial scale of forestry and agricultural activities that characterized deforestation in Brazil and Indonesia – the other two large rainforest countries. As the country stabilizes, deforestation will increase, but predicting when and where it will occur presents an ongoing challenge to REDD+ implementation.
-categories: [project_en]
-permalink: /redd_risk_map/en
-language: en
-page_key: redd_risk
+
 img: http://farm4.staticflickr.com/3687/12483987584_3b2a7cf09a_b.jpg
 author: Leo Bottrill & Herve Kashongwe
 hidden: true
@@ -20,6 +22,10 @@ basemap:
         z: -1
       - id: moabi_redd_projects
         z: 0
+
+maplayer_options:
+    filter:
+    subset: [moabi_mining, moabi_oil, moabi_logging, moabi_energy, moabi_indigenous, moabi_protected]
 
 report:
   - title: Competition for resources threatens REDD+ in DRC
@@ -158,10 +164,6 @@ data:
   - title: Deforestation Drivers
     type: layer-ui
     description: The following resource concessions and infrastructure projects are possible drivers of deforestation.  In cases where they overlap with REDD projects, they will directly undermine the initiative.  Click on a layer to add it to the map.
-
-maplayer_options:
-    filter:
-    subset: [moabi_mining, moabi_oil, moabi_logging, moabi_energy, moabi_indigenous, moabi_protected]
 ---
 <!-- Legends -->
 {% for layer in page.map_layers.layers %}{% if layer.legend_template %}

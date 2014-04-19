@@ -12,10 +12,11 @@
 
 {{content}}
 
+{% include footer.html %}
+
 {% if page.basemap %}
     {% include parse_layers.html %}
     <script src='{{site.baseurl}}/map.js'></script>
 {% endif %}
 </body>
 </html>
-

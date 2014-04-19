@@ -1,5 +1,5 @@
 en:
-  coming_soon: coming soon...
+  coming_soon: Coming soon . . .
 
   header:
     reports: reports
@@ -31,8 +31,6 @@ en:
     report_button_text: Browse projects exploring key dynamics of land use and environment policy
     data_button_name: Data
     data_button_text: Explore, share, contribute, and download the data
-
-  about:
 
   data:
     visualize: Visualize
@@ -73,8 +71,6 @@ fr:
     report_button_text: Browse projects exploring key dynamics of land use and environment policy
     data_button_name: Data
     data_button_text: Explore, share, contribute, and download the data
-
-  about:
 
   data:
     visualize: Visualize

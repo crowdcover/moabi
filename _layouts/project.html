@@ -1,13 +1,7 @@
 ---
+layout: main
 ---
-<!doctype html>
-<html>
-<head>
-    {% include dochead.html %}
-</head>
-
-<body>
-
+{% assign t = site.data.translations %}
 <div id="map"></div>
 
 <div class="sidebar col12 fill-light strongline-right dropshadow-right" style="padding-top: 12px">
@@ -79,7 +73,3 @@
 
 {{content}}
 
-    {% if page.basemap %}{% include parse_layers.html %}{% endif %}
-    <script src='{{site.baseurl}}/map.js'></script>
-</body>
-</html>
