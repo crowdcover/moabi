@@ -8,11 +8,15 @@
 
 <body style="position: absolute; top: 0; bottom: 0; width: 100%;">
 
-{% include header.html %}
+{% unless page.categories contains 'report' %}
+    {% include header.html %}
+{% endunless %}
 
 {{content}}
 
-{% include footer.html %}
+{% unless page.categories contains 'report' %}
+    {% include footer.html %}
+{% endunless %}
 
 {% if page.basemap %}
     {% include parse_layers.html %}

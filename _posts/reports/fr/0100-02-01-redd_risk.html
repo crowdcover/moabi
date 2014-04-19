@@ -1,26 +1,26 @@
 ---
-layout: project
+layout: report
 language: fr
 categories:
   - fr
   - report
 
-title: Community Mapping
-description: In February 2014, CrowdCover and University College London's ExCiteS Program lead a community mapping training project in western DRC.
+title: REDD+ Risk
+description: Future forest loss in DRC is very uncertain. Decades of conflict and under investment have prevented the industrial scale of forestry and agricultural activities that characterized deforestation in Brazil and Indonesia – the other two large rainforest countries. As the country stabilizes, deforestation will increase, but predicting when and where it will occur presents an ongoing challenge to REDD+ implementation.
 
-img: http://farm8.staticflickr.com/7342/12618848714_5c700b0070_b.jpg
-author: Leo Bottrill
+img: http://farm4.staticflickr.com/3687/12483987584_3b2a7cf09a_b.jpg
+author: Leo Bottrill & Herve Kashongwe
 hidden: true
 
 basemap:
     center:
-        lat: -0.594
-        lon: 18.835
-        zoom: 16
+        lat: -2.877
+        lon: 22.830
+        zoom: 5
     layers:
       - id: moabi_base
         z: -1
-      - id: moabi_community_mapping
+      - id: moabi_redd_projects
         z: 0
 
 maplayer_options:
@@ -165,50 +165,125 @@ data:
     type: layer-ui
     description: The following resource concessions and infrastructure projects are possible drivers of deforestation.  In cases where they overlap with REDD projects, they will directly undermine the initiative.  Click on a layer to add it to the map.
 ---
-{% for main_panel in page.main_panels %}
-    {% if main_panel.panel_data.actions contains 'toggle-layer' %}
-        {% for data_element in main_panel.panel_data.data_elements %}
-            {% if data_element.legend %}
-                <div class="moabi-legend icon layer-toggle" data-id="{{data_element.id}}">
-                    <div class="legend-category">
-                        <div class="symbol" style="background-color: {{data_element.color}}"></div>
-                        <span class="value">{{data_element.name}}</span>
-                    </div>
-                    {% if data_element.source %}
-                        <div class="source"><span>Source:</span> {% if data_element.source.url %}<a href="{{data_element.source.ulr}}">{{data_element.source.name}}</a>{% else %}{{data_element.source.name}}{% endif %}</div>
-                    {% endif %}
-                </div>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-{% endfor %}
-
-<div class="moabi-legend icon layer-toggle" data-id="moabi_transport">
-    <div class="legend-category">
-        <div class="symbol"></div>
-        <span class="value">Road Reconstruction</span>
+<!-- Legends -->
+{% for layer in page.map_layers.layers %}{% if layer.legend_template %}
+<div class="moabi-legend space-bottom1" data-id="{{layer.id}}">
+    <div class="">
+        <div class="block" style="background-color: {{layer.legend_color}}"></div>
+        <h3 class="">{{layer.name}}</h3>
     </div>
-    <div class="source"><span>Source:</span> Ministry of Transportation</div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="desaturate">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
+    </div>
+</div>
+{% endif %}{% endfor %}
+
+<div class="moabi-legend space-bottom1" data-id="moabi_forest_cover">
+    <div class="col12">
+        <h3 class="">Forest Cover(%), 2000</h3>
+    </div>
+    <table class="fixed">
+        <thead>
+            <tr>
+                <th class="center">20</th>
+                <th class="center">50</th>
+                <th class="center">70</th>
+                <th class="center">80</th>
+                <th class="center">90</th>
+                <th class="center">100</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="background-color: #2B83BA;"></td>
+                <td style="background-color: #ABDDA4;"></td>
+                <td style="background-color: #FFFFBF;"></td>
+                <td style="background-color: #FDAE61;"></td>
+                <td style="background-color: #D7191C;"></td>
+                <td style="background-color: #990700;"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a class="desaturate" href="http://www.earthenginepartners.appspot.com/science-2013-global-forest">University of Maryland</a>
+    </div>
 </div>
 
-<div class="moabi-legend icon layer-toggle" data-id="moabi_energy">
-    <h4>Hydropower and Energy Corridors</h4>
-    <table class="legend-table named-rows">
-        <tr>
-            <th></th>
-            <th>Existing</th>
-            <th>Future</th>
-        </tr>
-        <tr>
-            <td>Dam</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Energy Line</td>
-            <td></td>
-            <td></td>
-        </tr>
+<div class="moabi-legend space-bottom1" data-id="moabi_forest_lossyear">
+    <div class="col12">
+        <h3 class="">Forest Loss by Year</h3>
+    </div>
+    <table class="fixed">
+        <thead>
+            <tr>
+                <th class="center">2001</th>
+                <th class="center">2003</th>
+                <th class="center">2006</th>
+                <th class="center">2009</th>
+                <th class="center">2012</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="background-color: #ffeb88;"></td>
+                <td style="background-color: #ffb34a;"></td>
+                <td style="background-color: #f07c2e;"></td>
+                <td style="background-color: #e34a28;"></td>
+                <td style="background-color: #c62107;"></td>
+            </tr>
+        </tbody>
     </table>
-    <div class="source"><span>Source:</span> <a href="www.com">Africa Energy</a></div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a class="desaturate" href="http://www.earthenginepartners.appspot.com/science-2013-global-forest">University of Maryland</a>
+    </div>
+</div>
+
+<div class="moabi-legend space-bottom1" data-id="moabi_protected">
+    <div class="">
+        <div class="block" style="background-image: url({{site.baseurl}}/img/ex_small.png)"></div>
+        <h3 class="">Protected Areas</h3>
+    </div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">...</a>
+    </div>
+</div>
+
+<div class="moabi-legend space-bottom1" data-id="moabi_transport">
+    <div class="">
+        <span class="legend-icon" style="color: #F8CC00;">━━</span>
+        <h3 class="">Road Rehabilitation Projects</h3>
+    </div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">Ministry of Transportation</a>
+    </div>
+</div>
+
+<div class="moabi-legend space-bottom1" data-id="moabi_community_mapping">
+    <div class="">
+        <h3 class="">Community Mapping, Ingendi</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/chainsaw.svg"></img><h3 class="micro">Logging (legal)</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/chainsaw_illegal.svg"></img><h3 class="micro">Logging (illegal)</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/community.svg"></img><h3 class="micro">Community Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/tree.svg"></img><h3 class="micro">Sacred Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/paw.svg"></img><h3 class="micro">Hunting Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/fish.svg"></img><h3 class="micro">Fishing Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/food_bag.svg"></img><h3 class="micro">Foraging Site</h3>
+        <img class="legend-icon" src="{{site.baseurl}}/img/agriculture.svg"></img><h3 class="micro">Farming Site</h3>
+    </div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">OGF</a>
+    </div>
+</div>
+
+<div class="moabi-legend space-bottom1" data-id="moabi_energy">
+    <div class="">
+        <h3 class="">Hydro and Transmission Lines</h3>
+        <span class="legend-icon dot" style="background-color: white; border: 2px solid #D12F3E"></span><h3 class="micro">Dam (existing)</h3>
+        <span class="legend-icon dot" style="background-color: #DEA2A9; border: 2px solid #D12F3E"></span><h3 class="micro">Dam (planned)</h3>
+        <span class="legend-icon" style="border-bottom: 3px solid #D12F3E; position: relative; bottom: 6px; width: 27px;"></span><h3 class="micro">Transmission Line (existing)</h3>
+        <span class="legend-icon" style="border-bottom: 3px dotted #D12F3E; position: relative; bottom: 6px; width: 27px;"></span><h3 class="micro">Transmission Line (planned)</h3>
+    </div>
+    <div class="micro legend-source">
+        <strong class="quiet">Source:</strong> <a href="www.com" class="desaturate">Ministry of Energy</a>
+    </div>
 </div>

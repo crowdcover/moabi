@@ -10,8 +10,8 @@ layout: main
             <a href="{{site.baseurl}}/" class="button quiet icon house"></a>
         </div>
         <div class='slider tabs col8 space-bottom1 clearfix'>
-            <a data-index="1" class='col6 active'>Report</a><!--
-         --><a data-index="2" class='col6'>Data</a>
+            <a data-index="1" class='col6 active'>{{t.[page.language].landing.report_button_name}}</a><!--
+         --><a data-index="2" class='col6'>{{t.[page.language].landing.data_button_name}}</a>
         </div>
     </div>
     <div class="col12 clip sliding h active1" style="height: calc(100% - 61px)">
@@ -22,7 +22,7 @@ layout: main
                     {% unless forloop.first %}
                         <a href="#" class="report-slider h animate quiet center clearfix" data-slide="up">
                             <span class="icon arrow-up col12"></span>
-                            <span class="small">Page Up</span>
+                            <span class="small">{{t.[page.language].report.page_up}}</span>
                         </a>
                     {% endunless %}
                     <div class="report-content">
@@ -37,7 +37,7 @@ layout: main
                     </div>
                     {% unless forloop.last %}
                         <a href="#" class="report-slider h animate quiet center pin-bottom" data-slide="down" style="bottom: 10px">
-                            <span class="small">Page Down</span>
+                            <span class="small">{{t.[page.language].report.page_down}}</span>
                             <span class="icon arrow-down col12"></span>
                         </a>
                     {% endunless %}
@@ -65,7 +65,7 @@ layout: main
                     {% endif %}
                 </div>
             {% endfor %}
-            <h2 class="">Export</h2>
+            <h2 class="">{{t.[page.language].data_extract.export}}</h2>
                 {% include data_export.html %}
         </div>
     </div>
