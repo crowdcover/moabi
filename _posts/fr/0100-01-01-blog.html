@@ -1,12 +1,12 @@
 ---
 layout: main
-title: Blog
-id: blog
-language: en
+language: fr
+categories:
+  - fr
 ---
 
 <div class="strongline-bottom fill-light">
-{% for post in site.categories.blog_post %} {% if post.language == page.language %}
+{% for post in site.categories.blog_post %}
     <section class="clearfix limiter pad4y">
             <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
             <div class="pad1 center keyline-bottom quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:black">|</span> {{post.author}}</div>
@@ -20,5 +20,5 @@ language: en
             <div class="pad2y keyline-top prose">{{post.excerpt}}</div>
             <a href="{{post.url}}">Read More</a>
     </section>
-{% endif %}{% endfor %}
+{% endfor %}
 </div>
