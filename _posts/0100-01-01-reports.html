@@ -23,7 +23,7 @@ categories:
                             </div>
                             <div class="col9 pad1x">
                                 {% if r.hidden %}
-                                    <p><em><strong>{{t.[page.language].coming_soon}}</strong></em></p>
+                                    <p><em>{{t.[page.language].coming_soon}}</em></p>
                                     <p>{{r.description | truncate:120 }} </p>
                                 {% else %}
                                     <p>{{r.description}}</p>
