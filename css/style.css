@@ -124,13 +124,21 @@ h3.light, h3.light a {
 
 
 /* links and color accents */
+a,
+a:active { color: #29abe2; }
+  a:hover { color: #4891B9; }
+
+.dark a,
+.dark a:active { color: #29abe2; }
+  .dark a:hover { color: #87BBD8;}
+
 a.desaturate { text-decoration: underline; color: #7F7F7F; }
 .dark a.desaturate { text-decoration: underline; color: #DDD; }
 a.desaturate:hover { color: #999;}
 
-strong { color: #F37500; } /* darker red orange */
+strong { color: #FF8F00; } /* darker red orange */
 .dark strong { color: #F8AA04; } /* brigher orange */
-a:hover strong { color: #CF710B; } /* darken further on hover */
+a:hover strong { color: #F17400; } /* darken further on hover */
 .dark a:hover strong { color: #FFC145; } /* lighten further on hover */
 
 .activate a {
@@ -323,14 +331,9 @@ a:hover strong { color: #CF710B; } /* darken further on hover */
   }
   .header a {
     font-family: 'Open Sans Bold';
-    color: #758B54;
   }
-  .header a:hover,
   .header a.active {
-    color: #F8AA04;
-  }
-  .header a:active {
-    color: #758B54;
+    color: #87BBD8; /* same as a:hover */
   }
 
 .landing {
