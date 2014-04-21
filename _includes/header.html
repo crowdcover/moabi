@@ -3,12 +3,16 @@
 <header class="header fill-light dropshadow-down strongline-bottom">
     <div class="limiter clearfix">
         <div class="col4" style="height: 40px;">
-            <a class="beta" href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center left; background-size: 100%; display:inline-block; height: 100%; width: 170px"></a>
+            <a class="beta fl" href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center left; background-size: 100%; display:inline-block; height: 100%; width: 170px"></a>
         </div>
+
+        {% include language_toggle.html %}
+
         <a class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
+
     </div>
 </header>
 {% else %}
@@ -17,10 +21,14 @@
         <div class="col4 center" style="height: 40px;">
             <a class="beta" href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center; background-size: 100%; display:inline-block; height: 100%; width: 170px"></a>
         </div>
+
+        {% include language_toggle.html %}
+
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
+
     </div>
 </header>
 {% endif %}
