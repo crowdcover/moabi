@@ -6,19 +6,19 @@ categories:
 ---
 
 <div class="strongline-bottom fill-light">
-{% for post in site.categories.blog_post %} {% if post.language == page.language %}
+{% for post in site.tags.blog_post %} {% if post.language == page.language %}
     <section class="clearfix limiter pad4y">
-            <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
-            <div class="pad1 center keyline-bottom quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:black">|</span> {{post.author}}</div>
-            {% if post.img %}
-            <div class="clearfix">
-                <div class="col10 margin1 margin1r pad1y center">
-                    <img src="{{post.img}}" alt="Blog Image">
-                </div>
+        <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
+        <div class="pad1 center keyline-bottom quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:black">|</span> {{post.author}}</div>
+        {% if post.img %}
+        <div class="clearfix">
+            <div class="col10 margin1 margin1r pad1y center">
+                <img src="{{post.img}}" alt="Blog Image">
             </div>
-            {% endif %}
-            <div class="pad2y keyline-top prose">{{post.excerpt}}</div>
-            <a href="{{post.url}}">Read More</a>
+        </div>
+        {% endif %}
+        <div class="pad2y keyline-top prose">{{post.excerpt | markdownify }}</div>
+        <a href="{{post.url}}">Read More</a>
     </section>
 {% endif %}{% endfor %}
 </div>

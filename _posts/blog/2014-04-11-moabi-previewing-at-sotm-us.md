@@ -1,8 +1,10 @@
 ---
 layout: blog_post
 language: en
-categories:
+tags:
   - blog_post
+categories:
+  - en
 title: Moabi Previewing at SotM-US
 subtitle: "The Moabi development team is *excited* for State of the Map US this weekend. We are sharing a preview of the new Moabi (to be fully launched on Earth Day), and presenting our work on Sunday at 4pm, [OpenStreetMap as Infrastructure](http://stateofthemap.us/session/openstreetmap-as-infrastructure/), sharing the stage with the USGS National Map Corps project, and NPS Park Tiles. Hope to see you there!"
 author: Mikel Maron
