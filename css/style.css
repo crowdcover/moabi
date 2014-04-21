@@ -325,6 +325,14 @@ a:hover strong { color: #F17400; } /* darken further on hover */
   }
 
 /* custom layout elements */
+.beta { text-align: center;}
+.beta:after {
+  content: 'beta';
+  position: relative;
+  left: 100px;
+  font-size: 8px;
+  color: #999;
+}
 .header {
   letter-spacing: 1px;
   z-index: 1;

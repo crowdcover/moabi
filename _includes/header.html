@@ -3,7 +3,7 @@
 <header class="header fill-dark dark dropshadow-down strongline-bottom">
     <div class="limiter clearfix">
         <div class="col4" style="height: 40px;">
-            <a href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center left; background-size: 46%; display:block; height: 100%"></a>
+            <a class="beta" href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center left; background-size: 100%; display:inline-block; height: 100%; width: 170px"></a>
         </div>
         <a class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
@@ -14,8 +14,8 @@
 {% else %}
 <header class="header fill-dark dark dropshadow-down strongline-bottom">
     <div class="clearfix">
-        <div class="col4" style="height: 40px;">
-            <a href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center; background-size: 32%; display:block; height: 100%"></a>
+        <div class="col4 center" style="height: 40px;">
+            <a class="beta" href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center; background-size: 100%; display:inline-block; height: 100%; width: 170px"></a>
         </div>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
         <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
