@@ -328,9 +328,7 @@ a:hover strong { color: #F17400; } /* darken further on hover */
 .header {
   letter-spacing: 1px;
   z-index: 1;
-  }
-  .header a {
-    font-family: 'Open Sans Bold';
+  font-family: 'Open Sans Bold', sans-serif;
   }
   .header a.active {
     color: #87BBD8; /* same as a:hover */

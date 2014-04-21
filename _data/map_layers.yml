@@ -23,7 +23,7 @@
   - id: moabi_redd_projects
     name: REDD+ Projects
     categories: []
-    description:
+    description: DRC REDD+ pilot projects
     legend_template: true
     legend_color: '#dae57e'
     date: 2013
@@ -35,7 +35,7 @@
   - id: moabi_protected
     name: Protected Forest Areas
     categories: [forestry]
-    description:
+    description: Existing protected areas in the DRC
     legend_template:
     legend_color:
     date:
@@ -45,7 +45,7 @@
   - id: moabi_community_mapping
     name: Community Mapping
     categories: [indigenous]
-    description:
+    description: Moabi and LINAPYCO field data from Ingende
     legend_template:
     legend_color:
     date: 2014
@@ -56,7 +56,7 @@
   - id: moabi_indigenous
     name: Indigenous Lands
     categories: [indigenous]
-    description:
+    description: Areas populated by indigenous people
     legend_template: true
     legend_color: '#8697d1'
     date: 2012
@@ -67,7 +67,7 @@
   - id: moabi_energy
     name: Dams and Energy Transmission Lines
     categories: [infrastructure]
-    description:
+    description: Existing and planned transmissions lines and dams
     legend_template:
     legend_color:
     date: 2013
@@ -78,7 +78,7 @@
   - id: moabi_logging
     name: Logging Concessions
     categories: [forestry, concession]
-    description:
+    description: Industrial and artisanal logging concessions
     legend_template: true
     legend_color: '#976A2F'
     date: 2013
@@ -89,7 +89,7 @@
   - id: moabi_mining
     name: Mining Concessions
     categories: [concession]
-    description:
+    description: All mining concessions, categorized as one of three main permit types':' 1) Exploitation permits, 2) research permits and 3) artisanal exploitation area
     legend_template: true
     legend_color: '#fae78f'
     date: 2014
@@ -100,7 +100,7 @@
   - id: moabi_oil
     name: Oil Concessions
     categories: [concession]
-    description:
+    description: Oil exploration blocks
     legend_template: true
     legend_color: '#d8912e'
     date: 2013
@@ -110,9 +110,9 @@
         url:
 
   - id: moabi_palm
-    name: Palm Concessions
+    name: Agriculture Concessions
     categories: [concession, forestry]
-    description:
+    description: Agricultural concessions, including cacao, coffee, hevea, and palm oil
     legend_template: true
     legend_color: '#79750A'
     date: 2014
@@ -123,7 +123,7 @@
   - id: moabi_transport
     name: Road Rehabilitation Projects
     categories: [infrastructure]
-    description:
+    description: Road rehabilitation projects currently being undertaken in DRC
     legend_template:
     legend_color:
     date: 2013
