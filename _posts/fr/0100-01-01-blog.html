@@ -4,9 +4,22 @@ language: fr
 categories:
   - fr
 ---
+{% assign t = site.data.translations %}
+
+{% assign has_translation = '' %}
+
+{% for post1 in site.tags.blog_post %}
+    {% for post2 in site.tags.blog_post %}
+        {% if post1.id == post2.id and post1.language != post2.language %}
+            {% capture has_translation %}{{has_translation}}{{post1.id}}, {% endcapture %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
 
 <div class="strongline-bottom fill-light">
-{% for post in site.categories.blog_post %}
+{% for post in site.tags.blog_post %}
+{% if post.language == page.language %}
     <section class="clearfix limiter pad4y">
         <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
         <div class="pad1 center keyline-bottom quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:black">|</span> {{post.author}}</div>
@@ -26,5 +39,28 @@ categories:
         </div>
         <a href="{{post.url}}">Read More</a>
     </section>
+{% else %}{% unless has_translation contains post.id %}
+    <!--  untranslated post -->
+    <section class="clearfix limiter pad4y">
+        <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
+        <div class="pad1 center quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:black">|</span> {{post.author}}</div>
+        <div class="pad1 center keyline-bottom quiet"><em>{{t.[page.language].no_translation}}</em></div>
+        {% if post.img %}
+        <div class="clearfix">
+            <div class="col10 margin1 margin1r pad1y center">
+                <img src="{{post.img}}" alt="Blog Image">
+            </div>
+        </div>
+        {% endif %}
+        <div class="pad2y keyline-top prose">
+            {% if post.subtitle %}
+                {{post.subtitle | markdownify}}
+            {% else %}
+                {{post.excerpt | markdownify}}
+            {% endif %}
+        </div>
+        <a href="{{post.url}}">Read More</a>
+    </section>
+{% endunless %}{% endif %}
 {% endfor %}
 </div>
