@@ -2,13 +2,20 @@
 <ul class="pad1 space-bottom4">
     <li class="pad0x pad1y clearfix">
         <div>
-            <a href="#" class="space" style="cursor: not-allowed"><strong>{{t.[page.language].data_extract.extract}}</strong></a><span class="small quiet pad1x">(OSM, GeoJson)</span>
+            <a href="" class="space"><strong>{{t.[page.language].data_extract.edit}}</strong></a>
         </div>
-        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.extract_text}} [<em>{{t.[page.language].coming_soon}}</em>]</div>
+        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.edit_description}}</div>
+    </li>
+    <li class="pad0x pad1y clearfix">
+        <div>
+            <a href="http://planet.osm.moabi.org/extracts/" class="space"><strong>{{t.[page.language].data_extract.extract}}</strong></a><span class="small quiet pad1x">(OSM, GeoJson)</span>
+        </div>
+        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.extract_text}}</div>
+        <div class="col12 quiet small">&copy; CC 4.0 <a href="http://osm.moabi.org/copyright">{{t.[page.language].read_more}}</a></div>
     </li>
     <li class="pad0x pad1y clearfix">
         <div class="col12">{{t.[page.language].data_extract.embed}}</div>
-        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.extract_text}}</div>
+        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.embed_text}}</div>
         <fieldset class="">
             <input type="text" id="map-embed" value="<iframe src='rdc.moabi.org/mapi/#6/28.00/26.10' frameborder='0' width='650' height='500'></iframe>" class="stretch">
         </fieldset>

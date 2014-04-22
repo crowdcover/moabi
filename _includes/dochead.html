@@ -1,6 +1,6 @@
 <meta charset="utf-8" />
-{% if page.url == "/404.html" %}
-    <meta http-equiv="refresh" content="20; url=/">
+{% if page.redirect %}
+    <meta http-equiv="refresh" content="{{page.redirect.time}};url={{page.redirect.dest}}">
 {% endif %}
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 <meta name="description" content="Moabi is a collaborative mapping platform to monitor landuse planning in the Democratic Republic of the Congo.">

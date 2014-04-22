@@ -1,5 +1,6 @@
 en:
   coming_soon: Coming soon . . .
+  read_more: read more
 
   header:
     reports: Reports
@@ -16,9 +17,11 @@ en:
     empty: empty
 
   data_extract:
+    edit: Edit Data
+    edit_description: Edit data already in the Database
     export: Export
     extract: Data Extracts
-    extract_text: Download extracts of the Database via Moabi.OSM iD interface
+    extract_text: Download extracts of the Database
     embed: Map Embed
     embed_text: Easily embed the map in any blog or website using simple HTML
     print: Print Map
@@ -26,18 +29,19 @@ en:
     snap: capture
 
   landing:
-    title: Collaborative land use mapping
-    description: Moabi-DRC is an independent mapping initiative that collaboratively monitors land use in the Democratic Republic of the Congo. Our community works towards a more Transparent, Equitable, and Sustainable future for the environment and people of DRC. You can use Moabi DRC to explore, share, and create projects on a wide range of issues from REDD+ to community mapping and more.
-    report_button_name: Report
-    report_button_text: Browse projects exploring key dynamics of land use and environment policy
-    data_button_name: Data
-    data_button_text: Explore, share, contribute, and download the data
+    title: Map, Monitor, Mobilize
+    description: Moabi DRC is an independent initiative that collaboratively monitors natural resource use in the Democratic Republic of the Congo. Our community works toward a more transparent, equitable, and sustainable future for the people and environment of DRC.
+    report_button_name: Reports
+    report_button_text: Read field reports on a wide range of issues from REDD+ to the causes of forest loss
+    data_button_name: Explore
+    data_button_text: View our ever-growing database of natural resource issues in DRC
 
   data:
     visualize: Visualize
     export: Export
 
   report:
+    description: Reports are map driven articles about emerging natural resource issues in the Democratic Republic of Congo. Please browse our first two reports below. If you are interested in filing your own report, you can do so [here](http://osm.moabi.org/stories).
     page_up: page up
     page_down: page down
 
@@ -46,47 +50,51 @@ en:
 
 
 fr:
-  coming_soon: coming soon...
+  coming_soon: A venir . . .
+  read_more: read more
 
   header:
-    reports: Reports
-    data: Data
+    reports: Rapports
+    data: Données
     blog: Blog
-    about: About
+    about: A propos
 
   footer:
-    partners: partners
+    partners: partenaires
 
   layer_ui:
-    available: Available Map Layers
-    displayed: Displayed Map Layers
-    empty: empty
+    available: Disponible Map Layers
+    displayed: Couches Affichées
+    empty: vide
 
   data_extract:
-    export: Export
-    extract: Data Extracts
-    extract_description: Download extracts of the Database via Moabi.OSM iD interface
-    embed: Map Embed
-    embed_description: Easily embed the map in any blog or website using simple HTML
-    print: Print Map
-    print_description: Take a screenshot of the current map view
+    edit: Edit Data
+    edit_description: Edit data already in the Database
+    export: Exportation
+    extract: Données extraites
+    extract_description: Téléchargez des extraits de la base de données
+    embed: Carte intégrée
+    embed_description: Intégrer Facilement la carte dans n'importe quel blog ou site web en utilisant HTML
+    print: Impression de la carte
+    print_description: Faire une capture d'écran de la vue actuelle de la carte
     snap: capture
 
   landing:
-    title: Collaborative land use mapping
-    description: Moabi-DRC is an independent mapping initiative that collaboratively monitors land use in the Democratic Republic of the Congo. Our community works towards a more Transparent, Equitable, and Sustainable future for the environment and people of DRC. You can use Moabi DRC to explore, share, and create projects on a wide range of issues from REDD+ to community mapping and more.
-    report_button_name: Report
-    report_button_text: Browse projects exploring key dynamics of land use and environment policy
-    data_button_name: Data
-    data_button_text: Explore, share, contribute, and download the data
+    title: Cartographie collaborative de l'utilisation des terres
+    description: La plateforme de cartographie collaborative “Moabi RDC” est une initiative indépendante de suivi de l’utilisation des ressources naturelles en République Démocratique du Congo. Notre communauté d’utilisateurs travaille dans la perspective d’améliorer la transparence, l’équitabilité et la durabilité de la gestion des ressources naturelles pour les peuples et le maintien des écosystèmes de la RDC.
+    report_button_name: Rapports
+    report_button_text: Consultez les rapports de terrain appréhendant un grand éventail de problématiques, allant de la REDD+ aux pertes de forêt.
+    data_button_name: Découvrez
+    data_button_text: Consultez notre base de données (en développement) sur les problématiques liées aux ressources naturelles en RDC
 
   data:
-    visualize: Visualize
-    export: Export
+    visualize: Visualisez
+    export: Exportez
 
   report:
-    page_up: page up
-    page_down: page down
+    description: Les rapports relatent des histoires quotidiennes sur les nouvelles problématiques de gestion des ressources naturelles en République démocratique du Congo. Merci de trouver ci-dessous nos deux premiers rapports. Si vous êtes souhaitez déposer votre propre rapport, vous pouvez le faire [ici](http://osm.moabi.org/stories).
+    page_up: haut de page
+    page_down: bas de page
 
   blog:
 

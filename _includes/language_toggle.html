@@ -1,71 +1,35 @@
-{% if page.id == 'about' or page.id == 'blog' or page.id == 'projects' %}
-    <span class="widget-ui horizontal toggle-language">
-        <a {% if page.language == 'fr' %}
-                href="/{{page.id}}/en"
-                data-lang="en"
-            {% else %}
-                href="#"
-                class='active'
-            {% endif %}>EN</a>
-        <a {% if page.language == 'en' %}
-                href="/{{page.id}}/fr"
-                data-lang="fr"
-            {% else %}
-                href="#"
-                class='active'
-            {% endif %}>FR</a>
-    </span>
-{% elsif page.id == 'home' %}
-    <span class="widget-ui horizontal toggle-language">
-        <a {% if page.language == 'fr' %}
-                href="{{site.baseurl}}"
-                data-lang="en"
-            {% else %}
-                href="#"
-                class='active'
-            {% endif %}>EN</a>
-        <a {% if page.language == 'en' %}
-                href="{{site.baseurl}}"
-                data-lang="fr"
-            {% else %}
-                href="#"
-                class='active'
-            {% endif %}>FR</a>
-    </span>
-    <!-- blogpost -->
-{% elsif page.layout == 'blog_post' %}
-    <span class="widget-ui horizontal toggle-language">
-        <a {% if page.language == 'fr' %}
-                href="{{site.baseurl}}/{{page.permalink | remove: 'fr'}}en"
-                data-lang="en"
-            {% else %}
-                href="#"
-                class='active'
-            {% endif %}>EN</a>
-        <a {% if page.language == 'en' %}
-                href="{{site.baseurl}}/{{page.permalink | remove: 'en'}}fr"
-                data-lang="fr"
-            {% else %}
-                href="#"
-                class='active'
-            {% endif %}>FR</a>
-    </span>
-    <!-- projects -->
+{% if page.url == '/en/index.html' or page.url == '/fr/index.html' %}
+<div class="widget-ui horizontal toggle-language fr">
+    <a {% if page.language == 'fr' %}
+            href="{{site.baseurl}}/en"
+            data-lang="en"
+        {% else %}
+            href="#"
+            class='active'
+        {% endif %}>EN</a>
+    <a {% if page.language == 'en' %}
+            href="{{site.baseurl}}/fr"
+            data-lang="fr"
+        {% else %}
+            href="#"
+            class='active'
+        {% endif %}>FR</a>
+</div>
 {% else %}
-    <span class="widget-ui horizontal toggle-language">
-        <a {% if page.language == 'fr' %}
-                href="{{site.baseurl}}{{page.permalink | remove: 'fr'}}en"
-                data-lang="en"
-            {% else %}
-                href="#"
-                class='active'
-            {% endif %}>EN</a>
-        <a {% if page.language == 'en' %}
-                href="{{site.baseurl}}{{page.permalink | remove: 'en'}}fr"
-                data-lang="fr"
-            {% else %}
-                href="#"
-                class='active'
-            {% endif %}>FR</a>
-    </span>
+<div class="widget-ui horizontal toggle-language fr">
+    <a {% if page.language == 'fr' %}
+            href="{{site.baseurl}}{{page.url | remove: '/fr/'}}/en/"
+            data-lang="en"
+        {% else %}
+            href="#"
+            class='active'
+        {% endif %}>EN</a>
+    <a {% if page.language == 'en' %}
+            href="{{site.baseurl}}{{page.url | remove: '/en/'}}/fr/"
+            data-lang="fr"
+        {% else %}
+            href="#"
+            class='active'
+        {% endif %}>FR</a>
+</div>
 {% endif %}

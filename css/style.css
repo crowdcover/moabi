@@ -145,7 +145,7 @@ a:hover strong { color: #F17400; } /* darken further on hover */
   color: #222;
 }
   .dark .activate a {
-    color: rgb(255, 252, 248);
+    color: rgb(255, 252, 248);`
   }
   .activate a:hover {
     background-color: #CCC;
@@ -220,6 +220,9 @@ a:hover strong { color: #F17400; } /* darken further on hover */
     text-align: center;
     display: block;
   }
+  .layer-ui .displayed[data-lang="fr"]:empty:before {
+    content: "vide";
+  }
   .layer-ui .displayed a,
   .layer-ui .not-displayed a {
     display: block;
@@ -264,6 +267,10 @@ a:hover strong { color: #F17400; } /* darken further on hover */
 
 .tabs a { cursor: pointer; } /*not sure why this needs to be restated*/
 
+textarea, input[type=password], input[type=text], input[type=number] {
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
+}
 
 
 .button.quiet {
@@ -345,7 +352,7 @@ a:hover strong { color: #F17400; } /* darken further on hover */
 .landing {
   width: 100%;
   height: auto;
-  min-height: calc(100% - 62px);
+  min-height: calc(100% - 170px);
   background-image: url('https://farm8.staticflickr.com/7207/13771392474_4186a5f467_h.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -593,23 +600,19 @@ a:hover strong { color: #F17400; } /* darken further on hover */
 
 /******************************* Language Widget *******************************/
 .widget-ui {
-    float: right;
-    background-color: white;
-    border: 1px solid #999;
-    border-radius: 3px;
-    margin: 7px 10px 0 0;
-}
+  /*border: 1px solid #BBB;*/
+  margin: 6px 0 6px 22px;
+  }
 
 .widget-ui a {
-    width: 26px;
-    height: 26px;
+    font: 14px/20px 'Open Sans Light', sans-serif;
     border-bottom: 1px solid #DDD;
     display: block;
-    color: #404040;
-    font-size: 12px;
-    font-weight: bold;
+    color: #666;
     text-align: center;
-    padding: 2px 0;
+    padding: 4px;
+    width: 32px;
+    font-weight: bold; /*don't keep this in*/
 }
 
 .widget-ui.horizontal a {
@@ -619,35 +622,37 @@ a:hover strong { color: #F17400; } /* darken further on hover */
 }
 
 .widget-ui a:hover {
-    background-color: white;
+    background-color: rgba(0,0,0,0.05);
     color: #404040;
 }
 
-.widget-ui a:active {
-    color: orange;
+.widget-ui a:active,
+.widget-ui a.active {
+    background-color: transparent;
+    color: #87BBD8;
 }
 
 .widget-ui a.active {
-    background-color: #F0F0F0;
-    color: orange;
-    box-shadow: inset 0px 2px 3px rgba(0,0,0,0.15);
+    /*background-color: #F0F0F0;*/
+    /*box-shadow: inset 0 0 1px rgba(0,0,0,0.15);*/
+    cursor: default;
 }
 
 .widget-ui a:first-child {
-    border-radius: 3px 3px 0 0;
+    /*border-radius: 3px 3px 0 0;*/
 }
 
 .widget-ui a:last-child {
-    border-radius: 0 0 3px 3px;
+    /*border-radius: 0 0 3px 3px;*/
     border-bottom: none;
 }
 
 .widget-ui.horizontal a:first-child {
-    border-radius: 3px 0 0 3px
+    /*border-radius: 3px 0 0 3px*/
 }
 
 .widget-ui.horizontal a:last-child {
-    border-radius: 0 3px 3px 0;
+    /*border-radius: 0 3px 3px 0;*/
     border-right: none;
 }
 
