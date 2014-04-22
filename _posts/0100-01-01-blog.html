@@ -17,7 +17,13 @@ categories:
             </div>
         </div>
         {% endif %}
-        <div class="pad2y keyline-top prose">{{post.excerpt | markdownify }}</div>
+        <div class="pad2y keyline-top prose">
+            {% if post.subtitle %}
+                {{post.subtitle | markdownify}}
+            {% else %}
+                {{post.excerpt | markdownify}}
+            {% endif %}
+        </div>
         <a href="{{post.url}}">Read More</a>
     </section>
 {% endif %}{% endfor %}
