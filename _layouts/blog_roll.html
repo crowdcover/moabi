@@ -33,7 +33,7 @@ layout: main
                 {{post.excerpt | markdownify}}
             {% endif %}
         </div>
-        <a href="{{post.url}}">Read More</a>
+        <a href="{{post.url}}">{{t.[page.language].read_more}}</a>
     </section>
 {% else %}{% unless has_translation contains post.id %}
     <!--  untranslated post -->
@@ -55,7 +55,7 @@ layout: main
                 {{post.excerpt | markdownify}}
             {% endif %}
         </div>
-        <a href="{{post.url}}">Read More</a>
+        <a href="{{post.url}}">{{t.[page.language].read_more}}</a>
     </section>
 {% endunless %}{% endif %}
 {% endfor %}
