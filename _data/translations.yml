@@ -8,6 +8,7 @@ en:
     data: Data
     blog: Blog
     about: About
+    sign_up: Sign Up
 
   footer:
     partners: partners
@@ -60,6 +61,7 @@ fr:
     data: Données
     blog: Blog
     about: A propos
+    sign_up: Sign Up
 
   footer:
     partners: partenaires
