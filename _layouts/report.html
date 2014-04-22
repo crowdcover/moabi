@@ -19,13 +19,13 @@ layout: main
         <div class="report-container col12 clip sliding v active1 animate">
             {% for report in page.report %}
                 <div class="report col12 animate" style="height: 100%" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}"{% if report.zoom_to %} data-nav='["{{report.zoom_to.lat}}", "{{report.zoom_to.lon}}", "{{report.zoom_to.zoom}}"]'{% endif %}{% if report.layers %} data-id='[{% for layer in report.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}>
-                    {% unless forloop.first %}
-                        <a href="#" class="report-slider h animate quiet center clearfix" data-slide="up">
-                            <span class="icon arrow-up col12"></span>
-                            <span class="small">{{t.[page.language].report.page_up}}</span>
-                        </a>
-                    {% endunless %}
-                    <div class="report-content">
+                    <!-- <div class="report-content"> -->
+                        {% unless forloop.first %}
+                            <a href="#" class="col12 report-slider h animate quiet center" data-slide="up">
+                                <div class="icon arrow-up"></div>
+                                <div class="small">{{t.[page.language].report.page_up}}</div>
+                            </a>
+                        {% endunless %}
                         <h2 class="prose serif pad1y space-bottom1 keyline-bottom">{{report.title}}</h2>
                         {% if page.author and forloop.first %}<div class="quiet space-bottom1 small">By {{page.author}}</div>{% endif %}
                         {% if forloop.first %}
@@ -34,13 +34,13 @@ layout: main
                             </div>
                         {% endif %}
                         <p class="prose space-bottom4">{{report.text}}</p>
-                    </div>
-                    {% unless forloop.last %}
-                        <a href="#" class="col12 report-slider h animate quiet center pad4y" data-slide="down" style="bottom: 10px">
-                            <span class="small">{{t.[page.language].report.page_down}}</span>
-                            <span class="icon arrow-down"></span>
-                        </a>
-                    {% endunless %}
+                        {% unless forloop.last %}
+                            <a href="#" class="col12 report-slider h animate quiet center pad4y" data-slide="down">
+                                <div class="small">{{t.[page.language].report.page_down}}</div>
+                                <div class="icon arrow-down"></div>
+                            </a>
+                        {% endunless %}
+                    <!-- </div> -->
                 </div>
             {% endfor %}
         </div>
