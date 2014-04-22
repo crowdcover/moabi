@@ -93,6 +93,7 @@
     legend_template: true
     legend_color: '#fae78f'
     date: 2014
+    tooltip: operator, operational_status, concession_type
     source:
         name: Cadastre Minier (CAMI)
         url:
