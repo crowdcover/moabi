@@ -28,11 +28,11 @@ en:
 
   landing:
     title: Map, Monitor, Mobilize
-    description: Moabi-DRC is an independent mapping initiative that collaboratively monitors land use in the Democratic Republic of the Congo. Our community works towards a more Transparent, Equitable, and Sustainable future for the environment and people of DRC. You can use Moabi DRC to explore, share, and create projects on a wide range of issues from REDD+ to community mapping and more.
-    report_button_name: Report
-    report_button_text: Browse projects exploring key dynamics of land use and environment policy
-    data_button_name: Data
-    data_button_text: Explore, share, contribute, and download the data
+    description: Moabi DRC is an independent initiative that collaboratively monitors natural resource use in the Democratic Republic of the Congo. Our community works toward a more transparent, equitable, and sustainable future for the people and environment of DRC.
+    report_button_name: Reports
+    report_button_text: Read field reports on a wide range of issues from REDD+ to the causes of forest loss
+    data_button_name: Explore
+    data_button_text: View our ever-growing database of natural resource issues in DRC
 
   data:
     visualize: Visualize
@@ -77,11 +77,11 @@ fr:
 
   landing:
     title: Cartographie collaborative de l'utilisation des terres
-    description: Moabi-RDC est une initiative de cartographie indépendante qui réalise un suivi collaboratif de l'utilisation des terres en République démocratique du Congo. Notre communauté travaille dans la perspective d'améliorer la transparence, l'équitabilité et la durabilité des ressources naturelles des peuples de RDC. Vous pouvez utiliser Moabi RDC pour explorer, partager et créer des projets relatifs à un large éventail de problématiques telles que la REDD+, la cartographie communautaire et plus encore.
-    report_button_name: Rapport
-    report_button_text: Recherchez des projets explorant les dynamiques majeures d'utilisation des terres et les politiques de l'environnement
-    data_button_name: Données
-    data_button_text: Explorez, partagez, contribuez, and téléchargez les données
+    description: La plateforme de cartographie collaborative “Moabi RDC” est une initiative indépendante de suivi de l’utilisation des ressources naturelles en République Démocratique du Congo. Notre communauté d’utilisateurs travaille dans la perspective d’améliorer la transparence, l’équitabilité et la durabilité de la gestion des ressources naturelles pour les peuples et le maintien des écosystèmes de la RDC.
+    report_button_name: Rapports
+    report_button_text: Consultez les rapports de terrain appréhendant un grand éventail de problématiques, allant de la REDD+ aux pertes de forêt.
+    data_button_name: Découvrez
+    data_button_text: Consultez notre base de données (en développement) sur les problématiques liées aux ressources naturelles en RDC
 
   data:
     visualize: Visualisez
