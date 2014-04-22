@@ -13,6 +13,7 @@ description: |
 img: http://farm8.staticflickr.com/7342/12618848714_5c700b0070_b.jpg
 img_caption: Boteka Palm Nursery. Source':' Moabi DRC
 author: Leo Bottrill, Herve Kashongwe, & Serge Bondo Kayembe
+
 basemap:
     center:
         lat: -2.877
@@ -24,9 +25,7 @@ basemap:
       - id: moabi_redd_projects
         z: 0
 
-
 report:
-
   - title: Will DRC palm oil plantations cause forest loss?
     text: |
         A recent OSFAC and OGF training mission to Ingende District in Equateur has raised questions regarding palm oil expansion in DRC. While scoping training locations, the team visited a palm oil plantation located in Boteka village. The palm oil concession is owned by Feronia PHC - a Canadian company with three plantations in DRC with plans to expand to almost <a href="http://www.feronia.com/Oil-Palm/Operations/default.aspx" title="">108,000 hectares</a>. The Boteka plantation is active and as of June 2013, it has 3,418 hectares under palm oil production. CDC, The UK government’s development finance institution, has invested <a href="http://www.cdcgroup.com/Media/News/CDC-invests-US181m-in-agribusiness-in-the-Democratic-Republic-of-Congo/" title="">$18.1 million dollars</a> in Feronia.
@@ -101,50 +100,3 @@ data:
 
 ---
 
-{% for main_panel in page.main_panels %}
-    {% if main_panel.panel_data.actions contains 'toggle-layer' %}
-        {% for data_element in main_panel.panel_data.data_elements %}
-            {% if data_element.legend %}
-                <div class="moabi-legend icon layer-toggle" data-id="{{data_element.id}}">
-                    <div class="legend-category">
-                        <div class="symbol" style="background-color: {{data_element.color}}"></div>
-                        <span class="value">{{data_element.name}}</span>
-                    </div>
-                    {% if data_element.source %}
-                        <div class="source"><span>Source:</span> {% if data_element.source.url %}<a href="{{data_element.source.ulr}}">{{data_element.source.name}}</a>{% else %}{{data_element.source.name}}{% endif %}</div>
-                    {% endif %}
-                </div>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-{% endfor %}
-
-<div class="moabi-legend icon layer-toggle" data-id="moabi_transport">
-    <div class="legend-category">
-        <div class="symbol"></div>
-        <span class="value">Road Reconstruction</span>
-    </div>
-    <div class="source"><span>Source:</span> Ministry of Transportation</div>
-</div>
-
-<div class="moabi-legend icon layer-toggle" data-id="moabi_energy">
-    <h4>Hydropower and Energy Corridors</h4>
-    <table class="legend-table named-rows">
-        <tr>
-            <th></th>
-            <th>Existing</th>
-            <th>Future</th>
-        </tr>
-        <tr>
-            <td>Dam</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Energy Line</td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-    <div class="source"><span>Source:</span> <a href="www.com">Africa Energy</a></div>
-</div>
