@@ -1,0 +1,72 @@
+---
+layout: main
+---
+{% assign t = site.data.translations %}
+
+{% assign has_translation = '' %}
+
+{% for post1 in site.tags.report %}
+    {% for post2 in site.tags.report %}
+        {% if post1.id == post2.id and post1.language != post2.language %}
+            {% capture has_translation %}{{has_translation}}{{post1.id}}, {% endcapture %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+
+<section class="fill-light strongline-bottom">
+    <div class="limiter pad2y">
+        <div class="space-bottom4 center pad4x pad2y">{{t.[page.language].report.description | markdownify }}</div>
+        {% for r in site.tags.report %} {% if r.language == page.language %}
+            <div class="prj-container col12 row6 prose space-bottom contain" style="background-image: url({{r.img}})">
+                {% if r.hidden %}
+                    <a class="clearfix prj-hidden" href="#">
+                {% else %}
+                    <a class="clearfix" href="{{r.url}}">
+                {% endif %}
+                        <div class="gradient"></div>
+                        <!-- <img class="grayscale row6 pin-right" src="http://tiles.osm.moabi.org/moabi_transport/5/18/16.png" alt=""> -->
+                        <div class="prj-info col12 pad4 clearfix dark limiter text-shadow pin-bottom animate">
+                            <div class="col3 pad1x">
+                                <h1 class="">{{r.title}}</h1>
+                            </div>
+                            <div class="col9 pad1x">
+                                {% if r.hidden %}
+                                    <p><em>{{t.[page.language].coming_soon}}</em></p>
+                                    <p>{{r.description | truncate:120 }} </p>
+                                {% else %}
+                                    <p>{{r.description}}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+            </div>
+        {% else %}{% unless has_translation contains r.id %}
+            <!-- untranslated project -->
+            <div class="prj-container col12 row6 prose space-bottom contain" style="background-image: url({{r.img}})">
+                {% if r.hidden %}
+                    <a class="clearfix prj-hidden" href="#">
+                {% else %}
+                    <a class="clearfix" href="{{r.url}}">
+                {% endif %}
+                        <div class="gradient"></div>
+                        <!-- <img class="grayscale row6 pin-right" src="http://tiles.osm.moabi.org/moabi_transport/5/18/16.png" alt=""> -->
+                        <div class="prj-info col12 pad4 clearfix dark limiter text-shadow pin-bottom animate">
+                            <div class="col3 pad1x">
+                                <h1 class="">{{r.title}}</h1>
+                            </div>
+                            <div class="col9 pad1x">
+                                {% if r.hidden %}
+                                    <p><em>{{t.[page.language].coming_soon}}</em></p>
+                                    <p>{{r.description | truncate:120 }} </p>
+                                {% else %}
+                                    <p><em>{{t.[page.language].no_translation}}</em></p>
+                                    <p>{{r.description}}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+            </div>
+        {% endunless %}{% endif %}
+        {% endfor %}
+    </div>
+</section>
