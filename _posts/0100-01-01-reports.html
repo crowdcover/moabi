@@ -8,6 +8,7 @@ categories:
 <!-- work background image opacity gradients thusly: http://stackoverflow.com/questions/5681813/transparent-background-image-with-a-gradient -->
 <section class="fill-light strongline-bottom">
     <div class="limiter pad2y">
+        <div class="space-bottom4 center pad4x pad2y">{{t.[page.language].report.description | markdownify }}</div>
         {% for r in site.tags.report %} {% if r.language == page.language %}
             <div class="prj-container col12 row6 prose space-bottom contain" style="background-image: url({{r.img}})">
                 {% if r.hidden %}
