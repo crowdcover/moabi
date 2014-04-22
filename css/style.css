@@ -352,7 +352,7 @@ textarea, input[type=password], input[type=text], input[type=number] {
 .landing {
   width: 100%;
   height: auto;
-  min-height: calc(100% - 62px);
+  min-height: calc(100% - 170px);
   background-image: url('https://farm8.staticflickr.com/7207/13771392474_4186a5f467_h.jpg');
   background-repeat: no-repeat;
   background-size: cover;
