@@ -1,0 +1,149 @@
+---
+layout: project
+title: Will DRC palm oil plantations cause forest loss? 
+description: |
+   With vast tracks of tropical forest straddling the equator, an abundance of freshwater, and a favorable climate, DRC could follow Indonesia and become a major exporter of palm oil. Questions remain, however, on when and where this expansion will occur as well as the potential impacts the industry could pose to DRC’s rich biodiversity and its rural communities, particularly indigenous peoples. 
+
+categories: [project_en]
+permalink: /will-drc-palm-oil-plantations-cause-forest-loss/en
+language: en
+page_key: will-drc-palm-oil-plantations-cause-forest-loss
+img: http://farm4.staticflickr.com/3687/12483987584_3b2a7cf09a_b.jpg
+basemap:
+    center:
+        lat: -2.877
+        lon: 22.83
+        zoom: 5
+    layers:
+      - id: moabi_base
+        z: -1
+      - id: moabi_redd_projects
+        z: 0
+
+
+report:
+  
+  - title: Will DRC palm oil plantations cause forest loss? 
+    text: |
+       Leo Bottrill, Herve Kashongwe, and Serge Bondo Kayembe A recent OSFAC and OGF training mission to Ingende District in Equateur has raised questions regarding palm oil expansion in DRC. While scoping training locations, the team visited a palm oil plantation located in Boteka village. The palm oil concession is owned by Feronia PHC - a Canadian company with three plantations in DRC with plans to expand to almost <a href="http://www.feronia.com/Oil-Palm/Operations/default.aspx" title="">108,000 hectares</a>. The Boteka plantation is active and as of June 2013, it has 3,418 hectares under palm oil production. CDC, The UK government’s development finance institution, has invested <a href="http://www.cdcgroup.com/Media/News/CDC-invests-US181m-in-agribusiness-in-the-Democratic-Republic-of-Congo/" title="">$18.1 million dollars</a> in Feronia. <img src="https://farm8.staticflickr.com/7436/12618543133_66d1bbce5b.jpg" alt="Boteka Palm Nursery"> <em>Boteka Palm Nursery. Source: Moabi DRC</em> 
+
+    type: 
+    layers: 
+    zoom_to:
+      lat: -2.877
+      lon: 22.83
+      zoom: 5
+  
+  - title: Historical map of industrial agriculture in DRC
+    text: |
+       The Moabi team added the location of Boteka plantation to an historical agriculture plantation map obtained from the DRC Ministry of Environment. This map illustrates historical plantations that the government plans to reactivate with new investment. With vast tracks of tropical forest straddling the equator, an abundance of freshwater, and a favorable climate, DRC could follow Indonesia and become a major exporter of palm oil. Questions remain, however, on when and where this expansion will occur as well as the potential impacts the industry could pose to DRC’s rich biodiversity and its rural communities, particularly indigenous peoples. 
+
+    type: 
+    layers: [moabi_palm]
+    zoom_to:
+      lat: 1.99911
+      lon: 21.89575
+      zoom: 7
+  
+  - title: Boteka not found on the historical plantation map
+    text: |
+       Further investigation by OSFAC and OGF into the Boteka plantation highlights these concerns. Using a forest cover map, OSFAC were able to draw an approximate boundary for the Boteka plantation. The map illustrates that while there are historical plantations in Ingende, the Boteka plantation does not appear to be included. This was raised with the Ministry of Environment and the Ministry of Agriculture but at a national level neither had information about the Boteka plantation. A request has been filed with Feronia PHC to access their actual plantation boundary and will be added to Moabi as soon as it becomes available. 
+
+    type: 
+    layers: [moabi_palm]
+    zoom_to:
+      lat: 0.46142
+      lon: 20.36316
+      zoom: 8
+  
+  - title: Boteka overlaps with a logging concession
+    text: |
+       The Boteka plantation overlaps with BBC logging concession - a Lebanese owned company. OGF contacted BBC but have not been able to confirm whether BBC are aware of the Boteka plantation overlap. Feronia PHC were also contacted and said they were unaware that their plantation overlapped with the BBC concession. 
+
+    type: 
+    layers: [moabi_palm]
+    zoom_to:
+      lat: 0.17029
+      lon: 21.33545
+      zoom: 8
+  
+  - title: Boteka plantation is surrounded by primary rainforest
+    text: |
+       To estimate where the Boteka plantation may expand, scientists at OSFAC drew a 33,000 hectare buffer around the concession - approximately one third of Feronia’s stated concession area in DRC. Within the buffer area, The buffer area overlaps with 23,674 hectares of primary forest, 4,267 hectares of secondary forest and 251 hectares of savannah. <img src="https://farm8.staticflickr.com/7362/13959925572_0e2e452399.jpg" alt="Boteka plantation with buffer"> <em>Boteka Plantation with buffer. Source: Moabi DRC</em> There is also evidence that between 2006 and 2012 , substantial forest loss occurred in and around Feronia PHC concession area. The cause of this forest loss remains unknown. Moabi team will update this analysis with the Feronia PHC plantation data as soon as the company make the information available. 
+
+    type: 
+    layers: [moabi_palm]
+    zoom_to:
+      lat: 1.77538
+      lon: 21.74332
+      zoom: 10
+        
+
+data:
+  - title: 
+    type: map-nav
+    description: |
+      
+    location:
+            
+
+  - title: Historical Agriculture Plantations
+    type: layer-ui
+    description: |
+       fill up later 
+
+    layers:
+    
+      - name: Palm Oil
+        id: moabi_palm
+            
+
+---
+
+{% for main_panel in page.main_panels %}
+    {% if main_panel.panel_data.actions contains 'toggle-layer' %}
+        {% for data_element in main_panel.panel_data.data_elements %}
+            {% if data_element.legend %}
+                <div class="moabi-legend icon layer-toggle" data-id="{{data_element.id}}">
+                    <div class="legend-category">
+                        <div class="symbol" style="background-color: {{data_element.color}}"></div>
+                        <span class="value">{{data_element.name}}</span>
+                    </div>
+                    {% if data_element.source %}
+                        <div class="source"><span>Source:</span> {% if data_element.source.url %}<a href="{{data_element.source.ulr}}">{{data_element.source.name}}</a>{% else %}{{data_element.source.name}}{% endif %}</div>
+                    {% endif %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+
+<div class="moabi-legend icon layer-toggle" data-id="moabi_transport">
+    <div class="legend-category">
+        <div class="symbol"></div>
+        <span class="value">Road Reconstruction</span>
+    </div>
+    <div class="source"><span>Source:</span> Ministry of Transportation</div>
+</div>
+
+<div class="moabi-legend icon layer-toggle" data-id="moabi_energy">
+    <h4>Hydropower and Energy Corridors</h4>
+    <table class="legend-table named-rows">
+        <tr>
+            <th></th>
+            <th>Existing</th>
+            <th>Future</th>
+        </tr>
+        <tr>
+            <td>Dam</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Energy Line</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <div class="source"><span>Source:</span> <a href="www.com">Africa Energy</a></div>
+</div>
