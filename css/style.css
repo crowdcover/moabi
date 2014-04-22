@@ -220,6 +220,9 @@ a:hover strong { color: #F17400; } /* darken further on hover */
     text-align: center;
     display: block;
   }
+  .layer-ui .displayed[data-lang="fr"]:empty:before {
+    content: "vide";
+  }
   .layer-ui .displayed a,
   .layer-ui .not-displayed a {
     display: block;

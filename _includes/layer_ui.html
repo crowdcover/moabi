@@ -1,3 +1,4 @@
+{% assign t = site.data.translations %}
 <div class="layer-ui col12 minor-panel-viewer animate">
     {% if page.maplayer_options.filter %}
         <div class="col2 text-right pad0y" style="padding-right: 8px">
@@ -30,7 +31,7 @@
         </div>
     {% endif %}
 
-    <div class="small quiet center animate">Available Map Layers</div>
+    <div class="small quiet center animate">{{t.[page.language].layer_ui.available}}</div>
     <ul class="not-displayed fill-darken keyline-all scroll-styled activate animate">
         {% if page.maplayer_options.subset %}
             {% for pagelayer_id in page.maplayer_options.subset %}{% for layer in site.data.map_layers %}
@@ -49,8 +50,8 @@
         {% endif %}
     </ul>
 
-    <div class="small quiet center animate">Displayed Map Layers</div>
-    <ul class="displayed sortable fill-darken keyline-all scroll-styled activate animate"></ul>
+    <div class="small quiet center animate">{{t.[page.language].layer_ui.displayed}}</div>
+    <ul class="displayed sortable fill-darken keyline-all scroll-styled activate animate" data-lang="{{page.language}}"></ul>
 
     {% for layer in page.map_layers.layers %}
         <ul data-id="{{layer.id}}" class="minor-panel small">

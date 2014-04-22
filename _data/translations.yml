@@ -1,5 +1,6 @@
 en:
   coming_soon: Coming soon . . .
+  read_more: read more
 
   header:
     reports: Reports
@@ -46,7 +47,8 @@ en:
 
 
 fr:
-  coming_soon: A venir...
+  coming_soon: A venir . . .
+  read_more: read more
 
   header:
     reports: Rapports
@@ -59,7 +61,7 @@ fr:
 
   layer_ui:
     available: Disponible Map Layers
-    displayed: Couches affichées
+    displayed: Couches Affichées
     empty: vide
 
   data_extract:
