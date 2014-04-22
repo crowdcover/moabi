@@ -386,19 +386,22 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 .prj-container .prj-info {
   z-index: 1;
-  color: #AAA;
+  /*color: #AAA;*/
   }
   .prj-container:hover .prj-info {
-    color: #FAFAFA;
+    /*color: #FAFAFA;*/
   }
-  .prj-container:hover .prj-hidden .prj-info {
-    color: #AAA;
+  .prj-container .gradient {
+    background-color: rgba(0,0,0,0.15);
+  }
+  .prj-container:hover .gradient {
+    opacity: 0.8;
   }
   .prj-container a.prj-hidden {
     cursor: not-allowed;
   }
-  .prj-hidden .gradient {
-    background: rgba(0,0,0,0.75);
+  .prj-container:hover .prj-hidden .gradient {
+    opacity: 1;
   }
 
 .grayscale {
