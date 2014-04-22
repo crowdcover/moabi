@@ -17,9 +17,11 @@ en:
     empty: empty
 
   data_extract:
+    edit: Edit Data
+    edit_description: Edit data already in the Database
     export: Export
     extract: Data Extracts
-    extract_text: Download extracts of the Database via Moabi.OSM iD interface
+    extract_text: Download extracts of the Database
     embed: Map Embed
     embed_text: Easily embed the map in any blog or website using simple HTML
     print: Print Map
@@ -66,9 +68,11 @@ fr:
     empty: vide
 
   data_extract:
+    edit: Edit Data
+    edit_description: Edit data already in the Database
     export: Exportation
     extract: Données extraites
-    extract_description: Téléchargez des extraits de la base de données via Moabi.OSM iD interface
+    extract_description: Téléchargez des extraits de la base de données
     embed: Carte intégrée
     embed_description: Intégrer Facilement la carte dans n'importe quel blog ou site web en utilisant HTML
     print: Impression de la carte
