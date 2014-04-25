@@ -110,16 +110,17 @@
         name: Ministere des Hydrocarbures (MIN.HYDRO)
         url:
 
-  # - id: moabi_palm
-  #   name: Agriculture Concessions
-  #   categories: [concession, forestry]
-  #   description: Agricultural concessions, including cacao, coffee, hevea, and palm oil
-  #   legend_template: true
-  #   legend_color: '#79750A'
-  #   date: 2014
-  #   source:
-  #       name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
-  #       url:
+  - id: moabi_palm
+    name: Agriculture Concessions
+    categories: [concession, forestry]
+    description: Agricultural concessions, including cacao, coffee, hevea, and palm oil
+    legend_template: true
+    legend_color: '#79750A'
+    date: 2014
+    source:
+        name: OGF/OSFAC
+        # name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
+        url:
 
   - id: moabi_transport
     name: Road Rehabilitation Projects
