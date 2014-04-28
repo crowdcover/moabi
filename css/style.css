@@ -19,15 +19,6 @@ body {
   /*background-color: rgb(255, 252, 248);*/
 }
 
-.gradient {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background: transparent url(../img/gradient_a70.png) repeat-x 0 0;
-  /*z-index: 1;*/
-}
-
 /* typography and spacing */
 h1, h2 {
   font-family: 'Open Sans XBold';
@@ -82,11 +73,6 @@ h3.light, h3.light a {
     padding-top: 4px;
     padding-bottom: 4px;
   }
-
-.row17 { height: 680px;}
-.row18 { height: 720px;}
-.row17 { height:auto; min-height: 680px;}
-.row18 { height:auto; min-height: 720px;}
 
 .strongline-all    { border:2px solid rgba(0,0,0,0.25); }
 .strongline-top    { border-top:2px solid rgba(0,0,0,0.25); }
@@ -191,7 +177,7 @@ a:hover strong { color: #F17400; } /* darken further on hover */
   }
 
 
-/* buttons/widgets/controls */
+/* widgets/controls */
 .layer-ui {
   }
   .layer-ui ul.displayed, .layer-ui ul.not-displayed {
@@ -240,6 +226,7 @@ a:hover strong { color: #F17400; } /* darken further on hover */
   }
 
 
+/* buttons */
 .rounded-toggle {
   padding: 2px;
   border-radius: 3px;
@@ -281,43 +268,35 @@ textarea, input[type=password], input[type=text], input[type=number] {
   color: rgba(0,0,0,.5);
 }
 
-.tab-group .tabs > a {
-  /*border-radius: 0;*/
-}
 
-/*pillmenu*/
 .pillmenu li {
-    display: inline-block;
-    margin-bottom: 12px;
-}
-
-.pillmenu li a {
+  display: inline-block;
+  margin-bottom: 12px;
+  }
+  .pillmenu li a {
     background-color: #C1BFBC;
     color: #222;
     margin-left: 2px;
     padding: 2px 10px;
     border-radius: 2px;
     border: 1px solid #AEACA9;
-}
-
-.pillmenu li a:hover {
+  }
+  .pillmenu li a:hover {
     background-color: #777;
     color: #DDD;
     border: 1px solid #777777;
-}
-
-.pillmenu li a:active {
+  }
+  .pillmenu li a:active {
     background-color: #798A69;
     color: #FFFFFF;
     border: 1px solid #777777;
-}
-
-.pillmenu li a.active {
+  }
+  .pillmenu li a.active {
     background-color: #C5CDAC;
     color: #333;
     border: 1px solid #999;
     box-shadow: inset 0px 2px 3px rgba(0,0,0,0.1);
-}
+  }
 
 
 /* share controls */
@@ -339,7 +318,13 @@ textarea, input[type=password], input[type=text], input[type=number] {
   left: 100px;
   font-size: 8px;
   color: #999;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -o-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
 }
+
 .header {
   letter-spacing: 1px;
   z-index: 1;
@@ -415,26 +400,6 @@ textarea, input[type=password], input[type=text], input[type=number] {
   -webkit-filter: grayscale(0%);
 }
 
-.browse-title-bar .big.arrow {
-  z-index: 1;
-  position: relative;
-  left: 50%;
-  bottom: 16px;
-  border-bottom-color: rgb(255, 252, 248);
-  }
-  .browse-title-bar .big.arrow.down {
-    top: 16px;
-  }
-
-/*
-.shadow {
-    background-color: rgba(0,0,0,0.1);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-}
-*/
 
 /* Project Hubs */
 .sidebar {
@@ -475,21 +440,9 @@ textarea, input[type=password], input[type=text], input[type=number] {
   }
 
 
-/* Animation */
-.invis {
-  height: 0;
-  overflow: hidden;
-  padding: 0;
-  }
-  .invis.active {
-    height: auto;
-  }
-
-
 
 
 /*********************** Menus ***********************/
-
 .minor-panel {
   display: none;
   }
@@ -508,9 +461,8 @@ textarea, input[type=password], input[type=text], input[type=number] {
 .slideshow {
     position: relative;
     width: 100%;
-}
-
-.slide-control {
+  }
+  .slide-control {
     position: absolute;
     width: 60px;
     height: 100%;
@@ -583,82 +535,36 @@ textarea, input[type=password], input[type=text], input[type=number] {
     z-index: 1;
   }
 
-
-/**************************Panels**************************/
-.main-panel {
-    display: none;
-}
-
-.main-panel.active {
-    display: block;
-    clear: both;
-}
-
-.contentbar.limiter .main-panel p.description {
-    padding: 0 40px 18px;
-    border-bottom: 2px solid #CCC;
-}
-
-
-
 /******************************* Language Widget *******************************/
 .widget-ui {
-  /*border: 1px solid #BBB;*/
-  margin: 6px 0 6px 22px;
+    margin: 6px 0 6px 22px;
   }
-
-.widget-ui a {
-    font: 14px/20px 'Open Sans Light', sans-serif;
-    border-bottom: 1px solid #DDD;
+  .widget-ui a {
+    font: 14px/20px 'Open Sans', sans-serif;
     display: block;
+    float: left;
     color: #666;
     text-align: center;
     padding: 4px;
     width: 32px;
-    font-weight: bold; /*don't keep this in*/
-}
-
-.widget-ui.horizontal a {
-    float: left;
     border-bottom: none;
     border-right: 1px solid #DDD;
-}
-
-.widget-ui a:hover {
+  }
+  .widget-ui a:last-child {
+    border-right: none;
+  }
+  .widget-ui a:hover {
     background-color: rgba(0,0,0,0.05);
     color: #404040;
-}
-
-.widget-ui a:active,
-.widget-ui a.active {
+  }
+  .widget-ui a:active,
+  .widget-ui a.active {
     background-color: transparent;
     color: #87BBD8;
-}
-
-.widget-ui a.active {
-    /*background-color: #F0F0F0;*/
-    /*box-shadow: inset 0 0 1px rgba(0,0,0,0.15);*/
+  }
+  .widget-ui a.active {
     cursor: default;
-}
-
-.widget-ui a:first-child {
-    /*border-radius: 3px 3px 0 0;*/
-}
-
-.widget-ui a:last-child {
-    /*border-radius: 0 0 3px 3px;*/
-    border-bottom: none;
-}
-
-.widget-ui.horizontal a:first-child {
-    /*border-radius: 3px 0 0 3px*/
-}
-
-.widget-ui.horizontal a:last-child {
-    /*border-radius: 0 3px 3px 0;*/
-    border-right: none;
-}
-
+  }
 
 
 /******************************* Map Legends *******************************/
@@ -743,8 +649,57 @@ textarea, input[type=password], input[type=text], input[type=number] {
 }
 
 
+/******************** Fonts ********************/
+@font-face {
+  font-family:'Open Sans Light';
+    src:url('../fonts/opensans-light.eot');
+    src:url('../fonts/opensans-light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/opensans-light.woff') format('woff');
+}
+
+@font-face {
+  font-family:'Open Sans XBold';
+    src:url('../fonts/opensans-bold.eot');
+    src:url('../fonts/opensans-bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/opensans-bold.woff') format('woff');
+}
+
+@font-face {
+  font-family:'Open Sans XXBold';
+    src:url('../fonts/opensans-extrabold.eot');
+    src:url('../fonts/opensans-extrabold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/opensans-extrabold.woff') format('woff');
+}
+
+@font-face {
+  font-family:'Deja Vu Serif';
+    src:url('../fonts/DejaVuSerif-webfont.eot');
+    src:url('../fonts/DejaVuSerif-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/DejaVuSerif-webfont.woff') format('woff');
+}
+
+.prose.serif {
+  font-family: 'Deja Vu Serif';
+  }
+  h1.prose,
+  h2.prose {
+    line-height: 30px;
+  }
+
+
 
 /******************** Icons ********************/
+@font-face {
+    font-family: 'Icon-Set';
+    src:url('../fonts/icon.eot?-shfr1q');
+    src:url('../fonts/icon.eot?#iefix-shfr1q') format('embedded-opentype'),
+        url('../fonts/icon.woff?-shfr1q') format('woff'),
+        url('../fonts/icon.ttf?-shfr1q') format('truetype'),
+        url('../fonts/icon.svg?-shfr1q#icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .arrow {
     height: 0;
     width: 0;
@@ -782,53 +737,6 @@ textarea, input[type=password], input[type=text], input[type=number] {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
-
-@font-face {
-  font-family:'Open Sans Light';
-    src:url('../fonts/opensans-light.eot');
-    src:url('../fonts/opensans-light.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/opensans-light.woff') format('woff');
-}
-
-@font-face {
-  font-family:'Open Sans XBold';
-    src:url('../fonts/opensans-bold.eot');
-    src:url('../fonts/opensans-bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/opensans-bold.woff') format('woff');
-}
-
-@font-face {
-  font-family:'Open Sans XXBold';
-    src:url('../fonts/opensans-extrabold.eot');
-    src:url('../fonts/opensans-extrabold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/opensans-extrabold.woff') format('woff');
-}
-
-@font-face {
-  font-family:'Deja Vu Serif';
-    src:url('../fonts/DejaVuSerif-webfont.eot');
-    src:url('../fonts/DejaVuSerif-webfont.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/DejaVuSerif-webfont.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Icon-Set';
-    src:url('../fonts/icon.eot?-shfr1q');
-    src:url('../fonts/icon.eot?#iefix-shfr1q') format('embedded-opentype'),
-        url('../fonts/icon.woff?-shfr1q') format('woff'),
-        url('../fonts/icon.ttf?-shfr1q') format('truetype'),
-        url('../fonts/icon.svg?-shfr1q#icon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.prose.serif {
-  font-family: 'Deja Vu Serif';
-  }
-  h1.prose,
-  h2.prose {
-    line-height: 30px;
-  }
 
 .icon:before,
 .rcon:after {
@@ -1009,33 +917,3 @@ textarea, input[type=password], input[type=text], input[type=number] {
 .icon.cc:before { content: "\e688" }
 .icon.cc-nc:before { content: "\e689" }
 .icon.cc-pd:before { content: "\e68a" }
-
-.layer-toggle.icon:active:before,
-.layer-toggle.rcon:active:after,
-.layer-toggle.icon.active:before,
-.layer-toggle.rcon.active:after {
-    content: "\e67c";
-    font-size: 10px;
-    top: 5px;
-}
-
-.layer-toggle.icon.active:hover:before,
-.layer-toggle.rcon.active:hover:after {
-    content: "\e656";
-    /*font-size: 14px;*/
-    /*cursor: pointer;*/
-    /*top: 3px;*/
-    /*right: -2px;*/
-}
-
-/*.moabi-legend.layer-toggle.icon:before {
-    position: absolute;
-    left: -2px;
-    top: 5px;
-}
-
-.moabi-legend.layer-toggle.icon:hover:before {
-    position: absolute;
-    left: -4px;
-    top: 3px;
-}*/
