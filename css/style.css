@@ -325,6 +325,14 @@ textarea, input[type=password], input[type=text], input[type=number] {
   transform: rotate(30deg);
 }
 
+.gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+  }
+
 .header {
   letter-spacing: 1px;
   z-index: 1;
@@ -370,23 +378,15 @@ textarea, input[type=password], input[type=text], input[type=number] {
   }
 
 .prj-container .prj-info {
-  z-index: 1;
-  /*color: #AAA;*/
-  }
-  .prj-container:hover .prj-info {
-    /*color: #FAFAFA;*/
-  }
-  .prj-container .gradient {
-    background-color: rgba(0,0,0,0.15);
   }
   .prj-container:hover .gradient {
-    opacity: 0.8;
+    background-color: rgba(0,0,0,0.4);
   }
   .prj-container a.prj-hidden {
     cursor: not-allowed;
   }
   .prj-container:hover .prj-hidden .gradient {
-    opacity: 1;
+    background-color: rgba(0,0,0,0.6)
   }
 
 .grayscale {
