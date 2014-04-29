@@ -24,18 +24,6 @@ h1, h2 {
   font-family: 'Open Sans XBold';
 }
 
-h1 a,
-h2 a,
-h3 a {
-  color: #404040;
-}
-
-h1 a:hover,
-h2 a:hover,
-h3 a:hover {
-  color: #888;
-}
-
 h1.bold, h1.bold a,
 h2.bold, h2.bold a,
 h3.bold, h3.bold a {
@@ -114,11 +102,13 @@ h3.light, h3.light a {
 /* links and color accents */
 a,
 a:active { color: #29abe2; }
-  a:hover { color: #4891B9; }
+  a:hover,
+  a.active { color: #3D7797; }
 
 .dark a,
 .dark a:active { color: #29abe2; }
-  .dark a:hover { color: #87BBD8;}
+  .dark a:hover,
+  .dark a.active { color: #B1DCF5;}
 
 a.desaturate { text-decoration: underline; color: #7F7F7F; }
 .dark a.desaturate { text-decoration: underline; color: #DDD; }
@@ -129,11 +119,24 @@ strong { color: #FF8F00; } /* darker red orange */
 a:hover strong { color: #F17400; } /* darken further on hover */
 .dark a:hover strong { color: #FFC145; } /* lighten further on hover */
 
+h1 a,
+h2 a,
+h3 a,
+.nav a { color: #404040; }
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+.nav a:hover,
+.nav a.active { color: #888; }
+
+.nav a:active { color: #FF8F00; } /* darker red orange */
+
 .activate a {
   color: #222;
-}
+  }
   .dark .activate a {
-    color: rgb(255, 252, 248);`
+    color: rgb(255, 252, 248);
   }
   .activate a:hover {
     background-color: #CCC;
@@ -159,7 +162,7 @@ a:hover strong { color: #F17400; } /* darken further on hover */
 /* backgrounds */
 .dark {
     color: #FFFCF8;
-}
+  }
   .fill-black { background-color: #000; }
   .fill-darken { background-color: rgba(0,0,0,0.1); }
   .dark .fill-darken { background-color: rgba(80, 80, 80, 0.1); }
@@ -254,7 +257,10 @@ a:hover strong { color: #F17400; } /* darken further on hover */
     color: #444;
   }
 
-.tabs a { cursor: pointer; } /*not sure why this needs to be restated*/
+.tabs a {
+  cursor: pointer; /*not sure why this needs to be restated*/
+  color: rgba(0,0,0,.5);
+}
 
 textarea, input[type=password], input[type=text], input[type=number] {
   background-color: rgba(0,0,0,0.1);
@@ -300,6 +306,37 @@ textarea, input[type=password], input[type=text], input[type=number] {
     box-shadow: inset 0px 2px 3px rgba(0,0,0,0.1);
   }
 
+.widget-ui {
+    margin: 6px 0;
+  }
+  .widget-ui a {
+    font: 14px/20px 'Open Sans', sans-serif;
+    display: block;
+    float: left;
+    text-align: center;
+    padding: 4px;
+    width: 32px;
+    border-bottom: none;
+    border-right: 1px solid #DDD;
+  }
+  .widget-ui a:not(.active) {
+    color: #666;
+  }
+  .widget-ui a:last-child {
+    border-right: none;
+  }
+  .widget-ui a:hover {
+    background-color: rgba(180,180,180,0.2);
+  }
+  .widget-ui a:active,
+  .widget-ui a.active {
+    background-color: transparent;
+    color: #FF8F00; /* darker red orange */
+  }
+  .widget-ui a.active {
+    cursor: default;
+  }
+
 
 /* share controls */
 .mapbox-modal-body {
@@ -311,6 +348,7 @@ textarea, input[type=password], input[type=text], input[type=number] {
   .mapbox-modal-body .mapbox-share-buttons a {
     background-color: #666;
   }
+
 
 /* custom layout elements */
 .logo-h {
@@ -343,9 +381,6 @@ textarea, input[type=password], input[type=text], input[type=number] {
   letter-spacing: 1px;
   z-index: 1;
   font-family: 'Open Sans Bold', sans-serif;
-  }
-  .header a.active {
-    color: #87BBD8; /* same as a:hover */
   }
 
 .landing {
@@ -539,37 +574,6 @@ textarea, input[type=password], input[type=text], input[type=number] {
   }
   .slide div {
     z-index: 1;
-  }
-
-/******************************* Language Widget *******************************/
-.widget-ui {
-    margin: 6px 0;
-  }
-  .widget-ui a {
-    font: 14px/20px 'Open Sans', sans-serif;
-    display: block;
-    float: left;
-    color: #666;
-    text-align: center;
-    padding: 4px;
-    width: 32px;
-    border-bottom: none;
-    border-right: 1px solid #DDD;
-  }
-  .widget-ui a:last-child {
-    border-right: none;
-  }
-  .widget-ui a:hover {
-    background-color: rgba(0,0,0,0.05);
-    color: #404040;
-  }
-  .widget-ui a:active,
-  .widget-ui a.active {
-    background-color: transparent;
-    color: #87BBD8;
-  }
-  .widget-ui a.active {
-    cursor: default;
   }
 
 
@@ -782,6 +786,7 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
     /* jlc - make base play nice */
     display: inline;
+    vertical-align: baseline;
 }
     .icon.float:before {
         float: left;

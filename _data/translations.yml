@@ -38,6 +38,16 @@ en:
     data_button_name: Explore
     data_button_text: View our ever-growing database of natural resource issues in DRC
 
+  about:
+    the_initiative: The Initiative
+    the_platform: The Platform
+    who_we_are: Who We Accroître
+    jobs: Jobs
+    partners: Partners
+    acknowledgements: Acknowledgements
+    more: Get in Touch
+    more_text: If you are interested in learning more about the Moabi platform while it is undergoing beta testing, please join our <a href="http://rdc.moabi.org/signup/">mailing list</a> or <a href="mailto:info@crowdcover.org">get in touch</a> with us directly.
+
   data:
     visualize: Visualize
     export: Export
@@ -90,6 +100,16 @@ fr:
     report_button_text: Consultez les rapports de terrain appréhendant un grand éventail de problématiques, allant de la REDD+ aux pertes de forêt.
     data_button_name: Découvrez
     data_button_text: Consultez notre base de données (en développement) sur les problématiques liées aux ressources naturelles en RDC
+
+  about:
+    the_initiative: The Initiative
+    the_platform: The Platform
+    who_we_are: Who We Accroître
+    jobs: Jobs
+    partners: Partners
+    acknowledgements: Acknowledgements
+    more: Get in Touch
+    more_text: If you are interested in learning more about the Moabi platform while it is undergoing beta testing, please join our <a href="http://rdc.moabi.org/signup/">mailing list</a> or <a href="mailto:info@crowdcover.org">get in touch</a> with us directly.
 
   data:
     visualize: Visualisez
