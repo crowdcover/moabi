@@ -1,5 +1,5 @@
 {% if page.url == '/en/index.html' or page.url == '/fr/index.html' %}
-<div class="widget-ui horizontal toggle-language fr">
+<div class="widget-ui horizontal toggle-language fr clearfix">
     <a {% if page.language == 'fr' %}
             href="{{site.baseurl}}/en"
             data-lang="en"
@@ -16,7 +16,7 @@
         {% endif %}>FR</a>
 </div>
 {% else %}
-<div class="widget-ui horizontal toggle-language fr">
+<div class="widget-ui horizontal toggle-language fr clearfix">
     <a {% if page.language == 'fr' %}
             href="{{site.baseurl}}{{page.url | remove: '/fr/'}}/en/"
             data-lang="en"

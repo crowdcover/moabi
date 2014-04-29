@@ -1,35 +1,38 @@
 {% assign t = site.data.translations %}
 {% if page.title != 'Data' %}
 <header class="header fill-light dropshadow-down strongline-bottom">
-    <div class="limiter clearfix">
-        <div class="col4" style="height: 40px;">
-            <a class="beta fl" href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center left; background-size: 100%; display:inline-block; height: 100%; width: 170px"></a>
+    <div class="row1 limiter clearfix">
+        <div class="col4 mobile-center">
+            <a class="logo-h pad1 beta fl" href="{{site.baseurl}}/{{page.language}}"></a>
         </div>
+        <div class="col8 mobile-center space space-bottom1">
 
-        {% unless page.title == 'Signup' %}{% include language_toggle.html %}{% endunless %}
-
-        <a class="pad1 fr {% if page.title == 'Signup' %}active{% endif %}" href="{{site.baseurl}}/signup/">{{t.[page.language].header.sign_up}}</a>
-        <a class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
+            {% unless page.title == 'Signup' %}{% include language_toggle.html %}{% endunless %}
+            <a class="pad1y fr {% if page.title == 'Signup' %}active{% endif %}" href="{{site.baseurl}}/signup/">{{t.[page.language].header.sign_up}}</a>
+            <a class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
+            <a class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
+            <a class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
+            <a class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
+        </div>
 
     </div>
 </header>
 {% else %}
 <header class="header fill-light dropshadow-down strongline-bottom">
-    <div class="clearfix">
-        <div class="col4 center" style="height: 40px;">
-            <a class="beta" href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center; background-size: 100%; display:inline-block; height: 100%; width: 170px"></a>
+    <div class="row1 clearfix">
+        <div class="row1 col4 center">
+            <a class="pad1 beta" href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center; background-size: 100%; display:inline-block; height: 100%; width: 170px"></a>
         </div>
 
-        {% include language_toggle.html %}
+        <div class="col8 mobile-center space">
+            {% include language_toggle.html %}
 
-        <a class="pad1 fr {% if page.title == 'Signup' %}active{% endif %}" href="{{site.baseurl}}/signup/">{{t.[page.language].header.sign_up}}</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
-        <a style="margin-right: 20px;" class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
+            <a class="pad1 fr {% if page.title == 'Signup' %}active{% endif %}" href="{{site.baseurl}}/signup/">{{t.[page.language].header.sign_up}}</a>
+            <a class="pad1y fr {% if page.title == 'About' %}active{% endif %}" href="{{site.baseurl}}/about/{{page.language}}">{{t.[page.language].header.about}}</a>
+            <a class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
+            <a class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
+            <a class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
+        </div>
 
     </div>
 </header>
