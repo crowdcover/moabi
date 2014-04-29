@@ -29,9 +29,10 @@ layout: main
                         <h2 class="prose serif pad1y space-bottom1 keyline-bottom">{{report.title}}</h2>
                         {% if page.author and forloop.first %}<div class="quiet space-bottom1 small">By {{page.author}}</div>{% endif %}
                         {% if forloop.first %}
-                            <div class="row6 space-bottom2 contain" style="overflow: hidden;">
+                            <!-- <div class="row6 space-bottom2 contain" style="overflow: hidden;">
                                 <img class="space-bottom2" src="{{page.img}}" style="position: absolute; bottom: -25%;"></img>
-                            </div>
+                            </div> -->
+                            <div class="row6 space-bottom2" style="background-image: url({{page.img}}); background-size: cover;"></div>
                         {% endif %}
                         <p class="prose space-bottom4">{{report.text}}</p>
                         {% unless forloop.last %}
