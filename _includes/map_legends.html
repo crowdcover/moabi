@@ -6,9 +6,6 @@
         <div class="block" style="background-color: {{layer.legend_color}}"></div>
         <h3 class="">{{layer.name}}</h3>
     </div>
-    <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="desaturate">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
-    </div>
 </div>
 {% endif %}
 {% endfor %}
@@ -39,9 +36,6 @@
             </tr>
         </tbody>
     </table>
-    <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> <a class="desaturate" href="http://www.earthenginepartners.appspot.com/science-2013-global-forest">University of Maryland</a>
-    </div>
 </div>
 
 <div class="moabi-legend space-bottom1" data-id="moabi_forest_lossyear">
@@ -68,9 +62,6 @@
             </tr>
         </tbody>
     </table>
-    <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> <a class="desaturate" href="http://www.earthenginepartners.appspot.com/science-2013-global-forest">University of Maryland</a>
-    </div>
 </div>
 
 <div class="moabi-legend space-bottom1" data-id="moabi_protected">
@@ -78,18 +69,12 @@
         <div class="block" style="background-image: url({{site.baseurl}}/img/ex_small.png)"></div>
         <h3 class="">Protected Areas</h3>
     </div>
-    <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
-    </div>
 </div>
 
 <div class="moabi-legend space-bottom1" data-id="moabi_transport">
     <div class="">
         <span class="legend-icon" style="color: #F8CC00;">━━</span>
         <h3 class="">Road Rehabilitation Projects</h3>
-    </div>
-    <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> Cellule Infrastructures (CI)
     </div>
 </div>
 
@@ -105,9 +90,6 @@
         <img class="legend-icon" src="{{site.baseurl}}/img/food_bag.svg"></img><h3 class="micro">Foraging Site</h3>
         <img class="legend-icon" src="{{site.baseurl}}/img/agriculture.svg"></img><h3 class="micro">Farming Site</h3>
     </div>
-    <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> Ligue Nationale des pygmees du Congo (LINAPYCO)
-    </div>
 </div>
 
 <div class="moabi-legend space-bottom1" data-id="moabi_energy">
@@ -117,8 +99,5 @@
         <span class="legend-icon dot" style="background-color: #DEA2A9; border: 2px solid #D12F3E"></span><h3 class="micro">Dam (planned)</h3>
         <span class="legend-icon" style="border-bottom: 3px solid #D12F3E; position: relative; bottom: 6px; width: 27px;"></span><h3 class="micro">Transmission Line (existing)</h3>
         <span class="legend-icon" style="border-bottom: 3px dotted #D12F3E; position: relative; bottom: 6px; width: 27px;"></span><h3 class="micro">Transmission Line (planned)</h3>
-    </div>
-    <div class="micro legend-source">
-        <strong class="quiet">Source:</strong> African Energy / Societe National d' Electricite (AE / SNEL)
     </div>
 </div>
