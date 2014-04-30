@@ -1,0 +1,35 @@
+---
+layout: main
+---
+{% assign t = site.data.translations %}
+<div class="fill-light strongline-bottom">
+    <div class="limiter pad4y clearfix">
+        <div class="col3 margin1r keyline-right space">
+            <h2 class="pad2x keyline-bottom space-bottom1">{{t.[page.language].documentation.training}}</h2>
+            <ul class="nav space-bottom2">
+                {% for train in site.tags.training reversed %}{% if train.language == page.language %}
+                    <li class="pad1y">
+                        <a href="{{site.baseurl}}{{train.url}}" class="{% if page.title == train.title %}active icon plus2{% endif %}" {% unless page.title == train.title %}style="margin-left: 17px"{% endunless %}>{{train.title}}</a>
+                    </li>
+                {% endif %}{% endfor %}
+                <li class="pad1y">
+                    <a href="#" class="{% if page.title == about_page.title %}active icon plus2{% endif %}" {% unless page.title == about_page.title %}style="margin-left: 17px"{% endunless %}>Authoring Reports</a>
+                </li>
+                <li class="pad1y">
+                    <a href="#" class="{% if page.title == about_page.title %}active icon plus2{% endif %}" {% unless page.title == about_page.title %}style="margin-left: 17px"{% endunless %}>Uploading/Editing Data</a>
+                </li>
+            </ul>
+            <h2 class="pad2x keyline-bottom space-bottom1">{{t.[page.language].documentation.data_documentation}}</h2>
+            <ul class="nav space-bottom2">
+                {% for documentation in site.tags.data_documentation reversed %}{% if documentation.language == page.language %}
+                    <li class="pad1y">
+                        <a href="{{site.baseurl}}{{documentation.url}}" class="{% if page.title == documentation.title %}active icon plus2{% endif %}" {% unless page.title == documentation.title %}style="margin-left: 17px"{% endunless %}>{{documentation.title}}</a>
+                    </li>
+                {% endif %}{% endfor %}
+            </ul>
+        </div>
+        <div class="col8 prose" style="padding: 28px 0;">
+            {{content}}
+        </div>
+    </div>
+</div>

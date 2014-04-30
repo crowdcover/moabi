@@ -1,0 +1,37 @@
+  - key: concession
+    description: land sold or rented to a private or state-owned industry for the extraction of natural resources
+    values:
+      - value: mining
+        geometry: [point, polygon]
+        description: An area of land allocated for mineral extraction
+        optional_attr:
+        rendered:
+      - value: logging
+        geometry: [point, polygon]
+        description: An area of land allocated for timber extraction
+        optional_attr:
+        rendered:
+      - value: agriculture
+        geometry: [point, polygon]
+        description: An area of land allocated for industrial-scale agriculture
+        optional_attr:
+        rendered:
+      - value: oil
+        geometry: [point, polygon]
+        description: An area of land allocated for the extraction of oil or hydrocarbons
+        optional_attr:
+        rendered:
+
+  - key: energy
+    description: any infrastructure involved in energy production or transmission
+    values:
+      - value: dam
+        geometry: [point, polygon]
+        description: a structure that obstructs the flow of water in order to generate power
+        optional_attr:
+        rendered:
+      - value: transmission line
+        geometry: [line]
+        description: High tension wires to transport energy
+        optional_attr: [status, capacity]
+        rendered:

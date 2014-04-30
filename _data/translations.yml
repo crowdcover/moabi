@@ -6,6 +6,7 @@ en:
   header:
     reports: Reports
     data: Data
+    documentation: Documentation
     blog: Blog
     about: About
     sign_up: Sign Up
@@ -59,6 +60,11 @@ en:
 
   blog:
 
+  documentation:
+    training: Training Materials
+    data_documentation: Data Documentation
+
+
 
 
 fr:
@@ -69,6 +75,7 @@ fr:
   header:
     reports: Rapports
     data: Données
+    documentation: Documentation
     blog: Blog
     about: A propos
     sign_up: Sign Up
@@ -121,4 +128,9 @@ fr:
     page_down: bas de page
 
   blog:
+
+  documentation:
+    training: Training Materials
+    data_documentation: Data Documentation
+
 

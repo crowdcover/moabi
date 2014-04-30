@@ -114,8 +114,8 @@ a.desaturate { text-decoration: underline; color: #7F7F7F; }
 .dark a.desaturate { text-decoration: underline; color: #DDD; }
 a.desaturate:hover { color: #999;}
 
-strong { color: #FF8F00; } /* darker red orange */
-.dark strong { color: #F8AA04; } /* brigher orange */
+/* strong { color: #FF8F00; } /* darker red orange */
+/* .dark strong { color: #F8AA04; } /* brigher orange */
 a:hover strong { color: #F17400; } /* darken further on hover */
 .dark a:hover strong { color: #FFC145; } /* lighten further on hover */
 
@@ -172,6 +172,7 @@ h3 a:hover,
     background-color: rgba(255, 252, 248, 0.82);
   }
 
+.highlight { border: 1px solid #CFCFCF;}
 
 /* animations */
 .animate {
