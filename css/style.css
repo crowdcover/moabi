@@ -127,10 +127,10 @@ h3 a,
 h1 a:hover,
 h2 a:hover,
 h3 a:hover,
-.nav a:hover,
-.nav a.active { color: #888; }
+.nav a:hover { color: #888; }
 
-.nav a:active { color: #FF8F00; } /* darker red orange */
+.nav a.active,
+.nav a:active { color: #29abe2; }/* blue || { color: #FF8F00; } /* darker red orange */
 
 .activate a {
   color: #222;
@@ -331,7 +331,7 @@ textarea, input[type=password], input[type=text], input[type=number] {
   .widget-ui a:active,
   .widget-ui a.active {
     background-color: transparent;
-    color: #FF8F00; /* darker red orange */
+    color: #29abe2; /* blue || #FF8F00; /* darker red orange */
   }
   .widget-ui a.active {
     cursor: default;
@@ -415,7 +415,7 @@ textarea, input[type=password], input[type=text], input[type=number] {
     border: 1px solid #DDD;
   }
   .logo img {
-    height: 50px;
+    height: 40px;
   }
 
 .prj-container .prj-info {
