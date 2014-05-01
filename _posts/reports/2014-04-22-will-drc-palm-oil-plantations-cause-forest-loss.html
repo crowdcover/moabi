@@ -11,7 +11,8 @@ description: |
    With vast tracks of tropical forest straddling the equator, an abundance of freshwater, and a favorable climate, DRC could follow Indonesia and become a major exporter of palm oil. Questions remain, however, on when and where this expansion will occur as well as the potential impacts the industry could pose to DRC’s rich biodiversity and its rural communities, particularly indigenous peoples.
 
 img: http://farm8.staticflickr.com/7342/12618848714_5c700b0070_b.jpg
-img_caption: Boteka Palm Nursery. Source':' Moabi DRC
+img_caption: Boteka Palm Nursery.
+img_source: Moabi DRC
 author: Leo Bottrill, Herve Kashongwe, & Serge Bondo Kayembe
 
 basemap:
@@ -22,8 +23,10 @@ basemap:
     layers:
       - id: moabi_base
         z: -1
-      - id: moabi_redd_projects
-        z: 0
+
+maplayer_options:
+    filter:
+    subset: [moabi_palm, moabi_logging, moabi_forest_lossyear]
 
 report:
   - title: Will DRC palm oil plantations cause forest loss?
@@ -39,7 +42,9 @@ report:
 
   - title: Historical map of industrial agriculture in DRC
     text: |
-       The Moabi team added the location of Boteka plantation to an historical agriculture plantation map obtained from the DRC Ministry of Environment. This map illustrates historical plantations that the government plans to reactivate with new investment. With vast tracks of tropical forest straddling the equator, an abundance of freshwater, and a favorable climate, DRC could follow Indonesia and become a major exporter of palm oil. Questions remain, however, on when and where this expansion will occur as well as the potential impacts the industry could pose to DRC’s rich biodiversity and its rural communities, particularly indigenous peoples.
+       The Moabi team added the location of Boteka plantation to an historical agriculture plantation map obtained from the DRC Ministry of Environment (MECNT). In collaboration with the World Resources Institute (WRI), the MECNT is validating this map, which will illustrate plantations that the government plans to reactivate with new investment.
+
+       With vast tracks of tropical forest straddling the equator, an abundance of freshwater, and a favorable climate, DRC could follow Indonesia and become a major exporter of palm oil. Questions remain, however, on when and where this expansion will occur as well as the potential impacts the industry could pose to DRC’s rich biodiversity and its rural communities, particularly indigenous peoples.
 
     type:
     layers: [moabi_palm]
@@ -61,7 +66,7 @@ report:
 
   - title: Boteka overlaps with a logging concession
     text: |
-       The Boteka plantation overlaps with BBC logging concession - a Lebanese owned company. OGF contacted BBC but have not been able to confirm whether BBC are aware of the Boteka plantation overlap. Feronia PHC were also contacted and said they were unaware that their plantation overlapped with the BBC concession.
+       The Boteka plantation overlaps with BBC logging concession - a Lebanese owned company. OGF contacted BBC but have not been able to confirm whether BBC are aware of the overlap with Boteka plantation. Feronia PHC were also contacted and said they were unaware that their plantation overlapped with the BBC concession.
 
     type:
     layers: [moabi_palm, moabi_logging]
@@ -70,7 +75,13 @@ report:
 
   - title: Boteka plantation is surrounded by primary rainforest
     text: |
-       To estimate where the Boteka plantation may expand, scientists at OSFAC drew a 33,000 hectare buffer around the concession - approximately one third of Feronia’s stated concession area in DRC. Within the buffer area, The buffer area overlaps with 23,674 hectares of primary forest, 4,267 hectares of secondary forest and 251 hectares of savannah. <img src="https://farm8.staticflickr.com/7362/13959925572_0e2e452399.jpg" alt="Boteka plantation with buffer"> <em>Boteka Plantation with buffer. Source: Moabi DRC</em> There is also evidence that between 2006 and 2012 , substantial forest loss occurred in and around Feronia PHC concession area. The cause of this forest loss remains unknown. Moabi team will update this analysis with the Feronia PHC plantation data as soon as the company make the information available.
+       To estimate where the Boteka plantation may expand, scientists at OSFAC drew a 33,000 hectare buffer around the concession - approximately one third of Feronia’s stated concession area in DRC.  The buffer area overlaps with 23,674 hectares of primary forest, 4,267 hectares of secondary forest and 251 hectares of savannah.
+
+       <div><img class="space-bottom1" src="https://farm8.staticflickr.com/7362/13959925572_0e2e452399.jpg" alt="Boteka plantation with buffer"></div>
+       <div class="quiet small">Boteka Plantation with buffer.</div>
+       <div class="quiet micro space-bottom2">Source: Moabi DRC</div>
+
+       <p class="prose space-bottom4">There is also evidence that between 2006 and 2012 , substantial forest loss occurred in and around Feronia PHC concession area. The cause of this forest loss remains unknown. Moabi team will update this analysis with the Feronia PHC plantation data as soon as the company make the information available.</p>
 
     type:
     layers: [moabi_forest_lossyear, moabi_palm]
@@ -87,10 +98,10 @@ data:
     location:
 
 
-  - title: Historical Agriculture Plantations
+  - title:
     type: layer-ui
     description: |
-       fill up later
+       Click on a layer to add it to the map.
 
     layers:
 

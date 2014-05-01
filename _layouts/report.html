@@ -26,14 +26,22 @@ layout: main
                                 <div class="small">{{t.[page.language].report.page_up}}</div>
                             </a>
                         {% endunless %}
-                        <h2 class="prose serif pad1y space-bottom1 keyline-bottom">{{report.title}}</h2>
-                        {% if page.author and forloop.first %}<div class="quiet space-bottom1 small">By {{page.author}}</div>{% endif %}
-                        {% if forloop.first %}
-                            <!-- <div class="row6 space-bottom2 contain" style="overflow: hidden;">
-                                <img class="space-bottom2" src="{{page.img}}" style="position: absolute; bottom: -25%;"></img>
-                            </div> -->
-                            <div class="row6 space-bottom2" style="background-image: url({{page.img}}); background-size: cover;"></div>
+
+                        <h2 class="prose serif pad1y space-bottom2 keyline-bottom">{{report.title}}</h2>
+
+                        {% if forloop.first and page.img %}
+                            <div class="space-bottom1">
+                                <div class="row6 space-bottom1" style="background-image: url({{page.img}}); background-size: cover;"></div>
+                                {% if page.img_caption %}
+                                    <div class="quiet small">{{page.img_caption}}</div>
+                                {% endif %}
+                                {% if page.img_source %}
+                                    <div class="quiet micro">Source: {{page.img_source}}</div>
+                                {% endif %}
+                            </div>
+                            {% if page.author %}<div class="space-bottom2 small">By {{page.author}}</div>{% endif %}
                         {% endif %}
+
                         <p class="prose space-bottom4">{{report.text}}</p>
                         {% unless forloop.last %}
                             <a href="#" class="col12 report-slider h animate quiet center pad4y" data-slide="down">

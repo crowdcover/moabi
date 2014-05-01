@@ -116,8 +116,8 @@ a.desaturate:hover { color: #999;}
 
 /* strong { color: #FF8F00; } /* darker red orange */
 /* .dark strong { color: #F8AA04; } /* brigher orange */
-a:hover strong { color: #F17400; } /* darken further on hover */
-.dark a:hover strong { color: #FFC145; } /* lighten further on hover */
+/*a:hover strong { color: #F17400; } /* darken further on hover */
+/*.dark a:hover strong { color: #FFC145; } /* lighten further on hover */
 
 h1 a,
 h2 a,
