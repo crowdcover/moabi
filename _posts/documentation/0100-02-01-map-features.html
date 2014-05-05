@@ -5,16 +5,32 @@ tags:
   - data_documentation
 categories:
   - en
+tutorial: |
+          Within the Moabi database, all vector features are defined by a standardized set of **attributes** or tags.  Attributes (aka tags) are defined as *key-value pairs*, similar to how most GIS programs define data.  This ensures that data coming from different sources are stored and rendered in a consistent manner.
+
+          If this were not the case, and one user uploaded a mining concession with the **concession** tag set to **mineral** (`concession = 'mining'`) and another were to upload a mining concession with the **concession** attribute set to **mine** (`concession = 'mine'`), it would be difficult for the database (and many users) to determine that they refer to the same thing.
+
+          ### Attributes
+          All features have one **standard attribute** that defines what they are.  Additionally, features can have one or more **optional attributes** that signify additional information about that feature.  To continue with the above case, a mine can be given an *operator* attribute representing its owner/operator, a mineral attribute representing the mineral(s) being mined, and a handful of other attributes.
+
+          ```
+          concession = 'mine' and operator = 'CEBA sprl' and mineral = 'tungsten'
+          ```
+
+          ### Types
+          All features can be of one of three **geometry types**: **point**, **line**, or **polygon** (again, similar to most GIS programs).  It is possible for some features to be represented in different types.  For instance, while it doesn't make sense to represent a *transmission_line** as a polygon, a small concession could either be represented as a point marking its center, or as a polygon, outlining its bounds.
 ---
 <div style="overflow: hidden; padding-top: 20px">
-    <h1 class="pad2y pad4x keyline-bottom">Map Features</h1>
+    <h1 class="pad2y keyline-bottom">Map Features</h1>
+    <div>
+        {{page.tutorial | markdownify}}
+    </div>
     {% for feature_type in site.data.attribute-structure %}
         <h2 style="margin-top: 60px">{{feature_type.key | upcase}}</h2>
         <p class="small">{{feature_type.description | capitalize}}</p>
-        <p class="small"><strong>Example Code</strong><span class="micro pad2x">[expression for a SQL where clause]</span></p>
-        {% highlight sql %}
-            {{feature_type.example_code}}
-        {% endhighlight %}
+        <!-- <p class="small"><strong>Example Code</strong><span class="micro pad2x">[expression for a SQL where clause]</span></p> -->
+        {% highlight sql %}--example code [expression for a SQL where clause]--
+{{feature_type.example_code}}{% endhighlight %}
         <div class="space-bottom2 scroll-styled {% unless forloop.last %}dashline-bottom{% endunless %}" style="padding: 0;">
             <table>
                 <thead>
@@ -23,7 +39,7 @@ categories:
                         <th>Value</th>
                         <th style="width: 85px;">Type</th>
                         <th>Description</th>
-                        <th>Opt. Attributes</th>
+                        <th>Optional Attr.</th>
                         <th>Rendered Style</th>
                     </tr>
                 </thead>
