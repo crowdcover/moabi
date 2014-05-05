@@ -27,6 +27,7 @@ for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
 var moabi = {
 
     global: function() {
+        $('.click-active').on('click' this.clickActive);
         $('.slider').on('click', 'a', this.slide);
         $('.report-slider').on('click', this.slidePage);
         $('.minor-panel-viewer').on('click', 'a.layer-toggle', this.showMinorPanel);
@@ -68,6 +69,13 @@ var moabi = {
             });
             return totalHeight;
         });
+    },
+
+    clickActive: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        $(this).addClass('active');
     },
 
     mapCapture: function(e) {

@@ -9,13 +9,11 @@ categories:
 <div style="overflow: hidden; padding-top: 20px">
     <h1 class="pad2y pad4x keyline-bottom">Map Features</h1>
     {% for feature_type in site.data.attribute-structure %}
-        <h3>{{feature_type.key | upcase}}</h3>
+        <h2 style="margin-top: 60px">{{feature_type.key | upcase}}</h2>
         <p class="small">{{feature_type.description | capitalize}}</p>
-        <p class="small"><strong>Example Code</strong></p>
+        <p class="small"><strong>Example Code</strong><span class="micro pad2x">[expression for a SQL where clause]</span></p>
         {% highlight sql %}
-            {{feature_type.key}} = '{{feature_type.values[0]value}}'
-            // or
-            {{feature_type.key}} = '{{feature_type.values[1]value}}' and operator = 'DRC LCD'
+            {{feature_type.example_code}}
         {% endhighlight %}
         <div class="space-bottom2 scroll-styled {% unless forloop.last %}dashline-bottom{% endunless %}" style="padding: 0;">
             <table>
@@ -23,9 +21,9 @@ categories:
                     <tr>
                         <th>Key</th>
                         <th>Value</th>
-                        <th>Type</th>
+                        <th style="width: 85px;">Type</th>
                         <th>Description</th>
-                        <th>Optional Attributes</th>
+                        <th>Opt. Attributes</th>
                         <th>Rendered Style</th>
                     </tr>
                 </thead>
@@ -34,10 +32,28 @@ categories:
                         <tr>
                             <td><strong>{{feature_type.key | downcase}}</strong></td>
                             <td>{{feature.value}}</td>
-                            <td>{{feature.geometry}}</td>
-                            <td>{{feature.description}}</td>
-                            <td>{{feature.optional-attr}}</td>
-                            <td>{{feature.rendered}}</td>
+                            <td>
+                                {% if feature.geometry contains 'point' %}
+                                    <span class="idcon point" style="margin-top: 3px"></span>
+                                {% endif %}{% if feature.geometry contains 'line' %}
+                                    <span class="idcon line" style="margin-top: 3px"></span>
+                                {% endif %}{% if feature.geometry contains 'polygon' %}
+                                    <span class="idcon polygon" style="margin-top: 3px"></span>
+                                {% endif %}
+                            </td>
+                            <td class="small">{{feature.description}}</td>
+                            <td class="attr-list small click-active">
+                                {% if feature.optional_attr.size > 0 %}
+                                <ul class="">
+                                    {% for attr in feature.optional_attr %}
+                                        <li>{{attr}}</li>
+                                    {% endfor %}
+                                </ul>
+                                {% else %}
+                                <div class="quiet micro">none</div>
+                                {% endif %}
+                            </td>
+                            <td>...</td>
                         </tr>
                     {% endfor %}
                 </tbody>

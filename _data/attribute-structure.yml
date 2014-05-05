@@ -1,34 +1,71 @@
   - key: concession
-    description: land sold or rented to a private or state-owned industry for the extraction of natural resources
+    description: land sold or rented to a private or state-owned industry for the extraction of natural resources.
+    example_code: |
+      concession = 'mining'
+      -- or
+      concession = 'mining' and operator = 'CEBA sprl' and artisanal = 'yes'
     values:
       - value: mining
         geometry: [point, polygon]
         description: An area of land allocated for mineral extraction
-        optional_attr:
+        optional_attr: [name, operator, status, mineral, artisanal, area]
         rendered:
       - value: logging
         geometry: [point, polygon]
         description: An area of land allocated for timber extraction
-        optional_attr:
+        optional_attr: [name, operator, status, artisanal, area]
         rendered:
       - value: agriculture
         geometry: [point, polygon]
         description: An area of land allocated for industrial-scale agriculture
-        optional_attr:
+        optional_attr: [name, operator, status, area]
         rendered:
       - value: oil
         geometry: [point, polygon]
         description: An area of land allocated for the extraction of oil or hydrocarbons
-        optional_attr:
+        optional_attr: [name, operator, status, area]
         rendered:
 
+  - key: territory
+    description: land claimed by a specific group or peoples.
+    example_code: |
+                 territory = 'indigenous'
+    values:
+      - value: indigenous
+        geometry: [polygon]
+        description: land inhabited by an indignous group.
+        optional_attr: [ethnicity]
+        rendered:
+
+  - key: landuse
+    description: used to describe the purpose for which an area of land is being used.  more general than concession or territory.
+    example_code: |
+                 landuse = 'redd'
+                 -- or
+                 landuse = 'redd' and area > 270000
+    values:
+      - value: redd
+        geometry: [polygon]
+        description: land marked for conservation as part of the UN REDD+ process
+        optional_attr: [name, type, area]
+        rendered:
+      - value: protected area
+        geometry: [polygon]
+        description: land marked for conservation as part of the government's environmental program.
+        optional_attr: [name, status, area]
+
+
   - key: energy
-    description: any infrastructure involved in energy production or transmission
+    description: any infrastructure involved in energy production or transmission.
+    example_code: |
+                 energy = 'dam'
+                 -- or
+                 energy = 'dam' and status = 'proposed'
     values:
       - value: dam
         geometry: [point, polygon]
         description: a structure that obstructs the flow of water in order to generate power
-        optional_attr:
+        optional_attr: [operator, status, capacity]
         rendered:
       - value: transmission line
         geometry: [line]

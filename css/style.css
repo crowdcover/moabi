@@ -1,6 +1,8 @@
 /*
 palette
 
+text: #404040;
+
 dark: #222;
 light brown: rgb(255, 252, 248);
 orange: #F8AA04;
@@ -483,6 +485,31 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 
 
+/*********************** Documentation ***********************/
+.attr-list {
+  cursor: pointer;
+  }
+  .attr-list ul {
+    display: none;
+    margin-left: 16px;
+  }
+  .attr-list.active:after,
+  .attr-list:not(.active):before {
+    content: 'click to view';
+    font-size: 10px;
+    padding-left: 12px;
+    color: #999;
+  }
+  .attr-list.active:after {
+    content: 'click to close';
+  }
+  .attr-list:hover:after,
+  .attr-list:hover:before {
+    color: #404040;
+  }
+  .attr-list.active ul {
+    display: block;
+  }
 
 /*********************** Menus ***********************/
 .minor-panel {
@@ -709,6 +736,10 @@ textarea, input[type=password], input[type=text], input[type=number] {
       float: none;
     }
 
+  .mobile-pad {
+    padding: 10px;
+  }
+
   .widget-ui a {
     display: inline;
     float: none;
@@ -766,6 +797,25 @@ textarea, input[type=password], input[type=text], input[type=number] {
     transform: rotate(90deg);
 }
 
+.idcon {
+  display: inline-block;
+  vertical-align: top;
+  width: 20px;
+  height: 20px;
+  background: transparent url(/img/sprite.svg) no-repeat 0 0;
+  text-indent: -9999px;
+  overflow: hidden;
+  }
+  .idcon.point {
+    background-position: -20px 0;
+  }
+  .idcon.line {
+    background-position: -40px 0;
+  }
+  .idcon.polygon {
+    background-position: -60px 0;
+  }
+
 .icon:before,
 .rcon:after {
     font: 15px/20px 'Icon-Set';
@@ -803,6 +853,12 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 /* make base.css icons play nice with mine */
 .col1.big.icon:empty { float:left; width:08.3333%; }
+
+/* jlc custom classes */
+.l-offset {
+  position: relative;
+  left: -17px;
+}
 
 
 .icon.mobile:before { content: "\e600" }
