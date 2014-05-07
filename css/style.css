@@ -497,7 +497,7 @@ textarea, input[type=password], input[type=text], input[type=number] {
   .attr-list:not(.active):before {
     content: 'click to view';
     font-size: 10px;
-    padding-left: 12px;
+    padding-left: 4px;
     color: #999;
   }
   .attr-list.active:after {
@@ -509,6 +509,13 @@ textarea, input[type=password], input[type=text], input[type=number] {
   }
   .attr-list.active ul {
     display: block;
+  }
+
+.table-contents {
+  display: inline-block;
+  }
+  .table-contents li {
+    list-style: disc inside;
   }
 
 /*********************** Menus ***********************/

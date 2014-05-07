@@ -38,7 +38,7 @@
         rendered:
 
   - key: landuse
-    description: used to describe the purpose for which an area of land is being used.  more general than concession or territory.
+    description: used to describe the purpose for which an area of land is being used--more general than concession or territory.
     example_code: |
                  landuse = 'redd'
                  -- or
@@ -53,6 +53,43 @@
         geometry: [polygon]
         description: land marked for conservation as part of the government's environmental program.
         optional_attr: [name, status, area]
+
+  - key: highway
+    description: Roads flagged for redevelopment under the road rehabilitation project.  As more data is imported from OSM, the tag scheme will expand to resemble [OSM Highway key](http://wiki.openstreetmap.org/wiki/Map_Features#Highway)
+    example_code:
+    values:
+      - value: proposed
+        geometry: [line]
+        description: Road rehabilitation projects currently being undertaken in DRC
+        optional_attr: [name, ref, proposed]
+      # - value: motorway
+      #   geometry: [line]
+      #   description: A restricted access major divided highway, normally with 2 or more running lanes plus emergency hard shoulder. Equivalent to the Freeway, Autobahn, etc.
+      #   optional_attr: [name, ref, oneway, lanes, desination]
+      # - value: trunk
+      #   geometry: [line]
+      #   description: The most important roads in a country's system that aren't motorways.
+      #   optional_attr: [name, ref, oneway, lanes, desination]
+      # - value: primary
+      #   geometry: [line]
+      #   description: The next most important roads in a country's system--often link larger towns.
+      #   optional_attr: [name, ref, oneway, lanes, desination]
+      # - value: secondary
+      #   geometry: [line]
+      #   description: The next most important roads in a country's system--often link smaller towns and villages.
+      #   optional_attr: [name, ref, oneway, lanes, desination]
+      # - value: tertiary
+      #   geometry: [line]
+      #   description: The next most important roads in a country's system.
+      #   optional_attr: [name, ref, oneway, lanes, desination]
+      # - value: residential
+      #   geometry: [line]
+      #   description: Roads which are primarily lined with and serve as an access to housing.
+      #   optional_attr: [name, ref, oneway, lanes, desination]
+      # - value: service
+      #   geometry: [line]
+      #   description: For access roads to, or within an industrial estate, camp site, business park, car park etc.
+      #   optional_attr: [name, ref, oneway, lanes, desination]
 
 
   - key: energy
