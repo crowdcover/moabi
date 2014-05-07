@@ -33,11 +33,16 @@ layout: main
     {% include js/jquery-1.10.2.min.js %}
 
     (function(){
-        $('.click-active').on('click', function(e){
+        $('.show-opt-row').on('click', function(e){
             e.preventDefault()
             e.stopPropagation()
+            var $this = $(this),
+                feature = $this.data('feature');
 
-            $(this).toggleClass('active');
+
+            $this.toggleClass('active');
+
+            $this.parent('tr').siblings('tr.' + feature).toggleClass('active');
         });
     })();
 </script>

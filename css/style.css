@@ -486,30 +486,33 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 
 /*********************** Documentation ***********************/
-.attr-list {
+table tr.opt-row th,
+table tr.opt-row td {
+  padding: 2px 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  }
+  .opt-row {
+    display: none;
+  }
+  .opt-row.active {
+    display: table-row;
+  }
+
+.show-opt-row {
   cursor: pointer;
   }
-  .attr-list ul {
-    display: none;
-    margin-left: 16px;
-  }
-  .attr-list.active:after,
-  .attr-list:not(.active):before {
+  .show-opt-row.active:after,
+  .show-opt-row:not(.active):before {
     content: 'click to view';
-    font-size: 10px;
-    padding-left: 4px;
-    color: #999;
   }
-  .attr-list.active:after {
+  .show-opt-row.active:after {
     content: 'click to close';
   }
-  .attr-list:hover:after,
-  .attr-list:hover:before {
+  .show-opt-row:hover:after,
+  .show-opt-row:hover:before {
     color: #404040;
   }
-  .attr-list.active ul {
-    display: block;
-  }
+
 
 .table-contents {
   display: inline-block;

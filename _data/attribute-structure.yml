@@ -47,21 +47,21 @@
       - value: redd
         geometry: [polygon]
         description: land marked for conservation as part of the UN REDD+ process
-        optional_attr: [name, type, area]
+        optional_attr: [name, area]
         rendered:
-      - value: protected area
+      - value: protected_area
         geometry: [polygon]
         description: land marked for conservation as part of the government's environmental program.
         optional_attr: [name, status, area]
 
   - key: highway
-    description: Roads flagged for redevelopment under the road rehabilitation project.  As more data is imported from OSM, the tag scheme will expand to resemble [OSM Highway key](http://wiki.openstreetmap.org/wiki/Map_Features#Highway)
+    description: Roads flagged for redevelopment under the road rehabilitation project.  As more data is imported from OSM, the tag scheme will expand to resemble [OSM Highway key](http://wiki.openstreetmap.org/wiki/Map_Features#Highway).
     example_code:
     values:
       - value: proposed
         geometry: [line]
         description: Road rehabilitation projects currently being undertaken in DRC
-        optional_attr: [name, ref, proposed]
+        optional_attr: [name, ref, status]
       # - value: motorway
       #   geometry: [line]
       #   description: A restricted access major divided highway, normally with 2 or more running lanes plus emergency hard shoulder. Equivalent to the Freeway, Autobahn, etc.
@@ -104,7 +104,7 @@
         description: a structure that obstructs the flow of water in order to generate power
         optional_attr: [operator, status, capacity]
         rendered:
-      - value: transmission line
+      - value: transmission_line
         geometry: [line]
         description: High tension wires to transport energy
         optional_attr: [status, capacity]

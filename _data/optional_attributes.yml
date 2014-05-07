@@ -1,0 +1,27 @@
+  - key: name
+    value: '*'
+    description: The default name of the feature.
+  - key: operator
+    value: '*'
+    description: The owner/operator of the feature, as in the case of a concession or industrial project.
+  - key: status
+    value: active, inactive, under_review, unknown, illegal
+    description: The operational status of the feature, as in the case of a concession or industrial project.
+  - key: mineral
+    value: tin, tantalum, tungsten, gold, copper
+    description: For any feature that relates to mineral extraction, the mineral(s) involved.
+  - key: artisanal
+    value: yes/no
+    description: In the case of a concession, whether or not it is artisanal
+  - key: area
+    value: num
+    description: The feature area, in sqkm.
+  - key: ethnicity
+    value: '*'
+    description: For any feature denoting land claim or ownership, the ethnicity(ies) making the claim.
+  - key: ref
+    value: '*'
+    description: Road reference name (distinct from name attribute).
+  - key: capacity
+    value: num
+    description: For an electrical feature (e.g. Dam or Transmission Line), the electrical capacity (MW•h).
