@@ -8,4 +8,74 @@ categories:
 ---
 # Edit Data
 
-**coming soon**
+***
+
+*This tutorial covers editing and updating data already loaded onto Moabi.  If you are looking to upload data that does not yet exist on Moabi, see the* [Upload Data Tutorial]({{site.baseurl}}/upload-data/en/).
+
+*<span style="color: orange;">Orange Text is specific to the EcoHackathon.</span>*
+
+Moabi uses iD to edit existing data.  With iD, users can update map feature attributes, add new attributes to features, improve the geometry of features, and even add new hand-drawn features.  All edits happen within the browser, so as long as your browser is up to date, you will not need to download any additional software.
+
+To begin with, go to the **[Moabi Browse Page](http://osm.moabi.org/)**.
+
+[]
+
+## Getting Started
+
+
+
+In the *Browse Page*, you can explore the existing map layers on the right, and interact with the map as you would elsewhere on the site.  First, click the **Sign Up** button in the top right to create an account.
+
+[]
+
+Enter your email, username, a password and click **sign up**.  You will need to confirm your account by email and agree to the **Terms of Service**, stating simply that all data will be licensed in the public domain.  Moabi is built as a clone of the open source **OpenStreetMap** project; at the time of this project much of the look and feel (and branding) of the site still reflects OSM.
+
+
+Editing data can follow one of two similar possible paths:
+
+1. Adding additional features by hand
+
+2. Updating existing features
+
+
+***
+
+## Adding Features By Hand
+
+Using the **iD Editor's** satellite layer or another custom tile layer as reference, users can easily define new features, either as **points**, **lines**, or **polygons**, and specify their attributes.  <span style="color: orange;">For the EcoHackathon, we will be using a few different layers, including:</span>
+
+<ol style="color: orange;">
+    <li>iD's default satellite layer from Bing Maps.</li>
+    <li>A Layer displaying </li>
+</ol>
+
+***
+
+## Updating Existing Features
+
+Occasionally, features on the system might be shown to be incorrect, out of date, or missing additional attribute data.  This could happen for any number of reasons:
+
+* The data could be uploaded with low geographic precision so that the features only roughly track the real world content they are supposed to represent.
+
+* The data could be out of date.
+
+* Or additional information might have been descovered since the data was collected and uploaded.
+
+
+Having the tools to easily update geometry and attribute information within the browser makes collaborating on large datasets comparatively easy.  Some things to keep in mind, though.  Because Moabi hosts such large amounts of data, and in order to be editable, all on-screen features need to be loaded into the browser, it is only possible to edit data at zoom level **14** or higher.
+
+In this example, imagine we learned that the status of one of the roads in the **Road Rehabilitation** layer had changed.  First, open the map **Layers** tab <span class="idcon layers" style="margin-top: 3px"></span> and select the **Transport** layer.  Click on the layer to view it in the map and zoom in on the feature until the **Map Data** checkbox button in the bottom right is no longer grayed out.
+
+[]
+
+After a few seconds, all map features within the browser window should be outlined with a thick blue stoke.  Click on the road feature that needs updating to select it, and in the dropdown menu to the right of the **Edit** button click **Edit with iD**.
+
+[]
+
+You are now in the **iD Editor** with your selected feature loaded.  The editor should look similar to the browse page, except that the background is now a satellite image layer.  In the left hand panel, you can view and edit information on the feature's attributes.  Click on **All Tags** to add new tags to the feature.  For example, here we can update the **proposed tag**.
+
+[]
+
+In the map window, click and drag a feature's nodes to position or shape.  For example, with the satellite layer as reference, notice how our road feature is not quite aligned correctly.  By dragging all mis-aligned nodes to their correct location, users can greatly improve the precision of their geometries and correct incorrect geometries.
+
+

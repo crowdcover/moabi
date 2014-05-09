@@ -9,13 +9,13 @@ tutorial: |
           Within the Moabi database, all vector features are defined by a standardized set of **attributes** or tags.  Attributes (aka tags) are defined as *key-value pairs*, similar to how most GIS programs define data.  This ensures that data coming from different sources are stored and rendered in a consistent manner.
 
           ### Attributes
-          All features have one **standard attribute** that defines what they are.  Additionally, features can have one or more **optional attributes** that signify additional information about that feature.  To continue with the above case, a mine can be given an *operator* attribute representing its owner/operator, a mineral attribute representing the mineral(s) being mined, and a handful of other attributes.
+          All features have one **standard attribute** that defines what they are.  Additionally, features can have one or more **optional attributes** that signify additional information about that feature.  For example, a mine can be given an *operator* attribute representing its owner/operator, a mineral attribute representing the mineral(s) being mined, and a handful of other attributes.
 
           ### Types
           All features can be of one of three **geometry types**: **point**, **line**, or **polygon** (again, similar to most GIS programs).  It is possible for some features to be represented in different types.  For instance, while it doesn't make sense to represent a *transmission_line** as a polygon, a small concession could either be represented as a point marking its center, or as a polygon, outlining its bounds.
 ---
-<div style="overflow: hidden; padding-top: 20px">
-    <div class="prose">
+<div style="overflow: hidden;">
+    <div>
         <h1 class="pad2y keyline-bottom">Map Features</h1>
         <div>
             {{page.tutorial | markdownify}}
@@ -39,71 +39,69 @@ tutorial: |
             </ul>
         </div>
     </div>
-    <div class="prose">
-        {% for feature_type in site.data.attribute-structure %}
-            <a name="{{feature_type.key}}"></a>
-            <h2 style="margin-top: 60px">{{feature_type.key | upcase}}</h2>
-            <p class="small">{{feature_type.description | capitalize | markdownify }}</p>
-            <!-- <p class="small"><strong>Example Code</strong><span class="micro pad2x">[expression for a SQL where clause]</span></p>
-            {% highlight sql %}--example code [expression for a SQL where clause]--
-    {{feature_type.example_code}}{% endhighlight %} -->
-            <div class="space-bottom2 scroll-styled {% unless forloop.last %}dashline-bottom{% endunless %}" style="padding: 0;">
-                <table>
-                    <thead class="caps">
+    {% for feature_type in site.data.attribute-structure %}
+        <a name="{{feature_type.key}}"></a>
+        <h2 style="margin-top: 60px">{{feature_type.key | upcase}}</h2>
+        <p class="small">{{feature_type.description | capitalize | markdownify }}</p>
+        <!-- <p class="small"><strong>Example Code</strong><span class="micro pad2x">[expression for a SQL where clause]</span></p>
+        {% highlight sql %}--example code [expression for a SQL where clause]--
+{{feature_type.example_code}}{% endhighlight %} -->
+        <div class="space-bottom2 scroll-styled {% unless forloop.last %}dashline-bottom{% endunless %}" style="padding: 0;">
+            <table>
+                <thead class="caps">
+                    <tr>
+                        <th>Key</th>
+                        <th>Value</th>
+                        <th style="width: 85px;">Type</th>
+                        <th>Description</th>
+                        <th style="width: 88px;">Optional Attributes</th>
+                        <th>Rendered Style</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for feature in feature_type.values %}
+                        <a name="{{feature.value}}"></a>
                         <tr>
-                            <th>Key</th>
-                            <th>Value</th>
-                            <th style="width: 85px;">Type</th>
-                            <th>Description</th>
-                            <th style="width: 88px;">Optional Attributes</th>
-                            <th>Rendered Style</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for feature in feature_type.values %}
-                            <a name="{{feature.value}}"></a>
-                            <tr>
-                                <td><strong>{{feature_type.key | downcase}}</strong></td>
-                                <td><em>{{feature.value}}</em></td>
-                                <td>
-                                    {% if feature.geometry contains 'point' %}
-                                        <span class="idcon point" style="margin-top: 3px"></span>
-                                    {% endif %}{% if feature.geometry contains 'line' %}
-                                        <span class="idcon line" style="margin-top: 3px"></span>
-                                    {% endif %}{% if feature.geometry contains 'polygon' %}
-                                        <span class="idcon polygon" style="margin-top: 3px"></span>
-                                    {% endif %}
-                                </td>
-                                <td class="small">{{feature.description | capitalize}}</td>
-                                <td class="small quiet show-opt-row" data-feature="{{feature.value}}"></td>
-                                <td>...</td>
-                            </tr>
-                            {% if feature.optional_attr.size > 0 %}
-                                <tr class="opt-row quiet small {{feature.value}} caps">
-                                    <th>Optional Key</th>
-                                    <th colspan="2">Value(s)</th>
-                                    <th colspan="3">Description</th>
-                                </tr>
-                                {% for attr in feature.optional_attr %}
-                                {% for opt_attr in site.data.optional_attributes %}
-                                {% if attr == opt_attr.key %}
-                                    <tr class="opt-row quiet small {{feature.value}}">
-                                        <td><strong>{{opt_attr.key}}</strong></td>
-                                        <td colspan="2"><em>{{opt_attr.value}}</em></td>
-                                        <td colspan="3">{{opt_attr.description | capitalize}}</td>
-                                    </tr>
+                            <td><strong>{{feature_type.key | downcase}}</strong></td>
+                            <td><em>{{feature.value}}</em></td>
+                            <td>
+                                {% if feature.geometry contains 'point' %}
+                                    <span class="idcon point" style="margin-top: 3px"></span>
+                                {% endif %}{% if feature.geometry contains 'line' %}
+                                    <span class="idcon line" style="margin-top: 3px"></span>
+                                {% endif %}{% if feature.geometry contains 'polygon' %}
+                                    <span class="idcon polygon" style="margin-top: 3px"></span>
                                 {% endif %}
-                                {% endfor %}
-                                {% endfor %}
-                            {% else %}
-                                <tr class="opt-row quiet micro">
-                                    <td colspan="6">none</td>
+                            </td>
+                            <td class="small">{{feature.description | capitalize}}</td>
+                            <td class="small quiet show-opt-row" data-feature="{{feature.value}}"></td>
+                            <td>...</td>
+                        </tr>
+                        {% if feature.optional_attr.size > 0 %}
+                            <tr class="opt-row quiet small {{feature.value}} caps">
+                                <th>Optional Key</th>
+                                <th colspan="2">Value(s)</th>
+                                <th colspan="3">Description</th>
+                            </tr>
+                            {% for attr in feature.optional_attr %}
+                            {% for opt_attr in site.data.optional_attributes %}
+                            {% if attr == opt_attr.key %}
+                                <tr class="opt-row quiet small {{feature.value}}">
+                                    <td><strong>{{opt_attr.key}}</strong></td>
+                                    <td colspan="2"><em>{{opt_attr.value}}</em></td>
+                                    <td colspan="3">{{opt_attr.description | capitalize}}</td>
                                 </tr>
                             {% endif %}
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        {% endfor %}
-    </div>
+                            {% endfor %}
+                            {% endfor %}
+                        {% else %}
+                            <tr class="opt-row quiet micro">
+                                <td colspan="6">none</td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endfor %}
 </div>
