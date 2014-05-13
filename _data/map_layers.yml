@@ -81,6 +81,7 @@
     description: Industrial and artisanal logging concessions
     legend_template: true
     legend_color: '#976A2F'
+    tooltip: operator
     date: 2013
     source:
         name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
