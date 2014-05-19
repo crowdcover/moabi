@@ -25,7 +25,6 @@ basemap:
         z: -1
 
 maplayer_options:
-    filter:
     subset: [moabi_palm, moabi_logging, moabi_forest_lossyear]
 
 report:
@@ -33,7 +32,6 @@ report:
     text: |
         A recent OSFAC and OGF training mission to Ingende District in Equateur has raised questions regarding palm oil expansion in DRC. While scoping training locations, the team visited a palm oil plantation located in Boteka village. The palm oil concession is owned by Feronia PHC - a Canadian company with three plantations in DRC with plans to expand to almost <a href="http://www.feronia.com/Oil-Palm/Operations/default.aspx" title="">108,000 hectares</a>. The Boteka plantation is active and as of June 2013, it has 3,418 hectares under palm oil production. CDC, The UK government’s development finance institution, has invested <a href="http://www.cdcgroup.com/Media/News/CDC-invests-US181m-in-agribusiness-in-the-Democratic-Republic-of-Congo/" title="">$18.1 million dollars</a> in Feronia.
 
-    type:
     layers:
     zoom_to:
       lat: -2.877
@@ -46,7 +44,6 @@ report:
 
        With vast tracks of tropical forest straddling the equator, an abundance of freshwater, and a favorable climate, DRC could follow Indonesia and become a major exporter of palm oil. Questions remain, however, on when and where this expansion will occur as well as the potential impacts the industry could pose to DRC’s rich biodiversity and its rural communities, particularly indigenous peoples.
 
-    type:
     layers: [moabi_palm]
     zoom_to:
       lat: 1.99911
@@ -57,7 +54,6 @@ report:
     text: |
        Further investigation by OSFAC and OGF into the Boteka plantation highlights these concerns. Using a forest cover map, OSFAC were able to draw an approximate boundary for the Boteka plantation. The map illustrates that while there are historical plantations in Ingende, the Boteka plantation does not appear to be included. This was raised with the Ministry of Environment and the Ministry of Agriculture but at a national level neither had information about the Boteka plantation. A request has been filed with Feronia PHC to access their actual plantation boundary and will be added to Moabi as soon as it becomes available.
 
-    type:
     layers: [moabi_palm]
     zoom_to:
       lat: -0.4546
@@ -68,7 +64,6 @@ report:
     text: |
        The Boteka plantation overlaps with BBC logging concession - a Lebanese owned company. OGF contacted BBC but have not been able to confirm whether BBC are aware of the overlap with Boteka plantation. Feronia PHC were also contacted and said they were unaware that their plantation overlapped with the BBC concession.
 
-    type:
     layers: [moabi_palm, moabi_logging]
     zoom_to:
 
@@ -83,31 +78,10 @@ report:
 
        <p class="prose space-bottom4">There is also evidence that between 2006 and 2012 , substantial forest loss occurred in and around the Feronia PHC concession area. <a href="http://rdc.moabi.org/embed/#12/-0.4477/19.1596&layers=moabi_palm,moabi_forest_cover,moabi_forest_lossyear" target="_blank">Detailed analysis</a> of satellite images suggest that the loss was caused by clearance of historical palm plantations not primary rainforest. The Moabi team contacted Feronia PHC plantation with these findings, and they will release a environmental and social impact assessment with further details on their activities in Boteka and their other plantations in DRC in late June 2014.</p>
 
-    type:
     layers: [moabi_forest_lossyear, moabi_palm]
     zoom_to:
       lat: -0.4546
       lon: 19.0259
       zoom: 13
-
-data:
-  - title:
-    type: map-nav
-    description: |
-
-    location:
-
-
-  - title:
-    type: layer-ui
-    description: |
-       Click on a layer to add it to the map.
-
-    layers:
-
-      - name: Palm Oil
-        id: moabi_palm
-
-
 ---
 

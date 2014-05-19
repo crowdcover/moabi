@@ -1,6 +1,7 @@
 ---
 layout: main
 ---
+<!-- report_extended adds custom functionality for the data widgets (layer_ui, nav) -->
 {% assign t = site.data.translations %}
 <div id="map"></div>
 
@@ -55,11 +56,37 @@ layout: main
         </div>
         <!-- Data -->
         <div class="data-container col12 pad2x animate">
-            <div class="data col12 space-bottom4 dashline-bottom">
-                <h2 class="space-bottom1 ">Map Layers</h2>
-                <p class="prose small">Click on a layer to add it to the map.</p>
-                {% include layer_ui.html %}
-            </div>
+            {% for data in page.data %}
+                {% if data.type == 'map-nav' %}
+                    <!-- only supported for the sake of the REDD RISK map -->
+                    <div class="data col12 space-bottom4 dashline-bottom">
+                        <h2 class="space-bottom1 ">{{data.title}}</h2>
+                        <p class="prose small">{{data.description}}</p>
+
+                        <ul class="navigate pillmenu space-bottom1">
+                            {% for button in data.location %}
+                                <li>
+                                    <a data-nav='["{{button.lat}}", "{{button.lon}}", "{{button.zoom}}"]' href="#">{{button.name}}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                {% elsif data.type == 'layer-ui' %}
+                    <div class="data col12 space-bottom4 dashline-bottom">
+                        {% if data.title %}
+                            <h2 class="space-bottom1 ">{{data.title}}</h2>
+                        {% else %}
+                            <h2 class="space-bottom1 ">Map Layers</h2>
+                        {% endif %}
+                        {% if data.description %}
+                            <p class="prose small">{{data.description}}</p>
+                        {% else %}
+                            <p class="prose small">Click on a layer to add it to the map.</p>
+                        {% endif %}
+                        {% include layer_ui.html %}
+                    </div>
+                {% endif %}
+
+            {% endfor %}
             <h2 class="">{{t.[page.language].data_extract.export}}</h2>
                 {% include data_export.html %}
         </div>
