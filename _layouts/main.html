@@ -8,13 +8,13 @@
 
 <body style="position: absolute; top: 0; bottom: 0; width: 100%;">
 
-{% unless page.categories contains 'report' %}
+{% unless page.noheader %}
     {% include header.html %}
 {% endunless %}
 
 {{content}}
 
-{% unless page.categories contains 'report' %}
+{% unless page.nofooter %}
     {% include footer.html %}
 {% endunless %}
 
