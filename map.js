@@ -71,13 +71,6 @@ var moabi = {
         });
     },
 
-    clickActive: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-
-        $(this).addClass('active');
-    },
-
     mapCapture: function(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -284,22 +277,6 @@ var moabi = {
 
         $this.parent('li').siblings('li').children('a.active').removeClass('active');
         $this.addClass('active');
-    },
-
-    toggleLanguage: function(e) {
-        // e.stopPropagation();
-
-        // $this = $(this);
-
-        // if($this.data('lang') == 'en' && moabi.currentLanguage != 'en') {
-        //     moabi.currentLanguage = 'en';
-        //     $this.addClass('active').siblings('.active').removeClass('active');
-
-        // } else if($this.data('lang') == 'fr' && moabi.currentLanguage != 'fr') {
-        //     moabi.currentLanguage = 'fr';
-        //     $this.addClass('active').siblings('.active').removeClass('active');
-
-        // }
     },
 
     legendResize: function() {
