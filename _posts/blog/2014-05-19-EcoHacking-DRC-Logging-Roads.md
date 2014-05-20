@@ -18,7 +18,7 @@ Last weekend was the 2014 [EcoHack](http://ecohack.org/), a hackathon bringing t
 
 ## What We Found
 
-By tracing satellite imagery from 2000 to 2013 overlayed with WRI's [roads dataset](http://www.wri.org/our-work/project/congo-basin-forests/democratic-republic-congo#project-tabs), our team found at least six different areas with logging roads, at least three of which were exhibiting continued development as of 2013.
+By tracing satellite imagery from 2000 to 2013 overlaid with WRI's [roads dataset](http://www.wri.org/our-work/project/congo-basin-forests/democratic-republic-congo#project-tabs), our team found at least six different areas with logging roads, at least three of which were exhibiting continued development as of 2013.
 
 *Note: we have not yet validated all of our findings, so inconsistencies and gaps may exist.*
 
@@ -60,9 +60,9 @@ By tracing satellite imagery from 2000 to 2013 overlayed with WRI's [roads datas
     </table>
 </div>
 
-The pattern of industrial logging roads is distinct in five of the six areas: rectilinear lines that systematically expand to cover new forest plots.  Primary logging roads bisect a large swath of the forest.  Branching off from these, often at right angles, are secondary and tertiary roads that further divide the forested area into rectangles usually 2 kilometers wide and accessible by logging skidders.  The tracks cut by the skidders are not visible by satellite imagery, though these would most likely be futher criscrossing the untraced areas between secondary and tertiary logging roads.
+The pattern of industrial logging roads is distinct in five of the six areas: perpendicular lines that systematically grid new forest plots.  Primary logging roads bisect large swaths of the forest, with secondary and tertiary roads further gridding the area into smaller rectangles accessible by logging skidders.  The tracks cut by the skidders are not visible by satellite imagery, though these would most likely further crisscross the untraced areas between the primary, secondary and tertiary logging roads.
 
-Logging of forest concessions takes place on yearly rotations.  This systematic rotation is clearly visible at the northern-most concession, where logging first expanded in a ring to the north, north west, and east between 2000 and 2005 (red), then, by 2010, expanded further to the east and south (dark orange), then expanded to the north by 2012 (light orange), then filled in an area in the center (yellow).
+Logging of forest concessions takes place on yearly rotations.  This systematic rotation is clearly visible at the northern-most concession, where logging first expanded in a ring to the north, north west, and east between 2000 and 2005 (red); then, by 2010, expanded further to the east and south (dark orange); next expanding to the north by 2012 (light orange), and finally filling in an area in the center by 2013 (yellow).
 
 Zoom in and pan to navigate the map.  Hover over a traced road to find the date it was first observed on satellite imagery.
 
@@ -70,15 +70,15 @@ Zoom in and pan to navigate the map.  Hover over a traced road to find the date 
 
 ## How We Did It
 
-Equateur Province is nearly the size of all of New England and New York State.  In order to systematically map such a wide area in such a small amount of time, we employed the [OSM Tasking Manager](http://tasks.hotosm.org/) to microtask tracing for the entire area.  For map editing, we used a customized deployment of the in-browser iD editor, which saved all edits to our database.  Because the edits were not actively validated during the Hackathon, no edits were pushed to the OSM site itself.
+Equateur Province is nearly the size of all of New England and New York State.  In order to systematically map such a wide area in such a small amount of time, we employed the [OSM Tasking Manager](http://tasks.hotosm.org/) to microtask tracing for the entire area.  For map editing, we used a customized deployment of the in-browser [iD editor](http://learnosm.org/en/editing/id-editor/), which saved all edits to our database.  Because the edits were not actively validated during the hackathon, no edits were pushed to the OSM site itself.
 
-Our work flow looked something like this:
+Our workflow looked something like this:
 
-1) Use the Tasking Manager to grid the province and allow editors to start mapping, grid cell by grid cell.
+1) Grid the area of interest using the Tasking Manager and assign map editors to individual grid cells.
 
 <img class="space-bottom2" src="http://farm6.staticflickr.com/5035/14231717164_8e69dc5135_c.jpg" alt="OSM Tasking Manager" style="height:300px;">
 
-2) Within the Moabi iD instance, explore the existing road network within the grid cell and overlay satellite imagery from all available years: 2000, 2005, 2010, 2012, and 2013.
+2) Within the Moabi iD instance, explore the existing road network within the grid cell (outlined in purple) and overlay satellite imagery from all available years: 2000, 2005, 2010, 2012, and 2013.
 
 <img class="space-bottom2" src="http://farm8.staticflickr.com/7323/14169164633_9ee85067c3_c.jpg" alt="iD Satellite Image buttons" style="height:300px;">
 
@@ -96,4 +96,4 @@ Our work flow looked something like this:
 
 The hack was a great proof of concept, producing some really compelling data while allowing us to demo our online mapping tools with a large, diverse group of users.  Soon, we'll be expanding on what we did here for other areas in the region, improving the workflow and hopefully producing some really valuable data.
 
-We couldn't have pulled this off without active collaboration with so many different partners and contributers, in particular WRI, the EcoHack team, and Etsy, for volunteering their workspace for the hackathon.  Also, a huge thank you to all those at the EcoHack who helped us map.
+We couldn't have pulled this off without active collaboration with so many different partners and contributors, in particular WRI, the EcoHack team, and [Etsy](http://www.etsy.com/), for volunteering their workspace for the hackathon.  Also, a huge thank you to all those at the EcoHack who helped us map.
