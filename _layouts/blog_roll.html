@@ -15,6 +15,7 @@ layout: main
 
 <div class="strongline-bottom fill-light">
 {% for post in site.tags.blog_post %}
+{% unless post.draft %}
 {% if post.language == page.language %}
     <section class="clearfix limiter pad4y {% unless forloop.last %}strongline-bottom{% endunless %} space-bottom2">
         <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
@@ -35,7 +36,8 @@ layout: main
         </div>
         <a href="{{post.url}}">{{t.[page.language].read_more}}</a>
     </section>
-{% else %}{% unless has_translation contains post.id %}
+{% else %}
+    {% unless has_translation contains post.id %}
     <!--  untranslated post -->
     <section class="clearfix limiter pad4y {% unless forloop.last %}strongline-bottom{% endunless %} space-bottom2">
         <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
@@ -57,6 +59,8 @@ layout: main
         </div>
         <a href="{{post.url}}">{{t.[page.language].read_more}}</a>
     </section>
-{% endunless %}{% endif %}
+    {% endunless %}
+{% endif %}
+{% endunless %}
 {% endfor %}
 </div>
