@@ -27,7 +27,7 @@ for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
 var moabi = {
 
     global: function() {
-        $('.click-active').on('click', this.clickActive);
+        $('.map-interaction').on('click', this.mapInteract);
         $('.slider').on('click', 'a', this.slide);
         $('.report-slider').on('click', this.slidePage);
         $('.minor-panel-viewer').on('click', 'a.layer-toggle', this.showMinorPanel);
@@ -69,6 +69,23 @@ var moabi = {
             });
             return totalHeight;
         });
+    },
+
+    mapInteract: function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $this = $(this);
+
+        if($this.data('nav')){
+            var location = $this.data('nav');
+            var latLon = [location[0],location[1]],
+                zoom = location[2];
+
+            map.setView(latLon, zoom);
+        } else if ($this.data('layer-toggle')){
+
+        }
     },
 
     mapCapture: function(e) {
