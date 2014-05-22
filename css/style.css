@@ -254,7 +254,7 @@ h3 a:hover,
   }
   .rounded-toggle input[type=radio]:checked + label {
     background: #F8AA04;
-    box-shadow: inset 0px 2px 3px rgba(0,0,0,0.2);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.2);
   }
   .dark .rounded-toggle input[type=radio]:checked + label {
     color: #444;
@@ -340,6 +340,30 @@ textarea, input[type=password], input[type=text], input[type=number] {
     cursor: default;
   }
 
+
+.map-interaction {
+    display: inline-block;
+    color: rgb(236, 153, 0);
+/*    background-color: rgb(43, 40, 37);
+    background-color: rgba(255,255,255,0.1);*/
+    border: 1px dashed rgb(172, 123, 18);
+    border: 1px dashed rgba(238, 164, 32, 0.6);
+    padding: 0 3px;
+    line-height: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+.map-interaction.active,
+.map-interaction:hover {
+    background-color: rgb(53, 46, 25);
+    background-color: rgba(119, 103, 79, 0.2);
+}
+
+.map-interaction:active {
+    /*color: rgb(255, 222, 161);*/
+    border: 1px dashed rgb(255, 222, 161);
+    background-color: transparent;
+}
 
 /* share controls */
 .mapbox-modal-body {
