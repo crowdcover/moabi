@@ -439,10 +439,10 @@ textarea, input[type=password], input[type=text], input[type=number] {
   border: 1px solid transparent;
   }
   .logo a:hover {
-    border: 1px solid #DDD;
+    /*border: 1px solid #DDD;*/
   }
   .logo img {
-    height: 40px;
+    height: 30px;
   }
 
 .prj-container .prj-info {
@@ -470,10 +470,12 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 
 /* Project Hubs */
-.sidebar {
+.sidebar,
+#map.sidebarred {
   position: absolute;
-  top: 0;
+  top: 42px;
   left: 0;
+  /*bottom: 70px;*/
   bottom: 0;
   }
   .sidebar, .prj-header {

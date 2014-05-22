@@ -1,6 +1,6 @@
 {% assign t = site.data.translations %}
-{% if page.title == 'Data' %}
-<header class="header nav fill-gray dropshadow-down strongline-bottom">
+{% if page.header == 'sidebar' %}
+<header class="header nav fill-gray strongline-bottom contain caps">
     <div class="row1 clearfix">
         <div class="row1 col4 center">
             <a class="pad1 beta" href="{{site.baseurl}}/{{page.language}}" style="background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center; background-size: 100%; display:inline-block; height: 100%; width: 170px"></a>
@@ -20,7 +20,7 @@
     </div>
 </header>
 {% else %}
-<header class="header nav fill-gray dropshadow-down strongline-bottom">
+<header class="header nav fill-gray dropshadow-down strongline-bottom caps">
     <div class="row1 limiter clearfix">
         <div class="col4 mobile-center">
             <a class="logo-h pad1 beta fl" href="{{site.baseurl}}/{{page.language}}"></a>
