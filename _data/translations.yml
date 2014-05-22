@@ -1,7 +1,7 @@
 en:
   coming_soon: Coming soon . . .
   read_more: read more
-  no_translation: this page has not been translated yet
+  no_translation: this page has not yet been translated
 
   header:
     reports: Reports
@@ -70,7 +70,7 @@ en:
 fr:
   coming_soon: A venir . . .
   read_more: read more
-  no_translation: this page has not been translated yet
+  no_translation: this page has not yet been translated
 
   header:
     reports: Rapports
