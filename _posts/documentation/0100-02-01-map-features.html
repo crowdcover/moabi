@@ -12,7 +12,7 @@ tutorial: |
           All features have one **standard attribute** that defines what they are.  Additionally, features can have one or more **optional attributes** that signify additional information about that feature.  For example, a mine can be given an *operator* attribute representing its owner/operator, a mineral attribute representing the mineral(s) being mined, and a handful of other attributes.
 
           ### Types
-          All features can be of one of three **geometry types**: **point**, **line**, or **polygon** (again, similar to most GIS programs).  It is possible for some features to be represented in different types.  For instance, while it doesn't make sense to represent a *transmission_line** as a polygon, a small concession could either be represented as a point marking its center, or as a polygon, outlining its bounds.
+          All features can be of one of three **geometry types**: **point**, **line**, or **polygon** (again, similar to most GIS programs).  It is possible for some features to be represented in different types.  For instance, a small concession could either be represented as a point marking the concession center, or as a polygon outlining its boundary.
 ---
 <div style="overflow: hidden;">
     <div>
@@ -22,14 +22,14 @@ tutorial: |
         </div>
     </div>
     <div class="pad2y clearfix dashline-bottom hide-mobile">
-        <div class="table-contents keyline-all fill-gray">
-            <ul class="pad2y">
+        <div class="table-contents keyline-all fill-gray small pad2y">
+            <ul class="">
                 {% for feature_type in site.data.attribute-structure %}
                     <li class="pad4x pad0y">
                         <a href="#{{feature_type.key}}">{{feature_type.key | upcase }}</a>
                         <ul>
                             {% for feature in feature_type.values %}
-                                <li class="pad2x pad0y">
+                                <li class="pad2x">
                                     <a href="#{{feature.value}}">{{feature.value | capitalize }}</a>
                                 </li>
                             {% endfor %}
