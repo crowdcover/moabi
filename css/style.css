@@ -463,7 +463,7 @@ textarea, input[type=password], input[type=text], input[type=number] {
   -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
 }
 
-.grayscale.disappear:hover {
+.grayscale.fadeout:hover {
   filter: none;
   -webkit-filter: grayscale(0%);
 }
