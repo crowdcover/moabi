@@ -9,7 +9,7 @@ title: Hacking Logging Roads
 subtitle: Moabi and WRI teamed up at the Brooklyn EcoHack last weekend to map logging roads in Equateur Province.  Check out the results.
 author: James Conkling
 img: https://farm8.staticflickr.com/7350/14198779724_8f4b1721ba_c.jpg
-draft: true
+draft:
 ---
 
 Last weekend was the 2014 [EcoHack](http://ecohack.org/), a hackathon bringing together scientists, programmers and designers to collaborate on environmental themed projects.  To take advantage of such talent, Moabi and the [World Resource Institute](http://www.wri.org/) teamed up to map logging roads in Equateur Province, in eastern DRC.  Bringing together data from WRI and OSM, the hackathon was the perfect place to demo Moabi tools, in particular our clone of the [iD editor](http://learnosm.org/en/editing/id-editor/).
