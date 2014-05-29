@@ -1,6 +1,9 @@
   - key: name
     value: '*'
     description: The default name of the feature.
+  - key: license
+    value: '*'
+    description: The license type of a concession
   - key: operator
     value: '*'
     description: The owner/operator of the feature, as in the case of a concession or industrial project.
@@ -10,6 +13,17 @@
   - key: resource
     value: tin, gold, copper, timber, palm_oil
     description: For any feature that relates to resource extraction, the resource(s) involved.
+
+  - key: application_date
+    value: '{date}'
+    description: The application date of a concession
+  - key: grant_date
+    value: '{date}'
+    description: The grant date of a concession
+  - key: expiration_date
+    value: '{date}'
+    description: The expiration date of a concession
+
   - key: artisanal
     value: yes/no
     description: In the case of a concession, whether or not it is artisanal
