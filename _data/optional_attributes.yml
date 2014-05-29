@@ -7,9 +7,9 @@
   - key: status
     value: active, inactive, under_review, unknown, illegal
     description: The operational status of the feature, as in the case of a concession or industrial project.
-  - key: mineral
-    value: tin, tantalum, tungsten, gold, copper
-    description: For any feature that relates to mineral extraction, the mineral(s) involved.
+  - key: resource
+    value: tin, gold, copper, timber, palm_oil
+    description: For any feature that relates to resource extraction, the resource(s) involved.
   - key: artisanal
     value: yes/no
     description: In the case of a concession, whether or not it is artisanal

@@ -8,22 +8,22 @@
       - value: mining
         geometry: [point, polygon]
         description: An area of land allocated for mineral extraction
-        optional_attr: [name, operator, status, mineral, artisanal, area]
+        optional_attr: [license, status, operator, resource, artisanal, application_date, grant_date, expiration_date]
         rendered:
       - value: logging
         geometry: [point, polygon]
         description: An area of land allocated for timber extraction
-        optional_attr: [name, operator, status, artisanal, area]
+        optional_attr: [name, operator, status, artisanal, application_date, grant_date, expiration_date]
         rendered:
       - value: agriculture
         geometry: [point, polygon]
         description: An area of land allocated for industrial-scale agriculture
-        optional_attr: [name, operator, status, area]
+        optional_attr: [name, operator, status, application_date, grant_date, expiration_date]
         rendered:
       - value: oil
         geometry: [point, polygon]
         description: An area of land allocated for the extraction of oil or hydrocarbons
-        optional_attr: [name, operator, status, area]
+        optional_attr: [name, operator, status, application_date, grant_date, expiration_date]
         rendered:
 
   - key: territory

@@ -90,11 +90,11 @@
   - id: moabi_mining
     name: Mining Concessions
     categories: [concession]
-    description: All mining concessions, categorized as one of three main permit types':' 1) Exploitation permits, 2) research permits and 3) artisanal exploitation area
+    description: All mining concessions, either in the application phase, in the research phase, actively being exploited, or under review.
     legend_template: true
     legend_color: '#fae78f'
-    date: 2014
-    tooltip: operator, operational_status, concession_type
+    date: April 2014
+    tooltip: license, status, operator, resource, application_date, grant_date, expiration_date
     source:
         name: Cadastre Minier (CAMI)
         url:
