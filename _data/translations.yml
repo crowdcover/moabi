@@ -61,6 +61,7 @@ en:
   blog:
 
   documentation:
+    guides: Guides
     training: Training Materials
     data_documentation: Documentation
 
@@ -130,6 +131,7 @@ fr:
   blog:
 
   documentation:
+    guides: Guides
     training: Training Materials
     data_documentation: Documentation
 

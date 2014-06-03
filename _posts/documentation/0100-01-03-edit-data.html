@@ -2,7 +2,7 @@
 layout: documentation
 language: en
 tags:
-  - training
+  - guide
 categories:
   - en
 ---
@@ -12,70 +12,93 @@ categories:
 
 *This tutorial covers editing and updating data already loaded onto Moabi.  If you are looking to upload data that does not yet exist on Moabi, see the* [Upload Data Tutorial]({{site.baseurl}}/upload-data/en/).
 
-*<span style="color: orange;">Orange Text is specific to the EcoHackathon.</span>*
 
-Moabi uses iD to edit existing data.  With iD, users can update map feature attributes, add new attributes to features, improve the geometry of features, and even add new hand-drawn features.  All edits happen within the browser, so as long as your browser is up to date, you will not need to download any additional software.
+Moabi uses the **iD editor** to edit existing data.  With iD, users can:
+
+1. update map feature attributes,
+2. add new attributes to features,
+3. improve the geometry of features,
+4. add new traced features.
+
+All edits happen within the browser, so as long as your browser is up to date, you will not need to download any additional software.
 
 To begin with, go to the **[Moabi Browse Page](http://osm.moabi.org/)**.
 
-[]
+![](https://farm4.staticflickr.com/3865/14309594156_6e0645ea74_c.jpg)
+
+
 
 ## Getting Started
 
+In the *Browse Page*, you can explore the existing map layers on the right, and interact with the map as you would elsewhere on the site.
+
+### Sign Up/Sign In
+
+If you have not already done so, click the **Sign Up** button in the top right to create an account.
+
+![](https://farm4.staticflickr.com/3835/14352920173_a14df46d9a_o.png)
+
+Enter your email, username, a password and click **Sign Up**.  You will need to confirm your account by email and agree to the **Terms of Service**, stating simply that all data will be licensed in the public domain.  Moabi is built as a clone of the open source **OpenStreetMap** project; much of the look and feel of the site still reflects OSM.
+
+### Exploring the Map
+
+Click and hold on the map to pan.  To zoom in, either click the **+** button in the top right, double click on a location in the map, scroll up while your cursor is over the map, or hold *shift* and click to draw a bounding box over the map.  To zoom out, click the **-** button or scroll down.
+
+To view a map data layer, click on the <span class="idcon layers"></span> **layers** button and select that layer.  The **Moabi Browse Page** opens up a host of advanced functionality for examining a map feature, including its history, its entire attribute list, and its OSM XML structure.  To learn more about the underlying data model, go to the [Advanced Funtionality Page]({{site.baseurl}}/advanced-funtionality/{{page.language}}).  If instead you simply want to explore one or more map layers, go to the [Map Data Page]({{site.baseurl}}/data/{{page.language}})
 
 
-In the *Browse Page*, you can explore the existing map layers on the right, and interact with the map as you would elsewhere on the site.  First, click the **Sign Up** button in the top right to create an account.
 
-[]
+## Editing data
 
-Enter your email, username, a password and click **sign up**.  You will need to confirm your account by email and agree to the **Terms of Service**, stating simply that all data will be licensed in the public domain.  Moabi is built as a clone of the open source **OpenStreetMap** project; at the time of this project much of the look and feel (and branding) of the site still reflects OSM.
-
+<!-- Under the **Edit** dropdown, choose **Edit with iD**, the default, in-broswer editor for Moabi. -->
 
 Editing data can follow one of two similar possible paths:
 
-1. Adding additional features by hand
+1. Updating existing features
 
-2. Updating existing features
+2. Trace new features by hand
 
 
 ***
 
-## Adding Features By Hand
+### Updating Existing Features
 
-Using the **iD Editor's** satellite layer or another custom tile layer as reference, users can easily define new features, either as **points**, **lines**, or **polygons**, and specify their attributes.  <span style="color: orange;">For the EcoHackathon, we will be using a few different layers, including:</span>
+If data already in the Moabi database is outdated, incomplete, or incorrect, it is possible to update the feature within the browser.  Having the tools to easily update geometry and attribute information within the browser makes collaborating on large datasets comparatively easy.  Some things to keep in mind, though.  In order to be editable, all on-screen features need to be loaded into the browser.  In order to not crash your browser, data is only editable at zoom level **14** or higher.
 
-<ol style="color: orange;">
-    <li>iD's default satellite layer from Bing Maps.</li>
-    <li>A Layer displaying </li>
-</ol>
+1. In this example, imagine we learned that the reference name of one of the roads in the **Road Rehabilitation** layer was incorrect.  First, open the map **Layers** tab <span class="idcon layers" style="margin-top: 3px"></span> and select the **Transport** layer.  Click on the layer to view it in the map and zoom in on the feature until the **Map Data** checkbox button in the bottom right is no longer grayed out.  Click **Map Data** to enable editing of map data.
+![](https://farm4.staticflickr.com/3850/14309593446_37868794ce_c.jpg)
+
+2. After a few seconds, all map features within the browser window should be outlined with a thick blue stoke.  Click on the road feature that needs updating to select it, and in the dropdown menu to the right of the **Edit** button click **Edit with iD**.
+![](https://farm4.staticflickr.com/3868/14146071038_558fbca72f_c.jpg)
+
+3. You are now in the **iD Editor** with your selected feature loaded.  The editor should look similar to the browse page, except that the background is now a satellite image layer.  In the left hand panel, you can view and edit information on the feature's attributes.  Click on **All Tags** to add new tags to the feature.  For example, here we can update the **ref tag**.
+![](https://farm4.staticflickr.com/3862/14329392531_0a703094cb_c.jpg)
+
+4. In the map window, click and drag a feature's nodes to position or shape.  For example, with the satellite layer as reference, notice how our road feature is not quite aligned correctly.  By dragging all mis-aligned nodes to their correct location, users can greatly improve the precision of their geometries and correct incorrect geometries.
+![](https://farm4.staticflickr.com/3848/14146108740_40e5b17930_c.jpg)
 
 ***
 
-## Updating Existing Features
+### Tracing New Features
 
-Occasionally, features on the system might be shown to be incorrect, out of date, or missing additional attribute data.  This could happen for any number of reasons:
+Using the **iD Editor's** satellite layer, users can easily define new features, either as <span class="idcon point"></span> **points**, <span class="idcon line"></span> **lines**, or <span class="idcon polygon"></span> **polygons**, and specify their attributes.
 
-* The data could be uploaded with low geographic precision so that the features only roughly track the real world content they are supposed to represent.
+1. In this example, imagine we found evidence of logging roads that were not already in the database. (*for more on tracing and dating logging roads, see [our training]({{site.baseurl}}/EcoHackathon/{{page.language}}) we led with the World Resource Institute at the May 2014 EcoHackathon and the accompanying [blog post]({{site.baseurl}}/EcoHacking-DRC-Logging-Roads/{{page.language}})*)  Within the iD editor, navigate to your area of interest and zoom in until the editing buttons at the top of the map are no longer grayed out.
+![](https://farm4.staticflickr.com/3882/14333190235_0f78957f04_z.jpg)
 
-* The data could be out of date.
+2. Click the <span class="idcon line"></span>**line** button and start tracing.  Click once on the map to start the line, click again to create a line vertex, and click that vertex again to finish tracing that line.
+![](https://farm4.staticflickr.com/3844/14146057109_06144eb8b9_c.jpg)
 
-* Or additional information might have been descovered since the data was collected and uploaded.
+
+3. When you have finished tracing a feature, the attribute definition box appears, with some default attributes already visible (in this case, Road, Power Line, and Line).  If your feature is not already shown, search for it in the search bar at the top.  In this case, we choose **unclassified road** from the **road** dropdown.
+![](https://farm3.staticflickr.com/2919/14146054219_9478fc2090_c.jpg)
+
+4. Next, add additional optional tags (*read more about optional tags [here]({{site.baseurl}}/map-features/{{page.language}})*).  In this case, we add the optional tag `logging = yes`.
+![](https://farm4.staticflickr.com/3838/14331986554_ce81203bf9_z.jpg)
+
+5. If you are satisfied with your edits, click the **Save** button at the top and add a brief commit message describing what you edited.  If you think you made a mistake, click the undo button or simply refresh the page.
+![](https://farm3.staticflickr.com/2908/14331986424_5c7048e7db_z.jpg)
 
 
-Having the tools to easily update geometry and attribute information within the browser makes collaborating on large datasets comparatively easy.  Some things to keep in mind, though.  Because Moabi hosts such large amounts of data, and in order to be editable, all on-screen features need to be loaded into the browser, it is only possible to edit data at zoom level **14** or higher.
-
-In this example, imagine we learned that the status of one of the roads in the **Road Rehabilitation** layer had changed.  First, open the map **Layers** tab <span class="idcon layers" style="margin-top: 3px"></span> and select the **Transport** layer.  Click on the layer to view it in the map and zoom in on the feature until the **Map Data** checkbox button in the bottom right is no longer grayed out.
-
-[]
-
-After a few seconds, all map features within the browser window should be outlined with a thick blue stoke.  Click on the road feature that needs updating to select it, and in the dropdown menu to the right of the **Edit** button click **Edit with iD**.
-
-[]
-
-You are now in the **iD Editor** with your selected feature loaded.  The editor should look similar to the browse page, except that the background is now a satellite image layer.  In the left hand panel, you can view and edit information on the feature's attributes.  Click on **All Tags** to add new tags to the feature.  For example, here we can update the **proposed tag**.
-
-[]
-
-In the map window, click and drag a feature's nodes to position or shape.  For example, with the satellite layer as reference, notice how our road feature is not quite aligned correctly.  By dragging all mis-aligned nodes to their correct location, users can greatly improve the precision of their geometries and correct incorrect geometries.
 
 
