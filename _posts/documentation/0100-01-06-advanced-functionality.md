@@ -8,9 +8,25 @@ categories:
 ---
 # Advanced Functionality
 
-*This section covers the more advanced functionality of the **Browse Page**, in particular, how to examine a feature's history, its entire attribute list, and its OSM XML structure.  Before reading more, it might be useful to read up on the technical components of the OSM data model first.  Find more on the [OSM Wiki](http://wiki.openstreetmap.org/wiki/Main_Page), or an OSM tutorial page like [switch2osm](http://switch2osm.org/).*
+*This section covers the more advanced functionality of the **Browse Page**.  Before reading more, it might be useful to read up on the technical components of the OSM data model first.  Find more on the [OSM Wiki](http://wiki.openstreetmap.org/wiki/Main_Page), or an OSM tutorial page like [switch2osm](http://switch2osm.org/).*
 
 ***
+
+The **[Moabi Browse Page](osm.moabi.org)** allows users to explore detailed information about data in the database.  Within this page, it is possible to find details on the following:
+
+1. Detailed Feature Data, including:
+  * A feature's history, including when it was uploaded, by whom, and information on subsequent edits, if any.
+
+  * A detailed listing of its XML structure, including a list of nodes, ways, and relations of which it is a part.
+
+  * A full attribute list.
+
+2. Changeset History, including:
+  * A full log of changesets, including all uploads and edits grouped by their commit message.
+
+  * The bounding box of each changeset, outlining the geographic extent of the changes.
+
+If you are familiar with how to navigate the OSM home page, much of this should be familiar.
 
 
 ## Detailed Feature Data
@@ -37,11 +53,11 @@ We can also download an XML file for the feature.
 
 ## Changeset History
 
-To view data on who uploaded data and when, click on the **History** button.  On the left is a list of all **changesets**, including each **commit message**, the **user name** of the uploader, and the **commit date**.  Within the map, an orange **bounding box** outlines the extent of the changeset.  Click on either the changeset list item or the chagneset bounding box to view more information on the individual features.
+To view data on who uploaded data and when, click on the **History** button.  On the left is a list of all **changesets**, including each **commit message**, the **user name** of the uploader, and the **commit date**.  Within the map, an orange **bounding box** outlines the extent of the changeset.
 
 ![](https://farm4.staticflickr.com/3893/14353102453_4d61e8c917_z.jpg)
 
-This could be useful for a number of reasons:
+Click on either the changeset list item or the chagneset bounding box to view more information on the individual features of that changeset.  This could be useful for a number of reasons:
 
 1. You find a feature that looks out of place and are interested in when it was uploaded, by whom, and what other features it was uploaded with.
 
