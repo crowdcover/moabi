@@ -404,10 +404,16 @@ textarea, input[type=password], input[type=text], input[type=number] {
     background-color: rgba(0,0,0,0.6);
   }
 
-.header {
+header {
   letter-spacing: 1px;
-  z-index: 1;
   font-family: 'Open Sans Bold', sans-serif;
+  }
+
+footer a {
+  display: inline-block;
+  }
+  footer img {
+    height: 30px;
   }
 
 .landing {
@@ -433,17 +439,6 @@ textarea, input[type=password], input[type=text], input[type=number] {
     background-color: rgba(255, 252, 248, 0.2);
   }
 
-
-.logo a {
-  display: inline-block;
-  border: 1px solid transparent;
-  }
-  .logo a:hover {
-    /*border: 1px solid #DDD;*/
-  }
-  .logo img {
-    height: 30px;
-  }
 
 .prj-container .prj-info {
   }
@@ -763,6 +758,10 @@ table tr.opt-row td {
   h2.prose {
     line-height: 30px;
   }
+
+.prose p img {
+  margin: 10px 0;
+}
 
 
 
