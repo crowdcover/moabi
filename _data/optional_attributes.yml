@@ -11,7 +11,7 @@
     value: active, inactive, under_review, unknown, illegal
     description: The operational status of the feature, as in the case of a concession or industrial project.
   - key: resource
-    value: tin, gold, copper, timber, palm_oil
+    value: '*'
     description: For any feature that relates to resource extraction, the resource(s) involved.
 
   - key: application_date
