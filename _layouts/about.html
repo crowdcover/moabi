@@ -4,7 +4,7 @@ layout: main
 {% assign t = site.data.translations %}
 <div class="fill-light strongline-bottom">
     <div class="limiter pad4y clearfix">
-        <div class="col3 margin1r keyline-right space">
+        <div class="col3 margin1r keyline-right space noprint">
             <h2 class="pad2x keyline-bottom space-bottom1">{{t.[page.language].header.about}}</h2>
             <ul class="nav space-bottom2">
                 {% for about_page in site.tags.about reversed %}{% if about_page.language == page.language %}
