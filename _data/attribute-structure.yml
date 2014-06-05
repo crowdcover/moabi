@@ -47,12 +47,12 @@
       - value: redd
         geometry: [polygon]
         description: land marked for conservation as part of the UN REDD+ process
-        optional_attr: [name, area]
+        optional_attr: [name]
         rendered:
       - value: protected_area
         geometry: [polygon]
         description: land marked for conservation as part of the government's environmental program.
-        optional_attr: [name, status, area]
+        optional_attr: [name, status]
 
   - key: highway
     description: Roads flagged for redevelopment under the road rehabilitation project.  As more data is imported from OSM, the tag scheme will expand to resemble [OSM Highway key](http://wiki.openstreetmap.org/wiki/Map_Features#Highway).

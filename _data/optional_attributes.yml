@@ -27,9 +27,6 @@
   - key: artisanal
     value: yes/no
     description: In the case of a concession, whether or not it is artisanal
-  - key: area
-    value: num
-    description: The feature area, in sqkm.
   - key: ethnicity
     value: '*'
     description: For any feature denoting land claim or ownership, the ethnicity(ies) making the claim.
