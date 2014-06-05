@@ -6,13 +6,22 @@ tags:
 categories:
   - en
 tutorial: |
-          Within the Moabi database, all vector features are defined by a standardized set of **attributes** or tags.  Attributes (aka tags) are defined as *key-value pairs*, similar to how most GIS programs define data.  This ensures that data coming from different sources are stored and rendered in a consistent manner.
+          Within the Moabi database, all vector features are defined by a standardized set of **attributes** or tags.  Attributes (aka tags) are defined as **key-value pairs**, similar to how most GIS programs define data.  This ensures that data coming from different sources are stored and rendered in a consistent manner.
 
-          ### Attributes
-          All features have one **standard attribute** that defines what they are.  Additionally, features can have one or more **optional attributes** that signify additional information about that feature.  For example, a mine can be given an *operator* attribute representing its owner/operator, a mineral attribute representing the mineral(s) being mined, and a handful of other attributes.
+          ## Attributes
+          All features are defined by a series of different attributes
 
-          ### Types
-          All features can be of one of three **geometry types**: **point**, **line**, or **polygon** (again, similar to most GIS programs).  It is possible for some features to be represented in different types.  For instance, a small concession could either be represented as a point marking the concession center, or as a polygon outlining its boundary.
+          ### STANDARD ATTRIBUTES
+          All features have one standard attribute that defines what they are.  For example, all mining concessions must have the attribute `concession=mine`, while all logging concessions must have the attribute `concession=logging`.
+
+          ### OPTIONAL ATTRIBUTES
+          Additionally, features can have zero or more optional attributes that signify additional information about that feature.  For example, a mine can be given an `operator={text}` attribute representing its owner/operator, a `resource={text}` attribute representing the mineral(s) being mined, as well as a number of other attributes.
+
+          ### DEFAULT ATTRIBUTES
+          All features are also given automatically generated default attributes, depending on their **feature type**.  For example, the platform will calculate an area for all **polygons**, a length for all **lines**, and a province and district location for all features (**point**, **line**, and **polygon**).  Because of this, it is not necessary to include information on area, length, or administrative location when uploading or editing feature attributes.
+
+          ## Feature Types
+          All features can be of one of three **types**: **point**, **line**, or **polygon** (again, similar to most GIS programs).  It is possible for some features to be represented in different types.  For instance, a small concession could either be represented as a point marking the concession center, or as a polygon outlining its boundary.
 ---
 <div style="overflow: hidden;">
     <div>
