@@ -68,11 +68,15 @@ Congratulations!  Your dataset should now be ready to upload.  Simply add it to 
 
 In summary, some good things to keep in mind:
 
-* Attribute names of imported datasets must match exactly with the names documented in the **[Map Features]({{site.baseurl}}/map-features/{{page.language}})** page.  Attribute values should reflect the values that already exist in the database.
+* Attribute keys of imported datasets must match exactly with the keys documented in the **[Map Features]({{site.baseurl}}/map-features/{{page.language}})** page.  Attribute values should reflect the values that already exist in the database.
 
-* All attribute names and values should be lower case.
+* All attribute keys should be lower case.
 
-* All spaces in attribute names should be replaced by an underscore: `_`.
+* All spaces in attribute keys should be replaced by an underscore: `_`.
+
+* Attribute values that contain multiple values should be separated by a comma and space (`, `).  For instance, if a mining concession extracts multiple minerals, the feature would be tagged with the attribute `**resource**=*Au, Diamant, Fe*`.
+
+* True/false (aka *boolean*) attributes should only be present for features where the attribute is true.  For instance, while an artisanal mine needs to be tagged with an `artisanal=yes` attribute, there is no need for an industrial concession to be tagged with `artisanal=no`.
 
 * if you are unsure about any of these guidlines, or are having trouble preparing your dataset, [Get in touch](mailto:info@crowdcover.org) with us.  We are always willing to help out with the process.
 
