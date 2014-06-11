@@ -1,9 +1,5 @@
   - key: concession
     description: land sold or rented to a private or state-owned industry for the extraction of natural resources.
-    example_code: |
-      concession = 'mining'
-      -- or
-      concession = 'mining' and operator = 'CEBA sprl' and artisanal = 'yes'
     values:
       - value: mining
         geometry: [point, polygon]
@@ -27,27 +23,21 @@
         rendered:
 
   - key: territory
-    description: land claimed by a specific group or peoples.
-    example_code: |
-                 territory = 'indigenous'
+    description: Land claimed by a specific group or peoples.
     values:
       - value: indigenous
         geometry: [polygon]
-        description: land inhabited by an indignous group.
+        description: Land inhabited by an indignous group.
         optional_attr: [ethnicity]
         rendered:
 
   - key: landuse
-    description: used to describe the purpose for which an area of land is being used--more general than concession or territory.
-    example_code: |
-                 landuse = 'redd'
-                 -- or
-                 landuse = 'redd' and area > 270000
+    description: Used to describe the purpose for which an area of land is being used--more general than concession or territory.
     values:
       - value: redd
         geometry: [polygon]
         description: land marked for conservation as part of the UN REDD+ process
-        optional_attr: [name]
+        optional_attr: [name, status, project_leader, methodology, start_date, end_date, project_leader, contact_person, contact_email]
         rendered:
       - value: protected_area
         geometry: [polygon]
@@ -55,49 +45,40 @@
         optional_attr: [name, status]
 
   - key: highway
-    description: Roads flagged for redevelopment under the road rehabilitation project.  As more data is imported from OSM, the tag scheme will expand to resemble [OSM Highway key](http://wiki.openstreetmap.org/wiki/Map_Features#Highway).
-    example_code:
+    description: Roads, either existing or planned, relating to general public transportation or to a specific land use project.  Important optional attributes include 'proposed' and 'logging'.
     values:
-      - value: proposed
+      - value: motorway
         geometry: [line]
-        description: Road rehabilitation projects currently being undertaken in DRC
-        optional_attr: [name, ref, status]
-      # - value: motorway
-      #   geometry: [line]
-      #   description: A restricted access major divided highway, normally with 2 or more running lanes plus emergency hard shoulder. Equivalent to the Freeway, Autobahn, etc.
-      #   optional_attr: [name, ref, oneway, lanes, desination]
-      # - value: trunk
-      #   geometry: [line]
-      #   description: The most important roads in a country's system that aren't motorways.
-      #   optional_attr: [name, ref, oneway, lanes, desination]
-      # - value: primary
-      #   geometry: [line]
-      #   description: The next most important roads in a country's system--often link larger towns.
-      #   optional_attr: [name, ref, oneway, lanes, desination]
+        description: A restricted access major divided highway, normally with 2 or more running lanes plus emergency hard shoulder. Equivalent to the Freeway, Autobahn, etc.
+        optional_attr: [name, ref, proposed, logging]
+      - value: trunk
+        geometry: [line]
+        description: The most important roads in a country's system that aren't motorways.
+        optional_attr: [name, ref, proposed, logging]
+      - value: primary
+        geometry: [line]
+        description: The next most important roads in a country's system--often link larger towns.
+        optional_attr: [name, ref, proposed, logging]
       # - value: secondary
       #   geometry: [line]
       #   description: The next most important roads in a country's system--often link smaller towns and villages.
-      #   optional_attr: [name, ref, oneway, lanes, desination]
+      #   optional_attr: [name, ref, proposed, logging]
       # - value: tertiary
       #   geometry: [line]
       #   description: The next most important roads in a country's system.
-      #   optional_attr: [name, ref, oneway, lanes, desination]
+      #   optional_attr: [name, ref, proposed, logging]
       # - value: residential
       #   geometry: [line]
       #   description: Roads which are primarily lined with and serve as an access to housing.
-      #   optional_attr: [name, ref, oneway, lanes, desination]
+      #   optional_attr: [name, ref, proposed, logging]
       # - value: service
       #   geometry: [line]
       #   description: For access roads to, or within an industrial estate, camp site, business park, car park etc.
-      #   optional_attr: [name, ref, oneway, lanes, desination]
+      #   optional_attr: [name, ref, proposed, logging]
 
 
   - key: energy
     description: any infrastructure involved in energy production or transmission.
-    example_code: |
-                 energy = 'dam'
-                 -- or
-                 energy = 'dam' and status = 'proposed'
     values:
       - value: dam
         geometry: [point, polygon]

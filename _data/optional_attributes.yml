@@ -1,17 +1,17 @@
   - key: name
-    value: '*'
+    value: '{text}'
     description: The default name of the feature.
   - key: license
-    value: '*'
+    value: '{text}'
     description: The license type of a concession
   - key: operator
-    value: '*'
+    value: '{text}'
     description: The owner/operator of the feature, as in the case of a concession or industrial project.
   - key: status
-    value: active, inactive, under_review, unknown, illegal
+    value: '{text}'
     description: The operational status of the feature, as in the case of a concession or industrial project.
   - key: resource
-    value: '*'
+    value: '{text}'
     description: For any feature that relates to resource extraction, the resource(s) involved.
 
   - key: application_date
@@ -23,16 +23,45 @@
   - key: expiration_date
     value: '{date}'
     description: The expiration date of a concession
+  - key: start_date
+    value: '{date}'
+    description: The start date for any land use project.
+  - key: end_date
+    value: '{date}'
+    description: The end date for any land use project.
+
+# redd
+  - key: methodology
+    value: '{text}'
+    description: For any landuse or environmental project, the method(s) used to complete the project.
+  - key: project_leader
+    value: '{text}'
+    description: For any landuse or environmental project, the organizational leader of the project.
+  - key: contact_person
+    value: '{text}'
+    description: For any landuse or environmental project, the project contact.
+  - key: contact_email
+    value: '{text}'
+    description: For any landuse or environmental project, the project contact's email.
 
   - key: artisanal
-    value: yes/no
+    value: yes
     description: In the case of a concession, whether or not it is artisanal
+
   - key: ethnicity
-    value: '*'
+    value: '{text}'
     description: For any feature denoting land claim or ownership, the ethnicity(ies) making the claim.
+
   - key: ref
-    value: '*'
+    value: '{text}'
     description: Road reference name (distinct from name attribute).
+  - key: proposed
+    value: yes
+    description: This road has been flagged for redevelopment under the road rehabilitation project.
+  - key: logging
+    value: yes
+    description: This road is used in timber extraction, not for general public transportation.
+
   - key: capacity
-    value: num
+    value: '{num}'
     description: For an electrical feature (e.g. Dam or Transmission Line), the electrical capacity (MW•h).
