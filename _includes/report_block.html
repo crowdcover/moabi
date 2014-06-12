@@ -1,0 +1,24 @@
+<div class="prose space-bottom grayscale fadeout round animate" style="background-image: url({{r.img}}); overflow: hidden;">
+    {% if r.draft %}
+        <a class="row6 clearfix prj-hidden gradient" href="#" style="background-color: rgba(0,0,0,0.4);">
+    {% else %}
+        <a class="row6 clearfix gradient" href="{{r.url}}" style="background-color: rgba(0,0,0,0.4);">
+    {% endif %}
+            <div class="pad2y clearfix dark limiter text-shadow mobile-center contain animate">
+                <div class="col3 pad1x pad2y">
+                    <h2 style="padding:0;">{{r.title | capitalize}}</h2>
+                </div>
+                <div class="col9 pad1x pad2y">
+                    {% if r.draft %}
+                        <p><em>{{t.[page.language].coming_soon}}</em></p>
+                        <p>{{r.description | truncate:220 }} </p>
+                    {% elsif {{include.needs_translation}} == 'true' %}
+                        <p><em>needs translation</em></p>
+                        <p>{{r.description | truncate:220 }}</p>
+                    {% else %}
+                        <p>{{r.description | truncate:320 }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </a>
+</div>
