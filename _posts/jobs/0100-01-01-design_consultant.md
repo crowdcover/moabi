@@ -50,8 +50,8 @@ Based in DC
 ## Remuneration
 Payment will be negotiable and commensurate with experience
 
-## Application and deadline
-**Please send your resume and portfolio to jamesconkling@crowdcover.org by May 7th, 2014**
+## Application
+Please send your resume and portfolio to [jamesconkling@crowdcover.org](mailto:jamesconkling@crowdcover.org).
 
 
 
