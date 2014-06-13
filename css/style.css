@@ -145,19 +145,19 @@ a.desaturate { text-decoration: underline; color: #7F7F7F; }
 .dark a.desaturate { text-decoration: underline; color: #DDD; }
 a.desaturate:hover { color: #999;}
 
-/* 3) link state navigate: header, headings */
+/* 3) link state navigate: header, headings, sidebar nav */
 h1 a,
 h2 a,
 h3 a,
-header a { color: #404040; }
+.nav a { color: #404040; }
 
 h1 a:hover,
 h2 a:hover,
 h3 a:hover,
-header a:hover { color: #888; }
+.nav a:hover { color: #888; }
 
-header a.active,
-header a:active { color: #29abe2; }/* blue || { color: #FF8F00; } /* darker red orange */
+.nav a.active,
+.nav a:active { color: #29abe2; }/* blue || { color: #FF8F00; } /* darker red orange */
 
 /* 4) link state activate: layer_ui, */
 .activate a {
