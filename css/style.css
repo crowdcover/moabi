@@ -34,7 +34,7 @@ footer a {
   display: inline-block;
   }
   footer img {
-    height: 30px;
+    height: 28px;
   }
 
 /* typography and spacing */
@@ -453,8 +453,26 @@ textarea, input[type=password], input[type=text], input[type=number] {
     background-color: rgba(255, 252, 248, 0.2);
   }
 
+/* Sidebarred map pages: data,... */
+#sbar, #map.mbar {
+    position: absolute;
+    top: 42px; /* header height */
+    bottom: 68px; /* footer height */
+  }
+  #sbar {
+    width: 34%;
+    min-width: 360px;
+    max-width: 470px;
+  }
+  #map.mbar {
+    right: 0;
+    width: 66%;
+    max-width: calc(100% - 360px);
+    min-width: calc(100% - 470px);
+  }
 
-/* Project Hubs */
+
+/* Report Hubs */
 .sidebar,
 #map.sidebarred {
   position: absolute;

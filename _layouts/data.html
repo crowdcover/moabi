@@ -15,26 +15,26 @@ maplayer_options:
     subset: false
 
 header: sidebar
+footer: sidebar
 ---
 {% assign t = site.data.translations %}
-<div class="clearfix strongline-bottom">
-    <div class="col4 row16 pad1x fill-light strongline-right dropshadow-right">
-        <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
-            <div class='slider tabs col10 mobile-cols margin1 pad1y clearfix'>
-                <a data-index="1" class='col6 active'>{{t.[page.language].data.visualize}}</a><!--
-             --><a data-index="2" class='col6'>{{t.[page.language].data.export}}</a>
-            </div>
-        </div>
-        <div class="col12 row16 pad2y clip sliding h active1">
-
-            {% include layer_ui.html %}
-
-            <div class="col12 animate">
-                {% include data_export.html %}
-            </div>
+<div id="sbar" class="pad1x fill-light strongline-right dropshadow-right">
+    <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
+        <div class='slider tabs col10 mobile-cols margin1 pad1y clearfix'>
+            <a data-index="1" class='col6 active'>{{t.[page.language].data.visualize}}</a><!--
+         --><a data-index="2" class='col6'>{{t.[page.language].data.export}}</a>
         </div>
     </div>
-    <div class="col8 row16 contain">
-        <div id="map"></div>
+    <div class="col12 row16 pad2y clip sliding h active1">
+
+        {% include layer_ui.html %}
+
+        <div class="col12 animate">
+            {% include data_export.html %}
+        </div>
     </div>
 </div>
+<div id="map" class="mbar">
+    <!-- <div id=""></div> -->
+</div>
+
