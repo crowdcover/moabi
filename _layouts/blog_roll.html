@@ -18,7 +18,7 @@ layout: main
 {% unless post.draft %}
 {% if post.language == page.language %}
     <section class="clearfix limiter pad4y {% unless forloop.last %}strongline-bottom{% endunless %} space-bottom2">
-        <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
+        <h1 class="col10 margin1 margin1r center"><a href="{{post.url}}">{{post.title}}</a></h1>
         <div class="pad1 center quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:#444; padding: 0 6px;">|</span> {{post.author}}</div>
         {% if post.img %}
         <div class="clearfix">
