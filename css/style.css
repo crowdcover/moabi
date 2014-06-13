@@ -28,6 +28,7 @@ body {
 header {
   letter-spacing: 1px;
   font-family: 'Open Sans Bold', sans-serif;
+  z-index: 1;
   }
 
 footer a {
@@ -87,13 +88,13 @@ h1, h2 {
 }
 
 .dropshadow-down {
-  box-shadow: rgba(0,0,0,0.25) 0 5px 10px -2px;
+  box-shadow: rgba(0,0,0,0.15) 0 5px 10px -2px;
 }
   .dropshadow-right {
-    box-shadow: rgba(0,0,0,0.2) 5px 0 10px -2px;
+    box-shadow: rgba(0,0,0,0.15) 5px 0 10px -2px;
   }
   .dropshadow-down-right {
-    box-shadow: rgba(0,0,0,0.2) 4px 4px 10px 0;
+    box-shadow: rgba(0,0,0,0.15) 4px 4px 10px 0;
   }
 
 .wide-text { letter-spacing: 2px; }
@@ -463,6 +464,7 @@ textarea, input[type=password], input[type=text], input[type=number] {
     width: 34%;
     min-width: 360px;
     max-width: 470px;
+    z-index: 1;
   }
   #map.mbar {
     right: 0;
