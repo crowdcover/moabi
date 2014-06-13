@@ -1,35 +1,24 @@
-{% if page.url == '/en/index.html' or page.url == '/fr/index.html' %}
-<div class="widget-ui horizontal toggle-language fr clearfix">
+<div class="widget-ui horizontal toggle-language fr pad0x clearfix">
     <a {% if page.language == 'fr' %}
-            href="{{site.baseurl}}/en"
+            {% if page.title == 'landing' %}
+                href="{{site.baseurl}}/en/"
+            {% else %}
+                href="{{site.baseurl}}{{page.url | remove: '/fr/'}}/en/"
+            {% endif %}
             data-lang="en"
         {% else %}
             href="#"
             class='active'
         {% endif %}>EN</a>
     <a {% if page.language == 'en' %}
-            href="{{site.baseurl}}/fr"
+            {% if page.title == 'landing' %}
+                href="{{site.baseurl}}/fr/"
+            {% else %}
+                href="{{site.baseurl}}{{page.url | remove: '/en/'}}/fr/"
+            {% endif %}
             data-lang="fr"
         {% else %}
             href="#"
             class='active'
         {% endif %}>FR</a>
 </div>
-{% else %}
-<div class="widget-ui horizontal toggle-language fr clearfix">
-    <a {% if page.language == 'fr' %}
-            href="{{site.baseurl}}{{page.url | remove: '/fr/'}}/en/"
-            data-lang="en"
-        {% else %}
-            href="#"
-            class='active'
-        {% endif %}>EN</a>
-    <a {% if page.language == 'en' %}
-            href="{{site.baseurl}}{{page.url | remove: '/en/'}}/fr/"
-            data-lang="fr"
-        {% else %}
-            href="#"
-            class='active'
-        {% endif %}>FR</a>
-</div>
-{% endif %}
