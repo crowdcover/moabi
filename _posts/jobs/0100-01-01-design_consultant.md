@@ -5,6 +5,7 @@ tags:
   - job
 categories:
   - en
+duedate: false
 summary: |
          Moabi is currently looking for a design consultant to help grow our website.  We are looking for someone with an extensive web design background, highly competent with HTML and CSS, and with a strong grasp on UX and modern web design techniques.  The post will be based in DC.
 
@@ -51,7 +52,7 @@ Based in DC
 Payment will be negotiable and commensurate with experience
 
 ## Application
-Please send your resume and portfolio to [jamesconkling@crowdcover.org](mailto:jamesconkling@crowdcover.org).
+{% include job_duedate.md %}
 
 
 

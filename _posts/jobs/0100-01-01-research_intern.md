@@ -5,6 +5,7 @@ tags:
   - job
 categories:
   - en
+duedate: false
 summary: |
          Our DC office is looking to work with a research intern to help with project research and management.  We are looking for someone with excellent French language skills and a background in environmental studies and/or international development . Knowledge of Central Africa and the REDD+ initiative would be distinct advantage.
 
@@ -14,7 +15,7 @@ summary: |
 The research intern will be responsible for managing Moabi’s current research initiatives involving REDD+, Community Mapping, and Industrial Agriculture, as well as seeking out new, potentially fruitful future research initiatives.  He/she will contribute content to our reports, our database background documentation, and our newsletter.
 
 ## Project Scope
-Having recently made our platform live on April 22, Moabi is looking for a research intern to consult on our ongoing research initiatives.  As the platform grows in size and scope, we hope to bring in new and diverse data sources, and to continue publishing reports on the region’s pressing natural resource issues.  The site is now live at rdc.moabi.org.
+Having recently made our platform live on April 22, Moabi is looking for a research intern to consult on our ongoing research initiatives.  As the platform grows in size and scope, we hope to bring in new and diverse data sources, and to continue publishing reports on the region’s pressing natural resource issues.
 
 ## Key Responsibilities
 1. Lead background research on some of our existing reports, and coordinate production of new mapping reports.
@@ -47,7 +48,7 @@ Based in DC
 Payment will be negotiable and commensurate with experience
 
 ## Application
-Please send your resume and portfolio to [jamesconkling@crowdcover.org](mailto:jamesconkling@crowdcover.org).
+{% include job_duedate.md %}
 
 
 
