@@ -27,7 +27,7 @@
     legend_template: true
     legend_color: '#dae57e'
     date: 2013
-    tooltip: name
+    tooltip: name, status, project_leader, methodology, start_date, end_date, project_leader, contact_person, contact_email
     source:
         name: Observatoire des Forets d'Afrique Centrale / Coordination Nationale REDD (OFAC/CNREDD)
         url:
