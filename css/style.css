@@ -38,6 +38,12 @@ footer a {
     height: 28px;
   }
 
+/* force full-screen minus header/footer*/
+.v-stretch {
+  height: auto;
+  min-height: calc(100% - 110px);
+}
+
 /* typography and spacing */
 h1, h2 {
   font-family: 'Open Sans XBold';
@@ -423,8 +429,6 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 .landing {
   width: 100%;
-  height: auto;
-  min-height: calc(100% - 110px);
   background-image:
     linear-gradient(
         rgba(0,0,0,0.6),
@@ -435,12 +439,12 @@ textarea, input[type=password], input[type=text], input[type=number] {
   background-size: cover;
   background-position: center top;
   }
-  .landing .gradient {
+/*  .landing .gradient {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
-  }
+  }*/
   .landing .pill {
     border: 1px solid rgba(255, 252, 248, 0.3);
     border-radius: 3px;
