@@ -14,6 +14,12 @@ en:
   footer:
     partners: partners
 
+  sidebar_slider:
+    report: Read Report
+    map_layers: Maps
+    export: Export
+    edit: Edit
+
   layer_ui:
     available: Available Map Layers
     displayed: Displayed Map Layers
@@ -21,7 +27,7 @@ en:
 
   data_extract:
     edit: Edit Data
-    edit_description: Edit data already in the Database
+    edit_description: Click to edit data on the Moabi database, using the in-browser iD interface.
     export: Export
     extract: Data Extracts
     extract_text: Download extracts of the Database
@@ -32,12 +38,11 @@ en:
     snap: capture
 
   landing:
-    title: Map, Monitor, Mobilize
     description: Moabi DRC is an independent initiative that collaboratively monitors natural resource use in the Democratic Republic of the Congo. Our community works toward a more transparent, equitable, and sustainable future for the people and environment of DRC.
     report_button_name: Reports
     report_button_text: Read field reports on a wide range of issues from REDD+ to the causes of forest loss
-    data_button_name: Explore
-    data_button_text: View our ever-growing database of natural resource issues in DRC
+    data_button_name: Maps
+    data_button_text: View our ever-growing geo-database of natural resource issues in DRC
 
   about:
     the_initiative: The Initiative
@@ -84,6 +89,12 @@ fr:
   footer:
     partners: partenaires
 
+  sidebar_slider:
+    report: Read Report
+    map_layers: Maps
+    export: Export
+    edit: Edit
+
   layer_ui:
     available: Disponible Map Layers
     displayed: Couches Affichées
@@ -91,7 +102,7 @@ fr:
 
   data_extract:
     edit: Edit Data
-    edit_description: Edit data already in the Database
+    edit_description: Click to edit data on the Moabi database, using the in-browser iD interface.
     export: Exportation
     extract: Données extraites
     extract_description: Téléchargez des extraits de la base de données

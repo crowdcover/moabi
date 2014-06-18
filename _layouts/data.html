@@ -18,23 +18,35 @@ header: sidebar
 footer: sidebar
 ---
 {% assign t = site.data.translations %}
-<div id="sbar" class="pad1x fill-light strongline-right dropshadow-right scroll-styled">
-    <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
-        <div class='slider tabs col10 mobile-cols margin1 pad1y clearfix'>
-            <a data-index="1" class='col6 active'>{{t.[page.language].data.visualize}}</a><!--
-         --><a data-index="2" class='col6'>{{t.[page.language].data.export}}</a>
+<div id="sbar" class="fill-light strongline-right dropshadow-right">
+
+    <!-- sidebar slider -->
+    <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px">
+        <div class='slider tabs col10 margin1 mobile-cols space-bottom1 clearfix'>
+            <a data-index="1" class='col4 active'>{{t.[page.language].sidebar_slider.map_layers}}</a><!--
+         --><a data-index="2" class='col4'>{{t.[page.language].sidebar_slider.export}}</a><!--
+         --><a data-index="3" class='col4'>{{t.[page.language].sidebar_slider.edit}}</a>
         </div>
     </div>
-    <div class="col12 row16 pad1y clip sliding h active1">
 
-        {% include layer_ui.html %}
+    <div class="col12 clip sliding h active1" style="height: calc(100% - 50px)">
 
-        <div class="col12 animate">
+        <div class="sidebar-panel col12 animate">
+            {% include layer_ui.html %}
+        </div>
+
+        <div class="sidebar-panel col12 animate">
             {% include data_export.html %}
         </div>
+
+        <div class="sidebar-panel col12 animate">
+            {% include data_edit.html %}
+        </div>
+
     </div>
 </div>
-<div id="map" class="mbar">
-    <!-- <div id=""></div> -->
+
+<!-- map -->
+{% include map.html %}
 </div>
 
