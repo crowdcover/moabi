@@ -32,18 +32,18 @@
     {% endif %}
 
     <div class="small quiet center animate">{{t.[page.language].layer_ui.available}}</div>
-    <ul class="not-displayed fill-darken keyline-all insetshadow-down activate animate">
+    <ul class="not-displayed fill-darken insetshadow-down activate animate">
         {% if page.maplayer_options.subset %}
             {% for pagelayer_id in page.maplayer_options.subset %}{% for layer in site.data.map_layers %}
                 {% if layer.id == pagelayer_id %}
-                    <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
+                    <li class="keyline-left keyline-right" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
                         <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}" data-tooltip="{{layer.tooltip}}">{{layer.name}}</a>
                     </li>
                 {% endif %}
             {% endfor %}{% endfor %}
         {% else %}
             {% for layer in site.data.map_layers %}
-                <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
+                <li class="keyline-left keyline-right" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
                     <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}" data-tooltip="{{layer.tooltip}}">{{layer.name}}</a>
                 </li>
             {% endfor %}
@@ -51,7 +51,7 @@
     </ul>
 
     <div class="small quiet center animate">{{t.[page.language].layer_ui.displayed}}</div>
-    <ul class="displayed sortable fill-brown keyline-all insetshadow-down activate animate" data-lang="{{page.language}}"></ul>
+    <ul class="displayed sortable fill-brown insetshadow-down activate animate" data-lang="{{page.language}}"></ul>
 
     {% for layer in site.data.map_layers %}
         <ul data-id="{{layer.id}}" class="minor-panel small keyline-all pad0x space-bottom2">
