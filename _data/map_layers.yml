@@ -71,6 +71,7 @@
     legend_template:
     legend_color:
     date: 2013
+    tooltip: name
     source:
         name: African Energy / Societe National d' Electricite (AE / SNEL)
         url:
