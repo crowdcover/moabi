@@ -25,7 +25,7 @@ footer: sidebar
         <div class='slider tabs col10 margin1 mobile-cols space-bottom1 clearfix'>
             <a data-index="1" class='col4 active'>{{t.[page.language].sidebar_slider.map_layers}}</a><!--
          --><a data-index="2" class='col4'>{{t.[page.language].sidebar_slider.export}}</a><!--
-         --><a data-index="3" class='col4'>{{t.[page.language].sidebar_slider.edit}}</a>
+         --><a class='col4 page-fade-link' id="id-edit" href="http://osm.moabi.org/edit?editor=id">{{t.[page.language].sidebar_slider.edit}}</a>
         </div>
     </div>
 
@@ -39,9 +39,10 @@ footer: sidebar
             {% include data_export.html %}
         </div>
 
+        <!--
         <div class="sidebar-panel col12 animate">
             {% include data_edit.html %}
-        </div>
+        </div> -->
 
     </div>
 </div>

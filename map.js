@@ -28,7 +28,7 @@ var moabi = {
 
     global: function() {
         $('.map-interaction').on('click', this.mapInteract);
-        $('.slider').on('click', 'a', this.slide);
+        $('.slider').on('click', 'a', this.slidePanel);
         $('.report-slider').on('click', this.slidePage);
         $('.minor-panel-viewer').on('click', 'a.layer-toggle', this.showMinorPanel);
         $('.layer-ui').on('click', 'a.layer-toggle', this.layerUi);
@@ -36,6 +36,8 @@ var moabi = {
         // $('.toggle-language').on('click', 'a', this.toggleLanguage);
         $('.moabi-legend').appendTo('.map-legend').on('click', this.legendToggleLayer);
         $('.slideshow').on('click', '.slide-control', this.imgSlide);
+
+        $('.page-fade-link').on('click', this.fade2Page);
 
         $('#snap').on('click', this.mapCapture);
 
@@ -106,14 +108,23 @@ var moabi = {
         });
     },
 
-    slide: function() {
+    fade2Page: function(e) {
+        // on link click, fade page out, then follow link
+        e.preventDefault();
+        var newPage = this.href;
+
+        $('body').fadeOut(500, function(){
+            window.location = newPage;
+        });
+
+    },
+
+    slidePanel: function() {
         var $this = $(this),
             tabgroup = $this.parents('.tab-group'),
             index = $this.data('index'),
             oldIndex = $(this).siblings('.active').removeClass('active').data('index'),
             slidecontainer = tabgroup.next();
-
-        // $('a', tabgroup).removeClass('active');
 
         $this.addClass('active');
         slidecontainer.removeClass('active' + oldIndex).addClass('active' + index);
@@ -129,7 +140,7 @@ var moabi = {
 
             reportIndex = report.data('index'),
             reportCount = report.data('ixcount'),
-            reportContainer = report.parent('.report-container');
+            reportContainer = report.parent('.report-panel');
         leaflet_hash.setMovingMap();
         if ( $this.data('slide') == 'up' ){
             newIndex = reportIndex - 1;
@@ -251,6 +262,7 @@ var moabi = {
     },
 
     legendToggleLayer: function(e) {
+        // not currently implemented
         var mapId = $(this).data('id');
 
         $('.ui-button[data-id="' + mapId + '"]' ).trigger('click');
@@ -332,6 +344,15 @@ var moabi = {
         }
     },
 
+    removeAllLayers: function() {
+        $('.layer-ui .displayed .layer-toggle').trigger('click');
+
+        // below doesn't work if layers were added via .layer-ui trigger click
+        // for (var id in mapLayers['dataLayers']){
+        //     map.removeLayer(mapLayers['dataLayers'][id][0]);
+        // }
+    },
+
     setGrid: function(map) {
       try {
         // get moabi_id and tooltip of first item in the displayed list, and build a tooltip template
@@ -387,18 +408,19 @@ var moabi = {
     },
 
     updateExportLink: function(hash) {
+      // update map embed link and iD edit link
       if ($('#map-embed')[0]) {
         $('#map-embed')[0].value = "<iframe src='http://rdc.moabi.org/embed/" + hash + "' frameborder='0' width='900' height='700'></iframe>";
       }
-    },
 
-    removeAllLayers: function() {
-        $('.layer-ui .displayed .layer-toggle').trigger('click');
+      if ($('#id-edit')) {
+        z_lat_lon = hash.split('&')[0].split('/')
+        var zoom = z_lat_lon[0].replace("#", ""),
+          lat = z_lat_lon[1],
+          lon = z_lat_lon[2];
 
-        // below doesn't work if layers were added via .layer-ui trigger click
-        // for (var id in mapLayers['dataLayers']){
-        //     map.removeLayer(mapLayers['dataLayers'][id][0]);
-        // }
+        $('#id-edit').attr('href', 'http://osm.moabi.org/edit?editor=id#map=' + zoom + '/' + lat + '/' + lon)
+      }
     },
 
     getQueryVariable: function(hash, variable) {
