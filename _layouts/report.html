@@ -18,7 +18,7 @@ footer: hide
 
     <div class="col12 clip sliding h active1" style="height: calc(100% - 50px)">
         <!-- Report -->
-        <div class="report-panel col12 clip sliding v active1 animate">
+        <div class="report-panel prose clip sliding v active1 animate">
             {% for report in page.report %}
                 <section class="col12 animate" style="height: 100%" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}"{% if report.zoom_to %} data-nav='["{{report.zoom_to.lat}}", "{{report.zoom_to.lon}}", "{{report.zoom_to.zoom}}"]'{% endif %}{% if report.layers %} data-id='[{% for layer in report.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}>
 

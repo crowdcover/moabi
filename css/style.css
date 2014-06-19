@@ -38,6 +38,19 @@ footer a {
     height: 28px;
   }
 
+.prose.serif {
+  font-family: 'Deja Vu Serif';
+  }
+  h1.prose,
+  h2.prose {
+    line-height: 30px;
+  }
+
+.prose img {
+  margin: 10px auto;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
 /* force full-screen minus header/footer*/
 .v-stretch {
   height: auto;
@@ -744,18 +757,6 @@ table tr.opt-row td {
     src:url('../fonts/DejaVuSerif-webfont.eot');
     src:url('../fonts/DejaVuSerif-webfont.eot?#iefix') format('embedded-opentype'),
         url('../fonts/DejaVuSerif-webfont.woff') format('woff');
-}
-
-.prose.serif {
-  font-family: 'Deja Vu Serif';
-  }
-  h1.prose,
-  h2.prose {
-    line-height: 30px;
-  }
-
-.prose p img {
-  margin: 10px auto;
 }
 
 
