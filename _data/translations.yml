@@ -5,7 +5,7 @@ en:
 
   header:
     reports: Reports
-    data: Data
+    data: Maps
     documentation: Documentation
     blog: Blog
     about: About
@@ -80,7 +80,7 @@ fr:
 
   header:
     reports: Rapports
-    data: Données
+    data: Cartes
     documentation: Documentation
     blog: Blog
     about: A propos
@@ -117,7 +117,7 @@ fr:
     description: La plateforme de cartographie collaborative “Moabi RDC” est une initiative indépendante de suivi de l’utilisation des ressources naturelles en République Démocratique du Congo. Notre communauté d’utilisateurs travaille dans la perspective d’améliorer la transparence, l’équitabilité et la durabilité de la gestion des ressources naturelles pour les peuples et le maintien des écosystèmes de la RDC.
     report_button_name: Rapports
     report_button_text: Consultez les rapports de terrain appréhendant un grand éventail de problématiques, allant de la REDD+ aux pertes de forêt.
-    data_button_name: Découvrez
+    data_button_name: Cartes
     data_button_text: Consultez notre base de données (en développement) sur les problématiques liées aux ressources naturelles en RDC
 
   about:
