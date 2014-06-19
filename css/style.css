@@ -406,6 +406,8 @@ textarea, input[type=password], input[type=text], input[type=number] {
   .mapbox-modal-body .mapbox-share-buttons a {
     background-color: #666;
   }
+  .mapbox-modal-body .mapbox-embed,
+  .mapbox-modal-body .mapbox-embed-description { display: none; }
 
 
 /* custom layout elements */
