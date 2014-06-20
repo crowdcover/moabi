@@ -2,6 +2,7 @@ en:
   coming_soon: Coming soon . . .
   read_more: read more
   no_translation: this page has not yet been translated
+  download: download
 
   header:
     reports: Reports
@@ -26,15 +27,13 @@ en:
     empty: empty
 
   data_extract:
-    edit: Edit Data
-    edit_description: Click to edit data on the Moabi database, using the in-browser iD interface.
     export: Export
     extract: Data Extracts
     extract_text: Download extracts of the Database
     embed: Map Embed
     embed_text: Easily embed the map in any blog or website using simple HTML
     print: Print Map
-    print_text: Take a screenshot of the current map view
+    print_text: Take a screenshot of the current map view and download
     snap: capture
 
   landing:
@@ -77,6 +76,7 @@ fr:
   coming_soon: A venir . . .
   read_more: read more
   no_translation: this page has not yet been translated
+  download: download
 
   header:
     reports: Rapports
@@ -101,8 +101,6 @@ fr:
     empty: vide
 
   data_extract:
-    edit: Edit Data
-    edit_description: Click to edit data on the Moabi database, using the in-browser iD interface.
     export: Exportation
     extract: Données extraites
     extract_description: Téléchargez des extraits de la base de données

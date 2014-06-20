@@ -512,6 +512,32 @@ textarea, input[type=password], input[type=text], input[type=number] {
   }
 
 
+/* Print Map Preview*/
+#images {
+  /*background-image: url(https://farm6.staticflickr.com/5274/14482085473_4a0248391e_n.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;*/
+  /*height: 240px;*/
+  /*width: 290px;*/
+  /*overflow: hidden;*/
+  }
+  #images img {
+    /* if img ratio is larger-by-height than container ratio; width:auto
+       if img ratio is larger-by-width than container ratio; height:auto
+       calc and set in js.  although container can't scale */
+
+    /* better yet, use js to force one ratio for container.
+       position: absolute,
+       then if img ratio is larger-by-width: set top: 50%, margin-top:-25%
+       otherwise, vice versa */
+    width: 100%;
+    max-width: none;
+    max-height: none;
+  }
+
+
+
 
 /*********************** Documentation ***********************/
 table tr.opt-row th,

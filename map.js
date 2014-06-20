@@ -95,14 +95,16 @@ var moabi = {
         e.stopPropagation();
 
         leafletImage(map, function(err, canvas) {
-            var $imgContainer = $('#images');
-            console.log('image capture fired: this= ' + this);
+            var $imgContainer = $('#images'),
+                download = document.getElementById('map-download');
 
             var mapCapture = document.createElement('img');
-            var dimensions = map.getSize();
-            // img.width = dimensions.x;
-            // img.height = dimensions.y;
-            mapCapture.src = canvas.toDataURL();
+            // var dimensions = map.getSize();
+            //img.width = dimensions.x;
+            //img.height = dimensions.y;
+            mapImage = canvas.toDataURL();
+            download.href = mapImage;
+            mapCapture.src = mapImage;
             $imgContainer.children('img').remove();
             $imgContainer.append(mapCapture);
         });
