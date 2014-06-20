@@ -58,19 +58,14 @@ footer: hide
 
         <!-- Data -->
         <div class="sidebar-panel col12 animate">
-            <h2 class="space-bottom1 ">Map Layers</h2>
+            <h2 class="space-bottom1 ">Featured Map Layers</h2>
+            <p class="small quiet">Click on a layer to add it to the map</p>
             {% include layer_ui.html %}
         </div>
 
         <!-- Export -->
         <div class="sidebar-panel col12 animate">
-            <h2 class="">{{t.[page.language].data_extract.export}}</h2>
             {% include data_export.html %}
-        </div>
-
-        <!-- Edit -->
-        <div class="sidebar-panel col12 animate">
-            {% include data_edit.html %}
         </div>
 
     </div>
