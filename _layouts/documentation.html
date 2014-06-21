@@ -3,7 +3,7 @@ layout: main
 header: sidebar
 ---
 {% assign t = site.data.translations %}
-<div class="fill-light strongline-bottom">
+<div class="fill-light">
     <div class="pad4y clearfix">
         <div class="col3 margin1r pad4x keyline-right space mobile-center noprint">
 
@@ -39,6 +39,9 @@ header: sidebar
         </div>
 
         <div class="col7 margin1r prose mobile-pad">
+            <div class="pad2y no-print">
+                <a href="#" class="col12 button quiet print-page">Save/Print</a>
+            </div>
             {{content | markdownify }}
         </div>
     </div>
