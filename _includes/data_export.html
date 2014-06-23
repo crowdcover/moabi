@@ -1,30 +1,29 @@
-{% assign t = site.data.translations %}
 <ul class="pad1 space-bottom4">
-    <li class="pad0x pad1y clearfix">
-        <div>
-            <a href="" class="space"><strong>{{t.[page.language].data_extract.edit}}</strong></a>
+
+    <li class="pad0x pad2y clearfix">
+        <h3 class="">{{t.[page.language].data_extract.print}}</h3>
+        <div class="pad0y quiet small">{{t.[page.language].data_extract.print_text}}</div>
+        <div id="images" class="col12 fill-darken keyline-all contain">
+            <a id="snap" href="#" class="button pin-left short fill-dark" style="border-radius: 0;">{{t.[page.language].data_extract.snap}}</a>
+            <a id="map-download" href="#" download="map.png" class="button pin-right short fill-dark">{{t.[page.language].download}}</a>
+            <img src="https://farm6.staticflickr.com/5274/14482085473_d8a7f95126.jpg" alt="screen shot">
         </div>
-        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.edit_description}}</div>
     </li>
-    <li class="pad0x pad1y clearfix">
-        <div>
-            <a href="http://planet.osm.moabi.org/extracts/" class="space"><strong>{{t.[page.language].data_extract.extract}}</strong></a><span class="small quiet pad1x">(OSM, GeoJson)</span>
-        </div>
-        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.extract_text}}</div>
-        <div class="col12 quiet small">&copy; CC 4.0 <a href="http://osm.moabi.org/copyright">{{t.[page.language].read_more}}</a></div>
-    </li>
-    <li class="pad0x pad1y clearfix">
-        <div class="col12">{{t.[page.language].data_extract.embed}}</div>
-        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.embed_text}}</div>
+
+    <li class="pad0x pad2y clearfix">
+        <h3 class="">{{t.[page.language].data_extract.embed}}</h3>
+        <div class="pad0y quiet small">{{t.[page.language].data_extract.embed_text}}</div>
         <fieldset class="">
             <input type="text" id="map-embed" value="<iframe src='rdc.moabi.org/mapi/#6/28.00/26.10' frameborder='0' width='650' height='500'></iframe>" class="stretch">
         </fieldset>
     </li>
-    <li class="pad0x pad1y clearfix">
-        <div class="col12">{{t.[page.language].data_extract.print}}</div>
-        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.print_text}}</div>
-        <div id="images" class="col12 fill-darken keyline-all contain" style="min-height: 32px;">
-            <a id="snap" href="#" class="button pin-left short fill-dark" style="border-radius: 0;">{{t.[page.language].data_extract.snap}}</a>
-        </div>
+
+    <li class="pad0x pad2y clearfix">
+        <h3>
+            <a href="http://planet.osm.moabi.org/extracts/" class="space"><strong>{{t.[page.language].data_extract.extract}}</strong></a><span class="small quiet pad1x">(OSM, GeoJson)</span>
+        </h3>
+        <div class="col12 pad0y quiet small">{{t.[page.language].data_extract.extract_text}}</div>
+        <div class="col12 quiet small">&copy; CC 4.0 <a href="http://osm.moabi.org/copyright">{{t.[page.language].read_more}}</a></div>
     </li>
+
 </ul>

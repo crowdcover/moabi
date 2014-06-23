@@ -15,26 +15,34 @@ maplayer_options:
     subset: false
 
 header: sidebar
+footer: sidebar
 ---
 {% assign t = site.data.translations %}
-<div class="clearfix strongline-bottom">
-    <div class="col4 row16 pad1x fill-light strongline-right dropshadow-right">
-        <div class="tab-group col10 margin1 margin1r clearfix keyline-bottom space-bottom1">
-            <div class='slider tabs col10 mobile-cols margin1 pad1y clearfix'>
-                <a data-index="1" class='col6 active'>{{t.[page.language].data.visualize}}</a><!--
-             --><a data-index="2" class='col6'>{{t.[page.language].data.export}}</a>
-            </div>
-        </div>
-        <div class="col12 row16 pad2y clip sliding h active1">
+<div id="sbar" class="fill-light strongline-right dropshadow-right">
 
-            {% include layer_ui.html %}
-
-            <div class="col12 animate">
-                {% include data_export.html %}
-            </div>
+    <!-- sidebar slider -->
+    <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px">
+        <div class='slider tabs col10 margin1 mobile-cols space-bottom1 clearfix'>
+            <a data-index="1" class='col4 active'>{{t.[page.language].sidebar_slider.map_layers}}</a><!--
+         --><a data-index="2" class='col4'>{{t.[page.language].sidebar_slider.export}}</a><!--
+         --><a class='col4 page-fade-link' id="id-edit" href="http://osm.moabi.org/edit?editor=id">{{t.[page.language].sidebar_slider.edit}}</a>
         </div>
     </div>
-    <div class="col8 row16 contain">
-        <div id="map"></div>
+
+    <div class="col12 clip sliding h active1" style="height: calc(100% - 50px)">
+
+        <div class="sidebar-panel col12 animate">
+            {% include layer_ui.html %}
+        </div>
+
+        <div class="sidebar-panel col12 animate">
+            {% include data_export.html %}
+        </div>
+
     </div>
 </div>
+
+<!-- map -->
+{% include map.html %}
+</div>
+

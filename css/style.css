@@ -28,14 +28,34 @@ body {
 header {
   letter-spacing: 1px;
   font-family: 'Open Sans Bold', sans-serif;
+  z-index: 1;
   }
 
 footer a {
   display: inline-block;
   }
   footer img {
-    height: 30px;
+    height: 28px;
   }
+
+.prose.serif {
+  font-family: 'Deja Vu Serif';
+  }
+  h1.prose,
+  h2.prose {
+    line-height: 30px;
+  }
+
+.prose img {
+  margin: 10px auto;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* force full-screen minus header/footer*/
+.v-stretch {
+  height: auto;
+  min-height: calc(100% - 110px);
+}
 
 /* typography and spacing */
 h1, h2 {
@@ -86,15 +106,10 @@ h1, h2 {
   padding-right: 18px;
 }
 
-.dropshadow-down {
-  box-shadow: rgba(0,0,0,0.25) 0 5px 10px -2px;
-}
-  .dropshadow-right {
-    box-shadow: rgba(0,0,0,0.2) 5px 0 10px -2px;
-  }
-  .dropshadow-down-right {
-    box-shadow: rgba(0,0,0,0.2) 4px 4px 10px 0;
-  }
+.dropshadow-down { box-shadow: rgba(0,0,0,0.15) 0 5px 10px -2px; }
+  .dropshadow-right { box-shadow: rgba(0,0,0,0.15) 5px 0 10px -2px; }
+  .dropshadow-down-right { box-shadow: rgba(0,0,0,0.15) 4px 4px 10px 0; }
+  .insetshadow-down { box-shadow: inset 0px 3px 4px rgba(180, 180, 180, 0.3) }
 
 .wide-text { letter-spacing: 2px; }
 
@@ -165,9 +180,10 @@ h3 a:hover,
   }
   .activate a:hover {
     background-color: #CCC;
+    background-color: rgba(160,160,160,0.2);
   }
-  .activate a:active, .activate a.active {
-    background-color: rgb(224, 218, 210);
+  .activate a:active {
+    background-color: transparent;
     color: #F86D00;
   }
 
@@ -177,8 +193,8 @@ h3 a:hover,
   .dark .activate a:hover {
     background-color: #444;
   }
-  .dark .activate a:active, .dark .activate a.active {
-    background-color: #666;
+  .dark .activate a:active {
+    background-color: transparent;
     color: #F8AA04;
   }
 
@@ -188,13 +204,15 @@ h3 a:hover,
     color: #FFFCF8;
   }
   .fill-black { background-color: #000; }
-  .fill-darken { background-color: rgba(0,0,0,0.1); }
-  .dark .fill-darken { background-color: rgba(80, 80, 80, 0.1); }
   .fill-dark { background-color: #222; }
   .fill-light {
     background-color: rgb(255, 252, 248);
     background-color: rgba(255, 252, 248, 0.82);
   }
+  .fill-darken { background-color: rgba(0,0,0,0.1); }
+  .fill-lighten { background-color: rgba(226, 215, 199, 0.5); }
+  .dark .fill-darken { background-color: rgba(140, 140, 140, 0.1); }
+  .dark .fill-lighten { background-color: rgba(207, 191, 156, 0.2); }
 
 .highlight { border: 1px solid #CFCFCF;}
 
@@ -209,26 +227,24 @@ h3 a:hover,
 
 
 /* widgets/controls */
-.layer-ui {
-  }
-  .layer-ui ul.displayed, .layer-ui ul.not-displayed {
-    box-shadow: inset 0px 2px 3px rgba(230,230,230,0.1);
-  }
-  .layer-ui ul li {
-    margin: 0;
+  .layer-ui .not-displayed,
+  .layer-ui .displayed {
+    overflow: scroll;
+    border-top: 2px solid #707070;
+    border-bottom: 2px solid #707070;
+    margin: 4px 0 16px;
   }
   .layer-ui .not-displayed {
     max-height: 195px;
-    margin: 4px 0 16px;
   }
   .layer-ui .displayed {
     min-height: 70px;
     max-height: 136px;
-    margin: 4px 0 16px;
   }
   .layer-ui .displayed:empty,
   .layer-ui .not-displayed:empty {
-    background-color: transparent;
+    background-color: rgba(150,150,150,0.1);
+    box-shadow: none;
   }
   .layer-ui .displayed:empty:before {
     content: "none";
@@ -240,13 +256,18 @@ h3 a:hover,
   .layer-ui .displayed[data-lang="fr"]:empty:before {
     content: "vide";
   }
+  .layer-ui ul li {
+    margin: 0;
+  }
   .layer-ui .displayed a,
   .layer-ui .not-displayed a {
     display: block;
+    padding: 2px 6px;
+    font-size: 12px;
   }
-  .layer-ui li:last-child a {
+/*  .layer-ui li:last-child a {
     border-bottom: 0;
-  }
+  }*/
   .layer-ui .ui-state-highlight {
     height: 29px;
     border: 1px dashed #F8AA04;
@@ -398,6 +419,8 @@ textarea, input[type=password], input[type=text], input[type=number] {
   .mapbox-modal-body .mapbox-share-buttons a {
     background-color: #666;
   }
+  .mapbox-modal-body .mapbox-embed,
+  .mapbox-modal-body .mapbox-embed-description { display: none; }
 
 
 /* custom layout elements */
@@ -421,8 +444,6 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 .landing {
   width: 100%;
-  height: auto;
-  min-height: calc(100% - 110px);
   background-image:
     linear-gradient(
         rgba(0,0,0,0.6),
@@ -432,12 +453,6 @@ textarea, input[type=password], input[type=text], input[type=number] {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center top;
-  }
-  .landing .gradient {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
   }
   .landing .pill {
     border: 1px solid rgba(255, 252, 248, 0.3);
@@ -454,45 +469,73 @@ textarea, input[type=password], input[type=text], input[type=number] {
   }
 
 
-/* Project Hubs */
-.sidebar,
-#map.sidebarred {
-  position: absolute;
-  top: 42px;
-  left: 0;
-  /*bottom: 70px;*/
-  bottom: 0;
-  }
-  .sidebar, .prj-header {
-    width: 40%;
-    max-width: 540px;
-    min-width: 400px;
-    /*white-space: nowrap;*/
-    /*overflow: center;*/
-  }
-  .report-container, .data-container {
+/* Sidebarred map pages: data, reports */
+#sbar, #map.mbar {
     position: absolute;
-    /*top: 60px;*/
+    top: 42px; /* header height */
+    bottom: 68px; /* footer height */
+  }
+  #map.mbar.no-footer,
+  #sbar.no-footer { bottom: 0; }
+  #sbar {
+    width: 34%;
+    min-width: 360px;
+    max-width: 470px;
+    z-index: 1;
+  }
+  #map.mbar {
+    left: 0;
+    width: 100%;
+/*    width: 66%;
+    max-width: calc(100% - 360px);
+    min-width: calc(100% - 470px);*/
+  }
+
+.sidebar-panel {
+  height: 100%;
+  overflow: auto;
+  padding: 10px 18px 10px 16px;
+  }
+  .report-panel{
+    position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
   }
-  .data-container {
-    overflow: auto;
-  }
-  .report {
+  .report-panel section {
     padding: 0 20px;
     overflow: auto;
-  }
-  .report .report-content {
-/*    height: calc(100% - 124px);
-    overflow: scroll;
-    margin: 8px 0;*/
   }
   .report:first-child .report-content,
   .report:last-child .report-content {
     height: calc(100% - 80px);
   }
+
+
+/* Print Map Preview*/
+#images {
+  /*background-image: url(https://farm6.staticflickr.com/5274/14482085473_4a0248391e_n.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;*/
+  /*height: 240px;*/
+  /*width: 290px;*/
+  /*overflow: hidden;*/
+  }
+  #images img {
+    /* if img ratio is larger-by-height than container ratio; width:auto
+       if img ratio is larger-by-width than container ratio; height:auto
+       calc and set in js.  although container can't scale */
+
+    /* better yet, use js to force one ratio for container.
+       position: absolute,
+       then if img ratio is larger-by-width: set top: 50%, margin-top:-25%
+       otherwise, vice versa */
+    width: 100%;
+    max-width: none;
+    max-height: none;
+  }
+
 
 
 
@@ -635,8 +678,9 @@ table tr.opt-row td {
 .map-legends {
   background-color: rgb(255, 252, 248);
   background-color: rgba(255, 252, 248, 0.9);
+  border: 1px solid #bbb;
   border-radius: 0;
-  box-shadow: rgba(0,0,0,0.25) 0 0 10px 4px;
+  box-shadow: rgba(0,0,0,0.1) 0 0 8px 4px;
   }
   .map-legends .map-legend {
     width: 260px;
@@ -741,21 +785,40 @@ table tr.opt-row td {
         url('../fonts/DejaVuSerif-webfont.woff') format('woff');
 }
 
-.prose.serif {
-  font-family: 'Deja Vu Serif';
-  }
-  h1.prose,
-  h2.prose {
-    line-height: 30px;
-  }
-
-.prose p img {
-  margin: 10px auto;
-}
-
 
 
 /* Responsive Design */
+/* Small Screen Layout
+------------------------------------------------------- */
+@media only screen and (max-width:900px) {
+}
+
+/* Tablet Layout
+------------------------------------------------------- */
+@media only screen and (max-width:770px) {
+#sbar, #map.mbar {
+  min-width: 100%;
+  top: 42px; /* header height */
+  }
+  #sbar {
+    height: 300px;
+    border-right: 0;
+    border-bottom: 10px solid rgba(255, 252, 248, 0.82);
+  }
+  #map.mbar {
+    /*bottom: 68px;  footer height */
+    top: 342px;
+    bottom: 0;
+  }
+}
+
+.tabs > a {
+  height: 31px;
+  padding: 5px;
+}
+
+/* Mobile Layout
+------------------------------------------------------- */
 @media only screen and (max-width:640px) {
   .mobile-center{
     text-align: center;

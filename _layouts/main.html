@@ -21,5 +21,13 @@
     {% include parse_layers.html %}
     <script src='{{site.baseurl}}/map.js'></script>
 {% endif %}
+    <script>
+        // only adds event listener to first element.  map it to all print elements
+        document.getElementsByClassName('print-page')[0]
+            .addEventListener("click", function(){
+                window.print()
+            }
+        );
+    </script>
 </body>
 </html>
