@@ -1,3 +1,5 @@
+---
+---
 /*
 palette
 
@@ -425,7 +427,7 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 /* custom layout elements */
 .logo-h {
-  background: url(/img/logo_h.svg) no-repeat center left;
+  background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center left;
   background-size: 100%;
   display:inline-block;
   height: 100%;
