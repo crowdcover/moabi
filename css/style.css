@@ -113,6 +113,10 @@ h1, h2 {
   .dropshadow-down-right { box-shadow: rgba(0,0,0,0.15) 4px 4px 10px 0; }
   .insetshadow-down { box-shadow: inset 0px 3px 4px rgba(180, 180, 180, 0.3) }
 
+.doublestroke {
+  box-shadow: inset 0 0 0 3px rgba(100, 100, 100, 0.2);
+}
+
 .wide-text { letter-spacing: 2px; }
 
 .gradient {
@@ -217,6 +221,10 @@ h3 a:hover,
   .dark .fill-lighten { background-color: rgba(207, 191, 156, 0.2); }
 
 .highlight { border: 1px solid #CFCFCF;}
+
+.striped {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAgMAAAC5YVYYAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACVBMVEWZmZmZmZn///+JQwtGAAAAAXRSTlMAQObYZgAAAAFiS0dEAmYLfGQAAAAJcEhZcwAALiMAAC4jAXilP3YAAAAbSURBVAjXY3BgZWAQZWAIYWAMYGB1gDAZAhgBFtcB/4QtqrAAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTQtMDEtMDlUMTY6NTU6NDQtMDU6MDAXVyIiAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE0LTAxLTA5VDE2OjU1OjQ0LTA1OjAwZgqangAAAABJRU5ErkJggg==)
+}
 
 
 /* animations */

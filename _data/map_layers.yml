@@ -92,8 +92,8 @@
     name: Mining Concessions
     categories: [concession]
     description: All mining concessions, either in the application phase, in the research phase, actively being exploited, or under review.
-    legend_template: true
-    legend_color: '#fae78f'
+    legend_template:
+    legend_color:
     date: April 2014
     tooltip: license, status, operator, resource, application_date, grant_date, expiration_date
     source:
