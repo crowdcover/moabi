@@ -104,8 +104,8 @@
     name: Oil Concessions
     categories: [concession]
     description: Oil exploration blocks
-    legend_template: true
-    legend_color: '#d8912e'
+    legend_template:
+    legend_color:
     date: 2013
     tooltip: name
     source:
@@ -117,8 +117,8 @@
     categories: [concession, forestry]
     description: |
                  <em>Layer in the process of being validated</em>.  Agricultural concessions, created based on the <a href="http://carpe.umd.edu/forest_monitoring/monitoring.php" target="_blank">FACET</a> data, ‘cartes territoriales’ and a repertory of plantations.
-    legend_template: true
-    legend_color: '#79750A'
+    legend_template:
+    legend_color:
     date: 2014
     source:
         name: DIAF/WRI, working layer
