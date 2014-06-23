@@ -1,5 +1,5 @@
 name: "Moabi"
 description: "Moabi is a collaborative mapping platform to monitor landuse planning in the Democratic Republic of the Congo."
-baseurl: crowdcover.github.io/site
+baseurl: /crowdcover.github.io/site
 permalink: /:title/:categories/
 markdown: kramdown
