@@ -10,6 +10,7 @@
 
             {% include language_toggle.html %}
 
+            <a class="pad1y fr {% if page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}" href="{{site.baseurl}}/using-moabi/{{page.language}}">{{t.[page.language].header.documentation}}</a>
             <a class="pad1y fr {% if page.tags contains 'about' %}active{% endif %}" href="{{site.baseurl}}/the-initiative/{{page.language}}">{{t.[page.language].header.about}}</a>
             <a class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
             <!-- <a class="pad1y fr {% if page.tags contains 'data_documentation' or page.tags contains 'training' %}active{% endif %}" href="{{site.baseurl}}/how-to-use-moabi/{{page.language}}">{{t.[page.language].header.documentation}}</a> -->
@@ -29,6 +30,7 @@
 
             {% unless page.title == 'Signup' %}{% include language_toggle.html %}{% endunless %}
 
+            <a class="pad1y fr {% if page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}" href="{{site.baseurl}}/using-moabi/{{page.language}}">{{t.[page.language].header.documentation}}</a>
             <a class="pad1y fr {% if page.tags contains 'about' %}active{% endif %}" href="{{site.baseurl}}/the-initiative/{{page.language}}">{{t.[page.language].header.about}}</a>
             <a class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
             <!-- <a class="pad1y fr {% if page.tags contains 'data_documentation' or page.tags contains 'training' %}active{% endif %}" href="{{site.baseurl}}/how-to-use-moabi/{{page.language}}">{{t.[page.language].header.documentation}}</a> -->

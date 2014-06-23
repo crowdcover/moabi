@@ -39,10 +39,11 @@ header: sidebar
         </div>
 
         <div class="col7 margin1r prose mobile-pad">
+            {{content | markdownify }}
+
             <div class="pad2y no-print">
                 <a href="#" class="col12 button quiet print-page">Save/Print</a>
             </div>
-            {{content | markdownify }}
         </div>
     </div>
 </div>
