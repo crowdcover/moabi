@@ -1,48 +1,59 @@
 <!-- Legends -->
-{% for layer in site.data.map_layers %}
-{% if layer.legend_template %}
-<div class="moabi-legend space-bottom1" data-id="{{layer.id}}">
+
+<div class="moabi-legend space-bottom1" data-id="moabi_redd_projects">
     <div class="">
-        <div class="block" style="background-color: {{layer.legend_color}}"></div>
-        <h3 class="">{{layer.name}}</h3>
+        <div class="block double-stroke" style="background-color: #dae57e"></div>
+        <h3 class="">REDD+ Projects</h3>
     </div>
 </div>
-{% endif %}
-{% endfor %}
+
+<div class="moabi-legend space-bottom1" data-id="moabi_indigenous">
+    <div class="">
+        <div class="block double-stroke" style="background-color: #8697d1"></div>
+        <h3 class="">Indigenous Lands</h3>
+    </div>
+</div>
+
+
+<div class="moabi-legend space-bottom1" data-id="moabi_logging">
+    <div class="">
+        <div class="block double-stroke" style="background-color: #BD925B"></div>
+        <h3 class="">Logging Concessions</h3>
+    </div>
+</div>
 
 <div class="moabi-legend space-bottom1" data-id="moabi_mining">
+    <h3 class="">Mining Concessions</h3>
     <div class="">
-        <div class="block" style="background-color: rgba(250,231,143, 0.2)"></div>
+        <div class="block double-stroke" style="background-color: #FFFBA5"></div>
         <h3 class="">Research Permits</h3>
     </div>
     <div class="">
-        <div class="block" style="background-color: rgba(250,231,143, 0.8)"></div>
+        <div class="block double-stroke" style="background-color: #FFEF35"></div>
         <h3 class="">Exploration Permits</h3>
     </div>
     <div class="">
-        <div class="block striped" style="background-color: rgba(250,231,143, 1)"></div>
+        <div class="block double-stroke striped" style="background-color: #FFE420"></div>
         <h3 class="">Exploitation Permits</h3>
     </div>
 </div>
 
 <div class="moabi-legend space-bottom1" data-id="moabi_oil">
     <div class="">
-        <div class="block" style="background-color: #d8912e"></div>
+        <div class="block double-stroke" style="background-color: #FFB651"></div>
         <h3 class="">Oil Concessions</h3>
     </div>
 </div>
 
 <div class="moabi-legend space-bottom1" data-id="moabi_palm">
     <div class="">
-        <div class="block" style="background-color: #79750A"></div>
+        <div class="block double-stroke" style="background-color: #999C4C"></div>
         <h3 class="">Agriculture Concessions</h3>
     </div>
 </div>
 
 <div class="moabi-legend space-bottom1" data-id="moabi_forest_cover">
-    <div class="col12">
-        <h3 class="">Forest Cover(%), 2000</h3>
-    </div>
+    <h3 class="">Forest Cover(%), 2000</h3>
     <table class="fixed">
         <thead>
             <tr>
@@ -66,9 +77,7 @@
 </div>
 
 <div class="moabi-legend space-bottom1" data-id="moabi_forest_lossyear">
-    <div class="col12">
-        <h3 class="">Forest Loss by Year</h3>
-    </div>
+    <h3 class="">Forest Loss by Year</h3>
     <table class="fixed">
         <thead>
             <tr>
@@ -93,7 +102,7 @@
 
 <div class="moabi-legend space-bottom1" data-id="moabi_protected">
     <div class="">
-        <div class="block" style="background-image: url({{site.baseurl}}/img/ex_small.png)"></div>
+        <div class="block" style="background-color: #d0ffab; border: 1px dashed #888"></div>
         <h3 class="">Protected Areas</h3>
     </div>
 </div>

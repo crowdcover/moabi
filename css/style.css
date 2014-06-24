@@ -113,7 +113,7 @@ h1, h2 {
   .dropshadow-down-right { box-shadow: rgba(0,0,0,0.15) 4px 4px 10px 0; }
   .insetshadow-down { box-shadow: inset 0px 3px 4px rgba(180, 180, 180, 0.3) }
 
-.doublestroke {
+.double-stroke {
   box-shadow: inset 0 0 0 3px rgba(100, 100, 100, 0.2);
 }
 

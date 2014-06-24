@@ -24,8 +24,8 @@
     name: REDD+ Projects
     categories: []
     description: DRC REDD+ pilot projects
-    legend_template: true
-    legend_color: '#dae57e'
+    legend_template:
+    legend_color:
     date: 2013
     tooltip: name, status, project_leader, methodology, start_date, end_date, project_leader, contact_person, contact_email
     source:
@@ -57,8 +57,8 @@
     name: Indigenous Lands
     categories: [indigenous]
     description: Areas populated by indigenous people
-    legend_template: true
-    legend_color: '#8697d1'
+    legend_template:
+    legend_color:
     date: 2012
     source:
         name: Dynamique des Groupes des Peuples Autochtones (DGPA)
@@ -80,8 +80,8 @@
     name: Logging Concessions
     categories: [forestry, concession]
     description: Industrial and artisanal logging concessions
-    legend_template: true
-    legend_color: '#976A2F'
+    legend_template:
+    legend_color:
     tooltip: operator
     date: 2013
     source:
