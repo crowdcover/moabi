@@ -23,11 +23,12 @@
 {% endif %}
     <script>
         // only adds event listener to first element.  map it to all print elements
-        document.getElementsByClassName('print-page')[0]
-            .addEventListener("click", function(){
-                window.print()
-            }
-        );
+        if(document.getElementsByClassName('print-page').length > 0){
+            document.getElementsByClassName('print-page')[0]
+                .addEventListener('click', function(){
+                    window.print()
+                });
+        }
     </script>
 </body>
 </html>
