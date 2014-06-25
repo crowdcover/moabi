@@ -131,6 +131,7 @@
     legend_template:
     legend_color:
     date: 2013
+    tooltip: name, ref, highway, proposed
     source:
         name: Cellule Infrastructures (CI)
         url:
