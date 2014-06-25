@@ -213,7 +213,7 @@ h3 a:hover,
   .fill-dark { background-color: #222; }
   .fill-light {
     background-color: rgb(255, 252, 248);
-    background-color: rgba(255, 252, 248, 0.82);
+    background-color: rgba(255, 252, 248, 0.9);
   }
   .fill-darken { background-color: rgba(0,0,0,0.1); }
   .fill-lighten { background-color: rgba(226, 215, 199, 0.5); }
@@ -326,12 +326,15 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 
 .button.quiet {
-  /*background-color: #eee;*/
-  /*background-color: rgba(0,0,0,0.1);*/
-  background-color: transparent;
+  background-color: rgb(255, 252, 248);
+  background-color: rgba(241, 238, 234, 0.9);
   border: 1px solid rgba(0,0,0,0.25);
+  border-left: 0;
   color: rgba(0,0,0,.5);
-}
+  }
+  .button.quiet:first-child {
+    border-left: 1px solid rgba(0,0,0,0.25);
+  }
 
 
 .pillmenu li {
