@@ -29,7 +29,7 @@ var moabi = {
     global: function() {
         $('.map-interaction').on('click', this.mapInteract);
         $('.slider').on('click', 'a', this.slidePanel);
-        $('.report-slider').on('click', this.slidePage);
+        //$('.report-slider').on('click', this.slidePage);
         $('.minor-panel-viewer').on('click', 'a.layer-toggle', this.showMinorPanel);
         $('.layer-ui').on('click', 'a.layer-toggle', this.layerUi);
         $('.navigate').on('click', 'a', this.navigate);
@@ -133,58 +133,58 @@ var moabi = {
         return false;
     },
 
-    slidePage: function() {
-        // e.preventDefault();
-        // e.stopPropagation();
+    // slidePage: function() {
+    //     // e.preventDefault();
+    //     // e.stopPropagation();
 
-        var $this = $(this),
-            report = $(this).parent(),
+    //     var $this = $(this),
+    //         report = $(this).parent(),
 
-            reportIndex = report.data('index'),
-            reportCount = report.data('ixcount'),
-            reportContainer = report.parent('.report-panel');
-        leaflet_hash.setMovingMap();
-        if ( $this.data('slide') == 'up' ){
-            newIndex = reportIndex - 1;
-            reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
+    //         reportIndex = report.data('index'),
+    //         reportCount = report.data('ixcount'),
+    //         reportContainer = report.parent('.report-panel');
+    //     leaflet_hash.setMovingMap();
+    //     if ( $this.data('slide') == 'up' ){
+    //         newIndex = reportIndex - 1;
+    //         reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
 
-            // remove all layers
-            moabi.removeAllLayers();
+    //         // remove all layers
+    //         moabi.removeAllLayers();
 
-            // toggle layers/navigate according to previous slide location
-            var prevSlide = report.prev(),
-                prevMapId = prevSlide.data('id'),
-                prevNav = prevSlide.data('nav');
-            if (prevNav){
-                map.setView([prevNav[0], prevNav[1]], prevNav[2]);
-            }
-            if (prevMapId){
-                for (i = 0; i < prevMapId.length; i++){
-                    $('.layer-ui .layer-toggle[data-id="' + prevMapId[i] + '"]').trigger('click');
-                }
-            }
-        } else {
-            newIndex = reportIndex + 1;
-            reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
+    //         // toggle layers/navigate according to previous slide location
+    //         var prevSlide = report.prev(),
+    //             prevMapId = prevSlide.data('id'),
+    //             prevNav = prevSlide.data('nav');
+    //         if (prevNav){
+    //             map.setView([prevNav[0], prevNav[1]], prevNav[2]);
+    //         }
+    //         if (prevMapId){
+    //             for (i = 0; i < prevMapId.length; i++){
+    //                 $('.layer-ui .layer-toggle[data-id="' + prevMapId[i] + '"]').trigger('click');
+    //             }
+    //         }
+    //     } else {
+    //         newIndex = reportIndex + 1;
+    //         reportContainer.removeClass('active' + reportIndex).addClass('active' + newIndex);
 
-            // remove all layers
-            moabi.removeAllLayers();
+    //         // remove all layers
+    //         moabi.removeAllLayers();
 
-            // toggle layers/navigate according to next slide location
-            var nextSlide = report.next(),
-                nextMapId = nextSlide.data('id'),
-                nextNav = nextSlide.data('nav');
-            if (nextNav){
-                map.setView([nextNav[0], nextNav[1]], nextNav[2]);
-            }
-            if (nextMapId){
-                for (i = 0; i < nextMapId.length; i++){
-                    $('.layer-ui .layer-toggle[data-id="' + nextMapId[i] + '"]').trigger('click');
-                }
-            }
-        }
-        leaflet_hash.clearMovingMap();
-    },
+    //         // toggle layers/navigate according to next slide location
+    //         var nextSlide = report.next(),
+    //             nextMapId = nextSlide.data('id'),
+    //             nextNav = nextSlide.data('nav');
+    //         if (nextNav){
+    //             map.setView([nextNav[0], nextNav[1]], nextNav[2]);
+    //         }
+    //         if (nextMapId){
+    //             for (i = 0; i < nextMapId.length; i++){
+    //                 $('.layer-ui .layer-toggle[data-id="' + nextMapId[i] + '"]').trigger('click');
+    //             }
+    //         }
+    //     }
+    //     leaflet_hash.clearMovingMap();
+    // },
 
     layerUi: function(e) {
         e.preventDefault();
