@@ -34,6 +34,8 @@ footer: hide
                     {% if report.attachments and report.attachments.size %}
                         <div class="space-bottom1">
                             <div class="row6 space-bottom1" style="background-image: url({{report.attachments.first}}); background-size: cover;"></div>
+
+                            <!-- not currently configurable by report author -->
                             {% if page.img_caption %}
                                 <div class="quiet small">{{page.img_caption}}</div>
                             {% endif %}
@@ -41,7 +43,10 @@ footer: hide
                                 <div class="quiet micro">Source: {{page.img_source}}</div>
                             {% endif %}
                         </div>
+                    {% elsif forloop.first and page.img %}
+                        <div class="row6 space-bottom1" style="background-image: url({{page.img}}); background-size: cover;"></div>
                     {% endif %}
+
                     {% if forloop.first and page.author %}<div class="space-bottom2 small">By {{page.author}}</div>{% endif %}
 
                     <p class="prose space-bottom4">{{report.text}}</p>
