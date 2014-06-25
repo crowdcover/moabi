@@ -42,16 +42,16 @@
     source:
         name: World Ressources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
 
-  # - id: moabi_community_mapping
-  #   name: Community Mapping
-  #   categories: [indigenous]
-  #   description: Moabi and LINAPYCO field data from Ingende
-  #   legend_template:
-  #   legend_color:
-  #   date: 2014
-  #   source:
-  #       name: Ligue Nationale des pygmees du Congo (LINAPYCO)
-  #       url:
+  - id: moabi_community_mapping
+    name: Community Mapping
+    categories: [indigenous]
+    description: Moabi and LINAPYCO field data from Ingende
+    legend_template:
+    legend_color:
+    date: 2014
+    source:
+        name: Ligue Nationale des pygmees du Congo (LINAPYCO)
+        url:
 
   - id: moabi_indigenous
     name: Indigenous Lands
