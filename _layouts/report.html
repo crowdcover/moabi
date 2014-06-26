@@ -18,9 +18,9 @@ footer: hide
 
     <div class="col12 clip sliding h active1" style="height: calc(100% - 50px)">
         <!-- Report -->
-        <div class="sidebar-panel col12 prose animate">
+        <div class="report-panel col12 prose animate">
             {% for report in page.report %}
-                <section class="space-bottom4" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}"{% if report.zoom_to %} data-nav='["{{report.zoom_to.lat}}", "{{report.zoom_to.lon}}", "{{report.zoom_to.zoom}}"]'{% endif %}{% if report.layers %} data-id='[{% for layer in report.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}>
+                <section class="page" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}"{% if report.zoom_to %} data-nav='["{{report.zoom_to.lat}}", "{{report.zoom_to.lon}}", "{{report.zoom_to.zoom}}"]'{% endif %}{% if report.layers %} data-id='[{% for layer in report.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}{% if forloop.last %} style="margin-bottom:0px"{% else %} style="margin-bottom:80px"{% endif %}>
 
                     <h2 class="prose serif keyline-bottom" style="margin-bottom:10px">{{report.title}}</h2>
                     {% if forloop.first and page.author %}
