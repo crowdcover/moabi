@@ -34,6 +34,10 @@ var moabi = {
             context: '.report-panel',
             offset: '90%'
         });
+        $('.report-panel section').waypoint(this.reportScroll, {
+            context: '.report-panel',
+            offset: '15%'
+        });
         $('.minor-panel-viewer').on('click', 'a.layer-toggle', this.showMinorPanel);
         $('.layer-ui').on('click', 'a.layer-toggle', this.layerUi);
         $('.navigate').on('click', 'a', this.navigate);
@@ -43,6 +47,15 @@ var moabi = {
 
         $('#snap').on('click', this.mapCapture);
 
+        // $('a[href^="#"]').on('click', function(event) {
+        //     var target = $( $(this).attr('href') );
+        //     if( target.length ) {
+        //         event.preventDefault();
+        //         $('html, body').animate({
+        //             scrollTop: target.offset().top
+        //         }, 1000);
+        //     }
+        // });
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
             update: function( event, ui ){
@@ -135,42 +148,57 @@ var moabi = {
         return false;
     },
 
+    // reportScrollDown: function(dir) {
+    //     // only call waypoint offset 80% from top on scroll down
+    //     if( dir === 'down'){ moabi.reportScroll(dir, this); }
+    // },
+
+    // reportsScrollUp: function(dir) {
+    //     // only call waypoint offset at 20% from top on up
+    //     if( dir === 'up'){ moabi.reportScroll(dir, this); }
+    // },
     reportScroll: function(dir) {
         if(dir === 'down'){
-            var $this = $(this),
-                index = $this.data('index'),
-                nav = $this.data('nav'),
-                layers = $this.data('id');
+            var $this = $(this);
+            $this.prev().removeClass('active');
+            $this.addClass('active');
         }else{
-            var $this = $(this).prev(),
-                index = $this.data('index'),
-                nav = $this.data('nav'),
-                layers = $this.data('id');
+            var $this = $(this).prev();
+            $this.next().removeClass('active');
+            $this.addClass('active');
         }
 
+        var container = $this.parent(),
+            index = $this.data('index'),
+            nav = $this.data('nav'),
+            layers = $this.data('id');
 
         console.log("dir:" + dir + " index:" + index + " nav:" + nav + " layers:" + layers);
 
-        if(nav){
-            map.setView([nav[0], nav[1]], nav[2]);
-        }
-
-        if(layers){
-            moabi.removeAllExcept(layers);
-
-            $not_displayed = $('.layer-ui .not-displayed a');
-
-            for(i=0; i<layers.length; i++){
-                layer_button = $not_displayed.filter('[data-id="' + layers[i] + '"]');
-
-                if(layer_button.length){
-                    layer_button.trigger('click');
-                    console.log("add layer: " + layers[i]);
-                }
+        container.animate({
+            scrollTop: $this.offset().top - container.offset().top - 10 + container.scrollTop()
+        }, 600, function(){
+            if(nav){
+                map.setView([nav[0], nav[1]], nav[2]);
             }
-        }else{
-            moabi.removeAllExcept([]);
-        }
+
+            if(layers){
+                moabi.removeAllExcept(layers);
+
+                $not_displayed = $('.layer-ui .not-displayed a');
+
+                for(i=0; i<layers.length; i++){
+                    layer_button = $not_displayed.filter('[data-id="' + layers[i] + '"]');
+
+                    if(layer_button.length){
+                        layer_button.trigger('click');
+                        console.log("add layer: " + layers[i]);
+                    }
+                }
+            }else{
+                moabi.removeAllExcept([]);
+            }
+        });
 
     },
 

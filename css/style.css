@@ -512,6 +512,10 @@ textarea, input[type=password], input[type=text], input[type=number] {
   .report-panel section {
     height: auto;
     min-height: 100%;
+    opacity: 0.2;
+  }
+  .report-panel section.active {
+    opacity: 1;
   }
 
 
