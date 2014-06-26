@@ -18,18 +18,15 @@ footer: hide
 
     <div class="col12 clip sliding h active1" style="height: calc(100% - 50px)">
         <!-- Report -->
-        <div class="report-panel prose clip sliding v active1 animate">
+        <div class="report-panel col12 prose animate">
             {% for report in page.report %}
-                <section class="col12 animate" style="height: 100%" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}"{% if report.zoom_to %} data-nav='["{{report.zoom_to.lat}}", "{{report.zoom_to.lon}}", "{{report.zoom_to.zoom}}"]'{% endif %}{% if report.layers %} data-id='[{% for layer in report.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}>
+                <section class="animate" data-index="{{forloop.index}}" data-ixcount="{{forloop.length}}"{% if report.zoom_to %} data-nav='["{{report.zoom_to.lat}}", "{{report.zoom_to.lon}}", "{{report.zoom_to.zoom}}"]'{% endif %}{% if report.layers %} data-id='[{% for layer in report.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}{% if forloop.last %} style="margin-bottom:0px"{% else %} style="margin-bottom:80px"{% endif %}>
 
-                    {% unless forloop.first %}
-                        <a href="#" class="col12 report-slider h animate quiet center" data-slide="up">
-                            <div class="icon arrow-up"></div>
-                            <div class="small">{{t.[page.language].report.page_up}}</div>
-                        </a>
-                    {% endunless %}
-
-                    <h2 class="prose serif pad1y space-bottom2 keyline-bottom">{{report.title}}</h2>
+                    <h2 class="prose serif keyline-bottom" style="margin-bottom:10px">{{report.title}}</h2>
+                    {% if forloop.first and page.author %}
+                        <div class="serif small"><strong>By {{page.author}}</strong></div>
+                        <div class="serif space-bottom2 small">{{page.date | date:"%B %-d, %Y"}}</div>
+                    {% endif %}
 
                     {% if report.attachments and report.attachments.size %}
                         <div class="space-bottom1">
@@ -47,15 +44,7 @@ footer: hide
                         <div class="row6 space-bottom1" style="background-image: url({{page.img}}); background-size: cover;"></div>
                     {% endif %}
 
-                    {% if forloop.first and page.author %}<div class="space-bottom2 small">By {{page.author}}</div>{% endif %}
-
                     <p class="prose space-bottom4">{{report.text}}</p>
-                    {% unless forloop.last %}
-                        <a href="#" class="col12 report-slider h animate quiet center pad4y" data-slide="down">
-                            <div class="small">{{t.[page.language].report.page_down}}</div>
-                            <div class="icon arrow-down"></div>
-                        </a>
-                    {% endunless %}
 
                 </section>
             {% endfor %}
