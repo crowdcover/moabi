@@ -46,16 +46,6 @@ var moabi = {
         $('.page-fade-link').on('click', this.fade2Page);
 
         $('#snap').on('click', this.mapCapture);
-
-        // $('a[href^="#"]').on('click', function(event) {
-        //     var target = $( $(this).attr('href') );
-        //     if( target.length ) {
-        //         event.preventDefault();
-        //         $('html, body').animate({
-        //             scrollTop: target.offset().top
-        //         }, 1000);
-        //     }
-        // });
         $('.sortable').sortable({
             placeholder: "ui-state-highlight",
             update: function( event, ui ){
@@ -181,7 +171,7 @@ var moabi = {
             if(nav){
                 map.setView([nav[0], nav[1]], nav[2]);
             }
-
+            // add layers only after map.setView has completed, via a callback?
             if(layers){
                 moabi.removeAllExcept(layers);
 
