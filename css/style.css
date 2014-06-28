@@ -288,7 +288,7 @@ h3 a:hover,
   }
 
 
-/* buttons */
+/* buttons/controllers/lists */
 .rounded-toggle {
   padding: 2px;
   border-radius: 3px;
@@ -367,14 +367,12 @@ textarea, input[type=password], input[type=text], input[type=number] {
   }
 
 .widget-ui {
-    margin: 6px 0;
   }
   .widget-ui a {
     font: 14px/20px 'Open Sans', sans-serif;
     display: block;
     float: left;
     text-align: center;
-    padding: 4px;
     width: 32px;
     border-bottom: none;
     border-right: 1px solid #DDD;
@@ -940,12 +938,21 @@ table tr.opt-row td {
     /* jlc - make base play nice */
     display: inline;
     vertical-align: baseline;
-}
+  }
     .icon.float:before {
         float: left;
     }
     .rcon.float:after {
         float: right;
+    }
+    /* jlc - move icon outside of element (often for li)*/
+    .icon.offset {
+        position: relative;
+    }
+    .icon.offset:before {
+        position: absolute;
+        top: 3px;
+        left: -18px;
     }
 
 .icon.big:before,
@@ -955,13 +962,6 @@ table tr.opt-row td {
 
 /* make base.css icons play nice with mine */
 .col1.big.icon:empty { float:left; width:08.3333%; }
-
-/* jlc custom classes */
-.l-offset {
-  position: relative;
-  left: -17px;
-}
-
 
 .icon.mobile:before { content: "\e600" }
 .icon.mail:before { content: "\e601" }
@@ -1055,7 +1055,8 @@ table tr.opt-row td {
 .icon.plus:before { content: "\e658" }
 .icon.cross2:before { content: "\e659" }
 .icon.minus2:before { content: "\e65a" }
-.icon.plus2:before { content: "\e65b" }
+.icon.plus2:before,
+.rcon.plus2:after { content: "\e65b" }
 .icon.erase:before { content: "\e65c" }
 .icon.blocked:before { content: "\e65d" }
 .icon.info:before { content: "\e65e" }

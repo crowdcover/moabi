@@ -11,7 +11,7 @@ header: sidebar
             <ul class="nav space-bottom4">
                 {% for about_page in site.tags.about reversed %}{% if about_page.language == page.language %}
                     <li class="pad0y">
-                        <a href="{{site.baseurl}}{{about_page.url}}" class="{% if page.title == about_page.title %}active icon plus2 l-offset{% endif %}">{{about_page.title}}</a>
+                        <a href="{{site.baseurl}}{{about_page.url}}" class="{% if page.title == about_page.title %}active icon plus2 offset{% endif %}">{{about_page.title}}</a>
                     </li>
                 {% endif %}{% endfor %}
             </ul>
