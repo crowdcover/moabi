@@ -1,21 +1,38 @@
 {% assign t = site.data.translations %}
 
-<header class="header nav fill-gray strongline-bottom dropshadow-down contain caps noprint">
+<header class="header nav fill-gray strongline-bottom contain caps noprint">
     <div class="row1 clearfix{% unless page.header == 'sidebar' %} limiter{% endunless %}">
-        <div class="col4{% if page.header == 'sidebar' %} center{% else %} mobile-center{% endif %}">
+        <div class="col4{% if page.header == 'sidebar' %} center{% endif %}">
             <a class="logo-h pad1 beta{% unless page.header == 'sidebar' %} fl{% endunless %}" href="{{site.baseurl}}/{{page.language}}"></a>
         </div>
 
-        <div class="col8 mobile-center space">
-
+        <ul class="col8">
             {% unless page.title == 'Signup' %}{% include language_toggle.html %}{% endunless %}
 
-            <a class="pad1y fr {% if page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}" href="{{site.baseurl}}/using-moabi/{{page.language}}">{{t.[page.language].header.documentation}}</a>
-            <a class="pad1y fr {% if page.tags contains 'about' %}active{% endif %}" href="{{site.baseurl}}/the-initiative/{{page.language}}">{{t.[page.language].header.about}}</a>
-            <a class="pad1y fr {% if page.title == 'Blog' or page.layout == 'blog_post' %}active{% endif %}" href="{{site.baseurl}}/blog/{{page.language}}">{{t.[page.language].header.blog}}</a>
-            <a class="pad1y fr {% if page.title == 'Data' %}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
-            <a class="pad1y fr {% if page.title == 'Reports' %}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
-        </div>
+            <li class="dropdown pad1 fr">
+                <a class="rcon plus2 {% if page.tags contains 'about' or page.title == 'Blog' or page.tags contains 'blog_post' or page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}">More</a>
+                <ul class="pad1x fill-gray keyline-all strongline-top">
+                    <li class="pad1y keyline-bottom">
+                        <a href="{{site.baseurl}}/the-initiative/{{page.language}}" class="{% if page.tags contains 'about' %}active{% endif %}">{{t.[page.language].header.about}}</a>
+                    </li>
+                    <li class="pad1y keyline-bottom">
+                        <a href="{{site.baseurl}}/blog/{{page.language}}" class="{% if page.title == 'Blog' or page.tags contains 'blog_post' %}active{% endif %}">{{t.[page.language].header.blog}}</a>
+                    </li>
+                    <li class="pad1y ">
+                        <a href="{{site.baseurl}}/using-moabi/{{page.language}}" class="{% if page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}">{{t.[page.language].header.documentation}}</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="pad1 fr">
+                <a class="{% if page.title == 'Data'%}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
+            </li>
+
+
+            <li class="pad1 fr">
+                <a class="{% if page.title == 'Reports' or page.tags contains 'report'%}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
+            </li>
+        </ul>
 
     </div>
 </header>

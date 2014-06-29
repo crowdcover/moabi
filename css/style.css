@@ -59,6 +59,23 @@ footer a {
   min-height: calc(100% - 110px);
 }
 
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  }
+  .dropdown > ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 40px;
+  }
+  .dropdown:hover > ul {
+    display: block;
+  }
+  .dropdown > ul li {
+
+  }
+
 /* typography and spacing */
 h1, h2 {
   font-family: 'Open Sans XBold';
@@ -170,15 +187,16 @@ a.desaturate:hover { color: #999;}
 h1 a,
 h2 a,
 h3 a,
-.nav a { color: #404040; }
+.nav a{ color: #404040; }
 
 h1 a:hover,
 h2 a:hover,
 h3 a:hover,
-.nav a:hover { color: #888; }
+.nav a:hover{ color: #888; }
 
 .nav a.active,
-.nav a:active { color: #29abe2; }/* blue || { color: #FF8F00; } /* darker red orange */
+.nav a:active,
+nav a.active{ color: #29abe2; }/* blue || { color: #FF8F00; } /* darker red orange */
 
 /* 4) link state activate: layer_ui, */
 .activate a {
