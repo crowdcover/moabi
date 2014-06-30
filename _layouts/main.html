@@ -22,12 +22,25 @@
     <script src='{{site.baseurl}}/map.js'></script>
 {% endif %}
     <script>
-        // only adds event listener to first element.  map it to all print elements
-        if(document.getElementsByClassName('print-page').length > 0){
-            document.getElementsByClassName('print-page')[0]
-                .addEventListener('click', function(){
-                    window.print()
-                });
+        print_button = document.getElementsByClassName('print-page');
+        for(var i=0; i<print_button.length; i++){
+            print_button[i].addEventListener('click', function(){
+                window.print()
+            });
+        }
+
+        dropdown = document.getElementsByClassName('dropdown');
+        for(var i=0; i<dropdown.length; i++){
+            dropdown = dropdown[i];
+            dropdown_class = dropdown.className;
+
+            dropdown.addEventListener('click', function(){
+                if(dropdown.className.split(' ').indexOf('open') === -1){
+                    dropdown.className += ' open';
+                }else{
+                    dropdown.className = dropdown.className.replace(' open', '');
+                }
+            })
         }
     </script>
 </body>

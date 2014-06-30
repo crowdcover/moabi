@@ -69,11 +69,13 @@ footer a {
     left: 0;
     top: 40px;
   }
-  .dropdown:hover > ul {
+  /*.dropdown:hover > ul,*/
+  .dropdown.open > ul {
     display: block;
   }
-  .dropdown > ul li {
-
+  .dropdown.open > a,
+  .dropdown.open:hover > a {
+    color: #29abe2;
   }
 
 /* typography and spacing */
