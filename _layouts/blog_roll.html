@@ -18,7 +18,7 @@ layout: main
 {% unless post.draft %}
 {% if post.language == page.language %}
     <section class="clearfix limiter pad4y {% unless forloop.last %}strongline-bottom space-bottom2{% endunless %}">
-        <h1 class="col10 margin1 margin1r center space-bottom1"><a href="{{post.url}}">{{post.title}}</a></h1>
+        <h1 class="col10 margin1 margin1r center space-bottom1"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
         <div class="pad1 center quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:#444; padding: 0 6px;">|</span> {{post.author}}</div>
         {% if post.img %}
         <div class="clearfix">
@@ -34,13 +34,13 @@ layout: main
                 {{post.excerpt | markdownify}}
             {% endif %}
         </div>
-        <a href="{{post.url}}">{{t.[page.language].read_more}}</a>
+        <a href="{{site.baseurl}}{{post.url}}">{{t.[page.language].read_more}}</a>
     </section>
 {% else %}
     {% unless has_translation contains post.id %}
     <!--  untranslated post -->
     <section class="clearfix limiter pad4y {% unless forloop.last %}strongline-bottom space-bottom2{% endunless %}">
-        <h1 class="center"><a href="{{post.url}}">{{post.title}}</a></h1>
+        <h1 class="center"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
         <div class="pad1 center quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:#444; padding: 0 6px;">|</span> {{post.author}}</div>
         <div class="pad1 center quiet"><em>{{t.[page.language].no_translation}}</em></div>
         {% if post.img %}
@@ -57,7 +57,7 @@ layout: main
                 {{post.excerpt | markdownify}}
             {% endif %}
         </div>
-        <a href="{{post.url}}">{{t.[page.language].read_more}}</a>
+        <a href="{{site.baseurl}}{{post.url}}">{{t.[page.language].read_more}}</a>
     </section>
     {% endunless %}
 {% endif %}
