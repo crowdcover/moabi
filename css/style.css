@@ -16,6 +16,7 @@ orange: #F8AA04;
   bottom:0;
   width:100%;
   background-color: #333;
+  z-index: 0;
 }
 
 body {
