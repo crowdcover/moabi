@@ -336,8 +336,11 @@ nav a.active{ color: #29abe2; }/* blue || { color: #FF8F00; } /* darker red oran
   }
 
 .tabs a {
+  height: 31px;
+  padding: 5px;
   cursor: pointer; /*not sure why this needs to be restated*/
   color: rgba(0,0,0,0.5);
+  overflow: hidden;
 }
 
 textarea, input[type=password], input[type=text], input[type=number] {
@@ -836,11 +839,6 @@ table tr.opt-row td {
     top: 342px;
     bottom: 0;
   }
-}
-
-.tabs > a {
-  height: 31px;
-  padding: 5px;
 }
 
 /* Mobile Layout
