@@ -1351,7 +1351,7 @@ small .icon:before,
   padding:0;
 }
 
-a.icon:before,
+/*a.icon:before,
 a.rcon:after,
 a > .icon:before,
 a > .rcon:after {
@@ -1360,7 +1360,7 @@ a > .rcon:after {
           background-size:4240px 60px;
   opacity:1;
 }
-
+*/
 .dark.tabs .rcon:after,
 .dark.tabs .icon:before,
 .dark .tabs .rcon:after,
