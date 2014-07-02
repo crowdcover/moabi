@@ -163,8 +163,6 @@ var moabi = {
             nav = $this.data('nav'),
             layers = $this.data('id');
 
-        console.log("dir:" + dir + " index:" + index + " nav:" + nav + " layers:" + layers);
-
         container.animate({
             scrollTop: $this.offset().top - container.offset().top - 10 + container.scrollTop()
         }, 600, function(){
@@ -182,7 +180,6 @@ var moabi = {
 
                     if(layer_button.length){
                         layer_button.trigger('click');
-                        console.log("add layer: " + layers[i]);
                     }
                 }
             }else{
@@ -314,7 +311,6 @@ var moabi = {
             var $this = $(this);
 
             if(layers.indexOf($this.data('id')) === -1){
-                console.log('remove layer: ' + $this.data('id'));
                 $this.trigger('click');
             }
         });
