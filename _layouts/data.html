@@ -18,11 +18,11 @@ header: sidebar
 footer: sidebar
 ---
 {% assign t = site.data.translations %}
-<div id="sbar" class="fill-light strongline-right dropshadow-right">
+<div id="sidebar" class="left-bar fill-light strongline-right dropshadow-right">
 
     <!-- sidebar slider -->
     <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px">
-        <div class='slider tabs col10 margin1 mobile-cols space-bottom1 clearfix'>
+        <div class='slider tabs col10 pad0x margin1 mobile-cols space-bottom1 clearfix'>
             <a data-index="1" class='col4 active'>{{t.[page.language].sidebar_slider.map_layers}}</a><!--
          --><a data-index="2" class='col4'>{{t.[page.language].sidebar_slider.export}}</a><!--
          --><a class='col4 page-fade-link' id="id-edit" href="http://osm.moabi.org/edit?editor=id">{{t.[page.language].sidebar_slider.edit}}</a>

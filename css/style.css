@@ -8,6 +8,8 @@ text: #404040;
 dark: #222;
 light brown: rgb(255, 252, 248);
 orange: #F8AA04;
+blue: #29abe2;
+hover blue: #3D7797;
 */
 
 #map {
@@ -31,7 +33,7 @@ body {
 header {
   letter-spacing: 1px;
   font-family: 'Open Sans Bold', sans-serif;
-  z-index: 1;
+  z-index: 2;
   }
 
 footer a {
@@ -459,20 +461,30 @@ textarea, input[type=password], input[type=text], input[type=number] {
 
 
 /* custom layout elements */
-.logo-h {
-  background: url({{site.baseurl}}/img/logo_h.svg) no-repeat center left;
-  background-size: 100%;
-  display:inline-block;
-  height: 100%;
-  width: 170px
-}
+  .logo-icon {
+    background: url({{site.baseurl}}/img/moabi_logo_40_40.svg) no-repeat center left;
+    /*background-size: 100%;*/
+    display:inline-block;
+    height: 40px;
+    width: 40px;
+  }
+  .logo-text {
+    font:16px/20px 'Open Sans XBold', sans-serif;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    letter-spacing: 2px;
+    color: #29abe2;
+  }
+  a:hover .logo-text {
+    color: #3D7797;
+  }
 
-.beta { text-align: center;}
 .beta:after {
   content: 'beta';
   position: relative;
-  left: 100px;
-  bottom: 10px;
+  left: 6px;
+  top: -5px;
   font-size: 8px;
   color: #999;
 }
@@ -504,26 +516,35 @@ textarea, input[type=password], input[type=text], input[type=number] {
   }
 
 
-/* Sidebarred map pages: data, reports */
-#sbar, #map.mbar {
+/* Sidebar-separated pages: header, data page, reports pages */
+/* .left-bar/.right-bar apply all elements that split their layout; #sidebar.left-bar and #map.right-bar apply only to sidebar and map elements*/
+.left-bar {
+    width: 34%;
+    min-width: 360px;
+    max-width: 470px;
+  }
+  .right-bar {
+    width: 66%;
+    max-width: calc(100% - 360px);
+    min-width: calc(100% - 470px);
+  }
+
+#sidebar.left-bar,
+#map.right-bar {
     position: absolute;
     top: 42px; /* header height */
     bottom: 68px; /* footer height */
   }
-  #map.mbar.no-footer,
-  #sbar.no-footer { bottom: 0; }
-  #sbar {
-    width: 34%;
-    min-width: 360px;
-    max-width: 470px;
+  #map.right-bar.no-footer,
+  #sidebar.left-bar.no-footer { bottom: 0; }
+  #sidebar {
     z-index: 1;
   }
-  #map.mbar {
+  #map.right-bar {
     left: 0;
     width: 100%;
-/*    width: 66%;
-    max-width: calc(100% - 360px);
-    min-width: calc(100% - 470px);*/
+    max-width: none;
+    min-width: 0;
   }
 .report-panel,
 .sidebar-panel {
@@ -825,16 +846,25 @@ table tr.opt-row td {
 /* Tablet Layout
 ------------------------------------------------------- */
 @media only screen and (max-width:770px) {
-#sbar, #map.mbar {
-  min-width: 100%;
-  top: 42px; /* header height */
+  header > div { padding: 0 20px;}
+  header .left-bar,
+  header .right-bar {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    height: 40px;
   }
-  #sbar {
+
+  #sidebar, #map.right-bar {
+    min-width: 100%;
+    top: 42px; /* header height */
+  }
+  #sidebar {
     height: 300px;
     border-right: 0;
     border-bottom: 10px solid rgba(255, 252, 248, 0.82);
   }
-  #map.mbar {
+  #map.right-bar {
     /*bottom: 68px;  footer height */
     top: 342px;
     bottom: 0;
@@ -844,13 +874,15 @@ table tr.opt-row td {
 /* Mobile Layout
 ------------------------------------------------------- */
 @media only screen and (max-width:640px) {
+  .left-bar .logo-text { display: none;}
+
   .mobile-center{
     text-align: center;
-    }
-    .mobile-center > a,
-    .mobile-center > div{
-      float: none;
-    }
+  }
+  .mobile-center > a,
+  .mobile-center > div{
+    float: none;
+  }
 
   .mobile-pad {
     padding: 10px;

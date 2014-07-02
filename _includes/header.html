@@ -2,11 +2,12 @@
 
 <header class="header nav fill-gray strongline-bottom contain caps noprint">
     <div class="row1 clearfix{% unless page.header == 'sidebar' %} limiter{% endunless %}">
-        <div class="col4{% if page.header == 'sidebar' %} center{% endif %}">
-            <a class="logo-h pad1 beta{% unless page.header == 'sidebar' %} fl{% endunless %}" href="{{site.baseurl}}/{{page.language}}"></a>
-        </div>
+        <a class="left-bar fl clearfix{% if page.header == 'sidebar' %} center{% endif %}" href="{{site.baseurl}}/{{page.language}}">
+            <div class="logo-icon"></div>
+            <div class="logo-text">Moabi DRC</div>
+        </a>
 
-        <ul class="col8">
+        <ul class="right-bar fr clearfix">
             {% unless page.title == 'Signup' %}{% include language_toggle.html %}{% endunless %}
 
             <li class="dropdown pad1 fr">
