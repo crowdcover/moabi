@@ -71,6 +71,7 @@ footer a {
     position: absolute;
     left: 0;
     top: 40px;
+    width: 162px;
   }
   /*.dropdown:hover > ul,*/
   .dropdown.open > ul {
