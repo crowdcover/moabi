@@ -1,0 +1,62 @@
+---
+layout: documentation
+language: fr
+title: Decharger Donnees
+tags:
+  - guide
+categories:
+  - fr
+---
+# Decharger Donnees
+
+Moabi  est construit comme une pateforme pour permettre à plusieurs groupes de collaborer sur les donnees vectorielles, toutes dans une base des donnees après etre convenu sur les definitions des donnees. Pour que les donnees restent structurees et utilisables, il est important de retenir ce qui suit:
+
+* Toutes les donnees importees doivent aderees au schema des attributs Moabi (found in the [map features documentation]({{site.baseurl}}/map features/{{page.language}})).  Le schema is construit avec toute flexibilité et capable de grandir de la meme maniere que les nouveaux objets exigent les nouvelles definitions des donnees.
+
+* Toutes les données importées à grande echelle peuvent avoir lieu en toute conscience de ce qui existe deja dans la base des donnees. Sinon, les objets/donnees dupliques et obsoletes reduiront de leur qualite dans l’enseble des données.
+
+* Tous les importés doivent clairement documenter les metadonnées, y compris la source, date, petite description de l’ensemble des donnees, et si necessaire, la precision sur l’ensemble des donnees.
+
+## Avoir Ses Données Prêtes Pour Data Moabi
+
+Si vous avez un dataset et vous voulez telecharger sur Moabi, il ya certaines choses que vous devez faire pour preparer votre importation des données sur Moabi.  Comme exemple, ce guide fournit une explication etape-par-etape  de la maniere dont les nouvelles informations sur les concessions agriculture sont telechargees. Les resultats, quand on se rend dans la base des donnees peuvent etre quelques comme ceci:
+
+![](https://farm6.staticflickr.com/5075/14346261485_6cfe14b35c_c.jpg)
+
+
+### Rejoindre la Conversation
+
+Si vous avez les donnees que vous voulez telecharger, [entrez en contact](mailto:info@crowdcover.org) avec nous.  Nous sommes entrain de contruire les Groupes de Travail des Donnees autour des diffents datasets que nous gerons. Si les autres sont deja entrain de travailler pour le cas vos donnees, venez rejoinder la conversation.
+
+### Restructuration des Attributs
+
+Convertir vos attributs des donnees pour convenir [Moabi's attribute schema]({{site.baseurl}}/map-features/{{page.language}}).  Ceci va impliquer l’ajout de certains attributs pour chaque objet propose, changer le nom de certains attributs existants, et possiblement supprimer certains attributs qui ne s’appliquent pas.
+
+  * Dans notre exemple, nous regardons la table des attributs du dataset en utilisant **qGIS** (ou tout autre GIS software).  Certains de ces attributs ne sont pas clairement importants à garder. Les autres vont necessiter de les changer.
+![](https://farm6.staticflickr.com/5152/14361318353_988cba6297_c.jpg)
+
+  * Moabi cree son unique id d’objet, alors pas besoin de maintenir la colonne `id`.  Cependant, si ceci etait l’unique clé assignee à la concession par le ministere de l’agriculture, ce serait quelque chose sur laquelle nous pourrions suivre avec attention. Dans ce cas, il est cependant pertinent seulement pour ce dataset specifique.
+
+  * Il n’y a pas besoin de suivre attentivement les donnees geographiques d’une province ou district -- Moabi suit attentivement ceci pour nous automatiquemnet. Alors, nous pouvons ignorer `Territoire`, `Denominati`, and `Localisati`.  De la meme facon, Moabi peut prendre soins des surface et perimetre de sa maniere, donc pas besoin de garder les attributs `SURFACE` ou `PERIMETRE`.
+
+
+Maintenant, pour matcher nos attributs à l’attribut schema concession agricole, nous allons sur  le **[Map Features]({{site.baseurl}}/map-features/{{page.language}}/#agriculture)** page.
+
+![](https://farm4.staticflickr.com/3889/14154517590_f593a5d50f_c.jpg)
+
+  * **Attributs Primaires** definie le type d’objet, comme centrale hydroelectrique ou concession forestiere. Habituellement, un attribut est suffisant pour definir un type d’objet, et cet attribut doit etre le meme pour tous les objets de ce type d’objet. Dans ce cas, nous ajoutons `concession = agriculture` dans tous les objets de notre dataset.
+
+  * **Attributs Optionnels**, differents pour chaque type d’objet, representent les informations additionnelles pour chaque objet. Dans ce cas, ca prend comme l’attribut `operateur`marche de paire avec l’attribut `Acquereur` dans notre dataset, et l’attribut `ressource` marche de paire avec l’attribut `Culture` dans notre dataset.
+
+  * Ca se voit comme si quelques attributs optionnels ont manqué les valeurs `NULL`.  Ça c’est OK.  Parailleurs, Moabi est un bon outil de collation pour les donnees incompletes, pour verification par differentes sources, et pour verification des donnees sur terrain.
+
+Quand nous avons terminé de transformer notre dataset, la table des attributs doit être comme suit:
+
+![](https://farm6.staticflickr.com/5312/14337793821_1aea6defb7_o.png)
+
+<!-- 3. La derniere chose à faire pour avoir vos donnees prêtes pour Moabi c’est de valider la géometrie -->
+Felicitations!  Votre dataset doit maintenant etre prêt ppour telecharger. Simplement ajouter ca dans notre dossier public dans Google Drive folder  et ca va s’ajouter dans la file d’attente de téléchargement. Si vous avez des difficultés avec Google Drive, tu peux aussi [email](mailto:info@crowdcover.org) ca à nous.
+
+
+
+

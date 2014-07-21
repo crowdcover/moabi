@@ -1,0 +1,110 @@
+---
+layout: documentation
+language: fr
+tags:
+  - training
+categories:
+  - fr
+---
+# Edit Data
+
+***
+
+Moabi uses iD to edit existing data.  With iD, users can update map feature attributes, add new attributes to features, improve the geometry of features, and even add new hand-drawn features.  All edits happen within the browser, so as long as your browser is up to date, you will not need to download any additional software.
+
+For the **EcoHackathon**, we are using another **OSM** tool, the **Tasking Manager** to microtask the work.  To begin with, go to the [Tasking Manager](http://tasks.hotosm.org/job/520) to be assigned a task.
+
+![](https://farm8.staticflickr.com/7395/13962446399_7c011d8b89_b.jpg)
+
+Click **Log In Using Your OpenStreetMap Account**.  If you've never used OSM before, click **Register Now** and confirm by email. Finally, authorize the **Tasking Manager** to access your account.
+
+***
+
+## OSM Tasking Manager
+
+The **Tasking Manager** is used to break up very large mapping projects into small pieces that can be microtasked across many members of a group.  The gridded map on the right displays the entire area of interest broken up into grid cells.  <span style="color: #A4A8A8;">Gray</span> cells have not yet been worked on; <span style="color: #FFC151;">Yellow</span> cells are being edited; <span style="color: #FFA6A6">Red</span> cells have been mapped; and <span style="color: #66E966">Green</span> cells have been validated.
+
+![](https://farm6.staticflickr.com/5485/14222223531_652dbfee79_c.jpg)
+
+To get started, click a gray square that has not yet been worked on.  You will be presented with a series of editors to map that cell.  For this exercise, we are using the in-browser **iD** editor.  Click **Yes, I want to work on this task** to be assigned this task.
+
+![](https://farm8.staticflickr.com/7359/14149277434_50eae89202.jpg)
+
+1. First download your grid cell's bounding box as a `.gpx` file.  Right click the **.gpx** button and save it to your hard drive.
+
+2. Next, click **iD Editor** to go to **iD**.
+
+### Move from OSM to Moabi
+
+Welcome to OSM's **iD Editor**.  However, for the EcoHack, we will be working within **Moabi's** **iD** clone, so first we must change the URL slightly.  Your URL will look something like this:
+
+```
+http://www.openstreetmap.org/edit?editor=id#map=10/3.6888/18.8086
+```
+
+Change `www.openstreetmap` to `dev.osm.moabi`, so that your full URL looks something like this:
+
+```
+http://dev.osm.moabi.org/edit?editor=id#map=10/3.6888/18.8086
+```
+
+***
+
+## iD
+
+You will now be asked to create another account for Moabi.  Follow the same process you did to sign up for OSM (use the same name and password, if that's easier to remember), and confirm by email.
+
+Once you are back in the Moabi **iD** editor, you can reupload the `.gpx` file you downloaded from the OSM **iD** editor.  Click the <span class="idcon layers" style="margin-top: 3px"></span> **layers** tab to open the layer chooser, and at the bottom, find the **Local GPX file** button.  Either drag and drop your local `.gpx` file or browse for it on your hard drive.
+
+![](https://farm8.staticflickr.com/7411/13962446359_0f1b01ef12_b.jpg)
+
+You should now see your grid cell outlined in <span style="color: #FF26D4;">purple</span>.  Everything within that box is yours to work on.
+
+### Navigating in iD
+
+You have already seen the <span class="idcon layers" style="margin-top: 3px"></span> **layers** tab when adding your `.gpx` file.  Open it again, and in the top radio-button box, experiment with changing the base layer.  A handful of different satellite layers are available, some with time stamps.
+
+![](https://farm8.staticflickr.com/7323/14169164633_9ee85067c3_b.jpg)
+
+In <span class="idcon layers" style="margin-top: 3px"></span> **layers** tab, below the baselayer box, there are also checkboxes for **data layers**.  Toggle the **Equateur Roads** overlay to view the roads layer we will be digitizing.
+
+
+The **Equateur Roads** layer displays **WRI** in OSM roads in orange.  Logging roads are orange with a dashed stroke.  OSM roads are white.  **We are interested in tracing the following:
+
+1. WRI logging roads not in OSM (orange, dashed line)
+
+2. WRI logging roads already in OSM (white line overlaying an orange, dashed line), and
+
+3. WRI non-logging roads not in OSM (orange, solid line)
+
+
+
+*A note on editing*: because Moabi hosts such large amounts of data, and in order to be editable, all on-screen features need to be loaded into the browser.  For this reason, it is only possible to edit data at zoom level **14** or higher.  If the **point**, **line**, **area** buttons at the top are an opaque black, you are not zoomed in far enough to edit.
+
+![](https://farm6.staticflickr.com/5560/13962426877_d5702bcc72_z.jpg)
+
+Find an area and zoom into the map , or click **Zoom to Edit** on the left.
+
+***
+
+### Editing in iD
+
+For this tutorial, everything we will be digitizing are lines--it is also possible to add points and polygons.  Click the <span class="idcon line"></span>**line** button and add start tracing.
+
+1. Click the map to add a new point to the multi-line, and **click the final point again to complete tracing**.
+
+2. When your trace is complete, add the correct attributes.  From the available attribute list, click **Road**, choose **Unclassified**, and, if it's a logging road, assign **logging** the value of **yes**.
+
+3. Next, if it is a logging road, date the image.  Open up the <span class="idcon layers" style="margin-top: 3px"></span> **layers** tab again and change the base layer between different timestamped satellite layers.  If the road is visible one year and not visible the previous year, assign **first_observed** to the year of that satellite layer.  Next, do the same to find when (*or if*) the road was abandoned and disappeared.  If the road is visible one year and visible the *next* year, assign **last_observed** to the year of that satellite layer.  It is possible that one or both of these years will not be undeterminable; in that case, leave the tag blank.
+
+4. Add another road, and continue tracing another feature inside your area of interest.
+
+![](https://farm6.staticflickr.com/5585/14202389466_b35b789e75_c.jpg)
+
+***
+
+### Closing a Task
+
+When you have successfully mapped an entire grid cell, go back to the tasking manager and click the green **Mark the Task as Done** button.  Add any comments on the data (for example, irregularities or inconsistencies).
+
+You have successfully uploaded data to the Moabi OSM server.  Congratulations!  If you feel up for it, choose another cell.

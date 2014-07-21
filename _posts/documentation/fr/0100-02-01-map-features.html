@@ -1,29 +1,29 @@
 ---
 layout: documentation
-language: en
+language: fr
+title: documentation
 tags:
   - data_documentation
 categories:
-  - en
+  - fr
 tutorial: |
-          Within the Moabi database, all vector features have a **geometry type** that defines if that feature is a single point, a line, or a polygon.  Additional, non-geometric information about each feature is defined by a standardized set of **attributes**.
+          Dans la base des données Moabi, toutes les caractéristiques des vecteurs ont une ** géométrie typique** qui définie si cette caractéristique est un point unique, une ligne, ou un polygone.  Information additionnelle non géométrique sur chaque caractéristique est définie par un ensemble  standardisé appelé **attributs**.
 
 
-          ## Geometry Types
-          All features can be of one of three **types**: <span class="idcon point"></span>**point**, <span class="idcon line"></span>**line**, or <span class="idcon polygon"></span>**polygon**, similar to most GIS programs.  It is possible for some features to be represented in different types.  For instance, a small concession could either be represented as a point marking the concession center, or as a polygon outlining its boundary.
+          ## Types de géométrie
+          Toutes les caractéristiques peuvent etre un ou trois **types**: <span class="idcon point"></span>**point**, <span class="idcon line"></span>**line**, or <span class="idcon polygon"></span>**polygon**, similaire dans la plus part de programmes GIS.  Il est possible que certaines caractéristiques soient représentées par différents types. Par exemple, une petite concession pourrait être représentée soit par un point marquant le centre de la concession ou comme a polygone traçant ses limites.
 
+          ## Attributs
+          Toutes les caractéristiques sont définies par une série des différents attributs (aka *tags*) qui contiennent des informations additionnelles sur l’objet. Les Attributs son tune paire of  une**clé** et une **valeur**, encore similaire dans la plus part de programmes GIS.  Il y a trois types d’attributs ans la plateforme Moabi.  Pour plus d’information sur la nomenclature conventionnelle d’un attribut, regardez dans le tutorial sur[uploading data]({{site.baseurl}}/upload-data/en).
 
-          ## Attributes
-          All features are defined by a series of different attributes (aka *tags*) that contain additional information about a feature.  Attributes are a pairing of a **key** and a **value**, again similar to most GIS programs.  There are three types of attributes in the Moabi platform.  To learn more about attribute naming conventions, see the tutorial on [uploading data]({{site.baseurl}}/upload-data/{{page.language}}).
+          ###  ATTRIBUTS PRIMAIRE
+          Toutes les caractéristiques (objets) on tune clé primaire qui définie ce qu’ils sont. Par exemple, toutes les concessions minières doivent avoir comme attribut `concession=mine`, alors que les concessions forestières doivent avoir comme attribut `concession=logging`.
 
-          ### PRIMARY ATTRIBUTES
-          All features have one primary attribute that defines what they are.  For example, all mining concessions must have the attribute `concession=mine`, while all logging concessions must have the attribute `concession=logging`.
+          ### ATTRIBUTS OPTIONNELS
+          Additionellement, les objets peuvent avoir zéro ou plusieurs attributs optionnels ce qui signifie l’information additionnelle sur cet objet.  Par exemple, une mine peut etre qualifiée un `operateur={text}` attribut représentant son propriétaire/operateur, une `ressource={text}` attribut représentant le (s) minerais en exploitation, aussi bien que les autres attributs.
 
-          ### OPTIONAL ATTRIBUTES
-          Additionally, features can have zero or more optional attributes that signify additional information about that feature.  For example, a mine can be given an `operator={text}` attribute representing its owner/operator, a `resource={text}` attribute representing the mineral(s) being mined, as well as a number of other attributes.
-
-          ### DEFAULT ATTRIBUTES
-          All features are also given automatically generated default attributes, depending on their **feature type**.  For example, the platform will calculate an area for all **polygons**, a length for all **lines**, and a province and district location for all features (**point**, **line**, and **polygon**).  Because of this, it is not necessary to include information on area, length, or administrative location when uploading or editing feature attributes.
+          ### ATTRIBUTS PAR DEFAUT
+          Tous les objets ont aussi automatiquement des attributs définis par défaut, dépendamment de leur **caractéristique type**.  Par exemple, la plateforme peut calculer la superficie de tous les **polygones**, la longueur de toutes les **lignes**, et la localisation d’une province et district pour tous les objets (**point**, **ligne**, et **polygone**).  A cause de cela, il n’est pas nécessaire d’inclure l’information sur la surface, longueur, ou localisation administrative quand on charge ou on édite les attributs d’un objet.
 
 ---
 <div style="overflow: hidden;">
