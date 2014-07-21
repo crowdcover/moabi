@@ -1,7 +1,7 @@
 ---
 layout: documentation
 language: fr
-title: advanced
+title: Advanced
 tags:
   - guide
 categories:
