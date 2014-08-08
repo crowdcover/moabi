@@ -112,6 +112,20 @@
           -2.174770572211874
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": -9,
+        "name": "Bumba"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          22.467041015625,
+          2.2955282141879016
+        ]
+      }
     }
   ]
 }
