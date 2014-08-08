@@ -84,6 +84,34 @@
           -2.317483068758292
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": -7,
+        "name": "north mai-ndombe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.92144775390625,
+          -1.8096965844979593
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": -8,
+        "name": "west mai-ndombe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          17.718200683593746,
+          -2.174770572211874
+        ]
+      }
     }
   ]
 }
