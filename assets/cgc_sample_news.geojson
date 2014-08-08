@@ -1,11 +1,5 @@
 {
   "type": "FeatureCollection",
-  "crs": {
-    "type": "name",
-    "properties": {
-      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
-    }
-  },
   "features": [
     {
       "type": "Feature",
@@ -74,6 +68,20 @@
         "coordinates": [
           25,
           -3
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": -6,
+        "name": "mai-ndombe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          18.10546875,
+          -2.317483068758292
         ]
       }
     }
