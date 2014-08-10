@@ -1,5 +1,0 @@
-{
-  "tiles": [ "http://a.tiles.mapbox.com/v3/examples.map-i86l3621/{z}/{x}/{y}.png" ],
-  "minzoom": 0,
-  "maxzoom": 18
-}
