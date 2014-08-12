@@ -8,7 +8,7 @@
         </a>
 
         <ul class="right-bar fr clearfix">
-            {% unless page.title == 'Signup' %}{% include language_toggle.html %}{% endunless %}
+            {% unless page.hide == 'language_toggle' %}{% include language_toggle.html %}{% endunless %}
 
             <li class="dropdown pad1 fr">
                 <a class="rcon plus2 {% if page.tags contains 'about' or page.title == 'Blog' or page.tags contains 'blog_post' or page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}" href="#">{{t.[page.language].header.more}}</a>

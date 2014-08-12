@@ -70,6 +70,10 @@ en:
     training: Training Materials
     data_documentation: Documentation
 
+  signup:
+    header: Sign Up for Updates
+    description: Sign up to receive occasional Moabi newsletters, events, and updates on the platform.
+
 
 
 
@@ -145,5 +149,9 @@ fr:
     guides: Guides
     training: Training Materials
     data_documentation: Documentation
+
+  signup:
+    header: Sign Up for Updates
+    description: Sign up to receive occasional Moabi newsletters, events, and updates on the platform.
 
 
