@@ -18,7 +18,7 @@ this.map.shareControl.setPosition('topright');
 this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
 this.leaflet_hash = L.hash(this.map);
 
-this.map.legendControl.addLegend("<h2 class='center keyline-bottom'>Legend</h2>");
+this.map.legendControl.addLegend("<h3 class='center keyline-bottom'>Legend</h3>");
 
 //build base layer
 for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
@@ -330,7 +330,7 @@ var moabi = {
 
       var grid_url = "http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json";
 
-      //
+      // for each loaded tile layer, remove
       var present = false;
       map.eachLayer(function (layer) {
         if (layer.options['grids']) {
