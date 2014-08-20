@@ -1,4 +1,4 @@
-<li class="widget-ui horizontal toggle-language fr pad1 clearfix">
+<li class="language-toggle horizontal toggle-language fr pad1 clearfix">
     <a {% if page.language == 'fr' %}
             {% if page.title == 'landing' %}
                 href="{{site.baseurl}}/en/"
@@ -6,9 +6,10 @@
                 href="{{site.baseurl}}{{page.url | remove: '/fr/'}}/en/"
             {% endif %}
             data-lang="en"
+            class='quiet fl pad0x keyline-right'
         {% else %}
             href="#"
-            class='active'
+            class='active fl pad0x keyline-right'
         {% endif %}>EN</a>
     <a {% if page.language == 'en' %}
             {% if page.title == 'landing' %}
@@ -17,8 +18,9 @@
                 href="{{site.baseurl}}{{page.url | remove: '/en/'}}/fr/"
             {% endif %}
             data-lang="fr"
+            class='quiet fl pad0x'
         {% else %}
             href="#"
-            class='active'
+            class='active fl pad0x'
         {% endif %}>FR</a>
 </li>

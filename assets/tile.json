@@ -8,7 +8,6 @@
     "scheme":"xyz",
     "tilejson":"2.0.0",
     "tiles":[
-        "http://a.tiles.mapbox.com/v3/examples.map-0l53fhk2/{z}/{x}/{y}.png",
-        "http://b.tiles.mapbox.com/v3/examples.map-0l53fhk2/{z}/{x}/{y}.png"
+        "http://tiles.osm.moabi.org/moabi_base/{z}/{x}/{y}.png"
         ]
 }

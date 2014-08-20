@@ -1,0 +1,49 @@
+---
+header: pin-top
+footer: pin-bottom
+---
+<!doctype html>
+<html>
+<head>
+    {% include dochead.html %}
+</head>
+
+<body>
+{% unless page.hide contains 'header' %}
+    {% include header.html %}
+{% endunless %}
+
+{{content}}
+
+{% unless page.hide == 'footer' %}
+    {% include footer.html %}
+{% endunless %}
+
+{% include parse_layers.html %}
+<script src='{{site.baseurl}}/map.js'></script>
+
+<script>
+    print_button = document.getElementsByClassName('print-page');
+    for(var i=0; i<print_button.length; i++){
+        print_button[i].addEventListener('click', function(){
+            window.print()
+        });
+    }
+
+    dropdown = document.getElementsByClassName('dropdown');
+    for(var i=0; i<dropdown.length; i++){
+        dropdown = dropdown[i];
+        dropdown_class = dropdown.className;
+
+        dropdown.addEventListener('click', function(){
+            if(dropdown.className.split(' ').indexOf('open') === -1){
+                dropdown.className += ' open';
+            }else{
+                dropdown.className = dropdown.className.replace(' open', '');
+            }
+        })
+    }
+</script>
+
+</body>
+</html>

@@ -1,8 +1,8 @@
 {% assign t = site.data.translations %}
 
-<header class="header nav fill-gray strongline-bottom contain caps noprint">
-    <div class="row1 clearfix{% unless page.header == 'sidebar' %} limiter{% endunless %}">
-        <a class="left-bar fl clearfix{% if page.header == 'sidebar' %} center{% endif %}" href="{{site.baseurl}}/{{page.language}}">
+<header class="header fill-gray strongline-bottom caps wide-text noprint {% if page.header == 'pin-top' %}pin-top{% endif %}">
+    <div class="row1 clearfix limiter">
+        <a class="left-bar fl clearfix center strong" href="{{site.baseurl}}/{{page.language}}">
             <div class="logo-icon"></div>
             <div class="logo-text beta">Moabi DRC</div>
         </a>
@@ -10,28 +10,28 @@
         <ul class="right-bar fr clearfix">
             {% unless page.hide == 'language_toggle' %}{% include language_toggle.html %}{% endunless %}
 
-            <li class="dropdown pad1 fr">
-                <a class="rcon plus2 {% if page.tags contains 'about' or page.title == 'Blog' or page.tags contains 'blog_post' or page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}" href="#">{{t.[page.language].header.more}}</a>
+            <li class="dropdown pad1 fr strong">
+                <a class="rcon plus2 quiet {% if page.tags contains 'about' or page.title == 'Blog' or page.tags contains 'blog_post' or page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}" href="#">{{t.[page.language].header.more}}</a>
                 <ul class="pad1x fill-gray keyline-all strongline-top">
                     <li class="pad1y keyline-bottom">
-                        <a href="{{site.baseurl}}/the-initiative/{{page.language}}" class="{% if page.tags contains 'about' %}active{% endif %}">{{t.[page.language].header.about}}</a>
+                        <a href="{{site.baseurl}}/the-initiative/{{page.language}}" class="quiet {% if page.tags contains 'about' %}active{% endif %}">{{t.[page.language].header.about}}</a>
                     </li>
                     <li class="pad1y keyline-bottom">
-                        <a href="{{site.baseurl}}/blog/{{page.language}}" class="{% if page.title == 'Blog' or page.tags contains 'blog_post' %}active{% endif %}">{{t.[page.language].header.blog}}</a>
+                        <a href="{{site.baseurl}}/blog/{{page.language}}" class="quiet {% if page.title == 'Blog' or page.tags contains 'blog_post' %}active{% endif %}">{{t.[page.language].header.blog}}</a>
                     </li>
                     <li class="pad1y ">
-                        <a href="{{site.baseurl}}/using-moabi/{{page.language}}" class="{% if page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}">{{t.[page.language].header.documentation}}</a>
+                        <a href="{{site.baseurl}}/using-moabi/{{page.language}}" class="quiet {% if page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}">{{t.[page.language].header.documentation}}</a>
                     </li>
                 </ul>
             </li>
 
-            <li class="pad1 fr">
-                <a class="{% if page.title == 'Data'%}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
+            <li class="pad1 fr strong">
+                <a class="quiet {% if page.title == 'Data'%}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
             </li>
 
 
-            <li class="pad1 fr">
-                <a class="{% if page.title == 'Reports' or page.tags contains 'report'%}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
+            <li class="pad1 fr strong">
+                <a class="quiet {% if page.title == 'Reports' or page.tags contains 'report'%}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
             </li>
         </ul>
 

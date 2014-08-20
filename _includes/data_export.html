@@ -1,18 +1,18 @@
-<ul class="pad1">
+<ul>
 
-    <li class="pad0x space-bottom4 clearfix">
+    <li class="space-bottom4 clearfix">
         <h3 class="">{{t.[page.language].data_extract.print}}</h3>
         <div class="pad0y quiet small">{{t.[page.language].data_extract.print_text}}</div>
-        <div id="images" class="col12 fill-darken keyline-all contain">
-            <div class="pin-left">
-                <a id="snap" href="#" class="button short quiet unround" style="border-top:0; border-left:0;">{{t.[page.language].data_extract.snap}}</a><!--
-                --><a id="map-download" href="#" download="map.png" class="button short quiet" style="border-radius:0 0 3px 0; border-top:0;">{{t.[page.language].download}}</a>
+        <div id="images" class="col12 fill-darken strongline-all contain">
+            <div class="pill pin-left">
+                <a id="snap" href="#" class="button short quiet" style="border-top:0; border-left:0;">{{t.[page.language].data_extract.snap}}</a><!--
+                --><a id="map-download" href="#" download="map.png" class="button short quiet" style="border-top:0;">{{t.[page.language].download}}</a>
             </div>
             <img src="https://farm6.staticflickr.com/5274/14482085473_d8a7f95126.jpg" alt="screen shot">
         </div>
     </li>
 
-    <li class="pad0x space-bottom4">
+    <li class="space-bottom4">
         <h3 class="">{{t.[page.language].data_extract.embed}}</h3>
         <div class="pad0y quiet small">{{t.[page.language].data_extract.embed_text}}</div>
         <fieldset class="">
@@ -20,12 +20,18 @@
         </fieldset>
     </li>
 
-    <li class="pad0x space-bottom4">
+    <li class="space-bottom4">
         <h3>
-            <a href="http://planet.osm.moabi.org/extracts/" class="space"><strong>{{t.[page.language].data_extract.extract}}</strong></a><span class="small quiet pad1x">(OSM, GeoJson)</span>
+            <strong>{{t.[page.language].data_extract.extract}}</strong></a><span class="small quiet pad1x">(OSM, GeoJson)</span>
         </h3>
         <div class="pad0y quiet small">{{t.[page.language].data_extract.extract_text}}</div>
-        <div class="quiet small">&copy; CC 4.0 <a href="http://osm.moabi.org/copyright">{{t.[page.language].read_more}}</a></div>
+
+        <div class="col8 margin2 pill mobile-cols clearfix">
+            <a href="http://planet.osm.moabi.org/extracts/" class="col6 button quiet short">Download</a><!--
+            --><a href="http://osm.moabi.org/copyright" class="col6 button quiet short">&copy; CC 4.0 </a>
+        </div>
+
+<!--         <div class="quiet small">&copy; CC 4.0 <a href="http://osm.moabi.org/copyright">{{t.[page.language].read_more}}</a></div> -->
     </li>
 
 </ul>

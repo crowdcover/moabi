@@ -1,7 +1,9 @@
 {% assign t = site.data.translations %}
-<footer class="logo fill-gray space-bottom1 space center strongline-top hide-tablet {% if page.footer == 'sidebar' %}pin-bottom{% endif %}">
-    <div class="pad0 center quiet caps micro">{{t.[page.language].footer.partners}}</div>
-    <a class="pad1x grayscale fadeout" target="_blank" href="http://www.ogfrdc.cd/"><img class="" src="{{site.baseurl}}/img/OGF_logo_80.png" alt="OGF"></a>
-    <a class="pad1x grayscale fadeout" target="_blank" href="http://www.osfac.net/index.php?lang=en"><img class="" src="{{site.baseurl}}/img/OSFAC_logo_80.png" alt="OSFAC"></a>
-    <a class="pad1x grayscale fadeout" target="_blank" href="http://www.iiasa.ac.at/"><img class="" src="{{site.baseurl}}/img/IIASA_logo_80.png" alt="IIASA"></a>
+<footer class="logo fill-gray space center strongline-top hide-tablet {% if page.footer == 'pin-bottom' %}pin-bottom{% endif %}">
+    <div class="space-bottom1">
+        <div class="pad0 center quiet caps micro">{{t.[page.language].footer.partners}}</div>
+        <a class="pad1x grayscale fadeout" target="_blank" href="http://www.ogfrdc.cd/"><img src="{{site.baseurl}}/img/logos/OGF_logo_28.png" alt="OGF"></a>
+        <a class="pad1x grayscale fadeout" target="_blank" href="http://www.osfac.net/index.php?lang=en"><img src="{{site.baseurl}}/img/logos/OSFAC_logo_28.png" alt="OSFAC"></a>
+        <a class="pad1x grayscale fadeout" target="_blank" href="http://www.iiasa.ac.at/"><img src="{{site.baseurl}}/img/logos/IIASA_logo_28.png" alt="IIASA"></a>
+    </div>
 </footer>

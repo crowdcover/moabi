@@ -2,7 +2,7 @@
 layout: main
 ---
 {% assign t = site.data.translations %}
-<div class="landing v-stretch strongline-bottom contain text-shadow">
+<div class="landing contain text-shadow cover-image">
     <div class="col12 pad4y dark limiter clearfix contain" style="padding-top: 60px;">
         <div class="row4 space-bottom4" style="background: url({{site.baseurl}}/img/logo_v.svg) no-repeat center; background-size: 20%"></div>
 <!--         <div class="center space-bottom1">
@@ -12,12 +12,12 @@ layout: main
             <p>{{t.[page.language].landing.description}}</p>
         </div>
 
-        <div class='pill row4 col10 margin1 center space-bottom4'><!--
-         --><a href='{{site.baseurl}}/reports/{{page.language}}' class='col6'>
+        <div class='landing-button col10 margin1 center space-bottom4 keyline-all'><!--
+         --><a href='{{site.baseurl}}/reports/{{page.language}}' class='col6 uncolored keyline-all'>
                 <h2 class="caps pad2y">{{t.[page.language].landing.report_button_name}}</h2>
                 <div class="pad2x space-bottom4">{{t.[page.language].landing.report_button_text}}</div>
             </a><!--
-         --><a href='{{site.baseurl}}/data/{{page.language}}' class='col6'>
+         --><a href='{{site.baseurl}}/data/{{page.language}}' class='col6 uncolored keyline-all'>
                 <h2 class="caps pad2y">{{t.[page.language].landing.data_button_name}}</h2>
                 <div class="pad2x space-bottom4">{{t.[page.language].landing.data_button_text}}</div>
             </a>

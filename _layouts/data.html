@@ -1,5 +1,5 @@
 ---
-layout: main
+layout: map
 
 basemap:
     center:
@@ -13,12 +13,11 @@ basemap:
 maplayer_options:
     filter:
     subset: false
-
-header: sidebar
-footer: sidebar
 ---
 {% assign t = site.data.translations %}
-<div id="sidebar" class="left-bar fill-light strongline-right dropshadow-right">
+<!-- map -->
+{% include map.html %}
+<div id="sidebar" class="fill-light strongline-right">
 
     <!-- sidebar slider -->
     <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px">
@@ -31,18 +30,17 @@ footer: sidebar
 
     <div class="col12 clip sliding h active1" style="height: calc(100% - 50px)">
 
-        <div class="sidebar-panel col12 animate">
-            {% include layer_ui.html %}
+        <div class="sidebar-panel col12 animate scroll-styled">
+            <div class="pad1" style="padding-right:0;">{% include layer_ui.html %}</div>
         </div>
 
-        <div class="sidebar-panel col12 animate">
-            {% include data_export.html %}
+        <div class="sidebar-panel col12 animate scroll-styled">
+            <div class="pad1" style="padding-right:0;">{% include data_export.html %}</div>
         </div>
 
     </div>
 </div>
 
-<!-- map -->
-{% include map.html %}
+
 </div>
 

@@ -1,6 +1,5 @@
 ---
 layout: main
-header: sidebar
 ---
 {% assign t = site.data.translations %}
 <div class="fill-light">
@@ -9,30 +8,30 @@ header: sidebar
 
             <h3 class="caps">{{t.[page.language].documentation.guides}}</h3>
             <div class="pad0y keyline-bottom space-bottom1 small quiet">Learn more about the Moabi system with these introductory guides.</div>
-            <ul class="nav space-bottom4">
+            <ul class="space-bottom4">
                 {% for guide in site.tags.guide reversed %}{% if guide.language == page.language %}
                     <li class="pad0y">
-                        <a href="{{site.baseurl}}{{guide.url}}" class="{% if page.title == guide.title %}active icon plus2 offset{% endif %}">{{guide.title}}</a>
+                        <a href="{{site.baseurl}}{{guide.url}}" class="quiet {% if page.title == guide.title %}active icon plus2 offset{% endif %}">{{guide.title}}</a>
                     </li>
                 {% endif %}{% endfor %}
             </ul>
 
             <h3 class="caps">{{t.[page.language].documentation.data_documentation}}</h3>
             <div class="pad0y keyline-bottom space-bottom1 small quiet">Look up documentation on the Moabi data structure.</div>
-            <ul class="nav space-bottom4">
+            <ul class="space-bottom4">
                 {% for documentation in site.tags.data_documentation reversed %}{% if documentation.language == page.language %}
                     <li class="pad0y">
-                        <a href="{{site.baseurl}}{{documentation.url}}" class="{% if page.title == documentation.title %}active icon plus2 offset{% endif %}">{{documentation.title}}</a>
+                        <a href="{{site.baseurl}}{{documentation.url}}" class="quiet {% if page.title == documentation.title %}active icon plus2 offset{% endif %}">{{documentation.title}}</a>
                     </li>
                 {% endif %}{% endfor %}
             </ul>
 
             <h3 class="caps">{{t.[page.language].documentation.training}}</h3>
             <div class="pad0y keyline-bottom space-bottom1 small quiet">Find training material on past Moabi deployments.</div>
-            <ul class="nav space-bottom4">
+            <ul class="space-bottom4">
                 {% for train in site.tags.training reversed %}{% if train.language == page.language %}
                     <li class="pad0y">
-                        <a href="{{site.baseurl}}{{train.url}}" class="{% if page.title == train.title %}active icon plus2 offset{% endif %}">{{train.title}}</a>
+                        <a href="{{site.baseurl}}{{train.url}}" class="quiet {% if page.title == train.title %}active icon plus2 offset{% endif %}">{{train.title}}</a>
                     </li>
                 {% endif %}{% endfor %}
             </ul>

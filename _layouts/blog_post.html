@@ -6,7 +6,7 @@ layout: main
         {% if page.draft %}
             <h1 class="center"><em>------------ DRAFT ------------</em></h1>
         {% endif %}
-        <h1 class="center"><a href="{{page.url}}">{{page.title}}</a></h1>
+        <h1 class="center"><a href="{{page.url}}" class="quiet">{{page.title}}</a></h1>
         <div class="center keyline-bottom quiet" style="padding-bottom:10px;">{{page.date | date: "%d %B, %Y"}} | {{page.author}}</div>
         {% if page.img %}
         <div class="clearfix">
