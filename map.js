@@ -32,11 +32,7 @@ var moabi = {
         $('.slider').on('click', 'a', this.slidePanel);
         $('.report-panel section').waypoint(this.reportScroll, {
             context: '.report-panel',
-            offset: '90%'
-        });
-        $('.report-panel section').waypoint(this.reportScroll, {
-            context: '.report-panel',
-            offset: '15%'
+            offset: '80%'
         });
         $('.minor-panel-viewer').on('click', 'a.layer-toggle', this.showMinorPanel);
         $('.layer-ui').on('click', 'a.layer-toggle', this.layerUi);
