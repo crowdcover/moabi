@@ -1,14 +1,1 @@
-{
-    "autoscale":true,
-    "bounds":[-180,-85,180,85],
-    "center":[22,-3,6],
-    "maxzoom":18,
-    "minzoom":0,
-    "name":"Moabi Base",
-    "scheme":"xyz",
-    "tilejson":"2.0.0",
-    "tiles":[
-        "http://a.tiles.mapbox.com/v3/examples.map-0l53fhk2/{z}/{x}/{y}.png",
-        "http://b.tiles.mapbox.com/v3/examples.map-0l53fhk2/{z}/{x}/{y}.png"
-        ]
-}
+{"attribution":"<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>","autoscale":true,"bounds":[-180,-85,180,85],"center":[0,0,3],"data":["http://a.tiles.mapbox.com/v3/examples.map-0l53fhk2/markers.geojsonp"],"description":"","embed":"http://a.tiles.mapbox.com/v3/examples.map-0l53fhk2.html","geocoder":"http://a.tiles.mapbox.com/v3/examples.map-0l53fhk2/geocode/{query}.jsonp","id":"examples.map-0l53fhk2","maxzoom":19,"minzoom":0,"name":"Mapbox Lacquer","private":true,"scheme":"xyz","tilejson":"2.0.0","tiles":["http://a.tiles.mapbox.com/v3/examples.map-0l53fhk2/{z}/{x}/{y}.png","http://b.tiles.mapbox.com/v3/examples.map-0l53fhk2/{z}/{x}/{y}.png"],"vector_layers":[{"fields":{},"id":"mapbox_streets"}],"webpage":"http://a.tiles.mapbox.com/v3/examples.map-0l53fhk2/page.html"}
