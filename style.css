@@ -693,6 +693,8 @@ table tr.opt-row td {
   text-transform: capitalize;
 }
 
+.leaflet-top { z-index: 9999;}
+
 
 /******************** Fonts ********************/
 @font-face {
