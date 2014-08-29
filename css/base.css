@@ -177,13 +177,16 @@ body { background:#eee; }
     color: #29abe2;
   }
 
-.report-panel section {
+.report-panel.prose section {
   height: auto;
-  min-height: 100%;
   opacity: 0.2;
+  margin-bottom:100px;
   }
-  .report-panel section.active {
+  .report-panel.prose section.active {
     opacity: 1;
+  }
+  .report-panel.prose section:last-child{
+    margin-bottom:0;
   }
 
 /* Map Elements
