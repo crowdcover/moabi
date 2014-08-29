@@ -133,16 +133,6 @@ var moabi = {
         slidecontainer.removeClass('active' + oldIndex).addClass('active' + index);
         return false;
     },
-
-    // reportScrollDown: function(dir) {
-    //     // only call waypoint offset 80% from top on scroll down
-    //     if( dir === 'down'){ moabi.reportScroll(dir, this); }
-    // },
-
-    // reportsScrollUp: function(dir) {
-    //     // only call waypoint offset at 20% from top on up
-    //     if( dir === 'up'){ moabi.reportScroll(dir, this); }
-    // },
     reportScroll: function(dir) {
         if(dir === 'down'){
             var $this = $(this);
@@ -158,10 +148,6 @@ var moabi = {
             index = $this.data('index'),
             nav = $this.data('nav'),
             layers = $this.data('id');
-
-        container.animate({
-            scrollTop: $this.offset().top - container.offset().top - 10 + container.scrollTop()
-        }, 600, function(){
             if(nav){
                 map.setView([nav[0], nav[1]], nav[2]);
             }
@@ -181,10 +167,7 @@ var moabi = {
             }else{
                 moabi.removeAllExcept([]);
             }
-        });
-
     },
-
     layerUi: function(e) {
         e.preventDefault();
         e.stopPropagation();
