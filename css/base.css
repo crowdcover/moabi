@@ -189,6 +189,45 @@ body { background:#eee; }
     margin-bottom:0;
   }
 
+table tr.opt-row th,
+table tr.opt-row td {
+  padding: 2px 8px;
+  background-color: rgba(0, 0, 0, 0.05);
+  }
+  .opt-row {
+    display: none;
+  }
+  .opt-row.active {
+    display: table-row;
+  }
+
+.show-opt-row {
+  cursor: pointer;
+  }
+  .show-opt-row.active:after,
+  .show-opt-row:not(.active):before {
+    content: 'click to view';
+  }
+  .show-opt-row.active:after {
+    content: 'click to close';
+  }
+  .show-opt-row:hover:after,
+  .show-opt-row:hover:before {
+    color: #404040;
+  }
+
+
+.table-contents {
+  display: inline-block;
+  }
+  .table-contents ul {
+    margin: 0;
+  }
+  .table-contents ul li {
+    margin: 0;
+    list-style: disc inside;
+  }
+
 /* Map Elements
 ------------------------------------------------------- */
 #map, #sidebar {
@@ -1396,13 +1435,13 @@ table.fixed {
   }
 .prose h1,
 .prose h2 {
-  padding-top:40px;
+  padding-top:20px;
   }
 .prose h3,
 .prose h4,
 .prose h5,
 .prose h6 {
-  padding-top:20px;
+  padding-top:10px;
   }
 .prose h1:first-child,
 .prose h2:first-child,

@@ -1,6 +1,11 @@
   - key: name
     value: '{text}'
     description: The default name of the feature.
+
+  - key: population
+    value: '{num}'
+    description: The population of the feature.
+
   - key: license
     value: '{text}'
     description: The license type of a concession

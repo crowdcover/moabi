@@ -29,12 +29,12 @@ tutorial: |
 <div style="overflow: hidden;">
     <div>
         <h1 class="pad2y keyline-bottom">Map Features</h1>
-        <div class="space-bottom4">
+        <div class="prose space-bottom4">
             {{page.tutorial | markdownify}}
         </div>
     </div>
     <!-- table of contents -->
-    <div class="pad2y clearfix dashline-bottom hide-mobile">
+    <div class="pad2y clearfix space-bottom2 hide-mobile noprint">
         <div class="table-contents keyline-all fill-gray small pad2y">
             <div class="center small quiet caps space-bottom1">Table of Contents</div>
             <ul class="">
@@ -53,8 +53,9 @@ tutorial: |
             </ul>
         </div>
     </div>
+    <div class="prose">
     {% for feature_type in site.data.attribute-structure %}
-        <h2 style="margin-top: 60px">{{feature_type.key | upcase}}</h2>
+        <h2>{{feature_type.key | upcase}}</h2>
         <p class="small">{{feature_type.description | capitalize | markdownify }}</p>
         <div class="space-bottom2 scroll-styled {% unless forloop.last %}dashline-bottom{% endunless %}" style="padding: 0;">
             <table>
@@ -109,4 +110,5 @@ tutorial: |
             </table>
         </div>
     {% endfor %}
+    </div>
 </div>
