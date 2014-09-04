@@ -40,7 +40,7 @@
     legend_color:
     date:
     source:
-        name: World Ressources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
+        name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
 
   - id: moabi_community_mapping
     name: Community Mapping
