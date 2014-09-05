@@ -1,17 +1,7 @@
 ---
 ---
-/*
-palette
-
-text: #404040;
-
-dark: #222;
-light brown: rgb(255, 252, 248);
-orange: #F8AA04;
-blue: #29abe2;
-hover blue: #3D7797;
-*/
-
+/*scss imports*/
+@import 'palette';
 
 /* Base.css by MapBox: https://www.mapbox.com/base/ */
 /* Adapted--some might say bastardized--to fit the Moabi project platform */
@@ -105,13 +95,13 @@ body,
 input,
 textarea {
   color:#404040;
-  color:rgba(0,0,0,0.75);
+  color:$text;
   font:15px/20px 'Open Sans', sans-serif;
   -webkit-font-smoothing:antialiased;
   }
 
-body { background:#eee; }
-.dark { color:#fff; }
+body { background:$bground; }
+.dark { color:$darktext; }
 
 .landing {
   background-image:
@@ -123,10 +113,10 @@ body { background:#eee; }
   }
   .landing .landing-button a {
     height: 100%;
-    background-color: rgba(255, 252, 248, 0.1);
+    background-color: $transparent;
   }
   .landing .landing-button a:hover {
-    background-color: rgba(255, 252, 248, 0.2);
+    background-color: $transparenthover;
   }
 
 .logo-icon {
@@ -141,10 +131,10 @@ body { background:#eee; }
     display: inline-block;
     vertical-align: top;
     padding: 10px;
-    color: #29abe2;
+    color: $moabi;
   }
   a:hover .logo-text {
-    color: #3D7797;
+    color: $moabihover;
   }
 
 .beta:after {
@@ -174,7 +164,7 @@ body { background:#eee; }
   }
   .dropdown.open > a,
   .dropdown.open:hover > a {
-    color: #29abe2;
+    color: $link;
   }
 
 .report-panel.prose section {
@@ -217,13 +207,13 @@ table tr.opt-row td {
   }
 
 
-.table-contents {
+.table-of-contents {
   display: inline-block;
   }
-  .table-contents ul {
+  .table-of-contents ul {
     margin: 0;
   }
-  .table-contents ul li {
+  .table-of-contents ul li {
     margin: 0;
     list-style: disc inside;
   }
@@ -262,7 +252,7 @@ table tr.opt-row td {
   background-color: rgba(180,180,180,0.2);
   }
   .language-toggle a.active {
-    color: #29abe2; /* blue || #FF8F00; /* darker red orange */
+   /* color: #29abe2; /* blue || #FF8F00; /* darker red orange */
     cursor: default;
   }
 
@@ -482,46 +472,56 @@ em {
 
 .serif {font-family:'Deja Vu Serif', serif;}
 
+.strong,
+strong {
+  font-family:'Open Sans Bold', sans-serif;
+  font-weight:normal;
+  }
+  strong em,
+  em strong { font-family:'Open Sans Bold Italic', sans-serif; }
+
+address,
+em {
+  font-family:'Open Sans Italic', sans-serif;
+  }
+
+.serif {font-family:'Deja Vu Serif', serif;}
+
 /* Links */
 a,
 a > code {
-  color:#3887BE;
+  color:$link;
   text-decoration:none;
   }
   a:hover > code,
-  a:hover { color:#63b6e5; }
+  a:hover { color:$linkhover; }
   a:focus {
-    -webkit-box-shadow:inset 0 0 0 1px rgba(0,0,0,0.05);
-            box-shadow:inset 0 0 0 1px rgba(0,0,0,0.05);
+    -webkit-box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
   }
 
 .dark a,
-.dark a > code  { color:#63b6e5; }
+.dark a > code  { color:$darklink; }
 .dark a:hover > code,
-.dark a:hover { color:#8fcaec; }
+.dark a:hover { color:$darklinkhover; }
 .dark a:focus {
-  -webkit-box-shadow:inset 0 0 0 1px rgba(256,256,256,0.05);
-          box-shadow:inset 0 0 0 1px rgba(256,256,256,0.05);
+  -webkit-box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
+          box-shadow: 0 0 0 2px rgba(255,255,255,0.1);
   }
 
-a.quiet       { color:#4a4a4a;  }
-a.quiet:hover { color:#888; }
-a.quiet.active { color:#29abe2;}
+a.quiet       { color:$quiet;  }
+a.quiet:hover { color:$quiethover; }
+a.quiet.active { color:$link;}
 
 .dark a.quiet,
-a.quiet.dark { color:rgba(255,255,255,0.5); }
+a.quiet.dark { color:$quietdark; }
 
 .dark a.quiet:hover,
-a.quiet.dark.active, a.quiet.dark:hover { color:rgba(255,255,255,0.75); }
-
-a.uncolored,
-a.uncolored:hover { color: rgba(0,0,0,0.75);}
-
-.dark a.uncolored,
-.dark a.uncolored:hover { color:#FFFCF8;}
+a.quiet.dark:hover,
+a.quiet.dark.active { color:$quietdarkhover; }
 
 .activate a {
-  color: #222;
+  color: $text;
   }
   .activate a:hover {
     background-color: #CCC;
@@ -529,18 +529,18 @@ a.uncolored:hover { color: rgba(0,0,0,0.75);}
   }
   .activate a:active {
     background-color: transparent;
-    color: #F86D00;
+    color: $activate;
   }
 
 .dark .activate a {
-  color: rgb(255, 252, 248);
+  color: $darktext;
   }
   .dark .activate a:hover {
     background-color: #444;
   }
   .dark .activate a:active {
     background-color: transparent;
-    color: #F8AA04;
+    color: $darkactivate;
   }
 
 /* Buttons */
@@ -1576,7 +1576,7 @@ h2 a[href^='#']:after,
 .doc h2[id]:after,
 .doc h3[id]:after,
 .doc h4[id]:after {
-  background:transparent url(icon-000000@2x.png) -1280px 0px no-repeat;
+  /*background:transparent url(icon-000000@2x.png) -1280px 0px no-repeat;*/
   color:rgba(0,0,0,0.75);
   content:'Permalink';
   float:left;
