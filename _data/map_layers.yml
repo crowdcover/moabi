@@ -4,7 +4,7 @@
     description: "Tree cover, 2000, defined as canopy closure for all vegetation taller than 5m in height. Categorized as a percentage (0 - 100) of each pixel cell.  Resolution: 1 arc-second (~30m)."
     legend_template:
     legend_color:
-    date: 2013
+    date: 2000
     source:
         name: University of Maryland (UMD)
         url: http://earthenginepartners.appspot.com/science-2013-global-forest
@@ -15,7 +15,7 @@
     description: "Total forest loss, 2000 - 2010, defined as a standard-replacement disturbance, or a change from forest to non-forest.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.  Resolution: 1 arc-second (~30m)."
     legend_template:
     legend_color:
-    date: 2013
+    date: 2000 - 2012
     source:
         name: University of Maryland (UMD)
         url: http://earthenginepartners.appspot.com/science-2013-global-forest
@@ -26,7 +26,7 @@
     description: DRC REDD+ pilot projects
     legend_template:
     legend_color:
-    date: 2013
+    date: 2014
     tooltip: [name, status, methodology, start_date, end_date, project_leader, contact_person, contact_email]
     source:
         name: Observatoire des Forets d'Afrique Centrale / Coordination Nationale REDD (OFAC/CNREDD)
@@ -40,7 +40,7 @@
     legend_color:
     date:
     source:
-        name: World Ressources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
+        name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
 
   - id: moabi_community_mapping
     name: Community Mapping
@@ -64,10 +64,22 @@
         name: Dynamique des Groupes des Peuples Autochtones (DGPA)
         url: www.dgpa.cd
 
-  - id: moabi_energy
-    name: Dams and Energy Transmission Lines
+  - id: moabi_hydropower
+    name: Hydroelectric Power
     categories: [infrastructure]
-    description: Existing and planned transmissions lines and dams
+    description: Existing and planned hydroelectric dams
+    legend_template:
+    legend_color:
+    date: 2013
+    tooltip: [name, proposed]
+    source:
+        name: African Energy / Societe National d' Electricite (AE / SNEL)
+        url:
+
+  - id: moabi_transmission_lines
+    name: Electricity Transmission Lines
+    categories: [infrastructure]
+    description: Existing and planned electricity transmission lines
     legend_template:
     legend_color:
     date: 2013
@@ -124,6 +136,17 @@
         name: DIAF/WRI, working layer
         url:
 
+  - id: moabi_palm_suitability
+    name: Palm Oil Suitability
+    categories: [forestry]
+    description: Palm Oil Suitability Index from low/no suitability to high suitability, based on analysis by the International Institute for Applied Systems Analysis.
+    legend_template:
+    legend_color:
+    date: 2014
+    source:
+        name: IIASA - International Institute for Applied Systems Analysis
+        url: http://www.iiasa.ac.at/
+
   - id: moabi_transport
     name: Road Rehabilitation Projects
     categories: [infrastructure]
@@ -135,3 +158,14 @@
     source:
         name: Cellule Infrastructures (CI)
         url:
+
+  - id: moabi_intact_forests
+    name: Intact Forest Landscapes
+    categories: [forestry]
+    description: Defined as unbroken expanses of natural ecosystems in the zone of current forest extent without signs of significant human activity, not fragmented by infrastructure, and at least 50,000 hectares in size.  Prepared by the IFL Mapping Team (Greenpeace, World Resources Institute, Transparent World), with the latest update made for year 2012
+    legend_template:
+    legend_color: #C5E5AA
+    date: 2006 - 2012
+    source:
+        name: IFL Mapping Team (Greenpeace, World Resources Institute, Transparent World)
+        url: http://www.intactforests.org
