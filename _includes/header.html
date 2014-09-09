@@ -12,7 +12,7 @@
 
             <li class="dropdown pad1 fr strong">
                 <a class="rcon plus2 quiet {% if page.tags contains 'about' or page.title == 'Blog' or page.tags contains 'blog_post' or page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}" href="#">{{t.[page.language].header.more}}</a>
-                <ul class="pad1x fill-gray keyline-all strongline-top">
+                <ul class="pad1x fill-gray keyline-left keyline-right keyline-bottom">
                     <li class="pad1y keyline-bottom">
                         <a href="{{site.baseurl}}/the-initiative/{{page.language}}" class="quiet {% if page.tags contains 'about' %}active{% endif %}">{{t.[page.language].header.about}}</a>
                     </li>
