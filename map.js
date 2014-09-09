@@ -7,23 +7,20 @@
 {% include js/leaflet-hash.js %}
 
 ;(function(context) {
-
+L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
 this.map = L.mapbox.map('map', undefined, {
-    shareControl: true,
-    scrollWheelZoom: false
+  layers: [mapLayers.baseLayer.id],
+  center: mapLayers.baseLayer.latlon,
+  zoom: mapLayers.baseLayer.zoom,
+  scrollWheelZoom: false,
+  minZoom: 4,
+  maxZoom: 18
 });
 
-this.map.zoomControl.setPosition('topright');
-this.map.shareControl.setPosition('topright');
-this.map.setView(mapLayers.baseLayer.latlon, mapLayers.baseLayer.zoom);
+this.map.zoomControl.setPosition('topleft');
 this.leaflet_hash = L.hash(this.map);
 
 this.map.legendControl.addLegend("<h3 class='center keyline-bottom'>Legend</h3>");
-
-//build base layer
-for(i = 0; i < mapLayers.baseLayer["id"].length; i++){
-    L.tileLayer('http://tiles.osm.moabi.org/' + mapLayers.baseLayer["id"][i][0] + '/{z}/{x}/{y}.png').addTo(this.map);
-}
 
 var moabi = {
 
