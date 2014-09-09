@@ -1,0 +1,19 @@
+<div class="pad2y clearfix space-bottom2 hide-mobile noprint">
+  <div class="table-of-contents keyline-all fill-gray small pad2y">
+    <div class="center small quiet caps space-bottom1">{{t.[page.language].documentation.table_of_contents}}</div>
+    <ul class="">
+      {% for feature_type in site.data.attribute-structure %}
+        <li class="pad2x pad0y">
+          <a href="#{{feature_type.key}}">{{feature_type.key | upcase }}</a>
+          <ul>
+            {% for feature in feature_type.values %}
+              <li class="pad2x">
+                  <a href="#{{feature.value}}">{{feature.value | capitalize }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

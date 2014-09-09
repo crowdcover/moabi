@@ -65,5 +65,3 @@ Click on either the changeset list item or the chagneset bounding box to view mo
 
 3. You recently uploaded data and want to check whether the upload was successful.
 
-
-

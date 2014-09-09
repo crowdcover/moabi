@@ -69,6 +69,7 @@ en:
     guides: Guides
     training: Training Materials
     data_documentation: Documentation
+    table_of_contents: Table Of Contents
 
   signup:
     header: Sign Up for Updates
@@ -149,6 +150,7 @@ fr:
     guides: Guides
     training: Training Materials
     data_documentation: Documentation
+    table_of_contents: Table Of Contents
 
   signup:
     header: Sign Up for Updates

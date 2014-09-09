@@ -38,7 +38,13 @@ layout: main
         </div>
 
         <div class="col7 margin1r mobile-pad">
+          {% if page.tags contains 'data_documentation' %}
             {{content | markdownify }}
+          {% else %}
+            <div class="prose">
+              {{content | markdownify}}
+            </div>
+          {% endif %}
 
             <div class="pad2y noprint">
                 <a href="#" class="col12 button quiet print-page">Save/Print</a>

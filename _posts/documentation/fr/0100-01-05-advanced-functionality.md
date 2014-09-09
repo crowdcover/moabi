@@ -65,6 +65,3 @@ Click on either the changeset list item or the chagneset bounding box to view mo
 2. You find a feature that is incorrect, and suspect that the other features it was uploaded with might also be incorrect.  If this is the case, it is possible to **revert** (or delete) the entire changeset.
 
 3. You recently uploaded data and want to check whether the upload was successful.
-
-
-
