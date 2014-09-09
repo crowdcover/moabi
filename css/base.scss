@@ -3,6 +3,7 @@
 @import 'palette';
 $headerheight: 40px;
 $footerheight: 75px;
+$sidebarwidth: 400px;
 
 /* Base.css by MapBox: https://www.mapbox.com/base/ */
 /* Adapted--some might say bastardized--to fit the Moabi project platform */
@@ -114,9 +115,11 @@ body { background:$bground; }
   }
   .landing .landing-button a {
     height: 100%;
+    color: #FFF;
     background-color: $transparent;
   }
   .landing .landing-button a:hover {
+    color: #FFF;
     background-color: $transparenthover;
   }
 
@@ -229,14 +232,14 @@ table tr.opt-row td {
 
 #map {
   right:0;
-  width: calc(100% - 400px);
+  width: calc(100% - #{$sidebarwidth});
   background-color: #333;
   z-index: -1;
 }
 
 #sidebar {
   left:0;
-  width: 400px;
+  width: $sidebarwidth;
 }
 
 /* Menus */
@@ -249,148 +252,11 @@ table tr.opt-row td {
 
 /* Widgets
 ------------------------------------------------------- */
-.language-toggle a:not(.active):hover {
-  background-color: rgba(180,180,180,0.2);
-  }
-  .language-toggle a.active {
-   /* color: #29abe2; /* blue || #FF8F00; /* darker red orange */
-    cursor: default;
-  }
-
-/* widgets/controls */
-  .layer-ui .not-displayed,
-  .layer-ui .displayed {
-    overflow: scroll;
-    border-top: 2px solid #707070;
-    border-bottom: 2px solid #707070;
-    margin: 4px 0 16px;
-  }
-  .layer-ui .not-displayed {
-    max-height: 195px;
-  }
-  .layer-ui .displayed {
-    min-height: 70px;
-    max-height: 136px;
-  }
-  .layer-ui .displayed:empty,
-  .layer-ui .not-displayed:empty {
-    background-color: rgba(150,150,150,0.1);
-    box-shadow: none;
-  }
-  .layer-ui .displayed:empty:before {
-    content: "none";
-    font: 12px/20px 'Open Sans Italic', sans-serif;
-    padding-top: 8px;
-    text-align: center;
-    display: block;
-  }
-  .layer-ui .displayed[data-lang="fr"]:empty:before {
-    content: "vide";
-  }
-  .layer-ui ul li {
-    margin: 0;
-  }
-  .layer-ui .displayed a,
-  .layer-ui .not-displayed a {
-    display: block;
-    padding: 2px 10px;
-    font-size: 12px;
-  }
-  .layer-ui .ui-state-highlight {
-    height: 29px;
-    border: 1px dashed #F8AA04;
-    background-color: rgba(200,200,200,0.1);
-  }
-  .layer-ui .minor-panel {
-    /*max-height: 164px;*/
-  }
+@import 'widgets';
 
 /* Legends/Tooltips
 ------------------------------------------------------- */
-.leaflet-container {
-  font-family: 'Open Sans', sans-serif;
-}
-
-.map-tooltip,
-.map-legends {
-  background-color: rgb(255, 252, 248);
-  background-color: rgba(255, 252, 248, 0.9);
-  border: 1px solid #bbb;
-  border-radius: 0;
-  box-shadow: rgba(0,0,0,0.1) 0 0 8px 4px;
-  }
-  .map-legends .map-legend {
-    width: 260px;
-    max-height: 400px;
-    padding: 0 18px 0 0;
-    margin: 10px 0 10px 10px;
-    overflow: auto;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-.moabi-legend {
-  display: none;
-  }
-  .moabi-legend.active {
-    display: block;
-    border-bottom: 1px dashed #CCC;
-  }
-  .moabi-legend.active:last-child {
-    border-bottom: 0;
-  }
-  .moabi-legend .block {
-    height: 18px;
-    width: 28px;
-    float: left;
-    margin-right: 8px;
-    border: 1px solid #888;
-  }
-  .moabi-legend .legend-icon {
-    height: 18px;
-    width: 28px;
-    float: left;
-    margin-right: 8px;
-  }
-  .moabi-legend h3 {
-    font-size: 13px;
-    margin-bottom: 2px;
-  }
-  .moabi-legend h3.micro {
-    font-size: 11px;
-  }
-  .moabi-legend table {
-    margin-bottom: 2px;
-  }
-  .moabi-legend table th {
-    padding: 0;
-  }
-  .moabi-legend table td {
-    height: 12px;
-    border-left: 1px solid #ddd;
-  }
-  .moabi-legend table td:last-child {
-    border-right: 1px solid #ddd;
-  }
-  .moabi-legend .legend-icon.dot {
-    height: 10px;
-    width: 10px;
-    margin: 5px 17px 0 8px;
-  }
-  .moabi-legend .legend-source { margin-left: 8px; }
-
-.map-tooltip {
-  width: 260px;
-  font: 14px/20px 'Open Sans', sans-serif;
-}
-.map-tooltip-content {}
-.map-tooltip .key {
-  font-family: 'Open Sans Bold';
-  text-transform: capitalize;
-}
+@import 'legends-tooltips';
 
 /* Inline Elements: Defaults
 ------------------------------------------------------- */
