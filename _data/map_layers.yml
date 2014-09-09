@@ -27,7 +27,7 @@
     legend_template:
     legend_color:
     date: 2013
-    tooltip: name, status, methodology, start_date, end_date, project_leader, contact_person, contact_email
+    tooltip: [name, status, methodology, start_date, end_date, project_leader, contact_person, contact_email]
     source:
         name: Observatoire des Forets d'Afrique Centrale / Coordination Nationale REDD (OFAC/CNREDD)
         url:
@@ -71,7 +71,7 @@
     legend_template:
     legend_color:
     date: 2013
-    tooltip: name, proposed
+    tooltip: [name, proposed]
     source:
         name: African Energy / Societe National d' Electricite (AE / SNEL)
         url:
@@ -82,7 +82,7 @@
     description: Industrial and artisanal logging concessions
     legend_template:
     legend_color:
-    tooltip: operator
+    tooltip: [operator]
     date: 2013
     source:
         name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
@@ -95,7 +95,7 @@
     legend_template:
     legend_color:
     date: April 2014
-    tooltip: license, status, operator, resource, application_date, grant_date, expiration_date
+    tooltip: [license, status, operator, resource, application_date, grant_date, expiration_date]
     source:
         name: Cadastre Minier (CAMI)
         url:
@@ -107,7 +107,7 @@
     legend_template:
     legend_color:
     date: 2013
-    tooltip: name
+    tooltip: [name]
     source:
         name: Ministere des Hydrocarbures (MIN.HYDRO)
         url:
@@ -131,7 +131,7 @@
     legend_template:
     legend_color:
     date: 2013
-    tooltip: name, ref, highway, proposed
+    tooltip: [name, ref, highway, proposed]
     source:
         name: Cellule Infrastructures (CI)
         url:

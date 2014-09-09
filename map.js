@@ -295,12 +295,12 @@ var moabi = {
     setGrid: function(map) {
       try {
         // get moabi_id and tooltip of first item in the displayed list, and build a tooltip template
-        var moabi_id = $($('.layer-ui .displayed')[0].firstChild).children('a').data('id');
-        var tooltip = $($('.layer-ui .displayed')[0].firstChild).children('a').data('tooltip');
-        var tooltip_list = tooltip.split(',');
-        var template = "";
-        for (var x in tooltip_list) {
-          template = template + "<div class='tooltip-attribute'> <span class='key'>" + tooltip_list[x] + "</span>" + ": \{\{" + tooltip_list[x] + "\}\}</div>";
+        var layerListItem = $('.layer-ui .displayed li:first a'),
+            moabi_id = layerListItem.data('id'),
+            tooltip = layerListItem.data('tooltip'),
+            template = "";
+        for (var i in tooltip) {
+          template = template + "<div class='tooltip-attribute'> <span class='key'>" + tooltip[i] + "</span>" + ": \{\{" + tooltip[i] + "\}\}</div>";
         }
       } catch(err) { return; }
 
@@ -320,7 +320,7 @@ var moabi = {
 
 
 
-      if (tooltip != "" && ! present) {
+      if (tooltip.length > 0 && ! present) {
         var tilejson = {"tilejson":"2.0.0","grids":["http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json"],"template":"\{\{#__teaser__\}\}" + template + "{\{/__teaser__\}\}"};
         var gridLayer = L.mapbox.gridLayer(tilejson);
         map.addLayer(gridLayer);
