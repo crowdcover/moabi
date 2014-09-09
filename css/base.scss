@@ -1,7 +1,8 @@
 ---
 ---
-/*scss imports*/
 @import 'palette';
+$headerheight: 40px;
+$footerheight: 75px;
 
 /* Base.css by MapBox: https://www.mapbox.com/base/ */
 /* Adapted--some might say bastardized--to fit the Moabi project platform */
@@ -155,7 +156,7 @@ body { background:$bground; }
     display: none;
     position: absolute;
     left: 0;
-    top: 40px;
+    top: $headerheight;
     width: 162px;
   }
   /*.dropdown:hover > ul,*/
@@ -222,8 +223,8 @@ table tr.opt-row td {
 ------------------------------------------------------- */
 #map, #sidebar {
   position:absolute;
-  top: 46px;  /* header height */
-  bottom: 75px; /* footer height */
+  top: $headerheight;  /* header height */
+  bottom: $footerheight; /* footer height */
 }
 
 #map {
