@@ -1,67 +1,13 @@
 <script>
-
+{% assign mapBaseLayer = page.basemap.layers | first %}
 var mapLayers = {
     baseLayer: {
-        id: [
-            {% for layer in page.basemap.layers %}
-                ['{{ layer.id }}',{{layer.z}}]{% unless forloop.last %},{% endunless %}
-            {% endfor %}
-            ],
+        id: L.tileLayer('http://tiles.osm.moabi.org/{{mapBaseLayer.id}}/{z}/{x}/{y}.png'),
         latlon: [{{page.basemap.center.lat}}, {{page.basemap.center.lon}}],
-        zoom: {{page.basemap.center.zoom}}{% if page.basemap.noScrollZoom %},
-        noScrollZoom: true {% endif %}
+        zoom: {{page.basemap.center.zoom}}
     },
     dataLayers: {},
     currentLanguage: '{{page.language}}',
     pageType: '{{page.layout}}'
-}
-
-
-/*
-    mapLayers.mapLayers = {
-    {% for section in sections %}
-    "{{section.sectionid}}": {
-      "label": "{{section.label}}",
-      "class": "{{section.class}}",
-      "layers": {
-        {% for layer in section.layers %}
-        "{{layer.layerid}}": {
-          "label": "{{layer.label}}",
-          "maps": [
-            {% for map in layer.maps %}
-            {
-            "mapid": "{{map.mapid}}",
-            "text": {% if map.text %}document.getElementById('{{map.text}}').innerHTML{% else %}''{% endif %},
-            "legend": {% if map.legend %}document.getElementById('{{map.legend}}').innerHTML{% else %}''{% endif %},
-            "htmlid": "{{map.htmlid}}",
-            "label": "{{map.label}}"
-            },
-            {% endfor %}
-          ],
-        },
-        {% endfor %}
-      }
-    },
-  {% endfor %}
-  }
-*/
-
-  // mapLayers.mapboxLayers = {
-  //   {% for section in sections %}
-  //     {% for layer in section.layers %}
-  //       {% for map in layer.maps %}
-  //         {% if map.htmlid %}{% assign htmlid = map.htmlid %}{% else %}{% assign htmlid = layer.layerid %}{% endif %}
-  //         {{ htmlid }} : {
-  //           "id": "{{map.mapid}}",
-  //           {% if gis %}{% else %}
-  //           "text": {% if map.text %}document.getElementById('{{map.text}}').innerHTML{% else %}''{% endif %},
-  //           "legend": {% if map.legend %}document.getElementById('{{map.legend}}').innerHTML{% else %}''{% endif %},
-  //           "zIndex": {% if map.z %}{{map.z}}{% else %}''{% endif %}
-  //           {% endif %}
-  //         },
-  //      {% endfor %}
-  //     {% endfor %}
-  //   {% endfor %}
-  //   }
-
+};
 </script>
