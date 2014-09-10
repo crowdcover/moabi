@@ -164,7 +164,7 @@
     categories: [forestry]
     description: Defined as unbroken expanses of natural ecosystems in the zone of current forest extent without signs of significant human activity, not fragmented by infrastructure, and at least 50,000 hectares in size.  Prepared by the IFL Mapping Team (Greenpeace, World Resources Institute, Transparent World), with the latest update made for year 2012
     legend_template:
-    legend_color: #C5E5AA
+    legend_color:
     date: 2006 - 2012
     source:
         name: IFL Mapping Team (Greenpeace, World Resources Institute, Transparent World)

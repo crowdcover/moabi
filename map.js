@@ -227,21 +227,6 @@ var moabi = {
         leaflet_hash.trigger('move');
     },
 
-    // filterLayers: function(e) {
-    //     e.preventDefault();
-    //     e.stopPropagation();
-
-    //     var $this = $(this),
-    //         category = $this.data('category');
-
-    //     $this.siblings('ul.nodisplay').children('li').each(function(){
-    //         $this = $(this);
-    //         if ($this.data('categories').split(',').indexOf(category) == -1) {
-    //             $this.hide();
-    //         }
-    //     });
-    // },
-
     showMinorPanel: function(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -299,7 +284,7 @@ var moabi = {
             moabi_id = layerListItem.data('id'),
             tooltip = layerListItem.data('tooltip'),
             template = "";
-        for (var i in tooltip) {
+        for(var i=0; i<tooltip.length; i++) {
           template = template + "<div class='tooltip-attribute'> <span class='key'>" + tooltip[i] + "</span>" + ": \{\{" + tooltip[i] + "\}\}</div>";
         }
       } catch(err) { return; }
@@ -317,8 +302,6 @@ var moabi = {
           }
         }
       });
-
-
 
       if (tooltip.length > 0 && ! present) {
         var tilejson = {"tilejson":"2.0.0","grids":["http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json"],"template":"\{\{#__teaser__\}\}" + template + "{\{/__teaser__\}\}"};
