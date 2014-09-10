@@ -1534,7 +1534,7 @@ h2 .dark > a[href^='#'] {
   vertical-align: top;
   width: 20px;
   height: 20px;
-  background: transparent url(/img/sprite.svg) no-repeat 0 0;
+  background: transparent url({{site.baseurl}}/img/sprite.svg) no-repeat 0 0;
   text-indent: -9999px;
   overflow: hidden;
   }
