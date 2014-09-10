@@ -285,7 +285,7 @@ var moabi = {
             tooltip = layerListItem.data('tooltip'),
             template = "";
         for(var i=0; i<tooltip.length; i++) {
-          template = template + "<div class='tooltip-attribute'> <span class='key'>" + tooltip[i] + "</span>" + ": \{\{" + tooltip[i] + "\}\}</div>";
+          template = template + "<div class='tooltip-attribute'> <span class='key'>" + tooltip[i] + "</span>: \{\{" + tooltip[i] + "\}\}</div>";
         }
       } catch(err) { return; }
 
@@ -304,10 +304,14 @@ var moabi = {
       });
 
       if (tooltip.length > 0 && ! present) {
-        var tilejson = {"tilejson":"2.0.0","grids":["http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json"],"template":"\{\{#__teaser__\}\}" + template + "{\{/__teaser__\}\}"};
-        var gridLayer = L.mapbox.gridLayer(tilejson);
-        map.addLayer(gridLayer);
-        map.addControl(L.mapbox.gridControl(gridLayer));
+        var tilejson = {
+              "tilejson":"2.0.0",
+              "grids":[grid_url],
+              "template":"\{\{#__teaser__\}\}" + "<div class='tooltip-attribute'> <span class='key'>Name</span>: \{\{name\}\}</div>" + "{\{/__teaser__\}\}" +
+                         "\{\{#__full__\}\}" + template + "{\{/__full__\}\}"
+            },
+            gridLayer = L.mapbox.gridLayer(tilejson).addTo(map),
+            gridControl = L.mapbox.gridControl(gridLayer).addTo(map);
       }
     },
 
