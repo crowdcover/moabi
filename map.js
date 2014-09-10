@@ -281,15 +281,21 @@ var moabi = {
       try {
         // get moabi_id and tooltip of first item in the displayed list, and build a tooltip template
         var layerListItem = $('.layer-ui .displayed li:first a'),
-            moabi_id = layerListItem.data('id'),
-            tooltip = layerListItem.data('tooltip'),
-            template = "";
-        for(var i=0; i<tooltip.length; i++) {
-          template = template + "<div class='tooltip-attribute'> <span class='key'>" + tooltip[i] + "</span>: \{\{" + tooltip[i] + "\}\}</div>";
-        }
-      } catch(err) { return; }
-
-      var grid_url = "http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json";
+            grid_url = "http://grids.osm.moabi.org/grids/" + layerListItem.data('id') + "/{z}/{x}/{y}.json",
+            teaserTooltip = layerListItem.data('tooltip-teaser'),
+            fullTooltip = layerListItem.data('tooltip-full'),
+            teaserTemplate = "",
+            fullTemplate = "";
+        $.each(teaserTooltip, function(idx, attr){
+          teaserTemplate += "<div class='tooltip-attribute'> <span class='key'>" + attr.replace('_', ' ') + "</span>: \{\{" + attr + "\}\}</div>";
+        });
+        teaserTemplate += "<span class='micro quiet caps'>click for more feature information</span>"
+        $.each(fullTooltip, function(idx, attr){
+          fullTemplate += "<div class='tooltip-attribute'> <span class='key'>" + attr.replace('_', ' ') + "</span>: \{\{" + attr + "\}\}</div>";
+        });
+        fullTemplate += "<div><a href='http://osm.moabi.org/edit?way=\{\{osm_id\}\}' class='quiet small'>Edit in iD</a></div>";
+        fullTemplate += "<div><a href='http://osm.moabi.org/way/\{\{osm_id\}\}/history' class='quiet small'>View History</a></div>";
+      } catch(err) { console.log(err); return; }
 
       // for each loaded tile layer, remove
       var present = false;
@@ -303,15 +309,16 @@ var moabi = {
         }
       });
 
-      if (tooltip.length > 0 && ! present) {
+      // add grid if it's not present and if at least one of teaserTooltip or fullTooltip is not empty
+      if (!present && (teaserTooltip.length > 0 || fullTooltip.length)) {
         var tilejson = {
-              "tilejson":"2.0.0",
+              "tilejson":"2.1.0",
               "grids":[grid_url],
-              "template":"\{\{#__teaser__\}\}" + "<div class='tooltip-attribute'> <span class='key'>Name</span>: \{\{name\}\}</div>" + "{\{/__teaser__\}\}" +
-                         "\{\{#__full__\}\}" + template + "{\{/__full__\}\}"
-            },
-            gridLayer = L.mapbox.gridLayer(tilejson).addTo(map),
-            gridControl = L.mapbox.gridControl(gridLayer).addTo(map);
+              "template":"\{\{#__teaser__\}\}" + teaserTemplate + "{\{/__teaser__\}\}" +
+                         "\{\{#__full__\}\}" + fullTemplate + "{\{/__full__\}\}"
+            };
+        moabi.gridLayer = L.mapbox.gridLayer(tilejson).addTo(map),
+        moabi.gridControl = L.mapbox.gridControl(moabi.gridLayer).addTo(map);
       }
     },
 

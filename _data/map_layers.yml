@@ -27,7 +27,8 @@
     legend_template:
     legend_color:
     date: 2014
-    tooltip: [name, status, methodology, start_date, end_date, project_leader, contact_person, contact_email]
+    tooltip_teaser: [name, status]
+    tooltip_full: [name, status, methodology, start_date, end_date, project_leader, contact_person, contact_email]
     source:
         name: Observatoire des Forets d'Afrique Centrale / Coordination Nationale REDD (OFAC/CNREDD)
         url:
@@ -71,7 +72,8 @@
     legend_template:
     legend_color:
     date: 2013
-    tooltip: [name, proposed]
+    tooltip_teaser: [name, proposed]
+    tooltip_full: [name, proposed]
     source:
         name: African Energy / Societe National d' Electricite (AE / SNEL)
         url:
@@ -83,7 +85,8 @@
     legend_template:
     legend_color:
     date: 2013
-    tooltip: [name, proposed]
+    tooltip_teaser: [name, proposed]
+    tooltip_full: [name, proposed]
     source:
         name: African Energy / Societe National d' Electricite (AE / SNEL)
         url:
@@ -94,7 +97,8 @@
     description: Industrial and artisanal logging concessions
     legend_template:
     legend_color:
-    tooltip: [operator]
+    tooltip_teaser: [operator]
+    tooltip_full: [operator]
     date: 2013
     source:
         name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
@@ -107,7 +111,8 @@
     legend_template:
     legend_color:
     date: April 2014
-    tooltip: [license, status, operator, resource, application_date, grant_date, expiration_date]
+    tooltip_teaser: [license, status, operator]
+    tooltip_full: [license, status, operator, resource, application_date, grant_date, expiration_date]
     source:
         name: Cadastre Minier (CAMI)
         url:
@@ -119,7 +124,8 @@
     legend_template:
     legend_color:
     date: 2013
-    tooltip: [name]
+    tooltip_teaser: [name]
+    tooltip_full: [name]
     source:
         name: Ministere des Hydrocarbures (MIN.HYDRO)
         url:
@@ -154,7 +160,8 @@
     legend_template:
     legend_color:
     date: 2013
-    tooltip: [name, ref, highway, proposed]
+    tooltip_teaser: [name, highway]
+    tooltip_full: [name, highway, ref, proposed]
     source:
         name: Cellule Infrastructures (CI)
         url:
