@@ -39,7 +39,9 @@
     description: Existing protected areas in the DRC
     legend_template:
     legend_color:
-    date:
+    date: July 2013
+    tooltip_teaser: [name, type]
+    tooltip_full: [name, type, status, valid, source]
     source:
         name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
 
