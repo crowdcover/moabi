@@ -7,24 +7,10 @@
 {% include js/leaflet-hash.js %}
 
 ;(function(context) {
-L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
-this.map = L.mapbox.map('map', undefined, {
-  layers: [mapLayers.baseLayer.id],
-  center: mapLayers.baseLayer.latlon,
-  zoom: mapLayers.baseLayer.zoom,
-  scrollWheelZoom: false,
-  minZoom: 4,
-  maxZoom: 18
-});
-
-this.map.zoomControl.setPosition('topleft');
-this.leaflet_hash = L.hash(this.map);
-
-this.map.legendControl.addLegend("<h3 class='center keyline-bottom'>Legend</h3>");
-
 var moabi = {
 
     global: function() {
+        this.initMap();
         $('.map-interaction').on('click', this.mapInteract);
         $('.slider').on('click', 'a', this.slidePanel);
         $('.report-panel section').waypoint(this.reportScroll, {
@@ -52,15 +38,15 @@ var moabi = {
                     //console.log(numLayers - index + " : " + $(this).children('a').text() );
 
                 });
-                moabi.setGrid(map);
+                moabi.setGrid(moabi.map);
                 leaflet_hash.trigger('move');
                 //console.log("----");
             }
         });
         $( ".sortable" ).disableSelection();
-        leaflet_hash.on('update', moabi.getLayerHash);
-        leaflet_hash.on('change', moabi.setLayerHash);
-        leaflet_hash.on('hash', moabi.updateExportLink);
+        this.leaflet_hash.on('update', moabi.getLayerHash);
+        this.leaflet_hash.on('change', moabi.setLayerHash);
+        this.leaflet_hash.on('hash', moabi.updateExportLink);
         moabi.updateExportLink(location.hash);
         $('.not-displayed').css('height', function(){
             totalHeight = 2;
@@ -69,6 +55,23 @@ var moabi = {
             });
             return totalHeight;
         });
+    },
+
+    initMap: function(){
+      L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
+      this.map = L.mapbox.map('map', undefined, {
+        layers: [mapLayers.baseLayer.id],
+        center: mapLayers.baseLayer.latlon,
+        zoom: mapLayers.baseLayer.zoom,
+        scrollWheelZoom: false,
+        minZoom: 4,
+        maxZoom: 18
+      });
+
+      this.map.zoomControl.setPosition('topleft');
+      this.leaflet_hash = L.hash(this.map);
+
+      this.map.legendControl.addLegend("<h3 class='center keyline-bottom'>Legend</h3>");
     },
 
     mapInteract: function(e) {
@@ -82,7 +85,7 @@ var moabi = {
             var latLon = [location[0],location[1]],
                 zoom = location[2];
 
-            map.setView(latLon, zoom);
+            moabi.map.setView(latLon, zoom);
         } else if ($this.data('layer-toggle')){
 
         }
@@ -92,7 +95,7 @@ var moabi = {
         e.preventDefault();
         e.stopPropagation();
 
-        leafletImage(map, function(err, canvas) {
+        leafletImage(moabi.map, function(err, canvas) {
             var $imgContainer = $('#images'),
                 download = document.getElementById('map-download');
 
@@ -146,7 +149,7 @@ var moabi = {
             nav = $this.data('nav'),
             layers = $this.data('id');
             if(nav){
-                map.setView([nav[0], nav[1]], nav[2]);
+                moabi.map.setView([nav[0], nav[1]], nav[2]);
             }
             // add layers only after map.setView has completed, via a callback?
             if(layers){
@@ -189,7 +192,7 @@ var moabi = {
         // if button is active, remove layer from map and move button to notDisplayed
         if ($this.hasClass('active')) {
             $this.removeClass('active');
-            map.removeLayer(layer);
+            moabi.map.removeLayer(layer);
             layerLegend.removeClass('active');
 
             // find all indices in notDisplayed
@@ -219,11 +222,11 @@ var moabi = {
         } else {
             $this.addClass('active');
             displayed.prepend($this.parent('li'));
-            map.addLayer(layer);
+            moabi.map.addLayer(layer);
 
             layerLegend.addClass('active');
         }
-        moabi.setGrid(map);
+        moabi.setGrid(moabi.map);
         leaflet_hash.trigger('move');
     },
 
@@ -261,7 +264,7 @@ var moabi = {
             lon = $this.data("nav")[1],
             zoom = $this.data("nav")[2];
 
-        map.setView([lat, lon], zoom);
+        moabi.map.setView([lat, lon], zoom);
 
         $this.parent('li').siblings('li').children('a.active').removeClass('active');
         $this.addClass('active');
