@@ -38,7 +38,7 @@
 
                   });
           moabi.setGrid(moabi.map);
-          leaflet_hash.trigger('move');
+          moabi.leaflet_hash.trigger('move');
                 //console.log("----");
               }
             });
@@ -226,7 +226,7 @@
         layerLegend.addClass('active');
       }
       moabi.setGrid(moabi.map);
-      leaflet_hash.trigger('move');
+      moabi.leaflet_hash.trigger('move');
     },
 
     showMinorPanel: function(e) {
