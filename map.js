@@ -27,19 +27,7 @@ var moabi = {
         $('#snap').on('click', this.mapCapture);
         $('.sortable').sortable({
           placeholder: "ui-state-highlight",
-          update: function( event, ui ){
-            ui['item'].siblings('li').addBack().each(function(index) {
-              // this is repetitive.  how to calculate w/o two queries?
-              var numLayers = ui['item'].siblings('li').addBack().length,
-                  mapId = ui['item'].children('a').data('id'),
-                  layer = mapLayers.dataLayers[mapId][0];
-
-              layer.setZIndex(numLayers - index);
-              //console.log(numLayers - index + " : " + $(this).children('a').text() );
-            });
-            moabi.setGrid(moabi.map);
-            moabi.leaflet_hash.trigger('move');
-          }
+          update: moabi.setLayersZIndex
         });
         $( ".sortable" ).disableSelection();
         this.leaflet_hash.on('update', moabi.getLayerHash);
@@ -221,7 +209,34 @@ var moabi = {
         displayed.prepend($this.parent('li'));
         moabi.map.addLayer(layer);
         layerLegend.addClass('active');
+
+        //reset all layers' z-indexes
+        moabi.setLayersZIndex();
       }
+      moabi.setGrid(moabi.map);
+      moabi.leaflet_hash.trigger('move');
+    },
+
+    setLayersZIndex: function(){
+      var layerButtons = $('ul.displayed').children('li'),
+          numLayers = layerButtons.length;
+
+      layerButtons.each(function(index){
+        var layerButton = $(this),
+            mapId = layerButton.children('a').data('id'),
+            layer = mapLayers.dataLayers[mapId][0];
+
+        layer.setZIndex(numLayers - index);
+      });
+      // layerButtons.each(function(index) {
+      //   // this is repetitive.  how to calculate w/o two queries?
+      //   var numLayers = ui['item'].siblings('li').addBack().length,
+      //       mapId = ui['item'].children('a').data('id'),
+      //       layer = mapLayers.dataLayers[mapId][0];
+
+      //   layer.setZIndex(numLayers - index);
+      //   //console.log(numLayers - index + " : " + $(this).children('a').text() );
+      // });
       moabi.setGrid(moabi.map);
       moabi.leaflet_hash.trigger('move');
     },
