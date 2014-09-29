@@ -298,17 +298,28 @@ var moabi = {
             grid_url = "http://grids.osm.moabi.org/grids/" + layerListItem.data('id') + "/{z}/{x}/{y}.json",
             teaserTooltip = layerListItem.data('tooltip-teaser'),
             fullTooltip = layerListItem.data('tooltip-full'),
-            teaserTemplate = "",
-            fullTemplate = "";
-        $.each(teaserTooltip, function(idx, attr){
-          teaserTemplate += "<div class='tooltip-attribute'> <span class='key'>" + attr.replace('_', ' ') + "</span>: \{\{" + attr + "\}\}</div>";
+            teaserTemplate = "<div class='attr-table keyline-all space-bottom0'><table><tbody>",
+            fullTemplate = "<div class='attr-table keyline-all space-bottom0'><table><tbody>";
+
+        $.each(teaserTooltip, function(idx, attribute){
+          teaserTemplate = extendTooltip(teaserTemplate, attribute);
         });
-        teaserTemplate += "<span class='micro quiet caps'>click for more feature information</span>"
-        $.each(fullTooltip, function(idx, attr){
-          fullTemplate += "<div class='tooltip-attribute'> <span class='key'>" + attr.replace('_', ' ') + "</span>: \{\{" + attr + "\}\}</div>";
+        $.each(fullTooltip, function(idx, attribute){
+          fullTemplate = extendTooltip(fullTemplate, attribute);
         });
-        fullTemplate += "<div><a href='http://osm.moabi.org/edit?way=\{\{osm_id\}\}' class='quiet small'>Edit in iD</a></div>";
-        fullTemplate += "<div><a href='http://osm.moabi.org/way/\{\{osm_id\}\}/history' class='quiet small'>View History</a></div>";
+
+        teaserTemplate += "</tbody></table></div>" +
+                          "<span class='micro quiet caps strong'>click for more feature information</span>";
+        fullTemplate += "</tbody></table></div>" +
+                        "<div class='tabs col12'>" +
+                        "<a href='http://osm.moabi.org/edit?way=\{\{osm_id\}\}' class='col6 quiet small' target='_blank'>Edit in iD</a>" +
+                        "<a href='http://osm.moabi.org/way/\{\{osm_id\}\}/history' class='col6 quiet small' target='_blank'>View History</a>" +
+                        "</div>";
+
+        function extendTooltip(ttip, attribute){
+          return ttip += "<tr class='small'><td class='capitalize strong pad0'>" + attribute.replace('_', ' ') + "</td>" +
+                              "<td class=' pad0'> \{\{" + attribute + "\}\}</td></tr>";
+        }
       } catch(err) { console.log(err); return; }
 
       // for each loaded tile layer, remove
