@@ -229,7 +229,8 @@ table tr.opt-row td {
 #map, #sidebar {
   position:absolute;
   top: $headerheight;  /* header height */
-  bottom: $footerheight; /* footer height */
+  /*bottom: $footerheight; /* footer height */
+  bottom: 0;
 }
 
 #map {
