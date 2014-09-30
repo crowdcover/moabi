@@ -317,8 +317,8 @@ var moabi = {
                         "</div>";
 
         function extendTooltip(ttip, attribute){
-          return ttip += "<tr class='small'><td class='capitalize strong pad0'>" + attribute.replace('_', ' ') + "</td>" +
-                              "<td class=' pad0'> \{\{" + attribute + "\}\}</td></tr>";
+          return ttip += "<tr class='small'><td class='capitalize strong'>" + attribute.replace('_', ' ') + "</td>" +
+                              "<td> \{\{" + attribute + "\}\}</td></tr>";
         }
       } catch(err) { console.log(err); return; }
 

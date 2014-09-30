@@ -89,6 +89,12 @@
   .map-tooltip table {
     margin-bottom: 0;
   }
+  .map-tooltip table td{
+    padding: 4px;
+  }
   .map-tooltip table td:last-child{
     padding-right: 18px;
+  }
+  .map-tooltip table tr:last-child td {
+    border-bottom: 0;
   }
