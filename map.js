@@ -298,8 +298,8 @@ var moabi = {
             grid_url = "http://grids.osm.moabi.org/grids/" + layerListItem.data('id') + "/{z}/{x}/{y}.json",
             teaserTooltip = layerListItem.data('tooltip-teaser'),
             fullTooltip = layerListItem.data('tooltip-full'),
-            teaserTemplate = "<div class='attr-table keyline-all space-bottom0'><table><tbody>",
-            fullTemplate = "<div class='attr-table keyline-all space-bottom0'><table><tbody>";
+            teaserTemplate = "<div class='attr-table keyline-all space-bottom1'><table><tbody>",
+            fullTemplate = "<div class='attr-table keyline-all space-bottom1'><table><tbody>";
 
         $.each(teaserTooltip, function(idx, attribute){
           teaserTemplate = extendTooltip(teaserTemplate, attribute);
@@ -307,17 +307,19 @@ var moabi = {
         $.each(fullTooltip, function(idx, attribute){
           fullTemplate = extendTooltip(fullTemplate, attribute);
         });
+        fullTemplate = extendTooltip(fullTemplate, "way_area", "area (ha)");
 
         teaserTemplate += "</tbody></table></div>" +
-                          "<span class='micro quiet caps strong'>click for more feature information</span>";
+                          "<div class='col12 center micro quiet caps strong'>click for more feature information</div>";
         fullTemplate += "</tbody></table></div>" +
                         "<div class='tabs col12'>" +
-                        "<a href='http://osm.moabi.org/edit?way=\{\{osm_id\}\}' class='col6 quiet small' target='_blank'>Edit in iD</a>" +
+                        "<a href='http://osm.moabi.org/edit?way=\{\{osm_id\}\}' class='col6 quiet small' target='_blank'>Edit</a>" +
                         "<a href='http://osm.moabi.org/way/\{\{osm_id\}\}/history' class='col6 quiet small' target='_blank'>View History</a>" +
                         "</div>";
 
-        function extendTooltip(ttip, attribute){
-          return ttip += "<tr class='small'><td class='capitalize strong'>" + attribute.replace('_', ' ') + "</td>" +
+        function extendTooltip(ttip, attribute, label){
+          var label = label || attribute.replace('_', ' ');
+          return ttip += "<tr class='small'><td class='capitalize strong'>" + label + "</td>" +
                               "<td> \{\{" + attribute + "\}\}</td></tr>";
         }
       } catch(err) { console.log(err); return; }
