@@ -7,24 +7,10 @@
 {% include js/leaflet-hash.js %}
 
 ;(function(context) {
-L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
-this.map = L.mapbox.map('map', undefined, {
-  layers: [mapLayers.baseLayer.id],
-  center: mapLayers.baseLayer.latlon,
-  zoom: mapLayers.baseLayer.zoom,
-  scrollWheelZoom: false,
-  minZoom: 4,
-  maxZoom: 18
-});
-
-this.map.zoomControl.setPosition('topleft');
-this.leaflet_hash = L.hash(this.map);
-
-this.map.legendControl.addLegend("<h3 class='center keyline-bottom'>Legend</h3>");
-
 var moabi = {
 
     global: function() {
+        this.initMap();
         $('.map-interaction').on('click', this.mapInteract);
         $('.slider').on('click', 'a', this.slidePanel);
         $('.report-panel section').waypoint(this.reportScroll, {
@@ -40,27 +26,13 @@ var moabi = {
 
         $('#snap').on('click', this.mapCapture);
         $('.sortable').sortable({
-            placeholder: "ui-state-highlight",
-            update: function( event, ui ){
-                ui['item'].siblings('li').addBack().each(function(index) {
-                    // this is repetitive.  how to calculate w/o two queries?
-                    var numLayers = ui['item'].siblings('li').addBack().length,
-                        mapId = ui['item'].children('a').data('id'),
-                        layer = mapLayers.dataLayers[mapId][0];
-
-                    layer.setZIndex(numLayers - index);
-                    //console.log(numLayers - index + " : " + $(this).children('a').text() );
-
-                });
-                moabi.setGrid(map);
-                leaflet_hash.trigger('move');
-                //console.log("----");
-            }
+          placeholder: "ui-state-highlight",
+          update: moabi.setLayersZIndex
         });
         $( ".sortable" ).disableSelection();
-        leaflet_hash.on('update', moabi.getLayerHash);
-        leaflet_hash.on('change', moabi.setLayerHash);
-        leaflet_hash.on('hash', moabi.updateExportLink);
+        this.leaflet_hash.on('update', moabi.getLayerHash);
+        this.leaflet_hash.on('change', moabi.setLayerHash);
+        this.leaflet_hash.on('hash', moabi.updateExportLink);
         moabi.updateExportLink(location.hash);
         $('.not-displayed').css('height', function(){
             totalHeight = 2;
@@ -69,6 +41,23 @@ var moabi = {
             });
             return totalHeight;
         });
+    },
+
+    initMap: function(){
+      L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
+      this.map = L.mapbox.map('map', undefined, {
+        layers: [mapLayers.baseLayer.id],
+        center: mapLayers.baseLayer.latlon,
+        zoom: mapLayers.baseLayer.zoom,
+        scrollWheelZoom: false,
+        minZoom: 4,
+        maxZoom: 18
+      });
+
+      this.map.zoomControl.setPosition('topleft');
+      this.leaflet_hash = L.hash(this.map);
+
+      this.map.legendControl.addLegend("<h3 class='center keyline-bottom'>Legend</h3>");
     },
 
     mapInteract: function(e) {
@@ -82,7 +71,7 @@ var moabi = {
             var latLon = [location[0],location[1]],
                 zoom = location[2];
 
-            map.setView(latLon, zoom);
+            moabi.map.setView(latLon, zoom);
         } else if ($this.data('layer-toggle')){
 
         }
@@ -92,7 +81,7 @@ var moabi = {
         e.preventDefault();
         e.stopPropagation();
 
-        leafletImage(map, function(err, canvas) {
+        leafletImage(moabi.map, function(err, canvas) {
             var $imgContainer = $('#images'),
                 download = document.getElementById('map-download');
 
@@ -146,7 +135,7 @@ var moabi = {
             nav = $this.data('nav'),
             layers = $this.data('id');
             if(nav){
-                map.setView([nav[0], nav[1]], nav[2]);
+                moabi.map.setView([nav[0], nav[1]], nav[2]);
             }
             // add layers only after map.setView has completed, via a callback?
             if(layers){
@@ -166,65 +155,90 @@ var moabi = {
             }
     },
     layerUi: function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+      e.preventDefault();
+      e.stopPropagation();
 
-        var $this = $(this),
-            $thisIndex = $this.parent('li').data('index'),
-            displayed = $('.layer-ui .displayed'),
-            notDisplayed = $('.layer-ui .not-displayed');
+      var $this = $(this),
+          $thisIndex = $this.parent('li').data('index'),
+          displayed = $('.layer-ui .displayed'),
+          notDisplayed = $('.layer-ui .not-displayed'),
+          mapId = $this.data('id');
 
-            mapId = $this.data('id');
+      if (! mapLayers.dataLayers[mapId]){
+        mapLayers.dataLayers[mapId] = [
+          L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
+          $('.moabi-legend[data-id="' + mapId + '"]')
+        ];
+      }
 
-        if (! mapLayers.dataLayers[mapId]){
-            mapLayers.dataLayers[mapId] = [
-                L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
-                $('.moabi-legend[data-id="' + mapId + '"]')
-            ];
-        }
+      var layer = mapLayers.dataLayers[mapId][0],
+          layerLegend = mapLayers.dataLayers[mapId][1];
 
-        var layer = mapLayers.dataLayers[mapId][0];
-            layerLegend = mapLayers.dataLayers[mapId][1];
+      // if button is active, remove layer from map and move button to notDisplayed
+      if ($this.hasClass('active')) {
+        $this.removeClass('active');
+        moabi.map.removeLayer(layer);
+        layerLegend.removeClass('active');
 
-        // if button is active, remove layer from map and move button to notDisplayed
-        if ($this.hasClass('active')) {
-            $this.removeClass('active');
-            map.removeLayer(layer);
-            layerLegend.removeClass('active');
+        // find all indices in notDisplayed
+        var notDisplayedIndices = notDisplayed.children('li').map(function(){
+          return $(this).data('index');
+        }).get().sort(function (a, b) { return a - b; });
 
-            // find all indices in notDisplayed
-            var notDisplayedIndices = notDisplayed.children('li').map(function(){
-                return $(this).data('index');
-            }).get().sort(function (a, b) { return a - b; });
-
-            // if nodisplay is empty OR if $thisIndex greater than the largest nodisplay index, append to end
-            if (notDisplayedIndices.length === 0 || $thisIndex > notDisplayedIndices[notDisplayedIndices.length - 1]){
-                notDisplayed.append($this.parent('li'));
-            // if $thisIndex less than the smallest nodisplay Index, prepend to beginning
-            } else if ($thisIndex < notDisplayedIndices[0]){
-                notDisplayed.prepend($this.parent('li'));
-            // else, find next smallest
-            } else {
-                for (i = 0; i < notDisplayedIndices.length; i++){
-                    if (notDisplayedIndices[i] > $thisIndex){
-                        nextLargestIndex = notDisplayedIndices[i - 1];
-                        break;
-                    }
-                }
-
-                notDisplayed.children('li').filter('[data-index="' + nextLargestIndex + '"]').after($this.parent('li'));
-            }
-
-        // else if button is not active: add layer to map and move button to displayList
+        // if nodisplay is empty OR if $thisIndex greater than the largest nodisplay index, append to end
+        if (notDisplayedIndices.length === 0 || $thisIndex > notDisplayedIndices[notDisplayedIndices.length - 1]){
+          notDisplayed.append($this.parent('li'));
+        // if $thisIndex less than the smallest nodisplay Index, prepend to beginning
+        } else if ($thisIndex < notDisplayedIndices[0]){
+          notDisplayed.prepend($this.parent('li'));
+        // else, find next smallest
         } else {
-            $this.addClass('active');
-            displayed.prepend($this.parent('li'));
-            map.addLayer(layer);
+          for (i = 0; i < notDisplayedIndices.length; i++){
+            if (notDisplayedIndices[i] > $thisIndex){
+              nextLargestIndex = notDisplayedIndices[i - 1];
+              break;
+            }
+          }
 
-            layerLegend.addClass('active');
+          notDisplayed.children('li').filter('[data-index="' + nextLargestIndex + '"]').after($this.parent('li'));
         }
-        moabi.setGrid(map);
-        leaflet_hash.trigger('move');
+
+      // else if button is not active: add layer to map and move button to displayList
+      } else {
+        $this.addClass('active');
+        displayed.prepend($this.parent('li'));
+        moabi.map.addLayer(layer);
+        layerLegend.addClass('active');
+
+        //reset all layers' z-indexes
+        moabi.setLayersZIndex();
+      }
+      moabi.setGrid(moabi.map);
+      moabi.leaflet_hash.trigger('move');
+    },
+
+    setLayersZIndex: function(){
+      var layerButtons = $('ul.displayed').children('li'),
+          numLayers = layerButtons.length;
+
+      layerButtons.each(function(index){
+        var layerButton = $(this),
+            mapId = layerButton.children('a').data('id'),
+            layer = mapLayers.dataLayers[mapId][0];
+
+        layer.setZIndex(numLayers - index);
+      });
+      // layerButtons.each(function(index) {
+      //   // this is repetitive.  how to calculate w/o two queries?
+      //   var numLayers = ui['item'].siblings('li').addBack().length,
+      //       mapId = ui['item'].children('a').data('id'),
+      //       layer = mapLayers.dataLayers[mapId][0];
+
+      //   layer.setZIndex(numLayers - index);
+      //   //console.log(numLayers - index + " : " + $(this).children('a').text() );
+      // });
+      moabi.setGrid(moabi.map);
+      moabi.leaflet_hash.trigger('move');
     },
 
     showMinorPanel: function(e) {
@@ -261,7 +275,7 @@ var moabi = {
             lon = $this.data("nav")[1],
             zoom = $this.data("nav")[2];
 
-        map.setView([lat, lon], zoom);
+        moabi.map.setView([lat, lon], zoom);
 
         $this.parent('li').siblings('li').children('a.active').removeClass('active');
         $this.addClass('active');
@@ -281,15 +295,34 @@ var moabi = {
       try {
         // get moabi_id and tooltip of first item in the displayed list, and build a tooltip template
         var layerListItem = $('.layer-ui .displayed li:first a'),
-            moabi_id = layerListItem.data('id'),
-            tooltip = layerListItem.data('tooltip'),
-            template = "";
-        for(var i=0; i<tooltip.length; i++) {
-          template = template + "<div class='tooltip-attribute'> <span class='key'>" + tooltip[i] + "</span>" + ": \{\{" + tooltip[i] + "\}\}</div>";
-        }
-      } catch(err) { return; }
+            grid_url = "http://grids.osm.moabi.org/grids/" + layerListItem.data('id') + "/{z}/{x}/{y}.json",
+            teaserTooltip = layerListItem.data('tooltip-teaser'),
+            fullTooltip = layerListItem.data('tooltip-full'),
+            teaserTemplate = "<div class='attr-table keyline-all space-bottom1'><table><tbody>",
+            fullTemplate = "<div class='attr-table keyline-all space-bottom1'><table><tbody>";
 
-      var grid_url = "http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json";
+        $.each(teaserTooltip, function(idx, attribute){
+          teaserTemplate = extendTooltip(teaserTemplate, attribute);
+        });
+        $.each(fullTooltip, function(idx, attribute){
+          fullTemplate = extendTooltip(fullTemplate, attribute);
+        });
+        fullTemplate = extendTooltip(fullTemplate, "way_area", "area (ha)");
+
+        teaserTemplate += "</tbody></table></div>" +
+                          "<div class='col12 center micro quiet caps strong'>click for more feature information</div>";
+        fullTemplate += "</tbody></table></div>" +
+                        "<div class='tabs col12'>" +
+                        "<a href='http://osm.moabi.org/edit?way=\{\{osm_id\}\}' class='col6 quiet small' target='_blank'>Edit</a>" +
+                        "<a href='http://osm.moabi.org/way/\{\{osm_id\}\}/history' class='col6 quiet small' target='_blank'>View History</a>" +
+                        "</div>";
+
+        function extendTooltip(ttip, attribute, label){
+          var label = label || attribute.replace('_', ' ');
+          return ttip += "<tr class='small'><td class='capitalize strong'>" + label + "</td>" +
+                              "<td> \{\{" + attribute + "\}\}</td></tr>";
+        }
+      } catch(err) { console.log(err); return; }
 
       // for each loaded tile layer, remove
       var present = false;
@@ -303,11 +336,16 @@ var moabi = {
         }
       });
 
-      if (tooltip.length > 0 && ! present) {
-        var tilejson = {"tilejson":"2.0.0","grids":["http://grids.osm.moabi.org/grids/" + moabi_id + "/{z}/{x}/{y}.json"],"template":"\{\{#__teaser__\}\}" + template + "{\{/__teaser__\}\}"};
-        var gridLayer = L.mapbox.gridLayer(tilejson);
-        map.addLayer(gridLayer);
-        map.addControl(L.mapbox.gridControl(gridLayer));
+      // add grid if it's not present and if at least one of teaserTooltip or fullTooltip is not empty
+      if (!present && (teaserTooltip.length > 0 || fullTooltip.length)) {
+        var tilejson = {
+              "tilejson":"2.1.0",
+              "grids":[grid_url],
+              "template":"\{\{#__teaser__\}\}" + teaserTemplate + "{\{/__teaser__\}\}" +
+                         "\{\{#__full__\}\}" + fullTemplate + "{\{/__full__\}\}"
+            };
+        moabi.gridLayer = L.mapbox.gridLayer(tilejson).addTo(map),
+        moabi.gridControl = L.mapbox.gridControl(moabi.gridLayer).addTo(map);
       }
     },
 

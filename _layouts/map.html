@@ -1,6 +1,6 @@
 ---
 header: pin-top
-footer: pin-bottom
+hide: [footer]
 ---
 <!doctype html>
 <html>
@@ -15,7 +15,7 @@ footer: pin-bottom
 
 {{content}}
 
-{% unless page.hide == 'footer' %}
+{% unless page.hide contains 'footer' %}
     {% include footer.html %}
 {% endunless %}
 

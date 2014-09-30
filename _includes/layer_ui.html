@@ -36,17 +36,19 @@
         {% if page.maplayer_options.subset %}
             {% for pagelayer_id in page.maplayer_options.subset %}{% for layer in site.data.map_layers %}
                 {% if layer.id == pagelayer_id %}
-                    <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
-                        <a class="layer-toggle keyline-bottom" href="#" data-id="{{layer.id}}"
-                        data-tooltip='[{% for attr in layer.tooltip %}"{{attr}}"{%unless forloop.last%} ,{%endunless%}{% endfor %}]'>{{layer.name}}</a>
-                    </li>
+                  <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
+                      <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}"
+                      data-tooltip-teaser='[{% for attr in layer.tooltip_teaser %}"{{attr}}"{%unless forloop.last%} ,{%endunless%}{% endfor %}]'
+                      data-tooltip-full='[{% for attr in layer.tooltip_full %}"{{attr}}"{%unless forloop.last%} ,{%endunless%}{% endfor %}]'>{{layer.name}}</a>
+                  </li>
                 {% endif %}
             {% endfor %}{% endfor %}
         {% else %}
             {% for layer in site.data.map_layers %}
                 <li class="" data-index="{{forloop.index}}" data-categories="{% for category in layer.categories %}{{category}},{% endfor %}">
                     <a class="layer-toggle icon pad0 keyline-bottom" href="#" data-id="{{layer.id}}"
-                    data-tooltip='[{% for attr in layer.tooltip %}"{{attr}}"{%unless forloop.last%} ,{%endunless%}{% endfor %}]'>{{layer.name}}</a>
+                    data-tooltip-teaser='[{% for attr in layer.tooltip_teaser %}"{{attr}}"{%unless forloop.last%} ,{%endunless%}{% endfor %}]'
+                    data-tooltip-full='[{% for attr in layer.tooltip_full %}"{{attr}}"{%unless forloop.last%} ,{%endunless%}{% endfor %}]'>{{layer.name}}</a>
                 </li>
             {% endfor %}
         {% endif %}

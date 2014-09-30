@@ -1,11 +1,13 @@
+@import 'palette';
+
 .leaflet-container {
   font-family: 'Open Sans', sans-serif;
 }
 
 .map-tooltip,
 .map-legends {
-  background-color: rgb(255, 252, 248);
-  background-color: rgba(255, 252, 248, 0.9);
+  background-color: $light;
+  background-color: $lightTransparent;
   border: 1px solid #bbb;
   border-radius: 0;
   box-shadow: rgba(0,0,0,0.1) 0 0 8px 4px;
@@ -72,13 +74,27 @@
     margin: 5px 17px 0 8px;
   }
   .moabi-legend .legend-source { margin-left: 8px; }
+  /*move legend below tooltip*/
+  .leaflet-bottom.leaflet-right { z-index: 1;}
+
 
 .map-tooltip {
-  width: 260px;
+  width: 272px;
   font: 14px/20px 'Open Sans', sans-serif;
-}
-.map-tooltip-content {}
-.map-tooltip .key {
-  font-family: 'Open Sans Bold';
-  text-transform: capitalize;
-}
+  }
+  .map-tooltip .attr-table {
+    max-height: 280px;
+    overflow: auto;
+  }
+  .map-tooltip table {
+    margin-bottom: 0;
+  }
+  .map-tooltip table td{
+    padding: 4px;
+  }
+  .map-tooltip table td:last-child{
+    padding-right: 18px;
+  }
+  .map-tooltip table tr:last-child td {
+    border-bottom: 0;
+  }
