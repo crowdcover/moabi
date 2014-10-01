@@ -300,6 +300,11 @@ var moabi = {
             fullTooltip = layerListItem.data('tooltip-full'),
             teaserTemplate = "<div class='attr-table keyline-all space-bottom1'><table><tbody>",
             fullTemplate = "<div class='attr-table keyline-all space-bottom1'><table><tbody>";
+        function extendTooltip(ttip, attribute, label){
+          var label = label || attribute.replace('_', ' ');
+          return ttip += "<tr class='small'><td class='capitalize strong'>" + label + "</td>" +
+                              "<td> \{\{" + attribute + "\}\}</td></tr>";
+        }
 
         $.each(teaserTooltip, function(idx, attribute){
           teaserTemplate = extendTooltip(teaserTemplate, attribute);
@@ -317,11 +322,6 @@ var moabi = {
                         "<a href='http://osm.moabi.org/way/\{\{osm_id\}\}/history' class='col6 quiet small' target='_blank'>View History</a>" +
                         "</div>";
 
-        function extendTooltip(ttip, attribute, label){
-          var label = label || attribute.replace('_', ' ');
-          return ttip += "<tr class='small'><td class='capitalize strong'>" + label + "</td>" +
-                              "<td> \{\{" + attribute + "\}\}</td></tr>";
-        }
       } catch(err) { console.log(err); return; }
 
       // for each loaded tile layer, remove
