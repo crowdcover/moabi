@@ -37,7 +37,7 @@ Depending on your skills, we have two competitions:
   <span class="clearfix"></span>
 </div>
 
-*exemple des cartes*
+*Example Maps: Ecomakala Risk Map, DRC Intact Forests, Transport, & Energy Map*
 
 ## What are the Prizes?
 

@@ -32,7 +32,7 @@ Selon vos compétences, deux types de compétitions distinctes sont lancées:
   <span class="clearfix"></span>
 </div>
 
-*exemple des cartes*
+*Exemple des Cartes: Ecomakala Risk Map, DRC Intact Forests, Transport, & Energy Map*
 
 ## Quels sont les prix?
 
