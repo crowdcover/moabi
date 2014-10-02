@@ -27,7 +27,7 @@ layout: main
             </div>
         </div>
         {% endif %}
-        <div class="pad2y prose">
+        <div class="pad2y prose center">
             {% if post.subtitle %}
                 {{post.subtitle | markdownify}}
             {% else %}
@@ -40,7 +40,7 @@ layout: main
     {% unless has_translation contains post.id %}
     <!--  untranslated post -->
     <section class="clearfix limiter pad4y {% unless forloop.last %}strongline-bottom space-bottom2{% endunless %}">
-        <h1 class="center"><a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a></h1>
+        <h1 class="center"><a href="{{site.baseurl}}{{post.url}}" class="quiet">{{post.title}}</a></h1>
         <div class="pad1 center quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:#444; padding: 0 6px;">|</span> {{post.author}}</div>
         <div class="pad1 center quiet"><em>{{t.[page.language].no_translation}}</em></div>
         {% if post.img %}
