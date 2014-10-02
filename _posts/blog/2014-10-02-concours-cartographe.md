@@ -10,7 +10,7 @@ subtitle: Moabi DRC is launching a competition to find the best map makers in th
 author: Herve Kashongwe
 published: true
 
-img: https://farm3.staticflickr.com/2950/15234270259_66fce66638.jpg
+img: https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg
 ---
 If you are Congolese with a passion for cartography, GIS, or remote sensing, then this competition is for you !
 
@@ -22,12 +22,6 @@ Maps will be judged on technical merit, and creativity. But above all, we are lo
 
 We hope this competition will raise awareness about some of the pressing environmental issues facing the people and wildlife of DRC. We also hope it give local map makers an opportunity to show off their cartographic skills !
 
-<div>
-  <img src="http://2.bp.blogspot.com/_59lYK5VQ6Gs/S9kSj38Dg0I/AAAAAAAAAmI/MTgNXj8QFCI/s1600/CARPE_BaseMap_landscapes.jpg" style="float:left; width:50%; padding:6px;" />
-  <img src="https://farm4.staticflickr.com/3927/15234028660_b71d21423e_o.png" style="float:left; width:50%; padding:6px;" />
-  <span style="clear:both"></span>
-</div>
-
 *example maps*
 
 ***
@@ -36,6 +30,14 @@ Depending on your skills, we have two competitions:
 
 * Hand drawn maps
 * GIS/Remote sensing maps
+
+<div>
+  <img src="https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg" style="float:left; width:50%; padding:6px;" />
+  <img src="https://farm3.staticflickr.com/2950/15234553318_b33180f58a.jpg" style="width:50%; padding:6px;" />
+  <span class="clearfix"></span>
+</div>
+
+*exemple des cartes*
 
 ## What are the Prizes?
 

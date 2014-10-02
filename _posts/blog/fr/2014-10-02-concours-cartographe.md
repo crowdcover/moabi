@@ -11,7 +11,7 @@ author: Herve Kashongwe
 
 published: true
 
-img: https://farm3.staticflickr.com/2950/15234270259_66fce66638.jpg
+img: https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg
 ---
 Vous êtes congolais et passionné de cartographie, SIG ou de télédétection, ce concours s’adresse à vous !
 
@@ -19,20 +19,20 @@ Le projet Moabi RDC  lance un concours de cartographie qui récompensera les mei
 
 Les cartes seront évaluées selon des critères techniques et selon leur originalité. Nous espérons que ce concours permettra de sensibiliser sur les problématiques environnementales auxquelles les populations de RDC sont confrontées. Nous espérons également que ce concours donnera une opportunité aux dessinateurs et cartographes locaux de montrer leurs compétences.
 
-<div>
-  <img src="http://2.bp.blogspot.com/_59lYK5VQ6Gs/S9kSj38Dg0I/AAAAAAAAAmI/MTgNXj8QFCI/s1600/CARPE_BaseMap_landscapes.jpg" style="float:left; width:50%; padding:6px;" />
-  <img src="https://farm4.staticflickr.com/3927/15234028660_b71d21423e_o.png" style="float:left; width:50%; padding:6px;" />
-  <span style="clear:both"></span>
-</div>
-
-*exemple des cartes*
-
 ***
 
 Selon vos compétences, deux types de compétitions distinctes sont lancées:
 
 * Cartes dessinées manuellement
 * Cartes faites avec logiciels SIG
+
+<div>
+  <img src="https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg" style="float:left; width:50%; padding:6px;" />
+  <img src="https://farm3.staticflickr.com/2950/15234553318_b33180f58a.jpg" style="width:50%; padding:6px;" />
+  <span class="clearfix"></span>
+</div>
+
+*exemple des cartes*
 
 ## Quels sont les prix?
 
