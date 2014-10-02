@@ -11,7 +11,7 @@ author: Herve Kashongwe
 
 published: true
 
-img: https://farm4.staticflickr.com/3930/15417086401_52a2dee2c6.jpg
+img: https://farm3.staticflickr.com/2950/15234270259_66fce66638.jpg
 ---
 Vous êtes congolais et passionné de cartographie, SIG ou de télédétection, ce concours s’adresse à vous !
 

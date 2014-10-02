@@ -10,7 +10,7 @@ subtitle: Moabi DRC is launching a competition to find the best map makers in th
 author: Herve Kashongwe
 published: true
 
-img: https://farm4.staticflickr.com/3930/15417086401_52a2dee2c6.jpg
+img: https://farm3.staticflickr.com/2950/15234270259_66fce66638.jpg
 ---
 If you are Congolese with a passion for cartography, GIS, or remote sensing, then this competition is for you !
 
