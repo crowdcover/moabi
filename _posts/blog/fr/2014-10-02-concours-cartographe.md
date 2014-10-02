@@ -5,13 +5,13 @@ tags:
   - blog_post
 categories:
   - fr
-title: Lancement du 1er concours de cartographie Moabi
+title: Lancement du 1er Concours de Cartographie Moabi
 subtitle: Le projet Moabi RDC  lance un concours de cartographie qui récompensera les meilleures cartographes et dessinateurs de la RDC.
 author: Herve Kashongwe
 
 published: true
 
-img: https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg
+img: https://farm4.staticflickr.com/3929/15235319339_240fc0e276_c.jpg
 ---
 Vous êtes congolais et passionné de cartographie, SIG ou de télédétection, ce concours s’adresse à vous !
 
@@ -28,7 +28,7 @@ Selon vos compétences, deux types de compétitions distinctes sont lancées:
 
 <div>
   <img src="https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg" style="float:left; width:50%; padding:6px;" />
-  <img src="https://farm3.staticflickr.com/2950/15234553318_b33180f58a.jpg" style="width:50%; padding:6px;" />
+  <img src="https://farm3.staticflickr.com/2946/15235282209_5e60a57986.jpg" style="width:50%; padding:6px;" />
   <span class="clearfix"></span>
 </div>
 
@@ -38,7 +38,7 @@ Selon vos compétences, deux types de compétitions distinctes sont lancées:
 
 Pour chaque compétition :
 
-* 1er prix : 250$,
+* 1er prix : 250$
 * 2e prix: 150$
 * 3e   prix: 100$
 

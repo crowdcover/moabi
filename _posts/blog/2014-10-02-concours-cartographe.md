@@ -5,12 +5,12 @@ tags:
   - blog_post
 categories:
   - en
-title: Announcing the first Moabi Mapping Competition
+title: Announcing the First Moabi Mapping Competition
 subtitle: Moabi DRC is launching a competition to find the best map makers in the Democratic Republic of Congo.
 author: Herve Kashongwe
 published: true
 
-img: https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg
+img: https://farm4.staticflickr.com/3929/15235319339_240fc0e276_c.jpg
 ---
 If you are Congolese with a passion for cartography, GIS, or remote sensing, then this competition is for you !
 
@@ -33,7 +33,7 @@ Depending on your skills, we have two competitions:
 
 <div>
   <img src="https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg" style="float:left; width:50%; padding:6px;" />
-  <img src="https://farm3.staticflickr.com/2950/15234553318_b33180f58a.jpg" style="width:50%; padding:6px;" />
+  <img src="https://farm3.staticflickr.com/2946/15235282209_5e60a57986.jpg" style="width:50%; padding:6px;" />
   <span class="clearfix"></span>
 </div>
 
@@ -43,9 +43,9 @@ Depending on your skills, we have two competitions:
 
 Both competitions have the following prizes :
 
-* 1st Prize : 250$,
-* 2nd prix: 150$
-* 3rd  prix: 100$
+* 1st Prize : $250
+* 2nd prix: $150
+* 3rd  prix: $100
 
 We will also feature the winning entries on the homepage of the Moabi website.
 
