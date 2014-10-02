@@ -35,17 +35,17 @@ Depending on your skills, we have two competitions:
   <img src="https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg" style="float:left; width:50%; padding:6px;" />
   <img src="https://farm3.staticflickr.com/2946/15235282209_5e60a57986.jpg" style="width:50%; padding:6px;" />
   <span class="clearfix"></span>
-</div>
 
-*Example Maps: Ecomakala Risk Map, DRC Intact Forests, Transport, & Energy Map*
+  <div>Example Maps: Ecomakala Risk Map, DRC Intact Forests, Transport, & Energy Map</div>
+</div>
 
 ## What are the Prizes?
 
 Both competitions have the following prizes :
 
 * 1st Prize : $250
-* 2nd prix: $150
-* 3rd  prix: $100
+* 2nd Prize: $150
+* 3rd  Prize: $100
 
 We will also feature the winning entries on the homepage of the Moabi website.
 
@@ -72,13 +72,13 @@ We will also feature the winning entries on the homepage of the Moabi website.
   * its purpose
   * its intent
 
-Please send map files (jpg, PDF, PNG formats) can be sent to Herve Kashongwe: "hkashongwe@gmail.com"
+Please send map files (jpg, PDF, PNG formats) can be sent to Herve Kashongwe: <a href="mailto:hkashongwe@gmail.com">hkashongwe@gmail.com</a>.
 
 Records including maps produced manually to be filed in OSFAC at the following address:OSFAC, 14 Avenue du Sergent Moke, Concession Safricas, District Socimat, Common Ngaliema, Kinshasa.
 
-For questions, please email hkashongwe@gmail.com
+For questions, please email <a href="mailto:hkashongwe@gmail.com">hkashongwe@gmail.com</a>.
 
-To keep updated on the competition and learn who wins by liking us at facebook.com/moabimapping and following us on Twitter *@moabimaps*
+To keep updated on the competition and learn who wins by liking us on facebook at [Moabi Mapping](//facebook.com/moabimapping) and following us on Twitter [@moabimaps](//twitter.com/MoabiMaps).
 
 ### Members of the Moabi selection committee:
 

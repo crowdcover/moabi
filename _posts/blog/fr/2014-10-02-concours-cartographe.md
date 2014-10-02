@@ -62,22 +62,22 @@ Les cartes des lauréats seront publiées sur la page d’accueil du site Moabi 
 
 ## Comment participer ?
 Le dossier de candidature au concours doit être composé :
-* L’identité du participant : Nom du participant et nom de l’organisation / institution / entreprise (le cas échéant), Adresse postale, Coordonnées téléphoniques et e-mail ;
 
-Si le concours est réalisé au nom d’une organisation/ institution / entreprise, noter le domaine d’activités, l’aire géographique d’intervention, le nombre de membres / employés, les principales activités et projets réalisés à ce jour.
+* L’identité du participant : Nom du participant et nom de l’organisation / institution / entreprise (le cas échéant), Adresse postale, Coordonnées téléphoniques et e-mail
+* Si le concours est réalisé au nom d’une organisation/ institution / entreprise, noter le domaine d’activités, l’aire géographique d’intervention, le nombre de membres / employés, les principales activités et projets réalisés à ce jour.
 * La carte et les données géoréférencées.
-* La note descriptive de la carte, expliquant i)
+* La note descriptive de la carte, expliquant
   * le contexte dans lequel la carte a été réalisée
   * son objectif
   * son intérêt
 
-Merci de transmettre les cartes informatiques au format jpg, png à Herve Kashongwe : hkashongwe@gmail.com
+Merci de transmettre les cartes informatiques au format jpg, png à Herve Kashongwe : <a href="mailto:hkashongwe@gmail.com">hkashongwe@gmail.com</a>
 
 Les dossiers incluant des cartes réalisées manuellement doivent être déposés à l’OSFAC, à l'adresse suivante : OSFAC, 14 Avenue du Sergent Moke, Concession SAFRICAS, Quartier Socimat, Commune de Ngaliema, Kinshasa.
 
-Pour de plus amples informations, merci de contacter Herve Kashongwe : hkashongwe@gmail.com
+Pour de plus amples informations, merci de contacter Herve Kashongwe : <a href="mailto:hkashongwe@gmail.com">hkashongwe@gmail.com</a>
 
-Pour vous maintenir informer sur ce concours et connaître les vainqueurs, vous pouvez nous rejoindre sur facebook.com/moabimapping ou nous suivre sur twitter @moabimaps.
+Pour vous maintenir informer sur ce concours et connaître les vainqueurs, vous pouvez nous rejoindre sur [Moabi Mapping](//facebook.com/moabimapping) ou nous suivre sur twitter [@moabimaps](//twitter.com/MoabiMaps).
 
 ### Composition du comité de sélection Moabi :
 
