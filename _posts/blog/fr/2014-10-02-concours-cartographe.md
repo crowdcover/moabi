@@ -85,7 +85,7 @@ Pour vous maintenir informer sur ce concours et connaître les vainqueurs, vous 
 * Nicky Kingunya, Directeur adjoint à la Direction du Développement Durable du MECNT.
 * Eric Lutete, Experts national en SIG et formateur à l’Université de Kinshasa
 * Maurice Mbunga, Géographe à l’IGC
-* Pascal Drouard, Expert international en SIG à WRI
+* Pascal Douard, Expert international en SIG à WRI
 * Claire Halleux, Experte internationale en SIG ainsi qu’en sciences environnementales au RGC
 * Elvis Tshibasu, Expert international en SIG au WWF
 * Hervé Kashongwe : Expert national en SIG à l’OSFAC et secrétaire du Comité de sélection Moabi

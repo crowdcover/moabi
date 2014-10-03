@@ -86,7 +86,7 @@ To keep updated on the competition and learn who wins by liking us on facebook a
 * Nicky Kingunya, Deputy Director of the Sustainable Development Department at MECNT.
 * Eric Lutete, National expert in GIS and trainer at the University of Kinshasa
 * Maurice Mbunga, Geographer at the IGC
-* Pascal Drouard, International Expert in GIS at WRI
+* Pascal Douard, International Expert in GIS at WRI
 * Claire Halleux, International Expert in GIS as well as environmental science at RGC
 * Elvis Tshibasu, International Expert in GIS at WWF
 * Hervé Kashongwe: National Expert in GIS at OSFAC and Secretary of the Moabi Selection Committee
