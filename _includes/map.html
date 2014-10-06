@@ -1,1 +1,6 @@
-<div id="map" class="right-bar{% if page.footer == 'hide' %} no-footer{% endif %}"></div>
+<div id="map" class="
+  {% unless page.hide contains 'sidebar' %}sidebarred {% endunless %}
+  {% if page.hide contains 'footer' %}no-footer {% endif %}
+  {% if page.hide contains 'header' %}no-header {% endif %}">
+  <a href="//rdc.moabi.org"><div class="pin-bottomleft logo-icon"></div></a>
+</div>

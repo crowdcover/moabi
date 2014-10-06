@@ -129,6 +129,7 @@ body { background:$bground; }
   display:inline-block;
   height: 40px;
   width: 40px;
+  z-index: 1;
   }
   .logo-text {
     font:16px/20px 'Open Sans Bold', sans-serif;
@@ -229,21 +230,28 @@ table tr.opt-row td {
 #map, #sidebar {
   position:absolute;
   top: $headerheight;  /* header height */
-  /*bottom: $footerheight; /* footer height */
-  bottom: 0;
-}
-
-#map {
-  right:0;
-  width: calc(100% - #{$sidebarwidth});
-  background-color: #333;
-  z-index: -1;
-}
-
-#sidebar {
-  left:0;
-  width: $sidebarwidth;
-}
+  bottom: $footerheight; /* footer height */
+  }
+  #map {
+    background-color: #333;
+    right: 0;
+    width: 100%;
+  }
+  #sidebar {
+    left: 0;
+    width: $sidebarwidth;
+  }
+  #map.sidebarred{
+    width: calc(100% - #{$sidebarwidth});
+  }
+  #map.no-header,
+  #sidebar.no-header{
+    top: 0;
+  }
+  #map.no-footer,
+  #sidebar.no-footer{
+    bottom: 0;
+  }
 
 /* Menus */
 .minor-panel {
