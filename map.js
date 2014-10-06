@@ -21,15 +21,12 @@ var moabi = {
         $('.layer-ui').on('click', 'a.layer-toggle', this.layerUi);
         $('.navigate').on('click', 'a', this.navigate);
         $('.moabi-legend').appendTo('.map-legend');
-
         $('.page-fade-link').on('click', this.fade2Page);
-
         $('#snap').on('click', this.mapCapture);
         $('.sortable').sortable({
           placeholder: "ui-state-highlight",
           update: moabi.setLayersZIndex
         });
-        $( ".sortable" ).disableSelection();
         this.leaflet_hash.on('update', moabi.getLayerHash);
         this.leaflet_hash.on('change', moabi.setLayerHash);
         this.leaflet_hash.on('hash', moabi.updateExportLink);
@@ -79,9 +76,6 @@ var moabi = {
                 download = document.getElementById('map-download');
 
             var mapCapture = document.createElement('img');
-            // var dimensions = map.getSize();
-            //img.width = dimensions.x;
-            //img.height = dimensions.y;
             mapImage = canvas.toDataURL();
             download.href = mapImage;
             mapCapture.src = mapImage;
@@ -221,15 +215,6 @@ var moabi = {
 
         layer.setZIndex(numLayers - index);
       });
-      // layerButtons.each(function(index) {
-      //   // this is repetitive.  how to calculate w/o two queries?
-      //   var numLayers = ui['item'].siblings('li').addBack().length,
-      //       mapId = ui['item'].children('a').data('id'),
-      //       layer = mapLayers.dataLayers[mapId][0];
-
-      //   layer.setZIndex(numLayers - index);
-      //   //console.log(numLayers - index + " : " + $(this).children('a').text() );
-      // });
       moabi.setGrid(moabi.map);
       moabi.leaflet_hash.trigger('move');
     },
