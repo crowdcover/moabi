@@ -34,13 +34,6 @@ var moabi = {
         this.leaflet_hash.on('change', moabi.setLayerHash);
         this.leaflet_hash.on('hash', moabi.updateExportLink);
         moabi.updateExportLink(location.hash);
-        $('.not-displayed').css('height', function(){
-            totalHeight = 2;
-            $('.not-displayed').children('li').each(function(){
-                totalHeight += $(this).outerHeight();
-            });
-            return totalHeight;
-        });
     },
 
     initMap: function(){
