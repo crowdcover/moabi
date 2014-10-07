@@ -30,7 +30,7 @@ prose:
           label: "title"
       - name: "subtitle"
         field:
-          element: "textarea"
+          element: "text"
           label: "Summary"
           help: "add a few lines of text for a short summary."
           value: ""
