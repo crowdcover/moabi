@@ -24,6 +24,10 @@ prose:
         field:
           element: "hidden"
           value: "en"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
       - name: "subtitle"
         field:
           element: "textarea"
@@ -64,6 +68,10 @@ prose:
         field:
           element: "hidden"
           value: "fr"
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
       - name: "subtitle"
         field:
           element: "textarea"
