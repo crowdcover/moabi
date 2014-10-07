@@ -32,15 +32,13 @@ prose:
         field:
           element: "textarea"
           label: "Summary"
-          help: "add a few lines of text for a short summary, to appear on the blog roll page: http://rdc.moabi.org/blog/en/ .  If necessary, copy and paste one of your lead paragraphs"
+          help: "add a few lines of text for a short summary."
           value: ""
-          placeholder: "..."
       - name: "author"
         field:
           element: "text"
           label: "Author"
           value: "CrowdCover Team"
-          placeholder: "..."
       - name: "img"
         field:
           element: "text"
