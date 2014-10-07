@@ -4,7 +4,7 @@ baseurl: /site
 permalink: /:title/:categories/
 markdown: kramdown
 prose:
-  rooturl: _posts/blog
+  rooturl: "_posts/blog"
   siteurl: "http://crowdcover.github.io/site/"
   metadata:
     _posts:
