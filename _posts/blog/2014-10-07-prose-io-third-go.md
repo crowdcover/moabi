@@ -3,7 +3,7 @@ categories: en
 language: en
 tags: blog_post
 layout: blog_post
-published: false
+published: true
 title: prose.io third go
 author: CrowdCover Team
 subtitle: "trying to set a subtitle with only a text input field, rather than a textarea input field."
