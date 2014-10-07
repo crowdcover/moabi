@@ -3,3 +3,99 @@ description: "Moabi is a collaborative mapping platform to monitor landuse plann
 baseurl: /site
 permalink: /:title/:categories/
 markdown: kramdown
+prose:
+  rooturl: _posts/blog
+  siteurl: "http://crowdcover.github.io/site/"
+  metadata:
+    _posts:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "blog_post"
+      - name: "tags"
+        field:
+          element: "hidden"
+          value: "blog_post"
+      - name: "language"
+        field:
+          element: "select"
+          help: "language and categories must match"
+          options:
+            - name: "FR"
+              value: "fr"
+            - name: "EN"
+              value: "en"
+      - name: "categories"
+        field:
+          element: "select"
+          help: "language and categories must match"
+          options:
+            - name: "FR"
+              value: "fr"
+            - name: "EN"
+              value: "en"
+      - name: "subtitle"
+        field:
+          element: "textarea"
+          label: "summary"
+          help: "add a few lines of text for a short summary, to appear on the blog roll page: http://rdc.moabi.org/blog/en/ .  If necessary, copy and paste one of your lead paragraphs"
+          value: ""
+          placeholder: "..."
+      - name: "author"
+        field:
+          element: "text"
+          value: ""
+      - name: "img"
+        field:
+          element: "text"
+          label: "banner photo"
+          help: "URL link to a photo you would like to use for the banner photograph.  These can be hosted on flickr or elsewhere."
+          value: ""
+          placeholder: "http://example_photo_url.com"
+# _posts/fr config should exactly match _posts config, except for translated text values
+    _posts/fr:
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "blog_post"
+      - name: "tags"
+        field:
+          element: "hidden"
+          value: "blog_post"
+      - name: "language"
+        field:
+          element: "select"
+          help: "language and categories must match"
+          options:
+            - name: "FR"
+              value: "fr"
+            - name: "EN"
+              value: "en"
+      - name: "categories"
+        field:
+          element: "select"
+          help: "language and categories must match"
+          options:
+            - name: "FR"
+              value: "fr"
+            - name: "EN"
+              value: "en"
+      - name: "subtitle"
+        field:
+          element: "textarea"
+          label: "summary"
+          help: "add a few lines of text for a short summary, to appear on the blog roll page: http://rdc.moabi.org/blog/en/ .  If necessary, copy and paste one of your lead paragraphs"
+          value: ""
+          placeholder: "..."
+      - name: "author"
+        field:
+          element: "text"
+          value: ""
+      - name: "img"
+        field:
+          element: "text"
+          label: "banner photo"
+          help: "URL link to a photo you would like to use for the banner photograph.  These can be hosted on flickr or elsewhere."
+          value: ""
+          placeholder: "http://example_photo_url.com"
+
