@@ -347,17 +347,15 @@ var moabi = {
 
     updateExportLink: function(hash) {
       // update map embed link and iD edit link
-      if ($('#map-embed')[0]) {
-        $('#map-embed')[0].value = "<iframe src='http://rdc.moabi.org/embed/" + hash + "' frameborder='0' width='900' height='700'></iframe>";
-      }
+      $('#map-embed').val("<iframe src='//{{site.baseurl}}/embed/" + hash + "' frameborder='0' width='900' height='700'></iframe>");
 
       if ($('#id-edit')) {
-        z_lat_lon = hash.split('&')[0].split('/')
-        var zoom = z_lat_lon[0].replace("#", ""),
-          lat = z_lat_lon[1],
-          lon = z_lat_lon[2];
+        var z_lat_lon = hash.split('&')[0].split('/'),
+            zoom = z_lat_lon[0].replace("#", ""),
+            lat = z_lat_lon[1],
+            lon = z_lat_lon[2];
 
-        $('#id-edit').attr('href', 'http://osm.moabi.org/edit?editor=id#map=' + zoom + '/' + lat + '/' + lon)
+        $('#id-edit').attr('href', '//osm.moabi.org/edit?editor=id#map=' + zoom + '/' + lat + '/' + lon)
       }
     },
 
