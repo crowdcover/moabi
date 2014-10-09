@@ -1354,6 +1354,11 @@ table.fixed {
   margin-left:auto;
   }
 
+.prose img:after {
+  content:' [' attr(alt) '] ';
+  color: $quiet;
+}
+
 table.prose,
 .prose table {
   border:1px solid #ddd;

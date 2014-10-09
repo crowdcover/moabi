@@ -25,12 +25,9 @@
     transition: all 0.2s ease;
 }
 
-.moabi-legend {
-  display: none;
-  }
-  .moabi-legend.active {
-    display: block;
-    border-bottom: 1px dashed #CCC;
+.moabi-legend.active {
+  display: block;
+  border-bottom: 1px dashed #CCC;
   }
   .moabi-legend.active:last-child {
     border-bottom: 0;

@@ -1,0 +1,21 @@
+---
+---
+{% comment %}
+generate fully formed tileJSON grid template, so the browser doesn't have to.
+unfortunately, it's totally unmanageable
+{% endcomment %}
+{
+{% for layer in site.data.map_layers %}
+{% capture teaser %}<div class='attr-table keyline-all space-bottom1'><table><tbody>{% for teaser in layer.tooltip_teaser %}<tr class='small'><td class='capitalize strong'>{{teaser}}</td><td>{%raw%}{{{%endraw%}{{teaser}}{%raw%}}}{%endraw%}</td></tr>{% endfor %}</tbody></table></div><div class='col12 center micro quiet caps strong'>click for more feature information</div>{% endcapture %}
+{% capture full %}<div class='attr-table keyline-all space-bottom1'><table><tbody>{% for full in layer.tooltip_full %}<tr class='small'><td class='capitalize strong'>{{full}}</td><td>{%raw%}{{{%endraw%}{{full}}{%raw%}}}{%endraw%}</td></tr>{% endfor %}{%raw%}<tr class='small'><td class='capitalize strong'>Way Area</td><td>{{way_area}}</td></tr></tbody></table></div><div class='tabs col12'><a href='http://osm.moabi.org/edit?way={{osm_id}}' class='col6 quiet small' target='_blank'>Edit</a><a href='http://osm.moabi.org/way/{{osm_id}}/history' class='col6 quiet small' target='_blank'>View History</a></div>{%endraw%}{% endcapture %}
+  "{{layer.id}}": {
+      "name": "{{layer.name}}",
+      "description": "{{layer.description | replace:'"', "'" | replace:'\n', ''}}",
+      "legend": "<h3>{{layer.name}}, {{layer.date}}</h3>",
+      "date": "{{layer.date}}",
+      "source_name": "{{layer.source.name}}",
+      "source_url": "{{layer.source.url}}",
+      "template": "{%raw%}{{#__teaser__}}{%endraw%}{{teaser}}{%raw%}{{/__teaser__}}{%endraw%} {%raw%}{{#__full__}}{%endraw%}{{full}}{%raw%}{{/__full__}}{%endraw%}"
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+}
