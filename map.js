@@ -9,8 +9,8 @@
 ;(function(context) {
 var moabi = {
     global: function() {
-        $('header .dropdown').on('click', this.headerDropdown);
-        $('.print-page').on(click, this.printPage);
+        $('header .dropdown').on('click', 'a.dropdown-button', this.headerDropdown);
+        $('a.print-page').on('click', this.printPage);
         // modularize and load only on map pages
         this.initMap();
         $('#map').on('changeLayer', this.changeLayer);
@@ -22,10 +22,6 @@ var moabi = {
         $('.slider').on('click', 'a', this.slidePanel);
         $('#snap').on('click', this.mapCapture);
         $('.page-fade-link').on('click', this.fade2Page);
-        this.leaflet_hash.on('update', moabi.getLayerHash);
-        this.leaflet_hash.on('change', moabi.setLayerHash);
-        this.leaflet_hash.on('hash', moabi.updateExportLink);
-        moabi.updateExportLink(location.hash);
         // modularize and load only on report pages
         $('.report-panel section').waypoint(this.reportScroll, {
             context: '.report-panel',
@@ -37,20 +33,21 @@ var moabi = {
         $('a[href^="#"]').on('click', this.textScroll);
     },
 
-    headerDropdown: function(){
-      var $this = $(this);
-      if($this.hasClass('open')){
-        $this.removeClass('open');
-      }else{
-        $this.addClass('open');
-      }
+    headerDropdown: function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      $(this).parent('.dropdown').toggleClass('open');
     },
 
-    printPage: function(){
+    printPage: function(e){
+      e.preventDefault();
+      e.stopPropagation();
       window.print();
     },
 
     initMap: function(){
+      // temp check: if loaded on a page w/ no map, don't run initMap
+      if(! $('#map').length ) return
       L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
       this.map = L.mapbox.map('map', undefined, {
         layers: [mapLayers.baseLayer.id],
@@ -65,6 +62,11 @@ var moabi = {
       this.leaflet_hash = L.hash(this.map);
 
       this.map.legendControl.addLegend("<h3 class='center keyline-bottom'>Legend</h3>");
+
+      moabi.leaflet_hash.on('update', moabi.getLayerHash);
+      moabi.leaflet_hash.on('change', moabi.setLayerHash);
+      moabi.leaflet_hash.on('hash', moabi.updateExportLink);
+      moabi.updateExportLink(location.hash);
     },
 
     // changeLayer() and subsidiary functions, triggered on changeLayer Event //
@@ -400,7 +402,7 @@ var moabi = {
       return(vars.join("&"));
     },
 
-    showRow: function(){
+    showRow: function(e){
       e.stopPropagation();
 
       var $this = $(this);
@@ -414,8 +416,8 @@ var moabi = {
       if( target.length ) {
           //e.preventDefault();
           $('html, body').animate({
-              scrollTop: target.offset().top
-          }, 700);
+              scrollTop: target.offset().top - 20
+          }, 400);
       }
     }
 

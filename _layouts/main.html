@@ -17,8 +17,9 @@
   {% include footer.html %}
 {% endunless %}
 
-
-{% include parse_layers.html %}
+{% if page.basemap %}
+  {% include parse_layers.html %}
+{% endif %}
 <script src='{{site.baseurl}}/map.js'></script>
 
 
