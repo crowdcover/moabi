@@ -174,15 +174,12 @@ body { background:$bground; }
 
 .report-panel.prose section {
   height: auto;
+  min-height: 80%;
   opacity: 0.2;
-  margin-bottom:100px;
+  margin-bottom:60px;
   }
   .report-panel.prose section.active {
     opacity: 1;
-  }
-  .report-panel.prose section:last-child{
-    margin-bottom:0;
-    height: 100%;
   }
 
 table tr.opt-row th,
