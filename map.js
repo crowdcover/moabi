@@ -8,8 +8,10 @@
 
 ;(function(context) {
 var moabi = {
-
     global: function() {
+        $('header .dropdown').on('click', this.headerDropdown);
+        $('.print-page').on(click, this.printPage);
+        // modularize and load only on map pages
         this.initMap();
         $('#map').on('changeLayer', this.changeLayer);
         $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
@@ -17,6 +19,7 @@ var moabi = {
           placeholder: "ui-state-highlight",
           update: moabi.reorderLayers
         });
+        $('.slider').on('click', 'a', this.slidePanel);
         $('#snap').on('click', this.mapCapture);
         $('.page-fade-link').on('click', this.fade2Page);
         this.leaflet_hash.on('update', moabi.getLayerHash);
@@ -24,12 +27,27 @@ var moabi = {
         this.leaflet_hash.on('hash', moabi.updateExportLink);
         moabi.updateExportLink(location.hash);
         // modularize and load only on report pages
-        $('.slider').on('click', 'a', this.slidePanel);
         $('.report-panel section').waypoint(this.reportScroll, {
             context: '.report-panel',
             offset: '80%'
         });
         $('.navigate').on('click', 'a', this.navigate);
+        // modularize and load only on documentation pages
+        $('.show-opt-row').on('click', this.showRow);
+        $('a[href^="#"]').on('click', this.textScroll);
+    },
+
+    headerDropdown: function(){
+      var $this = $(this);
+      if($this.hasClass('open')){
+        $this.removeClass('open');
+      }else{
+        $this.addClass('open');
+      }
+    },
+
+    printPage: function(){
+      window.print();
     },
 
     initMap: function(){
@@ -380,7 +398,27 @@ var moabi = {
       }
       if (! found) { vars.push(  key + "=" + value ); }
       return(vars.join("&"));
+    },
+
+    showRow: function(){
+      e.stopPropagation();
+
+      var $this = $(this);
+
+      $this.toggleClass('active');
+      $this.parent('tr').siblings('tr.' + $this.data('feature')).toggleClass('active');
+    },
+
+    textScroll: function(e){
+      var target = $( $(this).attr('href') );
+      if( target.length ) {
+          //e.preventDefault();
+          $('html, body').animate({
+              scrollTop: target.offset().top
+          }, 700);
+      }
     }
+
 };
 
 window.moabi = moabi;
