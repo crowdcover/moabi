@@ -17,7 +17,7 @@ en:
     partners: partners
 
   sidebar_slider:
-    report: Read Report
+    report: Report
     map_layers: Maps
     export: Export
     edit: Edit
@@ -97,7 +97,7 @@ fr:
     partners: partenaires
 
   sidebar_slider:
-    report: Read Report
+    report: Report
     map_layers: Maps
     export: Export
     edit: Edit
