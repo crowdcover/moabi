@@ -78,7 +78,9 @@ var moabi = {
 
         if(mapId === displayedLayers.eq(0).data('id')){
           var nextLayerId = displayedLayers.eq(1).data('id');
-          moabi.addGrid(nextLayerId, moabi.getLayerJSON(nextLayerId).template);
+          if(nextLayerId){
+            moabi.addGrid(nextLayerId, moabi.getLayerJSON(nextLayerId).template);
+          }
         }
       }else{
         // run all add layer actions:
