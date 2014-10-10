@@ -151,6 +151,11 @@ var moabi = {
     );
   },
 
+  buildLegend: function(legendContent, htmlTemplate){
+    // TODO
+    return legendContent;
+  },
+
   removeLegend: function(mapId){
     $('.map-legend .moabi-legend[data-id="' + mapId + '"]').remove();
   },
@@ -200,6 +205,11 @@ var moabi = {
                       .attr('data-id', mapId)
                       .append(summaryContent)
     );
+  },
+
+  buildSummary: function(summaryContent, htmlTemplate){
+    // TODO
+    return summaryContent;
   },
 
   removeSummary: function(mapId){
