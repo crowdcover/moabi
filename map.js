@@ -88,6 +88,7 @@ var moabi = {
     if(moabi.map.hasLayer(tileLayer)){
       // run all remove layer actions
       moabi.map.removeLayer(tileLayer);
+      moabi.removeLayerButton(mapId);
       moabi.removeLegend(mapId);
       moabi.removeSummary(mapId);
       moabi.clearGrids();
@@ -96,7 +97,6 @@ var moabi = {
       var displayedLayers = moabi.getDisplayedLayers(),
           nextLayerId,
           layerJSON;
-      moabi.removeLayerButton(mapId);
 
       if(mapId === displayedLayers.eq(0).data('id')){
         nextLayerId = displayedLayers.eq(1).data('id');
