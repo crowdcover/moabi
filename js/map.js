@@ -1,18 +1,15 @@
 ---
 ---
-{% include js/jquery-1.11.1.min.js %}
-{% include js/jquery-ui-1.10.4.custom.min.js %}
-{% include js/waypoints.min.js %}
-{% include js/leaflet-image.js %}
-{% include js/leaflet-hash.js %}
-
 ;(function(context) {
 var moabi = {
   global: function() {
     $('header .dropdown').on('click', 'a.dropdown-button', this.headerDropdown);
     $('a.print-page').on('click', this.printPage);
     // modularize and load only on map pages
-    this.initMap();
+  },
+
+  initMap: function() {
+    this.buildMap();
     $('#map').on('changeLayer', this.changeLayer);
     $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
     $('.sortable').sortable({
@@ -22,12 +19,18 @@ var moabi = {
     $('.slider').on('click', 'a', this.slidePanel);
     $('#snap').on('click', this.mapCapture);
     $('.page-fade-link').on('click', this.fade2Page);
+  },
+
+  initReport: function() {
     // modularize and load only on report pages
     $('.report-panel section').waypoint(this.reportScroll, {
       context: '.report-panel',
       offset: '80%'
     });
     $('.navigate').on('click', 'a', this.navigate);
+  },
+
+  initDocumentation: function(){
     // modularize and load only on documentation pages
     $('.show-opt-row').on('click', this.showRow);
     $('a[href^="#"]').on('click', this.textScroll);
@@ -45,9 +48,7 @@ var moabi = {
     window.print();
   },
 
-  initMap: function(){
-    // temp check: if loaded on a page w/ no map, don't run initMap
-    if(! $('#map').length ) return
+  buildMap: function(){
     L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
     this.map = L.mapbox.map('map', undefined, {
       layers: [mapLayers.baseLayer.id],

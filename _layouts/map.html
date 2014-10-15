@@ -3,22 +3,30 @@
 <!doctype html>
 <html>
 <head>
-    {% include dochead.html %}
+  {% include dochead.html %}
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.0/mapbox.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.0/mapbox.js'></script>
+  <script src="{{site.baseurl}}/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
+  <script src="{{site.baseurl}}/js/vendor/leaflet-hash.js"></script>
+  <script src="{{site.baseurl}}/js/vendor/leaflet-image.js"></script>
 </head>
 
 <body>
 {% unless page.hide contains 'header' %}
-    {% include header.html %}
+  {% include header.html %}
 {% endunless %}
 
 {{content}}
 
 {% unless page.hide contains 'footer' %}
-    {% include footer.html %}
+  {% include footer.html %}
 {% endunless %}
 
 {% include parse_layers.html %}
-<script src='{{site.baseurl}}/map.js'></script>
+<script src='{{site.baseurl}}/js/map.js'></script>
+<script>
+  moabi.initMap();
+</script>
 
 </body>
 </html>
