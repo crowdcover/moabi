@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: layouts2/documentation
 language: en
 tags:
   - guide
