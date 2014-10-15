@@ -5,7 +5,6 @@ var moabi = {
   global: function() {
     $('header .dropdown').on('click', 'a.dropdown-button', this.headerDropdown);
     $('a.print-page').on('click', this.printPage);
-    // modularize and load only on map pages
   },
 
   initMap: function() {
@@ -22,7 +21,6 @@ var moabi = {
   },
 
   initReport: function() {
-    // modularize and load only on report pages
     $('.report-panel section').waypoint(this.reportScroll, {
       context: '.report-panel',
       offset: '80%'
@@ -31,7 +29,6 @@ var moabi = {
   },
 
   initDocumentation: function(){
-    // modularize and load only on documentation pages
     $('.show-opt-row').on('click', this.showRow);
     $('a[href^="#"]').on('click', this.textScroll);
   },
@@ -67,7 +64,7 @@ var moabi = {
     moabi.leaflet_hash.on('update', moabi.getLayerHash);
     moabi.leaflet_hash.on('change', moabi.setLayerHash);
     moabi.leaflet_hash.on('hash', moabi.updateExportLink);
-    moabi.updateExportLink(location.hash);
+    // moabi.updateExportLink(location.hash);
   },
 
   // changeLayer() and subsidiary functions, triggered on changeLayer Event //
