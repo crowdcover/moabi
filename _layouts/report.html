@@ -6,8 +6,9 @@ hide: [footer]
 <!doctype html>
 <html>
 <head>
-  {% include dochead.html %}
+{% include dochead.html %}
   <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.0/mapbox.css' rel='stylesheet' />
+  <link href='{{site.baseurl}}/css/base.css' rel='stylesheet' />
   <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.0/mapbox.js'></script>
   <script src="{{site.baseurl}}/js/vendor/jquery-ui-1.10.4.custom.min.js"></script>
   <script src="{{site.baseurl}}/js/vendor/leaflet-hash.js"></script>
