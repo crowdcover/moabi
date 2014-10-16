@@ -41,8 +41,8 @@ generate JSON metadata for each tile layer, including:
 {% endcapture %}
   "{{layer.id}}": {
       "name": "{{layer.name}}",
-      "description": {{layer.description}},
-      "legend": {{layer.legend | strip_newlines}},
+      "description": "{{layer.description | replace:'"', "'" | strip_newlines}}",
+      "legend": "{{layer.legend | replace:'"', "'" | strip_newlines}}",
       "date": "{{layer.date}}",
       "source_name": "{{layer.source.name}}",
       "source_url": "{{layer.source.url}}",
