@@ -113,14 +113,14 @@
             <div class='moabi-legend space-bottom1' data-id='moabi_community_mapping'>
               <div>
                 <h3>Community Mapping, Ingendi</h3>
-                <img class='legend-icon' src='{{site.baseurl}}/img/chainsaw.svg'></img><h3 class='micro'>Logging (legal)</h3>
-                <img class='legend-icon' src='{{site.baseurl}}/img/chainsaw_illegal.svg'></img><h3 class='micro'>Logging (illegal)</h3>
-                <img class='legend-icon' src='{{site.baseurl}}/img/community.svg'></img><h3 class='micro'>Community Site</h3>
-                <img class='legend-icon' src='{{site.baseurl}}/img/tree.svg'></img><h3 class='micro'>Sacred Site</h3>
-                <img class='legend-icon' src='{{site.baseurl}}/img/paw.svg'></img><h3 class='micro'>Hunting Site</h3>
-                <img class='legend-icon' src='{{site.baseurl}}/img/fish.svg'></img><h3 class='micro'>Fishing Site</h3>
-                <img class='legend-icon' src='{{site.baseurl}}/img/food_bag.svg'></img><h3 class='micro'>Foraging Site</h3>
-                <img class='legend-icon' src='{{site.baseurl}}/img/agriculture.svg'></img><h3 class='micro'>Farming Site</h3>
+                <img class='legend-icon' src='/img/chainsaw.svg'></img><h3 class='micro'>Logging (legal)</h3>
+                <img class='legend-icon' src='/img/chainsaw_illegal.svg'></img><h3 class='micro'>Logging (illegal)</h3>
+                <img class='legend-icon' src='/img/community.svg'></img><h3 class='micro'>Community Site</h3>
+                <img class='legend-icon' src='/img/tree.svg'></img><h3 class='micro'>Sacred Site</h3>
+                <img class='legend-icon' src='/img/paw.svg'></img><h3 class='micro'>Hunting Site</h3>
+                <img class='legend-icon' src='/img/fish.svg'></img><h3 class='micro'>Fishing Site</h3>
+                <img class='legend-icon' src='/img/food_bag.svg'></img><h3 class='micro'>Foraging Site</h3>
+                <img class='legend-icon' src='/img/agriculture.svg'></img><h3 class='micro'>Farming Site</h3>
               </div>
             </div>
     date: 2014
