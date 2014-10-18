@@ -251,14 +251,6 @@ table tr.opt-row td {
     bottom: 0;
   }
 
-/* Menus */
-.minor-panel {
-  display: none;
-  }
-  .minor-panel.active {
-    display: block;
-  }
-
 /* Widgets
 ------------------------------------------------------- */
 @import 'widgets';
@@ -1246,7 +1238,7 @@ table.fixed {
 .scroll-styled .highlight pre,
 .scroll-styled {
   overflow:auto;
-  padding-right: 18px;
+  padding-right: 20px;
   }
 .scroll-styled .highlight pre::webkit-scrollbar,
 .scroll-styled::-webkit-scrollbar {

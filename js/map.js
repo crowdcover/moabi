@@ -13,7 +13,12 @@ var moabi = {
     $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
     $('.sortable').sortable({
       placeholder: "ui-state-highlight",
-      update: moabi.reorderLayers
+      update: function(){
+        var newLayerId = $(this).children('li:first').data('id'),
+            newLayerJSON = moabi.getLayerJSON(newLayerId);
+        moabi.showSummary(newLayerId, newLayerJSON);
+        moabi.reorderLayers();
+      }
     });
     $('.slider').on('click', 'a', this.slidePanel);
     $('#snap').on('click', this.mapCapture);
@@ -97,7 +102,7 @@ var moabi = {
       moabi.map.removeLayer(tileLayer);
       moabi.removeLayerButton(mapId);
       moabi.removeLegend(mapId);
-      moabi.removeSummary(mapId);
+      moabi.removeSummary();
       moabi.clearGrids();
 
       // if the removed layer was top layer and there is another layer below it, add grid of that below layer
@@ -117,7 +122,7 @@ var moabi = {
       moabi.map.addLayer(tileLayer);
       moabi.showLayerButton(mapId)
       moabi.showLegend(mapId, layerJSON.legend);
-      moabi.showSummary(mapId, layerJSON.description);
+      moabi.showSummary(mapId, layerJSON);
       // not very smart: simply remove all grids and add for the new layer
       moabi.clearGrids()
       moabi.addGrid(mapId, layerJSON.template);
@@ -143,23 +148,6 @@ var moabi = {
     });
 
     return layerJSON[mapId];
-  },
-
-  showLegend: function(mapId, legendContent){
-    $('.map-legend').append(
-      $('<div></div>').addClass('moabi-legend')
-                      .attr('data-id', mapId)
-                      .append(legendContent)
-    );
-  },
-
-  buildLegend: function(legendContent, htmlTemplate){
-    // TODO
-    return legendContent;
-  },
-
-  removeLegend: function(mapId){
-    $('.map-legend .moabi-legend[data-id="' + mapId + '"]').remove();
   },
 
   showLayerButton: function(mapId){
@@ -201,21 +189,46 @@ var moabi = {
 
   },
 
-  showSummary: function(mapId, summaryContent){
-    $('.sidebar-panel:first').append(
-      $('<div></div>').addClass('layer-summary')
+  showLegend: function(mapId, legendContent){
+    $('.map-legend').append(
+      $('<div></div>').addClass('moabi-legend')
                       .attr('data-id', mapId)
-                      .append(summaryContent)
+                      .append(legendContent)
     );
   },
 
-  buildSummary: function(summaryContent, htmlTemplate){
-    // TODO
-    return summaryContent;
+  removeLegend: function(mapId){
+    $('.map-legend .moabi-legend[data-id="' + mapId + '"]').remove();
   },
 
-  removeSummary: function(mapId){
-    $('.sidebar-panel:first .layer-summary[data-id="' + mapId + '"]').remove();
+  showSummary: function(mapId, layerJSON){
+    // remove existing summary, if exists
+    moabi.removeSummary();
+    var summary = ['<ul data-id="', mapId, '" class="layer-summary small keyline-all pad0x space-bottom2">',
+      '<li class="pad0">', '<h3>', layerJSON.name, '</h3>', '</li>',
+      '<li class="pad0 keyline-bottom">', layerJSON.description, '</li>',
+      '<li class="pad0 keyline-bottom space">',
+        '<strong class="quiet">Source: </strong>', //insert source_name and optionally source_url here
+      '</li>',
+      '<li class="pad0 space">',
+        '<strong class="quiet">Date:</strong> ',
+        '<span class="micro', layerJSON.date, '</span>',
+      '</li>',
+    '</ul>'];
+
+    if(layerJSON.source_url){
+      var urlHTML = ['<a href="', layerJSON.source_url, '" class="micro">',
+        layerJSON.source_name, '</a>']
+    }else{
+      var urlHTML = ['<span class="micro">', layerJSON.source_name, '</span>'];
+    }
+    summary.splice(13, 0, urlHTML.join(''));
+
+    $('.layer-ui').append(summary.join(''));
+  },
+
+  removeSummary: function(){
+    $('.layer-ui ul.layer-summary').remove();
   },
 
   addGrid: function(mapId, gridTemplate){

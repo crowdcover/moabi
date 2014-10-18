@@ -58,22 +58,4 @@
 
     <div class="small center">{{t.[page.language].layer_ui.displayed}}</div>
     <ul class="displayed sortable fill-brown keyline-all insetshadow-down activate animate" data-lang="{{page.language}}"></ul>
-<!--
-    {% for layer in site.data.map_layers %}
-        <ul data-id="{{layer.id}}" class="minor-panel small keyline-all pad0x space-bottom2">
-            <li class="pad0">
-                <h3>{{layer.name}}</h3>
-            </li>
-            <li class="pad0 keyline-bottom">
-                {{layer.description | truncate:250 }}
-            </li>
-            <li class="pad0 {% if layer.date %}keyline-bottom {% endif %}space micro">
-                <strong class="quiet">Source:</strong> {% if layer.source.url %}<a href="{{layer.source.url}}" class="desaturate">{{layer.source.name}}</a>{% else %}{{layer.source.name}}{% endif %}
-            </li>
-            {% if layer.date %}<li class="pad0 space">
-                <strong class="quiet">Date:</strong> {{layer.date}}
-            </li>{% endif %}
-        </ul>
-    {% endfor %}
--->
 </div>
