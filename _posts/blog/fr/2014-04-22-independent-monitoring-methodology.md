@@ -1,5 +1,5 @@
 ---
-layout: blog_post
+layout: layouts2/blog_post
 language: fr
 tags:
   - blog_post

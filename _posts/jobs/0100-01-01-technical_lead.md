@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: layouts2/about
 language: en
 tags:
   - job
@@ -11,7 +11,7 @@ summary: |
 
 ---
 # Lead Developer
- 
+
 CrowdCover is looking for a Lead Developer of [Moabi](http://moabi.org). You will manage and contribute to the build out of new collaborative mapping and open data tools, to address the world’s most pressing environmental issues. The Moabi platform is based on the [OpenStreetMap ecosystem of tools](http://vimeo.com/92001606#t=13m4s), and integrates Jekyll and a custom map tile infrastructure to produce compelling map based story telling. Your team includes developers, cartographers, and interaction designers, working closely together to design and implement simple solutions for complex problems from the field. Be ready to conceive new technical ideas, implement, and collaborate in open source projects, right on the edge of what’s possible.
 
 # Project Scope
@@ -25,7 +25,7 @@ The platform has gone through a series of field trainings in DRC, producing exte
 Lead Developer is responsible for the core development of the Maobi mapping platform, and database management tools; integration with smartphone mapping data collection tools; and simple map story-telling publishing tools. You will ...
 
 * Manage the development team, set timelines and goals
-* Build core pieces of our software, especially the core Rails app and API 
+* Build core pieces of our software, especially the core Rails app and API
 * Translate user requirements into feasible implementations
 * Architect new solutions to tech challenges
 * Contribute to and review proposals
@@ -41,7 +41,7 @@ This is our dream list of your skills and experience. We know, no one is going t
 * Python scripting, particularly with spatial libraries
 * Mobile data collection, with ODK and FormHub
 * Use of RESTful APIs. Bonus for developing one.
-* Fluency in multiple languages, like Ruby, Python, PHP, C++, Java, etc. 
+* Fluency in multiple languages, like Ruby, Python, PHP, C++, Java, etc.
 
 * Map design using TileMill. Bonus for building and installing mapnik and a tileserver.
 * Contributor to OpenStreetMap. Bonus for use of OSM data tools. Mega bonus for building an OSM based tool.
@@ -64,11 +64,11 @@ You are experienced leading a small, fast moving, user focused, open source team
 * Active participant in developer and user communities. Bonus contributor to major open source projects
 * Clear and effective verbal and written communicator, especially between technical and non-technical audiences.
 * A stellar planner and project manager. Effective time estimation, requirement prioritization, and schedule keeping.
-* Perfectly comfortable reaching out to open source communities with questions, for guidance, and collaborations 
+* Perfectly comfortable reaching out to open source communities with questions, for guidance, and collaborations
 
 # Location
 
-You will be based in Washington DC. 
+You will be based in Washington DC.
 
 Some work required in the Democratic Republic of Congo with possible additional trips to other global and US domestic locations.
 

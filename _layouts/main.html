@@ -3,45 +3,23 @@
 <!doctype html>
 <html>
 <head>
-    {% include dochead.html %}
+{% include dochead.html %}
+  <link href='{{site.baseurl}}/css/base.css' rel='stylesheet' />
 </head>
 
 <body>
 {% unless page.hide contains 'header' %}
-    {% include header.html %}
+  {% include header.html %}
 {% endunless %}
 
 {{content}}
 
 {% unless page.hide contains 'footer' %}
-    {% include footer.html %}
+  {% include footer.html %}
 {% endunless %}
 
-{% if page.basemap %}
-    {% include parse_layers.html %}
-    <script src='{{site.baseurl}}/map.js'></script>
-{% endif %}
-    <script>
-        print_button = document.getElementsByClassName('print-page');
-        for(var i=0; i<print_button.length; i++){
-            print_button[i].addEventListener('click', function(){
-                window.print()
-            });
-        }
+<script src='{{site.baseurl}}/js/map.js'></script>
 
-        dropdown = document.getElementsByClassName('dropdown');
-        for(var i=0; i<dropdown.length; i++){
-            dropdown = dropdown[i];
-            dropdown_class = dropdown.className;
 
-            dropdown.addEventListener('click', function(){
-                if(dropdown.className.split(' ').indexOf('open') === -1){
-                    dropdown.className += ' open';
-                }else{
-                    dropdown.className = dropdown.className.replace(' open', '');
-                }
-            })
-        }
-    </script>
 </body>
 </html>

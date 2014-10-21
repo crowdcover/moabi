@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: layouts2/about
 language: fr
 tags:
   - about
