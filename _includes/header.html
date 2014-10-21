@@ -1,13 +1,13 @@
 {% assign t = site.data.translations %}
 
-<header class="header row1 fill-gray strongline-bottom caps wide-text noprint text-embose{% if page.header == 'pin-top' %} pin-top{% endif %}">
-    <div class="clearfix limiter">
-        <a class="left-bar fl clearfix center strong" href="{{site.baseurl}}/{{page.language}}">
-            <div class="logo-icon"></div>
-            <div class="logo-text beta">Moabi DRC</div>
+<header class="header fill-gray strongline-bottom caps wide-text noprint text-embose">
+    <div class="limiter clearfix">
+        <a class="fl contain center strong" href="{{site.baseurl}}/{{page.language}}">
+            <span class="logo-icon"></span>
+            <span class="logo-text beta pad1">Moabi DRC</span>
         </a>
 
-        <ul class="right-bar fr clearfix">
+        <ul class="fr">
             {% unless page.hide == 'language_toggle' %}{% include language_toggle.html %}{% endunless %}
 
             <li class="dropdown pad1 fr strong">

@@ -1,7 +1,7 @@
 ---
 ---
 @import 'palette';
-$headerheight: 40px;
+$headerheight: 42px;
 $footerheight: 75px;
 $sidebarwidth: 400px;
 
@@ -93,6 +93,15 @@ table { border-collapse: collapse; border-spacing:0; }
 
 /* Major and Custom Layout Elements
 ------------------------------------------------------- */
+html {
+  min-width: 760px;
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+}
+
 body,
 input,
 textarea {
@@ -125,7 +134,7 @@ body { background:$bground; }
 
 .logo-icon {
   background: url({{site.baseurl}}/img/moabi_logo_40_40.svg) no-repeat center left;
-  /*background-size: 100%;*/
+  vertical-align: middle;
   display:inline-block;
   height: 40px;
   width: 40px;
@@ -135,21 +144,19 @@ body { background:$bground; }
     font:16px/20px 'Open Sans Bold', sans-serif;
     display: inline-block;
     vertical-align: top;
-    padding: 10px;
     color: $moabi;
   }
   a:hover .logo-text {
     color: $moabihover;
   }
-
-.beta:after {
-  content: 'beta';
-  position: relative;
-  left: 6px;
-  top: -5px;
-  font-size: 8px;
-  color: #999;
-}
+  .beta:after {
+    content: 'beta';
+    position: absolute;
+    right: -20px;
+    top: 8px;
+    font-size: 8px;
+    color: #999;
+  }
 
 .dropdown {
   position: relative;
@@ -2386,6 +2393,8 @@ img.inline, .inline           { display:inline-block; }
 @media only screen and (max-width:770px) {
   .hide-tablet { display:none; }
   .show-tablet { display:block; }
+
+  .mobile-pad { padding: 20px; }
 }
 
 /* Mobile Layout
