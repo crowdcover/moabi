@@ -18,7 +18,7 @@ var moabi = {
         var newLayerId = $(this).children('li:first').data('id'),
             newLayerJSON = moabi.getLayerJSON(newLayerId);
         moabi.showSummary(newLayerId, newLayerJSON);
-        // moabi.reorderLayers();
+        moabi.reorderLayers();
       }
     });
     $('.slider').on('click', 'a', this.slidePanel);
