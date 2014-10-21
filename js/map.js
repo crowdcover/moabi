@@ -2,7 +2,7 @@
 ---
 ;(function(context) {
 var moabi = {
-  global: function() {
+  common: function() {
     $('header .dropdown').on('click', 'a.dropdown-button', this.headerDropdown);
     $('a.print-page').on('click', this.printPage);
   },
@@ -13,11 +13,12 @@ var moabi = {
     $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
     $('.sortable').sortable({
       placeholder: "ui-state-highlight",
-      update: function(){
+      update: function(event, ui){
+        moabi.sortable = ui;
         var newLayerId = $(this).children('li:first').data('id'),
             newLayerJSON = moabi.getLayerJSON(newLayerId);
         moabi.showSummary(newLayerId, newLayerJSON);
-        moabi.reorderLayers();
+        // moabi.reorderLayers();
       }
     });
     $('.slider').on('click', 'a', this.slidePanel);
@@ -38,6 +39,7 @@ var moabi = {
     $('a[href^="#"]').on('click', this.textScroll);
   },
 
+  // common event handlers
   headerDropdown: function(e){
     e.preventDefault();
     e.stopPropagation();
@@ -48,6 +50,54 @@ var moabi = {
     e.preventDefault();
     e.stopPropagation();
     window.print();
+  },
+
+  // map event handlers and helper functions
+    layerButtonClick: function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    $('#map').trigger('changeLayer', $(this).parent('li').data('id'));
+  },
+
+  mapCapture: function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    leafletImage(moabi.map, function(err, canvas) {
+      var $imgContainer = $('#images'),
+          download = document.getElementById('map-download');
+
+      var mapCapture = document.createElement('img');
+      mapImage = canvas.toDataURL();
+      download.href = mapImage;
+      mapCapture.src = mapImage;
+      $imgContainer.children('img').remove();
+      $imgContainer.append(mapCapture);
+    });
+  },
+
+  slidePanel: function(e) {
+    var $this = $(this),
+        tabgroup = $this.parents('.tab-group'),
+        index = $this.data('index'),
+        oldIndex = $(this).siblings('.active').removeClass('active').data('index'),
+        slidecontainer = tabgroup.next();
+
+    $this.addClass('active');
+    slidecontainer.removeClass('active' + oldIndex).addClass('active' + index);
+    return false;
+  },
+
+  fade2Page: function(e) {
+    // on link click, fade page out, then follow link
+    e.preventDefault();
+    var newPage = this.href;
+
+    $('body').fadeOut(500, function(){
+        window.location = newPage;
+    });
+
   },
 
   buildMap: function(){
@@ -67,7 +117,7 @@ var moabi = {
     moabi.map.zoomControl.setPosition('topleft');
     moabi.leaflet_hash = L.hash(this.map);
 
-    moabi.map.legendControl.addLegend("<h3 class='center keyline-bottom'>Legend</h3>");
+    moabi.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
 
     moabi.leaflet_hash.on('update', moabi.getLayerHash);
     moabi.leaflet_hash.on('change', moabi.setLayerHash);
@@ -79,7 +129,6 @@ var moabi = {
   changeLayer: function(e, mapId){
     // initiate everything that should happen when a map layer is added/removed
     // triggered by custom event 'changeLayer'
-    // console.log('chageLayer fired.  mapId: ', mapId, 'event: ', e);
 
     // alias tileLayer in mapLayers, if not already
     var alreadyAliased = true,
@@ -190,11 +239,18 @@ var moabi = {
   },
 
   showLegend: function(mapId, legendContent){
-    $('.map-legend').append(
-      $('<div></div>').addClass('moabi-legend')
-                      .attr('data-id', mapId)
-                      .append(legendContent)
-    );
+    $('<div>', {
+                'class': 'moabi-legend',
+                'data-id': mapId,
+                html: legendContent
+    }).prependTo('.map-legend .legend-contents');
+  },
+
+  reorderLegend: function(mapId, position){
+    var legendContents = $('.legend-contents'),
+        layerLegend = legendContents.children('.moabi-legend[data-id="' + mapId + '"]');
+
+    legendContents.prepend(layerLegend);
   },
 
   removeLegend: function(mapId){
@@ -248,16 +304,8 @@ var moabi = {
     $('.map-tooltip').remove();
   },
 
-  // event handlers that trigger changeLayer event //
-  layerButtonClick: function(e){
-    e.preventDefault();
-    e.stopPropagation();
-
-    $('#map').trigger('changeLayer', $(this).parent('li').data('id'));
-  },
-
-  // additional event handlers that interact with map //
   reorderLayers: function(){
+    // TODO
     moabi.setLayersZIndex();
     moabi.clearGrids();
     moabi.leaflet_hash.trigger('move');
@@ -309,34 +357,6 @@ var moabi = {
     return $('.layer-ui ul.not-displayed li.layer-toggle');
   },
 
-  mapCapture: function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    leafletImage(moabi.map, function(err, canvas) {
-      var $imgContainer = $('#images'),
-          download = document.getElementById('map-download');
-
-      var mapCapture = document.createElement('img');
-      mapImage = canvas.toDataURL();
-      download.href = mapImage;
-      mapCapture.src = mapImage;
-      $imgContainer.children('img').remove();
-      $imgContainer.append(mapCapture);
-    });
-  },
-
-  fade2Page: function(e) {
-    // on link click, fade page out, then follow link
-    e.preventDefault();
-    var newPage = this.href;
-
-    $('body').fadeOut(500, function(){
-        window.location = newPage;
-    });
-
-  },
-
   updateExportLink: function(hash) {
     // update map embed link and iD edit link
     $('#map-embed').val("<iframe src='//{{site.baseurl}}/embed/" + hash + "' frameborder='0' width='900' height='700'></iframe>");
@@ -351,19 +371,60 @@ var moabi = {
     }
   },
 
-  slidePanel: function(e) {
-    var $this = $(this),
-        tabgroup = $this.parents('.tab-group'),
-        index = $this.data('index'),
-        oldIndex = $(this).siblings('.active').removeClass('active').data('index'),
-        slidecontainer = tabgroup.next();
+  removeAllExcept: function(keepLayers) {
+    // removes all layers from map, except for keepLayers (pass as array)
+    // returns a list of removed layers
+    var displayedLayers = moabi.getDisplayedLayers('id'),
+        removedLayers = $.map(displayedLayers, function(removeLayer, index){
+          moabi.keepLayers = keepLayers;
+          moabi.removeLayer = removeLayer;
 
-    $this.addClass('active');
-    slidecontainer.removeClass('active' + oldIndex).addClass('active' + index);
-    return false;
+          if( keepLayers.indexOf(removeLayer) === -1){
+            $('#map').trigger('changeLayer', removeLayer);
+            return removeLayer;
+          }
+        });
+    return removedLayers;
   },
 
-  // report editing event handlers
+  // leaflet hash functions
+  setLayerHash: function(hash) {
+    return moabi.setQueryVariable(hash, "layers", moabi.getDisplayedLayers('id').join(','));
+  },
+
+  getLayerHash: function() {
+    var layers = moabi.getQueryVariable(location.hash, "layers");
+    if (layers) { layers = layers.split(','); }
+    moabi.removeAllExcept([]); //could be smarter
+    for (i = layers.length-1; i >= 0; i--){
+      $('#map').trigger('changeLayer', layers[i]);
+    }
+  },
+
+  getQueryVariable: function(hash, variable) {
+    var vars = hash.split("&");
+    for (var i=0;i<vars.length;i++) {
+      var pair = vars[i].split("=");
+      if(pair[0] == variable){return pair[1];}
+    }
+    return(false);
+  },
+
+  setQueryVariable: function(hash, key, value) {
+    var vars = hash.split("&");
+    var found = false;
+    for (var i=0;i<vars.length;i++) {
+      var pair = vars[i].split("=");
+      if(pair[0] == key){
+        vars[i] = key + "=" + value;
+        found = true;
+      }
+    }
+    if (! found) { vars.push(  key + "=" + value ); }
+    return(vars.join("&"));
+  },
+
+  // report event handlers
   reportScroll: function(dir) {
     if(dir === 'down'){
         var $this = $(this);
@@ -411,59 +472,7 @@ var moabi = {
     $this.addClass('active');
   },
 
-  removeAllExcept: function(keepLayers) {
-    // removes all layers from map, except for keepLayers (pass as array)
-    // returns a list of removed layers
-    var displayedLayers = moabi.getDisplayedLayers('id'),
-        removedLayers = $.map(displayedLayers, function(removeLayer, index){
-          moabi.keepLayers = keepLayers;
-          moabi.removeLayer = removeLayer;
-
-          if( keepLayers.indexOf(removeLayer) === -1){
-            $('#map').trigger('changeLayer', removeLayer);
-            return removeLayer;
-          }
-        });
-    return removedLayers;
-  },
-
-  // leaflet hash functions //
-  setLayerHash: function(hash) {
-    return moabi.setQueryVariable(hash, "layers", moabi.getDisplayedLayers('id').join(','));
-  },
-
-  getLayerHash: function() {
-    var layers = moabi.getQueryVariable(location.hash, "layers");
-    if (layers) { layers = layers.split(','); }
-    moabi.removeAllExcept([]); //could be smarter
-    for (i = layers.length-1; i >= 0; i--){
-      $('#map').trigger('changeLayer', layers[i]);
-    }
-  },
-
-  getQueryVariable: function(hash, variable) {
-    var vars = hash.split("&");
-    for (var i=0;i<vars.length;i++) {
-      var pair = vars[i].split("=");
-      if(pair[0] == variable){return pair[1];}
-    }
-    return(false);
-  },
-
-  setQueryVariable: function(hash, key, value) {
-    var vars = hash.split("&");
-    var found = false;
-    for (var i=0;i<vars.length;i++) {
-      var pair = vars[i].split("=");
-      if(pair[0] == key){
-        vars[i] = key + "=" + value;
-        found = true;
-      }
-    }
-    if (! found) { vars.push(  key + "=" + value ); }
-    return(vars.join("&"));
-  },
-
+  // documentation event handlers
   showRow: function(e){
     e.stopPropagation();
 
@@ -488,4 +497,4 @@ window.moabi = moabi;
 
 })(window);
 
-moabi.global();
+moabi.common();
