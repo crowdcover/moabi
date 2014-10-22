@@ -68,7 +68,7 @@ hide: [footer]
                       </a>
                     {% endif %}
 
-                    <p class="prose space-bottom4">{{reportpage.text}}</p>
+                    <p class="prose space-bottom4">{{reportpage.text | markdownify}}</p>
 
                 </section>
             {% endfor %}
