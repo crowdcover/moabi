@@ -235,6 +235,41 @@ var moabi = {
     });
   },
 
+  getJSONPromise: function(mapId){
+    var JSONPromise = $.Deferred();
+    $.ajax('/map_layers.json', {
+      type: 'GET',
+      dataType: 'json',
+      contentType: 'application/json',
+      success: function(returnedJSON){
+        JSONPromise.resolve(returnedJSON.mapId);
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log('getLayerJSON Error for mapId: ' + mapId + '.  Error: ' + errorThrown);
+        JSONPromise.reject();
+      }
+    });
+
+    return JSONPromise.promise();
+
+    JSONPromise.done(function(result){
+      console.log('done');
+      console.log(result);
+    }).fail(function(error){
+      console.log('wtf');
+    })
+  },
+
+  textJSONPromise: function(){
+    var promise = moabi.getJSONPromise('moabi_mining')
+    promise.done(function(result){
+      console.log('done');
+      console.log(result);
+    }).fail(function(error){
+      console.log('wtf');
+    })
+  },
+
   getLayerZIndex: function(mapId){
     // return mapId zIndex, or -1 if dataLayers doesn't contain mapId
     // var zIndex = mapLayers.dataLayers[mapId].options.zIndex;
