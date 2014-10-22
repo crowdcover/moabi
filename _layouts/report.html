@@ -36,35 +36,39 @@ hide: [footer]
     <div class="col12 clip sliding h active1" style="height: calc(100% - 50px)">
         <!-- Report -->
         <div class="report-panel col12 scroll-styled pad2 prose animate" style="height:100%;">
-            {% for report in page.report %}
+            {% for reportpage in page.report %}
                 <section class="animate {%if forloop.first%}active{%endif%}"
                 data-index="{{forloop.index}}"
-                {% if report.zoom_to %} data-nav='["{{report.zoom_to.lat}}", "{{report.zoom_to.lon}}", "{{report.zoom_to.zoom}}"]'{% endif %}
-                {% if report.layers %} data-id='[{% for layer in report.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}>
+                {% if reportpage.zoom_to %} data-nav='["{{reportpage.zoom_to.lat}}", "{{reportpage.zoom_to.lon}}", "{{reportpage.zoom_to.zoom}}"]'{% endif %}
+                {% if reportpage.layers %} data-id='[{% for layer in reportpage.layers %}"{{layer}}"{% unless forloop.last %} ,{% endunless %}{% endfor %}]'{% endif %}>
 
-                    <h2 class="prose serif keyline-bottom" style="margin-bottom:10px">{{report.title}}</h2>
+                    <h2 class="prose serif keyline-bottom" style="margin-bottom:10px">{{reportpage.title}}</h2>
                     {% if forloop.first and page.author %}
                         <div class="serif small"><strong>By {{page.author}}</strong></div>
                         <div class="serif space-bottom2 small">{{page.date | date:"%B %-d, %Y"}}</div>
                     {% endif %}
 
-                    {% if report.attachments and report.attachments.size %}
-                        <div class="space-bottom1">
-                            <div class="row6 space-bottom1" style="background-image: url({{report.attachments.first}}); background-size: cover;"></div>
+                    {% if reportpage.attachments and reportpage.attachments.size %}
+                      <div class="space-bottom1">
+                        <a href="{{reportpage.attachments.first}}">
+                          <div class="row6 space-bottom1" style="background-image: url({{reportpage.attachments.first}}); background-size: cover;"></div>
+                        </a>
 
-                            <!-- not currently configurable by report author -->
-                            {% if page.img_caption %}
-                                <div class="quiet small">{{page.img_caption}}</div>
-                            {% endif %}
-                            {% if page.img_source %}
-                                <div class="quiet micro">Source: {{page.img_source}}</div>
-                            {% endif %}
-                        </div>
+                        <!-- not currently configurable by report author -->
+                        {% if page.img_caption %}
+                          <div class="quiet small">{{page.img_caption}}</div>
+                        {% endif %}
+                        {% if page.img_source %}
+                          <div class="quiet micro">Source: {{page.img_source}}</div>
+                        {% endif %}
+                      </div>
                     {% elsif forloop.first and page.img %}
+                      <a href="{{page.img}}">
                         <div class="row6 space-bottom1" style="background-image: url({{page.img}}); background-size: cover;"></div>
+                      </a>
                     {% endif %}
 
-                    <p class="prose space-bottom4">{{report.text}}</p>
+                    <p class="prose space-bottom4">{{reportpage.text}}</p>
 
                 </section>
             {% endfor %}
