@@ -36,12 +36,12 @@ During the first meeting, the objectives were: (I) defining what the IM-REDD is,
 
 This first meeting of the working group provided the opportunity to share the same understanding of the issues related to the design of an IM-REDD system. In addition, the Working Group validated the objectives to be achieved in 2014, including the establishment of a network of local observers, the topics addressed during the investigations and carried out on the ground.
 
-**The next meeting of the working group will be organized in the last quarter of 2014 and will  focus on training local observers.**
+> **The next meeting of the working group will be organized in the last quarter of 2014 and will  focus on training local observers.**
 
 ***
 
 
-> ## May 2014:  First edition of the REDD+ University in Bandundu and launching of an IM-REDD reflection at the Maï Ndombe district scale
+## May 2014:  First edition of the REDD+ University in Bandundu and launching of an IM-REDD reflection at the Maï Ndombe district scale
 
 ![](/)
 
@@ -175,32 +175,3 @@ Contact details :
 Benoit Thuaire
 +0 (0243) 8-21-30-33-70
 benoit.thuaire@gmail.com_
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
