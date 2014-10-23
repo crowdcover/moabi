@@ -116,6 +116,7 @@ In the coming months, we will be launching a the Moabi mobile app, a peer review
 ![](/)
 
 The Moabi platform is aiming to become an collaborative platform dedicated to independent monitoring for REDD+ and other land users in DRC. With this goal, Moabi project organized five days of training on the use of Moabi Platform. This training took place in the offices of OSFAC from 21 -25 July, 2014. 
+
 The first three days were focused on the use of Moabi Platform and the editing of online reports. The last two days dealt with GIS data management. These training sessions were designed for a GIS community.
 
 At the end of this week, 45 persons were trained!
