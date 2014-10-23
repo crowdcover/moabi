@@ -5,7 +5,7 @@ permalink: /:title/:categories/
 markdown: kramdown
 prose:
   rooturl: "_posts/blog"
-  siteurl: "http://crowdcover.github.io/site/"
+  siteurl: "http://rdc.moabi.org/en/"
   metadata:
     _posts:
       - name: "layout"
