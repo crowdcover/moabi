@@ -5,7 +5,8 @@ tags: blog_post
 layout: blog_post
 published: false
 title: "Moabi's Second Newsletter"
-author: CrowdCover Team
+author: Benoit Thuaire
+subtitle: "Moabi's second newsletter announces the REDD+ Independent Monitoring system at the project scale, the development of the Moabi platform and the launch of the Moabi map competition."
 ---
 
 ## Moabi's Second Newsletter
