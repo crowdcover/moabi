@@ -162,7 +162,7 @@
     tooltip_teaser: [name, proposed]
     tooltip_full: [name, proposed]
     source:
-        name: African Energy / Societe National d' Electricite (AE / SNEL)
+        name: Societe National d' Electricite (AE / SNEL)
         url:
 
   - id: moabi_transmission_lines
