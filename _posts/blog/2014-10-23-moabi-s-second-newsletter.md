@@ -69,9 +69,6 @@ The Working Group suggested to address this second priority according to the fol
 
 ## June 2014: end of the scoping field missions in Maï Ndombe : the Local Observers network is established
 
-![authorities in Mekiri Village](https://farm4.staticflickr.com/3956/15616264156_031baa7f33_z.jpg)
-_project team received by the administrative and traditional authorities of Mekiri village_
-
 The second scoping mission of OGF in the ERA-WWC project area had as objectives:
 
 1. to continue the establishment of a network of local observers of the REDD+ project

@@ -71,9 +71,6 @@ Le Groupe de travail a proposé d’appréhender cette seconde priorité selon l
 
 ## Juin 2014 : fin des missions exploratoires en Maï Ndombe : le réseau d’OL est constitué !
 
-![authorities in Mekiri Village](https://farm4.staticflickr.com/3956/15616264156_031baa7f33_z.jpg)
-_project team received by the administrative and traditional authorities of Mekiri village_
-
 La deuxième mission exploratoire d’OGF dans la zone du projet ERA-WWC avait pour objectif  de poursuivre la mise en place d’un réseau d’observateurs locaux du projet d’ERA-WWC et d’évaluer leur connaissance sur le Projet REDD+ ainsi que sur les problématiques associées.
 
 La deuxième mission exploratoire d’OGF dans la zone du projet ERA-WWC avait pour objectif  de poursuivre la mise en place d’un réseau d’observateurs locaux du projet d’ERA-WWC et d’évaluer leur connaissance sur le Projet REDD+ ainsi que sur les problématiques associées.
