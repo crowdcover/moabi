@@ -3,7 +3,7 @@ categories: en
 language: en
 tags: blog_post
 layout: blog_post
-published: false
+published: true
 title: "Moabi's Second Newsletter"
 author: Benoit Thuaire
 subtitle: "Moabi's second newsletter announces the REDD+ Independent Monitoring system at the project scale, the development of the Moabi platform and the launch of the Moabi map competition."
@@ -124,13 +124,13 @@ At the end of this week, 45 persons were trained!
 
 ### The REDD+ Potential Risks Map
 
+![The REDD+ Potential Risks Poster](https://farm6.staticflickr.com/5601/15455381097_9af1854300_z.jpg)
+
 On 27 June 2014, OSFAC organized the second meeting of the working group dedicated to the REDD+ Potential risks map. The objectives of this meeting were: 
 
 * formalizing the partnership agreements between the data providers and the Moabi Project
 * validating new data and analysis
 * designing a directory gathering the address of the our partners in Kinshasa and then for disseminating the poster.
-
-![The REDD+ Potential Risks Poster](https://farm6.staticflickr.com/5601/15455381097_9af1854300_z.jpg)
 
 Even though the formalization of partnership agreement remain complicated to implement, the representatives of the data providers have fully contributed to update the information of the REDD+  Potential risk map and they have listed the institutions, NGOs, projects and private companies that work on  REDD+.
 
