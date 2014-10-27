@@ -2,14 +2,16 @@
 categories: en
 language: en
 tags: blog_post
-layout: blog_post
+layout: layouts2/blog_post
 published: true
 title: "Moabi's Second Newsletter"
 author: Benoit Thuaire
 subtitle: "Moabi's second newsletter announces the REDD+ Independent Monitoring system at the project scale, the development of the Moabi platform and the launch of the Moabi map competition."
+
+img: https://farm4.staticflickr.com/3956/15616264156_031baa7f33_z.jpg
 ---
 
-After sending the 1st Newsletter edition whose purpose was to introduce the Moabi Project, this  new  edition  gives  you  an  overview  of  new  activities  carried  out  during  the  six  (6) last  months:  you  will  find  the  progress  made  in  the  design  of  the **REDD+ Independent Monitoring system at the project scale, the development of the Moabi platform and the launch of the Moabi map competition as well!**  
+After sending the 1st Newsletter edition whose purpose was to introduce the Moabi Project, this  new  edition  gives  you  an  overview  of  new  activities  carried  out  during  the  six  (6) last  months:  you  will  find  the  progress  made  in  the  design  of  the **REDD+ Independent Monitoring system at the project scale, the development of the Moabi platform and the launch of the Moabi map competition as well!**
 
 Hoping  that  the  summer  break  has  gone  well,  we  wish  you  a  very  good  reading  of  this newsletter and please contact us if you have any questions or comments.
 
@@ -18,10 +20,10 @@ Hoping  that  the  summer  break  has  gone  well,  we  wish  you  a  very  good
 
 The Moabi Project aims to design an institutional and a technical process of an IM-REDD and grievance mechanism for REDD+ (IM-REDD) at the national and project scale.
 
-The goals of IM-REDD+ are for: 
+The goals of IM-REDD+ are for:
 
 1. **Strengthen the enforcement of Congolese laws** and regulations related to REDD+ .
-2. **Improve the participation of civil society** 
+2. **Improve the participation of civil society**
 3. **Ensure quality** of the activities implemented by the REDD project proponents
 4. **Enhance activities** developed by the REDD project proponents.
 
@@ -56,8 +58,8 @@ The working group suggested to work as follows:
 
 The Working Group suggested to address this second priority according to the following steps:
 
-* Step 1: Identify the areas primarily affected by deforestation; 
-* Step 2: Meet with the civil society, community leaders and local communities to present the project and discuss methods for the establishment of a local observers network; 
+* Step 1: Identify the areas primarily affected by deforestation;
+* Step 2: Meet with the civil society, community leaders and local communities to present the project and discuss methods for the establishment of a local observers network;
 * Step 3: Identify the REDD local observers and to train them in REDD+ monitoring.
 
 > **The project is tracking the design of REDD+ program in Mai Ndombe and we will participate in the workshop for the launch of this program. **
@@ -65,7 +67,7 @@ The Working Group suggested to address this second priority according to the fol
 ***
 
 
-## June 2014: end of the scoping field missions in Maï Ndombe : the Local Observers network is established 
+## June 2014: end of the scoping field missions in Maï Ndombe : the Local Observers network is established
 
 ![authorities in Mekiri Village](https://farm4.staticflickr.com/3956/15616264156_031baa7f33_z.jpg)
 _project team received by the administrative and traditional authorities of Mekiri village_
@@ -79,12 +81,12 @@ At the end of this mission, six (6) new local observers have been identified and
 
 ![project team facing local challenges](https://farm4.staticflickr.com/3938/15639963835_9b8a1d2e40_z.jpg)
 
-In addition, the field surveys permitted to collect the following evidences : 
+In addition, the field surveys permitted to collect the following evidences :
 
-1. The level of understanding of the REDD+ process by the communities is very low ; 
-2. the local communities living in the REDD+ area still use the slash and burn agriculture ; 
-3. the mapping activities of the villages as well as the rights of uses are not effective in all the villages visited; 
-4. The vast majority of the communities are referring  to their customary law to manage their land and to solve land conflicts, rather than the official legislation. 
+1. The level of understanding of the REDD+ process by the communities is very low ;
+2. the local communities living in the REDD+ area still use the slash and burn agriculture ;
+3. the mapping activities of the villages as well as the rights of uses are not effective in all the villages visited;
+4. The vast majority of the communities are referring  to their customary law to manage their land and to solve land conflicts, rather than the official legislation.
 
 > **The next field mission planned in late October will aim to train Local Observers to monitor of the REDD+ project activities and will hire a Coordinator, based in Inongo, who will be in charge of checking the data collected by LO and in then forward to the Moabi Platform (http://www.rdc.moabi.org).**
 
@@ -93,27 +95,27 @@ In addition, the field surveys permitted to collect the following evidences :
 
 ## July 2014: A partnership agreement written by ERA-WWC and the Moabi Project
 
-After several weeks of discussion, a formal partnership agreement between ERA-WWC Project and our Project has been jointly written. The objective of this agreement is to share REDD+ information – a key step towards the transparency required of all REDD+ projects operating in DRC. 
+After several weeks of discussion, a formal partnership agreement between ERA-WWC Project and our Project has been jointly written. The objective of this agreement is to share REDD+ information – a key step towards the transparency required of all REDD+ projects operating in DRC.
 
 After the signing of this agreement, ERA-WWC would be the first REDD+ project that displays its data on the Moabi Platform, especially (i) the summary of its project and the timeline of its socioeconomic and environmental activities as well (ii) its geo referenced data (village, geophysical data, vegetation data, Land use, etc.).
 
-The signing of this partnership agreement will facilitate the implementation of Project Monitoring. Well done to  ERA-WWC ! 
+The signing of this partnership agreement will facilitate the implementation of Project Monitoring. Well done to  ERA-WWC !
 
 ***
 
 
 ## Moabi Platform News
 
-Since April, the Moabi platform has developed considerably.  While increasing the number of datasets tracked, we have also greatly streamlined the editing process, making it far easier to analyze and update the data.  A more streamlined design should improve site accessibility and importantly decrease site load times. We’ve made improvements to the report editor functions, upgraded the site cartography, and posted a range of new map layers including including intact forests, palm oil suitability, and updates for oil blocks and mining concessions. 
+Since April, the Moabi platform has developed considerably.  While increasing the number of datasets tracked, we have also greatly streamlined the editing process, making it far easier to analyze and update the data.  A more streamlined design should improve site accessibility and importantly decrease site load times. We’ve made improvements to the report editor functions, upgraded the site cartography, and posted a range of new map layers including including intact forests, palm oil suitability, and updates for oil blocks and mining concessions.
 
-In the coming months, we will be launching a the Moabi mobile app, a peer review feature, and a Maindombe data hub featuring all REDD+ project information for the Maindombe jurisdictional REDD+ program. 
+In the coming months, we will be launching a the Moabi mobile app, a peer review feature, and a Maindombe data hub featuring all REDD+ project information for the Maindombe jurisdictional REDD+ program.
 
 
 ### First Trainings on the use of the Moabi Platform!
 
 ![Moabi Training at OSFAC](https://farm4.staticflickr.com/3941/15617217412_59180a8950_z.jpg)
 
-The Moabi platform is aiming to become an collaborative platform dedicated to independent monitoring for REDD+ and other land users in DRC. With this goal, Moabi project organized five days of training on the use of Moabi Platform. This training took place in the offices of OSFAC from 21 -25 July, 2014. 
+The Moabi platform is aiming to become an collaborative platform dedicated to independent monitoring for REDD+ and other land users in DRC. With this goal, Moabi project organized five days of training on the use of Moabi Platform. This training took place in the offices of OSFAC from 21 -25 July, 2014.
 
 The first three days were focused on the use of Moabi Platform and the editing of online reports. The last two days dealt with GIS data management. These training sessions were designed for a GIS community.
 
@@ -126,7 +128,7 @@ At the end of this week, 45 persons were trained!
 
 ![The REDD+ Potential Risks Poster](https://farm6.staticflickr.com/5601/15455381097_9af1854300_z.jpg)
 
-On 27 June 2014, OSFAC organized the second meeting of the working group dedicated to the REDD+ Potential risks map. The objectives of this meeting were: 
+On 27 June 2014, OSFAC organized the second meeting of the working group dedicated to the REDD+ Potential risks map. The objectives of this meeting were:
 
 * formalizing the partnership agreements between the data providers and the Moabi Project
 * validating new data and analysis
@@ -139,11 +141,11 @@ Even though the formalization of partnership agreement remain complicated to imp
 
 ### The Funding Facility: a fund for supporting the Congolese CSO
 
-This fund, created in 2014, aimed at financially supporting the CSO that want to conduct independent monitoring activities related to REDD+. 
+This fund, created in 2014, aimed at financially supporting the CSO that want to conduct independent monitoring activities related to REDD+.
 
-After drafting a concept note that clarifies the rules for applying to this fund, the Moabi Project will establish a panel of experts in charge of selecting the projects as well as the monitoring their implementation. 
+After drafting a concept note that clarifies the rules for applying to this fund, the Moabi Project will establish a panel of experts in charge of selecting the projects as well as the monitoring their implementation.
 
-This panel will be composed with experts from national and international environmental civil society, Congolese Administration and donors. 
+This panel will be composed with experts from national and international environmental civil society, Congolese Administration and donors.
 
 **The objective is to make available this fund by the end of 2014.**
 
@@ -158,11 +160,11 @@ The goal is to encourage natural resource mapping, to improve our knowledge on D
 
 All Congolese Nationals living in DRC can apply to the competition!
 Two categories of price have been allocated: one for hand drawn maps and the other for GIS/remote sensing maps (1st prize: $250, 2nd prize: $150 , 3th prize: 100 $).
- 
+
 The complete application form have to be submitted to OSFAC at the following address: 14 Avenue du Sergent Moke, Concession SAFRICAS, Quartier Socimat, Commune de Ngaliema, Kinshasa.
 
 You can find all the competition details on the Moabi platform (http://rdc.moabi.org/concours-cartographe/en/) or by eamiling Hervé Kashongwé : hkashongwe@gmail.com
- 
+
 **Do not last: this competition is open until 12 December 2014!**
 
 

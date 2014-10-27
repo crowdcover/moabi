@@ -2,11 +2,13 @@
 categories: fr
 language: fr
 tags: blog_post
-layout: blog_post
+layout: layouts2/blog_post
 published: true
-title: "Moabi's Second Newsletter"
+title: "Deuxième Bulletin de Moabi"
 author: Benoit Thuaire
 subtitle: "Après l’envoi d’une 1ère Newsletter dont l’objet était d’introduire le Projet Moabi, cette nouvelle édition vous propose un tour d’horizon de l’actualité des principales activités conduites au cours des 6 derniers mois : vous découvrirez notamment les progrès accomplis pour concevoir un système de suivi indépendant de la REDD+ à l’échelle des projets, le développement de la plateforme Moabi ainsi que le lancement du concours de cartographie"
+
+img: https://farm4.staticflickr.com/3956/15616264156_031baa7f33_z.jpg
 ---
 
 Après l’envoi d’une 1ère Newsletter dont l’objet était d’introduire le Projet Moabi, cette nouvelle édition vous propose un tour d’horizon de l’actualité des principales activités conduites au cours des 6 derniers mois : vous découvrirez notamment les progrès accomplis pour concevoir un **système de suivi indépendant de la REDD+ à l’échelle des projets**, le développement de la plateforme Moabi ainsi que **le lancement du concours de cartographie** !
