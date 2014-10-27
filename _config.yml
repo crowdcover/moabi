@@ -7,7 +7,7 @@ prose:
   rooturl: "_posts/blog"
   siteurl: "http://rdc.moabi.org/en/"
   metadata:
-    _posts:
+    _posts/blog:
       - name: "layout"
         field:
           element: "hidden"
@@ -49,7 +49,7 @@ prose:
 # _posts/fr config should match _posts config,
 # except for translated text values [currently both are in english]
 # and categories and tags should match their respective language abbrev.
-    _posts/fr:
+    _posts/blog/fr:
       - name: "layout"
         field:
           element: "hidden"
