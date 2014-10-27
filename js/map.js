@@ -182,7 +182,7 @@ var moabi = {
 
   getLayerJSON: function(mapId){
     var layerJSON;
-    $.ajax('/map_layers.json', {
+    $.ajax('{{site.baseurl}}/map_layers.json', {
       type: 'GET',
       dataType: 'json',
       contentType: 'application/json',
