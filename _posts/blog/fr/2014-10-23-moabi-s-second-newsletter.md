@@ -88,7 +88,7 @@ Par ailleurs, les investigations de terrain ont permis de mettre en évidence le
 3. les activités de cartographie des limites des villages ainsi que des droits d’usages ne sont pas effectives dans l’ensemble des villages visités ;
 4. La majorité des communautés ignorent l’existence du droit foncier et font recours au droit coutumier pour la gestion des terres et pour la résolution des éventuels conflits de terre.
 
-> **La prochaine mission de terrain, planifiée à la fin du mois d’octobre, aura pour objectifs de former les observateurs locaux au suivi des activités du projet REDD+ et de recruter un Coordinateur local, basé à Inongo, qui sera chargé de vérifier les informations collectées par les OL et de les diffuser sur la plateforme Moabi (http://www.rdc.moabi.org).**
+> **La prochaine mission de terrain, planifiée à la fin du mois d’octobre, aura pour objectifs de former les observateurs locaux au suivi des activités du projet REDD+ et de recruter un Coordinateur local, basé à Inongo, qui sera chargé de vérifier les informations collectées par les OL et de les diffuser sur la [plateforme Moabi](http://www.rdc.moabi.org).**
 
 ***
 
@@ -162,7 +162,7 @@ Le concours de cartographie est ouvert à tous les Congolais résidant en RDC. D
 
 Les dossiers de candidature complets doivent être déposés à l’adresse d’OSFAC : 14 Avenue du Sergent Moke, Concession SAFRICAS, Quartier Socimat, Commune de Ngaliema, Kinshasa.
 
-Pour plus d’information, veuillez vous rendre sur la plateforme Moabi (http://rdc.moabi.org/concours-cartographe/fr/) ou veuillez contacter Hervé Kashongwé : hkashongwe@gmail.com
+Pour plus d’information, [veuillez vous rendre sur la plateforme Moabi](http://rdc.moabi.org/concours-cartographe/fr/) ou veuillez contacter Hervé Kashongwé : hkashongwe@gmail.com
 
 **Ne tardez pas : Ce concours est ouvert jusqu’au 12 Décembre 2014 !**
 

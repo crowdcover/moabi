@@ -88,7 +88,7 @@ In addition, the field surveys permitted to collect the following evidences :
 3. the mapping activities of the villages as well as the rights of uses are not effective in all the villages visited;
 4. The vast majority of the communities are referring  to their customary law to manage their land and to solve land conflicts, rather than the official legislation.
 
-> **The next field mission planned in late October will aim to train Local Observers to monitor of the REDD+ project activities and will hire a Coordinator, based in Inongo, who will be in charge of checking the data collected by LO and in then forward to the Moabi Platform (http://www.rdc.moabi.org).**
+> **The next field mission planned in late October will aim to train Local Observers to monitor of the REDD+ project activities and will hire a Coordinator, based in Inongo, who will be in charge of checking the data collected by LO and in then forward to the [Moabi Platform](http://www.rdc.moabi.org).**
 
 ***
 
@@ -156,14 +156,14 @@ The Project has launched its mapping competition!
 
 ![Map Competition Poster](https://farm4.staticflickr.com/3933/15454718639_6fa72a13ce_z.jpg)
 
-The goal is to encourage natural resource mapping, to improve our knowledge on DRC environmental issues that people face. (http://rdc.moabi.org).
+The goal is to encourage natural resource mapping, to improve our knowledge on DRC environmental issues that people face.
 
 All Congolese Nationals living in DRC can apply to the competition!
 Two categories of price have been allocated: one for hand drawn maps and the other for GIS/remote sensing maps (1st prize: $250, 2nd prize: $150 , 3th prize: 100 $).
 
 The complete application form have to be submitted to OSFAC at the following address: 14 Avenue du Sergent Moke, Concession SAFRICAS, Quartier Socimat, Commune de Ngaliema, Kinshasa.
 
-You can find all the competition details on the Moabi platform (http://rdc.moabi.org/concours-cartographe/en/) or by eamiling Hervé Kashongwé : hkashongwe@gmail.com
+You can [find all the competition details on the Moabi platform](http://rdc.moabi.org/concours-cartographe/en/) or by eamiling Hervé Kashongwé : hkashongwe@gmail.com
 
 **Do not last: this competition is open until 12 December 2014!**
 
