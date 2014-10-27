@@ -45,7 +45,7 @@ A l’issue de la séance de travail, les résultats étaient satisfaisants puis
 
 ## Mai 2014 : 1ère édition de l’université de la REDD+ au Bandundu et lancement d’un réflexion sur l’OI-REDD à l’échelle du district de la Maï Ndombe 
 
-![](/)
+![REDD+ University, Bandundu](https://farm4.staticflickr.com/3944/14993277384_6d1d1e0375_z.jpg)
 
 La première édition de l’université provinciale de la REDD+ au Bandundu s’est tenue du 28 avril au 2 mai 2014.  Organisé par EFI (European Forest Institute), le MECNT et le gouvernorat de Bandundu, l’objectif était d’apporter les premières informations qui permettront aux parties prenantes provinciales de comprendre le processus REDD+.
 
@@ -55,8 +55,6 @@ A l’issue des travaux, les participants à ce groupe de travail ont proposé d
 
 1. A l’échelle des Projets REDD+ existants puis à l’échelle du FIP (Fond d’investissement pour les Forêts), en reprenant la démarche de travail développée à l’échelle du Projet ERA-WWC.
 2. Travailler sur les sites où les moteurs de la déforestation et de la dégradation forestière ont les répercussions les plus fortes sur la dynamique forestière.
-
-![](/)
 
 Le Groupe de travail a proposé d’appréhender cette seconde priorité selon la démarche suivante:
 
@@ -71,7 +69,7 @@ Le Groupe de travail a proposé d’appréhender cette seconde priorité selon l
 
 ## Juin 2014 : fin des missions exploratoires en Maï Ndombe : le réseau d’OL est constitué !
 
-![authorities in Mekiri Village](/url)
+![authorities in Mekiri Village](https://farm4.staticflickr.com/3956/15616264156_031baa7f33_z.jpg)
 _project team received by the administrative and traditional authorities of Mekiri village_
 
 La deuxième mission exploratoire d’OGF dans la zone du projet ERA-WWC avait pour objectif  de poursuivre la mise en place d’un réseau d’observateurs locaux du projet d’ERA-WWC et d’évaluer leur connaissance sur le Projet REDD+ ainsi que sur les problématiques associées.
@@ -79,7 +77,7 @@ La deuxième mission exploratoire d’OGF dans la zone du projet ERA-WWC avait p
 La deuxième mission exploratoire d’OGF dans la zone du projet ERA-WWC avait pour objectif  de poursuivre la mise en place d’un réseau d’observateurs locaux du projet d’ERA-WWC et d’évaluer leur connaissance sur le Projet REDD+ ainsi que sur les problématiques associées.
 A l’issue de cette mission  six (6) nouveaux observateurs locaux (OL) ont été identifiés et  s’ajoutent au dix (10) précédemment sélectionnés lors de la première mission. 
 
-![](/)
+![project team facing local challenges](https://farm4.staticflickr.com/3938/15639963835_9b8a1d2e40_z.jpg)
 
 Par ailleurs, les investigations de terrain ont permis de mettre en évidence les éléments ci-après : 
 
@@ -113,7 +111,7 @@ Dans les prochains mois, nous allons lancer une application pour mobiles, un mé
 
 ### Premières formations à l’utilisation de la plateforme Moabi !
 
-![](/)
+![Moabi Training at OSFAC](https://farm4.staticflickr.com/3941/15617217412_59180a8950_z.jpg)
 
 La plateforme de cartographie Moabi a pour ambition d’être l’interface collaborative de suivi indépendant de la REDD, et plus largement de la gestion des ressources naturelles en RDC. Dans cette perspective, le projet Moabi a organisé cinq journées de formation à l’utilisation de la plateforme Moabi. Cette formation s’est déroulée dans les bureaux de l’OSFAC du 21 juillet au 25 juillet 2014. 
 
@@ -121,12 +119,12 @@ Les trois premières journées ont été consacrées à l’utilisation de la pl
 
 A l’issue de cette semaine, 45 personnes ont été formées !
 
-![](/)
-
 > **Désormais, chaque mois, des séances de travail seront organisées en petits groupes, à OSFAC afin de renforcer le rôle que la plateforme Moabi peut jouer en faveur des OSC environnementales qui pourront valoriser leurs activités par la publication de rapports succincts sur la gestion des ressources naturelles.**
 
 
 ### La « carte des risques potentiels REDD+ », bientôt diffusée à Kinshasa !
+
+![The REDD+ Potential Risks Poster](https://farm6.staticflickr.com/5601/15455381097_9af1854300_z.jpg)
 
 Le 27 juin 2014, OSFAC a organisé la deuxième réunion du groupe de travail sur la carte nationale des risques potentiels REDD+. Les objectifs de cette réunion étaient de: 
 * formaliser des accords de partenariat entre les pourvoyeurs de données et le Projet Moabi
@@ -151,6 +149,8 @@ Ce panel sera composé de professionnels nationaux et internationaux qualifiés 
 
 
 ### Lancement du concours de cartographie Moabi !
+
+![Map Competition Poster](https://farm4.staticflickr.com/3933/15454718639_6fa72a13ce_z.jpg)
 
 C’est fait ! Le Projet a lancé son concours de cartographie ! 
 
