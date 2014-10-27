@@ -160,7 +160,7 @@ Two categories of price have been allocated: one for hand drawn maps and the oth
 
 The complete application form have to be submitted to OSFAC at the following address: 14 Avenue du Sergent Moke, Concession SAFRICAS, Quartier Socimat, Commune de Ngaliema, Kinshasa.
 
-You can [find all the competition details on the Moabi platform](http://rdc.moabi.org/concours-cartographe/en/) or by eamiling Hervé Kashongwé : hkashongwe@gmail.com
+You can [find all the competition details on the Moabi platform](http://rdc.moabi.org/concours-cartographe/en/) or by emailing Hervé Kashongwé : hkashongwe@gmail.com
 
 **Do not last: this competition is open until 12 December 2014!**
 
