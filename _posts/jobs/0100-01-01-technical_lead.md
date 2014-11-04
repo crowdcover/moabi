@@ -78,4 +78,4 @@ Payment will be negotiable and commensurate with experience
 
 # Application
 
-Send your resume, and examples of your work, website, GitHub projects to info@crowdcover.org.
+Send your resume, and examples of your work, website, GitHub projects to [info@crowdcover.org](mailto:info@crowdcover.org).

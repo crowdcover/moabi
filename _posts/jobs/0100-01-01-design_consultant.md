@@ -52,7 +52,7 @@ Based in DC
 Payment will be negotiable and commensurate with experience
 
 ## Application
-{% include job_duedate.md %}
+Send your resume, and examples of your work, website, GitHub projects to [info@crowdcover.org](mailto:info@crowdcover.org).
 
 
 

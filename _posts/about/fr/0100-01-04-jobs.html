@@ -1,0 +1,23 @@
+---
+layout: layouts2/about
+language: fr
+tags:
+  - about
+categories:
+  - fr
+---
+<h1>Jobs</h1>
+
+{% if site.tags.job %}
+  {% for job_post in site.tags.job %}
+    <div class="pad1y space-bottom4{% unless forloop.last %} keyline-bottom{% endunless %}">
+      <h2>{{job_post.title | replace: '_', ' '}}</h2>
+      {{job_post.summary | markdownify}}
+      <a href="{{site.baseurl}}/{{job_post.title | downcase }}/{{page.language}}">Read More</a>
+    </div>
+  {% endfor %}
+{% else %}
+  <h3 class="quiet center">
+    <em>Moabi is not activly hiring at the moment.  Please check back later</em>
+  </h3>
+{% endif %}
