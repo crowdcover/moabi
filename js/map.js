@@ -13,6 +13,7 @@ var moabi = {
     $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
     $('.sortable').sortable({
       placeholder: "ui-state-highlight",
+      helper: 'clone',
       update: function(event, ui){
         moabi.sortable = ui;
         var newLayerId = $(this).children('li:first').data('id'),
