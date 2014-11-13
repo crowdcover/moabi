@@ -113,7 +113,11 @@ var moabi = {
     });
 
     // building L.mapbox.map with an undefined layer creates an extra, empty .leaflet-layer, so delete it.
-    $('#map .leaflet-map-pane .leaflet-tile-pane .leaflet-layer').eq(1).remove()
+    var leafletLayers = $(moabi.map._tilePane).children('.leaflet-layer');
+    leafletLayers.eq(1).remove();
+
+    // assign explicit z-index to base layer
+    leafletLayers.eq(0).css('z-index', 0);
 
     moabi.map.zoomControl.setPosition('topleft');
     moabi.leaflet_hash = L.hash(this.map);
@@ -167,14 +171,18 @@ var moabi = {
       // run all add layer actions:
         // add layer to map; add legend; move layer-ui button
         // show description summary; add grid; update hash
-      var layerJSON = moabi.getLayerJSON(mapId);
+      var layerJSON = moabi.getLayerJSON(mapId),
+          topLayerPaneZIndex = Math.max.apply(Math, moabi.getLayersZIndex());
       if(! layerJSON ) return false;
+
       moabi.map.addLayer(tileLayer);
-      moabi.showLayerButton(mapId)
+      tileLayer.setZIndex(topLayerPaneZIndex + 1);
+
+      moabi.showLayerButton(mapId);
       moabi.showLegend(mapId, layerJSON.legend);
       moabi.showSummary(mapId, layerJSON);
       // not very smart: simply remove all grids and add for the new layer
-      moabi.clearGrids()
+      moabi.clearGrids();
       moabi.addGrid(mapId, layerJSON.template);
     }
     // moabi.setLayersZIndex();
@@ -324,6 +332,17 @@ var moabi = {
     $.each(displayedLayerIds, function(index, id){
       var tileLayer = mapLayers.dataLayers[id].tileLayer;
       tileLayer.setZIndex(numLayers - index);
+    });
+  },
+
+  getLayersZIndex: function(mapId){
+    // returns zIndex for mapId layer, or if unspecified, returns array of all zIndices
+    if(mapId){
+      return mapLayers.dataLayers[mapId].tileLayer.options.zIndex;
+    }
+    var leafletLayers = $(moabi.map._tilePane).children('.leaflet-layer');
+    return $.map(leafletLayers, function(layerPane, index){
+      return parseInt( $(layerPane).css('z-index') );
     });
   },
 
