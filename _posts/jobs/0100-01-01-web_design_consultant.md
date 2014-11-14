@@ -7,15 +7,15 @@ categories:
   - en
 duedate: false
 summary: |
-         Moabi is currently looking for a design consultant to help grow our website.  We are looking for someone with an extensive web design background, highly competent with HTML and CSS, and with a strong grasp on UX and modern web design techniques.  The post will be based in DC.
+         Moabi is currently looking for a web design consultant to help grow our website.  We are looking for someone with an extensive web design background, highly competent with HTML and CSS, and with a strong grasp on UX and modern web design techniques.  The post will be based in DC.
 
 ---
 # Design Consultant
 
-The designer is responsible for implementing data-centric design ideas for website design, layout, typology, and structure.
+The designer is responsible for implementing data-centric design ideas for website design, layout, typology, and structure across all of Moabi's various projects.
 
 ## Project Scope
-Having recently made our platform live on April 22, Moabi is looking for a web design consultant to help expand on the current site.  As site functionality expands, and our user base grows, we will be iteratively improving upon site design and functionality.  The site is now live at rdc.moabi.org.
+Having made our platform live on April 22, Moabi is looking for a web design consultant to help expand on the current site.  As site functionality expands, and our lists of projects grow, we will be iteratively improving upon design and functionality.
 
 ## Key Responsibilities
 1. Translate the site’s growing content into a seamless, intuitive design structure that builds off of and improves the current flat, modern, data-centric design
@@ -44,7 +44,7 @@ Having recently made our platform live on April 22, Moabi is looking for a web d
 4. Web-optimized imagery assets from the projects photo library, accounting for load times and web based viewing.
 
 ## Consultancy duration
-Part time over 3 months (50% time) with possibility of extension
+3 months with possibility of extension
 Reporting to Technical Lead and Moabi Project Lead
 Based in DC
 
@@ -52,7 +52,7 @@ Based in DC
 Payment will be negotiable and commensurate with experience
 
 ## Application
-Send your resume, and examples of your work, website, GitHub projects to [info@crowdcover.org](mailto:info@crowdcover.org).
+Send your resume, and examples of your work, website, and/or GitHub projects to [info@crowdcover.org](mailto:info@crowdcover.org).
 
 
 
