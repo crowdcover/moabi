@@ -188,7 +188,7 @@ var moabi = {
       tileLayer.setZIndex(topLayerZIndex + 1);
 
       moabi.showLayerButton(mapId);
-      moabi.showLegend(mapId, layerJSON.legend);
+      moabi.showLegend(mapId, layerJSON);
       moabi.showSummary(mapId, layerJSON);
       // not very smart: simply remove all grids and add for the new layer
       moabi.clearGrids();
@@ -218,6 +218,7 @@ var moabi = {
 
   getLayers: function(){
     // return an array of mapIds ordered by zIndex from lowest to highest
+    // it is not guaranteed that a mapId's index in the array matches its zIndex
     var dataLayers = mapLayers.dataLayers,
         layersSortedByZIndex = [];
 
@@ -314,11 +315,11 @@ var moabi = {
 
   },
 
-  showLegend: function(mapId, legendContent){
+  showLegend: function(mapId, layerJSON){
     $('<div>', {
                 'class': 'moabi-legend',
                 'data-id': mapId,
-                html: legendContent
+                html: layerJSON.legend
     }).prependTo('.map-legend .legend-contents');
   },
 
