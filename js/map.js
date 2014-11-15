@@ -17,22 +17,22 @@ var moabi = {
       update: function(event, ui){
         var displayedButtonContainer = $(this),
             newTopButtonId = displayedButtonContainer.children('li:first').data('id'),
-            movedButtonId = ui.item.data('id');
+            movedButtonId = ui.item.data('id'),
+            movedButtonJSON = moabi.getLayerJSON(newTopButtonId);
 
         // always show movedLayer summary
-        moabi.showSummary(movedButtonId, moabi.getLayerJSON(movedButtonId));
+        moabi.showSummary(movedButtonId, movedButtonJSON);
 
         // unless new top button is the same as the old top button, add grids of new topButton
         if(newTopButtonId !== moabi.getLayers()[0]){
           moabi.clearGrids();
-          moabi.addGrid(newTopButtonId);
+          moabi.addGrid(newTopButtonId, moabi.getLayerJSON(newTopButtonId));
         }
         orderedButtonIds = $.map(moabi.getDisplayedLayersButtons(), function(button, index){
           return $(button).data('id')
         }).reverse();
         moabi.setLayersZIndices(orderedButtonIds);
         moabi.leaflet_hash.trigger('move');
-        console.log('fired');
       }
     });
     $('.slider').on('click', 'a', this.slidePanel);
@@ -169,10 +169,9 @@ var moabi = {
         // if 1+ more layers on map, add grid of the new top layer
         if(layers.length > 1){
           var nextLayerId = layers[layers.length -2];
-              layerJSON = moabi.getLayerJSON(nextLayerId);
 
           if(! layerJSON ) return false;
-          moabi.addGrid(nextLayerId, layerJSON.template);
+          moabi.addGrid(nextLayerId, moabi.getLayerJSON(nextLayerId));
         }
       }
     }else{
@@ -193,7 +192,7 @@ var moabi = {
       moabi.showSummary(mapId, layerJSON);
       // not very smart: simply remove all grids and add for the new layer
       moabi.clearGrids();
-      moabi.addGrid(mapId, layerJSON.template);
+      moabi.addGrid(mapId, layerJSON);
     }
     moabi.leaflet_hash.trigger('move');
   },
@@ -364,11 +363,12 @@ var moabi = {
     $('.layer-ui ul.layer-summary').remove();
   },
 
-  addGrid: function(mapId, gridTemplate){
+  addGrid: function(mapId, layerJSON){
+    if(! layerJSON.template){ return false; }
     var tilejson = {
       "tilejson":"2.1.0",
       "grids":["http://grids.osm.moabi.org/grids/" + mapId + "/{z}/{x}/{y}.json"],
-      "template":gridTemplate
+      "template":layerJSON.template
     };
     moabi.gridLayer = L.mapbox.gridLayer(tilejson).addTo(moabi.map),
     moabi.gridControl = L.mapbox.gridControl(moabi.gridLayer).addTo(moabi.map);
