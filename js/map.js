@@ -16,6 +16,7 @@ var moabi = {
       helper: 'clone',
       update: function(event, ui){
         var displayedButtonContainer = $(this),
+            layers = moabi.getLayers(),
             newTopButtonId = displayedButtonContainer.children('li:first').data('id'),
             movedButtonId = ui.item.data('id'),
             movedButtonJSON = moabi.getLayerJSON(newTopButtonId);
@@ -24,7 +25,7 @@ var moabi = {
         moabi.showSummary(movedButtonId, movedButtonJSON);
 
         // unless new top button is the same as the old top button, add grids of new topButton
-        if(newTopButtonId !== moabi.getLayers()[0]){
+        if(newTopButtonId !== layers[layers.length -1]){
           moabi.clearGrids();
           moabi.addGrid(newTopButtonId, moabi.getLayerJSON(newTopButtonId));
         }
@@ -168,9 +169,10 @@ var moabi = {
         moabi.clearGrids();
         // if 1+ more layers on map, add grid of the new top layer
         if(layers.length > 1){
-          var nextLayerId = layers[layers.length -2];
+          var nextLayerId = layers[layers.length -2],
+              nextLayerJSON = moabi.getLayerJSON(nextLayerId)
 
-          if(! layerJSON ) return false;
+          if(! nextLayerJSON ) return false;
           moabi.addGrid(nextLayerId, moabi.getLayerJSON(nextLayerId));
         }
       }
@@ -178,16 +180,16 @@ var moabi = {
       // run all add layer actions:
         // add layer to map; add legend; move layer-ui button
         // show description summary; add grid; update hash
-      var layerJSON = moabi.getLayerJSON(mapId);
-      if(! layerJSON ) return false;
 
       // find zIndex of current top layer, or -1 if no current layers
       var layers = moabi.getLayers(),
-          topLayerZIndex = moabi.getLayerZIndex(layers[layers.length -1])
+          topLayerZIndex = moabi.getLayerZIndex(layers[layers.length -1]),
+          layerJSON = moabi.getLayerJSON(mapId);
       moabi.map.addLayer(tileLayer);
       tileLayer.setZIndex(topLayerZIndex + 1);
 
       moabi.showLayerButton(mapId);
+      if(! layerJSON ){ return false; }
       moabi.showLegend(mapId, layerJSON);
       moabi.showSummary(mapId, layerJSON);
       // not very smart: simply remove all grids and add for the new layer
@@ -244,12 +246,12 @@ var moabi = {
   },
 
   setLayerZIndex: function(mapId, zIndex){
-    mapLayers.dataLayer[mapId].setZIndex(zIndex);
+    mapLayers.dataLayers[mapId].setZIndex(zIndex);
   },
 
   setLayersZIndices: function(mapIds){
     // set zIndex for each mapId in array mapIds, arranged from lowest to highest
-    for(var i=0; i<mapIds; i++){
+    for(var i=0; i<mapIds.length; i++){
       moabi.setLayerZIndex(mapIds[i], i);
     }
   },
