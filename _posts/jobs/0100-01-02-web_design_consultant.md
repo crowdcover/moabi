@@ -6,6 +6,7 @@ tags:
 categories:
   - en
 duedate: false
+title: Web Design Consultant
 summary: |
          Moabi is currently looking for a web design consultant to help grow our website.  We are looking for someone with an extensive web design background, highly competent with HTML and CSS, and with a strong grasp on UX and modern web design techniques.  The post will be based in DC.
 
