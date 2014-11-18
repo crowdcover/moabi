@@ -7,7 +7,7 @@ categories:
   - en
 duedate: false
 summary: |
-         Our DC office is looking to work with a research intern to help with project research and management.  We are looking for someone with excellent French language skills and a background in environmental studies and/or international development . Knowledge of Central Africa and the REDD+ initiative would be distinct advantage.
+         Our DC office is looking to work with a research intern to help with project research and management.  We are looking for someone with excellent French language skills and a background in environmental studies and/or international development . Knowledge of Central Africa and the REDD+ initiative would be a distinct advantage.
 
 ---
 # Research Intern
