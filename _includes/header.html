@@ -11,10 +11,10 @@
             {% unless page.hide == 'language_toggle' %}{% include language_toggle.html %}{% endunless %}
 
             <li class="dropdown pad1 fr strong">
-                <a class="dropdown-button rcon plus2 quiet {% if page.tags contains 'about' or page.title == 'Blog' or page.tags contains 'blog_post' or page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}" href="#">{{t.[page.language].header.more}}</a>
+                <a class="dropdown-button rcon plus2 quiet {% if page.tags contains 'about' or page.tags contains 'Jobs' or page.title == 'Blog' or page.tags contains 'blog_post' or page.tags contains 'data_documentation' or page.tags contains 'training' or page.tags contains 'guide' %}active{% endif %}" href="#">{{t.[page.language].header.more}}</a>
                 <ul class="pad1x fill-gray keyline-left keyline-right keyline-bottom">
                     <li class="pad1y keyline-bottom">
-                        <a href="{{site.baseurl}}/the-initiative/{{page.language}}" class="quiet {% if page.tags contains 'about' %}active{% endif %}">{{t.[page.language].header.about}}</a>
+                        <a href="{{site.baseurl}}/the-initiative/{{page.language}}" class="quiet {% if page.tags contains 'about' or page.tags contains 'Jobs' %}active{% endif %}">{{t.[page.language].header.about}}</a>
                     </li>
                     <li class="pad1y keyline-bottom">
                         <a href="{{site.baseurl}}/blog/{{page.language}}" class="quiet {% if page.title == 'Blog' or page.tags contains 'blog_post' %}active{% endif %}">{{t.[page.language].header.blog}}</a>
@@ -24,12 +24,9 @@
                     </li>
                 </ul>
             </li>
-
             <li class="pad1 fr strong">
                 <a class="quiet {% if page.title == 'Data'%}active{% endif %}" href="{{site.baseurl}}/data/{{page.language}}">{{t.[page.language].header.data}}</a>
             </li>
-
-
             <li class="pad1 fr strong">
                 <a class="quiet {% if page.title == 'Reports' or page.tags contains 'report'%}active{% endif %}" href="{{site.baseurl}}/reports/{{page.language}}">{{t.[page.language].header.reports}}</a>
             </li>

@@ -2,7 +2,7 @@
 layout: layouts2/about
 language: en
 tags:
-  - job
+  - Jobs
 categories:
   - en
 duedate: false
