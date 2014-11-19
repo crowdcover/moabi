@@ -44,9 +44,9 @@ generate JSON metadata for each tile layer, including:
       "description": "{{layer.description | replace:'"', "'" | strip_newlines}}",
       "legend": "{{layer.legend | replace:'"', "'" | strip_newlines}}",
       "date": "{{layer.date}}",
+      {% if layer.tooltip_teaser or layer.tooltip_full %}"template": "{%raw%}{{#__teaser__}}{%endraw%}{{teaser | strip_newlines}}{%raw%}{{/__teaser__}} {{#__full__}}{%endraw%}{{full | strip_newlines}}{%raw%}{{/__full__}}{%endraw%}",{% endif %}
       "source_name": "{{layer.source.name}}",
-      "source_url": "{{layer.source.url}}",
-      "template": "{%raw%}{{#__teaser__}}{%endraw%}{{teaser | strip_newlines}}{%raw%}{{/__teaser__}} {{#__full__}}{%endraw%}{{full | strip_newlines}}{%raw%}{{/__full__}}{%endraw%}"
+      "source_url": "{{layer.source.url}}"
     }{% unless forloop.last %},{% endunless %}
 {% endfor %}
 }
