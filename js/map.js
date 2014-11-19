@@ -15,11 +15,25 @@ var moabi = {
       placeholder: "ui-state-highlight",
       helper: 'clone',
       update: function(event, ui){
-        moabi.sortable = ui;
-        var newLayerId = $(this).children('li:first').data('id'),
-            newLayerJSON = moabi.getLayerJSON(newLayerId);
-        moabi.showSummary(newLayerId, newLayerJSON);
-        moabi.reorderLayers();
+        var displayedButtonContainer = $(this),
+            layers = moabi.getLayers(),
+            newTopButtonId = displayedButtonContainer.children('li:first').data('id'),
+            movedButtonId = ui.item.data('id'),
+            movedButtonJSON = moabi.getLayerJSON(newTopButtonId);
+
+        // always show movedLayer summary
+        moabi.showSummary(movedButtonId, movedButtonJSON);
+
+        // unless new top button is the same as the old top button, add grids of new topButton
+        if(newTopButtonId !== layers[layers.length -1]){
+          moabi.clearGrids();
+          moabi.addGrid(newTopButtonId, moabi.getLayerJSON(newTopButtonId));
+        }
+        orderedButtonIds = $.map(moabi.getDisplayedLayersButtons(), function(button, index){
+          return $(button).data('id')
+        }).reverse();
+        moabi.setLayersZIndices(orderedButtonIds);
+        moabi.leaflet_hash.trigger('move');
       }
     });
     $('.slider').on('click', 'a', this.slidePanel);
@@ -113,7 +127,11 @@ var moabi = {
     });
 
     // building L.mapbox.map with an undefined layer creates an extra, empty .leaflet-layer, so delete it.
-    $('#map .leaflet-map-pane .leaflet-tile-pane .leaflet-layer').eq(1).remove()
+    var leafletLayers = $(moabi.map._tilePane).children('.leaflet-layer');
+    leafletLayers.eq(1).remove();
+
+    // assign explicit z-index to base layer
+    mapLayers.baseLayer.id.setZIndex(-1);
 
     moabi.map.zoomControl.setPosition('topleft');
     moabi.leaflet_hash = L.hash(this.map);
@@ -132,52 +150,52 @@ var moabi = {
     // triggered by custom event 'changeLayer'
 
     // alias tileLayer in mapLayers, if not already
-    var alreadyAliased = true,
-        tileLayer;
     if(! mapLayers.dataLayers[mapId]){
-      mapLayers.dataLayers[mapId] = {
-        tileLayer: L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png'),
-      }
-      alreadyAliased = false;
+      mapLayers.dataLayers[mapId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
     }
-    tileLayer = mapLayers.dataLayers[mapId].tileLayer;
+    var tileLayer = mapLayers.dataLayers[mapId];
 
-    // check if layer is already present
+    // if layer is present, run all remove layer actions
     if(moabi.map.hasLayer(tileLayer)){
-      var displayedLayers = moabi.getDisplayedLayers('button'),
-          nextLayerId,
-          layerJSON;
-
+      var layers = moabi.getLayers();
       // run all remove layer actions
       moabi.map.removeLayer(tileLayer);
       moabi.removeLayerButton(mapId);
       moabi.removeLegend(mapId);
       moabi.removeSummary();
-      moabi.clearGrids();
 
-      // if the removed layer was top layer and there is another layer below it, add grid of that below layer
-      if(mapId === displayedLayers.eq(0).data('id') && displayedLayers.length > 1){
-        nextLayerId = displayedLayers.eq(1).data('id');
+      // if removed layer was highest layer, clear grids
+      if(mapId === layers[layers.length -1]){
+        moabi.clearGrids();
+        // if 1+ more layers on map, add grid of the new top layer
+        if(layers.length > 1){
+          var nextLayerId = layers[layers.length -2],
+              nextLayerJSON = moabi.getLayerJSON(nextLayerId)
 
-        layerJSON = moabi.getLayerJSON(nextLayerId);
-        if(! layerJSON ) return false;
-        moabi.addGrid(nextLayerId, layerJSON.template);
+          if(! nextLayerJSON ) return false;
+          moabi.addGrid(nextLayerId, moabi.getLayerJSON(nextLayerId));
+        }
       }
     }else{
       // run all add layer actions:
         // add layer to map; add legend; move layer-ui button
         // show description summary; add grid; update hash
-      var layerJSON = moabi.getLayerJSON(mapId);
-      if(! layerJSON ) return false;
+
+      // find zIndex of current top layer, or -1 if no current layers
+      var layers = moabi.getLayers(),
+          topLayerZIndex = moabi.getLayerZIndex(layers[layers.length -1]),
+          layerJSON = moabi.getLayerJSON(mapId);
       moabi.map.addLayer(tileLayer);
-      moabi.showLayerButton(mapId)
-      moabi.showLegend(mapId, layerJSON.legend);
+      tileLayer.setZIndex(topLayerZIndex + 1);
+
+      moabi.showLayerButton(mapId);
+      if(! layerJSON ){ return false; }
+      moabi.showLegend(mapId, layerJSON);
       moabi.showSummary(mapId, layerJSON);
       // not very smart: simply remove all grids and add for the new layer
-      moabi.clearGrids()
-      moabi.addGrid(mapId, layerJSON.template);
+      moabi.clearGrids();
+      moabi.addGrid(mapId, layerJSON);
     }
-    // moabi.setLayersZIndex();
     moabi.leaflet_hash.trigger('move');
   },
 
@@ -200,9 +218,71 @@ var moabi = {
     return layerJSON[mapId];
   },
 
+  getLayers: function(){
+    // return an array of mapIds ordered by zIndex from lowest to highest
+    // it is not guaranteed that a mapId's index in the array matches its zIndex
+    var dataLayers = mapLayers.dataLayers,
+        layersSortedByZIndex = [];
+
+    for(mapId in dataLayers){
+      var tileLayer = dataLayers[mapId];
+      if(moabi.map.hasLayer(tileLayer)){
+        layersSortedByZIndex[tileLayer.options.zIndex] = mapId;
+      }
+    }
+    return layersSortedByZIndex.filter(function(n){
+      return n != undefined;
+    });
+  },
+
+  getLayerZIndex: function(mapId){
+    // return mapId zIndex, or -1 if dataLayers doesn't contain mapId
+    // var zIndex = mapLayers.dataLayers[mapId].options.zIndex;
+    // return zIndex ? zIndex : -1;
+    if(mapLayers.dataLayers[mapId]){
+      return mapLayers.dataLayers[mapId].options.zIndex;
+    }
+    return -1;
+  },
+
+  setLayerZIndex: function(mapId, zIndex){
+    mapLayers.dataLayers[mapId].setZIndex(zIndex);
+  },
+
+  setLayersZIndices: function(mapIds){
+    // set zIndex for each mapId in array mapIds, arranged from lowest to highest
+    for(var i=0; i<mapIds.length; i++){
+      moabi.setLayerZIndex(mapIds[i], i);
+    }
+  },
+
+  getDisplayedLayersButtons: function(){
+    // return a jQuery object containing all layer buttons, sorted from bottom to top
+    return $('.layer-ui ul.displayed li.layer-toggle');
+  },
+
+  getNotDisplayedLayersButtons: function(){
+    return $('.layer-ui ul.not-displayed li.layer-toggle');
+  },
+
+  removeAllExcept: function(keepLayers) {
+    // removes all layers from map, except for keepLayers (pass as array)
+    // returns a list of removed layers
+    var displayedLayers = moabi.getLayers();
+    return $.map(displayedLayers, function(removeLayer, index){
+              moabi.keepLayers = keepLayers;
+              moabi.removeLayer = removeLayer;
+
+              if( keepLayers.indexOf(removeLayer) === -1){
+                $('#map').trigger('changeLayer', removeLayer);
+                return removeLayer;
+              }
+            });
+  },
+
   showLayerButton: function(mapId){
     // move layerButton from .not-displayed to .displayed
-    var layerButton = moabi.getNotDisplayedLayerButtons().filter('[data-id="' + mapId + '"]'),
+    var layerButton = moabi.getNotDisplayedLayersButtons().filter('[data-id="' + mapId + '"]'),
         displayed = $('.layer-ui .displayed');
 
     layerButton.addClass('active').prependTo(displayed);
@@ -210,16 +290,14 @@ var moabi = {
 
   removeLayerButton: function(mapId){
     // move layerButton from .displayed to where it was originally located in .not-displayed
-    var layerButton = moabi.getDisplayedLayers('button').filter('[data-id="' + mapId + '"]').removeClass('active'),
+    var layerButton = moabi.getDisplayedLayersButtons().filter('[data-id="' + mapId + '"]').removeClass('active'),
         layerButtonIndex = layerButton.data('index'),
-        notDisplayedButtons = moabi.getNotDisplayedLayerButtons();
-
-    moabi.notDisplayedButtons = notDisplayedButtons;
+        notDisplayedButtons = moabi.getNotDisplayedLayersButtons();
 
     for(i=0; i<notDisplayedButtons.length; i++){
-      // if button index is less than the smallest, insert at beginning
       var notDisplayedButton = notDisplayedButtons.eq(i),
           notDisplayedButtonIndex = notDisplayedButton.data('index');
+      // if button index is less than the smallest, insert at beginning
       if(i===0 && layerButtonIndex < notDisplayedButtonIndex){
         notDisplayedButton.before(layerButton);
         break;
@@ -239,11 +317,11 @@ var moabi = {
 
   },
 
-  showLegend: function(mapId, legendContent){
+  showLegend: function(mapId, layerJSON){
     $('<div>', {
                 'class': 'moabi-legend',
                 'data-id': mapId,
-                html: legendContent
+                html: layerJSON.legend
     }).prependTo('.map-legend .legend-contents');
   },
 
@@ -288,11 +366,12 @@ var moabi = {
     $('.layer-ui ul.layer-summary').remove();
   },
 
-  addGrid: function(mapId, gridTemplate){
+  addGrid: function(mapId, layerJSON){
+    if(! layerJSON.template){ return false; }
     var tilejson = {
       "tilejson":"2.1.0",
       "grids":["http://grids.osm.moabi.org/grids/" + mapId + "/{z}/{x}/{y}.json"],
-      "template":gridTemplate
+      "template":layerJSON.template
     };
     moabi.gridLayer = L.mapbox.gridLayer(tilejson).addTo(moabi.map),
     moabi.gridControl = L.mapbox.gridControl(moabi.gridLayer).addTo(moabi.map);
@@ -303,59 +382,6 @@ var moabi = {
       moabi.map.removeLayer(moabi.gridLayer);
     }
     $('.map-tooltip').remove();
-  },
-
-  reorderLayers: function(){
-    // TODO
-    moabi.setLayersZIndex();
-    moabi.clearGrids();
-    moabi.leaflet_hash.trigger('move');
-
-    var topMapLayerId = moabi.getDisplayedLayers('id')[0],
-        layerJSON = moabi.getLayerJSON(topMapLayerId);
-        if(! layerJSON ) return false;
-    moabi.addGrid(topMapLayerId, layerJSON.template);
-  },
-
-  setLayersZIndex: function(){
-    var displayedLayerIds = moabi.getDisplayedLayers('id'),
-        numLayers = displayedLayerIds.length;
-
-    $.each(displayedLayerIds, function(index, id){
-      var tileLayer = mapLayers.dataLayers[id].tileLayer;
-      tileLayer.setZIndex(numLayers - index);
-    });
-  },
-
-  getDisplayedLayers: function(info){
-    // limit mapLayers.dataLayers objs to those displayed on map
-    var displayedLayers = [];
-    for(layer in mapLayers.dataLayers){
-      if(moabi.map.hasLayer(mapLayers.dataLayers[layer].tileLayer)){
-        displayedLayers.push({layer : mapLayers.dataLayers[layer]});
-      }
-    }
-    // return data on info parameter
-    switch(info){
-      case "id":
-        // this should be done by querying mapLayers or the moabi.map object,
-        // so that handling layers is decoupled from the .layer-ui buttons
-        return $.map($('.layer-ui ul.displayed .layer-toggle'), function(button, index){
-          return $(button).data('id');
-        });
-      case "tileLayer":
-        var tileLayers = [];
-        for(id in displayedLayers) tileLayers.push(displayedLayers[id].tileLayer);
-        return tileLayers;
-      case "button":
-        return $('.layer-ui ul.displayed .layer-toggle');
-      default:
-        return displayedLayers;
-    }
-  },
-
-  getNotDisplayedLayerButtons: function(){
-    return $('.layer-ui ul.not-displayed li.layer-toggle');
   },
 
   updateExportLink: function(hash) {
@@ -372,25 +398,9 @@ var moabi = {
     }
   },
 
-  removeAllExcept: function(keepLayers) {
-    // removes all layers from map, except for keepLayers (pass as array)
-    // returns a list of removed layers
-    var displayedLayers = moabi.getDisplayedLayers('id'),
-        removedLayers = $.map(displayedLayers, function(removeLayer, index){
-          moabi.keepLayers = keepLayers;
-          moabi.removeLayer = removeLayer;
-
-          if( keepLayers.indexOf(removeLayer) === -1){
-            $('#map').trigger('changeLayer', removeLayer);
-            return removeLayer;
-          }
-        });
-    return removedLayers;
-  },
-
   // leaflet hash functions
   setLayerHash: function(hash) {
-    return moabi.setQueryVariable(hash, "layers", moabi.getDisplayedLayers('id').join(','));
+    return moabi.setQueryVariable(hash, "layers", moabi.getLayers().join(','));
   },
 
   getLayerHash: function() {
@@ -447,7 +457,7 @@ var moabi = {
     moabi.removeAllExcept(newLayers);
     if(newLayers){
       // perform a quick lookup to test if newLayers is already displayed
-      var displayedLayersIds = moabi.getDisplayedLayers('id');
+      var displayedLayersIds = moabi.getLayers();
 
       for(i=0; i<newLayers.length; i++){
         newLayer = newLayers[i];
