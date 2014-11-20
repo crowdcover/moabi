@@ -17,23 +17,22 @@ var moabi = {
       update: function(event, ui){
         var displayedButtonContainer = $(this),
             layers = moabi.getLayers(),
-            newTopButtonId = displayedButtonContainer.children('li:first').data('id'),
-            movedButtonId = ui.item.data('id'),
-            movedButtonJSON = moabi.getLayerJSON(newTopButtonId);
+            newTopButtonId = displayedButtonContainer.children('li:first').data('id');
 
-        // always show movedLayer summary
-        moabi.showSummary(movedButtonId, movedButtonJSON);
+        moabi.getLayerJSON(newTopButtonId).done(function(topLayerJSON){
+          // unless new top button is the same as the old top button, add grids and summary of new topButton
+          if(newTopButtonId !== layers[layers.length -1]){
+            moabi.clearGrids();
+            moabi.addGrid(newTopButtonId, topLayerJSON);
+            moabi.showSummary(newTopButtonId, topLayerJSON);
+          }
 
-        // unless new top button is the same as the old top button, add grids of new topButton
-        if(newTopButtonId !== layers[layers.length -1]){
-          moabi.clearGrids();
-          moabi.addGrid(newTopButtonId, moabi.getLayerJSON(newTopButtonId));
-        }
-        orderedButtonIds = $.map(moabi.getDisplayedLayersButtons(), function(button, index){
-          return $(button).data('id')
-        }).reverse();
-        moabi.setLayersZIndices(orderedButtonIds);
-        moabi.leaflet_hash.trigger('move');
+          orderedButtonIds = $.map(moabi.getDisplayedLayersButtons(), function(button, index){
+            return $(button).data('id')
+          }).reverse();
+          moabi.setLayersZIndices(orderedButtonIds);
+          moabi.leaflet_hash.trigger('move');
+        });
       }
     });
     $('.slider').on('click', 'a', this.slidePanel);
@@ -169,11 +168,11 @@ var moabi = {
         moabi.clearGrids();
         // if 1+ more layers on map, add grid of the new top layer
         if(layers.length > 1){
-          var nextLayerId = layers[layers.length -2],
-              nextLayerJSON = moabi.getLayerJSON(nextLayerId)
+          var nextLayerId = layers[layers.length -2];
 
-          if(! nextLayerJSON ) return false;
-          moabi.addGrid(nextLayerId, moabi.getLayerJSON(nextLayerId));
+          moabi.getLayerJSON(nextLayerId).done(function(nextLayerJSON){
+            moabi.addGrid(nextLayerId, nextLayerJSON);
+          });
         }
       }
     }else{
@@ -183,39 +182,49 @@ var moabi = {
 
       // find zIndex of current top layer, or -1 if no current layers
       var layers = moabi.getLayers(),
-          topLayerZIndex = moabi.getLayerZIndex(layers[layers.length -1]),
-          layerJSON = moabi.getLayerJSON(mapId);
+          topLayerZIndex = moabi.getLayerZIndex(layers[layers.length -1]);
+
       moabi.map.addLayer(tileLayer);
       tileLayer.setZIndex(topLayerZIndex + 1);
-
       moabi.showLayerButton(mapId);
-      if(! layerJSON ){ return false; }
-      moabi.showLegend(mapId, layerJSON);
-      moabi.showSummary(mapId, layerJSON);
-      // not very smart: simply remove all grids and add for the new layer
-      moabi.clearGrids();
-      moabi.addGrid(mapId, layerJSON);
+
+      moabi.getLayerJSON(mapId).done(function(layerJSON){
+        moabi.showLegend(mapId, layerJSON);
+        moabi.showSummary(mapId, layerJSON);
+        // not very smart: simply remove all grids and add for the new layer
+        moabi.clearGrids();
+        moabi.addGrid(mapId, layerJSON);
+      });
     }
+
     moabi.leaflet_hash.trigger('move');
   },
 
   getLayerJSON: function(mapId){
-    var layerJSON;
-    $.ajax('{{site.baseurl}}/map_layers.json', {
+    // returns a promise object, that when resolved, contains JSON for mapId
+    var JSONPromise = $.Deferred();
+    $.ajax('/map_layers.json', {
       type: 'GET',
       dataType: 'json',
       contentType: 'application/json',
-      success: function(returnedJSON){
-        layerJSON = returnedJSON;
+      success: function(mapLayersJSON){
+        if(mapLayersJSON[mapId]){
+          JSONPromise.resolve(mapLayersJSON[mapId]);
+        }else{
+          JSONPromise.reject('no mapId ' + mapId);
+        }
       },
-      async: false,
       error: function(jqXHR, textStatus, errorThrown){
-        console.log("ajax load layerJSON ERROR: ", errorThrown);
-        return false;
+        JSONPromise.reject(errorThrown);
       }
     });
-
-    return layerJSON[mapId];
+    return JSONPromise;
+    // working with JSONPromise
+    // moabi.getJSONPromise(mapId).done(function(result){
+    //   console.log('returned layer name: ' + result.name);
+    // }).fail(function(error){
+    //   console.log('getJSON failed. Error: ' + error);
+    // })
   },
 
   getLayers: function(){
@@ -233,41 +242,6 @@ var moabi = {
     return layersSortedByZIndex.filter(function(n){
       return n != undefined;
     });
-  },
-
-  getJSONPromise: function(mapId){
-    var JSONPromise = $.Deferred();
-    $.ajax('/map_layers.json', {
-      type: 'GET',
-      dataType: 'json',
-      contentType: 'application/json',
-      success: function(returnedJSON){
-        JSONPromise.resolve(returnedJSON.mapId);
-      },
-      error: function(jqXHR, textStatus, errorThrown){
-        console.log('getLayerJSON Error for mapId: ' + mapId + '.  Error: ' + errorThrown);
-        JSONPromise.reject();
-      }
-    });
-
-    return JSONPromise.promise();
-
-    JSONPromise.done(function(result){
-      console.log('done');
-      console.log(result);
-    }).fail(function(error){
-      console.log('wtf');
-    })
-  },
-
-  textJSONPromise: function(){
-    var promise = moabi.getJSONPromise('moabi_mining')
-    promise.done(function(result){
-      console.log('done');
-      console.log(result);
-    }).fail(function(error){
-      console.log('wtf');
-    })
   },
 
   getLayerZIndex: function(mapId){
