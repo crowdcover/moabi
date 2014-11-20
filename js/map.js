@@ -259,9 +259,15 @@ var moabi = {
   },
 
   setLayersZIndices: function(mapIds){
-    // set zIndex for each mapId in array mapIds, arranged from lowest to highest
+    var legendContents = $('.legend-contents');
+
     for(var i=0; i<mapIds.length; i++){
+      // set zIndex for each mapId in array mapIds, arranged from lowest to highest
       moabi.setLayerZIndex(mapIds[i], i);
+
+      // reorder legends
+      legendContents.children('.moabi-legend[data-id="' + mapIds[i] + '"]')
+                    .prependTo(legendContents);
     }
   },
 
@@ -332,13 +338,6 @@ var moabi = {
                 'data-id': mapId,
                 html: layerJSON.legend
     }).prependTo('.map-legend .legend-contents');
-  },
-
-  reorderLegend: function(mapId, position){
-    var legendContents = $('.legend-contents'),
-        layerLegend = legendContents.children('.moabi-legend[data-id="' + mapId + '"]');
-
-    legendContents.prepend(layerLegend);
   },
 
   removeLegend: function(mapId){
