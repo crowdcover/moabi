@@ -5,6 +5,18 @@
    /* color: #29abe2; /* blue || #FF8F00; /* darker red orange */
     cursor: default;
   }
+.leaflet-bottom .leaflet-control { margin-bottom: 5px; }
+  .leaflet-left .leaflet-control { margin-left: 5px; }
+  .leaflet-top .leaflet-control { margin-top: 5px; }
+  .leaflet-right .leaflet-control { margin-right: 5px; }
+  .leaflet-bottom.leaflet-left {
+  left: 43px; /* make space for moabi logo */
+  }
+  .leaflet-control-scale .leaflet-control-scale-line {
+    padding: 0px 5px;
+    font-size: 10px;
+    line-height: 16px;
+  }
 
 /* widgets/controls */
   .layer-ui .not-displayed,

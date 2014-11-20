@@ -133,6 +133,7 @@ var moabi = {
     mapLayers.baseLayer.id.setZIndex(-1);
 
     moabi.map.zoomControl.setPosition('topleft');
+    L.control.scale().addTo(this.map);
     moabi.leaflet_hash = L.hash(this.map);
 
     moabi.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
