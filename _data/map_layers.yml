@@ -113,14 +113,14 @@
             <div class='moabi-legend space-bottom1' data-id='moabi_community_mapping'>
               <div>
                 <h3>Community Mapping, Ingendi</h3>
-                <img class='legend-icon' src='/img/chainsaw.svg'></img><h3 class='micro'>Logging (legal)</h3>
-                <img class='legend-icon' src='/img/chainsaw_illegal.svg'></img><h3 class='micro'>Logging (illegal)</h3>
-                <img class='legend-icon' src='/img/community.svg'></img><h3 class='micro'>Community Site</h3>
-                <img class='legend-icon' src='/img/tree.svg'></img><h3 class='micro'>Sacred Site</h3>
-                <img class='legend-icon' src='/img/paw.svg'></img><h3 class='micro'>Hunting Site</h3>
-                <img class='legend-icon' src='/img/fish.svg'></img><h3 class='micro'>Fishing Site</h3>
-                <img class='legend-icon' src='/img/food_bag.svg'></img><h3 class='micro'>Foraging Site</h3>
-                <img class='legend-icon' src='/img/agriculture.svg'></img><h3 class='micro'>Farming Site</h3>
+                <img class='legend-icon' src='/img/chainsaw.svg'></img><div class='micro'>Logging (legal)</div>
+                <img class='legend-icon' src='/img/chainsaw_illegal.svg'></img><div class='micro'>Logging (illegal)</div>
+                <img class='legend-icon' src='/img/community.svg'></img><div class='micro'>Community Site</div>
+                <img class='legend-icon' src='/img/tree.svg'></img><div class='micro'>Sacred Site</div>
+                <img class='legend-icon' src='/img/paw.svg'></img><div class='micro'>Hunting Site</div>
+                <img class='legend-icon' src='/img/fish.svg'></img><div class='micro'>Fishing Site</div>
+                <img class='legend-icon' src='/img/food_bag.svg'></img><div class='micro'>Foraging Site</div>
+                <img class='legend-icon' src='/img/agriculture.svg'></img><div class='micro'>Farming Site</div>
               </div>
             </div>
     date: 2014
@@ -154,8 +154,8 @@
             <div class='moabi-legend space-bottom1' data-id='moabi_hydropower'>
               <div>
                 <h3>Hydroelectric Power</h3>
-                <span class='legend-icon dot' style='background-color: #D12F3E; border: 1px solid #FFF'></span><h3 class='micro'>Existing Dam</h3>
-                <span class='legend-icon dot' style='background-color: #DEA2A9; border: 1px solid #FFF'></span><h3 class='micro'>Planned Dam</h3>
+                <span class='legend-icon dot' style='background-color: #D12F3E; border: 1px solid #FFF'></span><div class='micro'>Existing Dam</div>
+                <span class='legend-icon dot' style='background-color: #DEA2A9; border: 1px solid #FFF'></span><div class='micro'>Planned Dam</div>
               </div>
             </div>
     date: 2013
@@ -174,8 +174,8 @@
             <div class='moabi-legend space-bottom1' data-id='moabi_transmission_lines'>
               <div>
                 <h3>Electricity Transmission Lines</h3>
-                <span class='legend-icon' style='border-bottom: 3px solid #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><h3 class='micro'>Transmission Line (existing)</h3>
-                <span class='legend-icon' style='border-bottom: 3px dotted #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><h3 class='micro'>Transmission Line (planned)</h3>
+                <span class='legend-icon' style='border-bottom: 3px solid #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><div class='micro'>Transmission Line (existing)</div>
+                <span class='legend-icon' style='border-bottom: 3px dotted #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><div class='micro'>Transmission Line (planned)</div>
               </div>
             </div>
     date: 2013
@@ -214,15 +214,15 @@
               <h3>Mining Concessions</h3>
               <div>
                 <div class='block double-stroke' style='background-color: #F9F9F9'></div>
-                <h3>Research Permits</h3>
+                <div>Research Permits</div>
               </div>
               <div>
                 <div class='block double-stroke' style='background-color: #FFEF35'></div>
-                <h3>Exploration Permits</h3>
+                <div>Exploration Permits</div>
               </div>
               <div>
                 <div class='block double-stroke striped' style='background-color: #FFE420'></div>
-                <h3>Exploitation Permits</h3>
+                <div>Exploitation Permits</div>
               </div>
             </div>
     date: April 2014
@@ -242,11 +242,11 @@
               <h3>Oil Concessions</h3>
               <div>
                 <div class='block double-stroke' style='background-color: #FFB651'></div>
-                <h3>Active</h3>
+                <div>Active</div>
               </div>
               <div>
                 <div class='block double-stroke' style='background-color: rgba(255, 182, 81, 0.27)'></div>
-                <h3>Inactive/Unknown</h3>
+                <div>Inactive/Unknown</div>
               </div>
             </div>
     date: 2013
