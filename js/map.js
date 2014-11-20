@@ -9,7 +9,6 @@ var moabi = {
 
   initMap: function() {
     this.buildMap();
-    $('#map').on('changeLayer', this.changeLayer);
     $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
     $('.sortable').sortable({
       placeholder: "ui-state-highlight",
@@ -71,7 +70,7 @@ var moabi = {
     e.preventDefault();
     e.stopPropagation();
 
-    $('#map').trigger('changeLayer', $(this).parent('li').data('id'));
+    moabi.changeLayer($(this).parent('li').data('id'));
   },
 
   mapCapture: function(e) {
@@ -144,10 +143,8 @@ var moabi = {
     moabi.updateExportLink(location.hash);
   },
 
-  // changeLayer() and subsidiary functions, triggered on changeLayer Event //
-  changeLayer: function(e, mapId){
+  changeLayer: function(mapId){
     // initiate everything that should happen when a map layer is added/removed
-    // triggered by custom event 'changeLayer'
 
     // alias tileLayer in mapLayers, if not already
     if(! mapLayers.dataLayers[mapId]){
@@ -290,7 +287,7 @@ var moabi = {
               moabi.removeLayer = removeLayer;
 
               if( keepLayers.indexOf(removeLayer) === -1){
-                $('#map').trigger('changeLayer', removeLayer);
+                moabi.changeLayer(removeLayer);
                 return removeLayer;
               }
             });
@@ -417,7 +414,7 @@ var moabi = {
     if (layers) { layers = layers.split(','); }
     moabi.removeAllExcept([]); //could be smarter
     for (i = layers.length-1; i >= 0; i--){
-      $('#map').trigger('changeLayer', layers[i]);
+      moabi.changeLayer(layers[i]);
     }
   },
 
@@ -471,7 +468,7 @@ var moabi = {
       for(i=0; i<newLayers.length; i++){
         newLayer = newLayers[i];
         if(displayedLayersIds.indexOf(newLayer) === -1){
-          $('#map').trigger('changeLayer', newLayers[i]);
+          moabi.changeLayer(newLayers[i]);
         }
       }
     }
