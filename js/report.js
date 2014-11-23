@@ -1,8 +1,8 @@
 //Load common code that includes config, then load the app logic for this page.
 require(['./common'], function (common) {
-  require(['app/map-app'], function(app){
+  require(['app/report-app'], function(app){
 
-    app.initMap();
+    app.initReport();
 
   });
 });

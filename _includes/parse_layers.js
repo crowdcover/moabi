@@ -1,8 +1,7 @@
-<script>
 {% assign mapBaseLayer = page.basemap.layers | first %}
 var mapLayers = {
     baseLayer: {
-        id: L.tileLayer('http://tiles.osm.moabi.org/{{mapBaseLayer.id}}/{z}/{x}/{y}.png'),
+        id: '{{mapBaseLayer.id}}',
         latlon: [{{page.basemap.center.lat}}, {{page.basemap.center.lon}}],
         zoom: {{page.basemap.center.zoom}}
     },
@@ -10,4 +9,3 @@ var mapLayers = {
     currentLanguage: '{{page.language}}',
     pageType: '{{page.layout}}'
 };
-</script>

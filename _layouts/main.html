@@ -3,8 +3,8 @@
 <!doctype html>
 <html>
 <head>
-{% include dochead.html %}
-  <link href='{{site.baseurl}}/css/base.css' rel='stylesheet' />
+  {% include dochead.html %}
+  <script data-main="{{site.baseurl}}/js/main" src="{{site.baseurl}}/js/vendor/require.js"></script>
 </head>
 
 <body>
@@ -17,12 +17,5 @@
 {% unless page.hide contains 'footer' %}
   {% include footer.html %}
 {% endunless %}
-
-<script src='{{site.baseurl}}/js/map.js'></script>
-<script>
-  moabi.initDocumentation();
-</script>
-
-
 </body>
 </html>
