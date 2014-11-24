@@ -13,18 +13,4 @@ requirejs.config({
   }
 });
 
-require(["jquery"], function(){
-  var headerDropdown = function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    $(this).parent('.dropdown').toggleClass('open');
-  };
-
-  var printPage = function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    window.print();
-  };
-  $('header .dropdown').on('click', 'a.dropdown-button', headerDropdown);
-  $('a.print-page').on('click', printPage);
-});
+var moabi = {};

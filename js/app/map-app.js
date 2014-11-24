@@ -1,10 +1,10 @@
 // map module
-define(['mapbox', 'leafletImage', 'leafletHash', 'jquery-sortable'],
-function (L, leafletImage, leaflet_hash, sortable) {
-  var moabi = {
+define(['app/main-app', 'mapbox', 'leafletImage', 'leafletHash', 'jquery', 'jquery-sortable'],
+function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
+  $.extend(moabi, {
     initMap: function(){
       moabi.buildMap();
-      $('.layer-ui li.layer-toggle').on('click', 'a', moabi.layerButtonClick);
+      $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
       $('.sortable').sortable({
         placeholder: "ui-state-highlight",
         helper: 'clone',
@@ -29,10 +29,11 @@ function (L, leafletImage, leaflet_hash, sortable) {
           });
         }
       });
-      $('.slider').on('click', 'a', moabi.slidePanel);
-      $('#snap').on('click', moabi.mapCapture);
-      $('.page-fade-link').on('click', moabi.fade2Page);
+      $('.slider').on('click', 'a', this.slidePanel);
+      $('#snap').on('click', this.mapCapture);
+      $('.page-fade-link').on('click', this.fade2Page);
     },
+
     buildMap: function(){
       mapLayers.baseLayer.tileLayer = L.tileLayer('http://tiles.osm.moabi.org/'+ mapLayers.baseLayer.id +'/{z}/{x}/{y}.png');
 
@@ -409,6 +410,6 @@ function (L, leafletImage, leaflet_hash, sortable) {
       });
     }
 
-  };
+  });
   return moabi;
 });

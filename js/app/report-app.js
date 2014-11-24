@@ -55,7 +55,7 @@ define(['app/map-app', 'waypoints'], function (moabi, waypoints) {
 
       $this.parent('li').siblings('li').children('a.active').removeClass('active');
       $this.addClass('active');
-    },
+    }
 
   });
   return moabi;

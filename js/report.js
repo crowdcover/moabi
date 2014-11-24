@@ -1,5 +1,5 @@
-//Load common code that includes config, then load the app logic for this page.
-require(['./common'], function (common) {
+//Load common code for require config, then load the app logic for this page.
+require(['./common'], function (moabi) {
   require(['app/report-app'], function(app){
 
     app.initReport();
