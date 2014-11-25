@@ -35,11 +35,11 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     },
 
     buildMap: function(){
-      pageConfig.baseLayer.tileLayer = L.tileLayer('http://tiles.osm.moabi.org/'+ pageConfig.baseLayer.id +'/{z}/{x}/{y}.png');
+      var baseLayer = L.tileLayer('http://tiles.osm.moabi.org/'+ pageConfig.baseLayer.id +'/{z}/{x}/{y}.png');
 
       L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
       this.map = L.mapbox.map('map', undefined, {
-        layers: pageConfig.baseLayer.tileLayer,
+        layers: baseLayer,
         center: pageConfig.baseLayer.latlon,
         zoom: pageConfig.baseLayer.zoom,
         scrollWheelZoom: false,
@@ -47,12 +47,12 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
         maxZoom: 18
       });
 
-      // // building L.mapbox.map with an undefined layer creates an extra, empty .leaflet-layer, so delete it.
-      var leafletLayers = $(this.map._tilePane).children('.leaflet-layer');
-      leafletLayers.eq(1).remove();
-
-      // // assign explicit z-index to base layer
-      pageConfig.baseLayer.tileLayer.setZIndex(-1);
+      // add additional object to map object to store references to layers
+        // set baselayer z-index to -1, while you're at it
+      this.map.moabiLayers = {
+        baseLayer: baseLayer.setZIndex(-1),
+        dataLayers: []
+      };
 
       this.map.zoomControl.setPosition('topleft');
       L.control.scale().addTo(this.map);
@@ -76,11 +76,11 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     changeLayer: function(mapId){
       // initiate everything that should happen when a map layer is added/removed
 
-      // alias tileLayer in pageConfig, if not already
-      if(! pageConfig.dataLayers[mapId]){
-        pageConfig.dataLayers[mapId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
+      // alias tileLayer in map.moabiLayers.dataLayers, if not already
+      if(! this.map.moabiLayers.dataLayers[mapId]){
+        this.map.moabiLayers.dataLayers[mapId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
       }
-      var tileLayer = pageConfig.dataLayers[mapId];
+      var tileLayer = this.map.moabiLayers.dataLayers[mapId];
 
       // if layer is present, run all remove layer actions
       if(this.map.hasLayer(tileLayer)){
@@ -135,9 +135,9 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
         type: 'GET',
         dataType: 'json',
         contentType: 'application/json',
-        success: function(pageConfigJSON){
-          if(pageConfigJSON[mapId]){
-            JSONPromise.resolve(pageConfigJSON[mapId]);
+        success: function(layersJSON){
+          if(layersJSON[mapId]){
+            JSONPromise.resolve(layersJSON[mapId]);
           }else{
             JSONPromise.reject('no mapId ' + mapId);
           }
@@ -158,7 +158,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     getLayers: function(){
       // return an array of mapIds ordered by zIndex from lowest to highest
       // it is not guaranteed that a mapId's index in the array matches its zIndex
-      var dataLayers = pageConfig.dataLayers,
+      var dataLayers = moabi.map.moabiLayers.dataLayers,
           layersSortedByZIndex = [];
 
       for(mapId in dataLayers){
@@ -174,16 +174,14 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
 
     getLayerZIndex: function(mapId){
       // return mapId zIndex, or -1 if dataLayers doesn't contain mapId
-      // var zIndex = pageConfig.dataLayers[mapId].options.zIndex;
-      // return zIndex ? zIndex : -1;
-      if(pageConfig.dataLayers[mapId]){
-        return pageConfig.dataLayers[mapId].options.zIndex;
+      if(moabi.map.moabiLayers.dataLayers[mapId]){
+        return moabi.map.moabiLayers.dataLayers[mapId].options.zIndex;
       }
       return -1;
     },
 
     setLayerZIndex: function(mapId, zIndex){
-      pageConfig.dataLayers[mapId].setZIndex(zIndex);
+      moabi.map.moabiLayers.dataLayers[mapId].setZIndex(zIndex);
     },
 
     setLayersZIndices: function(mapIds){
