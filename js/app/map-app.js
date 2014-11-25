@@ -3,6 +3,7 @@ define(['app/main-app', 'mapbox', 'leafletImage', 'leafletHash', 'jquery', 'jque
 function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
   $.extend(moabi, {
     initMap: function(){
+      moabi.initMain();
       moabi.buildMap();
       $('.layer-ui li.layer-toggle').on('click', 'a', this.layerButtonClick);
       $('.sortable').sortable({

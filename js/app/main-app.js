@@ -1,6 +1,5 @@
 // main module
 define(['jquery'], function ($) {
-// define(function () {
   $.extend(moabi, {
     initMain: function(){
       $('header .dropdown').on('click', 'a.dropdown-button', this.headerDropdown);
