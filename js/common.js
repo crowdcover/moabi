@@ -9,7 +9,9 @@ requirejs.config({
   },
   "shim": {
     "mapbox": { "exports": "L" },
-    "leafletHash": ["mapbox"]
+    "leafletHash": ["mapbox"],
+    "jquery-sortable": ["jquery"],
+    "waypoints": ["jquery"]
   }
 });
 
