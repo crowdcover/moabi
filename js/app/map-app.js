@@ -35,13 +35,13 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     },
 
     buildMap: function(){
-      mapLayers.baseLayer.tileLayer = L.tileLayer('http://tiles.osm.moabi.org/'+ mapLayers.baseLayer.id +'/{z}/{x}/{y}.png');
+      pageConfig.baseLayer.tileLayer = L.tileLayer('http://tiles.osm.moabi.org/'+ pageConfig.baseLayer.id +'/{z}/{x}/{y}.png');
 
       L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
       this.map = L.mapbox.map('map', undefined, {
-        layers: mapLayers.baseLayer.tileLayer,
-        center: mapLayers.baseLayer.latlon,
-        zoom: mapLayers.baseLayer.zoom,
+        layers: pageConfig.baseLayer.tileLayer,
+        center: pageConfig.baseLayer.latlon,
+        zoom: pageConfig.baseLayer.zoom,
         scrollWheelZoom: false,
         minZoom: 4,
         maxZoom: 18
@@ -52,7 +52,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
       leafletLayers.eq(1).remove();
 
       // // assign explicit z-index to base layer
-      mapLayers.baseLayer.tileLayer.setZIndex(-1);
+      pageConfig.baseLayer.tileLayer.setZIndex(-1);
 
       this.map.zoomControl.setPosition('topleft');
       L.control.scale().addTo(this.map);
@@ -76,11 +76,11 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     changeLayer: function(mapId){
       // initiate everything that should happen when a map layer is added/removed
 
-      // alias tileLayer in mapLayers, if not already
-      if(! mapLayers.dataLayers[mapId]){
-        mapLayers.dataLayers[mapId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
+      // alias tileLayer in pageConfig, if not already
+      if(! pageConfig.dataLayers[mapId]){
+        pageConfig.dataLayers[mapId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
       }
-      var tileLayer = mapLayers.dataLayers[mapId];
+      var tileLayer = pageConfig.dataLayers[mapId];
 
       // if layer is present, run all remove layer actions
       if(this.map.hasLayer(tileLayer)){
@@ -135,9 +135,9 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
         type: 'GET',
         dataType: 'json',
         contentType: 'application/json',
-        success: function(mapLayersJSON){
-          if(mapLayersJSON[mapId]){
-            JSONPromise.resolve(mapLayersJSON[mapId]);
+        success: function(layersJSON){
+          if(layersJSON[mapId]){
+            JSONPromise.resolve(layersJSON[mapId]);
           }else{
             JSONPromise.reject('no mapId ' + mapId);
           }
@@ -158,7 +158,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     getLayers: function(){
       // return an array of mapIds ordered by zIndex from lowest to highest
       // it is not guaranteed that a mapId's index in the array matches its zIndex
-      var dataLayers = mapLayers.dataLayers,
+      var dataLayers = pageConfig.dataLayers,
           layersSortedByZIndex = [];
 
       for(mapId in dataLayers){
@@ -174,16 +174,16 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
 
     getLayerZIndex: function(mapId){
       // return mapId zIndex, or -1 if dataLayers doesn't contain mapId
-      // var zIndex = mapLayers.dataLayers[mapId].options.zIndex;
+      // var zIndex = pageConfig.dataLayers[mapId].options.zIndex;
       // return zIndex ? zIndex : -1;
-      if(mapLayers.dataLayers[mapId]){
-        return mapLayers.dataLayers[mapId].options.zIndex;
+      if(pageConfig.dataLayers[mapId]){
+        return pageConfig.dataLayers[mapId].options.zIndex;
       }
       return -1;
     },
 
     setLayerZIndex: function(mapId, zIndex){
-      mapLayers.dataLayers[mapId].setZIndex(zIndex);
+      pageConfig.dataLayers[mapId].setZIndex(zIndex);
     },
 
     setLayersZIndices: function(mapIds){
