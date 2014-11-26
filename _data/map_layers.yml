@@ -339,3 +339,33 @@
     source:
         name: IFL Mapping Team (Greenpeace, World Resources Institute, Transparent World)
         url: http://www.intactforests.org
+
+  - id: era_forest_stratification
+    name: Era Forest Stratification
+    categories: [forestry, redd]
+    description: |
+                 Remote sensed survey of forest stratification for the ERA REDD+ project.
+    legend: |
+            <div class='moabi-legend space-bottom1' data-id='era_forest_stratification'>
+              <h3>Era Forest Stratification</h3>
+              <div>
+                <div class='block double-stroke' style='background-color: #58600e'></div>
+                <div>Dense Forest</div>
+              </div>
+              <div>
+                <div class='block double-stroke' style='background-color: #95a12e'></div>
+                <div>Secondary Forest</div>
+              </div>
+              <div>
+                <div class='block double-stroke' style='background-color: #cdd488'></div>
+                <div>Swamp</div>
+              </div>
+              <div>
+                <div class='block double-stroke' style='background-color: #fffbe9'></div>
+                <div>Savannah</div>
+              </div>
+            </div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
