@@ -284,7 +284,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
         '</li>',
         '<li class="pad0 space">',
           '<strong class="quiet">Date:</strong> ',
-          '<span class="micro', layerJSON.date, '</span>',
+          '<span class="micro">', layerJSON.date, '</span>',
         '</li>',
       '</ul>'];
 
@@ -296,6 +296,8 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
       }
       summary.splice(13, 0, urlHTML.join(''));
 
+      console.log(summary.join(''));
+      console.log(layerJSON);
       $('.layer-ui').append(summary.join(''));
     },
 
