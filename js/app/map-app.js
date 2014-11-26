@@ -263,7 +263,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
 
     showLegend: function(mapId, layerJSON){
       $('<div>', {
-                  'class': 'moabi-legend',
+                  'class': 'moabi-legend space-bottom1',
                   'data-id': mapId,
                   html: layerJSON.legend
       }).prependTo('.map-legend .legend-contents');
