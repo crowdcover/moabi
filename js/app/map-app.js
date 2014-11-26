@@ -33,7 +33,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
         // set baselayer z-index to -1, while you're at it
       this.map.moabiLayers = {
         baseLayer: baseLayer.setZIndex(-1),
-        dataLayers: []
+        dataLayers: {}
       };
 
       this.map.zoomControl.setPosition('topleft');
@@ -296,8 +296,6 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
       }
       summary.splice(13, 0, urlHTML.join(''));
 
-      console.log(summary.join(''));
-      console.log(layerJSON);
       $('.layer-ui').append(summary.join(''));
     },
 
