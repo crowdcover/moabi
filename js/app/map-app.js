@@ -33,7 +33,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
         // set baselayer z-index to -1, while you're at it
       this.map.moabiLayers = {
         baseLayer: baseLayer.setZIndex(-1),
-        dataLayers: []
+        dataLayers: {}
       };
 
       this.map.zoomControl.setPosition('topleft');
@@ -79,11 +79,13 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     changeLayer: function(mapId){
       // initiate everything that should happen when a map layer is added/removed
 
-      // alias tileLayer in map.moabiLayers.dataLayers, if not already
-      if(! this.map.moabiLayers.dataLayers[mapId]){
-        this.map.moabiLayers.dataLayers[mapId] = L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png');
+      // cache tileLayer in moabi.map.moabiLayers.dataLayers[mapId]
+      if(! moabi.map.moabiLayers.dataLayers[mapId]){
+        moabi.map.moabiLayers.dataLayers[mapId] = {
+          tileLayer: L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png')
+        };
       }
-      var tileLayer = this.map.moabiLayers.dataLayers[mapId];
+      var tileLayer = this.map.moabiLayers.dataLayers[mapId].tileLayer;
 
       // if layer is present, run all remove layer actions
       if(this.map.hasLayer(tileLayer)){
@@ -133,22 +135,32 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
 
     getLayerJSON: function(mapId){
       // returns a promise object, that when resolved, contains JSON for mapId
+      // assumes that map.moabiLayers.dataLayers[mapId] already exists and contains [mapId].tileLayer
       var JSONPromise = $.Deferred();
-      $.ajax('/map_layers.json', {
-        type: 'GET',
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function(layersJSON){
-          if(layersJSON[mapId]){
-            JSONPromise.resolve(layersJSON[mapId]);
-          }else{
-            JSONPromise.reject('no mapId ' + mapId);
+      if(! moabi.map.moabiLayers.dataLayers[mapId].layerJSON){
+        // run ajax request for layerJSON and when loaded, store in map.moabiLayers.dataLayers[mapId].layerJSON
+        $.ajax('/map_layers.json', {
+          type: 'GET',
+          dataType: 'json',
+          contentType: 'application/json',
+          success: function(layersJSON){
+            if(layersJSON[mapId]){
+              // cache layerJSON in map.moabiLayers.dataLayers
+              moabi.map.moabiLayers.dataLayers[mapId].layerJSON = layersJSON[mapId];
+
+              // resolve promise object
+              JSONPromise.resolve(layersJSON[mapId]);
+            }else{
+              JSONPromise.reject('no mapId ' + mapId);
+            }
+          },
+          error: function(jqXHR, textStatus, errorThrown){
+            JSONPromise.reject(errorThrown);
           }
-        },
-        error: function(jqXHR, textStatus, errorThrown){
-          JSONPromise.reject(errorThrown);
-        }
-      });
+        });
+      }else{
+        JSONPromise.resolve(moabi.map.moabiLayers.dataLayers[mapId].layerJSON);
+      }
       return JSONPromise;
       // working with JSONPromise
       // moabi.getJSONPromise(mapId).done(function(result){
@@ -161,7 +173,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     getLayers: function(){
       // return an array of mapIds ordered by zIndex from lowest to highest
       // it is not guaranteed that a mapId's index in the array matches its zIndex
-      var dataLayers = moabi.map.moabiLayers.dataLayers,
+      var dataLayers = Object.keys(moabi.map.moabiLayers.dataLayers),
           layersSortedByZIndex = [];
 
       for(mapId in dataLayers){
@@ -178,13 +190,13 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     getLayerZIndex: function(mapId){
       // return mapId zIndex, or -1 if dataLayers doesn't contain mapId
       if(moabi.map.moabiLayers.dataLayers[mapId]){
-        return moabi.map.moabiLayers.dataLayers[mapId].options.zIndex;
+        return moabi.map.moabiLayers.dataLayers[mapId].tileLayer.options.zIndex;
       }
       return -1;
     },
 
     setLayerZIndex: function(mapId, zIndex){
-      moabi.map.moabiLayers.dataLayers[mapId].setZIndex(zIndex);
+      moabi.map.moabiLayers.dataLayers[mapId].tileLayer.setZIndex(zIndex);
     },
 
     setLayersZIndices: function(mapIds){
@@ -296,8 +308,6 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
       }
       summary.splice(13, 0, urlHTML.join(''));
 
-      console.log(summary.join(''));
-      console.log(layerJSON);
       $('.layer-ui').append(summary.join(''));
     },
 
