@@ -64,22 +64,37 @@
       - value: province
         geometry: [polygon]
         description: The largest administrative unit.
-        optional_attr: []
+        optional_attr: [name, population]
         rendered:
       - value: district
         geometry: [polygon]
         description: The next smallest administrative unit.
-        optional_attr: []
+        optional_attr: [name, population]
         rendered:
       - value: territory
         geometry: [polygon]
         description: The next smallest administrative unit.
-        optional_attr: []
+        optional_attr: [name, population]
         rendered:
       - value: sector
         geometry: [polygon]
-        description: The smallest administrative unit.  Also known as collectivity.
-        optional_attr: []
+        description: The next smallest administrative unit.  Also known as collectivity.
+        optional_attr: [name, population]
+        rendered:
+      - value: groupment
+        geometry: [polygon]
+        description: The next smallest administrative unit.
+        optional_attr: [name, population]
+        rendered:
+      - value: clan
+        geometry: [polygon]
+        description: The next smallest administrative unit.  Usually a grouped cluster of villages.
+        optional_attr: [name, population]
+        rendered:
+      - value: locality
+        geometry: [polygon]
+        description: The smallest administrative unit.  A village's territorial boundary.
+        optional_attr: [name, population]
         rendered:
 
   - key: highway
