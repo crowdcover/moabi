@@ -7,22 +7,17 @@ categories:
   - en
 duedate: false
 summary: |
-         Moabi is currently looking for a web design consultant to help grow our website.  We are looking for someone with an extensive web design background, highly competent with HTML and CSS, and with a strong grasp on UX and modern web design techniques.  The post will be based in DC.
+         Moabi is looking for a web design consultant to help with design templating.  The designer will be responsible for delivering data-centric design templates for content across the CongoMines project, as well as contributing to the site’s general style guide.
 
 ---
 # Design Consultant
 
-The designer is responsible for implementing data-centric design ideas for website design, layout, typology, and structure across all of Moabi's various projects.
-
-## Project Scope
-Having made our platform live on April 22, Moabi is looking for a web design consultant to help expand on the current site.  As site functionality expands, and our lists of projects grow, we will be iteratively improving upon design and functionality.
+Moabi is looking for a web design consultant to help with design templating.  The designer will be responsible for delivering data-centric design templates for content across the CongoMines project, as well as contributing to the site’s general style guide.
 
 ## Key Responsibilities
-1. Translate the site’s growing content into a seamless, intuitive design structure that builds off of and improves the current flat, modern, data-centric design
+1. Translate site content into a seamless, intuitive, responsive design
 2. Improve typographic hierarchy
 3. Design site iconography to match the project’s overall visual personality
-4. Design/manage project newsletter
-5. Report to cartography team and project lead
 
 ## Required Skills
 1. Data-centric web design using modern HTML and CSS
@@ -32,27 +27,36 @@ Having made our platform live on April 22, Moabi is looking for a web design con
 5. Adobe Photoshop/Illustrator or other vector/raster graphical software in order to manage site graphic assets
 
 ## Additional Skills
-1. Familiarity with JavaScript libraries such as JQuery, D3, and mapbox.js
-2. Experience using Git and GitHub.
-3. Comfortable with Agile, iterative development
-4. Past work with either web mapping projects and/or environmental management projects
+1. Experience using Git, GitHub, and gh-pages for collaborative work
+2. Comfortable with agile, iterative development
+3. Past work with either web mapping projects and/or environmental management projects a plus.
+4. Experience with, or willingness to learn, Jekyll static site templating.
+5. While the designer is not responsible for front end development, he/she will be working closely with the project’s front end developer.  Experience with or interest in JS libraries such as D3 and Leaflet/MapBox.js is a plus.
 
 ## Deliverables
-1. Clean, custom stylesheets building off the established base.css framework and modified html pages.
-2. Typographic webfont library with simple but versatile usage guidelines
-3. Iconography library
-4. Web-optimized imagery assets from the projects photo library, accounting for load times and web based viewing.
+1. Responsive HTML templates for the following pages, made in collaboration with the project team
+  * landing
+  * about
+  * article library
+  * blog
+  * report
+  * map
+  * issue/topic pages
+  * company profile pages
+2. Clean stylesheets building off the established base.css framework or introducing a new css framework.
+3. Typographic webfont library with simple but versatile usage guidelines
+4. Iconography library
+5. Web-optimized imagery assets from the projects photo library, accounting for load times and web based viewing.
+
 
 ## Consultancy duration
-3 months with possibility of extension
-Reporting to Technical Lead and Moabi Project Lead
-Based in DC
+1 - 2 months, depending on the full time/part time status.  The position reports to the project Front End Developer and Cartographer.
 
 ## Remuneration
 Payment will be negotiable and commensurate with experience
 
 ## Application
-Send your resume, and examples of your work, website, and/or GitHub projects to [info@crowdcover.org](mailto:info@crowdcover.org).
+Send your resume, and examples of your work, website, and/or GitHub projects to [info@crowdcover.org](mailto:info@crowdcover.org).  Please include an rough estimate of project timeline and cost, and if needed, a brief description of how you plan to approach the project.
 
 
 
