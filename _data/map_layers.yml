@@ -369,3 +369,39 @@
     source:
         name: ERA-WWC
         url:
+
+  - id: era_agriculture_projects
+    name: Era Agriculture Projects
+    categories: [forestry, redd]
+    description: |
+                 ...
+    legend: |
+            <div></div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
+
+  - id: era_education_projects
+    name: Era Education Projects
+    categories: [forestry, redd]
+    description: |
+                 ...
+    legend: |
+            <div></div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
+
+  - id: era_community_projects
+    name: Era Community Projects
+    categories: [forestry, redd]
+    description: |
+                 ...
+    legend: |
+            <div></div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
