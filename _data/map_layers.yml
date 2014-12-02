@@ -4,29 +4,27 @@
     description: |
                 Tree cover, 2000, defined as canopy closure for all vegetation taller than 5m in height. Categorized as a percentage (0 - 100) of each pixel cell.  Resolution: 1 arc-second (~30m).
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_forest_cover'>
-              <h3>Forest Cover(%), 2000</h3>
-              <table class='fixed'>
-                <thead>
-                  <tr>
-                    <th class='center'>10</th>
-                    <th class='center'>40</th>
-                    <th class='center'>60</th>
-                    <th class='center'>90</th>
-                    <th class='center'>100</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style='background-color: #FCFBF7;'></td>
-                    <td style='background-color: #F8E8C6;'></td>
-                    <td style='background-color: #C9CA85;'></td>
-                    <td style='background-color: #878F45;'></td>
-                    <td style='background-color: #50551C;'></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <h3>Forest Cover(%), 2000</h3>
+            <table class='fixed'>
+              <thead>
+                <tr>
+                  <th class='center'>10</th>
+                  <th class='center'>40</th>
+                  <th class='center'>60</th>
+                  <th class='center'>90</th>
+                  <th class='center'>100</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style='background-color: #FCFBF7;'></td>
+                  <td style='background-color: #F8E8C6;'></td>
+                  <td style='background-color: #C9CA85;'></td>
+                  <td style='background-color: #878F45;'></td>
+                  <td style='background-color: #50551C;'></td>
+                </tr>
+              </tbody>
+            </table>
     date: 2000
     source:
         name: University of Maryland (UMD)
@@ -38,29 +36,27 @@
     description: |
                  Total forest loss, 2000 - 2010, defined as a standard-replacement disturbance, or a change from forest to non-forest.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.  Resolution: 1 arc-second (~30m).
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_forest_lossyear'>
-              <h3>Forest Loss by Year</h3>
-              <table class='fixed'>
-                <thead>
-                  <tr>
-                    <th class='center'>2001</th>
-                    <th class='center'>2003</th>
-                    <th class='center'>2006</th>
-                    <th class='center'>2009</th>
-                    <th class='center'>2012</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style='background-color: #ffffe0;'></td>
-                    <td style='background-color: #ffd67f;'></td>
-                    <td style='background-color: #ffab5c;'></td>
-                    <td style='background-color: #ff7a35;'></td>
-                    <td style='background-color: #ff3000;'></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <h3>Forest Loss by Year</h3>
+            <table class='fixed'>
+              <thead>
+                <tr>
+                  <th class='center'>2001</th>
+                  <th class='center'>2003</th>
+                  <th class='center'>2006</th>
+                  <th class='center'>2009</th>
+                  <th class='center'>2012</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style='background-color: #ffffe0;'></td>
+                  <td style='background-color: #ffd67f;'></td>
+                  <td style='background-color: #ffab5c;'></td>
+                  <td style='background-color: #ff7a35;'></td>
+                  <td style='background-color: #ff3000;'></td>
+                </tr>
+              </tbody>
+            </table>
     date: 2000 - 2012
     source:
         name: University of Maryland (UMD)
@@ -72,13 +68,10 @@
     description: |
                  DRC REDD+ pilot projects
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_redd_projects'>
-              <div>
-                <div class='block double-stroke' style='background-color: #dae57e'></div>
-                  <h3>REDD+ Projects</h3>
-                </div>
+            <div>
+              <div class='block double-stroke' style='background-color: #dae57e'></div>
+              <h3>REDD+ Projects</h3>
             </div>
-
     date: 2014
     tooltip_teaser: [name, status]
     tooltip_full: [name, status, methodology, start_date, end_date, project_leader, contact_person, contact_email]
@@ -92,11 +85,9 @@
     description: |
                  Existing protected areas in the DRC
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_protected'>
-              <div>
-                <div class='block' style='background-color: #d0ffab; border: 1px dashed #888'></div>
-                <h3>Protected Areas</h3>
-              </div>
+            <div>
+              <div class='block' style='background-color: #d0ffab; border: 1px dashed #888'></div>
+              <h3>Protected Areas</h3>
             </div>
     date: July 2013
     tooltip_teaser: [name, type]
@@ -110,18 +101,16 @@
     description: |
                  Moabi and LINAPYCO field data from Ingende
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_community_mapping'>
-              <div>
-                <h3>Community Mapping, Ingendi</h3>
-                <img class='legend-icon' src='/img/chainsaw.svg'></img><div class='micro'>Logging (legal)</div>
-                <img class='legend-icon' src='/img/chainsaw_illegal.svg'></img><div class='micro'>Logging (illegal)</div>
-                <img class='legend-icon' src='/img/community.svg'></img><div class='micro'>Community Site</div>
-                <img class='legend-icon' src='/img/tree.svg'></img><div class='micro'>Sacred Site</div>
-                <img class='legend-icon' src='/img/paw.svg'></img><div class='micro'>Hunting Site</div>
-                <img class='legend-icon' src='/img/fish.svg'></img><div class='micro'>Fishing Site</div>
-                <img class='legend-icon' src='/img/food_bag.svg'></img><div class='micro'>Foraging Site</div>
-                <img class='legend-icon' src='/img/agriculture.svg'></img><div class='micro'>Farming Site</div>
-              </div>
+            <div>
+              <h3>Community Mapping, Ingendi</h3>
+              <img class='legend-icon' src='/img/chainsaw.svg'></img><div class='micro'>Logging (legal)</div>
+              <img class='legend-icon' src='/img/chainsaw_illegal.svg'></img><div class='micro'>Logging (illegal)</div>
+              <img class='legend-icon' src='/img/community.svg'></img><div class='micro'>Community Site</div>
+              <img class='legend-icon' src='/img/tree.svg'></img><div class='micro'>Sacred Site</div>
+              <img class='legend-icon' src='/img/paw.svg'></img><div class='micro'>Hunting Site</div>
+              <img class='legend-icon' src='/img/fish.svg'></img><div class='micro'>Fishing Site</div>
+              <img class='legend-icon' src='/img/food_bag.svg'></img><div class='micro'>Foraging Site</div>
+              <img class='legend-icon' src='/img/agriculture.svg'></img><div class='micro'>Farming Site</div>
             </div>
     date: 2014
     source:
@@ -134,11 +123,9 @@
     description: |
                  Areas populated by indigenous people
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_indigenous'>
-              <div>
-                <div class='block double-stroke' style='background-color: #8697d1'></div>
-                <h3>Indigenous Lands</h3>
-              </div>
+            <div>
+              <div class='block double-stroke' style='background-color: #8697d1'></div>
+              <h3>Indigenous Lands</h3>
             </div>
     date: 2012
     source:
@@ -151,12 +138,10 @@
     description: |
                  Existing and planned hydroelectric dams
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_hydropower'>
-              <div>
-                <h3>Hydroelectric Power</h3>
-                <span class='legend-icon dot' style='background-color: #D12F3E; border: 1px solid #FFF'></span><div class='micro'>Existing Dam</div>
-                <span class='legend-icon dot' style='background-color: #DEA2A9; border: 1px solid #FFF'></span><div class='micro'>Planned Dam</div>
-              </div>
+            <div>
+              <h3>Hydroelectric Power</h3>
+              <span class='legend-icon dot' style='background-color: #D12F3E; border: 1px solid #FFF'></span><div class='micro'>Existing Dam</div>
+              <span class='legend-icon dot' style='background-color: #DEA2A9; border: 1px solid #FFF'></span><div class='micro'>Planned Dam</div>
             </div>
     date: 2013
     tooltip_teaser: [name, proposed]
@@ -171,12 +156,10 @@
     description: |
                  Existing and planned electricity transmission lines
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_transmission_lines'>
-              <div>
-                <h3>Electricity Transmission Lines</h3>
-                <span class='legend-icon' style='border-bottom: 3px solid #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><div class='micro'>Transmission Line (existing)</div>
-                <span class='legend-icon' style='border-bottom: 3px dotted #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><div class='micro'>Transmission Line (planned)</div>
-              </div>
+            <div>
+              <h3>Electricity Transmission Lines</h3>
+              <span class='legend-icon' style='border-bottom: 3px solid #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><div class='micro'>Transmission Line (existing)</div>
+              <span class='legend-icon' style='border-bottom: 3px dotted #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><div class='micro'>Transmission Line (planned)</div>
             </div>
     date: 2013
     tooltip_teaser: [name, proposed]
@@ -191,11 +174,9 @@
     description: |
                  Industrial and artisanal logging concessions
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_logging'>
-              <div>
-                <div class='block double-stroke' style='background-color: #BD925B'></div>
-                <h3>Logging Concessions</h3>
-              </div>
+            <div>
+              <div class='block double-stroke' style='background-color: #BD925B'></div>
+              <h3>Logging Concessions</h3>
             </div>
     tooltip_teaser: [operator]
     tooltip_full: [operator]
@@ -210,20 +191,18 @@
     description: |
                  All mining concessions, either in the application phase, in the research phase, actively being exploited, or under review.
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_mining'>
-              <h3>Mining Concessions</h3>
-              <div>
-                <div class='block double-stroke' style='background-color: #F9F9F9'></div>
-                <div>Research Permits</div>
-              </div>
-              <div>
-                <div class='block double-stroke' style='background-color: #FFEF35'></div>
-                <div>Exploration Permits</div>
-              </div>
-              <div>
-                <div class='block double-stroke striped' style='background-color: #FFE420'></div>
-                <div>Exploitation Permits</div>
-              </div>
+            <h3>Mining Concessions</h3>
+            <div>
+              <div class='block double-stroke' style='background-color: #F9F9F9'></div>
+              <div>Research Permits</div>
+            </div>
+            <div>
+              <div class='block double-stroke' style='background-color: #FFEF35'></div>
+              <div>Exploration Permits</div>
+            </div>
+            <div>
+              <div class='block double-stroke striped' style='background-color: #FFE420'></div>
+              <div>Exploitation Permits</div>
             </div>
     date: April 2014
     tooltip_teaser: [license, status, operator]
@@ -238,16 +217,14 @@
     description: |
                  Oil exploration blocks
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_oil'>
-              <h3>Oil Concessions</h3>
-              <div>
-                <div class='block double-stroke' style='background-color: #FFB651'></div>
-                <div>Active</div>
-              </div>
-              <div>
-                <div class='block double-stroke' style='background-color: rgba(255, 182, 81, 0.27)'></div>
-                <div>Inactive/Unknown</div>
-              </div>
+            <h3>Oil Concessions</h3>
+            <div>
+              <div class='block double-stroke' style='background-color: #FFB651'></div>
+              <div>Active</div>
+            </div>
+            <div>
+              <div class='block double-stroke' style='background-color: rgba(255, 182, 81, 0.27)'></div>
+              <div>Inactive/Unknown</div>
             </div>
     date: 2013
     tooltip_teaser: [name]
@@ -262,11 +239,9 @@
     description: |
                  <em>Layer in the process of being validated</em>.  Agricultural concessions, created based on the <a href='http://carpe.umd.edu/forest_monitoring/monitoring.php' target='_blank'>FACET</a> data, ‘cartes territoriales’ and a repertory of plantations.
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_palm'>
-              <div>
-                <div class='block double-stroke' style='background-color: #9A9867'></div>
-                <h3>Agriculture Concessions</h3>
-              </div>
+            <div>
+              <div class='block double-stroke' style='background-color: #9A9867'></div>
+              <h3>Agriculture Concessions</h3>
             </div>
     date: 2014
     source:
@@ -279,27 +254,25 @@
     description: |
                  Palm Oil Suitability Index from low/no suitability to high suitability, based on analysis by the International Institute for Applied Systems Analysis.
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_palm_suitability'>
-              <h3>Palm Oil Suitability</h3>
-              <table class='fixed'>
-                <thead>
-                  <tr>
-                    <th class='center'>Marginal</th>
-                    <th class='center'>Moderate</th>
-                    <th class='center'>Suitable</th>
-                    <th class='center'>High</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style='background-color: #F7EFDC;'></td>
-                    <td style='background-color: #E6C2CA;'></td>
-                    <td style='background-color: #9F93BB;'></td>
-                    <td style='background-color: #667099;'></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <h3>Palm Oil Suitability</h3>
+            <table class='fixed'>
+              <thead>
+                <tr>
+                  <th class='center'>Marginal</th>
+                  <th class='center'>Moderate</th>
+                  <th class='center'>Suitable</th>
+                  <th class='center'>High</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style='background-color: #F7EFDC;'></td>
+                  <td style='background-color: #E6C2CA;'></td>
+                  <td style='background-color: #9F93BB;'></td>
+                  <td style='background-color: #667099;'></td>
+                </tr>
+              </tbody>
+            </table>
     date: 2014
     source:
         name: IIASA - International Institute for Applied Systems Analysis
@@ -311,11 +284,9 @@
     description: |
                  Road rehabilitation projects currently being undertaken in DRC.
     legend: |
-            <div class='moabi-legend space-bottom1' data-id='moabi_transport'>
-              <div>
-                <span class='legend-icon' style='color: #F8CC00;'>━━</span>
-                <h3>Road Rehabilitation Projects</h3>
-              </div>
+            <div>
+              <span class='legend-icon' style='color: #F8CC00;'>━━</span>
+              <h3>Road Rehabilitation Projects</h3>
             </div>
     date: 2013
     tooltip_teaser: [name, highway]
@@ -330,10 +301,8 @@
     description: |
                  Defined as unbroken expanses of natural ecosystems in the zone of current forest extent without signs of significant human activity, not fragmented by infrastructure, and at least 50,000 hectares in size.  Prepared by the IFL Mapping Team (Greenpeace, World Resources Institute, Transparent World), with the latest update made for year 2012
     legend: |
-            <div>
-              <div class='block' style='background-color: #BCDC98'></div>
-                <h3>Intact Forests</h3>
-              </div>
+            <div class='block' style='background-color: #BCDC98'></div>
+              <h3>Intact Forests</h3>
             </div>
     date: 2006 - 2012
     source:

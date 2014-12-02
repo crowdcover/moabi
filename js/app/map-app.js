@@ -9,26 +9,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
       $('.sortable').sortable({
         placeholder: "ui-state-highlight",
         helper: 'clone',
-        update: function(event, ui){
-          var displayedButtonContainer = $(this),
-              layers = moabi.getLayers(),
-              newTopButtonId = displayedButtonContainer.children('li:first').data('id');
-
-          moabi.getLayerJSON(newTopButtonId).done(function(topLayerJSON){
-            // unless new top button is the same as the old top button, add grids and summary of new topButton
-            if(newTopButtonId !== layers[layers.length -1]){
-              moabi.clearGrids();
-              moabi.addGrid(newTopButtonId, topLayerJSON);
-              moabi.showSummary(newTopButtonId, topLayerJSON);
-            }
-
-            orderedButtonIds = $.map(moabi.getDisplayedLayersButtons(), function(button, index){
-              return $(button).data('id')
-            }).reverse();
-            moabi.setLayersZIndices(orderedButtonIds);
-            moabi.leaflet_hash.trigger('move');
-          });
-        }
+        update: this.layerSortedUpdate
       });
       $('.slider').on('click', 'a', this.slidePanel);
       $('#snap').on('click', this.mapCapture);
@@ -52,7 +33,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
         // set baselayer z-index to -1, while you're at it
       this.map.moabiLayers = {
         baseLayer: baseLayer.setZIndex(-1),
-        dataLayers: []
+        dataLayers: {}
       };
 
       this.map.zoomControl.setPosition('topleft');
@@ -72,6 +53,27 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
       e.stopPropagation();
 
       moabi.changeLayer($(this).parent('li').data('id'));
+    },
+
+    layerSortedUpdate: function(e, ui){
+      var displayedButtonContainer = $(this),
+          layers = moabi.getLayers(),
+          newTopButtonId = displayedButtonContainer.children('li:first').data('id');
+
+      moabi.getLayerJSON(newTopButtonId).done(function(topLayerJSON){
+        // unless new top button is the same as the old top button, add grids and summary of new topButton
+        if(newTopButtonId !== layers[layers.length -1]){
+          moabi.clearGrids();
+          moabi.addGrid(newTopButtonId, topLayerJSON);
+          moabi.showSummary(newTopButtonId, topLayerJSON);
+        }
+
+        orderedButtonIds = $.map(moabi.getDisplayedLayersButtons(), function(button, index){
+          return $(button).data('id')
+        }).reverse();
+        moabi.setLayersZIndices(orderedButtonIds);
+        moabi.leaflet_hash.trigger('move');
+      });
     },
 
     changeLayer: function(mapId){
@@ -261,7 +263,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
 
     showLegend: function(mapId, layerJSON){
       $('<div>', {
-                  'class': 'moabi-legend',
+                  'class': 'moabi-legend space-bottom1',
                   'data-id': mapId,
                   html: layerJSON.legend
       }).prependTo('.map-legend .legend-contents');
@@ -282,7 +284,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
         '</li>',
         '<li class="pad0 space">',
           '<strong class="quiet">Date:</strong> ',
-          '<span class="micro', layerJSON.date, '</span>',
+          '<span class="micro">', layerJSON.date, '</span>',
         '</li>',
       '</ul>'];
 
