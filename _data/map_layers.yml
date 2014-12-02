@@ -341,7 +341,7 @@
     name: Era Agriculture Projects
     categories: [forestry, redd]
     description: |
-                 ...
+                 Agricultural projects conducted by Era in their concession.
     legend: |
             <div></div>
     date: 2014
@@ -353,7 +353,7 @@
     name: Era Education Projects
     categories: [forestry, redd]
     description: |
-                 ...
+                 Education projects conducted by Era in their concession.
     legend: |
             <div></div>
     date: 2014
@@ -365,7 +365,31 @@
     name: Era Community Projects
     categories: [forestry, redd]
     description: |
-                 ...
+                 Community development projects conducted by Era in their concession.
+    legend: |
+            <div></div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
+
+  - id: era_clan_boundaries
+    name: Era Clan Boundaries
+    categories: [forestry, redd]
+    description: |
+                 Clan boundaries within the Era REDD+ concession.
+    legend: |
+            <div></div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
+
+  - id: era_project_zones
+    name: Era Project Zones
+    categories: [forestry, redd]
+    description: |
+                 Era REDD+ concession zones.
     legend: |
             <div></div>
     date: 2014
