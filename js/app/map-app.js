@@ -173,11 +173,11 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     getLayers: function(){
       // return an array of mapIds ordered by zIndex from lowest to highest
       // it is not guaranteed that a mapId's index in the array matches its zIndex
-      var dataLayers = Object.keys(moabi.map.moabiLayers.dataLayers),
+      var dataLayers = moabi.map.moabiLayers.dataLayers,
           layersSortedByZIndex = [];
 
       for(mapId in dataLayers){
-        var tileLayer = dataLayers[mapId];
+        var tileLayer = dataLayers[mapId].tileLayer;
         if(moabi.map.hasLayer(tileLayer)){
           layersSortedByZIndex[tileLayer.options.zIndex] = mapId;
         }
