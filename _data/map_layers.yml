@@ -370,7 +370,7 @@
                  Community development projects conducted by Era in their concession.
     legend: |
             <h3>Era Community Projects</h3>
-            <img class='legend-icon' src='/img/community.svg'></img><div class='micro'>Agriculture</div>
+            <img class='legend-icon' src='/img/community.svg'></img><div class='micro'>Community Projects</div>
     date: 2014
     source:
         name: ERA-WWC
