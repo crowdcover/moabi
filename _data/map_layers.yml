@@ -382,7 +382,10 @@
     description: |
                  Clan boundaries within the Era REDD+ concession.
     legend: |
-            <div></div>
+            <div>
+              <span class='legend-icon' style='color: #666;'>━━</span>
+              <h3>Era Clan Boundaries</h3>
+            </div>
     date: 2014
     source:
         name: ERA-WWC
@@ -394,7 +397,10 @@
     description: |
                  Era REDD+ concession zones.
     legend: |
-            <div></div>
+            <div>
+              <span class='legend-icon' style='color: #999;'>━━</span>
+              <h3>Era Project Zones</h3>
+            </div>
     date: 2014
     source:
         name: ERA-WWC
