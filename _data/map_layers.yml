@@ -308,3 +308,100 @@
     source:
         name: IFL Mapping Team (Greenpeace, World Resources Institute, Transparent World)
         url: http://www.intactforests.org
+
+  - id: era_forest_stratification
+    name: Era Forest Stratification
+    categories: [forestry, redd]
+    description: |
+                 Remote sensed survey of forest stratification for the ERA REDD+ project.
+    legend: |
+            <h3>Era Forest Stratification</h3>
+            <div>
+              <div class='block double-stroke' style='background-color: #58600e'></div>
+              <div>Dense Forest</div>
+            </div>
+            <div>
+              <div class='block double-stroke' style='background-color: #95a12e'></div>
+              <div>Secondary Forest</div>
+            </div>
+            <div>
+              <div class='block double-stroke' style='background-color: #cdd488'></div>
+              <div>Swamp</div>
+            </div>
+            <div>
+              <div class='block double-stroke' style='background-color: #fffbe9'></div>
+              <div>Savannah</div>
+            </div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
+
+  - id: era_agriculture_projects
+    name: Era Agriculture Projects
+    categories: [forestry, redd]
+    description: |
+                 Agricultural projects conducted by Era in their concession.
+    legend: |
+            <h3>Era Agriculture Projects</h3>
+            <img class='legend-icon' src='/img/agriculture.svg'></img><div class='micro'>Agriculture</div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
+
+  - id: era_education_projects
+    name: Era Education Projects
+    categories: [forestry, redd]
+    description: |
+                 Education projects conducted by Era in their concession.
+    legend: |
+            <h3>Era Education Projects</h3>
+            <img class='legend-icon' src='/img/education.svg'></img><div class='micro'>Education</div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
+
+  - id: era_community_projects
+    name: Era Community Projects
+    categories: [forestry, redd]
+    description: |
+                 Community development projects conducted by Era in their concession.
+    legend: |
+            <h3>Era Community Projects</h3>
+            <img class='legend-icon' src='/img/community.svg'></img><div class='micro'>Agriculture</div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
+
+  - id: era_clan_boundaries
+    name: Era Clan Boundaries
+    categories: [forestry, redd]
+    description: |
+                 Clan boundaries within the Era REDD+ concession.
+    legend: |
+            <div>
+              <span class='legend-icon' style='color: #666;'>━━</span>
+              <h3>Era Clan Boundaries</h3>
+            </div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
+
+  - id: era_project_zones
+    name: Era Project Zones
+    categories: [forestry, redd]
+    description: |
+                 Era REDD+ concession zones.
+    legend: |
+            <div>
+              <span class='legend-icon' style='color: #999;'>━━</span>
+              <h3>Era Project Zones</h3>
+            </div>
+    date: 2014
+    source:
+        name: ERA-WWC
+        url:
