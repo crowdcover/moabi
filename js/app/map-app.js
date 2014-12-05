@@ -1,3 +1,5 @@
+---
+---
 // map module
 define(['app/main-app', 'mapbox', 'leafletImage', 'leafletHash', 'jquery', 'jquery-sortable'],
 function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
