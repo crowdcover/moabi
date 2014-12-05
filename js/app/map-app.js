@@ -139,7 +139,7 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
       var JSONPromise = $.Deferred();
       if(! moabi.map.moabiLayers.dataLayers[mapId].layerJSON){
         // run ajax request for layerJSON and when loaded, store in map.moabiLayers.dataLayers[mapId].layerJSON
-        $.ajax('/map_layers.json', {
+        $.ajax('{{site.baseurl}}/map_layers.json', {
           type: 'GET',
           dataType: 'json',
           contentType: 'application/json',
