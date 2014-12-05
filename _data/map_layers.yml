@@ -343,7 +343,8 @@
     description: |
                  Agricultural projects conducted by Era in their concession.
     legend: |
-            <div></div>
+            <h3>Era Agriculture Projects</h3>
+            <img class='legend-icon' src='/img/agriculture.svg'></img><div class='micro'>Agriculture</div>
     date: 2014
     source:
         name: ERA-WWC
@@ -355,7 +356,8 @@
     description: |
                  Education projects conducted by Era in their concession.
     legend: |
-            <div></div>
+            <h3>Era Education Projects</h3>
+            <img class='legend-icon' src='/img/education.svg'></img><div class='micro'>Education</div>
     date: 2014
     source:
         name: ERA-WWC
@@ -367,7 +369,8 @@
     description: |
                  Community development projects conducted by Era in their concession.
     legend: |
-            <div></div>
+            <h3>Era Community Projects</h3>
+            <img class='legend-icon' src='/img/community.svg'></img><div class='micro'>Agriculture</div>
     date: 2014
     source:
         name: ERA-WWC
