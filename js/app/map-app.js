@@ -356,10 +356,12 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
 
     getLayerHash: function() {
       var layers = moabi.getQueryVariable(location.hash, "layers");
-      if (layers) { layers = layers.split(','); }
-      moabi.removeAllExcept([]); //could be smarter
-      for (i = layers.length-1; i >= 0; i--){
-        moabi.changeLayer(layers[i]);
+      if (layers) {
+        layers = layers.split(',');
+        moabi.removeAllExcept([]); //could be smarter
+        for (i=0; i<layers.length; i++){
+          moabi.changeLayer(layers[i]);
+        }
       }
     },
 
