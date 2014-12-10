@@ -7,9 +7,10 @@ published: false
 title: Moabi Gets New Cartography
 author: James Conkling
 subtitle: "Moabi just revamped much of site cartography.  We were aiming for a slightly simpler, cleaner set of map layers to better highlight our map data.  Check them out and tell us what you think."
+img: "https://farm8.staticflickr.com/7501/15374138373_c5f00b462f_c.jpg"
 ---
 
-In preparation for the [XXX Conference](http://www.com) in Lima this past weekend, the Moabi team just revamped much of our site cartography.  We were aiming for a slightly simplier, cleaner set of map layers to better highlight our map data.  Check them out on the [maps page](rdc.moabi.org/data/en) and tell us what you think.
+In preparation for the [XXX Conference](http://www.com) in Lima this past weekend, the Moabi team just revamped much of our site cartography.  We were aiming for a slightly simplier, cleaner set of map layers to better highlight our map data.  Check them out on the [maps page](rdc.moabi.org/data/en) and tell us what you think.  Some Highlights:
 
 ## Base Layer
 ![new base layer](/_posts/blog/Screenshot 2014-12-10 17.26.41.png)
@@ -19,11 +20,6 @@ We rebuild the entire base layer with new styles and data.  In addition to the l
 * new admin boundaries for Provinces, Districts, and Territories.
 * over 3000 new place names, from cities to villages
 * labels for rivers and water bodies
-
-## Forest Cover
-![forest cover layer](/_posts/blog/Screenshot 2014-12-10 18.02.58.png)
-
-We restyled the UMD Forest Cover layer with a lighter, smarter color ramp that contrasts much more seamlessly with other layers.
 
 ## Era Layers
 ![era layers](/_posts/blog/Screenshot 2014-12-10 18.07.49.png)
