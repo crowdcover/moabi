@@ -3,7 +3,7 @@ categories: en
 language: en
 tags: blog_post
 layout: layouts2/blog_post
-published: false
+published: true
 title: Moabi Gets New Cartography
 author: James Conkling
 subtitle: "Moabi just revamped much of site cartography.  We were aiming for a slightly simpler, cleaner set of map layers to better highlight our map data.  Check them out and tell us what you think."
