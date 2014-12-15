@@ -416,6 +416,7 @@
             <img class='legend-icon dot' style='border-color: #a9b918;'src='site.baseurl/img/community.svg'><span class='micro'>Community Projects</span>
     date: 2014
     tooltip_teaser: [name, community_project_count]
+    tooltip_photo: image
     tooltip_full: [name, community_project_count]
     source:
         name: ERA-WWC

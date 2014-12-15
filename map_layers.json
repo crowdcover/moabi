@@ -23,7 +23,9 @@ generate JSON metadata for each tile layer, including:
 <div class='col12 center micro quiet caps strong'>click for more feature information</div>
 
 {% endcapture %}{% capture full %}
-
+{% if layer.tooltip_photo %}
+  <img class='space-bottom1 center' src='{%raw%}{{{%endraw%}{{layer.tooltip_photo}}{%raw%}}}{%endraw%}' />
+{% endif %}
 <div class='attr-table keyline-all space-bottom1'>
   <table><tbody>
     {% for full in layer.tooltip_full %}
