@@ -104,28 +104,28 @@
             <div>
               <h3>Community Mapping, Ingendi</h3>
               <div>
-                <img class='legend-icon' src='/img/chainsaw.svg'></img><span class='micro'>Logging (legal)</span>
+                <img class='legend-icon' src='site.baseurl/img/chainsaw.svg'></img><span class='micro'>Logging (legal)</span>
               <div>
               <div>
-                <img class='legend-icon' src='/img/chainsaw_illegal.svg'></img><span class='micro'>Logging (illegal)</span>
+                <img class='legend-icon' src='site.baseurl/img/chainsaw_illegal.svg'></img><span class='micro'>Logging (illegal)</span>
               <div>
               <div>
-                <img class='legend-icon' src='/img/community.svg'></img><span class='micro'>Community Site</span>
+                <img class='legend-icon' src='site.baseurl/img/community.svg'></img><span class='micro'>Community Site</span>
               <div>
               <div>
-                <img class='legend-icon' src='/img/tree.svg'></img><span class='micro'>Sacred Site</span>
+                <img class='legend-icon' src='site.baseurl/img/tree.svg'></img><span class='micro'>Sacred Site</span>
               <div>
               <div>
-                <img class='legend-icon' src='/img/paw.svg'></img><span class='micro'>Hunting Site</span>
+                <img class='legend-icon' src='site.baseurl/img/paw.svg'></img><span class='micro'>Hunting Site</span>
               <div>
               <div>
-                <img class='legend-icon' src='/img/fish.svg'></img><span class='micro'>Fishing Site</span>
+                <img class='legend-icon' src='site.baseurl/img/fish.svg'></img><span class='micro'>Fishing Site</span>
               <div>
               <div>
-                <img class='legend-icon' src='/img/food_bag.svg'></img><span class='micro'>Foraging Site</span>
+                <img class='legend-icon' src='site.baseurl/img/food_bag.svg'></img><span class='micro'>Foraging Site</span>
               <div>
               <div>
-                <img class='legend-icon' src='/img/agriculture.svg'></img><span class='micro'>Farming Site</span>
+                <img class='legend-icon' src='site.baseurl/img/agriculture.svg'></img><span class='micro'>Farming Site</span>
               <div>
             </div>
     date: 2014
@@ -383,7 +383,7 @@
                  Agricultural projects conducted by Era in their concession.
     legend: |
             <h3>Era Agriculture Projects</h3>
-            <img class='legend-icon dot' style='border-color: #a9b918;'src='/img/agriculture.svg'><span class='micro'>Agriculture</span>
+            <img class='legend-icon dot' style='border-color: #a9b918;'src='site.baseurl/img/agriculture.svg'><span class='micro'>Agriculture</span>
     date: 2014
     tooltip_teaser: [name, agriculture_project_count]
     tooltip_full: [name, agriculture_project_count]
@@ -398,7 +398,7 @@
                  Education projects conducted by Era in their concession.
     legend: |
             <h3>Era Education Projects</h3>
-            <img class='legend-icon dot' style='border-color: #a9b918;'src='/img/education.svg'><span class='micro'>Education</span>
+            <img class='legend-icon dot' style='border-color: #a9b918;'src='site.baseurl/img/education.svg'><span class='micro'>Education</span>
     date: 2014
     tooltip_teaser: [name, education_project_count]
     tooltip_full: [name, education_project_count]
@@ -413,7 +413,7 @@
                  Community development projects conducted by Era in their concession.
     legend: |
             <h3>Era Community Projects</h3>
-            <img class='legend-icon dot' style='border-color: #a9b918;'src='/img/community.svg'><span class='micro'>Community Projects</span>
+            <img class='legend-icon dot' style='border-color: #a9b918;'src='site.baseurl/img/community.svg'><span class='micro'>Community Projects</span>
     date: 2014
     tooltip_teaser: [name, community_project_count]
     tooltip_full: [name, community_project_count]
