@@ -95,43 +95,43 @@
     source:
         name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
 
-  - id: moabi_community_mapping
-    name: Community Mapping
-    categories: [indigenous]
-    description: |
-                 Moabi and LINAPYCO field data from Ingende
-    legend: |
-            <div>
-              <h3>Community Mapping, Ingendi</h3>
-              <div>
-                <img class='legend-icon' src='site.baseurl/img/chainsaw.svg'></img><span class='micro'>Logging (legal)</span>
-              <div>
-              <div>
-                <img class='legend-icon' src='site.baseurl/img/chainsaw_illegal.svg'></img><span class='micro'>Logging (illegal)</span>
-              <div>
-              <div>
-                <img class='legend-icon' src='site.baseurl/img/community.svg'></img><span class='micro'>Community Site</span>
-              <div>
-              <div>
-                <img class='legend-icon' src='site.baseurl/img/tree.svg'></img><span class='micro'>Sacred Site</span>
-              <div>
-              <div>
-                <img class='legend-icon' src='site.baseurl/img/paw.svg'></img><span class='micro'>Hunting Site</span>
-              <div>
-              <div>
-                <img class='legend-icon' src='site.baseurl/img/fish.svg'></img><span class='micro'>Fishing Site</span>
-              <div>
-              <div>
-                <img class='legend-icon' src='site.baseurl/img/food_bag.svg'></img><span class='micro'>Foraging Site</span>
-              <div>
-              <div>
-                <img class='legend-icon' src='site.baseurl/img/agriculture.svg'></img><span class='micro'>Farming Site</span>
-              <div>
-            </div>
-    date: 2014
-    source:
-        name: Ligue Nationale des pygmees du Congo (LINAPYCO)
-        url:
+  # - id: moabi_community_mapping
+  #   name: Community Mapping
+  #   categories: [indigenous]
+  #   description: |
+  #                Moabi and LINAPYCO field data from Ingende
+  #   legend: |
+  #           <div>
+  #             <h3>Community Mapping, Ingendi</h3>
+  #             <div>
+  #               <img class='legend-icon' src='site.baseurl/img/chainsaw.svg'></img><span class='micro'>Logging (legal)</span>
+  #             <div>
+  #             <div>
+  #               <img class='legend-icon' src='site.baseurl/img/chainsaw_illegal.svg'></img><span class='micro'>Logging (illegal)</span>
+  #             <div>
+  #             <div>
+  #               <img class='legend-icon' src='site.baseurl/img/community.svg'></img><span class='micro'>Community Site</span>
+  #             <div>
+  #             <div>
+  #               <img class='legend-icon' src='site.baseurl/img/tree.svg'></img><span class='micro'>Sacred Site</span>
+  #             <div>
+  #             <div>
+  #               <img class='legend-icon' src='site.baseurl/img/paw.svg'></img><span class='micro'>Hunting Site</span>
+  #             <div>
+  #             <div>
+  #               <img class='legend-icon' src='site.baseurl/img/fish.svg'></img><span class='micro'>Fishing Site</span>
+  #             <div>
+  #             <div>
+  #               <img class='legend-icon' src='site.baseurl/img/food_bag.svg'></img><span class='micro'>Foraging Site</span>
+  #             <div>
+  #             <div>
+  #               <img class='legend-icon' src='site.baseurl/img/agriculture.svg'></img><span class='micro'>Farming Site</span>
+  #             <div>
+  #           </div>
+  #   date: 2014
+  #   source:
+  #       name: Ligue Nationale des pygmees du Congo (LINAPYCO)
+  #       url:
 
   - id: moabi_indigenous
     name: Indigenous Lands
