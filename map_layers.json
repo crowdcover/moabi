@@ -42,7 +42,7 @@ generate JSON metadata for each tile layer, including:
   "{{layer.id}}": {
       "name": "{{layer.name}}",
       "description": "{{layer.description | replace:'"', "'" | strip_newlines}}",
-      "legend": "{{layer.legend | replace:'"', "'" | strip_newlines}}",
+      "legend": "{{layer.legend | replace:'"', "'" | strip_newlines | replace:'site.baseurl', site.baseurl }}",
       "date": "{{layer.date}}",
       {% if layer.tooltip_teaser or layer.tooltip_full %}"template": "{%raw%}{{#__teaser__}}{%endraw%}{{teaser | strip_newlines}}{%raw%}{{/__teaser__}} {{#__full__}}{%endraw%}{{full | strip_newlines}}{%raw%}{{/__full__}}{%endraw%}",{% endif %}
       "source_name": "{{layer.source.name}}",

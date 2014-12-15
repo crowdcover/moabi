@@ -103,14 +103,30 @@
     legend: |
             <div>
               <h3>Community Mapping, Ingendi</h3>
-              <img class='legend-icon' src='/img/chainsaw.svg'></img><div class='micro'>Logging (legal)</div>
-              <img class='legend-icon' src='/img/chainsaw_illegal.svg'></img><div class='micro'>Logging (illegal)</div>
-              <img class='legend-icon' src='/img/community.svg'></img><div class='micro'>Community Site</div>
-              <img class='legend-icon' src='/img/tree.svg'></img><div class='micro'>Sacred Site</div>
-              <img class='legend-icon' src='/img/paw.svg'></img><div class='micro'>Hunting Site</div>
-              <img class='legend-icon' src='/img/fish.svg'></img><div class='micro'>Fishing Site</div>
-              <img class='legend-icon' src='/img/food_bag.svg'></img><div class='micro'>Foraging Site</div>
-              <img class='legend-icon' src='/img/agriculture.svg'></img><div class='micro'>Farming Site</div>
+              <div>
+                <img class='legend-icon' src='/img/chainsaw.svg'></img><span class='micro'>Logging (legal)</span>
+              <div>
+              <div>
+                <img class='legend-icon' src='/img/chainsaw_illegal.svg'></img><span class='micro'>Logging (illegal)</span>
+              <div>
+              <div>
+                <img class='legend-icon' src='/img/community.svg'></img><span class='micro'>Community Site</span>
+              <div>
+              <div>
+                <img class='legend-icon' src='/img/tree.svg'></img><span class='micro'>Sacred Site</span>
+              <div>
+              <div>
+                <img class='legend-icon' src='/img/paw.svg'></img><span class='micro'>Hunting Site</span>
+              <div>
+              <div>
+                <img class='legend-icon' src='/img/fish.svg'></img><span class='micro'>Fishing Site</span>
+              <div>
+              <div>
+                <img class='legend-icon' src='/img/food_bag.svg'></img><span class='micro'>Foraging Site</span>
+              <div>
+              <div>
+                <img class='legend-icon' src='/img/agriculture.svg'></img><span class='micro'>Farming Site</span>
+              <div>
             </div>
     date: 2014
     source:
@@ -138,10 +154,12 @@
     description: |
                  Existing and planned hydroelectric dams
     legend: |
+            <h3>Hydroelectric Power</h3>
+            <div style="margin-bottom:4px;">
+              <img class='legend-icon dot' style='border-color: #DEA2A9;' src='site.baseurl/img/dam_border.svg'><span class='micro'>Existing Dam</span>
+            </div>
             <div>
-              <h3>Hydroelectric Power</h3>
-              <span class='legend-icon dot' style='background-color: #D12F3E; border: 1px solid #FFF'></span><div class='micro'>Existing Dam</div>
-              <span class='legend-icon dot' style='background-color: #DEA2A9; border: 1px solid #FFF'></span><div class='micro'>Planned Dam</div>
+              <img class='legend-icon dot' style='border-color: #DEA2A9;' src='site.baseurl/img/dam_gray_border.svg'><span class='micro'>Planned Dam</span>
             </div>
     date: 2013
     tooltip_teaser: [name, proposed]
@@ -158,8 +176,14 @@
     legend: |
             <div>
               <h3>Electricity Transmission Lines</h3>
-              <span class='legend-icon' style='border-bottom: 3px solid #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><div class='micro'>Transmission Line (existing)</div>
-              <span class='legend-icon' style='border-bottom: 3px dotted #D12F3E; position: relative; bottom: 6px; width: 27px;'></span><div class='micro'>Transmission Line (planned)</div>
+              <div>
+                <span class='legend-icon' style='border-bottom: 3px solid #D12F3E; position: relative; bottom: 2px; width: 27px; display: inline-block'></span>
+                <span class='micro'>Transmission Line (existing)</span>
+              </div>
+              <div>
+                <span class='legend-icon' style='border-bottom: 3px dotted #D12F3E; position: relative; bottom: 2px; width: 27px; display: inline-block'></span>
+                <span class='micro'>Transmission Line (planned)</span>
+              </div>
             </div>
     date: 2013
     tooltip_teaser: [name, proposed]
@@ -172,7 +196,7 @@
     name: Logging Concessions
     categories: [forestry, concession]
     description: |
-                 Industrial and artisanal logging concessions
+                 Industrial logging concessions.
     legend: |
             <div>
               <div class='block double-stroke' style='background-color: #BD925B'></div>
@@ -180,6 +204,21 @@
             </div>
     tooltip_teaser: [operator]
     tooltip_full: [operator]
+    date: 2013
+    source:
+        name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
+        url:
+
+  - id: moabi_logging_artisanal
+    name: Artisanal Logging Concessions
+    categories: [forestry, concession]
+    description: |
+                 Artisanal logging concessions.
+    legend: |
+            <img class='legend-icon dot' style='border-color: #BD925B;' src='site.baseurl/img/chainsaw.svg'/><h3>Artisanal Logging Concessions</h3>
+
+    tooltip_teaser:
+    tooltip_full:
     date: 2013
     source:
         name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
@@ -344,7 +383,7 @@
                  Agricultural projects conducted by Era in their concession.
     legend: |
             <h3>Era Agriculture Projects</h3>
-            <img class='legend-icon' src='/img/agriculture.svg'></img><div class='micro'>Agriculture</div>
+            <img class='legend-icon dot' style='border-color: #a9b918;'src='/img/agriculture.svg'><span class='micro'>Agriculture</span>
     date: 2014
     source:
         name: ERA-WWC
@@ -357,7 +396,7 @@
                  Education projects conducted by Era in their concession.
     legend: |
             <h3>Era Education Projects</h3>
-            <img class='legend-icon' src='/img/education.svg'></img><div class='micro'>Education</div>
+            <img class='legend-icon dot' style='border-color: #a9b918;'src='/img/education.svg'><span class='micro'>Education</span>
     date: 2014
     source:
         name: ERA-WWC
@@ -370,7 +409,7 @@
                  Community development projects conducted by Era in their concession.
     legend: |
             <h3>Era Community Projects</h3>
-            <img class='legend-icon' src='/img/community.svg'></img><div class='micro'>Community Projects</div>
+            <img class='legend-icon dot' style='border-color: #a9b918;'src='/img/community.svg'><span class='micro'>Community Projects</span>
     date: 2014
     source:
         name: ERA-WWC
