@@ -348,6 +348,21 @@
         name: IFL Mapping Team (Greenpeace, World Resources Institute, Transparent World)
         url: http://www.intactforests.org
 
+  - id: moabi_independent_observers
+    name: Independent Observers
+    categories: [forestry]
+    description: |
+                 Local, independent observers of the ERA REDD+ project.
+    legend: |
+            <img class='legend-icon dot' style='border-color: #a9b918;' src='site.baseurl/img/eye.svg'/><h3>Independent Observers</h3>
+    date: 2014
+    tooltip_teaser: [name]
+    tooltip_full: [name, population]
+    tooltip_photo: local_observer_photo
+    source:
+        name: Moabi/OSFAC
+        url:
+
   - id: era_forest_stratification
     name: Era Forest Stratification
     categories: [forestry, redd]
@@ -416,7 +431,6 @@
             <img class='legend-icon dot' style='border-color: #a9b918;'src='site.baseurl/img/community.svg'><span class='micro'>Community Projects</span>
     date: 2014
     tooltip_teaser: [name, community_project_count]
-    tooltip_photo: image
     tooltip_full: [name, community_project_count]
     source:
         name: ERA-WWC
