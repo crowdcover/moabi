@@ -10,7 +10,7 @@ subtitle: "Moabi just revamped much of site cartography.  We were aiming for a s
 img: "https://farm8.staticflickr.com/7501/15374138373_c5f00b462f_c.jpg"
 ---
 
-In preparation for the [Global Landscape Forum](http://www.landscapes.org/) in Lima this past weekend, the Moabi team just revamped much of our site cartography.  We were aiming for a slightly simplier, cleaner set of map layers to better highlight our map data.  Check them out on the [maps page](rdc.moabi.org/data/en) and tell us what you think.  Some Highlights:
+In preparation for the [Global Landscape Forum](http://www.landscapes.org/) in Lima this past weekend, the Moabi team just revamped much of our site cartography.  We were aiming for a slightly simplier, cleaner set of map layers to better highlight our map data.  Check them out on the [maps page]({{site.baseurl}}/data/en) and tell us what you think.  Some Highlights:
 
 ## Base Layer
 ![new base layer](https://farm9.staticflickr.com/8669/15374225703_21a0794599_c.jpg)
