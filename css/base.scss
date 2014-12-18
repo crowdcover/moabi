@@ -830,7 +830,7 @@ img {
   max-width:100%;
   vertical-align:top;
   }
-  .center img,
+  /*.center img,*/
   img.center { margin-left:auto; margin-right:auto; display: block; }
 
 /* images defined with background size -
@@ -1351,10 +1351,13 @@ table.fixed {
   margin-left:auto;
   }
 
-.prose img:after {
-  content:' [' attr(alt) '] ';
-  color: $quiet;
-}
+.prose img {
+  border: 4px solid #eee;
+  }
+  .prose img:after {
+    content:' [' attr(alt) '] ';
+    color: $quiet;
+  }
 
 table.prose,
 .prose table {
