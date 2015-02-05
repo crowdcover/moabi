@@ -144,6 +144,8 @@
               <h3>Indigenous Lands</h3>
             </div>
     date: 2012
+    tooltip_teaser: [tribe, lifestyle]
+    tooltip_full: [tribe, lifestyle]
     source:
         name: Dynamique des Groupes des Peuples Autochtones (DGPA)
         url: www.dgpa.cd
@@ -283,6 +285,8 @@
               <h3>Agriculture Concessions</h3>
             </div>
     date: 2014
+    tooltip_teaser: [name]
+    tooltip_full: [name]
     source:
         name: DIAF/WRI, working layer
         url:
