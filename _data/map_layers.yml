@@ -268,8 +268,8 @@
               <div>Inactive/Unknown</div>
             </div>
     date: 2013
-    tooltip_teaser: [name]
-    tooltip_full: [name]
+    tooltip_teaser: [name, license, company]
+    tooltip_full: [name, license, company, contract_type]
     source:
         name: Ministere des Hydrocarbures (MIN.HYDRO)
         url:
