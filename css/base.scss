@@ -922,8 +922,10 @@ pre {
   background:rgba(0,0,0,0.025);
   font-size:12px;
   line-height:20px;
-  padding:3px;
-  border-radius: 3px;
+  padding:8px;
+  // border-radius: 3px;
+  display: block;
+  border: 1px solid #ddd;
   }
 pre {
   display:block;
