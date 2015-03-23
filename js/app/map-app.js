@@ -226,6 +226,9 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
     removeAllExcept: function(keepLayers) {
       // removes all layers from map, except for keepLayers (pass as array)
       // returns a list of removed layers
+      if(! Array.isArray(keepLayers)){
+        keepLayers = [keepLayers];
+      }
       var displayedLayers = moabi.getLayers();
       return $.map(displayedLayers, function(removeLayer, index){
                 moabi.keepLayers = keepLayers;
