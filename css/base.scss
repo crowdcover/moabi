@@ -1355,6 +1355,7 @@ table.fixed {
 
 .prose img {
   border: 4px solid #eee;
+  margin: 0 auto;
   }
   .prose img:after {
     content:' [' attr(alt) '] ';
