@@ -4,12 +4,14 @@ language: en
 tags: blog_post
 layout: layouts2/blog_post
 published: true
-title: 4th Moabi Project Consortium
+title: 3rd Ddition of the Moabi Newsletter
 author: Benoit Thuaire
 subtitle: |
           Moabi hosted the fourth meeting of the Consortium, which took place in the hall of the Arche at Clinique Ngaliema in Kinshasa, on 25 February 2015.  About eighty participants heard of the progress made over the last six months by the Moabi Project.
 img: "https://farm9.staticflickr.com/8652/16659682672_c26d1cea69_z.jpg"
 ---
+# 4th Moabi Project Consortium
+
 The fourth meeting of the Consortium took place in the hall of the Arche at Clinique Ngaliema in Kinshasa, on 25 February 2015. About eighty participants heard of the progress made over the last six months by the Moabi Project.
 
 In addition, the consortium was marked by three major announcements:
