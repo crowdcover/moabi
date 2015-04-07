@@ -4,7 +4,7 @@ language: en
 tags: blog_post
 layout: layouts2/blog_post
 published: true
-title: 3rd Ddition of the Moabi Newsletter
+title: 3rd Edition of the Moabi Newsletter
 author: Benoit Thuaire
 subtitle: |
           Moabi hosted the fourth meeting of the Consortium, which took place in the hall of the Arche at Clinique Ngaliema in Kinshasa, on 25 February 2015.  About eighty participants heard of the progress made over the last six months by the Moabi Project.
@@ -24,7 +24,7 @@ In addition, the consortium was marked by three major announcements:
 # Moabi Mapping Competition
 The results of the 1st edition of the mapping competition were announced at the Consortium Project, February 25, 2015.
 
-The contest brought together 44 Congolese participants ! 7 maps were hand-drawn and 37 maps were made using GIS software. The maps will be soon available on the Moabi platform in the section “blogpost” [http://rdc.moabi.org/blog/en/](http://rdc.moabi.org/blog/en/).
+The contest brought together 44 Congolese participants ! 7 maps were hand-drawn and 37 maps were made using GIS software. The maps will be soon available on the Moabi platform in the section *blog post*: [http://rdc.moabi.org/blog/en/](http://rdc.moabi.org/blog/en/).
 
 
 
@@ -103,9 +103,9 @@ Beside, a joint IM methodology of these two processes would help achieve economi
 
 # Moabi from 2016
 
-Over the past four years, Moabi has developed partnerships to collect a large amount of data on the drivers of deforestation. Furthermore, Moabi has been contributing to the design of an IM-REDD method. As part of the national REDD+ strategy, Moabi is now recognized as a critical tool for improving governance in the DRC.  Givan that the current funding from NORAD is coming to an end in December 2015, a new phase of the project is being designed.
+Over the past four years, Moabi has developed partnerships to collect a large amount of data on the drivers of deforestation. Furthermore, Moabi has been contributing to the design of an IM-REDD method. As part of the national REDD+ strategy, Moabi is now recognized as a critical tool for improving governance in the DRC.  Given that the current funding from NORAD is coming to an end in December 2015, a new phase of the project is being designed.
 
-It is in this context that at the last Consortium BOTTRILL Leo, Director of Moabi project, announced the creation of the international NGO MOABI.INC headquartered in Washington. It will specifically dedicate to the general administration of the NGO's activities, the development of technology (Moabi platform, smartphones, etc.) and communication activities with the international partners.
+It is in this context that at the last Consortium BOTTRILL Leo, Director of Moabi project, announced the creation of the international NGO MOABI.INC headquartered in Washington. It will specifically dedicate to the general administration of the NGO's activities, the development of technology (Moabi platform, smart phones, etc.) and communication activities with the international partners.
 
 A local branch will be created in the DRC responsible for the deployment of operational activities, such as monitoring grievances (which is a mechanism that must be implemented as part of REDD +).
 
