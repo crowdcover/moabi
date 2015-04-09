@@ -6,6 +6,7 @@ tags:
 categories:
   - fr
 title: Le projet Moabi RDC lance la deuxième édition du concours de cartographie 
+author: Benoit Thuaire
 subtitle: Le projet Moabi RDC lance la deuxième édition du concours de cartographie qui récompensera les meilleures cartographes et dessinateurs de la RDC.  Les cartes seront évaluées selon des critères techniques et selon leur originalité. Nous espérons que ce concours permettra de sensibiliser sur les problématiques environnementales auxquelles les populations de RDC sont confrontées. Nous espérons également que ce concours donnera une opportunité aux dessinateurs et cartographes locaux de montrer leurs compétences.
 
 
