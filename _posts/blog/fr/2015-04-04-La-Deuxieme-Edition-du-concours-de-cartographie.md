@@ -20,6 +20,8 @@ Les cartes seront évaluées selon des critères techniques et selon leur origin
 
 Pour cette édition, nous proposons d’effectuer un seul concours mais, qui accepterait à la fois les cartes manuelles et des cartes faites avec un logiciel SIG. 
 
+**[Cliquez ICI pour télécharger la description du concours](https://docs.google.com/file/d/0B-RQ_kNBOt-5VlItdy0wMFdCV3c/edit)**
+
 
 ## Thématiques 
 
@@ -64,6 +66,8 @@ Le dossier de candidature au concours doit être composé des pièces suivantes 
 * Le formulaire de soumission du concours de cartographie que vous trouverez en annexe de ce document ;
 * La carte proposée ;
 * Les  fichiers mxd pour les cartes qui ont été réalisées avec un logiciel SIG.
+
+**[Cliquez ici pour télécharger l'application](https://docs.google.com/file/d/0B-RQ_kNBOt-5X2VnZUtCU3RLeHc/edit)**
 
 Merci de transmettre les cartes informatiques au format jpg, png ou pdf à Herve Kashongwe : 
 [hkashongwe@gmail.com](mailto:hkashongwe@gmail.com)
