@@ -67,7 +67,7 @@ Le dossier de candidature au concours doit être composé des pièces suivantes 
 * La carte proposée ;
 * Les  fichiers mxd pour les cartes qui ont été réalisées avec un logiciel SIG.
 
-**[Cliquez ici pour télécharger l'application](https://docs.google.com/file/d/0B-RQ_kNBOt-5X2VnZUtCU3RLeHc/edit)**
+**[Cliquer ici pour télécharger le formulaire de soumission au concours](https://docs.google.com/file/d/0B-RQ_kNBOt-5X2VnZUtCU3RLeHc/edit)**
 
 Merci de transmettre les cartes informatiques au format jpg, png ou pdf à Herve Kashongwe : 
 [hkashongwe@gmail.com](mailto:hkashongwe@gmail.com)
