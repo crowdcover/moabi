@@ -68,7 +68,7 @@ Institut Européen de la Forêt - EFI (Facilité REDD de l’Union européenne).
 
 ## Pour plus d’informations
 
-**Jean Cyrille Owanda** <br>
+**Jean Cyrille Owada** <br>
 Chef de projet Open Mai Ndombe <br>
 Expert OIFLEG, Contrôle Légalité forestière <br>
 Coordonnateur de projet FLAG <br>
