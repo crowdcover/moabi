@@ -21,6 +21,8 @@ En République Démocratique du Congo, la société civile congolaise joue un r�
 
 Depuis 2009, la RDC se prépare également à mettre en oeuvre la REDD+. La Stratégie cadre nationale de la REDD+ a été adoptée fin 2012 et le pays se trouve actuellement en transition entre la phase de préparation et la phase d’investissements, notamment au travers de la préparation d’un programme de réduction d’émissions à l’échelle de la juridiction de Mai Ndombe.  L’initiative Moabi, démarrée en 2011, vise la mise en place d’une plateforme d’information collaborative sur la REDD+.  En partenariat avec Moabi, OGF travaille depuis 2014 au développement d’une OI pour la REDD+.
 
+![](https://c2.staticflickr.com/4/3936/15618852242_8931dc071b_o.png)
+
 L’expérience acquise au travers de la conception et de la mise en oeuvre de l’OI-FLEG constitue aujourd’hui un atout majeur pour le développement d’une OI de la REDD+, d’autant plus que la même organisation, OGF, mène les activités. L’exploitation illégale étant l’un des moteurs de la déforestation en RDC, de nombreux recoupements existent entre les deux types d’observation indépendante et les nombreuses données, qualitatives, quantitatives et cartographiques collectées.
 
 L’exploitation des synergies entre les deux OI permettra d’accroitre l’efficacité et la visibilité des missions d’OI, de renforcer la transparence en matière d’application de la loi et des sauvegardes liées à la REDD+, et de réduire les coûts de transaction de l’OI dans un contexte de moyens limités. Le développement du programme de réduction d’émissions de Mai Ndombe représente une première opportunité d’interaction entre l’OI-REDD et l’OI-FLEG.
@@ -40,6 +42,8 @@ En particulier, il vise à:
 
 1. Organisation d’un atelier de restitution des résultats du projet et des leçons apprises lors des missions 2015.
 
+![](https://c2.staticflickr.com/8/7429/16263206328_e5e54fac98_z.jpg)
+
 
 # Phases du Projet
 
@@ -53,6 +57,7 @@ En particulier, il vise à:
 
 1. Dissémination des objectifs et résultats du projet lors d’un atelier en juin 2015.
 
+![](https://c2.staticflickr.com/8/7347/16424897456_89a86548aa_z.jpg)
 
 # Financement
 
