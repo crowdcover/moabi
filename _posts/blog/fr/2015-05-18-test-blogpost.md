@@ -22,4 +22,4 @@ Plan for the Day
 3. Brunch
 4. Make silly lists
 
-![]({{site.baseurl}}/https://farm3.staticflickr.com/2891/12483502755_f605561cdc_b.jpg)
+![](https://farm3.staticflickr.com/2891/12483502755_f605561cdc_b.jpg)
