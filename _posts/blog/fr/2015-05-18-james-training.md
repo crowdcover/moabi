@@ -5,7 +5,9 @@ tags: blog_post
 layout: layouts2/blog_post
 published: false
 title: "James' training"
-author: CrowdCover Team
+author: Benoit
+img: "https://www.flickr.com/photos/117396527@N08/17539382791/"
+subtitle: OOOOoOOOOOOOooOOOOOOO
 ---
 
 
