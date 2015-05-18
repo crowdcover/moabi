@@ -15,10 +15,13 @@ subtitle: "GIS activities developing by Moabi in DRC "
 Promouvoir une bonne gouvernance forestière à travers un suivi indépendant en RDC, telle est l’objectif fixé par la deuxième phase du projet MOABI en RDC.  Ainsi dans le cadre de l’implémentation des activités de cette nouvelle phase, l’Observatoire Satellital des Forets d’Afrique Centrale (OSFAC) est en  charge du renforcement des capacités en système d’information géographique (SIG) de tous les partenaires du projet.
 
 1. Objectifs 
+
 L’objectif principal de cette formation est de donner des bases en Système d’Information Géographique particulièrement dans l’utilisation du logiciel QGIS 2.4.  ainsi que sur quelque méthode de collecte de donnée avec GPS.
+
 Ainsi a  l’issue de ce cours, les apprenants  connaîtront la gamme des fonctionnalités du logiciel QGIS et pourront l’utiliser par eux-mêmes afin de réaliser des cartes, manipuler des données géographiques et effectuer des analyses SIG
 
 2. Contenue de la formation 
+
 Module 1 : Introduction générales
 Introduction aux SIG : Historique, concepts de base, domaines d’applications, composantes, 
 rôles, etc.
