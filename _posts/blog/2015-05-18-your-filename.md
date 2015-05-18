@@ -5,11 +5,13 @@ tags: blog_post
 layout: layouts2/blog_post
 published: false
 title: Moabi Test Blogpost
-author: CrowdCover Team
+author: Serge Bondo
+subtitle: Paragraph.......
 ---
 
 # Introduction
-Paragraph-Paragraph.........
+Paragraph-Paragraph
+
 Sommaire
 1. Introduction
 2. Contexte et Justification
