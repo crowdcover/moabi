@@ -5,7 +5,9 @@ tags: blog_post
 layout: layouts2/blog_post
 published: false
 title: "MOABI GIS activities "
-author: CrowdCover Team
+author: Herve Kashongwe
+img: "https://c1.staticflickr.com/9/8766/16479470593_da256c374a_z.jpg"
+subtitle: "GIS activities developing by Moabi in DRC "
 ---
 
 # INTRODUCTION 
