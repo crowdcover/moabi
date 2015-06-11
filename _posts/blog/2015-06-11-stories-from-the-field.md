@@ -4,7 +4,7 @@ language: en
 tags: blog_post
 layout: layouts2/blog_post
 published: true
-title: Stories from the Field - Forest Monitoring in the Congo Basin
+title: "EVENT: Stories from the Field - Forest Monitoring in the Congo Basin"
 author: Leo Bottrill
 subtitle: |
           For several years, [ExCiteS](https://www.ucl.ac.uk/excites) and Moabi have developed new tools and approaches to forest monitoring in the Congo Basin rainforests. Using a combination of old-fashioned field work coupled with cutting edge mapping technology, team members will present experiences implementing programs under the challenging environmental and political conditions characterizing the region. They will discuss how efforts can be scaled to meet the challenges of FLEGT, REDD+, and the emerging palm oil industry. We look forward to a lively discussion!
