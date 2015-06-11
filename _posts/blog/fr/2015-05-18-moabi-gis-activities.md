@@ -3,7 +3,7 @@ categories: fr
 language: fr
 tags: blog_post
 layout: layouts2/blog_post
-published: true
+published: 
 title: "MOABI GIS activities "
 author: Herve Kashongwe
 img: "https://c1.staticflickr.com/9/8766/16479470593_da256c374a_z.jpg"
