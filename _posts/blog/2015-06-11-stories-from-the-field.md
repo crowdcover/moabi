@@ -19,7 +19,7 @@ img: "https://c1.staticflickr.com/1/341/18089125083_28f55dffda_z.jpg"
             Department of Geography University College London <br>
             Pearson Building <br>
             Gower Street <br>
-            London  WC1E 6BT (map) <br>
+            London  WC1E 6BT ([map](https://www.openstreetmap.org/#map=19/51.52498/-0.13548)) <br>
 
 Please RSVP to [info@crowdcover.org](mailto:info@crowdcover.org)
 
