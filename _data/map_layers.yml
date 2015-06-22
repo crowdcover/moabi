@@ -469,3 +469,67 @@
     source:
         name: ERA-WWC
         url:
+
+
+  - id: ogf_survey
+    name: OGF Survey
+    categories: []
+    description: |
+                 OGF Survey
+    legend: |
+            <div>
+              <span class='legend-icon' style='color: #999;'>━━</span>
+              <h3>OGF Survey</h3>
+            </div>
+    date: 2015
+    source:
+        name: OGF
+        url:
+
+
+  - id: terroirs
+    name: Mai Ndombe Terroirs
+    categories: []
+    description: |
+                 Mai Ndombe Terroirs
+    legend: |
+            <div>
+              <span class='legend-icon' style='color: #999;'>━━</span>
+              <h3>Mai Ndombe Terroirs</h3>
+            </div>
+    date: 2015
+    source:
+        name: WWF
+        url:
+
+
+  - id: landuse
+    name: Mai Ndombe Land Use
+    categories: []
+    description: |
+                 Mai Ndombe Land Use
+    legend: |
+            <div>
+              <span class='legend-icon' style='color: #999;'>━━</span>
+              <h3>Mai Ndombe Land Use</h3>
+            </div>
+    date: 2015
+    source:
+        name: WWF
+        url:
+
+
+  - id: plantation_boundaries
+    name: Plantation Boundaries
+    categories: []
+    description: |
+                 Plantation Boundaries
+    legend: |
+            <div>
+              <span class='legend-icon' style='color: #999;'>━━</span>
+              <h3>Plantation Boundaries</h3>
+            </div>
+    date: 2015
+    source:
+        name: WWF
+        url:
