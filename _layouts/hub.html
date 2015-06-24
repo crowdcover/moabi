@@ -1,0 +1,21 @@
+---
+---
+<!doctype html>
+<html>
+<head>
+  {% include dochead.html %}
+  <script data-main="{{site.baseurl}}/js/main" src="{{site.baseurl}}/js/vendor/require.js"></script>
+</head>
+
+<body>
+{% unless page.hide contains 'header' %}
+  {% include header.html %}
+{% endunless %}
+
+{{content}}
+
+{% unless page.hide contains 'footer' %}
+  {% include footer.html %}
+{% endunless %}
+</body>
+</html>
