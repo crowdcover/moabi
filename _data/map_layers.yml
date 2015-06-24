@@ -470,7 +470,6 @@
         name: ERA-WWC
         url:
 
-
   - id: moabi_ogf_survey
     name: OGF FLEG Monitoring Locations
     categories: []
@@ -486,12 +485,11 @@
         name: OGF
         url:
 
-
   - id: moabi_terroirs
     name: Terroir Boundaries (WWF mai ndombe RPAN)
     categories: []
     description: |
-                 This layers present the boundaries of terroirs created by WWF in Mai Ndombe RPAN project
+                 This layers present the boundaries of terroirs created by WWF in Mai Ndombe RPAN project.
     legend: |
             <div>
               <span class='legend-icon' style='color: #999;'>━━</span>
@@ -501,7 +499,6 @@
     source:
         name: WWF
         url:
-
 
   - id: moabi_landuse
     name: Land Use Terroirs (WWF mai ndombe RPAN)
@@ -517,7 +514,6 @@
     source:
         name: WWF
         url:
-
 
   - id: moabi_plantation_boundaries
     name: Plantation Boundaries (WWF ecomakala)
