@@ -471,64 +471,72 @@
         url:
 
   - id: moabi_ogf_survey
-    name: OGF Survey
+    name: OGF FLEG Monitoring Locations
     categories: []
     description: |
-                 OGF Survey
+                 This layers give information concerning all place visited by OGF during their FLEGT monitoring mission.
     legend: |
             <div>
               <span class='legend-icon' style='color: #999;'>━━</span>
-              <h3>OGF Survey</h3>
+              <h3>OGF FLEG Monitoring Locations</h3>
             </div>
     date: 2015
+    tooltip_teaser: [name]
+    tooltip_full: [name]
     source:
         name: OGF
         url:
 
 
   - id: moabi_terroirs
-    name: Mai Ndombe Terroirs
+    name: Terroirs Boundaries (WWF mai ndombe RPAN)
     categories: []
     description: |
-                 Mai Ndombe Terroirs
+                 This layers present the boundaries of terroirs created by WWF in Mai Ndombe RPAN project.
     legend: |
             <div>
               <span class='legend-icon' style='color: #999;'>━━</span>
-              <h3>Mai Ndombe Terroirs</h3>
+              <h3>Terroirs Boundaries (WWF mai ndombe RPAN)</h3>
             </div>
     date: 2015
+    tooltip_teaser: [name]
+    tooltip_full: [name]
     source:
         name: WWF
         url:
 
 
   - id: moabi_landuse
-    name: Mai Ndombe Land Use
+    name: Land Use Terroirs (WWF mai ndombe RPAN)
     categories: []
     description: |
-                 Mai Ndombe Land Use
+                 This layers present the land use inside all terroirs created especially savanna, forest, habitation and Moasaic forest and agriculture.
     legend: |
             <div>
               <span class='legend-icon' style='color: #999;'>━━</span>
-              <h3>Mai Ndombe Land Use</h3>
+              <h3>Land Use Terroirs (WWF mai ndombe RPAN)</h3>
             </div>
     date: 2015
+    tooltip_teaser: [name]
+    tooltip_full: [name]
     source:
         name: WWF
         url:
 
 
   - id: moabi_plantation_boundaries
-    name: Plantation Boundaries
+    name: Plantation Boundaries (WWF ecomakala)
     categories: []
     description: |
-                 Plantation Boundaries
+                 This layers show all plantation of ecomakala project with details on their owner, area and type of tree growth
     legend: |
             <div>
               <span class='legend-icon' style='color: #999;'>━━</span>
-              <h3>Plantation Boundaries</h3>
+              <h3>Plantation Boundaries (WWF ecomakala)</h3>
             </div>
     date: 2015
+    tooltip_teaser: [name]
+    tooltip_full: [name]
     source:
         name: WWF
         url:
