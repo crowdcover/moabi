@@ -75,6 +75,18 @@
     margin: 0 11px 0px 3px;
     padding: 2px;
   }
+
+  .moabi-legend .ogf-survey {
+    float: left;
+    margin-right: 5px;
+    margin-top: 2px;
+    background: rgba(30, 240, 47, 0.5);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  border: 2px solid rgba(240, 30, 89, 0.5);
+}
+
   .moabi-legend .legend-source { margin-left: 8px; }
   /*move legend below tooltip*/
   .leaflet-bottom.leaflet-right { z-index: 1;}

@@ -477,7 +477,7 @@
                  This layers give information concerning all place visited by OGF during their FLEGT monitoring mission.
     legend: |
             <div>
-              <span class='legend-icon' style='color: #999;'>━━</span>
+              <div class='moabi-legend ogf-survey'></div>
               <h3>OGF FLEG Monitoring Locations</h3>
             </div>
     date: 2015
