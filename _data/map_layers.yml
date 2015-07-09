@@ -144,8 +144,8 @@
               <h3>Indigenous Lands</h3>
             </div>
     date: 2012
-    tooltip_teaser: [tribe, lifestyle]
-    tooltip_full: [tribe, lifestyle]
+    tooltip_teaser: [sector, ethnic_group, lifestyle]
+    tooltip_full: [sector, ethnic_group, lifestyle]
     source:
         name: Dynamique des Groupes des Peuples Autochtones (DGPA)
         url: www.dgpa.cd
@@ -517,7 +517,7 @@
               <h3>Land Use Terroirs (WWF mai ndombe RPAN)</h3>
             </div>
     date: 2015
-    tooltip_teaser: [name]
+    tooltip_teaser: [name, occupation]
     tooltip_full: [name]
     source:
         name: WWF
