@@ -13,6 +13,7 @@ layout: main
     {% endfor %}
 {% endfor %}
 
+
 <div class="fill-light">
 {% for post in site.tags.blog_post %}
 {% unless post.draft %}
@@ -20,6 +21,18 @@ layout: main
     <section class="clearfix limiter pad4y {% unless forloop.last %}strongline-bottom space-bottom2{% endunless %}">
         <h1 class="col10 margin1 margin1r center space-bottom1"><a href="{{site.baseurl}}{{post.url}}" class="quiet">{{post.title}}</a></h1>
         <div class="pad1 center quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:#444; padding: 0 6px;">|</span> {{post.author}}</div>
+
+        {% if post.lucidpress %}
+        <div
+        style="display:inline-block;width:99%;text-align:center;font-size:18px">
+        <a href="{{site.baseurl}}{{post.url}}">
+        <img
+            src="{{post.img}}"
+            width="50%" style="border:1px solid black;box-sizing:border-box;"/>
+
+        </a>
+        </div>
+        {% else %}
         {% if post.img %}
         <div class="clearfix">
             <div class="col10 margin1 margin1r pad1y center">
@@ -34,6 +47,9 @@ layout: main
                 {{post.excerpt | markdownify}}
             {% endif %}
         </div>
+        {% endif %}
+
+
         <a href="{{site.baseurl}}{{post.url}}">{{t.[page.language].read_more}}</a>
     </section>
 {% else %}
@@ -43,6 +59,19 @@ layout: main
         <h1 class="center"><a href="{{site.baseurl}}{{post.url}}" class="quiet">{{post.title}}</a></h1>
         <div class="pad1 center quiet">{{post.date | date: "%d %B, %Y"}} <span style="color:#444; padding: 0 6px;">|</span> {{post.author}}</div>
         <div class="pad1 center quiet"><em>{{t.[page.language].no_translation}}</em></div>
+
+
+        {% if post.lucidpress %}
+        <div
+        style="display:inline-block;width:99%;text-align:center;font-size:18px">
+        <a href="{{site.baseurl}}{{post.url}}">
+        <img
+            src="{{post.img}}"
+            width="50%" style="border:1px solid black;box-sizing:border-box;"/>
+
+        </a>
+        </div>
+        {% else %}
         {% if post.img %}
         <div class="clearfix">
             <div class="col10 margin1 margin1r pad1y center">
@@ -57,6 +86,7 @@ layout: main
                 {{post.excerpt | markdownify}}
             {% endif %}
         </div>
+        {% endif %}
         <a href="{{site.baseurl}}{{post.url}}">{{t.[page.language].read_more}}</a>
     </section>
     {% endunless %}
