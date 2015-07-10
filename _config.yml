@@ -39,6 +39,11 @@ prose:
           element: "text"
           label: "Author"
           value: "CrowdCover Team"
+      - name: "lucidpress"
+        field:
+          element: "text"
+          label: "Newsletter"
+          value: "false"
       - name: "img"
         field:
           element: "text"
@@ -81,6 +86,11 @@ prose:
           element: "text"
           label: "Author"
           value: "CrowdCover Team"
+      - name: "lucidpress"
+        field:
+          element: "text"
+          label: "Newsletter"
+          value: "false"
       - name: "img"
         field:
           element: "text"
@@ -88,4 +98,3 @@ prose:
           help: "URL link to a photo you would like to use for the banner photograph.  These can be hosted on flickr or elsewhere."
           value: ""
           placeholder: "http://example_photo_url.com"
-
