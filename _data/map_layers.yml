@@ -540,3 +540,20 @@
     source:
         name: WWF
         url:
+
+  - id: moabi_carpe_landscapes
+    name: CARPE Landscapes (REDD Priority Zones)
+    categories: [REDD]
+    description: |
+
+    legend: |
+            <div>
+              <div class='block double-stroke' style='background-color: #e35e41'></div>
+              <h3>CARPE Landscapes (REDD Priority Zones)</h3>
+            </div>
+    date: 2015
+    tooltip_teaser: [name]
+    tooltip_full: [name]
+    source:
+        name: CARPE
+        url:
