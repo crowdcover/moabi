@@ -368,12 +368,12 @@
         url:
 
   - id: era_forest_stratification
-    name: Era Forest Stratification
+    name: ERA Forest Stratification
     categories: [forestry, redd]
     description: |
                  Remote sensed survey of forest stratification for the ERA REDD+ project.
     legend: |
-            <h3>Era Forest Stratification</h3>
+            <h3>ERA Forest Stratification</h3>
             <div>
               <div class='block double-stroke' style='background-color: #58600e'></div>
               <div>Dense Forest</div>
@@ -392,74 +392,74 @@
             </div>
     date: 2014
     source:
-        name: ERA-WWC
+        name: Ecosystem Restoration Associates and Wildlife Works Carbon (ERA-WWC)
         url:
 
   - id: era_agriculture_projects
-    name: Era Agriculture Projects
+    name: ERA Agriculture Projects
     categories: [forestry, redd]
     description: |
-                 Agricultural projects conducted by Era in their concession.
+                 Agricultural projects conducted by ERA in their concession.
     legend: |
-            <h3>Era Agriculture Projects</h3>
+            <h3>ERA Agriculture Projects</h3>
             <img class='legend-icon dot' style='border-color: #a9b918;'src='site.baseurl/img/agriculture.svg'><span class='micro'>Agriculture</span>
     date: 2014
     tooltip_teaser: [name, agriculture_project_count]
     tooltip_full: [name, agriculture_project_count]
     source:
-        name: ERA-WWC
+        name: Ecosystem Restoration Associates and Wildlife Works Carbon (ERA-WWC)
         url:
 
   - id: era_education_projects
-    name: Era Education Projects
+    name: ERA Education Projects
     categories: [forestry, redd]
     description: |
-                 Education projects conducted by Era in their concession.
+                 Education projects conducted by ERA in their concession.
     legend: |
-            <h3>Era Education Projects</h3>
+            <h3>ERA Education Projects</h3>
             <img class='legend-icon dot' style='border-color: #a9b918;'src='site.baseurl/img/education.svg'><span class='micro'>Education</span>
     date: 2014
     tooltip_teaser: [name, education_project_count]
     tooltip_full: [name, education_project_count]
     source:
-        name: ERA-WWC
+        name: Ecosystem Restoration Associates and Wildlife Works Carbon (ERA-WWC)
         url:
 
   - id: era_community_projects
-    name: Era Community Projects
+    name: ERA Community Projects
     categories: [forestry, redd]
     description: |
-                 Community development projects conducted by Era in their concession.
+                 Community development projects conducted by ERA in their concession.
     legend: |
-            <h3>Era Community Projects</h3>
+            <h3>ERA Community Projects</h3>
             <img class='legend-icon dot' style='border-color: #a9b918;'src='site.baseurl/img/community.svg'><span class='micro'>Community Projects</span>
     date: 2014
     tooltip_teaser: [name, community_project_count]
     tooltip_full: [name, community_project_count]
     source:
-        name: ERA-WWC
+        name: Ecosystem Restoration Associates and Wildlife Works Carbon (ERA-WWC)
         url:
 
   - id: era_clan_boundaries
-    name: Era Clan Boundaries
+    name: ERA Clan Boundaries
     categories: [forestry, redd]
     description: |
-                 Clan boundaries within the Era REDD+ concession.
+                 Clan boundaries within the ERA REDD+ concession.
     legend: |
             <div>
               <span class='legend-icon' style='color: #666;'>━━</span>
-              <h3>Era Clan Boundaries</h3>
+              <h3>ERA Clan Boundaries</h3>
             </div>
     date: 2014
     source:
-        name: ERA-WWC
+        name: Ecosystem Restoration Associates and Wildlife Works Carbon (ERA-WWC)
         url:
 
   - id: era_project_zones
-    name: Era Project Zones
+    name: ERA Project Zones
     categories: [forestry, redd]
     description: |
-                 Era REDD+ concession zones.
+                 ERA REDD+ concession zones.
     legend: |
             <div>
               <span class='legend-icon' style='color: #999;'>━━</span>
@@ -467,7 +467,7 @@
             </div>
     date: 2014
     source:
-        name: ERA-WWC
+        name: Ecosystem Restoration Associates and Wildlife Works Carbon (ERA-WWC)
         url:
 
   - id: moabi_ogf_survey
@@ -484,9 +484,8 @@
     tooltip_teaser: [name]
     tooltip_full: [name]
     source:
-        name: OGF
-        url:
-
+        name: Observatoire de la Gouvernance Forestière (OGF)
+        url: http://www.ogfrdc.cd/
 
   - id: moabi_terroirs
     name: Terroirs Boundaries (WWF mai ndombe RPAN)
@@ -496,7 +495,7 @@
     legend: |
             <div>
               <span class='legend-icon' style='color: #999;'>━━</span>
-              <h3>Terroirs Boundaries (WWF mai ndombe RPAN)</h3>
+              <h3>Terroirs Boundaries (WWF Nai Ndombe RPAN)</h3>
             </div>
     date: 2015
     tooltip_teaser: [name]
@@ -507,14 +506,14 @@
 
 
   - id: moabi_landuse
-    name: Land Use Terroirs (WWF mai ndombe RPAN)
+    name: Land Use Terroirs (WWF Mai Ndombe RPAN)
     categories: []
     description: |
                  This layers present the land use inside all terroirs created especially savanna, forest, habitation and Moasaic forest and agriculture.
     legend: |
             <div>
               <span class='legend-icon' style='color: #999;'>━━</span>
-              <h3>Land Use Terroirs (WWF mai ndombe RPAN)</h3>
+              <h3>Land Use Terroirs (WWF Mai Ndombe RPAN)</h3>
             </div>
     date: 2015
     tooltip_teaser: [name, occupation]
@@ -545,7 +544,7 @@
     name: CARPE Landscapes (REDD Priority Zones)
     categories: [REDD]
     description: |
-
+                  Conservation areas designated by the Congo Basin Forest Partnership and Central African Forest Commission (COMIFAC) and supported by CARPE.  These are moist forest landscapes that are the priority zones for REDD projects.
     legend: |
             <div>
               <div class='block double-stroke' style='background-color: #e35e41'></div>
@@ -555,5 +554,5 @@
     tooltip_teaser: [name]
     tooltip_full: [name]
     source:
-        name: CARPE
-        url:
+        name: Central Africa Regional Program for the Environment (CARPE)
+        url: http://carpe.umd.edu/
