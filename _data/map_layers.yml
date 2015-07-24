@@ -556,3 +556,20 @@
     source:
         name: Central Africa Regional Program for the Environment (CARPE)
         url: http://carpe.umd.edu/
+
+    - id: moabi_fip_zones
+      name: FIP Intervention Zones
+      categories: []
+      description: |
+                    Geographic areas selected by the Forest Investment Program (FIP) as priority intervention zones where they seek to co-finance conservation projects. These areas were chosen based on five criteria: 1) climate change mitigation potential, 2) demonstration potential at scale, 3) cost effectiveness, 4) implementation potential, and 5) integration of sustainable development (related benefits).
+      legend: |
+              <div>
+                <div class='block double-stroke striped' style='background-color: #aee7fd'></div>
+                <h3>FIP Intervention Zones</h3>
+              </div>
+      date: 2011
+      tooltip_teaser: [name]
+      tooltip_full: [name]
+      source:
+          name:  DRC Ministry of Environment, Nature Conservation and Tourism
+          url: http://www-cif.climateinvestmentfunds.org/country/democratic-republic-congo/democratic-republic-congos-fip-programming
