@@ -1,0 +1,20 @@
+
+
+#map {
+  min-width: 600px !important;
+  min-height: 900px !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #FFF !important;
+  top: 0px;
+  left: 0px;
+}
+
+
+@media print {
+
+	html {padding: 0px!important;}
+	.leaflet-control-easyPrint-button{display: none!important;}
+  .leaflet-control-zoom{display: none!important;}
+  .map-legends {box-shadow: none!important;}
+}

@@ -1,8 +1,8 @@
 ---
 ---
 // map module
-define(['app/main-app', 'mapbox', 'leafletImage', 'leafletHash', 'jquery', 'jquery-sortable'],
-function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
+define(['app/main-app', 'mapbox', 'leafletImage', 'leafletHash', 'leafletEasyPrint', 'jquery', 'jquery-sortable', 'jquery-print'],
+function (moabi, L, leafletImage, leaflet_hash, leafletEasyPrint, $, sortable, jquery_print) {
   $.extend(moabi, {
     initMap: function(){
       moabi.initMain();
@@ -43,6 +43,8 @@ function (moabi, L, leafletImage, leaflet_hash, $, sortable) {
       moabi.leaflet_hash = L.hash(this.map);
 
       this.map.legendControl.addLegend('<h3 class="center keyline-bottom">Legend</h3><div class="legend-contents"></div>');
+
+      L.easyPrint().addTo(this.map);
 
       moabi.leaflet_hash.on('update', moabi.getLayerHash);
       moabi.leaflet_hash.on('change', moabi.setLayerHash);

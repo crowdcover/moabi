@@ -18,7 +18,7 @@ hide: [footer]
 {% assign t = site.data.translations %}
 <!-- map -->
 {% include map.html %}
-<div id="sidebar" class="fill-light strongline-right{% if page.hide contains 'footer' %} no-footer{% endif %}">
+<div id="sidebar" class="noprint fill-light strongline-right{% if page.hide contains 'footer' %} no-footer{% endif %}">
 
     <!-- sidebar slider -->
     <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px">
@@ -44,4 +44,3 @@ hide: [footer]
 
 
 </div>
-
