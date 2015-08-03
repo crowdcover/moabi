@@ -211,6 +211,75 @@
         name: World Resources Institute / Ministere de l'environnement Conservation de la Nature et Tourisme (WRI/MECNT)
         url:
 
+  - id: moabi_logging_roads
+    name: Logging Roads
+    categories: [forestry, concession]
+    description: |
+                 Logging Roads
+    legend: |
+              <h3>Logging Roads</h3>
+              <table class='fixed'>
+                <thead>
+                  <tr>
+                    <th class='center'>before 2000</th>
+                    <th class='center'>2000</th>
+                    <th class='center'>2001</th>
+                    <th class='center'>2002</th>
+                  </tr>
+                  <tr>
+                    <th class='center'>2003</th>
+                    <th class='center'>2004</th>
+                    <th class='center'>2005</th>
+                    <th class='center'>2006</th>
+                  </tr>
+                  <tr>
+                    <th class='center'>2007</th>
+                    <th class='center'>2008</th>
+                    <th class='center'>2009</th>
+                    <th class='center'>2010</th>
+                  </tr>
+                  <tr>
+                    <th class='center'>2011</th>
+                    <th class='center'>2012</th>
+                    <th class='center'>2013</th>
+                    <th class='center'>after 2013</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style='background-color: #fbffdd;'></td>
+                    <td style='background-color: #f8ffcc;'></td>
+                    <td style='background-color: #f9f3be;'></td>
+                    <td style='background-color: #fae8b0;'></td>
+                  </tr>
+                  <tr>
+                    <td style='background-color: #fadea3;'></td>
+                    <td style='background-color: #fad396;'></td>
+                    <td style='background-color: #f9c788;'></td>
+                    <td style='background-color: #f8bc7b;'></td>
+                  </tr>
+                  <tr>
+                    <td style='background-color: #f6b06e;'></td>
+                    <td style='background-color: #f4a661;'></td>
+                    <td style='background-color: #f19a54;'></td>
+                    <td style='background-color: #ef8f47;'></td>
+                  </tr>
+                  <tr>
+                    <td style='background-color: #eb8439;'></td>
+                    <td style='background-color: #e8782b;'></td>
+                    <td style='background-color: #e46c1c;'></td>
+                    <td style='background-color: #cc5506;'></td>
+                  </tr>
+                </tbody>
+              </table>
+    tooltip_teaser: [start_date]
+    tooltip_full: [start_date, end_date]
+    date: 2015
+    source:
+        name: OpenStreetMap contributors
+        url: http://www.openstreetmap.org/copyright
+
+
   - id: moabi_logging_artisanal
     name: Artisanal Logging Concessions
     categories: [forestry, concession]
@@ -470,6 +539,20 @@
         name: Ecosystem Restoration Associates and Wildlife Works Carbon (ERA-WWC)
         url:
 
+  - id: moabi_era_deforestation
+    name: ERA Deforestation Drivers
+    categories: [forestry, redd]
+    description: |
+                 ERA Deforestation Drivers
+    legend: |
+            <img class='legend-icon dot' style='border-color: #c93807;' src='site.baseurl/img/chainsaw.svg'/><h3>ERA Deforestation Drivers</h3>
+    date: 2015
+    tooltip_teaser: [name]
+    tooltip_full: [name]
+    source:
+        name: Ecosystem Restoration Associates (ERA)
+        url:
+
   - id: moabi_ogf_survey
     name: OGF FLEG Monitoring Locations
     categories: []
@@ -486,6 +569,24 @@
     source:
         name: Observatoire de la Gouvernance Forestière (OGF)
         url: http://www.ogfrdc.cd/
+
+
+  - id: moabi_mai_ndombe_redd_project
+    name: Mai Ndombe REDD Project Zone
+    categories: []
+    description: |
+                 Mai Ndombe REDD Project Zone
+    legend: |
+            <div>
+              <div class='block double-stroke' style='background-color: #2698de'></div>
+              <h3>Mai Ndombe REDD Project Zone</h3>
+            </div>
+    date: 2015
+    tooltip_teaser: [name]
+    tooltip_full: [name]
+    source:
+        name: Moabi
+        url:
 
   - id: moabi_terroirs
     name: Terroirs Boundaries (WWF mai ndombe RPAN)
