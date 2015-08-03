@@ -226,24 +226,6 @@
                     <th class='center'>2001</th>
                     <th class='center'>2002</th>
                   </tr>
-                  <tr>
-                    <th class='center'>2003</th>
-                    <th class='center'>2004</th>
-                    <th class='center'>2005</th>
-                    <th class='center'>2006</th>
-                  </tr>
-                  <tr>
-                    <th class='center'>2007</th>
-                    <th class='center'>2008</th>
-                    <th class='center'>2009</th>
-                    <th class='center'>2010</th>
-                  </tr>
-                  <tr>
-                    <th class='center'>2011</th>
-                    <th class='center'>2012</th>
-                    <th class='center'>2013</th>
-                    <th class='center'>after 2013</th>
-                  </tr>
                 </thead>
                 <tbody>
                   <tr>
@@ -252,18 +234,54 @@
                     <td style='background-color: #f9f3be;'></td>
                     <td style='background-color: #fae8b0;'></td>
                   </tr>
+                </tbody>
+              </table>
+                <table class='fixed'>
+                  <thead>
+                  <tr>
+                    <th class='center'>2003</th>
+                    <th class='center'>2004</th>
+                    <th class='center'>2005</th>
+                    <th class='center'>2006</th>
+                  </tr>
+                </thead>
+                <tbody>
                   <tr>
                     <td style='background-color: #fadea3;'></td>
                     <td style='background-color: #fad396;'></td>
                     <td style='background-color: #f9c788;'></td>
                     <td style='background-color: #f8bc7b;'></td>
                   </tr>
+                </tbody>
+              </table>
+              <table class='fixed'>
+                <thead>
                   <tr>
-                    <td style='background-color: #f6b06e;'></td>
-                    <td style='background-color: #f4a661;'></td>
-                    <td style='background-color: #f19a54;'></td>
-                    <td style='background-color: #ef8f47;'></td>
+                    <th class='center'>2007</th>
+                    <th class='center'>2008</th>
+                    <th class='center'>2009</th>
+                    <th class='center'>2010</th>
                   </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td style='background-color: #f6b06e;'></td>
+                      <td style='background-color: #f4a661;'></td>
+                      <td style='background-color: #f19a54;'></td>
+                      <td style='background-color: #ef8f47;'></td>
+                    </tr>
+                </tbody>
+              </table>
+              <table class='fixed'>
+                <thead>
+                  <tr>
+                    <th class='center'>2011</th>
+                    <th class='center'>2012</th>
+                    <th class='center'>2013</th>
+                    <th class='center'>after 2013</th>
+                  </tr>
+                </thead>
+                <tbody>
                   <tr>
                     <td style='background-color: #eb8439;'></td>
                     <td style='background-color: #e8782b;'></td>
