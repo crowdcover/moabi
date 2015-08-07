@@ -565,8 +565,9 @@
     legend: |
             <img class='legend-icon dot' style='border-color: #c93807;' src='site.baseurl/img/chainsaw.svg'/><h3>ERA Deforestation Drivers</h3>
     date: 2015
-    tooltip_teaser: [name]
-    tooltip_full: [name]
+    tooltip_teaser: [village,type]
+    tooltip_full: [village,type]
+    tooltip_photo: photo_url
     source:
         name: Ecosystem Restoration Associates (ERA)
         url:
@@ -596,7 +597,7 @@
                  Mai Ndombe REDD Project Zone
     legend: |
             <div>
-              <div class='block double-stroke' style='background-color: #2698de'></div>
+              <div class='block double-stroke' style='background-color: #26c0de'></div>
               <h3>Mai Ndombe REDD Project Zone</h3>
             </div>
     date: 2015
