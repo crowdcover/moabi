@@ -614,7 +614,7 @@
                  This layers present the boundaries of terroirs created by WWF in Mai Ndombe RPAN project.
     legend: |
             <div>
-              <span class='legend-icon' style='color: #999;'>━━</span>
+              <span class='legend-icon dotted' style='color: #fae49b;'>━━</span>
               <h3>Terroirs Boundaries (WWF Nai Ndombe RPAN)</h3>
             </div>
     date: 2015
@@ -631,10 +631,24 @@
     description: |
                  This layers present the land use inside all terroirs created especially savanna, forest, habitation and Moasaic forest and agriculture.
     legend: |
-            <div>
-              <span class='legend-icon' style='color: #999;'>━━</span>
               <h3>Land Use Terroirs (WWF Mai Ndombe RPAN)</h3>
-            </div>
+              <div>
+                <div class='block double-stroke' style='background-color: #487427'></div>
+                <div>Foret</div>
+              </div>
+              <div>
+                <div class='block double-stroke' style='background-color: #859f68'></div>
+                <div>Mosaique</div>
+              </div>
+              <div>
+                <div class='block double-stroke' style='background-color: #bdc177'></div>
+                <div>Savane</div>
+              </div>
+              <div>
+                <div class='block double-stroke' style='background-color: #d70e0e'></div>
+                <div>Habitation</div>
+              </div>
+
     date: 2015
     tooltip_teaser: [name, occupation]
     tooltip_full: [name]
