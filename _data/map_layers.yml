@@ -633,19 +633,19 @@
     legend: |
               <h3>Land Use Terroirs (WWF Mai Ndombe RPAN)</h3>
               <div>
-                <div class='block double-stroke' style='background-color: #487427'></div>
+                <div class='block double-stroke' style='background-color: #91AB7D'></div>
                 <div>Foret</div>
               </div>
               <div>
-                <div class='block double-stroke' style='background-color: #859f68'></div>
+                <div class='block double-stroke' style='background-color: #B5C4A4'></div>
                 <div>Mosaique</div>
               </div>
               <div>
-                <div class='block double-stroke' style='background-color: #bdc177'></div>
+                <div class='block double-stroke' style='background-color: #D5D8AD'></div>
                 <div>Savane</div>
               </div>
               <div>
-                <div class='block double-stroke' style='background-color: #d70e0e'></div>
+                <div class='block double-stroke' style='background-color: #E97979'></div>
                 <div>Habitation</div>
               </div>
 
