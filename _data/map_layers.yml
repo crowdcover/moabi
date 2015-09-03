@@ -666,7 +666,7 @@
                 <div>Habitation</div>
               </div>
               <div>
-                <hr style="border-top: 2px dotted #444343; width: 25px;" />
+                <hr style="float: left; margin-top: 10px; margin-right: 10px; border-top: 2px dotted #444343; width: 25px;" />
                 <span>Agricole</span>
               </div>
 
