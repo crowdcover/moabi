@@ -378,6 +378,23 @@
         name: DIAF/WRI, working layer
         url:
 
+    - id: moabi_feronia_concessions
+      name: Feronia Concessions
+      categories: [concession, forestry]
+      description: |
+                Feronia Concessions
+      legend: |
+              <div>
+                <div class='block double-stroke' style='background-color: #ED65D3'></div>
+                <h3>Feronia Concessions</h3>
+              </div>
+      date: 2014
+      tooltip_teaser: [name]
+      tooltip_full: [name]
+      source:
+          name: DIAF/WRI, working layer
+          url:
+
   - id: moabi_palm_suitability
     name: Palm Oil Suitability
     categories: [forestry]
@@ -647,6 +664,10 @@
               <div>
                 <div class='block double-stroke' style='background-color: #E97979'></div>
                 <div>Habitation</div>
+              </div>
+              <div>
+                <div class='legend-icon dotted' style='color: #444343;'>━━</div>
+                <div>Agricole</div>
               </div>
 
     date: 2015
