@@ -378,22 +378,22 @@
         name: DIAF/WRI, working layer
         url:
 
-    - id: moabi_feronia_concessions
-      name: Feronia Concessions
-      categories: [concession, forestry]
-      description: |
-                Feronia Concessions
-      legend: |
-              <div>
-                <div class='block double-stroke' style='background-color: #ED65D3'></div>
-                <h3>Feronia Concessions</h3>
-              </div>
-      date: 2014
-      tooltip_teaser: [name]
-      tooltip_full: [name]
-      source:
-          name: DIAF/WRI, working layer
-          url:
+  - id: moabi_feronia_concessions
+    name: Feronia Concessions
+    categories: [concession, forestry]
+    description: |
+              Feronia Concessions
+    legend: |
+            <div>
+              <div class='block double-stroke' style='background-color: #ED65D3'></div>
+              <h3>Feronia Concessions</h3>
+            </div>
+    date: 2014
+    tooltip_teaser: [name]
+    tooltip_full: [name]
+    source:
+        name: DIAF/WRI, working layer
+        url:
 
   - id: moabi_palm_suitability
     name: Palm Oil Suitability
@@ -676,7 +676,6 @@
     source:
         name: WWF
         url:
-
 
   - id: moabi_plantation_boundaries
     name: Plantation Boundaries (WWF ecomakala)
