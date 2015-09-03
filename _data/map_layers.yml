@@ -666,8 +666,8 @@
                 <div>Habitation</div>
               </div>
               <div>
-                <span class='legend-icon dotted' style='color: #444343;'>━━</span>
-                <h3>Agricole</h3>
+                <hr style="border-top: 2px dotted #444343; width: 25px;" />
+                <span>Agricole</span>
               </div>
 
     date: 2015
