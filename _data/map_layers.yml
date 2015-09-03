@@ -372,27 +372,27 @@
               <h3>Agriculture Concessions</h3>
             </div>
     date: 2014
-    tooltip_teaser: [name]
-    tooltip_full: [name]
+    tooltip_teaser: [name, operator, region,  resource]
+    tooltip_full: [[name, operator, region,  resource]
     source:
         name: DIAF/WRI, working layer
         url:
 
   - id: moabi_feronia_concessions
-    name: Feronia Concessions
+    name: Feronia Palm Oil Concessions
     categories: [concession, forestry]
     description: |
-              Feronia Concessions
+              This layer displays the plantation sites of Feronia, a Canadian palm oil company.  Feronia operates on three plantations: Lokutu, Yaligimba, and Boteka, which are collectively known as Plantations et Huileries du Congo SA, or PHC.
     legend: |
             <div>
               <div class='block double-stroke' style='background-color: #ED65D3'></div>
-              <h3>Feronia Concessions</h3>
+              <h3>Feronia Palm Oil Concessions</h3>
             </div>
-    date: 2014
-    tooltip_teaser: [name]
-    tooltip_full: [name]
+    date: 2015
+    tooltip_teaser: [name, operator, region,  resource]
+    tooltip_full: [name, operator, region,  resource]
     source:
-        name: DIAF/WRI, working layer
+        name: DIAF/WRI
         url:
 
   - id: moabi_palm_suitability
@@ -650,19 +650,19 @@
     legend: |
               <h3>Land Use Terroirs (WWF Mai Ndombe RPAN)</h3>
               <div>
-                <div class='block double-stroke' style='background-color: #91AB7D'></div>
+                <div class='block double-stroke' style='background-color: #477521'></div>
                 <div>Foret</div>
               </div>
               <div>
-                <div class='block double-stroke' style='background-color: #B5C4A4'></div>
+                <div class='block double-stroke' style='background-color: #839F65'></div>
                 <div>Mosaique</div>
               </div>
               <div>
-                <div class='block double-stroke' style='background-color: #D5D8AD'></div>
+                <div class='block double-stroke' style='background-color: #BCC172'></div>
                 <div>Savane</div>
               </div>
               <div>
-                <div class='block double-stroke' style='background-color: #E97979'></div>
+                <div class='block double-stroke' style='background-color: #D80500'></div>
                 <div>Habitation</div>
               </div>
               <div>
