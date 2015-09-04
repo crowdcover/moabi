@@ -373,7 +373,7 @@
             </div>
     date: 2014
     tooltip_teaser: [name, operator, region,  resource]
-    tooltip_full: [[name, operator, region,  resource]
+    tooltip_full: [name, operator, region,  resource]
     source:
         name: DIAF/WRI, working layer
         url:
