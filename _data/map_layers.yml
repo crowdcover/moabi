@@ -31,33 +31,35 @@
         url: http://earthenginepartners.appspot.com/science-2013-global-forest
 
   - id: moabi_forest_lossyear
-    name: UMD Forest Loss (2000 - 2012)
+    name: UMD Forest Loss (2000 - 2014)
     categories: [forestry, raster]
     description: |
-                 Total forest loss, 2000 - 2010, defined as a standard-replacement disturbance, or a change from forest to non-forest.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.  Resolution: 1 arc-second (~30m).
+                 Total forest loss, 2000 - 2014, defined as a standard-replacement disturbance, or a change from forest to non-forest.  Deforestation and forest degredation can be caused by multiple factors, both natural and man made.  Resolution: 1 arc-second (~30m).
     legend: |
             <h3>Forest Loss by Year</h3>
             <table class='fixed'>
               <thead>
                 <tr>
-                  <th class='center'>2001</th>
-                  <th class='center'>2003</th>
-                  <th class='center'>2006</th>
-                  <th class='center'>2009</th>
+                  <th class='center'>2001-2005</th>
+                  <th class='center'>2006-2010</th>
+                  <th class='center'>2011</th>
                   <th class='center'>2012</th>
+                  <th class='center'>2013</th>
+                  <th class='center'>2014</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td style='background-color: #ffffe0;'></td>
-                  <td style='background-color: #ffd67f;'></td>
-                  <td style='background-color: #ffab5c;'></td>
-                  <td style='background-color: #ff7a35;'></td>
-                  <td style='background-color: #ff3000;'></td>
+                  <td style='background-color: #ffffb2;'></td>
+                  <td style='background-color: #fed66d;'></td>
+                  <td style='background-color: #fda648;'></td>
+                  <td style='background-color: #fd4c00;'></td>
+                  <td style='background-color: #e52f21;'></td>
+                  <td style='background-color: #e52f21;'></td>
                 </tr>
               </tbody>
             </table>
-    date: 2000 - 2012
+    date: 2000 - 2014
     source:
         name: University of Maryland (UMD)
         url: http://earthenginepartners.appspot.com/science-2013-global-forest
