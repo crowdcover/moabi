@@ -435,7 +435,7 @@
               <span class='legend-icon' style='color: #F8CC00;'>━━</span>
               <h3>Road Rehabilitation Projects</h3>
             </div>
-    date: 2013
+    date: 2014
     tooltip_teaser: [name, highway]
     tooltip_full: [name, highway, ref, proposed]
     source:
