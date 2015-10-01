@@ -626,6 +626,23 @@
         name: Moabi
         url:
 
+  - id: moabi_maindombe_rprogram
+    name: Mai Ndombe R Program
+    categories: []
+    description: |
+                 Mai Ndombe R Program
+    legend: |
+            <div>
+              <div class='block double-stroke' style='background-color: #dae57e'></div>
+              <h3>Mai Ndombe R Program</h3>
+            </div>
+    date: 2014
+    tooltip_teaser: [name, status]
+    tooltip_full: [name, status, methodology, start_date, end_date, project_leader, contact_person, contact_email]
+    source:
+        name: Observatoire des Forets d'Afrique Centrale / Coordination Nationale REDD (OFAC/CNREDD)
+        url:
+
   - id: moabi_terroirs
     name: Terroirs Boundaries (WWF mai ndombe RPAN)
     categories: []
