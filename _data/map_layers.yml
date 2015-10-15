@@ -608,33 +608,15 @@
         name: Observatoire de la Gouvernance Forestière (OGF)
         url: http://www.ogfrdc.cd/
 
-
-  - id: moabi_mai_ndombe_redd_project
-    name: Mai Ndombe REDD Project Zone
-    categories: []
-    description: |
-                 Mai Ndombe REDD Project Zone
-    legend: |
-            <div>
-              <div class='block double-stroke' style='background-color: #26c0de'></div>
-              <h3>Mai Ndombe REDD Project Zone</h3>
-            </div>
-    date: 2015
-    tooltip_teaser: [name]
-    tooltip_full: [name]
-    source:
-        name: Moabi
-        url:
-
   - id: moabi_maindombe_rprogram
-    name: Mai Ndombe R Program
+    name: Mai Ndombe ER Program
     categories: []
     description: |
-                 Mai Ndombe R Program
+                 Mai Ndombe ER Program
     legend: |
             <div>
               <div class='block double-stroke' style='background-color: #dae57e'></div>
-              <h3>Mai Ndombe R Program</h3>
+              <h3>Mai Ndombe ER Program</h3>
             </div>
     date: 2014
     tooltip_teaser: [name, status]
