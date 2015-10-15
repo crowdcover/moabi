@@ -391,8 +391,8 @@
               <h3>Working Map of Feronia Agricultural Concessions</h3>
             </div>
     date: 2015
-    tooltip_teaser: [name, operator, region,  resource]
-    tooltip_full: [name, operator, region,  resource]
+    tooltip_teaser: [name, operator, resource]
+    tooltip_full: [name, operator, region,  resource, validation]
     source:
         name: Feronia
         url:
