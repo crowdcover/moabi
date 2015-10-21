@@ -381,14 +381,14 @@
         url:
 
   - id: moabi_feronia_concessions
-    name: Working Map of Feronia Agricultural Concessions
+    name: Working Map of Feronia Agriculture Concessions
     categories: [concession, forestry]
     description: |
-              This layer displays the plantation sites of Feronia, a Canadian palm oil company.  Feronia operates on three plantations: Lokutu, Yaligimba, and Boteka, which are collectively known as Plantations et Huileries du Congo SA, or PHC.
+              This layer displays the plantation sites of Feronia, a Canadian listed agriculture company. Feronia operates on three plantations: Lokutu, Yaligimba, and Boteka, which are collectively known as Plantations et Huileries du Congo SA, or PHC.
     legend: |
             <div>
               <div class='block double-stroke' style='background-color: #ED65D3'></div>
-              <h3>Working Map of Feronia Agricultural Concessions</h3>
+              <h3>Working Map of Feronia Agriculture Concessions</h3>
             </div>
     date: 2015
     tooltip_teaser: [name, operator, resource]
