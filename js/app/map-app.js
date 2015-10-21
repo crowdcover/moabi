@@ -26,7 +26,7 @@ function (moabi, L, leafletImage, leaflet_hash, leafletEasyPrint, $, sortable, j
         layers: baseLayer,
         center: pageConfig.baseLayer.latlon,
         zoom: pageConfig.baseLayer.zoom,
-        scrollWheelZoom: false,
+        scrollWheelZoom: true,
         minZoom: 4,
         maxZoom: 18
       });
