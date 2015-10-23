@@ -386,9 +386,42 @@
     description: |
               This layer displays the plantation sites of Feronia, a Canadian listed agriculture company. Feronia operates on three plantations: Lokutu, Yaligimba, and Boteka, which are collectively known as Plantations et Huileries du Congo SA, or PHC.
     legend: |
+            <h3>Working Map of Feronia Agriculture Concessions</h3>
+            <div>
+              <img class='svg legend-icon legend-icon-village fl' src='site.baseurl/img/village-24.svg'/>
+                <div>Village</div>
+            </div>
+            <div>
+              <img class='svg legend-icon legend-icon-cemetery fl' src='site.baseurl/img/cemetery-24.svg'/>
+                <div>Cemetery</div>
+            </div>
+            <div>
+              <img class='svg legend-icon legend-icon-clinic fl' src='site.baseurl/img/hospital-24.svg'/>
+                <div>Clinic</div>
+            </div>
+            <div>
+              <img class='svg legend-icon legend-icon-school fl' src='site.baseurl/img/library-24.svg'/>
+                <div>School</div>
+            </div>
+            <div>
+              <img class='svg legend-icon legend-icon-mill fl' src='site.baseurl/img/industrial-24.svg'/>
+                <div>Mill</div>
+            </div>
             <div>
               <div class='block double-stroke' style='background-color: #ED65D3'></div>
-              <h3>Working Map of Feronia Agriculture Concessions</h3>
+              <div>Agriculture Concessions</div>
+            </div>
+            <div>
+              <div class='block double-stroke' style='background-color: #eedb8d'></div>
+              <div>Plantation Areas</div>
+            </div>
+            <div>
+              <span class='legend-icon fl' style='color: #5d4715;'>━━</span>
+              <div>Roads</div>
+            </div>
+            <div>
+              <span class='legend-icon fl' style='color: #34a8dd;'>━━</span>
+              <div>Rivers/Tributaries</div>
             </div>
     date: 2015
     tooltip_teaser: [name, operator, resource]
