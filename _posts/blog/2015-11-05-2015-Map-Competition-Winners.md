@@ -28,9 +28,9 @@ Email address: norramakaka (at) gmail.com
 
 The winning map shows the locations of armed groups in North and South Kivu in eastern DRC, protected areas, and mining (cassiterite, tin, coltan, gold and lithium). It clearly illustrates the presence of armed groups within national parks. This map raises the question othe role of national parks: Are they solely preserving threatened ecosystems and biodiversity, or are they the preferred refuge of rebel groups?
 
-<object style="margin: auto;" data="/site/img/contestwinners/FirstPlace-MoabiMapContest2015.pdf" type="application/pdf" width="100%" height="1400">
+<object style="margin: auto;" data="/img/contestwinners/FirstPlace-MoabiMapContest2015.pdf" type="application/pdf" width="100%" height="1400">
 
-  <p>Error displaying the PDF. <a href="/site/img/contestwinners/FirstPlace-MoabiMapContest2015.pdf">Click here to
+  <p>Error displaying the PDF. <a href="/img/contestwinners/FirstPlace-MoabiMapContest2015.pdf">Click here to
   download the map.</a></p>
 
 </object>
@@ -48,9 +48,9 @@ Email address: Kikwembomartin (at) gmail.com
 
 This map covers the eastern provinces of DRC. It highlights existing overlap between the artisanal logging permits issued by the Province, forest tracks, protected areas, mining permits and REDD + projects. This map highlights the need to coordinate development initiatives within the region.
 
-<object style="margin: auto;" data="/site/img/contestwinners/SecondPlace-MoabiMapContest2015.pdf" type="application/pdf" width="100%" height="725">
+<object style="margin: auto;" data="/img/contestwinners/SecondPlace-MoabiMapContest2015.pdf" type="application/pdf" width="100%" height="725">
 
-  <p>Error displaying the PDF. <a href="/site/img/contestwinners/SecondPlace-MoabiMapContest2015.pdf">Click here to
+  <p>Error displaying the PDF. <a href="/img/contestwinners/SecondPlace-MoabiMapContest2015.pdf">Click here to
   download the map.</a></p>
 
 </object>
@@ -68,9 +68,9 @@ This map covers the eastern provinces of DRC. It highlights existing overlap bet
 ### Map Description
 This map illustrates the results of a participatory mapping with local communities and the Walikale indigenous people in North Kivu province. The objectives were (i) to test the participatory micro-zoning and (ii) to map land use in 4 Forest Concessions for Local Communities (CFCL) of Bakano to provide guidance for a sustainable ecosystem management forestiiers. This map is both a tool to develop participatory management plans for CFCL resources and local community advocacy tool to secure their territories.
 
-<object style="margin: auto;" data="/site/img/contestwinners/ThirdPlace-MoabiMapContest2015.pdf" type="application/pdf" width="100%" height="775">
+<object style="margin: auto;" data="/img/contestwinners/ThirdPlace-MoabiMapContest2015.pdf" type="application/pdf" width="100%" height="775">
 
-  <p>Error displaying the PDF. <a href="/site/img/contestwinners/ThirdPlace-MoabiMapContest2015.pdf">Click here to
+  <p>Error displaying the PDF. <a href="/img/contestwinners/ThirdPlace-MoabiMapContest2015.pdf">Click here to
   download the map.</a></p>
 
 </object>
