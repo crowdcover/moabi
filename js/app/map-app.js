@@ -19,7 +19,8 @@ function (moabi, L, leafletImage, leaflet_hash, leafletEasyPrint, $, sortable, j
     },
 
     buildMap: function(){
-      var baseLayer = L.tileLayer('http://tiles.osm.moabi.org/'+ pageConfig.baseLayer.id +'/{z}/{x}/{y}.png');
+      //var baseLayer = L.tileLayer('http://tiles.osm.moabi.org/'+ pageConfig.baseLayer.id +'/{z}/{x}/{y}.png');
+      var baseLayer = L.tileLayer('https://api.mapbox.com/v4/crowdcover.5572a3d7/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY3Jvd2Rjb3ZlciIsImEiOiI3akYtNERRIn0.uwBAdtR6Zk60Bp3vTKj-kg');
 
       L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
       this.map = L.mapbox.map('map', undefined, {
