@@ -31,8 +31,7 @@ La première carte gagnante  présente les localisations des groupes armés de l
 
 <object style="margin: auto;" data="/img/contestwinners/FirstPlace-MoabiMapContest2015.pdf" type="application/pdf" width="100%" height="1400">
 
-  <p>Erreur afficher le PDF . <a href="/img/contestwinners/FirstPlace-MoabiMapContest2015.pdf">Click here to
-  download the map.</a></p>
+  <p>Erreur afficher le PDF . <a href="/img/contestwinners/FirstPlace-MoabiMapContest2015.pdf">Cliquez ici pour télécharger la carte .</a></p>
 
 </object>
 
@@ -51,8 +50,7 @@ Cette carte a été réalisée à l’échelle de la province orientale de la RD
 
 <object style="margin: auto;" data="/img/contestwinners/SecondPlace-MoabiMapContest2015.pdf" type="application/pdf" width="100%" height="725">
 
-  <p>Error displaying the PDF. <a href="/img/contestwinners/SecondPlace-MoabiMapContest2015.pdf">Click here to
-  download the map.</a></p>
+  <p>Erreur afficher le PDF . <a href="/img/contestwinners/SecondPlace-MoabiMapContest2015.pdf">Cliquez ici pour télécharger la carte .</a></p>
 
 </object>
 
@@ -71,7 +69,6 @@ Cette carte est le résultat d’une cartographie participative des communautés
 
 <object style="margin: auto;" data="//img/contestwinners/ThirdPlace-MoabiMapContest2015.pdf" type="application/pdf" width="100%" height="775">
 
-  <p>Error displaying the PDF. <a href="/img/contestwinners/ThirdPlace-MoabiMapContest2015.pdf">Click here to
-  download the map.</a></p>
+  <p>Erreur afficher le PDF . <a href="/img/contestwinners/ThirdPlace-MoabiMapContest2015.pdf">Cliquez ici pour télécharger la carte .</a></p>
 
 </object>
