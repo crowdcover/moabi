@@ -435,6 +435,10 @@
     categories: [forestry]
     description: |
                  Palm Oil Suitability Index from low/no suitability to high suitability, based on analysis by the International Institute for Applied Systems Analysis.
+                 <br />
+                 Report: <a target="_blank" href="http://webarchive.iiasa.ac.at/Admin/PUB/Documents/IR-15-006.pdf">http://webarchive.iiasa.ac.at/Admin/PUB/Documents/IR-15-006.pdf</a>
+                 <br />
+                 Download: <a target="_blank" href="http://rdc.moabi.org/palmoilsuitability-download/en/">http://rdc.moabi.org/palmoilsuitability-download/en/</a>
     legend: |
             <h3>Palm Oil Suitability</h3>
             <table class='fixed'>
