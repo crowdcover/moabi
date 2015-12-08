@@ -619,13 +619,30 @@
     description: |
                  ERA Deforestation Drivers
     legend: |
-            <img class='legend-icon dot' style='border-color: #c93807;' src='site.baseurl/img/chainsaw.svg'/><h3>ERA Deforestation Drivers</h3>
+            <h3>ERA Deforestation Drivers</h3>
+            <div>
+              <img class='legend-icon dot' style='border-color: #c93807; background-color: #9CD759;' src='site.baseurl/img/chainsaw.svg'/>
+              <div>Charcoal Production (Makala)</div>
+            </div>
+            <div>
+              <img class='legend-icon dot' style='border-color: #c93807; background-color: #EF8938;' src='site.baseurl/img/chainsaw.svg'/>
+              <div>Woodcutting (Coup bois)</div>
+            </div>
+            <div>
+              <img class='legend-icon dot' style='border-color: #c93807; background-color: #65A4DC;' src='site.baseurl/img/chainsaw.svg'/>
+              <div>Bush Fires (Feux brousse)</div>
+            </div>
+            <div>
+              <img class='legend-icon dot' style='border-color: #c93807; background-color: #c25de8;' src='site.baseurl/img/chainsaw.svg'/>
+              <div>Slash-and-Burn (Agri brulis)</div>
+            </div>
+
     date: 2015
     tooltip_teaser: [village,type]
     tooltip_full: [village,type]
     tooltip_photo: photo_url
     source:
-        name: Ecosystem Restoration Associates (ERA)
+        name: Moabi; Ecosystem Restoration Associates (ERA)
         url:
 
   - id: moabi_ogf_survey
