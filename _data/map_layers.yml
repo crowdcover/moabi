@@ -617,29 +617,75 @@
     name: ERA Deforestation Drivers
     categories: [forestry, redd]
     description: |
-                 ERA Deforestation Drivers
+                 <div>Observation Dates</div>
+                 <div>
+                  <table style="width: 250px;">
+                    <tr>
+                      <td style="width: 100px;">June 2015</td>
+                      <td style="width: 50px; background-color: #c25de8; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #65A4DC; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #EF8938; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                    </tr>
+                    <tr>
+                      <td style="width: 100px;">May 2015</td>
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                    </tr>
+                    <tr>
+                      <td style="width: 100px;">April 2015</td>
+                      <td style="width: 50px; background-color: #c25de8; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #65A4DC; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #EF8938; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                    </tr>
+                    <tr>
+                      <td style="width: 100px;">March 2015</td>
+                      <td style="width: 50px; background-color: #c25de8; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #65A4DC; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #EF8938; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                    </tr>
+                    <tr>
+                      <td style="width: 100px;">February 2015</td>
+                      <td style="width: 50px; background-color: #c25de8; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #65A4DC; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #EF8938; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                    </tr>
+                    <tr>
+                      <td style="width: 100px;">January 2015</td>
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #fff; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #EF8938; border: 1px solid black;">
+                      <td style="width: 50px; background-color: #9CD759; border: 1px solid black;">
+                    </tr>
+                  </table>
+                 </div>
     legend: |
             <h3>ERA Deforestation Drivers</h3>
             <div>
-              <img class='legend-icon dot' style='border-color: #c93807; background-color: #9CD759;' src='site.baseurl/img/chainsaw.svg'/>
+              <img class='legend-icon dot' style='border-color: #999999; background-color: #9CD759;' src='site.baseurl/img/chainsaw.svg'/>
               <span>Charcoal Production (Makala)</span>
             </div>
             <div>
-              <img class='legend-icon dot' style='border-color: #c93807; background-color: #EF8938;' src='site.baseurl/img/chainsaw.svg'/>
+              <img class='legend-icon dot' style='border-color: #999999; background-color: #EF8938;' src='site.baseurl/img/chainsaw.svg'/>
               <span>Woodcutting (Coup bois)</span>
             </div>
             <div>
-              <img class='legend-icon dot' style='border-color: #c93807; background-color: #65A4DC;' src='site.baseurl/img/chainsaw.svg'/>
+              <img class='legend-icon dot' style='border-color: #999999; background-color: #65A4DC;' src='site.baseurl/img/chainsaw.svg'/>
               <span>Bush Fires (Feux brousse)</span>
             </div>
             <div>
-              <img class='legend-icon dot' style='border-color: #c93807; background-color: #c25de8;' src='site.baseurl/img/chainsaw.svg'/>
+              <img class='legend-icon dot' style='border-color: #999999; background-color: #c25de8;' src='site.baseurl/img/chainsaw.svg'/>
               <span>Slash-and-Burn (Agri brulis)</span>
             </div>
 
     date: 2015
-    tooltip_teaser: [village,type]
-    tooltip_full: [village,type]
+    tooltip_teaser: [village,type,date]
+    tooltip_full: [village,type,date]
     tooltip_photo: photo_url
     source:
         name: Moabi; Ecosystem Restoration Associates (ERA)
