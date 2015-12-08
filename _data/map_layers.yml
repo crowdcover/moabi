@@ -622,19 +622,19 @@
             <h3>ERA Deforestation Drivers</h3>
             <div>
               <img class='legend-icon dot' style='border-color: #c93807; background-color: #9CD759;' src='site.baseurl/img/chainsaw.svg'/>
-              <div>Charcoal Production (Makala)</div>
+              <span>Charcoal Production (Makala)</span>
             </div>
             <div>
               <img class='legend-icon dot' style='border-color: #c93807; background-color: #EF8938;' src='site.baseurl/img/chainsaw.svg'/>
-              <div>Woodcutting (Coup bois)</div>
+              <span>Woodcutting (Coup bois)</span>
             </div>
             <div>
               <img class='legend-icon dot' style='border-color: #c93807; background-color: #65A4DC;' src='site.baseurl/img/chainsaw.svg'/>
-              <div>Bush Fires (Feux brousse)</div>
+              <span>Bush Fires (Feux brousse)</span>
             </div>
             <div>
               <img class='legend-icon dot' style='border-color: #c93807; background-color: #c25de8;' src='site.baseurl/img/chainsaw.svg'/>
-              <div>Slash-and-Burn (Agri brulis)</div>
+              <span>Slash-and-Burn (Agri brulis)</span>
             </div>
 
     date: 2015
