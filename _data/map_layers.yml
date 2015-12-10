@@ -166,8 +166,8 @@
               <img class='legend-icon dot' style='border-color: #DEA2A9;' src='site.baseurl/img/dam_gray_border.svg'><span class='micro'>Planned Dam</span>
             </div>
     date: 2013
-    tooltip_teaser: [name, proposed]
-    tooltip_full: [name, proposed]
+    tooltip_teaser: [name, proposed,  "Statut", "Capacite de production effective (MW)", "Capacite potentielle installee (MW)","Capacite potentielle maximum (MW)"]
+    tooltip_full: [name, proposed, "% pour la population", "Beneficiaires", "Capacite de production effective (MW)", "Capacite potentielle installee (MW)","Capacite potentielle maximum (MW)", "Date 1ere mise en service", "Entreprises/ Responsables travaux", "Fin prevue des travaux",  "Investisseurs", "Localisation", "Montant des investissements", "Production (TWh/an)", "Projet", "Sources", "Statut", "Travaux"]
     source:
         name: Societe National d' Electricite (SNEL)
         url:
