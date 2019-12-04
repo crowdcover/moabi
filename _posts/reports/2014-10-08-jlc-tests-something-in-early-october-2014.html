@@ -1,0 +1,59 @@
+---
+layout: report
+language: en
+tags:
+  - report
+categories:
+  - en
+
+title: JLC tests something in early October 2014
+description: |
+   subhead <p/>
+
+img: 
+img_caption:
+img_source:
+author: JLC Testing
+
+draft: true
+
+
+basemap:
+    center:
+        
+        lat: -2.78942
+        lon: 22.58240
+        zoom: 7
+    layers:
+      - id: moabi_base
+        z: -1
+
+maplayer_options:
+    
+    subset: [moabi_forest_cover,moabi_intact_forests]
+
+
+report:
+  
+  - title: slide 1
+    text: |
+       slide description <p/>
+    layers: [moabi_intact_forests]
+    attachments: 
+    zoom_to:
+      lat: -2.78942
+      lon: 22.58240
+      zoom: 7
+  
+  - title: slide 2
+    text: |
+      
+    layers: 
+    attachments: 
+    zoom_to:
+      lat: -2.877
+      lon: 22.83
+      zoom: 5
+  
+---
+

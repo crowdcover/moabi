@@ -1,0 +1,49 @@
+---
+layout: report
+language: fr
+tags:
+  - report
+categories:
+  - fr
+
+title: les projets REDD+
+description: |
+   les projets REDD+ permettent de réduire les émissions des gaz à effet de serre dues à la déforestation et à la dégradation des forets <p/>
+
+img: 
+img_caption:
+img_source:
+author: Nicky Kingunia
+
+draft: true
+
+
+basemap:
+    center:
+        
+        lat: -2.87700
+        lon: 22.83000
+        zoom: 6
+    layers:
+      - id: moabi_base
+        z: -1
+
+maplayer_options:
+    
+    subset: [moabi_redd_projects,moabi_community_mapping]
+
+
+report:
+  
+  - title: l'implantation des projets REDD+
+    text: |
+       les projets REDD+ sont implantés à proximité des communautés locales et des peuples autochtones. ces derniers doivent bénéficier des rétombés de ces projets <p/>
+    layers: [moabi_redd_projects]
+    attachments: 
+    zoom_to:
+      lat: -2.87700
+      lon: 22.83000
+      zoom: 6
+  
+---
+

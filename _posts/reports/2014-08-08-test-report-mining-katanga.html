@@ -1,0 +1,49 @@
+---
+layout: report
+language: en
+tags:
+  - report
+categories:
+  - en
+
+title: Test Report Mining Katanga
+description: |
+   Who's where in the Copperbelt <p/>
+
+img: 
+img_caption:
+img_source:
+author: CongoMines
+
+draft: true
+
+
+basemap:
+    center:
+        
+        lat: -10.76856
+        lon: 25.90988
+        zoom: 9
+    layers:
+      - id: moabi_base
+        z: -1
+
+maplayer_options:
+    
+    subset: [moabi_mining,moabi_transport,moabi_energy,moabi_protected]
+
+
+report:
+  
+  - title: The big ones
+    text: |
+       Three large groups dominate the Copperbelt: Glencore, ENRC and Freeport McMoran. <p/>
+    layers: [moabi_mining]
+    attachments: 
+    zoom_to:
+      lat: -10.76856
+      lon: 25.90988
+      zoom: 9
+  
+---
+

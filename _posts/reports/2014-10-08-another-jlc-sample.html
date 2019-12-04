@@ -1,0 +1,59 @@
+---
+layout: report
+language: en
+tags:
+  - report
+categories:
+  - en
+
+title: Another JLC sample
+description: |
+   subheader <p/>
+
+img: 
+img_caption:
+img_source:
+author: JLC Testing
+
+draft: true
+
+
+basemap:
+    center:
+        
+        lat: 0
+        lon: 0
+        zoom: 0
+    layers:
+      - id: moabi_base
+        z: -1
+
+maplayer_options:
+    
+    subset: [moabi_forest_cover,moabi_hydropower,moabi_transmission_lines,moabi_intact_forests]
+
+
+report:
+  
+  - title: 
+    text: |
+       a slide w/ an empty title <p/><p/> a slide w/ an empty title <p/><p/> a slide w/ an empty title<p/>a slide w/ an empty title<p/>a slide w/ an empty title<p/>a slide w/ an empty title<p/>a slide w/ an empty title <p/>
+    layers: 
+    attachments: 
+    zoom_to:
+      lat: -2.877
+      lon: 22.83
+      zoom: 5
+  
+  - title: Slide 2
+    text: |
+       a slide w/ an empty title <p/><p/> a slide w/ an empty title <p/><p/> a slide w/ an empty title<p/>a slide w/ an empty title<p/>a slide w/ an empty title<p/>a slide w/ an empty title<p/>a slide w/ an empty title <p/>
+    layers: [moabi_intact_forests]
+    attachments: 
+    zoom_to:
+      lat: 0.99421
+      lon: 22.32971
+      zoom: 8
+  
+---
+
