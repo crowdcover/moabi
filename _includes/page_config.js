@@ -6,7 +6,7 @@ currently used to allow specification of baselayer and map center for each page
 var pageConfig = {
   baseLayer: {
     id: '{{mapBaseLayer.id}}',
-    latlon: [{{page.basemap.center.lat}}, {{page.basemap.center.lon}}],
-    zoom: {{page.basemap.center.zoom}}
+    latlon: [{{page.basemap.center.lat || -2.877}}, {{page.basemap.center.lon || 22.830}}],
+    zoom: {{page.basemap.center.zoom || 6}}
   }
 };
