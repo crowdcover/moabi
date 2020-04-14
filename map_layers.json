@@ -35,10 +35,6 @@ generate JSON metadata for each tile layer, including:
     <tr class='small'><td class='capitalize strong'>Area</td><td>{%raw%}{{way_area}}{%endraw%}</td></tr>
   </tbody></table>
 </div>
-<div class='tabs col12'>
-  <a href='http://osm.moabi.org/edit?{%raw%}{{elementtype}}={{osm_id}}{%endraw%}' class='col6 quiet small' target='_blank'>Edit</a>
-  <a href='http://osm.moabi.org/{%raw%}{{elementtype}}/{{osm_id}}{%endraw%}/history' class='col6 quiet small' target='_blank'>View History</a>
-</div>
 
 {% endcapture %}
   "{{layer.id}}": {

@@ -8,10 +8,6 @@ layout: main
         <!-- <div class="space-bottom4 center pad4x pad2y">{{t.[page.language].report.description | markdownify }}</div> -->
         <h2 class="center caps space-bottom1">Moabi Reports</h2>
         <div class="quiet center space-bottom2">Read reports on pressing land use and conservation issues, authored by Moabi users</div>
-        <div class="pill col12 center space-bottom4 mobile-cols"><!--
-          --><a href="http://osm.moabi.org/stories" class="button quiet">Write Reports</a><!--
-          --><a href="{{site.baseurl}}/write-reports/{{page.language}}" class="button quiet">View Tutorial</a>
-        </div>
         {% for r in site.tags.report %}{% unless r.draft %}
             {% if r.language == page.language %}
                 {% include report_block.html needs_translation="false" %}
