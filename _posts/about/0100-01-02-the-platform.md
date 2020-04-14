@@ -10,17 +10,7 @@ categories:
 
 This is the second version of Moabi DRC. The original Moabi DRC and its technical consortium was  launched in June 2011 by WWF and OSFAC. In 2013, management of Moabi DRC was handed over to the IIASA lead Improving Forest Governance through Independent Monitoring in DRC project. WWF DRC, however, remain an active member of the Moabi DRC consortium and a key data contributor.
 
-We have completely rebuilt the site using [OpenStreetMap](http://www.osm.org) the world’s largest collaborative mapping project. We are currently in a beta phase where will be testing the new  collaborative features. If you are interested in learning how to upload and edit spatial information using OSM and build your own Moabi reports, please [contact us](mailto:info@crowdcover.org).
-
-Over the course of the year, we will be adding new features over in two phases:
-
-### Late June
-
-We will be launching a registry of all DRC civil society organizations, a mapping competition as well as a host of new collaborative mapping features
-
-### Late November
-
-Moabi independent monitoring for REDD+ tools will be launched. These are being developed in consultation with a working group on independent monitoring formed under the Moabi DRC consortium.
+We have completely rebuilt the site using [OpenStreetMap](http://www.osm.org) the world’s largest collaborative mapping project. We are currently in a beta phase where will be testing the new  collaborative features. If you are interested in learning how to upload and edit spatial information using OSM and build your own Moabi reports, please [contact us](mailto:info@moabi.org).
 
 ## How is Moabi built?
 

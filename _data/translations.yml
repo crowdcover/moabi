@@ -48,11 +48,10 @@ en:
     the_initiative: The Initiative
     the_platform: The Platform
     who_we_are: Who We Accroître
-    jobs: Jobs
     partners: Partners
     acknowledgements: Acknowledgements
     more: Get in Touch
-    more_text: If you are interested in learning more about the Moabi platform while it is undergoing beta testing, please join our <a href="http://rdc.moabi.org/signup/">mailing list</a> or <a href="mailto:info@crowdcover.org">get in touch</a> with us directly.
+    more_text: If you are interested in learning more about the Moabi platform <a href="mailto:info@moabi.org">get in touch</a>.
 
   data:
     visualize: Visualize
@@ -129,11 +128,10 @@ fr:
     the_initiative: The Initiative
     the_platform: The Platform
     who_we_are: Who We Accroître
-    jobs: Jobs
     partners: Partners
     acknowledgements: Acknowledgements
     more: Get in Touch
-    more_text: If you are interested in learning more about the Moabi platform while it is undergoing beta testing, please join our <a href="http://rdc.moabi.org/signup/">mailing list</a> or <a href="mailto:info@crowdcover.org">get in touch</a> with us directly.
+    more_text: If you are interested in learning more about the Moabi platform please <a href="mailto:info@moabi.org">get in touch</a>.
 
   data:
     visualize: Visualisez
