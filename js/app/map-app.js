@@ -19,7 +19,6 @@ function (moabi, L, leafletImage, leaflet_hash, leafletEasyPrint, $, sortable, j
     },
 
     buildMap: function(){
-      //var baseLayer = L.tileLayer('http://tiles.osm.moabi.org/'+ pageConfig.baseLayer.id +'/{z}/{x}/{y}.png');
       var baseLayer = L.tileLayer('https://api.mapbox.com/v4/crowdcover.5572a3d7/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY3Jvd2Rjb3ZlciIsImEiOiI3akYtNERRIn0.uwBAdtR6Zk60Bp3vTKj-kg');
 
       L.mapbox.accessToken = 'pk.eyJ1IjoiamFtZXMtbGFuZS1jb25rbGluZyIsImEiOiJ3RHBOc1BZIn0.edCFqVis7qgHPRgdq0WYsA';
@@ -87,7 +86,7 @@ function (moabi, L, leafletImage, leaflet_hash, leafletEasyPrint, $, sortable, j
       // cache tileLayer in moabi.map.moabiLayers.dataLayers[mapId]
       if(! moabi.map.moabiLayers.dataLayers[mapId]){
         moabi.map.moabiLayers.dataLayers[mapId] = {
-          tileLayer: L.tileLayer('http://tiles.osm.moabi.org/' + mapId + '/{z}/{x}/{y}.png')
+          tileLayer: L.tileLayer('https://hpvhe47439ygwrt.belugacdn.link/moabi/' + mapId + '/{z}/{x}/{y}.png')
         };
       }
       var tileLayer = this.map.moabiLayers.dataLayers[mapId].tileLayer;
@@ -364,7 +363,7 @@ function (moabi, L, leafletImage, leaflet_hash, leafletEasyPrint, $, sortable, j
       if(! layerJSON.template){ return false; }
       var tilejson = {
         "tilejson":"2.1.0",
-        "grids":["http://grids.osm.moabi.org/grids/" + mapId + "/{z}/{x}/{y}.json"],
+        "grids":["https://hpvhe47439ygwrt.belugacdn.link/moabi/" + mapId + "/utfgrid/{z}/{x}/{y}.json"],
         "template":layerJSON.template
       };
       moabi.gridLayer = L.mapbox.gridLayer(tilejson).addTo(moabi.map),
