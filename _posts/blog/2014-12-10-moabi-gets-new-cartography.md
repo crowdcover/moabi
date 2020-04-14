@@ -39,4 +39,4 @@ With the help of [WildlifeWorks](http://www.wildlifeworks.com/index.php), we've 
 As part of this big push on cartography, we will be swapping in new icons for the hydropower and artisanal logging layers.
 
 ***
-Have data you would like to see on the system?  [Get in touch](mailto:info@crowdcover.org) with us.
+Have data you would like to see on the system?  [Get in touch](mailto:info@moabi.org) with us.

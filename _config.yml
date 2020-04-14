@@ -38,7 +38,7 @@ prose:
         field:
           element: "text"
           label: "Author"
-          value: "CrowdCover Team"
+          value: "Moabi Team"
       - name: "lucidpress"
         field:
           element: "text"
@@ -85,7 +85,7 @@ prose:
         field:
           element: "text"
           label: "Author"
-          value: "CrowdCover Team"
+          value: "Moabi Team"
       - name: "lucidpress"
         field:
           element: "text"

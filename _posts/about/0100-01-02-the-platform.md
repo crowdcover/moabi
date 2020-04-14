@@ -23,7 +23,7 @@ Using OSM as the basis for Moabi DRC has many advantages.  Where appropriate, it
 
 ### Explore the Data
 
-Browse extensive information on land use in the DRC via the interactive map. Export a map as a print copy, an embeddable url, or [download](http://planet.osm.moabi.org/extracts/) the raw geographic data. If you would like to contribute your own data, [contact us](mailto:info@crowdcover.org) and we will show you how to this.
+Browse extensive information on land use in the DRC via the interactive map. Export a map as a print copy, an embeddable url, or [download](http://planet.osm.moabi.org/extracts/) the raw geographic data. If you would like to contribute your own data, [contact us](mailto:info@moabi.org) and we will show you how to this.
 
 ### View and publish Reports
 
@@ -33,4 +33,4 @@ Each  presents specific data and analysis on a single topic. [Browse]({{site.bas
 
 Moabi is built on a clone of the OpenStreetMap project, an open, user-generated map of the world containing geographic data on buildings and navigation. Moabi extends OSM's collaborative model to tackle difficult developmental problems relating to land use planning and natural resource management.
 
-Learn [more](mailto:info@crowdcover.org) about Moabi, or [download and collaborate](http://planet.osm.moabi.org/extracts/) on the data.
+Learn [more](mailto:info@moabi.org) about Moabi, or [download and collaborate](http://planet.osm.moabi.org/extracts/) on the data.
