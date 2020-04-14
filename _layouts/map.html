@@ -9,13 +9,13 @@
 </head>
 
 <body>
-{% unless page.hide contains 'header' %}
+{% unless layout.hide contains 'header' %}
   {% include header.html %}
 {% endunless %}
 
 {{content}}
 
-{% unless page.hide contains 'footer' %}
+{% unless layout.hide contains 'footer' %}
   {% include footer.html %}
 {% endunless %}
 </body>

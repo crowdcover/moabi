@@ -12,18 +12,18 @@ hide: [footer]
 </head>
 
 <body>
-{% unless page.hide contains 'header' %}
+{% unless layout.hide contains 'header' %}
   {% include header.html %}
 {% endunless %}
 
-<div id="sidebar" class="left-bar fill-light strongline-right dropshadow-right{% if page.hide contains 'footer'%} no-footer{% endif %}">
+<div id="sidebar" class="left-bar fill-light strongline-right dropshadow-right no-footer">
 
     <!-- sidebar slider -->
     <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px">
         <div class='slider tabs col12 pad0x margin1 mobile-cols space-bottom1 clearfix'>
-            <a data-index="1" class='col3 active'>{{t.[page.language].sidebar_slider.report}}</a>
-            <a data-index="2" class='col3'>{{t.[page.language].sidebar_slider.map_layers}}</a>
-            <a data-index="3" class='col3'>{{t.[page.language].sidebar_slider.export}}</a>
+            <a data-index="1" class='col3 active'>{{t[page.language].sidebar_slider.report}}</a>
+            <a data-index="2" class='col3'>{{t[page.language].sidebar_slider.map_layers}}</a>
+            <a data-index="3" class='col3'>{{t[page.language].sidebar_slider.export}}</a>
         </div>
     </div>
 
@@ -88,8 +88,5 @@ hide: [footer]
 
 {{content}}
 
-{% unless page.hide contains 'footer' %}
-  {% include footer.html %}
-{% endunless %}
 </body>
 </html>

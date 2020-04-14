@@ -10,7 +10,7 @@
                 </div>
                 <div class="col9 pad1x pad2y">
                     {% if r.draft %}
-                        <p><em>{{t.[page.language].coming_soon}}</em></p>
+                        <p><em>{{t[page.language].coming_soon}}</em></p>
                         <p>{{r.description | truncate:220 }} </p>
                     {% elsif {{include.needs_translation}} == 'true' %}
                         <p><em>needs translation</em></p>

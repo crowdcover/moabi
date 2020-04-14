@@ -6,7 +6,7 @@ layout: main
     <div class="pad4y clearfix mobile-cols">
         <div class="col3 margin1r pad4x keyline-right space mobile-center noprint">
 
-            <h3 class="caps pad0y keyline-bottom space-bottom1">{{t.[page.language].header.about}}</h3>
+            <h3 class="caps pad0y keyline-bottom space-bottom1">{{t[page.language].header.about}}</h3>
             <ul class="space-bottom4">
                 {% for about_page in site.tags.about reversed %}{% if about_page.language == page.language %}
                     <li class="pad0y">
@@ -14,8 +14,8 @@ layout: main
                     </li>
                 {% endif %}{% endfor %}
             </ul>
-            <h3 class="caps pad0y keyline-bottom space-bottom1">{{t.[page.language].about.more}}</h3>
-            <p class="small">{{t.[page.language].about.more_text}}</p>
+            <h3 class="caps pad0y keyline-bottom space-bottom1">{{t[page.language].about.more}}</h3>
+            <p class="small">{{t[page.language].about.more_text}}</p>
         </div>
         <div class="col7 margin1r prose mobile-pad">
             {{content}}

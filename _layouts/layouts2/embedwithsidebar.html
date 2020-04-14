@@ -4,12 +4,12 @@ hide: [footer, header]
 ---
 {% assign t = site.data.translations %}
 {% include map.html %}
-<div id="sidebar" class="fill-light strongline-right{% if page.hide contains 'footer' %} no-footer{% endif %}{% if page.hide contains 'header' %} no-header{% endif %}">
+<div id="sidebar" class="fill-light strongline-right{% if layout.hide contains 'footer' %} no-footer{% endif %}{% if layout.hide contains 'header' %} no-header{% endif %}">
       <!-- sidebar slider -->
       <div class="tab-group col12 clearfix keyline-bottom" style="margin-top: 8px">
           <div class='slider tabs col12 pad0x margin1 mobile-cols space-bottom1 clearfix'>
-              <a data-index="1" class='col4 active'>{{t.[page.language].sidebar_slider.map_layers}}</a>
-              <a data-index="2" class='col4'>{{t.[page.language].sidebar_slider.export}}</a>
+              <a data-index="1" class='col4 active'>{{t[page.language].sidebar_slider.map_layers}}</a>
+              <a data-index="2" class='col4'>{{t[page.language].sidebar_slider.export}}</a>
           </div>
       </div>
 
