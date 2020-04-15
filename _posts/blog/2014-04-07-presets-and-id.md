@@ -11,7 +11,7 @@ author: Sajjad Anwar
 language: en
 published: true
 
-img: https://farm4.staticflickr.com/3795/13779212885_2be158bced.jpg
+img: /img/content/13779212885_2be158bced.jpg
 ---
 
 Presets are predefined set of tag(s) that represent a feature on the ground, for example, a Park. The idea of presets is widely used in OpenStreetMap and the iD editor makes it much easier. Presets can define fields, icons, and more metadata to make the feature unambiguous.
@@ -24,7 +24,7 @@ Next, we [extended the OpenStreetMap rails API](https://github.com/crowdcover/op
 
 Finally, we [created a new 'mode' within iD](https://github.com/crowdcover/iD/commit/b1070bd4893d489167e74c9fc1b228777ae1fd36) for the preset editor and [forked a lot of existing UI elements](https://github.com/crowdcover/iD/commit/53ea583ec1aad74d5121d4a18ba77c901a988b30) to create the preset editor form.
 
-![Search and edit presets.](https://farm6.staticflickr.com/5465/13779214503_f817a133ce.jpg)
+![Search and edit presets.]({{site.baseurl}}/img/content/13779214503_f817a133ce.jpg)
 
 The modifications in iD are a bit crude because this is a proof of concept. We realize that there's a lot of room for improvement. Since we are still getting a handle on how everything works in iD, there are several questions that came up during this process, such as:
 

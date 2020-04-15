@@ -48,7 +48,7 @@ prose:
         field:
           element: "text"
           label: "Banner Photo"
-          help: "URL link to a photo you would like to use for the banner photograph.  These can be hosted on flickr or elsewhere."
+          help: "URL link to a photo you would like to use for the banner photograph."
           value: ""
           placeholder: "http://example_photo_url.com"
 # _posts/fr config should match _posts config,
@@ -95,6 +95,6 @@ prose:
         field:
           element: "text"
           label: "Banner Photo"
-          help: "URL link to a photo you would like to use for the banner photograph.  These can be hosted on flickr or elsewhere."
+          help: "URL link to a photo you would like to use for the banner photograph."
           value: ""
           placeholder: "http://example_photo_url.com"

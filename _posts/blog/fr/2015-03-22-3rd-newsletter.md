@@ -9,7 +9,7 @@ author: Benoit Thuaire
 subtitle: |
           La réunion du 4ème Consortium s’est déroulée dans la salle Arche de la Clinique Ngaliema, à Kinshasa, le 25 février 2015.  Environ quatre-vingt participants ont écouté attentivement les progrès réalisés au cours des six derniers mois par le Projet Moabi.
 
-img: "https://farm9.staticflickr.com/8652/16659682672_c26d1cea69_z.jpg"
+img: "/img/content/16659682672_c26d1cea69_z.jpg"
 ---
 # 4ème Consortium du Projet Moabi
 

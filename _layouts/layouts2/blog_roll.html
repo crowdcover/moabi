@@ -27,7 +27,7 @@ layout: main
         style="display:inline-block;width:99%;text-align:center;font-size:18px">
         <a href="{{site.baseurl}}{{post.url}}">
         <img
-            src="{{post.img}}"
+            src="{{site.baseurl}}{{post.img}}"
             width="50%" style="border:1px solid black;box-sizing:border-box;"/>
 
         </a>
@@ -36,7 +36,7 @@ layout: main
         {% if post.img %}
         <div class="clearfix">
             <div class="col10 margin1 margin1r pad1y center">
-                <img src="{{post.img}}" alt="Blog Image" style="max-height: 360px;">
+                <img src="{{site.baseurl}}{{post.img}}" alt="Blog Image" style="max-height: 360px;">
             </div>
         </div>
         {% endif %}
@@ -66,7 +66,7 @@ layout: main
         style="display:inline-block;width:99%;text-align:center;font-size:18px">
         <a href="{{site.baseurl}}{{post.url}}">
         <img
-            src="{{post.img}}"
+            src="{{site.baseurl}}{{post.img}}"
             width="50%" style="border:1px solid black;box-sizing:border-box;"/>
 
         </a>
@@ -75,7 +75,7 @@ layout: main
         {% if post.img %}
         <div class="clearfix">
             <div class="col10 margin1 margin1r pad1y center">
-                <img src="{{post.img}}" alt="Blog Image" style="max-height: 360px;">
+                <img src="{{site.baseurl}}{{post.img}}" alt="Blog Image" style="max-height: 360px;">
             </div>
         </div>
         {% endif %}

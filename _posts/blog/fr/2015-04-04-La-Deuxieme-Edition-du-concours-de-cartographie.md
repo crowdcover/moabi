@@ -12,7 +12,7 @@ subtitle: Le projet Moabi RDC lance la deuxième édition du concours de cartogr
 
 published: true
 
-img: https://farm9.staticflickr.com/8802/17063874436_71dd5d090e_n.jpg
+img: /img/content/17063874436_71dd5d090e_n.jpg
 ---
 
 Le projet Moabi RDC lance la deuxième édition du concours de cartographie qui récompensera les meilleures cartographes et dessinateurs de la RDC.
@@ -35,7 +35,7 @@ Les cartes proposées doivent être liée à l’une des thématiques suivantes 
 
 Exemple de cartes : cette carte présente une estimation de carbone forestier à Kinshasa  
 
-![sample map](https://farm8.staticflickr.com/7657/16902321180_ca563a56d7.jpg)
+![sample map]({{site.baseurl}}/img/content/16902321180_ca563a56d7.jpg)
 
 ##  Quels sont les prix?
 

@@ -10,7 +10,7 @@ subtitle: Moabi DRC is launching a competition to find the best map makers in th
 author: Herve Kashongwe
 published: true
 
-img: https://farm4.staticflickr.com/3929/15235319339_240fc0e276_c.jpg
+img: /img/content/15235319339_240fc0e276_c.jpg
 ---
 If you are Congolese with a passion for cartography, GIS, or remote sensing, then this competition is for you !
 
@@ -32,8 +32,8 @@ Depending on your skills, we have two competitions:
 * GIS/Remote sensing maps
 
 <div>
-  <img src="https://farm4.staticflickr.com/3930/15234386819_8abdfeb3ec.jpg" style="float:left; width:50%; padding:6px;" />
-  <img src="https://farm3.staticflickr.com/2946/15235282209_5e60a57986.jpg" style="width:50%; padding:6px;" />
+  <img src="{{site.baseurl}}/img/content/15234386819_8abdfeb3ec.jpg" style="float:left; width:50%; padding:6px;" />
+  <img src="{{site.baseurl}}/img/content/15235282209_5e60a57986.jpg" style="width:50%; padding:6px;" />
   <span class="clearfix"></span>
 
   <div>Example Maps: Ecomakala Risk Map, DRC Intact Forests, Transport, & Energy Map</div>

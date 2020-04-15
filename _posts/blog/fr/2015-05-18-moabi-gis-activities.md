@@ -6,7 +6,7 @@ layout: layouts2/blog_post
 published: 
 title: "MOABI GIS activities "
 author: Herve Kashongwe
-img: "https://c1.staticflickr.com/9/8766/16479470593_da256c374a_z.jpg"
+img: "/img/content/16479470593_da256c374a_z.jpg"
 subtitle: "GIS activities developing by Moabi in DRC "
 ---
 

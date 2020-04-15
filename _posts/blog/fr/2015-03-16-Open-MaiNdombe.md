@@ -8,7 +8,7 @@ title: Projet Open Mai Ndombe
 author: Eulalie Guillaume
 subtitle: |
           En République Démocratique du Congo, la société civile congolaise joue un rôle important dans l’observation de la légalité des pratiques forestières, en particulier dans un contexte ou l’Etat manque de moyens pour assurer ses fonctions de contrôle. Cette fonction d’observation indépendante (OI-FLEG) est encadrée par la réglementation forestière. Cette OI est actuellement poursuivie par l’Observatoire de la Gouvernance Forestière en RDC (OGF), une ONG nationale congolaise, avec l’appui de Field Legality Advisory Group (FLAG), une organisation à vocation sous régionale formée des experts ayant conduit plusieurs projets d’OI-FLEG dans les pays du Bassin du Congo. Un protocole d’accord qui donne à OGF le mandat d’observateur indépendant du processus FLEG, en RDC a été accordé par le MEDD le 14 septembre 2013.
-img: "https://farm8.staticflickr.com/7606/16721046079_d845cc6a22_z.jpg"
+img: "/img/content/16721046079_d845cc6a22_z.jpg"
 ---
 # Contexte
 

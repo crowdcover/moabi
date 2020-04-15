@@ -8,7 +8,7 @@ categories:
 title: Moabi Previewing at SotM-US
 subtitle: "The Moabi development team is *excited* for State of the Map US this weekend. We are sharing a preview of the new Moabi (to be fully launched on Earth Day), and presenting our work on Sunday at 4pm, [OpenStreetMap as Infrastructure](http://stateofthemap.us/session/openstreetmap-as-infrastructure/), sharing the stage with the USGS National Map Corps project, and NPS Park Tiles. Hope to see you there!"
 author: Mikel Maron
-img: http://farm4.staticflickr.com/3794/11856104144_17c2ffee12_o.jpg
+img: /img/content/11856104144_17c2ffee12_o.jpg
 published: true
 ---
 
@@ -29,15 +29,15 @@ OpenStreetMap's render stack, editor and web application can be used to power co
 We've been working on customizations like...
 
 ## Preset Editor for iD
-<a href="https://www.flickr.com/photos/mikel_maron/13780711625" title="Screenshot from 2014-04-07 14:18:25 by Mikel Maron, on Flickr"><img src="https://farm6.staticflickr.com/5178/13780711625_5b3156eea0_c.jpg" width="800" height="425" alt="Screenshot from 2014-04-07 14:18:25"></a>
+<a href="https://www.flickr.com/photos/mikel_maron/13780711625" title="Screenshot from 2014-04-07 14:18:25 by Mikel Maron, on Flickr"><img src="{{site.baseurl}}/img/content/13780711625_5b3156eea0_c.jpg" width="800" height="425" alt="Screenshot from 2014-04-07 14:18:25"></a>
 
 ## Tile management through GitHub and a OSM TileAPI
-<a href="https://www.flickr.com/photos/mikel_maron/13781120514" title="Screenshot from 2014-04-11 11:53:50 by Mikel Maron, on Flickr"><img src="https://farm4.staticflickr.com/3726/13781120514_8ec42492f1_c.jpg" width="800" height="450" alt="Screenshot from 2014-04-11 11:53:50"></a>
+<a href="https://www.flickr.com/photos/mikel_maron/13781120514" title="Screenshot from 2014-04-11 11:53:50 by Mikel Maron, on Flickr"><img src="{{site.baseurl}}/img/content/13781120514_8ec42492f1_c.jpg" width="800" height="450" alt="Screenshot from 2014-04-11 11:53:50"></a>
 
 ## Map Story Building in OSM
-<a href="https://www.flickr.com/photos/mikel_maron/13781425503" title="35022736-c197-11e3-8083-b99f59e0c496 by Mikel Maron, on Flickr"><img src="https://farm8.staticflickr.com/7434/13781425503_ac32442c06_c.jpg" width="800" height="627" alt="35022736-c197-11e3-8083-b99f59e0c496"></a>
+<a href="https://www.flickr.com/photos/mikel_maron/13781425503" title="35022736-c197-11e3-8083-b99f59e0c496 by Mikel Maron, on Flickr"><img src="{{site.baseurl}}/img/content/13781425503_ac32442c06_c.jpg" width="800" height="627" alt="35022736-c197-11e3-8083-b99f59e0c496"></a>
 
 ## Showcase Map Sites in Jekyll/GitPages
-<a href="https://www.flickr.com/photos/mikel_maron/13780792745" title="redd-risk by Mikel Maron, on Flickr"><img src="https://farm8.staticflickr.com/7390/13780792745_8059466fa2_c.jpg" width="800" height="406" alt="redd-risk"></a>
+<a href="https://www.flickr.com/photos/mikel_maron/13780792745" title="redd-risk by Mikel Maron, on Flickr"><img src="{{site.baseurl}}/img/content/13780792745_8059466fa2_c.jpg" width="800" height="406" alt="redd-risk"></a>
 
 So much more this weekend, see you!

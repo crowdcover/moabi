@@ -8,7 +8,7 @@ categories:
 title: Pourquoi devons-nous concevoir une méthode de suivi indépendant pour la REDD+?
 subtitle: Le suivi indépendant est essentiel pour la mise en œuvre de la REDD + en RDC.  Malgré l'intérêt d'un système de suivi indépendant, aucune méthodologie a été conçu sur les problématiques REDD +. Le travail est donc un défi passionnant.
 author: Benoit Thuaire
-img: https://farm3.staticflickr.com/2891/12483502755_f605561cdc_b.jpg
+img: /img/content/12483502755_f605561cdc_b.jpg
 published: true
 ---
 Le suivi indépendant est essentiel pour la mise en œuvre de la REDD + en RDC pour trois raisons :

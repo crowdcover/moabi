@@ -7,7 +7,7 @@ published: true
 title: Customizing the iD Editor
 author: Sajjad Anwar
 subtitle: Moabi and MapBox have been working hard to improve the OSM iD editor.
-img: "https://farm9.staticflickr.com/8669/16492287116_73dcdf14cc_b_d.jpg"
+img: "/img/content/16492287116_73dcdf14cc_b_d.jpg"
 ---
 *This blog post originally appeared on the MapBox Blog titled [Customization and support for arbitrary feature types in iD](https://www.mapbox.com/blog/customizing-id/).*
 

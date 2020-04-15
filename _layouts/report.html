@@ -57,8 +57,8 @@ hide: [footer]
                         {% endif %}
                       </div>
                     {% elsif forloop.first and page.img %}
-                      <a href="{{page.img}}">
-                        <div class="row6 space-bottom1" style="background-image: url({{page.img}}); background-size: cover;"></div>
+                      <a href="{{site.baseurl}}{{page.img}}">
+                        <div class="row6 space-bottom1" style="background-image: url({{site.baseurl}}{{page.img}}); background-size: cover;"></div>
                       </a>
                     {% endif %}
 

@@ -9,7 +9,7 @@ author: Leo Bottrill
 subtitle: |
           For several years, [ExCiteS](https://www.ucl.ac.uk/excites) and Moabi have developed new tools and approaches to forest monitoring in the Congo Basin rainforests. Using a combination of old-fashioned field work coupled with cutting edge mapping technology, team members will present experiences implementing programs under the challenging environmental and political conditions characterizing the region. They will discuss how efforts can be scaled to meet the challenges of FLEGT, REDD+, and the emerging palm oil industry. We look forward to a lively discussion!
 
-img: "https://c1.staticflickr.com/1/341/18089125083_28f55dffda_z.jpg"
+img: "/img/content/18089125083_28f55dffda_z.jpg"
 ---
 
 **When**: June 23rd , 6pm - 8pm w/ light refreshments to follow

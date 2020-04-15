@@ -8,13 +8,13 @@ categories:
 title: Hacking Logging Roads
 subtitle: Moabi and WRI teamed up at the Brooklyn EcoHack last weekend to map logging roads in Equateur Province.  Check out the results.
 author: James Conkling
-img: https://farm8.staticflickr.com/7350/14198779724_8f4b1721ba_c.jpg
+img: /img/content/14198779724_8f4b1721ba_c.jpg
 draft:
 ---
 
 Last weekend was the 2014 [EcoHack](http://ecohack.org/), a hackathon bringing together scientists, programmers and designers to collaborate on environmental themed projects.  To take advantage of such talent, Moabi and the [World Resource Institute](http://www.wri.org/) teamed up to map logging roads in Equateur Province, in eastern DRC.  Bringing together data from WRI and OSM, the hackathon was the perfect place to demo Moabi tools, in particular our clone of the [iD editor](http://learnosm.org/en/editing/id-editor/).
 
-![hacking](https://farm6.staticflickr.com/5573/14012182589_9cd3710a72_c.jpg)
+![hacking]({{site.baseurl}}/img/content/14012182589_9cd3710a72_c.jpg)
 
 ## What We Found
 
@@ -76,19 +76,19 @@ Our workflow looked something like this:
 
 1) Grid the area of interest using the Tasking Manager and assign map editors to individual grid cells.
 
-<img class="space-bottom2" src="http://farm6.staticflickr.com/5035/14231717164_8e69dc5135_c.jpg" alt="OSM Tasking Manager" style="height:300px;">
+<img class="space-bottom2" src="{{site.baseurl}}/img/content/14231717164_8e69dc5135_c.jpg" alt="OSM Tasking Manager" style="height:300px;">
 
 2) Within the Moabi iD instance, explore the existing road network within the grid cell (outlined in purple) and overlay satellite imagery from all available years: 2000, 2005, 2010, 2012, and 2013.
 
-<img class="space-bottom2" src="http://farm8.staticflickr.com/7323/14169164633_9ee85067c3_c.jpg" alt="iD Satellite Image buttons" style="height:300px;">
+<img class="space-bottom2" src="{{site.baseurl}}/img/content/14169164633_9ee85067c3_c.jpg" alt="iD Satellite Image buttons" style="height:300px;">
 
 3) Start tracing.  Add attribute tag `logging='yes'` to logging roads.  If it is possible to tell what year the road first appeared based on the satellite imagery date, add the attribute tag `first_observed='{date}'`.
 
-<img class="space-bottom2" src="http://farm6.staticflickr.com/5585/14202389466_b35b789e75_c.jpg" alt="Tracing in iD" style="height:300px;">
+<img class="space-bottom2" src="{{site.baseurl}}/img/content/14202389466_b35b789e75_c.jpg" alt="Tracing in iD" style="height:300px;">
 
 4) When the assigned grid cell is fully mapped, the data is saved to our database and the cell is marked as done in the Tasking Manager.  Time permitting, the user can choose to map a new grid cell.
 
-<img class="space-bottom2" src="https://farm6.staticflickr.com/5485/14222223531_652dbfee79_c.jpg" alt="OSM Tasking Manager" style="height:300px;">
+<img class="space-bottom2" src="{{site.baseurl}}/img/content/14222223531_652dbfee79_c.jpg" alt="OSM Tasking Manager" style="height:300px;">
 
 5) Once all areas of interest are mapped, final editing, data cleaning, and validation are done via iD and [JOSM](https://josm.openstreetmap.de/) .  When we have completed all map validation, we will host the data on the Moabi platform, share it with our partners, and upload the data to OSM.
 

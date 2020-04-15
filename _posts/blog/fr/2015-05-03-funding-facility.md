@@ -12,7 +12,7 @@ subtitle: Comme annoncé au cours de la dernière réunion du consortium qui a c
 
 published: true
 
-img: https://farm3.staticflickr.com/2938/14333324345_9d14aa2dc6_z.jpg
+img: /img/content/14333324345_9d14aa2dc6_z.jpg
 ---
 
 Comme annoncé au cours de la dernière réunion du consortium qui a consacré sa naissance, Funding Facility (FF), MOABI met à la disposition des OSC de la RDC une subvention visant à soutenir le processus REDD.

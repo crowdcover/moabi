@@ -8,7 +8,7 @@ categories:
 title: Why do we need to develop an Independent Monitoring methodology for REDD+?
 subtitle: Independent monitoring is essential for REDD+ implementation in DRC.  Despite the interest of an independent monitoring system, no methodology has been designed for REDD+ issues. The task presents an exciting challenge.
 author: Benoit Thuaire
-img: https://farm3.staticflickr.com/2891/12483502755_f605561cdc_b.jpg
+img: /img/content/12483502755_f605561cdc_b.jpg
 published: true
 ---
 Independent monitoring is essential for REDD+ implementation in DRC for three reasons:

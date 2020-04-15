@@ -8,7 +8,7 @@ title: "Moabi's Second Newsletter"
 author: Benoit Thuaire
 subtitle: "Moabi's second newsletter announces the REDD+ Independent Monitoring system at the project scale, the development of the Moabi platform and the launch of the Moabi map competition."
 
-img: https://farm4.staticflickr.com/3956/15616264156_031baa7f33_z.jpg
+img: /img/content/15616264156_031baa7f33_z.jpg
 ---
 
 After sending the 1st Newsletter edition whose purpose was to introduce the Moabi Project, this  new  edition  gives  you  an  overview  of  new  activities  carried  out  during  the  six  (6) last  months:  you  will  find  the  progress  made  in  the  design  of  the **REDD+ Independent Monitoring system at the project scale, the development of the Moabi platform and the launch of the Moabi map competition as well!**
@@ -45,7 +45,7 @@ This first meeting of the working group provided the opportunity to share the sa
 
 ## May 2014:  First edition of the REDD+ University in Bandundu and launching of an IM-REDD reflection at the Maï Ndombe district scale
 
-![REDD+ University, Bandundu](https://farm4.staticflickr.com/3944/14993277384_6d1d1e0375_z.jpg)
+![REDD+ University, Bandundu]({{site.baseurl}}/img/content/14993277384_6d1d1e0375_z.jpg)
 
 The first session of the REDD+ University in Bandundu was held from 28 April to 2 May, 2014. Organized by EFI (European Forest Institute), the MECNT and the Gouvernorat of Bandundu. The objective was to provide a  REDD+ overview to provincial stakeholders.
 
@@ -76,7 +76,7 @@ The second scoping mission of OGF in the ERA-WWC project area had as objectives:
 
 At the end of this mission, six (6) new local observers have been identified and are added to the ten (10) selected previously during the first mission.
 
-![project team facing local challenges](https://farm4.staticflickr.com/3938/15639963835_9b8a1d2e40_z.jpg)
+![project team facing local challenges]({{site.baseurl}}/img/content/15639963835_9b8a1d2e40_z.jpg)
 
 In addition, the field surveys permitted to collect the following evidences :
 
@@ -110,7 +110,7 @@ In the coming months, we will be launching a the Moabi mobile app, a peer review
 
 ### First Trainings on the use of the Moabi Platform!
 
-![Moabi Training at OSFAC](https://farm4.staticflickr.com/3941/15617217412_59180a8950_z.jpg)
+![Moabi Training at OSFAC]({{site.baseurl}}/img/content/15617217412_59180a8950_z.jpg)
 
 The Moabi platform is aiming to become an collaborative platform dedicated to independent monitoring for REDD+ and other land users in DRC. With this goal, Moabi project organized five days of training on the use of Moabi Platform. This training took place in the offices of OSFAC from 21 -25 July, 2014.
 
@@ -123,7 +123,7 @@ At the end of this week, 45 persons were trained!
 
 ### The REDD+ Potential Risks Map
 
-![The REDD+ Potential Risks Poster](https://farm6.staticflickr.com/5601/15455381097_9af1854300_z.jpg)
+![The REDD+ Potential Risks Poster]({{site.baseurl}}/img/content/15455381097_9af1854300_z.jpg)
 
 On 27 June 2014, OSFAC organized the second meeting of the working group dedicated to the REDD+ Potential risks map. The objectives of this meeting were:
 
@@ -151,7 +151,7 @@ This panel will be composed with experts from national and international environ
 
 The Project has launched its mapping competition!
 
-![Map Competition Poster](https://farm4.staticflickr.com/3933/15454718639_6fa72a13ce_z.jpg)
+![Map Competition Poster]({{site.baseurl}}/img/content/15454718639_6fa72a13ce_z.jpg)
 
 The goal is to encourage natural resource mapping, to improve our knowledge on DRC environmental issues that people face.
 
