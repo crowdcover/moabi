@@ -44,7 +44,7 @@ hide: [footer]
 
                     {% if reportpage.attachments and reportpage.attachments.size %}
                       <div class="space-bottom1">
-                        <a href="{{reportpage.attachments.first}}">
+                        <a href="{{site.baseurl}}{{reportpage.attachments.first}}">
                           <div class="row6 space-bottom1" style="background-image: url({{site.baseurl}}{{reportpage.attachments.first}}); background-size: cover;"></div>
                         </a>
 
