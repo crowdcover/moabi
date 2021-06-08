@@ -86,7 +86,7 @@ function (moabi, L, leafletImage, leaflet_hash, leafletEasyPrint, $, sortable, j
       // cache tileLayer in moabi.map.moabiLayers.dataLayers[mapId]
       if(! moabi.map.moabiLayers.dataLayers[mapId]){
         moabi.map.moabiLayers.dataLayers[mapId] = {
-          tileLayer: L.tileLayer('https://hpvhe47439ygwrt.belugacdn.link/moabi/' + mapId + '/{z}/{x}/{y}.png')
+          tileLayer: L.tileLayer('https://cdn-maphubs.b-cdn.net/moabi/' + mapId + '/{z}/{x}/{y}.png')
         };
       }
       var tileLayer = this.map.moabiLayers.dataLayers[mapId].tileLayer;
